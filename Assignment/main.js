@@ -18,6 +18,8 @@ if (average(teamJohn) > average(teamMike)) {
     "Bravo, John's team has the highest scores among the duo",
     average(teamJohn)
   );
+} else if (average(teamMike) == average(teamJohn)) {
+  console.log("Surprise they both drew ");
 } else {
   console.log(
     "Bravo, Mike's team has the highest scores among the duo",
@@ -35,6 +37,11 @@ if (
   average(teamMike) > average(teamMary)
 ) {
   console.log("Bravo, Mike's team has the highest scores", average(teamMike));
+} else if (
+  average(teamMike) == average(teamJohn) &&
+  average(teamMike) == average(teamMary)
+) {
+  console.log("Surprise there is no winner");
 } else {
   console.log("Bravo, Mary's team has the highest scores", average(teamMary));
 }
