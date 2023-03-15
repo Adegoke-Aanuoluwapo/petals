@@ -1,25 +1,40 @@
 var teamJohn = [89, 120, 103];
-var teamMike = (116, 94, 123);
-
-function avJohn(arr) {
-  let sum = 0;
-  for (let a of arr) sum += a;
-  return sum;
-}
-console.log("The average of John's's team is ", avJohn([89, 120, 103]) / 3);
-
-function avTeamMike(bar) {
-  let sum = 0;
-  for (let b of bar) sum += b;
-  return sum;
-}
-console.log("The average of Mike's team is ", avTeamMike([116, 94, 123]) / 3);
+var teamMike = [116, 94, 123];
 
 var teamMary = [97, 134, 105];
 
-function avTeamMary(car) {
-  let sum = 0;
-  for (let c of car) sum += c;
-  return sum;
+console.log("The average of Mary's team is ", average(teamMary));
+
+console.log("The average of John's's team is ", average(teamJohn));
+
+console.log("The average of Mike's team is ", average(teamMike));
+
+function average(arr) {
+  sum = Array.from(arr).reduce((a, b) => a + b, 0);
+  return sum / 3;
 }
-console.log("The average of Mary's team is ", avTeamMary([97, 134, 105]) / 3);
+if (average(teamJohn) > average(teamMike)) {
+  console.log(
+    "Bravo, John's team has the highest scores among the duo",
+    average(teamJohn)
+  );
+} else {
+  console.log(
+    "Bravo, Mike's team has the highest scores among the duo",
+    average(teamMike)
+  );
+}
+
+if (
+  average(teamJohn) > average(teamMike) &&
+  average(teamJohn) > average(teamMary)
+) {
+  console.log("Bravo, John's team has the highest scores", average(teamJohn));
+} else if (
+  average(teamMike) > average(teamJohn) &&
+  average(teamMike) > average(teamMary)
+) {
+  console.log("Bravo, Mike's team has the highest scores", average(teamMike));
+} else {
+  console.log("Bravo, Mary's team has the highest scores", average(teamMary));
+}
