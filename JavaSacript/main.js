@@ -149,6 +149,41 @@
 //   areas.push(area);
 // }
 // console.log(areas);
-let areas = circles.map(function (radius) {
-  return Math.floor(Math.PI * radius * radius);
-});
+// let areas = circles.map(function (radius) {
+//   return Math.floor(Math.PI * radius * radius);
+// });
+// console
+// function say(message) {
+//   if (!message) {
+//     return;
+//   }
+//   console.log(message);
+// }
+// function add(a, b) {
+//   return a + b;
+// }
+// console.log(add(14, 15));
+// function compareBy(propertyName) {
+//   return function (a, b) {
+//     let x = a[propertyName],
+//       y = b[propertyName];
+
+//     if (x > y) {
+//       return 1;
+//     } else if (x < y) {
+//       return -1;
+//     } else {
+//       return 0;
+//     }
+//   };
+// }
+let products = [
+  { name: "iphone", price: 900 },
+  { name: "Samsung Galaxy", price: 850 },
+  { name: "Sony Xpeeria", price: 7000 },
+];
+console.log("product sorted by name:");
+console.table(products);
+products.sort(compareBy("name"));
+products.sort(compareBy("price"));
+console.table(products);
