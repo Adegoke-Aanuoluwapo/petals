@@ -202,7 +202,10 @@
 
 // let cm = convert(inToCm, 10);
 // console.log(cm);
-let show = function () {
-  console.log("Anonymous fuction");
-};
-show();
+// let show = function () {
+//   console.log("Anonymous fuction");
+// };
+// show();
+setTimeout(function () {
+  console.log("Execute later afterward after 1second");
+}, 2000);
