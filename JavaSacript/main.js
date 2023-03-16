@@ -206,6 +206,9 @@
 //   console.log("Anonymous fuction");
 // };
 // show();
-setTimeout(function () {
-  console.log("Execute later afterward after 1second");
-}, 2000);
+// setTimeout(function () {
+//   console.log("Execute later afterward after 1second");
+// }, 2000);
+(function () {
+  console.log("IIFE");
+})();
