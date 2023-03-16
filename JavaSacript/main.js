@@ -187,18 +187,22 @@
 // products.sort(compareBy("name"));
 // products.sort(compareBy("price"));
 // console.table(products);
-function cmToIn(length) {
-  return length / 2.54;
-}
-function inToCm(length) {
-  return length * 2.54;
-}
-console.log(inToCm(8));
-function convert(fn, length) {
-  return fn(length);
-}
-let inches = convert(cmToIn, 10);
-console.log(inches);
+// function cmToIn(length) {
+//   return length / 2.54;
+// }
+// function inToCm(length) {
+//   return length * 2.54;
+// }
+// console.log(inToCm(8));
+// function convert(fn, length) {
+//   return fn(length);
+// }
+// let inches = convert(cmToIn, 10);
+// console.log(inches);
 
-let cm = convert(inToCm, 10);
-console.log(cm);
+// let cm = convert(inToCm, 10);
+// console.log(cm);
+let show = function () {
+  console.log("Anonymous fuction");
+};
+show();
