@@ -42,28 +42,113 @@
 
 // console.log(person);
 // console.log(member);
-let mountains = ["Everest", "Fuji", "Nanga Parbat"];
+// let mountains = ["Everest", "Fuji", "Nanga Parbat"];
 
-console.log(mountains[0]); // 'Everest'
-console.log(mountains[1]); // 'Fuji'
-console.log(mountains[2]); // 'Nanga Parbat'
-mountains[2] = "K2";
-console.log(mountains);
-let seas = ["Black Sea", "Caribbean Sea", "North Sea", "Baltic Sea"];
-seas.push("Red Sea");
+// console.log(mountains[0]); // 'Everest'
+// console.log(mountains[1]); // 'Fuji'
+// console.log(mountains[2]); // 'Nanga Parbat'
+// mountains[2] = "K2";
+// console.log(mountains);
+// let seas = ["Black Sea", "Caribbean Sea", "North Sea", "Baltic Sea"];
+// seas.push("Red Sea");
 
-console.log(seas);
-seas = ["Black Sea", "Caribbean Sea", "North Sea", "Baltic Sea"];
-seas.push("Red Sea");
-console.log(seas);
-seas.unshift("Dead Sea");
+// console.log(seas);
+// seas = ["Black Sea", "Caribbean Sea", "North Sea", "Baltic Sea"];
+// seas.push("Red Sea");
+// console.log(seas);
+// seas.unshift("Dead Sea");
 
-console.log(seas);
-const lastElement = seas.pop();
-console.log(lastElement);
-const firstElement = seas.shift();
+// console.log(seas);
+// const lastElement = seas.pop();
+// console.log(lastElement);
+// const firstElement = seas.shift();
 
-console.log(firstElement);
-let index = seas.indexOf("North Sea");
+// console.log(firstElement);
+// let index = seas.indexOf("North Sea");
 
-console.log(index);
+// console.log(index);
+// console.log(Array.isArray(seas));
+// let result = 10 + "20";
+// console.log(result);
+// let energy = {
+//   valueOf() {
+//     return 100;
+//   },
+// };
+
+// let currentEnergy = energy - 10;
+// console.log(currentEnergy);
+
+// currentEnergy = energy + 100;
+// console.log(currentEnergy);
+
+// currentEnergy = energy / 2;
+// console.log(currentEnergy);
+
+// currentEnergy = energy * 1.5;
+// console.log(currentEnergy);
+
+// let remainder = 5 % -2;
+// console.log(remainder); // 1
+
+// remainder = 5 % 2;
+// console.log(remainder); // 1
+
+// remainder = 10 % Infinity;
+// console.log(remainder); // 10
+// num = 17;
+// function isOdd(num) {
+//   return num % 2;
+// }
+
+// console.log(num);
+// function say(a, b) {
+//   return a * b;
+// }
+// let result = say(45, 30);
+// console.log("Results:", result);
+// function add() {
+//   let sum = 0;
+//   for (let i = 0; i < arguments.length; i++) {
+//     sum += arguments[i];
+//   }
+//   return sum;
+// }
+// function add(a, b) {
+//   return a + b;
+// }
+// function av
+
+// console.log(add(2, 5, 7, 8));
+// console.log(add(3, 5, 7, 1, 4, 76, 4, 8));
+// showMe();
+// function showMe() {
+//   console.log("an hoisting example");
+// }
+// function add(a, b) {
+//   return a + b;
+// }
+// let sum = add;
+// function average(a, b, fn) {
+//   return fn(a, b) / 2;
+// }
+// let result = average(10, 20, sum);
+// console.log(result);
+// let resturant1 = $124;
+// let resturant2 = $48;
+// let resturant1 = $268;
+// function tip() {
+//   return;
+// }
+//  if (bill >)
+// let circles = [10, 20, 30];
+// let areas = [];
+// let area = 0;
+// for (let i = 0; i < circles.length; i++) {
+//   area = Math.floor(Math.PI * circles[i] * circles[i]);
+//   areas.push(area);
+// }
+// console.log(areas);
+let areas = circles.map(function (radius) {
+  return Math.floor(Math.PI * radius * radius);
+});
