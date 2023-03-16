@@ -194,3 +194,11 @@ function inToCm(length) {
   return length * 2.54;
 }
 console.log(inToCm(8));
+function convert(fn, length) {
+  return fn(length);
+}
+let inches = convert(cmToIn, 10);
+console.log(inches);
+
+let cm = convert(inToCm, 10);
+console.log(cm);
