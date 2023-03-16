@@ -177,13 +177,20 @@
 //     }
 //   };
 // }
-let products = [
-  { name: "iphone", price: 900 },
-  { name: "Samsung Galaxy", price: 850 },
-  { name: "Sony Xpeeria", price: 7000 },
-];
-console.log("product sorted by name:");
-console.table(products);
-products.sort(compareBy("name"));
-products.sort(compareBy("price"));
-console.table(products);
+// let products = [
+//   { name: "iphone", price: 900 },
+//   { name: "Samsung Galaxy", price: 850 },
+//   { name: "Sony Xpeeria", price: 7000 },
+// ];
+// console.log("product sorted by name:");
+// console.table(products);
+// products.sort(compareBy("name"));
+// products.sort(compareBy("price"));
+// console.table(products);
+function cmToIn(length) {
+  return length / 2.54;
+}
+function inToCm(length) {
+  return length * 2.54;
+}
+console.log(inToCm(8));
