@@ -223,4 +223,10 @@ show();
 let add = function (a, b) {
   return a + b;
 };
-add(100, 46);
+console.log(add(100, 46));
+// let add = (a, b) => a + b;
+// console.log(add(23, 27));
+let div = (a, b) => a / b;
+console.log(div(40, 8));
+let prod = (c, d) => c * d;
+console.log(prod(45, 30));
