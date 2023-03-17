@@ -209,6 +209,18 @@
 // setTimeout(function () {
 //   console.log("Execute later afterward after 1second");
 // }, 2000);
-(function () {
-  console.log("IIFE");
-})();
+// (function () {
+//   console.log("IIFE");
+// })();
+// let show = function () {
+//   console.log("Anonymous function");
+// };
+// show();
+let show = () => {
+  console.log("Anonymous function");
+};
+show();
+let add = function (a, b) {
+  return a + b;
+};
+add(100, 46);
