@@ -236,12 +236,37 @@
 // let result = square(y);
 // console.log(result);
 // console.log(y);
-let person = {
-  name: "John",
-  age: 25,
+// let person = {
+//   name: "John",
+//   age: 25,
+// };
+// function increaseAge(obj) {
+//   obj.age += 1;
+// }
+// increaseAge(person);
+// console.log(person);
+
+// function countDown(fromNumber) {
+//   console.log(fromNumber);
+// }
+// countDown(5);
+// function countDown(fromNumber) {
+//   console.log(fromNumber);
+//   let nextNumber = fromNumber - 2;
+
+//   if (nextNumber > 0) {
+//     countDown(nextNumber);
+//   }
+// }
+// countDown(9);
+let countDown = function f(fromNumber) {
+  console.log(fromNumber);
+  let nextNumber = fromNumber - 1;
+  if (nextNumber > 0) {
+    f(nextNumber);
+  }
 };
-function increaseAge(obj) {
-  obj.age += 1;
-}
-increaseAge(person);
-console.log(person);
+let newYearCountDown = countDown;
+countDown = null;
+newYearCountDown(10);
+countDown(6);
