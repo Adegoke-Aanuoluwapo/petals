@@ -216,23 +216,32 @@
 //   console.log("Anonymous function");
 // };
 // show();
-let show = () => {
-  console.log("Anonymous function");
+// let show = () => {
+//   console.log("Anonymous function");
+// };
+// show();
+// let add = function (a, b) {
+//   return a + b;
+// };
+// console.log(add(100, 46));
+// // let add = (a, b) => a + b;
+// // console.log(add(23, 27));
+// let div = (a, b) => a / b;
+// console.log(div(40, 8));
+// let prod = (c, d) => c * d;
+// console.log(prod(45, 30));
+// square = (b) => b * b;
+// console.log(square(50));
+// let y = 10;
+// let result = square(y);
+// console.log(result);
+// console.log(y);
+let person = {
+  name: "John",
+  age: 25,
 };
-show();
-let add = function (a, b) {
-  return a + b;
-};
-console.log(add(100, 46));
-// let add = (a, b) => a + b;
-// console.log(add(23, 27));
-let div = (a, b) => a / b;
-console.log(div(40, 8));
-let prod = (c, d) => c * d;
-console.log(prod(45, 30));
-square = (b) => b * b;
-console.log(square(50));
-let y = 10;
-let result = square(y);
-console.log(result);
-console.log(y);
+function increaseAge(obj) {
+  obj.age += 1;
+}
+increaseAge(person);
+console.log(person);
