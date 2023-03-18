@@ -269,14 +269,17 @@
 // let newYearCountDown = countDown;
 // countDown = null;
 // newYearCountDown(10);
-function sum(n) {
-  if (n <= 1) {
-    return n;
-  }
-  return n + sum(n - 1);
+// function sum(n) {
+//   if (n <= 1) {
+//     return n;
+//   }
+//   return n + sum(n - 1);
+// }
+
+// console.log(sum(5));
+
+// say = (message = "Hi") => message;
+// console.log(say());
+function say(message) {
+  message = typeof message !== "undefined" ? message : console.log(message);
 }
-
-console.log(sum(5));
-
-say = (message = "Hi") => message;
-console.log(say());
