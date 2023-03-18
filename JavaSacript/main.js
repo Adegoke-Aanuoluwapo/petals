@@ -259,14 +259,24 @@
 //   }
 // }
 // countDown(9);
-let countDown = function f(fromNumber) {
-  console.log(fromNumber);
-  let nextNumber = fromNumber - 1;
-  if (nextNumber > 0) {
-    f(nextNumber);
+// let countDown = function f(fromNumber) {
+//   console.log(fromNumber);
+//   let nextNumber = fromNumber - 1;
+//   if (nextNumber > 0) {
+//     f(nextNumber);
+//   }
+// };
+// let newYearCountDown = countDown;
+// countDown = null;
+// newYearCountDown(10);
+function sum(n) {
+  if (n <= 1) {
+    return n;
   }
-};
-let newYearCountDown = countDown;
-countDown = null;
-newYearCountDown(10);
-countDown(6);
+  return n + sum(n - 1);
+}
+
+console.log(sum(5));
+
+say = (message = "Hi") => message;
+console.log(say());
