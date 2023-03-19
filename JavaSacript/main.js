@@ -347,5 +347,8 @@ let person = {
   greet: function () {
     console.log("Helo, World");
   },
+  getFullName: function () {
+    return this.firstName + " " + this.lastName;
+  },
 };
-person.greet();
+console.log(person.getFullName());
