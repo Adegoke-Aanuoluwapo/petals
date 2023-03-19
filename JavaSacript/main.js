@@ -341,14 +341,23 @@ add(10, 20, 30);
 //   console.log("Hello" + person.firstName + person.lastName);
 // }
 // greet();
-let person = {
-  firstName: "John",
-  lastName: "Doe",
-  greet: function () {
-    console.log("Helo, World");
-  },
-  getFullName: function () {
+// let person = {
+//   firstName: "John",
+//   lastName: "Doe",
+//   greet: function () {
+//     console.log("Helo, World");
+//   },
+//   getFullName: function () {
+//     return this.firstName + " " + this.lastName;
+//   },
+// };
+// console.log(person.getFullName());
+function Person(firstName, lastName) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.getFullName = function () {
     return this.firstName + " " + this.lastName;
-  },
-};
+  };
+}
+let person = new Person("John", "Doe");
 console.log(person.getFullName());
