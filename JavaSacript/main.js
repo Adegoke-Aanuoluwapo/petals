@@ -285,16 +285,23 @@
 //   console.log(message);
 // }
 // say();
-function createDiv(
-  height = "100px",
-  width = "100px",
-  border = "solid 1px red"
-) {
-  let div = document.createElement("div");
-  div.style.height = heaight;
-  div.style.width = width;
-  div.style.border = border;
-  document.body.appendChild(div);
-  return div;
+// function createDiv(
+//   height = "100px",
+//   width = "100px",
+//   border = "solid 1px red"
+// ) {
+//   let div = document.createElement("div");
+//   div.style.height = heaight;
+//   div.style.width = width;
+//   div.style.border = border;
+//   document.body.appendChild(div);
+//   return div;
+// }
+// createDiv();
+function put(toy, toyBox = []) {
+  toyBox.push(toy);
+  return toyBox;
 }
-createDiv();
+console.log(put("Toy Car"));
+
+console.log(put("Teddy Bear"));
