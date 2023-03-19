@@ -298,10 +298,34 @@
 //   return div;
 // }
 // createDiv();
-function put(toy, toyBox = []) {
-  toyBox.push(toy);
-  return toyBox;
-}
-console.log(put("Toy Car"));
+// function put(toy, toyBox = []) {
+//   toyBox.push(toy);
+//   return toyBox;
+// }
+// console.log(put("Toy Car"));
 
-console.log(put("Teddy Bear"));
+// console.log(put("Teddy Bear"));
+// function date(d = today()) {
+//   console.log(d);
+// }
+// function today() {
+//   return new Date().toLocaleDateString("en-US");
+// }
+// date();
+// function bill(){
+
+// }
+let taxRate = () => 0.1;
+let getPrice = function (price, tax = price * taxRate()) {
+  return price + tax;
+};
+let fullPrice = getPrice(100);
+console.log(fullPrice);
+
+function add(x, y = 1, z = 2) {
+  console.log(arguments.length);
+  return x + y + z;
+}
+add(10, 23, 10, 30);
+add(10, 20);
+add(10, 20, 30);
