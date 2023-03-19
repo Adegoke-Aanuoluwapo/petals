@@ -329,3 +329,13 @@ function add(x, y = 1, z = 2) {
 add(10, 23, 10, 30);
 add(10, 20);
 add(10, 20, 30);
+
+let person = {
+  firstName: "John",
+  lastName: "Doe",
+};
+console.log(person.firstName);
+function greet() {
+  console.log("Hello" + person.firstName + person.lastName);
+}
+greet();
