@@ -330,12 +330,22 @@ add(10, 23, 10, 30);
 add(10, 20);
 add(10, 20, 30);
 
+// let person = {
+//   firstName: "John",
+//   lastName: "Doe",
+//   greet: function () {
+//         console.log('Hello, World!');
+// };
+// console.log(person.firstName);
+// function greet() {
+//   console.log("Hello" + person.firstName + person.lastName);
+// }
+// greet();
 let person = {
   firstName: "John",
   lastName: "Doe",
+  greet: function () {
+    console.log("Helo, World");
+  },
 };
-console.log(person.firstName);
-function greet() {
-  console.log("Hello" + person.firstName + person.lastName);
-}
-greet();
+person.greet();
