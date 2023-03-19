@@ -280,6 +280,21 @@
 
 // say = (message = "Hi") => message;
 // console.log(say());
-function say(message) {
-  message = typeof message !== "undefined" ? message : console.log(message);
+// function say(message) {
+//   message = typeof message !== "undefined" ? message : "Hi";
+//   console.log(message);
+// }
+// say();
+function createDiv(
+  height = "100px",
+  width = "100px",
+  border = "solid 1px red"
+) {
+  let div = document.createElement("div");
+  div.style.height = heaight;
+  div.style.width = width;
+  div.style.border = border;
+  document.body.appendChild(div);
+  return div;
 }
+createDiv();
