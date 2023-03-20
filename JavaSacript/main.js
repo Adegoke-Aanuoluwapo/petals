@@ -352,12 +352,17 @@ add(10, 20, 30);
 //   },
 // };
 // console.log(person.getFullName());
-function Person(firstName, lastName) {
-  this.firstName = firstName;
-  this.lastName = lastName;
-  this.getFullName = function () {
-    return this.firstName + " " + this.lastName;
-  };
-}
-let person = new Person("John", "Doe");
-console.log(person.getFullName());
+// function Person(firstName, lastName) {
+//   this.firstName = firstName;
+//   this.lastName = lastName;
+//   this.getFullName = function () {
+//     return this.firstName + " " + this.lastName;
+//   };
+// }
+// let person = new Person("John", "Doe");
+// console.log(person.getFullName());
+const bill = [];
+bill[0] = 45;
+bill[1] = 60;
+bill[2] = 100;
+console.log(bill);
