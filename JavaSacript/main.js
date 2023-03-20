@@ -412,15 +412,30 @@
 //   this.lastName = lastName;
 // }
 // Person();
-let person = { name: "John" };
+// let person = { name: "John" };
 
-console.log(person);
-console.log(person.name);
-console.log(person.toString());
-console.log(Object.prototype);
-console.log(typeof Object);
-function Person(name) {
-  this.name = name;
-}
-console.log(Person);
-console.log(Person.prototype);
+// console.log(person);
+// console.log(person.name);
+// console.log(person.toString());
+// console.log(Object.prototype);
+// console.log(typeof Object);
+// function Person(name) {
+//   this.name = name;
+// }
+// console.log(Person);
+// console.log(Person.prototype);
+// Person.prototype.greet = function () {
+//   return "Hi, I'm " + this.name + "!";
+// };
+// let p1 = new Person("John");
+// let greeting = p1.greet();
+// console.log(greeting);
+// let s = p1.toString();
+// console.log(s);
+var firstName = "John";
+var age = 16;
+age >= 18
+  ? console.log(firstName + "drinks beer")
+  : console.log(firstName + " drinks juice");
+var drink = age >= 18 ? "beer" : "juice";
+console.log(drink);
