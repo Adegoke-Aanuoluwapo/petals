@@ -455,17 +455,73 @@
 // console.log(p1.getFullName());
 // console.log(p3.getFullName());
 
-class Person {
-  constructor(firstName, lastName) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-  }
-  getFullName() {
-    return this.firstName + " " + this.lastName;
-  }
-}
-let p4 = new Person("James", "Brown");
-let p5 = new Person("Theresa", "May");
+// class Person {
+//   constructor(firstName, lastName) {
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//   }
+//   getFullName() {
+//     return this.firstName + " " + this.lastName;
+//   }
+// }
+// let p4 = new Person("James", "Brown");
+// let p5 = new Person("Theresa", "May");
 
-console.log(p4.getFullName());
-console.log(p5.getFullName());
+// console.log(p4.getFullName());
+// console.log(p5.getFullName());
+// class Person {
+//   constructor(name) {
+//     this.name = name;
+//   }
+// }
+// let person = new Person("John");
+// console.log(person.name);
+// class Person {
+//   constructor(name) {
+//     this.setName(name);
+//   }
+//   getName() {
+//     return this.name;
+//   }
+//   setName(newName) {
+//     newName = newName.trim();
+//     if (newName === "") {
+//       throw "The name cannot br empty";
+//     }
+//     this.name = newName;
+//   }
+// }
+// let person = new Person("Jane Doe");
+// console.log(person);
+// person.setName("Jane Smith");
+// console.log(person.getName());
+// let person = {
+//   name: "John Doe",
+//   greet: function () {
+//     return "Hi, I'm " + this.name;
+//   },
+// };
+// console.log(person.name);
+// console.log(person.greet());
+// console.log(person.toString());
+// console.log(person.__proto__);
+// let teacher = {
+//   teach: function (subject) {
+//     return " I can teach " + subject;
+//   },
+// };
+// teacher.__proto__ = person;
+// console.log(teacher.name);
+// console.log(teacher.greet());
+let person = {
+  name: "John Doe",
+  greet: function () {
+    return "Hi, I'm " + this.name;
+  },
+};
+let teacher = Object.create(person);
+teacher.name = "Jane Doe";
+teacher.teach = function (subject) {
+  return "I can teach " + subject;
+};
+console.log(teacher);
