@@ -432,10 +432,40 @@
 // console.log(greeting);
 // let s = p1.toString();
 // console.log(s);
-var firstName = "John";
-var age = 16;
-age >= 18
-  ? console.log(firstName + "drinks beer")
-  : console.log(firstName + " drinks juice");
-var drink = age >= 18 ? "beer" : "juice";
-console.log(drink);
+// var firstName = "John";
+// var age = 33;
+// age >= 18
+//   ? console.log(firstName + " drinks beer")
+//   : console.log(firstName + " drinks juice");
+// var drink = age >= 18 ? "beer" : "juice";
+// console.log(drink);
+// var job = "teacher";
+// function Person(firstName, lastName) {
+//   this.firstName = firstName;
+//   this.lastName = lastName;
+// }
+
+// Person.prototype.getFullName = function () {
+//   return this.firstName + " " + this.lastName;
+// };
+// let p1 = new Person("John", "Doe");
+// let p2 = new Person("Jane", "Doe");
+// let p3 = new Person("Jane", "Olutoroti");
+// console.log(p1.getFullName());
+// console.log(p1.getFullName());
+// console.log(p3.getFullName());
+
+class Person {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+  getFullName() {
+    return this.firstName + " " + this.lastName;
+  }
+}
+let p4 = new Person("James", "Brown");
+let p5 = new Person("Theresa", "May");
+
+console.log(p4.getFullName());
+console.log(p5.getFullName());
