@@ -606,3 +606,25 @@ class Person {
 }
 let person = new Person("John", "Doe");
 console.log(person.fullName);
+console.log(person.lastName);
+function Animal(legs) {
+  this.legs = legs;
+}
+
+Animal.prototype.walk = function () {
+  console.log("walking on " + this.legs + " legs");
+};
+function Birds(legs) {
+  Animal.call(this, legs);
+}
+
+Birds.prototype = Object.create(Animal.prototype);
+Birds.prototype.constructor = Animal;
+
+Birds.prototype.fly = function () {
+  console.log("flying");
+};
+
+var pigeon = new Birds(2);
+pigeon.walk();
+pigeon.fly();
