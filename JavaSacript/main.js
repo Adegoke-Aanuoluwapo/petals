@@ -593,38 +593,89 @@
 //   [propName]: 5,
 // };
 // console.log(rank.a);
-let name = "fullName";
+// let name = "fullName";
 
-class Person {
-  constructor(firstName, lastName) {
-    this.firstName = firstName;
-    this.lastName = lastName;
+// class Person {
+//   constructor(firstName, lastName) {
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//   }
+//   get [name]() {
+//     return `${this.firstName} ${this.lastName}`;
+//   }
+// }
+// let person = new Person("John", "Doe");
+// console.log(person.fullName);
+// console.log(person.lastName);
+// function Animal(legs) {
+//   this.legs = legs;
+// }
+
+// Animal.prototype.walk = function () {
+//   console.log("walking on " + this.legs + " legs");
+// };
+// function Birds(legs) {
+//   Animal.call(this, legs);
+// }
+
+// Birds.prototype = Object.create(Animal.prototype);
+// Birds.prototype.constructor = Animal;
+
+// Birds.prototype.fly = function () {
+//   console.log("flying");
+// };
+
+// var pigeon = new Birds(2);
+// pigeon.walk();
+// pigeon.fly();
+// class Animal {
+//   constructor(legs) {
+//     this.legs = legs;
+//   }
+//   walk() {
+//     console.log("walking on " + this.legs + " legs");
+//   }
+// }
+// class Bird extends Animal {
+//   constructor(legs) {
+//     super(legs);
+//     this.color = color;
+//   }
+//   fly() {
+//     console.log("flying");
+//   }
+//   getColor() {
+//     return this.color;
+//   }
+// }
+// let pigeon = new Bird(2, "white");
+// console.log(pigeon.getColor());
+// class Dog extends Animal {
+//   constructor() {
+//     super(4);
+//   }
+//   walk() {
+//     console.log(`go walking`);
+//   }
+// }
+// let bingo = new Dog();
+// bingo.walk();
+class Animal {
+  constructor(legs) {
+    this.legs = legs;
   }
-  get [name]() {
-    return `${this.firstName} ${this.lastName}`;
+
+  walk() {
+    console.log("walking on " + this.legs + " legs");
+  }
+  static helloWorld() {
+    console.log("Hello World");
   }
 }
-let person = new Person("John", "Doe");
-console.log(person.fullName);
-console.log(person.lastName);
-function Animal(legs) {
-  this.legs = legs;
+
+class Bird extends Animal {
+  fly() {
+    console.log("flying");
+  }
 }
-
-Animal.prototype.walk = function () {
-  console.log("walking on " + this.legs + " legs");
-};
-function Birds(legs) {
-  Animal.call(this, legs);
-}
-
-Birds.prototype = Object.create(Animal.prototype);
-Birds.prototype.constructor = Animal;
-
-Birds.prototype.fly = function () {
-  console.log("flying");
-};
-
-var pigeon = new Birds(2);
-pigeon.walk();
-pigeon.fly();
+Bird.helloWorld();
