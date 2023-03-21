@@ -660,22 +660,54 @@
 // }
 // let bingo = new Dog();
 // bingo.walk();
-class Animal {
-  constructor(legs) {
-    this.legs = legs;
-  }
+// class Animal {
+//   constructor(legs) {
+//     this.legs = legs;
+//   }
 
-  walk() {
-    console.log("walking on " + this.legs + " legs");
-  }
-  static helloWorld() {
-    console.log("Hello World");
-  }
-}
+//   walk() {
+//     console.log("walking on " + this.legs + " legs");
+//   }
+//   static helloWorld() {
+//     console.log("Hello World");
+//   }
+// }
 
-class Bird extends Animal {
-  fly() {
-    console.log("flying");
-  }
-}
-Bird.helloWorld();
+// class Bird extends Animal {
+//   fly() {
+//     console.log("flying");
+//   }
+// }
+// Bird.helloWorld();
+// class Queue extends Array {
+//   enqueue(e) {
+//     super.push(e);
+//   }
+//   dequeue() {
+//     return super.shift();
+//   }
+//   peek() {
+//     return !this.empty() ? this[0] : undefined;
+//   }
+//   empty() {
+//     return this.length === 0;
+//   }
+// }
+
+// var customers = new Queue();
+// customers.enqueue("A");
+// customers.enqueue("B");
+// customers.enqueue("C");
+// customers.enqueue("D");
+// customers.enqueue("E");
+// while (!customers.empty()) {
+//   console.log(customers.dequeue());
+// }
+let person = {
+  firstName: "John",
+  lastName: "Doe",
+};
+person.age = 24;
+console.log(person);
+delete person.age;
+console.log(person.age);
