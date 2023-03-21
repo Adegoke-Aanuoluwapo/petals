@@ -703,11 +703,18 @@
 // while (!customers.empty()) {
 //   console.log(customers.dequeue());
 // }
-let person = {
-  firstName: "John",
-  lastName: "Doe",
-};
-person.age = 24;
-console.log(person);
-delete person.age;
-console.log(person.age);
+// let person = {
+//   firstName: "John",
+//   lastName: "Doe",
+// };
+// person.age = 24;
+// console.log(person);
+// delete person.age;
+// console.log(person.age);
+
+let person = {};
+person.age = 25;
+person.ssn = "012-38-9119";
+for (let p in person) {
+  console.log(p);
+}
