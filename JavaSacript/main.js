@@ -513,15 +513,91 @@
 // teacher.__proto__ = person;
 // console.log(teacher.name);
 // console.log(teacher.greet());
-let person = {
-  name: "John Doe",
-  greet: function () {
-    return "Hi, I'm " + this.name;
-  },
-};
-let teacher = Object.create(person);
-teacher.name = "Jane Doe";
-teacher.teach = function (subject) {
-  return "I can teach " + subject;
-};
-console.log(teacher);
+// let person = {
+//   name: "John Doe",
+//   greet: function () {
+//     return "Hi, I'm " + this.name;
+//   },
+// };
+// let teacher = Object.create(person);
+// teacher.name = "Jane Doe";
+// teacher.teach = function (subject) {
+//   return "I can teach " + subject;
+// };
+// console.log(teacher);
+// let counter = {
+//   count: 0,
+//   next: function () {
+//     return ++this.count;
+//   },
+// };
+// console.log(counter.next());
+// console.log(this === window);
+// this.color = "Green";
+// console.log(window.color);
+
+// function show() {
+//   "use strict";
+//   console.log(this === undefined);
+//   function display() {
+//     console.log(this === undefined);
+//   }
+//   display();
+// }
+// show();
+// window.show();
+// let car = {
+//   brand: "Honda",
+//   getBrand: function () {
+//     return this.brand;
+//   },
+// };
+
+// console.log(car.getBrand());
+// let brand = car.getBrand;
+// console.log(brand());
+// function factory(aClass) {
+//   return new aClass();
+// }
+// let greeting = factory(
+//   class {
+//     sayHi() {
+//       console.log("Hi");
+//     }
+//   }
+// );
+// greeting.sayHi();
+// let greeting = factory(
+//   class {
+//     sayHi() {
+//       console.log("Hi");
+//     }
+//   }
+// );
+// greeting.sayHi();
+// let app = new (class {
+//   constructor(name, age) {
+//     this.name = name;
+//     this.age = age;
+//   }
+//   start() {
+//     console.log(`Starting the ${this.name} in the age ${this.age}`);
+//   }
+// })("Awesome App");
+// app.start();
+// let propName = "c";
+
+// const rank = {
+//   a: 1,
+//   b: 2,
+//   [propName]: 5,
+// };
+// console.log(rank.a);
+let name = "fullName";
+
+class Person {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+}
