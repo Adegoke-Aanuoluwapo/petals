@@ -712,9 +712,9 @@
 // delete person.age;
 // console.log(person.age);
 
-let person = {};
-person.age = 25;
-person.ssn = "012-38-9119";
-for (let p in person) {
-  console.log(p);
-}
+// let person = {};
+// person.age = 25;
+// person.ssn = "012-38-9119";
+// for (let p in person) {
+//   console.log(p);
+// }
