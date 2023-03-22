@@ -1,5 +1,5 @@
-function calculateAge(year) {
-  return 2023 - year;
+function calculateAge(birthYear) {
+  return 2023 - birthYear;
 }
 console.log(calculateAge(1963));
 function retirement(year, firstName) {
