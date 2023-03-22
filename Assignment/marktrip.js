@@ -1,21 +1,31 @@
 tip = [];
 bills = [77, 375, 110, 45];
+john_bill = [124, 48, 268, 180, 42];
 function tipping(bill, tip) {
   this.bill = [];
-  this.tip = [];
-  this.percent = percent;
+  this.tips = [];
+  this.finalBill = [];
+  let percent;
   this.bills.forEach((bill, index) => {
     if (bill < 100) {
       percent = 0.2;
-      tip = percent * bill;
     } else if (bill >= 100 && bill < 300) {
       percent = 0.1;
-      tip = percent * bill;
     } else if (bill > 300) {
       percent = 0.25;
-      tip = percent * bill;
     }
     this.tip[index] = percent * bill;
     this.finalBill[index] = bill + percent * bill;
   });
 }
+
+console.log(tipping(), finalBill);
+function average(calculate_average) {
+  var sum = 0;
+  for (let i = 0; i < bills.length; i++) {
+    sum = sum + bills[i];
+  }
+  return sum / bills.length;
+}
+console.log(average(bills));
+console.log(average(john_bill));
