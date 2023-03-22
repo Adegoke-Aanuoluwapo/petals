@@ -8,3 +8,4 @@ function retirement(year, firstName) {
   console.log(firstName + " retires in " + retire + " years");
 }
 retirement(1970, "Ademefun");
+retirement(1997, "Ojindo");
