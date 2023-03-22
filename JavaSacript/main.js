@@ -718,3 +718,11 @@
 // for (let p in person) {
 //   console.log(p);
 // }
+var person = {
+  firstName: "John",
+  lastName: "Doe",
+  ssn: "299-25-2351",
+};
+for (var i in person) {
+  console.log(i + ":" + person[i]);
+}
