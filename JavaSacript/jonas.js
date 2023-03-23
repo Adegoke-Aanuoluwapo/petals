@@ -93,5 +93,23 @@ john = {
     return this.bmi;
   },
 };
-// john.calcBmi();
+x = john.calcBmi();
 console.log("The BMI of " + john.fullName + " is " + john.calcBmi() + "kg/m2");
+mark = {
+  fullName: "Mark Miller",
+  mass: 78,
+  height: 1.69,
+
+  calcBmi: function () {
+    this.bmi = this.mass / (this.height * this.height);
+    return this.bmi;
+  },
+};
+console.log("The BMI of " + mark.fullName + " is " + mark.calcBmi() + "kg/m2");
+y = mark.calcBmi();
+if (x > y) {
+  console.log("john has the highest BMI" + x);
+} else {
+  console.log("Mark has the highest BMI" + y);
+}
+console.log(john);
