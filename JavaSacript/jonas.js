@@ -57,4 +57,7 @@ function sum(arr) {
   }
   return sum;
 }
+bills = [1, 3, 5, 7, 9];
+
+console.log(sum(bills));
 console.log(sum([1, 3, 5]));
