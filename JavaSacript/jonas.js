@@ -66,20 +66,32 @@ console.log(sum(bills));
 // console.log(john["lastName"]);
 // var x = "family";
 // console.log(john[x]);
-var jane = new Object();
-jane.name = "Jane";
-jane["job"] = "programmer";
-console.log(jane);
-var john = {
-  firstName: "John",
-  lastName: "Smith",
-  birthYear: 1996,
-  family: ["Jane", "Mark", "Bob", "Emily"],
-  job: "teacher",
-  isMarried: false,
-  calculateAge: function (birthYear) {
-    return 2023 - birthYear;
+// var jane = new Object();
+// jane.name = "Jane";
+// jane["job"] = "programmer";
+// console.log(jane);
+// var john = {
+//   firstName: "John",
+//   lastName: "Smith",
+//   birthYear: 1996,
+//   family: ["Jane", "Mark", "Bob", "Emily"],
+//   job: "teacher",
+//   isMarried: false,
+//   calculateAge: function () {
+//     this.age = 2023 - this.birthYear;
+//   },
+// };
+// john.calculateAge();
+// console.log(john);
+john = {
+  fullName: "john smith",
+  mass: 92,
+  height: 1.95,
+
+  calcBmi: function () {
+    this.bmi = this.mass / (this.height * this.height);
+    return this.bmi;
   },
 };
-x = john.calculateAge(1950);
-console.log(x);
+// john.calcBmi();
+console.log("The BMI of " + john.fullName + " is " + john.calcBmi() + "kg/m2");
