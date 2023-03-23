@@ -60,6 +60,16 @@ function sum(arr) {
 bills = [1, 3, 5, 7, 9];
 
 console.log(sum(bills));
+
+// console.log(john);
+// console.log(john.family[3]);
+// console.log(john["lastName"]);
+// var x = "family";
+// console.log(john[x]);
+var jane = new Object();
+jane.name = "Jane";
+jane["job"] = "programmer";
+console.log(jane);
 var john = {
   firstName: "John",
   lastName: "Smith",
@@ -67,13 +77,9 @@ var john = {
   family: ["Jane", "Mark", "Bob", "Emily"],
   job: "teacher",
   isMarried: false,
+  calculateAge: function (birthYear) {
+    return 2023 - birthYear;
+  },
 };
-console.log(john);
-console.log(john.family[3]);
-console.log(john["lastName"]);
-var x = "family";
-console.log(john[x]);
-var jane = new Object();
-jane.name = "Jane";
-jane["job"] = "programmer";
-console.log(jane);
+x = john.calculateAge(1950);
+console.log(x);
