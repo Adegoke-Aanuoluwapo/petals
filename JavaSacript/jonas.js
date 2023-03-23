@@ -32,6 +32,7 @@ function calculateTips(bill, tip) {
   this.tips = [];
   this.bills = [124, 48, 268];
   let percentage;
+  let average;
   this.finalbill = [];
   this.bills.forEach((bill, index) => {
     if (bill < 50) {
@@ -48,3 +49,12 @@ function calculateTips(bill, tip) {
 calculateTips();
 console.log(tips);
 console.log(finalbill);
+
+function sum(arr) {
+  this.sum = 0;
+  for (const val of arr) {
+    sum += val;
+  }
+  return sum;
+}
+console.log(sum([1, 3, 5]));
