@@ -73,3 +73,7 @@ console.log(john.family[3]);
 console.log(john["lastName"]);
 var x = "family";
 console.log(john[x]);
+var jane = new Object();
+jane.name = "Jane";
+jane["job"] = "programmer";
+console.log(jane);
