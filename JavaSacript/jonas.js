@@ -60,4 +60,16 @@ function sum(arr) {
 bills = [1, 3, 5, 7, 9];
 
 console.log(sum(bills));
-console.log(sum([1, 3, 5]));
+var john = {
+  firstName: "John",
+  lastName: "Smith",
+  birthYear: 1996,
+  family: ["Jane", "Mark", "Bob", "Emily"],
+  job: "teacher",
+  isMarried: false,
+};
+console.log(john);
+console.log(john.family[3]);
+console.log(john["lastName"]);
+var x = "family";
+console.log(john[x]);
