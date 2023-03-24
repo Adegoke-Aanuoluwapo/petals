@@ -21,11 +21,13 @@ function tipping(bill, tip) {
 
 console.log(tipping(), finalBill);
 function average(calculate_average) {
+  arrays = [];
   var sum = 0;
-  for (let i = 0; i < bills.length; i++) {
-    sum = sum + bills[i];
+
+  for (let i = 0; i < arrays.length; i++) {
+    sum = sum + arrays[i];
   }
-  return sum / bills.length;
+  return sum / arrays.length;
 }
 console.log(average(bills));
 console.log(average(john_bill));
