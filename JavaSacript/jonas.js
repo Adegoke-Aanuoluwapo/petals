@@ -158,3 +158,8 @@ first();
 console.log(first());
 console.log(second());
 console.log(third());
+function calculateAge(year) {
+  console.log(2023 - year);
+}
+calculateAge(1996);
+calculateAge(1962);
