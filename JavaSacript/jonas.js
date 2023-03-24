@@ -60,7 +60,38 @@ function sum(arr) {
 bills = [1, 3, 5, 7, 9];
 
 console.log(sum(bills));
+var john = {
+  firstName: "John",
+  lastName: "Smith",
+  birthYear: 1996,
+  family: ["Jane", "Mark", "Bob", "Emily"],
+  job: "teacher",
+  isMarried: false,
+  calculateAge: function () {
+    this.age = 2023 - this.birthYear;
+  },
+};
 
+kam = ["brag", "edmund", 1990, "cola", "happ", false];
+// for (let a = 0; a < kam.length; a++) {
+//   console.log(kam[a]);
+// }
+// var i = 0;
+// while (i < kam.length) {
+//   console.log(kam[i]);
+//   i++;
+// }
+for (var i = 0; i < kam.length; i++) {
+  if (typeof kam[i] !== "string") continue;
+  console.log(kam[i]);
+}
+for (var i = 0; i < kam.length; i++) {
+  if (typeof kam[i] !== "string") break;
+  console.log(kam[i]);
+}
+for (var i = kam.length - 1; i >= 0; i--) {
+  console.log(kam[i]);
+}
 // console.log(john);
 // console.log(john.family[3]);
 // console.log(john["lastName"]);
@@ -70,46 +101,60 @@ console.log(sum(bills));
 // jane.name = "Jane";
 // jane["job"] = "programmer";
 // console.log(jane);
-// var john = {
-//   firstName: "John",
-//   lastName: "Smith",
-//   birthYear: 1996,
-//   family: ["Jane", "Mark", "Bob", "Emily"],
-//   job: "teacher",
-//   isMarried: false,
-//   calculateAge: function () {
-//     this.age = 2023 - this.birthYear;
-//   },
-// };
+
 // john.calculateAge();
 // console.log(john);
-john = {
-  fullName: "john smith",
-  mass: 92,
-  height: 1.95,
+// john = {
+//   fullName: "john smith",
+//   mass: 92,
+//   height: 1.95,
 
-  calcBmi: function () {
-    this.bmi = this.mass / (this.height * this.height);
-    return this.bmi;
-  },
-};
-x = john.calcBmi();
-console.log("The BMI of " + john.fullName + " is " + john.calcBmi() + "kg/m2");
-mark = {
-  fullName: "Mark Miller",
-  mass: 78,
-  height: 1.69,
+//   calcBmi: function () {
+//     this.bmi = this.mass / (this.height * this.height);
+//     return this.bmi;
+//   },
+// };
+// x = john.calcBmi();
+// console.log("The BMI of " + john.fullName + " is " + john.calcBmi() + "kg/m2");
+// mark = {
+//   fullName: "Mark Miller",
+//   mass: 78,
+//   height: 1.69,
 
-  calcBmi: function () {
-    this.bmi = this.mass / (this.height * this.height);
-    return this.bmi;
-  },
-};
-console.log("The BMI of " + mark.fullName + " is " + mark.calcBmi() + "kg/m2");
-y = mark.calcBmi();
-if (x > y) {
-  console.log("john has the highest BMI" + x);
-} else {
-  console.log("Mark has the highest BMI" + y);
+//   calcBmi: function () {
+//     this.bmi = this.mass / (this.height * this.height);
+//     return this.bmi;
+//   },
+// };
+// console.log("The BMI of " + mark.fullName + " is " + mark.calcBmi() + "kg/m2");
+// y = mark.calcBmi();
+// if (x > y) {
+//   console.log("john has the highest BMI" + x);
+// } else if (x < y) {
+//   console.log("Mark has the highest BMI" + y);
+// } else {
+//   console.log("They both had draw");
+// }
+// console.log(john);
+// for (var i = 0; i < 10; i++) {
+//   console.log(i);
+// }
+var name = "John";
+function first() {
+  var a = "Hello";
+  second();
+  var x = a + name;
 }
-console.log(john);
+function second() {
+  var b = "Hi";
+  third();
+  var z = b + name;
+}
+function third() {
+  var c = "Hey!";
+  var z = c + name;
+}
+first();
+console.log(first());
+console.log(second());
+console.log(third());
