@@ -180,3 +180,7 @@ function first() {
     console.log(a + b + c);
   }
 }
+function third() {
+  var d = "John";
+  console.log(c);
+}
