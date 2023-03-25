@@ -139,33 +139,44 @@ for (var i = kam.length - 1; i >= 0; i--) {
 // for (var i = 0; i < 10; i++) {
 //   console.log(i);
 // }
-var name = "John";
-function first() {
-  var a = "Hello";
-  second();
-  var x = a + name;
-}
-function second() {
-  var b = "Hi";
-  third();
-  var z = b + name;
-}
-function third() {
-  var c = "Hey!";
-  var z = c + name;
-}
-calculateAge(1941);
+// var name = "John";
+// function first() {
+//   var a = "Hello";
+//   second();
+//   var x = a + name;
+// }
+// function second() {
+//   var b = "Hi";
+//   third();
+//   var z = b + name;
+// }
+// function third() {
+//   var c = "Hey!";
+//   var z = c + name;
+// }
+// calculateAge(1941);
+// first();
+// console.log(first());
+// console.log(second());
+// console.log(third());
+// function calculateAge(year) {
+//   console.log(2023 - year);
+// }
+// calculateAge(1996);
+// calculateAge(1962);
+// retirement(1956);
+// var retirement = function (year) {
+//   console.log(65 - (2023 - year));
+// };
+// retirement(1979);
+var a = "Hello!";
 first();
-console.log(first());
-console.log(second());
-console.log(third());
-function calculateAge(year) {
-  console.log(2023 - year);
+
+function first() {
+  var b = "Hi!";
+  second();
+  function second() {
+    var c = "Hey!";
+    console.log(a + b + c);
+  }
 }
-calculateAge(1996);
-calculateAge(1962);
-retirement(1956);
-var retirement = function (year) {
-  console.log(65 - (2023 - year));
-};
-retirement(1979);
