@@ -139,17 +139,21 @@ for (var i = kam.length - 1; i >= 0; i--) {
 // for (var i = 0; i < 10; i++) {
 //   console.log(i);
 // }
-// var name = "John";
-// function first() {
-//   var a = "Hello";
-//   second();
-//   var x = a + name;
-// }
-// function second() {
-//   var b = "Hi";
-//   third();
-//   var z = b + name;
-// }
+var a = "Hello";
+first();
+function first() {
+  var b = "Hi";
+  second();
+  function second() {
+    var b = "Hey";
+    third();
+  }
+}
+function third() {
+  var d = "John";
+  console.log(c);
+}
+
 // function third() {
 //   var c = "Hey!";
 //   var z = c + name;
@@ -169,18 +173,18 @@ for (var i = kam.length - 1; i >= 0; i--) {
 //   console.log(65 - (2023 - year));
 // };
 // retirement(1979);
-var a = "Hello!";
-first();
+// var a = "Hello!";
+// first();
 
-function first() {
-  var b = "Hi!";
-  second();
-  function second() {
-    var c = "Hey!";
-    console.log(a + b + c);
-  }
-}
-function third() {
-  var d = "John";
-  console.log(c);
-}
+// function first() {
+//   var b = "Hi!";
+//   second();
+//   function second() {
+//     var c = "Hey!";
+//     console.log(a + b + c);
+//   }
+// }
+// function third() {
+//   var d = "John";
+//   console.log(c);
+// }
