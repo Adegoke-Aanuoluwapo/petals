@@ -154,6 +154,7 @@ function third() {
   var c = "Hey!";
   var z = c + name;
 }
+calculateAge(1941);
 first();
 console.log(first());
 console.log(second());
@@ -163,3 +164,8 @@ function calculateAge(year) {
 }
 calculateAge(1996);
 calculateAge(1962);
+retirement(1956);
+var retirement = function (year) {
+  console.log(65 - (2023 - year));
+};
+retirement(1979);
