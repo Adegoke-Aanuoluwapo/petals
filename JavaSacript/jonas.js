@@ -139,20 +139,20 @@ for (var i = kam.length - 1; i >= 0; i--) {
 // for (var i = 0; i < 10; i++) {
 //   console.log(i);
 // }
-var a = "Hello";
-first();
-function first() {
-  var b = "Hi";
-  second();
-  function second() {
-    var b = "Hey";
-    third();
-  }
-}
-function third() {
-  var d = "John";
-  console.log(c);
-}
+// var a = "Hello";
+// first();
+// function first() {
+//   var b = "Hi";
+//   second();
+//   function second() {
+//     var b = "Hey";
+//     third();
+//   }
+// }
+// function third() {
+//   var d = "John";
+//   console.log(a + d);
+// }
 
 // function third() {
 //   var c = "Hey!";
@@ -188,3 +188,17 @@ function third() {
 //   var d = "John";
 //   console.log(c);
 // }
+// calculateAge(1994);
+// function calculateAge(year) {
+//   console.log(2023 - year);
+//   console.log(this);
+//}
+var john = {
+  name: "John",
+  yearOfBirth: 1990,
+  calculateAge: function (yearOfBirth) {
+    console.log(this);
+    console.log(2023 - yearOfBirth);
+  },
+};
+john.calculateAge();
