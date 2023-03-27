@@ -25,6 +25,13 @@ document.querySelector('.btn--roll').addEventListener('click', function () {
       '#current--' + activePlayer
     ).textContent = roundScore;
   } else {
+    //Next player
+    activePlayer === 0 ? (activePlayer = 1) : (activePlayer = 0);
+    if (activePlayer === 0) {
+      activePlayer = 1;
+    } else {
+      activePlayer = 0;
+    }
   }
 });
 
