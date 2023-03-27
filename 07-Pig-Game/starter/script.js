@@ -20,13 +20,17 @@ document.querySelector('.btn--roll').addEventListener('click', function () {
   var diceDOM = document.querySelector('.dice');
   diceDOM.style.display = 'block';
   diceDOM.src = 'dice-' + dice + '.png';
-});
-//3 Update the round score IF the rolled number was not a 1
+  //3 Update the round score IF the rolled number was not a 1
 
-if (dice !== 1) {
-  roundScore += dice;
-} else {
-}
+  if (dice !== 1) {
+    roundScore += dice;
+    document.querySelector(
+      '#current--' + activePlayer
+    ).textContent = roundScore;
+  } else {
+  }
+});
+
 //document.querySelector('#current--' + activePlayer).textContent = dice;
 // document.querySelector('#current--1').innerHTML = dice;
 // console.log(dice);
