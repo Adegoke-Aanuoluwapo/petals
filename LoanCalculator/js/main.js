@@ -82,4 +82,12 @@ const init = () => {
 
 init();
 
-calculateBtn.addEventListener("click", init);
+// calculateBtn.addEventListener("click", init);
+
+let inputs = document.querySelectorAll("input[type='number']");
+
+Array.from(inputs).forEach((inp) => {
+  inp.oninput = () => {
+    init();
+  };
+});

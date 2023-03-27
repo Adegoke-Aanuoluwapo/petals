@@ -8,10 +8,7 @@ document.getElementById('score--0').textContent = '0';
 document.getElementById('score--1').textContent = '0';
 document.getElementById('current--0').textContent = '0';
 document.getElementById('current--1').textContent = '0';
-function btn() {
-  console.log('button pressed');
-}
-btn();
+
 document.querySelector('.btn--roll').addEventListener('click', function () {
   // console.log('button is pressed');
   // Random number

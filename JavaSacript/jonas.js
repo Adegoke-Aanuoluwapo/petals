@@ -199,10 +199,10 @@ var john = {
   calculateAge: function (yearOfBirth) {
     console.log(this);
     console.log(2023 - this.yearOfBirth);
-    function innerFunction() {
-      console.log(this);
-    }
-    innerFunction();
+    //   function innerFunction() {
+    //     console.log(this);
+    //   }
+    //   innerFunction();
   },
 };
 john.calculateAge();
