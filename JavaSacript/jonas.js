@@ -217,5 +217,9 @@ for (var i = kam.length - 1; i >= 0; i--) {
 // document.getElementsByName("typescript").textContent = "34
 let current = document.querySelector(".current");
 let nextSibling = current.nextElementSibling;
-console.log(nextSibling);
-console.log(current);
+while (nextSibling) {
+  console.log(nextSibling);
+  nextSibling = nextSibling.nextElementSibling;
+}
+let prevSibling = current.previousElementSibling;
+console.log(prevSibling);
