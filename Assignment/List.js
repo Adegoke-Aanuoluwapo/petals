@@ -1,4 +1,8 @@
-let x = document.querySelectorAll("li");
+let x = document.querySelectorAll("ul >li");
 x[0].innerHTML = "first";
-let y = document.getElementsByTagName("li");
-y[2].innerHTML = "last";
+x[2].innerHTML = "last";
+x[3].innerHTML = "first";
+x[5].innerHTML = "last";
+x[6].innerHTML = "first";
+x[8].innerHTML = "last";
+console.log(x);
