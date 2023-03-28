@@ -193,22 +193,27 @@ for (var i = kam.length - 1; i >= 0; i--) {
 //   console.log(2023 - year);
 //   console.log(this);
 //}
-var john = {
-  name: "John",
-  yearOfBirth: 1990,
-  calculateAge: function (yearOfBirth) {
-    console.log(this);
-    console.log(2023 - this.yearOfBirth);
-    //   function innerFunction() {
-    //     console.log(this);
-    //   }
-    //   innerFunction();
-  },
-};
-john.calculateAge();
-var mike = {
-  name: "Nike",
-  yearOfBirth: 1984,
-};
-mike.calculateAge = john.calculateAge;
-mike.calculateAge();
+// var john = {
+//   name: "John",
+//   yearOfBirth: 1990,
+//   calculateAge: function (yearOfBirth) {
+//     console.log(this);
+//     console.log(2023 - this.yearOfBirth);
+//     //   function innerFunction() {
+//     //     console.log(this);
+//     //   }
+//     //   innerFunction();
+//   },
+// };
+// john.calculateAge();
+// var mike = {
+//   name: "Nike",
+//   yearOfBirth: 1984,
+// };
+// mike.calculateAge = john.calculateAge;
+// mike.calculateAge();
+// document.getElementById("message").style.color = "blue";
+// document.querySelector("#message").textContent = "I love JavaScript";
+// document.getElementsByName("typescript").textContent = "34";
+let note = document.querySelector(".note");
+console.log(note.parentNode);
