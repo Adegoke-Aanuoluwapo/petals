@@ -27,11 +27,13 @@ document.querySelector('.btn--roll').addEventListener('click', function () {
   } else {
     //Next player
     activePlayer === 0 ? (activePlayer = 1) : (activePlayer = 0);
-    if (activePlayer === 0) {
-      activePlayer = 1;
-    } else {
-      activePlayer = 0;
-    }
+    // if (activePlayer === 0) {
+    //   activePlayer = 1;
+    // } else {
+    //   activePlayer = 0;
+    // }
+    document.getElementById('current--0').textContent = '0';
+    document.getElementById('current--1').textContent = '0';
   }
 });
 
