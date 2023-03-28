@@ -215,11 +215,33 @@ for (var i = kam.length - 1; i >= 0; i--) {
 // document.getElementById("message").style.color = "blue";
 // document.querySelector("#message").textContent = "I love JavaScript";
 // document.getElementsByName("typescript").textContent = "34
-let current = document.querySelector(".current");
-let nextSibling = current.nextElementSibling;
-while (nextSibling) {
-  console.log(nextSibling);
-  nextSibling = nextSibling.nextElementSibling;
-}
-let prevSibling = current.previousElementSibling;
-console.log(prevSibling);
+// let current = document.querySelector(".current");
+// let nextSibling = current.nextElementSibling;
+// while (nextSibling) {
+//   console.log(nextSibling);
+//   nextSibling = nextSibling.nextElementSibling;
+// }
+// let prevSibling = current.previousElementSibling;
+// console.log("Previous Siblings");
+// while (prevSibling) {
+//   console.log(prevSibling);
+//   prevSibling = prevSibling.previousElementSibling;
+// }
+let getSiblings = function (e) {
+  let siblings = [];
+  if (!e.parentNode) {
+    return siblings;
+  }
+  let sibling = e.parentNode.firstChild;
+
+  while (sibling) {
+    if (sibling.nodeType === 1 && sibling !== e) {
+      sibling.push(sibling);
+    }
+    sibling = sibling.nextSibling;
+  }
+  return siblings;
+};
+let siblings = getSiblings(document.querySelector(".current"));
+siblingText = siblings.map((e) => e.innerHTML);
+console.log(siblingText);
