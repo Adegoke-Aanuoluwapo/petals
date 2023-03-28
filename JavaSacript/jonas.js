@@ -254,7 +254,10 @@ for (var i = kam.length - 1; i >= 0; i--) {
 //   nextSibling = nextSibling.nextElementSibling;
 // }
 // nextSibling[].innerHTML = "first";
-let parentElement = document.querySelector("#menu");
-let firstChild = parentElement.firstChild.nodeName;
-console.log(parentElement);
-console.log(firstChild);
+let menu = document.getElementById("menu");
+// let firstChild = parentElement.firstChild.nodeName;
+// console.log(parentElement);
+// console.log(firstChild);
+let children = menu.children;
+console.log(children);
+children[1].innerHTML = "check";
