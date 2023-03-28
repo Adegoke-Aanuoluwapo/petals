@@ -227,21 +227,34 @@ for (var i = kam.length - 1; i >= 0; i--) {
 //   console.log(prevSibling);
 //   prevSibling = prevSibling.previousElementSibling;
 // }
-let getSiblings = function (e) {
-  let siblings = [];
-  if (!e.parentNode) {
-    return siblings;
-  }
-  let sibling = e.parentNode.firstChild;
+// let getSiblings = function (e) {
+//   let siblings = [];
+//   if (!e.parentNode) {
+//     return siblings;
+//   }
+//   let sibling = e.parentNode.firstChild;
 
-  while (sibling) {
-    if (sibling.nodeType === 1 && sibling !== e) {
-      sibling.push(sibling);
-    }
-    sibling = sibling.nextSibling;
-  }
-  return siblings;
-};
-let siblings = getSiblings(document.querySelector(".current"));
-siblingText = siblings.map((e) => e.innerHTML);
-console.log(siblingText);
+//   while (sibling) {
+//     if (sibling.nodeType === 1 && sibling !== e) {
+//       sibling.push(sibling);
+//     }
+//     sibling = sibling.nextSibling;
+//   }
+//   return siblings;
+// };
+// let siblings = getSiblings(document.querySelector(".current"));
+// siblingText = siblings.map((e) => e.innerHTML);
+// console.log(siblingText);
+// let firstChild = document.querySelector(".first");
+// console.log(firstChild);
+// nextSibling = firstChild.nextElementSibling;
+// console.log(nextSibling);
+// while (nextSibling) {
+//   console.log(nextSibling);
+//   nextSibling = nextSibling.nextElementSibling;
+// }
+// nextSibling[].innerHTML = "first";
+let parentElement = document.querySelector("#menu");
+let firstChild = parentElement.firstChild.nodeName;
+console.log(parentElement);
+console.log(firstChild);
