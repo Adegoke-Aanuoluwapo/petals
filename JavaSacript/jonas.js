@@ -214,6 +214,8 @@ for (var i = kam.length - 1; i >= 0; i--) {
 // mike.calculateAge();
 // document.getElementById("message").style.color = "blue";
 // document.querySelector("#message").textContent = "I love JavaScript";
-// document.getElementsByName("typescript").textContent = "34";
-let note = document.querySelector(".note");
-console.log(note.parentNode);
+// document.getElementsByName("typescript").textContent = "34
+let current = document.querySelector(".current");
+let nextSibling = current.nextElementSibling;
+console.log(nextSibling);
+console.log(current);
