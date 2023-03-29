@@ -254,10 +254,21 @@ for (var i = kam.length - 1; i >= 0; i--) {
 //   nextSibling = nextSibling.nextElementSibling;
 // }
 // nextSibling[].innerHTML = "first";
-let menu = document.getElementById("menu");
-// let firstChild = parentElement.firstChild.nodeName;
-// console.log(parentElement);
-// console.log(firstChild);
-let children = menu.children;
-console.log(children);
-children[1].innerHTML = "check";
+// let menu = document.getElementById("menu");
+// // let firstChild = parentElement.firstChild.nodeName;
+// // console.log(parentElement);
+// // console.log(firstChild);
+// let children = menu.children;
+// console.log(children);
+// children[1].innerHTML = "check";
+// let current = document.querySelector(".current");
+// let nextSibling = current.nextElementSibling;
+// //console.log(nextSibling);
+// while (nextSibling) {
+//   console.log(nextSibling);
+//   nextSibling = nextSibling.nextElementSibling;
+// }
+let item = document.querySelector("#menu");
+console.log(item);
+firstChild = item.firstChild.nodeName;
+console.log(firstChild);
