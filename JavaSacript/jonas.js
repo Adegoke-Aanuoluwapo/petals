@@ -270,5 +270,7 @@ for (var i = kam.length - 1; i >= 0; i--) {
 // }
 let item = document.querySelector("#menu");
 console.log(item);
-firstChild = item.firstChild.nodeName;
-console.log(firstChild);
+firstChild = item.firstElementChild;
+lastChild = item.lastElementChild;
+console.log(firstChild, lastChild);
+firstChild.innerHTML = "first";
