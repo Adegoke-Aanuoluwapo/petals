@@ -791,6 +791,16 @@ function checkEven(number) {
     return false;
   }
 }
+function checkOdd(number) {
+  if (n % 2 !== 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 console.log(checkEven(3));
 let evenNumbers = numbers.filter(checkEven);
 console.log(evenNumbers);
+let Oddnumbers = numbers.filter(checkOdd);
+console.log(Oddnumbers);
