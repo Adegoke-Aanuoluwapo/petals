@@ -274,3 +274,27 @@ firstChild = item.firstElementChild;
 lastChild = item.lastElementChild;
 console.log(firstChild, lastChild);
 firstChild.innerHTML = "first";
+const func = (paramenter) => {
+  return arakunrin;
+};
+const food = ["carrot", "banana", "pear"];
+food.forEach((el) => {
+  console.log(el);
+});
+num = [1, 2, 3, 5, 6, 7];
+num.forEach((n) => {
+  if (n % 2 == 0) {
+    console.log(n);
+  }
+});
+
+var fruits, text, fLen, i;
+fruits = ["Banana", "Orange", "Apple", "Mango"];
+fLen = fruits.length;
+console.log("The length of fruits is:" + fLen);
+text = "<ul>";
+for (i = 0; i < fLen; i++) {
+  text += "<li>" + fruits[i] + "<li>";
+}
+// text += "</ul>";
+console.log(text);

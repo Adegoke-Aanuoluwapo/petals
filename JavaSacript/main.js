@@ -726,3 +726,55 @@ var person = {
 for (var i in person) {
   console.log(i + ":" + person[i]);
 }
+// fruits = ["Apple", "Cherry", "Guava", "borocolli"];
+// var fLen, i, text;
+// fLen = fruits.length;
+// text = "<ul>";
+// for (i = 0; i < fruits.length; i++) {
+//   text += "<li>" + fruits[i] + "</li>";
+// }
+// text += "</ul>";
+// console.log(text);
+// fruits.forEach(el);
+// function el(value) {
+//   text += "<li>" + value + "</li>";
+// }
+// text += "</ul>";
+// console.log(text);
+// document.getElementById("real").innerHTML = text;
+// fruits[fruits.length] = "Lemon";
+// console.log(fruits);
+// var person = [];
+
+// person[0] = "John";
+// person[1] = "Doe";
+// person[2] = 46;
+// var x = person.length;
+// var y = person[0];
+// console.log(x, y);
+// var points = new Array(40, 100, 1, 5, 25, 10);
+// console.log(points);
+// var ponte = [10, 30, 50, 5, 23, 1];
+// console.log(ponte);
+// var fruits = ["Banana", "Orange", "Apple", "Mango"];
+// // console.log(fruits.join("+"));
+// fruits.splice(2, 0, "Kiwi", "Lemonade");
+// console.log(fruits);
+// var myGirls = ["Cecilie", "Lone"];
+// var myBoys = ["Emil", "Tobias", "Linus"];
+// var myChildren = myGirls.concat(myBoys);
+// console.log(myChildren);
+const food = ["apple", "carrot", "orange", "pear", "banana"];
+// const duplicateFood = food.map((el) => {
+//   console.log(el + el);
+// });
+// const bananas = food.map((el) => " sweet");
+// console.log(bananas);
+// const fruits = food.filter((item)=>item.type==="fruit"
+//   console.log("fruit")
+// )
+const banana = food.find((el) => {
+  el !== "banana";
+  return el;
+});
+console.log(banana);
