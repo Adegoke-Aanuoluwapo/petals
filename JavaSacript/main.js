@@ -778,3 +778,16 @@ const banana = food.find((el) => {
   return el;
 });
 console.log(banana);
+let numbers = [1, 2, 3, 4, 5, 6, 7, 9, 8, 10];
+// function checkEven((number)=>{
+//   if(number%2==0){
+//     return number
+//   }
+// })
+function checkEven(number) {
+  if (number % 2 == 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
