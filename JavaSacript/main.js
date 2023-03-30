@@ -791,3 +791,6 @@ function checkEven(number) {
     return false;
   }
 }
+console.log(checkEven(3));
+let evenNumbers = numbers.filter(checkEven);
+console.log(evenNumbers);
