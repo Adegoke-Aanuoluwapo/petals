@@ -838,6 +838,19 @@ const numbers = [175, 50, 25];
 // function myFunc(total, num) {
 //   return total - num;
 // }
-numbers.forEach((el, i) => {
-  console.log("a[" + i + "]= " + el);
+prod = 1;
+numbers.forEach((el) => {
+  prod *= el;
 });
+console.log(prod);
+
+const letters = ["a", "b", "a", "d", "a"];
+let count = {};
+letters.forEach((a) => {
+  if (count[a]) {
+    count[a]++;
+  } else {
+    count[a] = 1;
+  }
+});
+console.log(count);
