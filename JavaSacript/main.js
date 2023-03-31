@@ -834,23 +834,47 @@ for (var i in person) {
 // const str = "Apple";
 // const numbered = Array.from(str);
 // console.log(numbered);
-const numbers = [175, 50, 25];
-// function myFunc(total, num) {
-//   return total - num;
-// }
-prod = 1;
-numbers.forEach((el) => {
-  prod *= el;
-});
-console.log(prod);
+// const numbers = [175, 50, 25];
+// // function myFunc(total, num) {
+// //   return total - num;
+// // }
+// prod = 1;
+// numbers.forEach((el) => {
+//   prod *= el;
+// });
+// console.log(prod);
 
-const letters = ["a", "b", "a", "d", "a", "c", "a", "b"];
-let count = {};
-letters.forEach((a) => {
-  if (count[a]) {
-    count[a]++;
-  } else {
-    count[a] = 1;
-  }
-});
-console.log(count);
+// const letters = ["a", "b", "a", "d", "a", "c", "a", "b"];
+// let count = {};
+// letters.forEach((a) => {
+//   if (count[a]) {
+//     count[a]++;
+//   } else {
+//     count[a] = 1;
+//   }
+// });
+// console.log(count);
+// const numbers = [1, 2, 3, 4, 5];
+// // const double = numbers.map((el) => {
+// //   return el * el * el;
+// // });
+// // console(double);
+// multiplyIndex = numbers.map((el, i) => {
+//   return el * i;
+// });
+// console.log(multiplyIndex);
+
+const products = [
+  { name: "laptop", price: 1000, count: 5 },
+  {
+    name: "desktop",
+    price: 1500,
+    count: 10,
+  },
+  { name: "phone", price: 500, count: 10 },
+];
+const totalProductValue = products.map((el) => ({
+  name: el.name,
+  totalValue: el.price * el.count,
+}));
+console.log(totalProductValue);
