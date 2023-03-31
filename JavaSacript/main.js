@@ -894,3 +894,18 @@ function isOdd(n) {
 }
 const oddNum = numbers.filter(isOdd);
 console.log(oddNum);
+const people = [
+  { name: "Florin", age: 26 },
+  { name: "Ivan", age: 18 },
+  { name: "Jai", age: 15 },
+];
+// const n = people.age;
+// function above18(n) {
+//   if (n >= 18) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+const adult = people.filter((person) => person.age >= 18);
+console.log(adult);
