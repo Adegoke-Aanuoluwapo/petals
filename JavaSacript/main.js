@@ -844,7 +844,7 @@ numbers.forEach((el) => {
 });
 console.log(prod);
 
-const letters = ["a", "b", "a", "d", "a"];
+const letters = ["a", "b", "a", "d", "a", "c", "a", "b"];
 let count = {};
 letters.forEach((a) => {
   if (count[a]) {
