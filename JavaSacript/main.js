@@ -831,5 +831,6 @@ console.log(pom);
 const numbering = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 numbering.reverse();
 console.log(numbering);
-const rand = "ABCDEFG";
-rand.from();
+const str = "Apple";
+const numbered = Array.from(str);
+console.log(numbered);
