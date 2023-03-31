@@ -764,73 +764,80 @@ for (var i in person) {
 // var myBoys = ["Emil", "Tobias", "Linus"];
 // var myChildren = myGirls.concat(myBoys);
 // console.log(myChildren);
-const food = ["apple", "carrot", "orange", "pear", "banana"];
-// const duplicateFood = food.map((el) => {
-//   console.log(el + el);
+// const food = ["apple", "carrot", "orange", "pear", "banana"];
+// // const duplicateFood = food.map((el) => {
+// //   console.log(el + el);
+// // });
+// // const bananas = food.map((el) => " sweet");
+// // console.log(bananas);
+// // const fruits = food.filter((item)=>item.type==="fruit"
+// //   console.log("fruit")
+// // )
+// const banana = food.find((el) => {
+//   el !== "banana";
+//   return el;
 // });
-// const bananas = food.map((el) => " sweet");
-// console.log(bananas);
-// const fruits = food.filter((item)=>item.type==="fruit"
-//   console.log("fruit")
-// )
-const banana = food.find((el) => {
-  el !== "banana";
-  return el;
-});
-console.log(banana);
-let numbers = [1, 2, 3, 4, 5, 6, 7, 9, 8, 10];
-// function checkEven((number)=>{
-//   if(number%2==0){
-//     return number
+// console.log(banana);
+// let numbers = [1, 2, 3, 4, 5, 6, 7, 9, 8, 10];
+// // function checkEven((number)=>{
+// //   if(number%2==0){
+// //     return number
+// //   }
+// // })
+// function checkEven(number) {
+//   if (number % 2 == 0) {
+//     return true;
+//   } else {
+//     return false;
 //   }
-// })
-function checkEven(number) {
-  if (number % 2 == 0) {
-    return true;
-  } else {
-    return false;
-  }
-}
-function checkOdd(n) {
-  if (n % 2 !== 0) {
-    return true;
-  } else {
-    return false;
-  }
-}
+// }
+// function checkOdd(n) {
+//   if (n % 2 !== 0) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
 
-console.log(checkEven(3));
-let evenNumbers = numbers.filter(checkEven);
-console.log(evenNumbers);
-let Oddnumbers = numbers.filter(checkOdd);
-console.log(Oddnumbers);
-numero = [1, 3, 4, 9, 8];
-numero.forEach((el) => {
-  console.log(el * el);
+// console.log(checkEven(3));
+// let evenNumbers = numbers.filter(checkEven);
+// console.log(evenNumbers);
+// let Oddnumbers = numbers.filter(checkOdd);
+// console.log(Oddnumbers);
+// numero = [1, 3, 4, 9, 8];
+// numero.forEach((el) => {
+//   console.log(el * el);
+// });
+// numero.filter((el) => {
+//   if (el % 2 == 0) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// });
+// const foody = ["Apple", "potato", "Banana", "Pawpaw"];
+// const pop = foody.map((el) => {
+//   console.log("Pawpaw");
+// });
+// const calm = foody.map((calm) => {
+//   console.log(calm + calm);
+// });
+// const foodyStr = foody.join(" ");
+// const foodStr = foody.join(" , ");
+// console.log(foodyStr);
+// console.log(foodStr);
+// const pom = foody.fill("Pomengranate");
+// console.log(pom);
+// const numbering = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// numbering.reverse();
+// console.log(numbering);
+// const str = "Apple";
+// const numbered = Array.from(str);
+// console.log(numbered);
+const numbers = [175, 50, 25];
+// function myFunc(total, num) {
+//   return total - num;
+// }
+numbers.forEach((el) => {
+  console.log(el);
 });
-numero.filter((el) => {
-  if (el % 2 == 0) {
-    return true;
-  } else {
-    return false;
-  }
-});
-const foody = ["Apple", "potato", "Banana", "Pawpaw"];
-const pop = foody.map((el) => {
-  console.log("Pawpaw");
-});
-const calm = foody.map((calm) => {
-  console.log(calm + calm);
-});
-const foodyStr = foody.join(" ");
-const foodStr = foody.join(" , ");
-console.log(foodyStr);
-console.log(foodStr);
-const pom = foody.fill("Pomengranate");
-console.log(pom);
-const numbering = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-numbering.reverse();
-console.log(numbering);
-const str = "Apple";
-const numbered = Array.from(str);
-console.log(numbered);
