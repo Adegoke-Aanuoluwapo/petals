@@ -791,7 +791,7 @@ function checkEven(number) {
     return false;
   }
 }
-function checkOdd(number) {
+function checkOdd(n) {
   if (n % 2 !== 0) {
     return true;
   } else {
@@ -804,3 +804,32 @@ let evenNumbers = numbers.filter(checkEven);
 console.log(evenNumbers);
 let Oddnumbers = numbers.filter(checkOdd);
 console.log(Oddnumbers);
+numero = [1, 3, 4, 9, 8];
+numero.forEach((el) => {
+  console.log(el * el);
+});
+numero.filter((el) => {
+  if (el % 2 == 0) {
+    return true;
+  } else {
+    return false;
+  }
+});
+const foody = ["Apple", "potato", "Banana", "Pawpaw"];
+const pop = foody.map((el) => {
+  console.log("Pawpaw");
+});
+const calm = foody.map((calm) => {
+  console.log(calm + calm);
+});
+const foodyStr = foody.join(" ");
+const foodStr = foody.join(" , ");
+console.log(foodyStr);
+console.log(foodStr);
+const pom = foody.fill("Pomengranate");
+console.log(pom);
+const numbering = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+numbering.reverse();
+console.log(numbering);
+const rand = "ABCDEFG";
+rand.from();
