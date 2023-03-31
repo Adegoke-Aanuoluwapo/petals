@@ -838,6 +838,6 @@ const numbers = [175, 50, 25];
 // function myFunc(total, num) {
 //   return total - num;
 // }
-numbers.forEach((el) => {
-  console.log(el);
+numbers.forEach((el, i) => {
+  console.log("a[" + i + "]= " + el);
 });
