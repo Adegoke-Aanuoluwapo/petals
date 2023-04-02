@@ -6,11 +6,29 @@
     <title>Document</title>
   </head>
   <body>
-    <h1 id="real">Hello</h1>
-    <input type="number" class="weight" value="30" />
-    <input type="number" class="height" value="5" />
-    <input type="number" class="bmi" value="6" />
-
+    <p>Please rate the service:</p>
+    <p>
+      <label for="very-poor">
+        <input type="radio" name="rate" value="Very poor" id="very-poor" /> Very
+        poor
+      </label>
+      <label for="poor">
+        <input type="radio" name="rate" value="Poor" id="poor" /> Poor
+      </label>
+      <label for="ok">
+        <input type="radio" name="rate" value="OK" id="ok" /> OK
+      </label>
+      <label for="good">
+        <input type="radio" name="rate" value="Good" /> Good
+      </label>
+      <label for="very-good">
+        <input type="radio" name="rate" value="Very Good" id="very-good" /> Very
+        Good
+      </label>
+    </p>
+    <p>
+      <button id="btnRate">Submit</button>
+    </p>
     <script src="./main.js"></script>
   </body>
 </html>
