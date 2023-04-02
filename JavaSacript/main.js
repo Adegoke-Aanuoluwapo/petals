@@ -861,48 +861,53 @@ for (var i in person) {
 // // console(double);
 // multiplyIndex = numbers.map((el, i) => {
 //   return el * i;
-// });
-// console.log(multiplyIndex);
+// // });
+// // console.log(multiplyIndex);
 
-// const products = [
-//   { name: "laptop", price: 1000, count: 5 },
-//   {
-//     name: "desktop",
-//     price: 1500,
-//     count: 10,
-//   },
-//   { name: "phone", price: 500, count: 10 },
+// // const products = [
+// //   { name: "laptop", price: 1000, count: 5 },
+// //   {
+// //     name: "desktop",
+// //     price: 1500,
+// //     count: 10,
+// //   },
+// //   { name: "phone", price: 500, count: 10 },
+// // ];
+// // const totalProductValue = products.map((el) => ({
+// //   name: el.name,
+// //   totalValue: el.price * el.count,
+// // }));
+// // console.log(totalProductValue);
+// // const str = ["1", "2", "3", "4"];
+// // const numbers = str.map((el) => {
+// //   return el;
+// // });
+// // console.log(numbers);
+// const numbers = [1, 2, 3, 4, 5, 6];
+// function isEven(n) {
+//   return n % 2 == 0;
+// }
+// number = numbers.filter(isEven);
+// console.log(number);
+// function isOdd(n) {
+//   return n % 2 !== 0;
+// }
+// oddNum = numbers.filter(isOdd);
+// console.log(oddNum);
+// const people = [
+//   { name: "Florin", age: 26 },
+//   { name: "Ivan", age: 18 },
+//   { name: "Jai", age: 15 },
 // ];
-// const totalProductValue = products.map((el) => ({
-//   name: el.name,
-//   totalValue: el.price * el.count,
-// }));
-// console.log(totalProductValue);
-// const str = ["1", "2", "3", "4"];
-// const numbers = str.map((el) => {
-//   return el;
+// const numbered = [1, 2, 3, 2, 1, 3, 3, 5, 4, 6];
+// nums = numbered.filter((value, index, arr) => {
+//   return arr.indexOf(value) === index;
 // });
-// console.log(numbers);
-const numbers = [1, 2, 3, 4, 5, 6];
-function isEven(n) {
-  return n % 2 == 0;
-}
-number = numbers.filter(isEven);
-console.log(number);
-function isOdd(n) {
-  return n % 2 !== 0;
-}
-oddNum = numbers.filter(isOdd);
-console.log(oddNum);
-const people = [
-  { name: "Florin", age: 26 },
-  { name: "Ivan", age: 18 },
-  { name: "Jai", age: 15 },
-];
-const numbered = [1, 2, 3, 2, 1, 3, 3, 5, 4, 6];
-nums = numbered.filter((value, index, arr) => {
-  return arr.indexOf(value) === index;
+// console.log(nums);
+// const adult = people.filter((person) => person.age >= 18);
+// console.log(adult);
+let btn = document.getElementById("btnRate");
+let outPut = document.getElementById("output");
+btn.addEventListener("click", () => {
+  let rates = document.getElementsByName("rate");
 });
-console.log(nums);
-const adult = people.filter((person) => person.age >= 18);
-console.log(adult);
