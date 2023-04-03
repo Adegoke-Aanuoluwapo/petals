@@ -310,3 +310,7 @@ for (i = 0; i < fLen; i++) {
 // menu.appendChild(createMenuItems("Contacts"));
 const firstList = document.querySelector("#first-list");
 console.log(firstList);
+const everest = firstList.firstElementChild;
+console.log(everest);
+const secondList = document.querySelector("#second-list");
+console.log(secondList);
