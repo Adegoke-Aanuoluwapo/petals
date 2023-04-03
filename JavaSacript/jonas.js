@@ -314,3 +314,4 @@ const everest = firstList.firstElementChild;
 console.log(everest);
 const secondList = document.querySelector("#second-list");
 console.log(secondList);
+secondList.appendChild(everest);
