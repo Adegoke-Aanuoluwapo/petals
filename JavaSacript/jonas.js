@@ -273,7 +273,7 @@ console.log(item);
 firstChild = item.firstElementChild;
 lastChild = item.lastElementChild;
 console.log(firstChild, lastChild);
-firstChild.innerHTML = "first";
+// firstChild.innerHTML = "first";
 const func = (paramenter) => {
   return arakunrin;
 };
@@ -298,3 +298,13 @@ for (i = 0; i < fLen; i++) {
 }
 // text += "</ul>";
 console.log(text);
+function createMenuItems(name) {
+  let li = document.createElement("li");
+  li.textContent = name;
+  return li;
+}
+const menu = document.querySelector("#menu");
+menu.appendChild(createMenuItems("Home"));
+menu.appendChild(createMenuItems("About"));
+menu.appendChild(createMenuItems("Services"));
+menu.appendChild(createMenuItems("Contacts"));
