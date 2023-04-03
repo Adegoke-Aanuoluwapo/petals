@@ -906,13 +906,21 @@ for (var i in person) {
 // console.log(nums);
 // const adult = people.filter((person) => person.age >= 18);
 // console.log(adult);
-let btn = document.getElementById("btnRate");
-let outPut = document.getElementById("output");
-btn.addEventListener("click", () => {
-  let rates = document.getElementsByName("rate");
-  rates.forEach((rate)=>
-  if (rate.checked){
-    outPut.innerText = `You selected: ${rate.value}`
-  }
-  })
-});
+// let btn = document.getElementById("btnRate");
+// let outPut = document.getElementById("output");
+// btn.addEventListener("click", () => {
+//   let rates = document.getElementsByName("rate");
+//   rates.forEach((rate)=>{if (rate.checked){
+//     outPut.innerText = `You selected: ${rate.value}`
+//   }
+
+//   })
+// });
+let div = document.createElement("div");
+div.innerHTML = "God is Good";
+console.log(div);
+div.id = "content";
+div.className = "note";
+let text = document.createTextNode("CreateElement example");
+div.appendChild(text);
+document.body.appendChild(div);
