@@ -923,4 +923,7 @@ div.id = "content";
 div.className = "note";
 let text = document.createTextNode("CreateElement example");
 div.appendChild(text);
+let h2 = document.createElement("h2");
+h2.textContent = "Add h2 element";
+div.appendChild(h2);
 document.body.appendChild(div);
