@@ -941,4 +941,4 @@ for (var i in person) {
 // menu.appendChild(li);
 // let list = document.querySelector("li:nth-child(2)");
 // console.log(list.parentElement);
-let script = document.createElement("script");
+//let script = document.createElement("script");
