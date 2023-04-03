@@ -916,14 +916,23 @@ for (var i in person) {
 
 //   })
 // });
-let div = document.createElement("div");
-div.innerHTML = "God is Good";
-console.log(div);
-div.id = "content";
-div.className = "note";
-let text = document.createTextNode("CreateElement example");
-div.appendChild(text);
-let h2 = document.createElement("h2");
-h2.textContent = "Add h2 element";
-div.appendChild(h2);
-document.body.appendChild(div);
+// let div = document.createElement("div");
+// div.innerHTML = "God is Good";
+// console.log(div);
+// div.id = "content";
+// div.className = "note";
+// let text = document.createTextNode("CreateElement example");
+// div.appendChild(text);
+// let h2 = document.createElement("h2");
+// h2.textContent = "Add h2 element";
+// div.appendChild(h2);
+// document.body.appendChild(div);
+const menu = document.querySelector("#menu");
+let li = document.createElement("li");
+li.textContent = "Products";
+menu.appendChild(li);
+console.log();
+li = document.createElement("li");
+li.textContent = "About Us";
+
+menu.appendChild(li);
