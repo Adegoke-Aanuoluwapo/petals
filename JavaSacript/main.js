@@ -931,8 +931,13 @@ const menu = document.querySelector("#menu");
 let li = document.createElement("li");
 li.textContent = "Products";
 menu.appendChild(li);
-console.log();
+console.log(menu);
 li = document.createElement("li");
 li.textContent = "About Us";
-
 menu.appendChild(li);
+li = document.createElement("li");
+
+li.textContent = "Services";
+menu.appendChild(li);
+let list = document.querySelector("li:nth-child(2)");
+console.log(list.parentElement);
