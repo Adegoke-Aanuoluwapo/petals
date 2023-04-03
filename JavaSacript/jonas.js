@@ -270,9 +270,9 @@ for (var i = kam.length - 1; i >= 0; i--) {
 // }
 let item = document.querySelector("#menu");
 console.log(item);
-firstChild = item.firstElementChild;
-lastChild = item.lastElementChild;
-console.log(firstChild, lastChild);
+// firstChild = item.firstElementChild;
+// lastChild = item.lastElementChild;
+//console.log(firstChild, lastChild);
 // firstChild.innerHTML = "first";
 const func = (paramenter) => {
   return arakunrin;
@@ -297,14 +297,16 @@ for (i = 0; i < fLen; i++) {
   text += "<li>" + fruits[i] + "<li>";
 }
 // text += "</ul>";
-console.log(text);
-function createMenuItems(name) {
-  let li = document.createElement("li");
-  li.textContent = name;
-  return li;
-}
-const menu = document.querySelector("#menu");
-menu.appendChild(createMenuItems("Home"));
-menu.appendChild(createMenuItems("About"));
-menu.appendChild(createMenuItems("Services"));
-menu.appendChild(createMenuItems("Contacts"));
+// console.log(text);
+// function createMenuItems(name) {
+//   let li = document.createElement("li");
+//   li.textContent = name;
+//   return li;
+// }
+// const menu = document.querySelector("#menu");
+// menu.appendChild(createMenuItems("Home"));
+// menu.appendChild(createMenuItems("About"));
+// menu.appendChild(createMenuItems("Services"));
+// menu.appendChild(createMenuItems("Contacts"));
+const firstList = document.querySelector("#first-list");
+console.log(firstList);
