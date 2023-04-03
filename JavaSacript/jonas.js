@@ -315,3 +315,6 @@ console.log(everest);
 const secondList = document.querySelector("#second-list");
 console.log(secondList);
 secondList.appendChild(everest);
+
+let note = document.getElementById("note");
+console.log(note.textContent);
