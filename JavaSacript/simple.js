@@ -5,10 +5,11 @@
 // node.textContent = newText;
 // note.textContent = "This is a note";
 let menu = document.getElementById("menu");
-console.log(menu);
-console.log(menu.innerHTML);
-let li = document.createElement("li");
-li.textContent = "About Us";
-menu.appendChild(li);
-console.log(menu);
-console.log(menu.innerHTML);
+// console.log(menu);
+// console.log(menu.innerHTML);
+// let li = document.createElement("li");
+// li.textContent = "About Us";
+// menu.appendChild(li);
+// console.log(menu);
+// console.log(menu.innerHTML);
+let main = document.getElementById("main");
