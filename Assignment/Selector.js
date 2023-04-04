@@ -15,3 +15,9 @@ for (let con of par) {
 //Setting an attribute
 first.setAttribute("secured", "true");
 second.setAttribute("secured", "false");
+third.setAttribute("position", "three");
+fourth.setAttribute("number", "four");
+
+////Number 2
+first.style.color = "green";
+first.style.background = "pink";
