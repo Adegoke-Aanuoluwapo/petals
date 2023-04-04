@@ -21,3 +21,5 @@ fourth.setAttribute("number", "four");
 ////Number 2
 first.style.color = "green";
 first.style.background = "pink";
+second.style.fontSize = "24px";
+third.style.fontFamily = "verdana";
