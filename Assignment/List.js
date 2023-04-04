@@ -1,11 +1,13 @@
-let first = [...document.querySelectorAll("ul.list li:first-child")];
+let first = [...document.querySelectorAll(".list li:first-child")];
 let last = [...document.querySelectorAll(".list li:last-child")];
-
+console.log(first);
 first.forEach((el) => (el.innerHTML = "First"));
 last.forEach((el) => (el.innerHTML = "Last"));
 
 console.log(first, last);
-//items[].innerHTML = "first";
+// items = document.getElementsByClassName(".list");
+// console.log(items);
+// items[0].innerHTML = "first";
 // x[2].innerHTML = "last";
 // x[3].innerHTML = "first";
 // x[5].innerHTML = "last";
