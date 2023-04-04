@@ -4,7 +4,7 @@
 // console.log("yes");
 // node.textContent = newText;
 // note.textContent = "This is a note";
-let menu = document.getElementById("menu");
+// let menu = document.getElementById("menu");
 // console.log(menu);
 // console.log(menu.innerHTML);
 // let li = document.createElement("li");
@@ -12,4 +12,8 @@ let menu = document.getElementById("menu");
 // menu.appendChild(li);
 // console.log(menu);
 // console.log(menu.innerHTML);
-let main = document.getElementById("main");
+// let main = document.getElementById("main");
+
+function showAlert() {
+  alert("Clicked!");
+}
