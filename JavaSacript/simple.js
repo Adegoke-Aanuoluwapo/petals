@@ -27,7 +27,13 @@
 // let style = getComputedStyle(message);
 // console.log("color: ", style.color);
 // console.log("background color: ", style.backgroundColor);
-let main = document.querySelector("#main");
-console.log(main);
-let style = getComputedStyle(main, "::first-letter");
-console.log(style.fontSize);
+// let main = document.querySelector("#main");
+// console.log(main);
+// let style = getComputedStyle(main, "::first-letter");
+//console.log(style.fontSize);
+let btn = document.querySelector("#btn");
+
+function display() {
+  console.log("I am clicked");
+}
+btn.addEventListener("mouseleave", display);
