@@ -29,3 +29,5 @@
 // console.log("background color: ", style.backgroundColor);
 let main = document.querySelector("#main");
 console.log(main);
+let style = getComputedStyle(main, "::first-letter");
+console.log(style.fontSize);
