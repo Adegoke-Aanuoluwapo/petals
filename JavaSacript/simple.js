@@ -24,3 +24,5 @@
 // };
 let message = document.querySelector(".message");
 console.log(message);
+let style = getComputedStyle(message);
+console.log("color: ", style.color);
