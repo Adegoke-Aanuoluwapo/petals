@@ -33,7 +33,7 @@
 //console.log(style.fontSize);
 let btn = document.querySelector("#btn");
 
-function display() {
-  console.log("I am clicked");
+function display(e) {
+  console.log(e.target);
 }
-btn.addEventListener("mouseleave", display);
+btn.addEventListener("mouseenter", display);
