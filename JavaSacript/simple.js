@@ -17,8 +17,10 @@
 // function showAlert() {
 //   alert("Clicked!");
 // }
-let btn = document.querySelector("#btn");
-console.log(btn);
-btn.mouseleave = function () {
-  console.log("Mouse leave");
-};
+// let btn = document.querySelector("#btn");
+// console.log(btn);
+// btn.mouseleave = function () {
+//   console.log("Mouse leave");
+// };
+let message = document.querySelector(".message");
+console.log(message);
