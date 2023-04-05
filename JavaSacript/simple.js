@@ -22,7 +22,10 @@
 // btn.mouseleave = function () {
 //   console.log("Mouse leave");
 // };
-let message = document.querySelector(".message");
-console.log(message);
-let style = getComputedStyle(message);
-console.log("color: ", style.color);
+// let message = document.querySelector(".message");
+// console.log(message);
+// let style = getComputedStyle(message);
+// console.log("color: ", style.color);
+// console.log("background color: ", style.backgroundColor);
+let main = document.querySelector("#main");
+console.log(main);
