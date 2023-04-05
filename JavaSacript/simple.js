@@ -14,6 +14,11 @@
 // console.log(menu.innerHTML);
 // let main = document.getElementById("main");
 
-function showAlert() {
-  alert("Clicked!");
-}
+// function showAlert() {
+//   alert("Clicked!");
+// }
+let btn = document.querySelector("#btn");
+console.log(btn);
+btn.mouseleave = function () {
+  console.log("Mouse leave");
+};
