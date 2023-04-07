@@ -14,12 +14,22 @@ Start with this webpage, which has several input elements and a button:
       <li>Someone's Name: <input type="text" id="person" /></li>
     </ul>
 
-    <button id="lib">Lib it!</button>
+    <button id="lib" onclick="display()">Lib it!</button>
 
     <div id="story"></div>
   </body>
   <script>
     let lib = document.querySelector("#lib");
     console.log(lib);
+    let noun = document.querySelector("#noun");
+    console.log(noun);
+    let adjective = document.querySelector("#adjective");
+    console.log(adjective);
+    function display() {
+      console.log(name + adjective);
+    }
+    // lib.onmouseenter = function (e) {
+    //   console.log(e.target);
+    // };
   </script>
 </html>
