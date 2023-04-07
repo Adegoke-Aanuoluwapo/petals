@@ -1,4 +1,4 @@
-const first = document.querySelector("p.para");
+const first = document.querySelector("p");
 console.log(first);
 const second = document.querySelector("#second");
 console.log(second);
@@ -23,3 +23,9 @@ first.style.color = "green";
 first.style.background = "pink";
 second.style.fontSize = "24px";
 third.style.fontFamily = "verdana";
+par.forEach((el) => {
+  el.firstElement.style.color = "green";
+});
+par.forEach((el) => {
+  el.thirdElementSibling.style.color = "green";
+});
