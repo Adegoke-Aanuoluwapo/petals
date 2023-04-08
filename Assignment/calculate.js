@@ -1,3 +1,4 @@
-let square = document.querySelector("square-button");
-console.log(square);
-let;
+let square = document.querySelector("#square-button");
+function squared(n) {
+  console.log("Hello");
+}
