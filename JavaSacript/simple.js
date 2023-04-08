@@ -31,9 +31,13 @@
 // console.log(main);
 // let style = getComputedStyle(main, "::first-letter");
 //console.log(style.fontSize);
-let btn = document.querySelector("#btn");
+// let btn = document.querySelector("#btn");
 
-function display(e) {
-  console.log(e.target);
-}
-btn.addEventListener("mouseenter", display);
+// function display(e) {
+//   console.log(e.target);
+//   e.preventDefault();
+// }
+// btn.addEventListener("mouseenter", display);
+document.addEventListener("DOMContentLoad", () => {
+  console.log("The DOM is fully loaded");
+});
