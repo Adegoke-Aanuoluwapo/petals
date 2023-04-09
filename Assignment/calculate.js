@@ -4,5 +4,5 @@ function squared(x) {
 }
 let input = document.querySelector("#square-input");
 console.log(input);
-x =input.innerHTML
-console.log(x)
+x = input.innerHTML;
+console.log(x);
