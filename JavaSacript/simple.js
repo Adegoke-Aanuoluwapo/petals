@@ -38,6 +38,9 @@
 //   e.preventDefault();
 // }
 // btn.addEventListener("mouseenter", display);
-document.addEventListener("DOMContentLoad", () => {
-  console.log("The DOM is fully loaded");
+// document.addEventListener("DOMContentLoad", () => {
+//   console.log("The DOM is fully loaded");
+// });
+window.addEventListener((event) => {
+  console.log("The page has finally alooaded");
 });
