@@ -41,6 +41,9 @@
 // document.addEventListener("DOMContentLoad", () => {
 //   console.log("The DOM is fully loaded");
 // });
-window.addEventListener("load", (event) => {
-  console.log("The page has finally loaded");
-});
+// window.addEventListener("load", (event) => {
+//   console.log("The page has finally loaded");
+// });
+outPut = document.getElementById("output");
+console.log(outPut);
+outPut.innerHTML = 200 * 34;
