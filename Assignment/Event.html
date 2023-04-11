@@ -18,5 +18,16 @@ Start with this webpage, which has several input elements and a button:
 
     <div id="story"></div>
   </body>
-  <script></script>
+  <script>
+    const noun = document.getElementById("noun");
+    const adj = document.getElementById("adjective");
+    const person = document.getElementById("person");
+
+    const story = document.getElementById("story");
+    function makeMadLib() {
+      story.innerHTML = person.value + " " + adj.value + " " + noun.value;
+    }
+    const btn = document.getElementById("lib");
+    btn.addEventListener("click", makeMadLib);
+  </script>
 </html>
