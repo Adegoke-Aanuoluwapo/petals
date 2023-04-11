@@ -26,4 +26,8 @@ btn4.addEventListener("click", Area);
 function Fraction() {
   frac = document.getElementById("percent1-input").value;
   fraction = parseFloat(frac) / 100;
+  whole = document.getElementById("percent2-input");
+  whole.value = fraction;
 }
+btn3 = document.getElementById("percent-button");
+btn3.addEventListener("click", Fraction);
