@@ -8,3 +8,18 @@
 // });
 let form = document.getElementById("signup");
 console.log(form);
+const name = form.elements["name"];
+console.log(name);
+const email = form.elements["email"];
+console.log(email);
+const button = form.elements["btn"];
+console.log(button);
+let fullName = name.value;
+function showMessage(input, message, type) {
+  const msg = input.parentNode.querySelector("small");
+  input.className = type ? "success" : "error";
+  return type;
+}
+function showError(input, message) {
+  return showMessage(input, message, false);
+}
