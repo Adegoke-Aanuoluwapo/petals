@@ -20,9 +20,10 @@ if ($_POST) {
 <body>
  <form method="POST">
   base:
-  <input type="number" name="base"><br>
+  <input type="number" name="base">
+  <br><br>
   height:
-  <input type="number" name="height"><br>
+  <input type="number" name="height"><br><br>
   <input type="submit"><br>
   <input type="text" value="<?= $area ?>">
  </form>
