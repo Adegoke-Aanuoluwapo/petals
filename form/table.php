@@ -41,8 +41,54 @@ if ($_POST) {
   <input type="text" value="state"><br><br>
   LGA:
   <input type="text" value="LGA">
-<input type="submit" va>
+<input type="submit" name="submit">
  </form>
+ <table>
+  <thead>
+   <tr>
+    <th>FORM</th>
+    <th>OUTPUT</th>
+   </tr>
+  </thead>
+  <tbody>
+   <tr>
+    <td>Surname</td>
+    <td><input type="text" value="<?=$surname ?>"></td>
+   </tr>
+   <tr>
+    <td>First Name</td>
+    <td><input type="text" value="<?=$firstname ?>"></td>
+   </tr>
+   <tr>
+    <td>Class</td>
+    <td><input type="text" value="<?=$class ?>"></td>
+   </tr>
+   <tr>
+    <td>Date of Birth</td>
+    <td><input type="text" value="<?=$dateOfBirth ?>"></td>
+   </tr>
+   <tr>
+    <td>Number</td>
+    <td><input type="text" value="<?=$number ?>"></td>
+   </tr>
+   <tr>
+    <td>Address</td>
+    <td><input type="text" value="<?=$address ?>"></td>
+   </tr>
+   <tr>
+    <td>School</td>
+    <td><input type="text" value="<?=$school ?>"></td>
+   </tr>
+   <tr>
+    <td>State</td>
+    <td><input type="text" value="<?=$state ?>"></td>
+   </tr>
+   <tr>
+    <td>LGA</td>
+    <td><input type="text" value="<?=$LGA ?>"></td>
+   </tr>
+  </tbody>
+ </table>
 </body>
 
 </html>
