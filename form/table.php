@@ -1,3 +1,17 @@
+<?php
+if ($_POST) {
+ $surname = $_POST['surname'];
+ $firstname = $_POST['firstname'];
+ $class = $_POST['class'];
+ $dateOfBirth = $_POST['dateOfBirth'];
+ $number = $_POST['number'];
+ $address = $_POST['number'];
+ $school = $_POST['school'];
+ $state = $_POST['state'];
+ $LGA = $_POST['LGA'];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +22,7 @@
 </head>
 
 <body>
-
+ <form method="$_POST"></form>
 </body>
 
 </html>
