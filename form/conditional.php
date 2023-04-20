@@ -51,8 +51,21 @@
 
  ?>
  <h2><?php
-     echo $message
+     echo $message;
+
+     $a = 14;
+     $b = 40;
+     if ($a > $b):
+        $messarge = 'a is greater than b';
+     elseif($a < $b):
+        $messarge = 'a is less than b';
+     else:
+        $messarge = 'a is equal to b';
+     endif;
      ?></h2>
+     <h1><?php 
+     echo $messarge
+     ?></h1>
 </body>
 
 </html>
