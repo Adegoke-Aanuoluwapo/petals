@@ -13,6 +13,22 @@
   <a href="#">Edit</a>
  <?php endif; ?>
  <a href="#">View</a>
+
+ <?php 
+ $checked = 'on';
+ if($checked = 'off'){
+  echo 'The checkbox has not been checked';
+ }
+ ?>
+ <h1><?php $is_authenticated = false;
+ if($is_authenticated){
+  echo "Welcome";
+ }else{
+  echo 'You are not authorized to access this page';
+ }
+ 
+ 
+ ?></h1>
 </body>
 
 </html>
