@@ -65,6 +65,7 @@
      ?></h2>
      <h1><?php 
      echo $messarge
+     
      ?></h1>
 </body>
 
