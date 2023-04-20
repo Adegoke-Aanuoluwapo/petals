@@ -1,19 +1,32 @@
 <?php
-$role = 'subscriber';
+$role = 'editor';
 $message = '';
-if ('admin' === $role){
- $message = 'Welcome, admin!';
-}elseif('editor'===$role){
- $message= 'Welcome editor, you have some pending article to edit';
-}
-elseif('author'===$role){
- $message= 'Welcome! Do you want to publish';
-}
-elseif('subscriber' ===$role){
- $message = 'Welcome! check out some new articles';
-}
-else{
- $message = 'Sorry! you are not authorize to access this page';
+// if ('admin' === $role){
+//  $message = 'Welcome, admin!';
+// }elseif('editor'===$role){
+//  $message= 'Welcome editor, you have some pending article to edit';
+// }
+// elseif('author'===$role){
+//  $message= 'Welcome! Do you want to publish';
+// }
+// elseif('subscriber' ===$role){
+//  $message = 'Welcome! check out some new articles';
+// }
+// else{
+//  $message = 'Sorry! you are not authorize to access this page';
+// }
+
+switch ($role){
+ case 'admin':
+  $message ="welcome, admin";
+ break;
+ case 'editor':
+  $message = "Welcome! You have some pending articles to edit";
+ break;
+ case 'author':
+  $message = "Welcome! You have some articles to publish";
+ break;
+
 }
 
 ?>
