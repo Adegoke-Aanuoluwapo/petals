@@ -61,11 +61,24 @@ $is_user_logged_in = true;
   echo 4 + 5 * 3;
   $greeting = 'Hello';
   $name = 'John';
-  $greeting = $greeting .' '. $name;
+  $greeting = $greeting . ' ' . $name;
   echo $greeting
   ?>
 
  </h1>
+ <h2>
+  <?php $priority = 5;
+  echo $priority;
+  $is_admin = true;
+  $can_approve = true;
+  if ($is_admin) {
+   echo 'Welcome, admin';
+   if ($can_approve) {
+    echo 'Please approve the pending';
+   }
+  }
+  ?>
+ </h2>
 </body>
 
 </html>
