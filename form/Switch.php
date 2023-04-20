@@ -26,6 +26,11 @@ switch ($role){
  case 'author':
   $message = "Welcome! You have some articles to publish";
  break;
+ case 'subscriber':
+  $message = "Welcome! You have some articles to read";
+ break;
+ default:
+ $message = "Sorry you are not permitted to this page"; 
 
 }
 
