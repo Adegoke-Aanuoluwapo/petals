@@ -6,6 +6,8 @@ $is_user_logged_in = false;
 //  $title = 'Login';
 // }
 $title = $is_user_logged_in ? 'Logout': 'Login';
+$path = '/about';
+$url = $path ?: '/';
 ?>
 
 
@@ -20,6 +22,9 @@ $title = $is_user_logged_in ? 'Logout': 'Login';
 
 <body>
  <?php echo $title ?>
+ <h1><?php 
+ echo $url;
+ ?></h1>
 </body>
 
 </html>
