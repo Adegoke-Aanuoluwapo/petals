@@ -5,9 +5,23 @@ $is_user_logged_in = false;
 // } else {
 //  $title = 'Login';
 // }
-$title = $is_user_logged_in ? 'Logout': 'Login';
+$title = $is_user_logged_in ? 'Logout' : 'Login';
 $path = '/about';
 $url = $path ?: '/';
+$eligible = true;
+$has_credit = false;
+
+$message = $eligible
+
+ ? ($has_credit
+  ? 'Can use the credit'
+  : 'Not enough credit')
+
+ : 'Not eligible to buy';
+
+$posts = ['First and Second Ternary post'];
+
+
 ?>
 
 
@@ -22,9 +36,17 @@ $url = $path ?: '/';
 
 <body>
  <?php echo $title ?>
- <h1><?php 
- echo $url;
- ?></h1>
+ <h1><?php
+     echo $url;
+     echo $message . '<br>';
+     // if (!empty($posts)) {
+     //  echo $posts[0];
+     // }
+     // else{
+     //  echo 'No Post';
+     // }
+     echo !empty($posts) ? $posts[0] : 'No Post';
+     ?></h1>
 </body>
 
 </html>
