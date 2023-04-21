@@ -1,3 +1,35 @@
+<?php  // $i = 0;
+   // do {
+   //  echo $i  . '<br>';
+   //  $i++;
+   // } while ($i <= 20);
+
+   // for ($i =0; $i <10; $i++){
+   //  if ($i ===8){
+   //  break;
+   //  }
+   //  echo "$i\n";
+   // }
+   // $j = 0;
+   // do{
+   //  if ($j ===7){
+   //  break;
+   //  }
+   //  echo "$j\n";
+   //  $j++;
+   // }while($j <= 10);
+   // $i = 0;
+   // $j = 0;
+
+   // for ($i = 1; $i < 5; $i++) {
+   //  for ($j = 1; $j < 5; $j++) {
+   //   $times = $i * $j;
+   //   echo $times;
+   //  }
+   //  echo '<br>';
+   // }
+   ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,43 +40,21 @@
 </head>
 
 <body>
- <?php
- // $i = 0;
- // do {
- //  echo $i  . '<br>';
- //  $i++;
- // } while ($i <= 20);
- 
- // for ($i =0; $i <10; $i++){
- //  if ($i ===8){
- //  break;
- //  }
- //  echo "$i\n";
- // }
- // $j = 0;
- // do{
- //  if ($j ===7){
- //  break;
- //  }
- //  echo "$j\n";
- //  $j++;
- // }while($j <= 10);
- // $i = 0;
- // $j = 0;
- for($i = 1; $i < 5; $i++){
-  for ($j = 1; $j <5; $j++){
-   $times = $i*$j;
-   echo $times;
-  }
-  echo '<br>';
+<table>
+  <tbody>
+   <tr>
+   <?php for($i = 1; $i < 5; $i++){ ?>
 
-  
- }
-  
- 
-
-
- ?>
-</body>
-
-</html>
+     <td>
+    <?php for ($j = 1; $j < 5; $j++) {
+     $times = $i * $j;
+    echo $times;
+    }
+     echo "<br>";
+   }
+     ?>  
+    
+    </td>
+    
+    </tr> </tbody> </table> </body>
+ </html>
