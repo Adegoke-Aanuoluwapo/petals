@@ -40,21 +40,29 @@
 </head>
 
 <body>
-<table>
-  <tbody>
-   <tr>
-   <?php for($i = 1; $i < 5; $i++){ ?>
 
-     <td>
-    <?php for ($j = 1; $j < 5; $j++) {
-     $times = $i * $j;
-    echo $times;
-    }
-     echo "<br>";
+
+<?php
+$i = 0;
+$j = 0;
+for ($i = 0; $i < 7; $i++){
+ for ($j = 0; $j < 5; $j++){
+  if ($i === 5){
+   break ;
+  }
+  echo "($i, $j)\n";
+ }
+}
+
+?>
+<h2><?php 
+for($c = 0; $c < 10; $c++){
+   if($c % 2 === 0){
+      continue;
    }
-     ?>  
-    
-    </td>
-    
-    </tr> </tbody> </table> </body>
+   echo "$c\n";
+}
+
+?></h2>
+<h1><?php ?></h1>
  </html>
