@@ -9,12 +9,18 @@
 
 <body>
  <?php
- $i = 0;
- do {
-  echo $i  . '<br>';
-  $i++;
- } while ($i <= 20);
-
+ // $i = 0;
+ // do {
+ //  echo $i  . '<br>';
+ //  $i++;
+ // } while ($i <= 20);
+ 
+ for ($i =0; $i <10; $i++){
+  if ($i ===8){
+  break;
+  }
+  echo "$i\n";
+ }
  ?>
 </body>
 
