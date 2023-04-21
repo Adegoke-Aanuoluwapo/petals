@@ -15,12 +15,35 @@
  //  $i++;
  // } while ($i <= 20);
  
- for ($i =0; $i <10; $i++){
-  if ($i ===8){
-  break;
+ // for ($i =0; $i <10; $i++){
+ //  if ($i ===8){
+ //  break;
+ //  }
+ //  echo "$i\n";
+ // }
+ // $j = 0;
+ // do{
+ //  if ($j ===7){
+ //  break;
+ //  }
+ //  echo "$j\n";
+ //  $j++;
+ // }while($j <= 10);
+ // $i = 0;
+ // $j = 0;
+ for($i = 1; $i < 5; $i++){
+  for ($j = 1; $j <5; $j++){
+   $times = $i*$j;
+   echo $times;
   }
-  echo "$i\n";
+  echo '<br>';
+
+  
  }
+  
+ 
+
+
  ?>
 </body>
 
