@@ -20,5 +20,8 @@
 
  echo welcome_user("Ojindo")
  ?>
+ <?php function welcome_user($username) { ?>
+    <span>welcome<?=$username ?></span>
+ <?php } ?>
 </body>
 </html>
