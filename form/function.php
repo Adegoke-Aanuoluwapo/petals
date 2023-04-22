@@ -12,7 +12,13 @@
  function welcome(){
   echo "You are welcome";
  }
- welcome()
+ welcome();
+
+ function welcome_user($username){
+  echo 'Welcome '. $username;
+ }
+
+ welcome_user("Ojindo")
  ?>
 </body>
 </html>
