@@ -15,10 +15,10 @@
  welcome();
 
  function welcome_user($username){
-  echo 'Welcome '. $username;
+  return 'Welcome '. $username . "!";
  }
 
- welcome_user("Ojindo")
+ echo welcome_user("Ojindo")
  ?>
 </body>
 </html>
