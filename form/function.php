@@ -7,7 +7,12 @@
 </head>
 <body>
  <?php
- 
+ echo "You are Welcome";
+
+ function welcome(){
+  echo "You are welcome";
+ }
+ welcome()
  ?>
 </body>
 </html>
