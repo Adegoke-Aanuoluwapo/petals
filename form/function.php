@@ -49,7 +49,20 @@
  echo $counter . "<br>";
 
  ?>
+<?php 
+$gain = 1;
+function increment(&$value){
+     $value += 1;
+     echo $value . "<br>";
 
+     
+}
+increment($gain);
+
+echo $gain . "<br>";
+
+
+?>
 </body>
 
 </html>
