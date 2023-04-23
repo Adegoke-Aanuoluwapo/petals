@@ -31,37 +31,45 @@
  <?php }
  echo welcom_user(" Olugunade");
 
- function concat($str1, $str2){
-                         return $str1 . $str2;
- }
- $greeting = concat("Welcome ", "Admin");
+//  function concat($str1, $str2){
+//                          return $str1 . $str2;
+//  }
+//  $greeting = concat("Welcome ", "Admin");
 
 
- echo $greeting;
- ?>
- <?php 
- $counter = 1;
- function increase($value){
-      $value+= 1;
-      echo $value. '<br>';
- }
- increase($counter);
- echo $counter . "<br>";
+//  echo $greeting;
+//  ?>
+//  <?php 
+//  $counter = 1;
+//  function increase($value){
+//       $value+= 1;
+//       echo $value. '<br>';
+//  }
+//  increase($counter);
+//  echo $counter . "<br>";
 
- ?>
-<?php 
-$gain = 1;
-function increment(&$value){
-     $value += 1;
-     echo $value . "<br>";
+//  ?>
+// <?php 
+// $gain = 1;
+// function increment(&$value){
+//      $value += 1;
+//      echo $value . "<br>";
 
      
+// }
+// increment($gain);
+
+// echo $gain . "<br>";
+
+
+// ?>
+<?php
+function concat($str1, $str2, $delimiter){
+     return $str1 . $delimiter . $str2;
 }
-increment($gain);
+$message = concat('Hi', 'there!', ' ' );
 
-echo $gain . "<br>";
-
-
+echo $message 
 ?>
 </body>
 
