@@ -122,9 +122,29 @@
           echo get_counter() . '<br>';
           echo get_counter() . '<br>';
           ?></h2>
-          <h1><?php
-          
-          ?></h1>
+          <h1><?php 
+          function sum($items){
+               $total = 0;
+               foreach($items as $item){
+                    $total += $item;
+               }
+               return $total;
+          }
+          echo sum([10, 20, 30, 40]) . '<br>';
+function add($x,$y){
+     return $x + $y;
+}
+  echo add(150, 140) . '<br>';        
+  function add1(int $a, int $b){
+       return $a + $b;
+  }
+  $result = add1(56, 44) . '<br>';
+  echo $result;
+  $result2 = add1(4.5, 6.9);
+  echo $result2 . '<br>';
+
+  
+  ?></h1>
 
 </body>
 
