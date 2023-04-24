@@ -142,8 +142,21 @@ function add($x,$y){
   echo $result;
   $result2 = add1(4.5, 6.9);
   echo $result2 . '<br>';
+function dd($data):void{
+     echo '<pre>';
+     var_dump($data);
+     echo '</pre>';
+     die;
+}
+echo dd("bless") . '<br>';
 
-  
+function summa($x, $y): int | float
+{
+     return $x * $y;
+}
+echo summa(10, 19);
+
+
   ?></h1>
 
 </body>
