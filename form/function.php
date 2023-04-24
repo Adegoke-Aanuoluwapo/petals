@@ -87,7 +87,11 @@
           $href= '#',
           $title='',
           $target='_self'){
-               $href=$href ? sprintf(('href="%s"', $href): '');
+               $href=$href ? sprintf('href="%s"', $href): '';
+               $title = $title ? sprintf('title="%s"', $title) : '';
+               $target= $target ? sprintf('target="%s"', $target) : '';
+
+               return "<a href $title $target>$text</a>";
           }
           ?></h1>
 
