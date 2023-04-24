@@ -83,17 +83,21 @@
           echo find('awesome', 'PHP is awesome')
           ?></h1>
           <h1><?php 
-          function create_anchor($text, 
-          $href= '#',
-          $title='',
-          $target='_self'){
-               $href=$href ? sprintf('href="%s"', $href): '';
-               $title = $title ? sprintf('title="%s"', $title) : '';
-               $target= $target ? sprintf('target="%s"', $target) : '';
+          // function create_anchor($text, 
+          // $href= '#',
+          // $title='',
+          // $target='_self'){
+          //      $href=$href ? sprintf('href="%s"', $href): '';
+          //      $title = $title ? sprintf('title="%s"', $title) : '';
+          //      $target= $target ? sprintf('target="%s"', $target) : '';
 
-               return "<a href $title $target>$text</a>";
-          }
-          ?></h1>
+          //      return "<a href $title $target>$text</a>";
+          // }
+
+          // $link = create_anchor("PHP Tutorial", 'https://www.phptutorial.net/',  $target = '_blank');
+
+          // echo $link
+          // ?></h1>
 
 </body>
 
