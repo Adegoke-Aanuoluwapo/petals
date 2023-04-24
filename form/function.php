@@ -175,7 +175,15 @@ echo "where are we"
   $plas = $plus(23, 45);
   echo $plas;
   
-  
+  function sumadd(){
+       $numbers = func_get_args();
+       $total = 0;
+       for ($i = 0; $i < count($numbers); $i++){
+            $total += $numbers[$i];
+            return $total;
+       }
+  }
+  echo sumadd(29,34, 57)
   ?></h1>
 
 </body>
