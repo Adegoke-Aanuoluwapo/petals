@@ -148,13 +148,20 @@ function dd($data):void{
      echo '</pre>';
      die;
 }
-echo dd("bless") . '<br>';
+echo dd("blessing") . '<br>';
 
-function summa($x, $y): int | float
-{
-     return $x * $y;
+// function summa($x, $y): int | float
+// {
+//      return $x * $y;
+// }
+// echo summa(10, 19);
+function upper(string $str):string{
+     return strtoupper($str);
 }
-echo summa(10, 19);
+$str = "ben";
+echo upper($str);
+
+echo "where are we"
 
 
   ?></h1>
