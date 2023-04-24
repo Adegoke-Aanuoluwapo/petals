@@ -82,7 +82,7 @@
           }
           echo find('awesome', 'PHP is awesome')
           ?></h1>
-          <h1><?php 
+     <h1><?php
           // function create_anchor($text, 
           // $href= '#',
           // $title='',
@@ -97,7 +97,34 @@
           // $link = create_anchor("PHP Tutorial", 'https://www.phptutorial.net/',  $target = '_blank');
 
           // echo $link
-          // ?></h1>
+          // 
+          ?></h1>
+     <h1><?php
+          $message = "talk and do ";
+
+          function talk()
+          {
+               global $message;
+               echo $message;
+          }
+          talk() . "<br>";
+          echo $message;
+          ?></h1>
+     <h2><?php
+          function get_counter()
+          {
+               static $counter = 1;
+               return $counter++;
+          }
+          echo get_counter() . '<br>';
+          echo get_counter() . '<br>';
+          echo get_counter() . '<br>';
+          echo get_counter() . '<br>';
+          echo get_counter() . '<br>';
+          ?></h2>
+          <h1><?php
+          
+          ?></h1>
 
 </body>
 
