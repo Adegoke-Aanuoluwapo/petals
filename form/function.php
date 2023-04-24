@@ -82,6 +82,14 @@
           }
           echo find('awesome', 'PHP is awesome')
           ?></h1>
+          <h1><?php 
+          function create_anchor($text, 
+          $href= '#',
+          $title='',
+          $target='_self'){
+               $href=$href ? sprintf(('href="%s"', $href): '');
+          }
+          ?></h1>
 
 </body>
 
