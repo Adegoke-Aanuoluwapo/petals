@@ -155,15 +155,27 @@ echo dd("blessing") . '<br>';
 //      return $x * $y;
 // }
 // echo summa(10, 19);
-function upper(string $str):string{
+function upper(?string $str):string{
      return strtoupper($str);
 }
-$str = "ben";
+$str = null;
 echo upper($str);
-
+echo upper("Ben");
 echo "where are we"
 
 
+  ?></h1>
+
+  <h1><?php 
+  
+
+  function plus(float $x, float $y){
+       return $x + $y;
+  }
+  $plas = $plus(23, 45);
+  echo $plas;
+  
+  
   ?></h1>
 
 </body>
