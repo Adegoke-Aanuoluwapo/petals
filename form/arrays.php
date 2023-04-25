@@ -17,7 +17,15 @@
   print_r($data);
   echo '</pre>';
  }
- print_array($scores)
+ print_array($scores);
+ echo $scores[0];
+ $scores[4] = 34;
+ print_array($scores);
+ echo count($scores);
+
+ $html['title'] = 'PHP Associative Arrays';
+ $html['description'] = 'Learn how to use associative arays in PHP';
+ print_r($html)
  
  ?></h1>
 </body>
