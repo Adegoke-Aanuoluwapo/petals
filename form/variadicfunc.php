@@ -26,7 +26,10 @@ function sum(...$numbers){
   $total  += $numbers[$i];
  }
  return $total;
-}
+};
+$empty_array = array();
+var_dump($empty_array) 
+
  ?>
 </body>
 
