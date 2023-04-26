@@ -50,7 +50,14 @@ echo $message2
 $pop = "./public/population.txt";
 if(file_exists($pop)){
  echo file_get_contents($pop);
-}
+};
+$f = fopen($pop, 'r');
+if ($f){
+$contents = fread($f, filesize($pop));
+fclose(($f));
+echo nl2br($contents);
+};
+
 
 
 ?></h1>
