@@ -46,6 +46,15 @@ if(is_file($filename)){
 }
 echo $message2
 ?>
+<h1><?php
+$pop = "./public/population.txt";
+if(file_exists($pop)){
+ echo file_get_contents($pop);
+}
+
+
+?></h1>
+<h1>Test</h1>
 <!DOCTYPE html>
 <html lang="en">
 
