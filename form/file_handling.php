@@ -51,14 +51,22 @@ $pop = "./public/population.txt";
 if(file_exists($pop)){
  echo file_get_contents($pop);
 };
-$f = fopen($pop, 'r');
-if ($f){
-$contents = fread($f, filesize($pop));
-fclose(($f));
-echo nl2br($contents);
-};
+ $f = fopen($pop, 'r');
+// if ($f){
+// $contents = fread($f, filesize($pop));
+// fclose(($f));
+// echo nl2br($contents);
+// };
 
+$lines = [];
+if (!$f){
+ return;
+} while(!feof($f)){
+ $lines[] = fgets($f);
+}
 
+print_r($lines);
+fclose($f);
 
 ?></h1>
 <h1>Test</h1>
