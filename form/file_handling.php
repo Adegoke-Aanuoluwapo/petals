@@ -45,30 +45,31 @@
 //  $message2 = "The file $filename does not exist";
 // }
 // echo $message2
-// ?>
+// 
+?>
 // <h1><?php
-// $pop = "./public/population.txt";
-// if(file_exists($pop)){
-//  echo file_get_contents($pop);
-// };
-//  $f = fopen($pop, 'r');
-// if ($f){
-// $contents = fread($f, filesize($pop));
-// fclose(($f));
-// echo nl2br($contents);
-// };
+       // $pop = "./public/population.txt";
+       // if(file_exists($pop)){
+       //  echo file_get_contents($pop);
+       // };
+       //  $f = fopen($pop, 'r');
+       // if ($f){
+       // $contents = fread($f, filesize($pop));
+       // fclose(($f));
+       // echo nl2br($contents);
+       // };
 
-// $lines = [];
-// if (!$f){
-//  return;
-// } while(!feof($f)){
-//  $lines[] = fgets($f);
-// }
+       // $lines = [];
+       // if (!$f){
+       //  return;
+       // } while(!feof($f)){
+       //  $lines[] = fgets($f);
+       // }
 
-// print_r($lines);
-// fclose($f);
+       // print_r($lines);
+       // fclose($f);
 
-?></h1>
+       ?></h1>
 <h1>Test</h1>
 <!DOCTYPE html>
 <html lang="en">
@@ -81,12 +82,28 @@
 
 <body>
  <?php
-$f = tmpfile();
-if (false !== $f){
- fputs($f, 'The current times is ' . strftime('%c'));
-}
-echo 'The current time is '.strftime('%c');
-exit(1);
+ // $f = tmpfile();
+ // if (false !== $f) {
+ //  fputs($f, 'The current times is ' . strftime('%c'));
+ // }
+ // echo 'The current time is ' . strftime('%c');
+ // exit(1);
+
+ // $name = tempnam('tmp', 'php');
+ // echo $name;
+ $filename = './public/population.txt';
+ if (file_exists($filename)) {
+  header('Content-Description: File Transfer');
+  header('Content-Type: application/octet-stream');
+  header('Content-Disposition: attachment; filename="' . basename($filename) . '"');
+  header('Expires: 0');
+  header('Cache-Control: must-revalidate');
+  header('Pragma: public');
+  header('Content-Length: ' . filesize($filename));
+  readfile($filename);
+  exit;
+ }
+
  ?>
 
 </body>
