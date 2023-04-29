@@ -15,6 +15,11 @@ print_r($numbers);
 $names = ['Bob', 'John', 'Alice'];
 sort($names, SORT_STRING);
 print_r($names);
+
+$fruits = ['apple', 'Banana', 'orange'];
+sort($fruits, SORT_FLAG_CASE);
+
+print_r($fruits)
 ?>
  
 </body>
