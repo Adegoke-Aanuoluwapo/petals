@@ -6,6 +6,12 @@
  <title>Document</title>
 </head>
 <body>
+<?php 
+$numbers = [2, 1, 3];
+
+sort($numbers);
+print_r($numbers)
+?>
  
 </body>
 </html>
