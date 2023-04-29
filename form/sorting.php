@@ -10,7 +10,11 @@
 $numbers = [2, 1, 3];
 
 sort($numbers);
-print_r($numbers)
+print_r($numbers);
+
+$names = ['Bob', 'John', 'Alice'];
+sort($names, SORT_STRING);
+print_r($names);
 ?>
  
 </body>
