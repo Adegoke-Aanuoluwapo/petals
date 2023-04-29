@@ -21,8 +21,11 @@ sort($fruits, SORT_FLAG_CASE);
 
 print_r($fruits);
 $rank = ['A-1', 'A-2', 'A-12', 'A-11'];
-sort($ranks, SORT_STRING |SORT_NATURAL);
+rsort($ranks, SORT_STRING | SORT_NATURAL);
 print_r($ranks);
+
+
+
 ?>
  
 </body>
