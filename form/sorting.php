@@ -19,7 +19,12 @@
   return $x <$y ? -1 : 1;
  });
  print_r($numbers);
+$number = [2, 1, 4, 3];
 
+usort($number, function($x, $y){
+ return $x <=> $y;
+});
+print_r($number);
  $names = ['Bob', 'John', 'Alice'];
  sort($names, SORT_STRING);
  print_r($names);
