@@ -26,10 +26,11 @@ usort($number, function($x, $y){
 });
 print_r($number);
 $bill = [5, 1, 4, 2, 3];
-usort($bill, fn($x, $y)=> $x <$y);
+usort($bill, fn($x, $y)=> $x <=>$y);
 print_r($bill);
 
- $names = ['Bob', 'John', 'Alice'];
+ $names = ['Alex', 'Peter', 'Alice', 'John'];
+ usort($names, fn($x,$y)=>strlen($x)<=>$y);
  sort($names, SORT_STRING);
  print_r($names);
 
