@@ -11,7 +11,7 @@
  <?php
  $numbers = [2, 1, 3];
 
- sort($numbers);
+ // sort($numbers);
  print_r($numbers);
 
  $names = ['Bob', 'John', 'Alice'];
