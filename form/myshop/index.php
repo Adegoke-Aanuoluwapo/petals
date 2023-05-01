@@ -12,6 +12,38 @@
  <div class="container my-5">
   <h2>List of clients </h2>
   <a class="btn btn-primary" href="/myshop/create.php" role="button">New Clients</a><br>
+  <table class="table">
+   <thead>
+    <tr>
+     <th>ID</th>
+     <th>Name</th>
+     <th>Email</th>
+     <th>Phone</th>
+     <th>Address</th>
+     <th>Created At</th>
+     <th>Action</th>
+    </tr>
+   </thead>
+   <tbody>
+    <?php 
+    
+    
+    ?>
+    <tr>
+     <td>10</td>
+     <td>Bill Gates</td>
+     <td>bill.gates@gmail.com</td>
+     <td>+11113334445</td>
+     <td>New York, USA</td>
+     <td>18/05/2023</td>
+     <td>
+      <a class="btn btn-primary btn-sm" href="/myshop/edit.php">Edit</a>
+      <a class="btn btn-danger btn-sm" href="/myshop/delete.php">Delete</a>
+     </td>
+
+    </tr>
+   </tbody>
+  </table>
  </div>
 </body>
 
