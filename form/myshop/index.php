@@ -25,9 +25,31 @@
     </tr>
    </thead>
    <tbody>
-    <?php 
-    
-    
+    <?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "myshop";
+
+    // Create connection
+    $connection = new mysqli($servername, $username, $password, $database);
+
+    // Check connection
+
+    if ($connection->connect_error) {
+     die("Connection failed: " . $connection_error);
+    }
+    //read all row from database
+    $sql = "SELECT * FROM clients";
+    $result = $connection->query($sql);
+
+    if (!$result){
+     die("Invalid query: " . $connection->error );
+    }
+    while($row - $result->fetch_assoc()){
+     
+    }
+
     ?>
     <tr>
      <td>10</td>
