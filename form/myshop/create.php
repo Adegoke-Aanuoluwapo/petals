@@ -4,6 +4,19 @@ $email = "";
 $email = "";
 $address = "";
 
+if ($_SERVER['REQUEST_METHOD'] =='POST'){
+ $name = $_POST["name"];
+ $email = $_POST["email"];
+ $email = $_POST["phone"];
+ $address = $_POST["address"];
+
+ do {
+  if (empty ($name) || empty($phone) || empty($address) || empty($email))
+ break;
+
+ }while(false);
+}
+
 ?>
 
 
@@ -47,12 +60,7 @@ $address = "";
      <input type="text" class="form-content" name="address" value="<?php echo $address; ?>">
     </div>
    </div>
-   <div class="row mb-3">
-    <label class="col-sm-3 col-form-label">created</label>
-    <div class="col-sm-6">
-     <input type="text" class="form-content" name="created" value="">
-    </div>
-   </div>
+   
   </form>
  </div>
 </body>
