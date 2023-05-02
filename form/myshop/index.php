@@ -47,23 +47,25 @@
      die("Invalid query: " . $connection->error );
     }
     while($row - $result->fetch_assoc()){
-     
-    }
-
-    ?>
-    <tr>
-     <td>10</td>
-     <td>Bill Gates</td>
-     <td>bill.gates@gmail.com</td>
-     <td>+11113334445</td>
-     <td>New York, USA</td>
-     <td>18/05/2023</td>
+     echo "
+      <tr>
+     <td>$row[id]</td>
+     <td>$row[name]</td>
+     <td>$row[email]</td>
+     <td>$row[phone]</td>
+     <td>$row[address]</td>
+     <td>$row[time]</td>
      <td>
       <a class="btn btn-primary btn-sm" href="/myshop/edit.php">Edit</a>
       <a class="btn btn-danger btn-sm" href="/myshop/delete.php">Delete</a>
      </td>
 
     </tr>
+     ";
+    }
+
+    ?>
+   
    </tbody>
   </table>
  </div>
