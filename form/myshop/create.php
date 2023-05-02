@@ -3,18 +3,18 @@ $name = "";
 $email = "";
 $email = "";
 $address = "";
+$successMessage = "";
+$error_message = "";
 
-$error_message ="";
-
-if ($_SERVER['REQUEST_METHOD'] =='POST'){
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
  $name = $_POST["name"];
  $email = $_POST["email"];
  $email = $_POST["phone"];
  $address = $_POST["address"];
 
  do {
-  if (empty ($name) || empty($phone) || empty($address) || empty($email)){
-    $error_message = "All fields are required";
+  if (empty($name) || empty($phone) || empty($address) || empty($email)) {
+   $error_message = "All fields are required";
    break;
   }
   //add new client database
@@ -23,8 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] =='POST'){
   $email = "";
   $address = "";
 
-
- }while(false);
+  $successMessage = "Client added correctly";
+ } while (false);
 }
 
 ?>
@@ -45,6 +45,16 @@ if ($_SERVER['REQUEST_METHOD'] =='POST'){
 <body>
  <div class="container my-5">
   <h2>New Client</h2>
+  <?php
+  if (!empty($error_message)) {
+   echo "
+   <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+   <strong>$error_message</strong>
+   <button type='button' class='btn-close' data-bs-dismiss ='alert' arial-label='Close'></div>
+   
+    ";
+  }
+  ?>
   <form method="post">
    <div class="row mb-3">
     <label class="col-sm-3 col-form-label">Names</label>
@@ -70,7 +80,28 @@ if ($_SERVER['REQUEST_METHOD'] =='POST'){
      <input type="text" class="form-content" name="address" value="<?php echo $address; ?>">
     </div>
    </div>
-   
+   <?php
+   if (!empty($successMessage)) {
+    echo "
+ <div class='row mb-3'>
+ <div class='alert alert-success alert dismissible fade show' role='alert'>
+ <strong>$successMessage</strong>
+ <button type='button' class='btn-close' data-bs-dismiss = 'alert' arial-label
+ </div>
+ </div>
+ </div>
+ ";
+   }
+   ?>
+   <div class="row mb-3">
+    <div class="offset-sm-3 col-sm-3 d-drid">
+     <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+    <div class="col-sm-3 d-grid">
+     <a class="btn btn-outline-primary" href="/myshop/index.php" role="button">Cancel</a>
+    </div>
+   </div>
+
   </form>
  </div>
 </body>
