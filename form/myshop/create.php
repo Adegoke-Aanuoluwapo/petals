@@ -21,25 +21,25 @@
    <div class="row mb-3">
     <label class="col-sm-3 col-form-label">Email</label>
     <div class="col-sm-6">
-     <input type="text" class="form-content" name="name" value="">
+     <input type="text" class="form-content" name="email" value="">
     </div>
    </div>
    <div class="row mb-3">
     <label class="col-sm-3 col-form-label">Phones</label>
     <div class="col-sm-6">
-     <input type="text" class="form-content" name="name" value="">
+     <input type="text" class="form-content" name="phone" value="">
     </div>
    </div>
    <div class="row mb-3">
     <label class="col-sm-3 col-form-label">Address</label>
     <div class="col-sm-6">
-     <input type="text" class="form-content" name="name" value="">
+     <input type="text" class="form-content" name="address" value="">
     </div>
    </div>
    <div class="row mb-3">
     <label class="col-sm-3 col-form-label">created</label>
      <div class="col-sm-6">
-      <input type="text" class="form-content" name="name" value="">
+      <input type="text" class="form-content" name="created" value="">
      </div>
    </div>
   </form>
