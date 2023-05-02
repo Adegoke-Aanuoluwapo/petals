@@ -1,3 +1,14 @@
+<?php
+$name = "";
+$email = "";
+$email = "";
+$address = "";
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,32 +26,32 @@
    <div class="row mb-3">
     <label class="col-sm-3 col-form-label">Names</label>
     <div class="col-sm-6">
-     <input type="text" class="form-content" name="name" value="">
+     <input type="text" class="form-content" name="name" value="<?php echo $name; ?>">
     </div>
    </div>
    <div class="row mb-3">
     <label class="col-sm-3 col-form-label">Email</label>
     <div class="col-sm-6">
-     <input type="text" class="form-content" name="email" value="">
+     <input type="text" class="form-content" name="email" value="<?php echo $email; ?>">
     </div>
    </div>
    <div class="row mb-3">
     <label class="col-sm-3 col-form-label">Phones</label>
     <div class="col-sm-6">
-     <input type="text" class="form-content" name="phone" value="">
+     <input type="text" class="form-content" name="phone" value="<?php echo $phone; ?>">
     </div>
    </div>
    <div class="row mb-3">
     <label class="col-sm-3 col-form-label">Address</label>
     <div class="col-sm-6">
-     <input type="text" class="form-content" name="address" value="">
+     <input type="text" class="form-content" name="address" value="<?php echo $address; ?>">
     </div>
    </div>
    <div class="row mb-3">
     <label class="col-sm-3 col-form-label">created</label>
-     <div class="col-sm-6">
-      <input type="text" class="form-content" name="created" value="">
-     </div>
+    <div class="col-sm-6">
+     <input type="text" class="form-content" name="created" value="">
+    </div>
    </div>
   </form>
  </div>
