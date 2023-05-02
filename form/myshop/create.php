@@ -1,7 +1,17 @@
 <?php
+$servername ="localhost";
+$username = "root";
+$password ="";
+$database ="myshop";
+
+//create connection
+$connection = new mysqli($servername, $username, $password, $database);
+
+
+
 $name = "";
 $email = "";
-$email = "";
+$phone = "";
 $address = "";
 $successMessage = "";
 $error_message = "";
@@ -9,7 +19,7 @@ $error_message = "";
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
  $name = $_POST["name"];
  $email = $_POST["email"];
- $email = $_POST["phone"];
+ $phone = $_POST["phone"];
  $address = $_POST["address"];
 
  do {
@@ -18,6 +28,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
    break;
   }
   //add new client database
+$sql = "INSERT INTO clients (name, email, phone, address)". "VALUES ('$name', '$email', '$phone', '$address')";
+$result = $connection->query($sql);
+if (!$result){
+ $error_message = "invalid query" . $conncetion->error;
+break;
+}
+
   $name = "";
   $email = "";
   $email = "";
@@ -40,6 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>My Shop</title>
  <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -85,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo "
  <div class='row mb-3'>
  <div class='alert alert-success alert dismissible fade show' role='alert'>
- <strong>$successMessage</strong>
+ <strong> $successMessage </strong>
  <button type='button' class='btn-close' data-bs-dismiss = 'alert' arial-label
  </div>
  </div>
@@ -98,7 +116,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
      <button type="submit" class="btn btn-primary">Submit</button>
     </div>
     <div class="col-sm-3 d-grid">
-     <a class="btn btn-outline-primary" href="/myshop/index.php" role="button">Cancel</a>
+     <a class="btn btn-outline-primary" href="/index.php" role="button">Cancel</a>
     </div>
    </div>
 

@@ -11,7 +11,7 @@
 <body>
  <div class="container my-5">
   <h2>List of clients </h2>
-  <a class="btn btn-primary" href="/myshop/create.php" role="button">New Clients</a><br>
+  <a class="btn btn-primary" href="create.php" role="button">New Clients</a><br>
   <table class="table">
    <thead>
     <tr>
