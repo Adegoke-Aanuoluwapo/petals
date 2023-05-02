@@ -4,6 +4,8 @@ $email = "";
 $email = "";
 $address = "";
 
+$error_message ="";
+
 if ($_SERVER['REQUEST_METHOD'] =='POST'){
  $name = $_POST["name"];
  $email = $_POST["email"];
@@ -11,8 +13,16 @@ if ($_SERVER['REQUEST_METHOD'] =='POST'){
  $address = $_POST["address"];
 
  do {
-  if (empty ($name) || empty($phone) || empty($address) || empty($email))
- break;
+  if (empty ($name) || empty($phone) || empty($address) || empty($email)){
+    $error_message = "All fields are required";
+   break;
+  }
+  //add new client database
+  $name = "";
+  $email = "";
+  $email = "";
+  $address = "";
+
 
  }while(false);
 }
