@@ -15,43 +15,56 @@ $phone = "";
 $address = "";
 $successMessage = "";
 $error_message = "";
+$id = "";
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+ if (!isset($_GET["id"])) {
+  header("location:index.php");
+  exit;
+ }
+ $id = $GET["id"];
+ //read the row of the selected client from the database table
+ $sql = "SELECT * FROM clients WHERE id =$id;";
+ $result = $connection->query($sql);
+ $row = $result->fetch_assoc();
+ if (!$row) {
+  header("location: index.php");
+  exit;
+ }
+
+ $name = $row["name"];
+ $email = $row["email"];
+ $phone = $row["phone"];
+ $address = $row["address"];
+} else {
+ //Post method: Update the data of the client
+
+ $id = $_POST["id"];
  $name = $_POST["name"];
  $email = $_POST["email"];
  $phone = $_POST["phone"];
  $address = $_POST["address"];
+ 
 
- do {
-  if (empty($name) || empty($phone) || empty($address) || empty($email)) {
-   $error_message = "All fields are required";
-   break;
-  }
-  //add new client database
-  $sql = "INSERT INTO clients (name, email, phone, address)" . "VALUES ('$name', '$email', '$phone', '$address')";
-  $result = $connection->query($sql);
-  if (!$result) {
-   $error_message = "invalid query" . $conncetion->error;
-   break;
-  }
+ do{
+  if (empty($id) || empty($name) || empty($phone) || empty($address) || empty($email)) {
+  $error_message = "All fields are required";
+  break;
+ }
+ $sql = "UPDATE clients". "SET name = '$name', email = '$email', phone = '$phone', address = '$address'" . "WHERE id = $id";
+ 
+ $result = $connection->query($sql);
+ if(!$result){
+  $error_message = "Invalid query" . $connection->error;
+ break;
+ }
+ $successMessage = "Client updated correctly";
 
-  $name = "";
-  $email = "";
-  $email = "";
-  $address = "";
-
-  $successMessage = "Client added correctly";
-
-  header("location: index.php");
-  exit;
- } while (false);
+ }while(true);
+ 
 }
 
 ?>
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -77,6 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   }
   ?>
   <form method="post">
+   <input type="hidden" value="<?php echo $id; ?>">
    <div class="row mb-3">
     <label class="col-sm-3 col-form-label">Names</label>
     <div class="col-sm-6">
