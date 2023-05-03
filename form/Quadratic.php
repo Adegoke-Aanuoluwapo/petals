@@ -16,19 +16,32 @@
 // } else {
 //  echo "No" . "<br>";
 // }
-$a =3 ; $b = 4; $c = 5; $d=6;
-$x = $a + $b;
-$y = $c + $d;
-echo $x . "<br>";
-echo $y . "<br>";
-if($x < $y){
- echo "x is less tha y";
+// $a =3 ; $b = 4; $c = 5; $d=6;
+// $x = $a + $b;
+// $y = $c + $d;
+// echo $x . "<br>";
+// echo $y . "<br>";
+// if($x < $y){
+//  echo "x is less tha y";
+// }
+// else if($x >$y){
+//  echo "x is greater than y";
+// }else{
+//  echo "They are equal to each other";
+// }
+$day = 7;
+if($day == 5){
+ echo "Friday";
 }
-else if($x >$y){
- echo "x is greater than y";
-}else{
- echo "They are equal to each other";
+elseif($day == 4){
+ echo "Thursday";
 }
+elseif($day == 3){
+ echo "Wednesday";
+}
+ else{
+  echo "No condition is met";
+ }
 
 ?>
 
