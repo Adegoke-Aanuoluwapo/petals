@@ -41,6 +41,9 @@ break;
   $address = "";
 
   $successMessage = "Client added correctly";
+
+  header("location: /myshop/index.php");
+  exit;
  } while (false);
 }
 
