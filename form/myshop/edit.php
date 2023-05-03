@@ -1,13 +1,3 @@
-<?php
-$b = 2;
-$a = 3;
-$c = 5;
-$x;
-$x = $b +((($b*2-4*$a*$c)**0.5)/2*$a);
-
-echo $x
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
