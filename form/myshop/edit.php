@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   header("location:index.php");
   exit;
  }
- $id = $GET["id"];
+ $id = $_GET["id"];
  //read the row of the selected client from the database table
  $sql = "SELECT * FROM clients WHERE id =$id;";
  $result = $connection->query($sql);
