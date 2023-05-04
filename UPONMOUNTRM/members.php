@@ -1,3 +1,11 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "myshop";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
