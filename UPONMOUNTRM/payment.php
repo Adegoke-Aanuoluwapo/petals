@@ -13,7 +13,7 @@
    var handler = PaystackPop.setup({
     key: 'pk_test_eb064e623b2d625c58884613fff1b7a40c273846',
     email: 'customer@email.com',
-    amount: 10000,
+    amount: 100000,
     ref: '' + Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
     metadata: {
      custom_fields: [{
