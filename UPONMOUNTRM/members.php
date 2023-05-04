@@ -3,6 +3,8 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $database = "myshop";
+// Create connection
+$connection = new mysqli($servername, $username, $password, $database);
 
 ?>
 
@@ -14,6 +16,16 @@ $database = "myshop";
  <title>Document</title>
 </head>
 <body>
- 
+ <table>
+  <thead>
+   <tr>
+    <th>s/n</th>
+    <th>FullNames</th>
+    <th>Sex</th>
+    <th>Position</th>
+    <th>State</th>
+   </tr>
+  </thead>
+ </table>
 </body>
 </html>
