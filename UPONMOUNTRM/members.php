@@ -1,18 +1,3 @@
-<?php
-
-// Create connection
-$connection = new mysqli($servername, $username, $password, $database);
-//read all row from database
-$sql = "SELECT * FROM clients";
-$result = $connection->query($sql);
-$row;
-if (!$result) {
- die("Invalid query: " . $connection->error);
-}
-while ($row = $result->fetch_assoc())
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +15,7 @@ while ($row = $result->fetch_assoc())
  <table>
   <thead>
    <tr>
-    <th>s/n</th>
+    <th>ID</th>
     <th>FullNames</th>
     <th>Sex</th>
     <th>Position</th>
@@ -39,19 +24,38 @@ while ($row = $result->fetch_assoc())
   </thead>
   <tbody>
    <?php
-  $servername = "localhost";
-  $username = "root";
-  $password = "";
-  $database = "myshop";
+   $servername = "localhost";
+   $username = "root";
+   $password = "";
+   $database = "myshop";
+   // Create connection
+   $connection = new mysqli($servername, $username, $password, $database);
+   // Check connection
+
+   if ($connection->connect_error) {
+    die("Connection failed: " . $connection_error);
+   }
+   //read all row from database
+   $sql = "SELECT * FROM clients";
+   $result = $connection->query($sql);
+   $row;
+   if (!$result) {
+    die("Invalid query: " . $connection->error);
+   }
+   while ($row = $result->fetch_assoc()) {
 
    ?>
-   <tr>
-    <td><?= $row['s/n'] ?></td>
-    <td><?= $row['fullnames'] ?></td>
-    <td><?= $row['sex'] ?></td>
-    <td><?= $row['position'] ?></td>
-    <td><?= $row['state'] ?></td>
-   </tr>
+    <tr>
+     <td><?= $row['id'] ?></td>
+     <td><?= $row['fullnames'] ?></td>
+     <td><?= $row['sex'] ?></td>
+     <td><?= $row['position'] ?></td>
+     <td><?= $row['state'] ?></td>
+     <a class="btn btn-primary btn-sm" href="edit.php?id=<?= $row['id'] ?>">Edit</a>
+     <a class="btn btn-danger btn-sm" href="delete.php?id=<?= $row['id'] ?>">Delete</a>
+     </td>
+    </tr>
+   <?php } ?>
   </tbody>
  </table>
 </body>
