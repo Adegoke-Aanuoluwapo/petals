@@ -29,7 +29,7 @@
 // }else{
 //  echo "They are equal to each other";
 // }
-$day = 7;
+$day = 5;
 if($day == 5){
  echo "Friday";
 }
