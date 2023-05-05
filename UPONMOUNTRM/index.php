@@ -64,9 +64,9 @@
             <div class="nav-item dropdown">
               <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown ">Donations</a>
               <div class="dropdown-menu m-0">
-                <a href="booking.html" class="dropdown-item">Jesus Cares Missions</a>
-                <a href="team.html" class="dropdown-item">Mikano Project</a>
-                <a href="testimonial.html" class="dropdown-item">Bus Project</a>
+                <a href="booking.php" class="dropdown-item">Jesus Cares Missions</a>
+                <a href="team.php" class="dropdown-item">Mikano Project</a>
+                <a href="testimonial.php" class="dropdown-item">Bus Project</a>
               </div>
             </div>
             <a href="contact.html" class="nav-item nav-link">Contact</a>
@@ -87,8 +87,8 @@
               </p>
               <!-- <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Book A Table</a> -->
             </div>
-            <div class="col-lg-6 text-center text-lg-end overflow-hidden">
-              <img class="img-fluid" src="img\UPMZRM.jpg" alt="" />
+            <div class="col-lg-6 text-center text-lg-end overflow-hidden " style=" background-color:blueviolet;">
+              <img class="img-fluid" src="img\UPMZRM.jpg" alt="" style="width: auto;" />
             </div>
           </div>
         </div>
@@ -97,7 +97,7 @@
     <!-- Navbar & Hero End -->
 
     <!-- Service Start -->
-    <div class="container-xxl py-5">
+    <!-- <div class="container-xxl py-5">
       <div class="container">
         <div class="row g-4">
           <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -150,7 +150,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- Service End -->
 
     <!-- About Start -->
