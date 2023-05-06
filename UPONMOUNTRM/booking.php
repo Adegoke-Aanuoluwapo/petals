@@ -162,13 +162,13 @@
                     <div class="testimonial-item bg-transparent border rounded p-4">
                         <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
                         <p>
-                            At the maiden edition
+                        The church of God visited the motherless Baby home
                         </p>
                         <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg" style="width: 50px; height: 50px" />
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/jcs1.jpg" style="width: 50px; height: 50px" />
                             <div class="ps-3">
-                                <h5 class="mb-1">Client Name</h5>
-                                <small>Profession</small>
+                                <h5 class="mb-1">Location</h5>
+                                <small>Motherless Baby Home</small>
                             </div>
                         </div>
                     </div>
