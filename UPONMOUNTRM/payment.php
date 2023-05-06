@@ -16,7 +16,7 @@
     <label for="first-name">First Name</label>
     <input type="text" id="first-name" />
    </div> -->
-   <div class="box">
+   <!-- <div class="box">
     <span class="details">First Name</span>
     <input type="text" placeholder="Enter Your First Name" name="First Name">
 
@@ -32,7 +32,7 @@
    <div class="form-group">
     <label for="amount">Amount</label>
     <input type="tel" id="amount" required />
-   </div>
+   </div> -->
    <div class="container">
     <div class="header">God Loves a cheeful giver</div>
     <form action="login.html" method="GET">
@@ -48,7 +48,7 @@
       </div>
       <div class="box">
        <span class="details">Email</span>
-       <input type="email" placeholder="Enter Your mail" name="Email" id="email">
+       <input type="email" placeholder="Enter Your mail" name="Email" id="email-address">
       </div>
       <div class="box">
        <span class="details">Amount</span>
@@ -84,8 +84,8 @@
      handler.openIframe();
     }
    </script>
-   <div class="button" style="margin-left:500px">
-    <button type="submit" onclick="payWithPaystack()"> Pay </button>
+   <div class="button" style="margin-left:50px; ">
+    <button class="button" type="submit" onclick="payWithPaystack()"> Pay </button>
    </div>
 
    <script src="https://js.paystack.co/v1/inline.js"></script>
