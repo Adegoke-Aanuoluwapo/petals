@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+ <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+ <div class="container">
+  <div class="header">Registration</div>
+  <form action="login.html" method="GET">
+   <div class="details">
+    <div class="box">
+     <span class="details">First Name</span>
+     <input type="text" placeholder="Enter Your First Name" name="First Name">
+
+    </div>
+    <div class="box">
+     <span class="details">Last Name</span>
+     <input type="text" placeholder="Enter Your Last Name" name="Last Name">
+    </div>
+
+
+    <div class="box">
+     <span class="details">Phone Number</span>
+     <input type="phone" placeholder="Enter Your Phone Number" name="Phone Number">
+    </div>
+    <div class="box">
+     <span class="details">Email</span>
+     <input type="email" placeholder="Enter Your mail" name="Email">
+    </div>
+
+    <div class="box">
+     <span class="details">Date of Birth</span>
+     <input type="date" placeholder="Enter Your DOB" name="DOB">
+    </div>
+    <div class="box">
+     <span class="details">Favorite Color</span>
+     <input type="color" placeholder="Enter Your Favorite Color" name="Color">
+    </div>
+   </div>
+   <div class="gender">
+    <span class="gender-title">Gender</span>
+    <div class="category">
+     <input type="radio" name="gender"> Male
+     <input type="radio" name="gender"> Female
+     <input type="radio" name="gender"> Other
+    </div>
+    <div class="button">
+     <input type="submit" name="Register" value="Register">
+    </div>
+   </div>
+
+  </form>
+
+ </div>
+</body>
+
+</html>
