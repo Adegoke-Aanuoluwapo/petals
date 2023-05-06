@@ -9,7 +9,7 @@
 </head>
 
 <body>
- <div style="background-color:blue; margin-left:500px;margin-top: 300px ">
+ <div class="container">
   <form id="paymentForm">
 
    <!-- <div class="form-group">
@@ -34,19 +34,26 @@
     <input type="tel" id="amount" required />
    </div>
    <div class="container">
-    <div class="header">Registration</div>
+    <div class="header">God Loves a cheeful giver</div>
     <form action="login.html" method="GET">
      <div class="details">
       <div class="box">
        <span class="details">First Name</span>
-       <input type="text" placeholder="Enter Your First Name" name="First Name">
+       <input type="text" placeholder="Enter Your First Name" name="First Name" id="first-name">
 
       </div>
       <div class="box">
        <span class="details">Last Name</span>
-       <input type="text" placeholder="Enter Your Last Name" name="Last Name">
+       <input type="text" placeholder="Enter Your Last Name" name="Last Name" id="last-name">
       </div>
-
+      <div class="box">
+       <span class="details">Email</span>
+       <input type="email" placeholder="Enter Your mail" name="Email" id="email">
+      </div>
+      <div class="box">
+       <span class="details">Amount</span>
+       <input type="email" placeholder="Enter Your mail" name="amount" id="amount">
+      </div>
 
     </form>
    </div>
@@ -77,7 +84,7 @@
      handler.openIframe();
     }
    </script>
-   <div class="form-submit" style="margin-left:500px">
+   <div class="button" style="margin-left:500px">
     <button type="submit" onclick="payWithPaystack()"> Pay </button>
    </div>
 
