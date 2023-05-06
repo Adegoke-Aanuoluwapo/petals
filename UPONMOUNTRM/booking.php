@@ -175,7 +175,7 @@
                     <div class="testimonial-item bg-transparent border rounded p-4">
                         <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
                         <p>
-                            
+                            The church of God takes the mission to the palace of the host communities where the packages were distributed to the host
                         </p>
                         <div class="d-flex align-items-center">
                             <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-2.jpg" style="width: 50px; height: 50px" />
