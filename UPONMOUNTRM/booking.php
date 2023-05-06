@@ -181,7 +181,7 @@
                             <img class="img-fluid flex-shrink-0 rounded-circle" src="img/jcs5.jpg" style="width: 50px; height: 50px" />
                             <div class="ps-3">
                                 <h5 class="mb-1">Location</h5>
-                                <small>Profession</small>
+                                <small>Aaye Palace</small>
                             </div>
                         </div>
                     </div>
