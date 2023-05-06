@@ -85,7 +85,7 @@
     }
    </script>
    <div class="button" style="margin-left:50px; ">
-    <button class="button" type="submit" onclick="payWithPaystack()"> Pay </button>
+    <button style="width: 70px; padding:15px; border-radius:25px" type="submit" onclick="payWithPaystack()"> Pay </button>
    </div>
 
    <script src="https://js.paystack.co/v1/inline.js"></script>
