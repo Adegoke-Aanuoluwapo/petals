@@ -8,7 +8,12 @@
 <body>
  <?php 
  $str = "Aanuoluwapo";
- echo strlen($str)
+ echo strlen($str) . '<br>';
+ $message = 'こんにちは';
+ echo mb_strlen($message) . '<br>';
+ $s = "PHP substring";
+ $result =substr($s, 0, 5);
+ echo $result
  ?>
 </body>
 </html>
