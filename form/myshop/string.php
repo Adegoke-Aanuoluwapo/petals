@@ -7,13 +7,21 @@
 </head>
 <body>
  <?php 
- $str = "Aanuoluwapo";
- echo strlen($str) . '<br>';
+ // $str = "Aanuoluwapo";
+ // echo strlen($str) . '<br>';
  // $message = 'こんにちは';
  // echo mb_strlen($message) . '<br>';
  // $s = "PHP is cool";
  // $result =substr($s, -7, -5);
  // echo $result
+
+ $message = 'adiós';
+ $result = mb_substr($message, 3, 1);
+ echo $result;
+ $str = 'To do or not to do';
+ $position = strpos($str, 'do', 4);
+ echo $position
+
  ?>
 </body>
 </html>
