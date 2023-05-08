@@ -19,8 +19,13 @@
  $result = mb_substr($message, 3, 1);
  echo $result;
  $str = 'To do or not to do';
- $position = strpos($str, 'do', 4);
- echo $position
+ $position = strpos($str, 'To');
+ if($position){
+  echo $position;
+ }
+ else{
+  echo 'not found';
+ }
 
  ?>
 </body>
