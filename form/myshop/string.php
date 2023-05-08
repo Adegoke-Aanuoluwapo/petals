@@ -29,6 +29,11 @@
 // $new_str2 = str_replace('hi', 'bye', $str2, $count);
 // echo $new_str2;
 // echo $count;
- ?>
+$str = 'The quick brown fox jumps over the lazy dog';
+$animals = ['fox', 'dog'];
+$new_animals = ['wolf', 'cat'];
+$new_str =str_replace($animals, $new_animals, $str);
+echo $new_str
+?>
 </body>
 </html>
