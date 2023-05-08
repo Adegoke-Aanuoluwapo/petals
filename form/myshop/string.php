@@ -9,11 +9,11 @@
  <?php 
  $str = "Aanuoluwapo";
  echo strlen($str) . '<br>';
- $message = 'こんにちは';
- echo mb_strlen($message) . '<br>';
- $s = "PHP substring";
- $result =substr($s, 0, 5);
- echo $result
+ // $message = 'こんにちは';
+ // echo mb_strlen($message) . '<br>';
+ // $s = "PHP is cool";
+ // $result =substr($s, -7, -5);
+ // echo $result
  ?>
 </body>
 </html>
