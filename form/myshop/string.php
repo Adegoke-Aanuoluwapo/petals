@@ -15,12 +15,20 @@
  // $result =substr($s, -7, -5);
  // echo $result
 
- $message = 'adiós';
- $result = mb_substr($message, 3, 1);
- echo $result;
- $str = 'PHP is cool';
- $position = stripos($str, 'php');
-var_dump($position)
+//  $message = 'adiós';
+//  $result = mb_substr($message, 3, 1);
+//  echo $result;
+//  $str = 'PHP is cool';
+//  $position = stripos($str, 'php');
+// var_dump($position)
+// $str = 'Hello there';
+// $new_str = str_replace('Hello', 'Hi', $str);
+// echo $new_str . '<br>';
+// echo $str;
+// $str2 = 'Hi, hi, hi';
+// $new_str2 = str_replace('hi', 'bye', $str2, $count);
+// echo $new_str2;
+// echo $count;
  ?>
 </body>
 </html>
