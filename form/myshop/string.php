@@ -18,15 +18,9 @@
  $message = 'adiós';
  $result = mb_substr($message, 3, 1);
  echo $result;
- $str = 'To do or not to do';
- $position = strpos($str, 'To');
- if($position){
-  echo $position;
- }
- else{
-  echo 'not found';
- }
-
+ $str = 'PHP is cool';
+ $position = stripos($str, 'php');
+var_dump($position)
  ?>
 </body>
 </html>
