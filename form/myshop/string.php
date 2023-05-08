@@ -6,6 +6,9 @@
  <title>Document</title>
 </head>
 <body>
- 
+ <?php 
+ $str = "Aanuoluwapo";
+ echo strlen($str)
+ ?>
 </body>
 </html>
