@@ -17,7 +17,7 @@
   }
  }
  $account->accountNumber = 1;
- echo $account
+ echo $account;
  
  ?>
 </body>
