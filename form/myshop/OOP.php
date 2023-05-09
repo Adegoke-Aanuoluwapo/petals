@@ -3,9 +3,18 @@
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Document</title>
+ <title>OOP</title>
 </head>
 <body>
+ <?php
+ class BankAccount{
+  public $accountNumber;
+  public $balance;
+  public function deposit($amount){
+   
+  }
+ }
  
+ ?>
 </body>
 </html>
