@@ -8,8 +8,8 @@
 <body>
  <?php
  class Transaction{
-  public $amount;
-  public $description;
+  public float $amount;
+  public string $description;
  }
  
  
