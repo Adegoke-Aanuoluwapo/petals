@@ -5,5 +5,5 @@ require_once 'OOP.php';
 
 $transaction = new Transaction();
 
-var_dump($transaction)
+var_dump($transaction->description)
 ?>
