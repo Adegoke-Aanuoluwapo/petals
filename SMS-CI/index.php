@@ -12,7 +12,13 @@
 	$password = "";
 	$database = "schoolmanager"; 
 
-	$connection = new mysqli($servername, $username, $password, $database )
+	$connection = new mysqli($servername, $username, $password, $database );
+
+
+	//Check connection
+	if ($connection->connect_error){
+		die("Connection failed: " . $connection);
+	}
 	
 	?>
 </body>
