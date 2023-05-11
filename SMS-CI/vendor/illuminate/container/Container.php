@@ -201,7 +201,7 @@ class Container implements ArrayAccess, ContainerContract
         // If the factory is not a Closure, it means it is just a class name which is
         // bound into this container to the abstract type and we will just wrap it
         // up inside its own Closure to give us more convenience when extending.
-        if (! $concrete instanceof Closure) {
+        if (!$concrete instanceof Closure) {
             $concrete = $this->getClosure($abstract, $concrete);
         }
 
@@ -254,7 +254,7 @@ class Container implements ArrayAccess, ContainerContract
      */
     public function bindIf($abstract, $concrete = null, $shared = false)
     {
-        if (! $this->bound($abstract)) {
+        if (!$this->bound($abstract)) {
             $this->bind($abstract, $concrete, $shared);
         }
     }
@@ -361,7 +361,7 @@ class Container implements ArrayAccess, ContainerContract
         $tags = is_array($tags) ? $tags : array_slice(func_get_args(), 1);
 
         foreach ($tags as $tag) {
-            if (! isset($this->tags[$tag])) {
+            if (!isset($this->tags[$tag])) {
                 $this->tags[$tag] = [];
             }
 
@@ -660,14 +660,14 @@ class Container implements ArrayAccess, ContainerContract
      */
     protected function getConcrete($abstract)
     {
-        if (! is_null($concrete = $this->getContextualConcrete($abstract))) {
+        if (!is_null($concrete = $this->getContextualConcrete($abstract))) {
             return $concrete;
         }
 
         // If we don't have a registered resolver or concrete for the type, we'll just
         // assume each type is a concrete name and will attempt to resolve it as is
         // since the container should be able to resolve concretes automatically.
-        if (! isset($this->bindings[$abstract])) {
+        if (!isset($this->bindings[$abstract])) {
             return $abstract;
         }
 
@@ -736,8 +736,8 @@ class Container implements ArrayAccess, ContainerContract
         // If the type is not instantiable, the developer is attempting to resolve
         // an abstract type such as an Interface of Abstract Class and there is
         // no binding registered for the abstractions so we need to bail out.
-        if (! $reflector->isInstantiable()) {
-            if (! empty($this->buildStack)) {
+        if (!$reflector->isInstantiable()) {
+            if (!empty($this->buildStack)) {
                 $previous = implode(', ', $this->buildStack);
 
                 $message = "Target [$concrete] is not instantiable while building [$previous].";
@@ -767,11 +767,13 @@ class Container implements ArrayAccess, ContainerContract
         // dependency instances and then use the reflection instances to make a
         // new instance of this class, injecting the created dependencies in.
         $parameters = $this->keyParametersByArgument(
-            $dependencies, $parameters
+            $dependencies,
+            $parameters
         );
 
         $instances = $this->getDependencies(
-            $dependencies, $parameters
+            $dependencies,
+            $parameters
         );
 
         array_pop($this->buildStack);
@@ -818,7 +820,7 @@ class Container implements ArrayAccess, ContainerContract
      */
     protected function resolveNonClass(ReflectionParameter $parameter)
     {
-        if (! is_null($concrete = $this->getContextualConcrete('$'.$parameter->name))) {
+        if (!is_null($concrete = $this->getContextualConcrete('$' . $parameter->name))) {
             if ($concrete instanceof Closure) {
                 return call_user_func($concrete, $this);
             } else {
@@ -963,7 +965,7 @@ class Container implements ArrayAccess, ContainerContract
 
         $expected = $function->getParameters()[0];
 
-        if (! $expected->getClass()) {
+        if (!$expected->getClass()) {
             return;
         }
 
@@ -982,16 +984,22 @@ class Container implements ArrayAccess, ContainerContract
         $this->fireCallbackArray($object, $this->globalResolvingCallbacks);
 
         $this->fireCallbackArray(
-            $object, $this->getCallbacksForType(
-                $abstract, $object, $this->resolvingCallbacks
+            $object,
+            $this->getCallbacksForType(
+                $abstract,
+                $object,
+                $this->resolvingCallbacks
             )
         );
 
         $this->fireCallbackArray($object, $this->globalAfterResolvingCallbacks);
 
         $this->fireCallbackArray(
-            $object, $this->getCallbacksForType(
-                $abstract, $object, $this->afterResolvingCallbacks
+            $object,
+            $this->getCallbacksForType(
+                $abstract,
+                $object,
+                $this->afterResolvingCallbacks
             )
         );
     }
@@ -1046,7 +1054,7 @@ class Container implements ArrayAccess, ContainerContract
             return true;
         }
 
-        if (! isset($this->bindings[$abstract]['shared'])) {
+        if (!isset($this->bindings[$abstract]['shared'])) {
             return false;
         }
 
@@ -1073,7 +1081,7 @@ class Container implements ArrayAccess, ContainerContract
      */
     protected function getAlias($abstract)
     {
-        if (! isset($this->aliases[$abstract])) {
+        if (!isset($this->aliases[$abstract])) {
             return $abstract;
         }
 
@@ -1162,6 +1170,7 @@ class Container implements ArrayAccess, ContainerContract
      * @param  string  $key
      * @return bool
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($key)
     {
         return $this->bound($key);
@@ -1190,7 +1199,7 @@ class Container implements ArrayAccess, ContainerContract
         // If the value is not a Closure, we will make it one. This simply gives
         // more "drop-in" replacement functionality for the Pimple which this
         // container's simplest functions are base modeled and built after.
-        if (! $value instanceof Closure) {
+        if (!$value instanceof Closure) {
             $value = function () use ($value) {
                 return $value;
             };

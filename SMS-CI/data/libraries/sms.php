@@ -7,7 +7,8 @@ if (!defined('BASEPATH'))
  * Note: This is the main user control class. 
  */
 
-class SMS {
+class SMS
+{
 
     /**
      * The CodeIgniter object variable
@@ -69,10 +70,11 @@ class SMS {
     /**
      * Constructor
      */
-    public function __construct() {
+    public function __construct()
+    {
 
         // get main CI object
-        $this->CI = & get_instance();
+        $this->CI = &get_instance();
 
         // Dependancies
         if (CI_VERSION >= 2.2) {
@@ -95,8 +97,8 @@ class SMS {
         $this->sms_db = $this->CI->load->database($this->config_vars['db_profile'], TRUE);
 
         // load error and info messages from flashdata (but don't store back in flashdata)
-        $this->errors = $this->CI->session->flashdata('errors') ? : array();
-        $this->infos = $this->CI->session->flashdata('infos') ? : array();
+        $this->errors = $this->CI->session->flashdata('errors') ?: array();
+        $this->infos = $this->CI->session->flashdata('infos') ?: array();
     }
 
     ########################
@@ -111,7 +113,8 @@ class SMS {
      * @param bool $remember
      * @return bool Indicates successful login.
      */
-    public function login($identifier, $pass, $remember = FALSE, $totp_code = NULL) {
+    public function login($identifier, $pass, $remember = FALSE, $totp_code = NULL)
+    {
 
         if ($this->config_vars['use_cookies'] == TRUE) {
             // Remove cookies first
@@ -127,13 +130,13 @@ class SMS {
 
         if ($this->config_vars['login_with_name'] == TRUE) {
 
-            if (!$identifier OR strlen($pass) < $this->config_vars['min'] OR strlen($pass) > $this->config_vars['max']) {
+            if (!$identifier or strlen($pass) < $this->config_vars['min'] or strlen($pass) > $this->config_vars['max']) {
                 $this->error($this->CI->lang->line('sms_error_login_failed_name'));
                 return FALSE;
             }
             $db_identifier = 'name';
         } else {
-            if (!valid_email($identifier) OR strlen($pass) < $this->config_vars['min'] OR strlen($pass) > $this->config_vars['max']) {
+            if (!valid_email($identifier) or strlen($pass) < $this->config_vars['min'] or strlen($pass) > $this->config_vars['max']) {
                 $this->error($this->CI->lang->line('sms_error_login_failed_email'));
                 return FALSE;
             }
@@ -187,8 +190,8 @@ class SMS {
         $query = $this->sms_db->get($this->config_vars['users']);
 
         if ($query->num_rows() > 0) {
-           
-                    // $this->error(' Your account is suspended! Contact to administration in an office hour.');
+
+            // $this->error(' Your account is suspended! Contact to administration in an office hour.');
             $this->error($this->CI->lang->line('sms_error_account_not_verified'));
             return FALSE;
         }
@@ -215,12 +218,12 @@ class SMS {
             }
         }
 
-        if ($this->config_vars['totp_active'] == TRUE AND $this->config_vars['totp_only_on_ip_change'] == FALSE) {
+        if ($this->config_vars['totp_active'] == TRUE and $this->config_vars['totp_only_on_ip_change'] == FALSE) {
             $query = null;
             $query = $this->sms_db->where($db_identifier, $identifier);
             $query = $this->sms_db->get($this->config_vars['users']);
             $totp_secret = $query->row()->totp_secret;
-            if ($query->num_rows() > 0 AND ! $totp_code) {
+            if ($query->num_rows() > 0 and !$totp_code) {
                 $this->error($this->CI->lang->line('sms_error_totp_code_required'));
                 return FALSE;
             } else {
@@ -235,14 +238,14 @@ class SMS {
             }
         }
 
-        if ($this->config_vars['totp_active'] == TRUE AND $this->config_vars['totp_only_on_ip_change'] == TRUE) {
+        if ($this->config_vars['totp_active'] == TRUE and $this->config_vars['totp_only_on_ip_change'] == TRUE) {
             $query = null;
             $query = $this->sms_db->where($db_identifier, $identifier);
             $query = $this->sms_db->get($this->config_vars['users']);
             $totp_secret = $query->row()->totp_secret;
             $ip_address = $query->row()->ip_address;
             $current_ip_address = $this->CI->input->ip_address();
-            if ($query->num_rows() > 0 AND ! $totp_code) {
+            if ($query->num_rows() > 0 and !$totp_code) {
                 if ($ip_address != $current_ip_address) {
                     $this->error($this->CI->lang->line('sms_error_totp_code_required'));
                     return FALSE;
@@ -277,7 +280,7 @@ class SMS {
 
             // If email and pass matches
             // create session
-         $log = $this->sms_security($row->id);
+            $log = $this->sms_security($row->id);
 
             $data = array(
                 'id' => $row->id,
@@ -291,12 +294,12 @@ class SMS {
                 'dob' => $row->dob,
                 'last_login' => $row->last_login,
                 'running_session_id' => $this->running_session()->id,
-               
+
                 'loggedin' => TRUE
             );
 
             $this->CI->session->set_userdata($data);
-            
+
             // if remember selected
             if ($remember) {
                 $expire = $this->config_vars['remember'];
@@ -354,7 +357,8 @@ class SMS {
      * Checks if user logged in, also checks remember.
      * @return bool
      */
-    public function is_loggedin() {
+    public function is_loggedin()
+    {
 
         if ($this->CI->session->userdata('loggedin')) {
             return TRUE;
@@ -367,7 +371,7 @@ class SMS {
                     return FALSE;
                 } else {
                     $cookie = explode('-', $this->CI->input->cookie('user', TRUE));
-                    if (!is_numeric($cookie[0]) OR strlen($cookie[1]) < 13) {
+                    if (!is_numeric($cookie[0]) or strlen($cookie[1]) < 13) {
                         return FALSE;
                     } else {
                         $query = $this->sms_db->where('id', $cookie[0]);
@@ -397,7 +401,7 @@ class SMS {
                     return FALSE;
                 } else {
                     $session = explode('-', $this->CI->session->userdata('remember'));
-                    if (!is_numeric($session[0]) OR strlen($session[1]) < 13) {
+                    if (!is_numeric($session[0]) or strlen($session[1]) < 13) {
                         return FALSE;
                     } else {
                         $query = $this->sms_db->where('id', $session[0]);
@@ -432,17 +436,19 @@ class SMS {
      * return row value
      */
 
-    public function list_session() {
+    public function list_session()
+    {
 
         $query = $this->sms_db->get($this->config_vars['tbl_session']);
-       if ($query->num_rows() <= 0){
-			//$this->error($this->CI->lang->line('sms_error_no_user'));
-			return FALSE;
-		}
+        if ($query->num_rows() <= 0) {
+            //$this->error($this->CI->lang->line('sms_error_no_user'));
+            return FALSE;
+        }
 
         return $query->result();
     }
-    public function running_session() {
+    public function running_session()
+    {
 
         $query = $this->sms_db->where('active', 1);
 
@@ -457,7 +463,8 @@ class SMS {
         return $result;
     }
 
-    public function next_session() {
+    public function next_session()
+    {
 
         $next = $this->running_session()->id + 1;
 
@@ -472,16 +479,18 @@ class SMS {
 
         return $query->row();
     }
-   
-    public function get_running_session_by_id($id){
-       $query = $this->sms_db->where('id', $id);
+
+    public function get_running_session_by_id($id)
+    {
+        $query = $this->sms_db->where('id', $id);
 
 
-        $query = $this->sms_db->get($this->config_vars['tbl_session']); 
+        $query = $this->sms_db->get($this->config_vars['tbl_session']);
         return $query->row()->session;
     }
 
-    public function set_active($id) {
+    public function set_active($id)
+    {
         if ($this->unset_session()) {
             $data = array(
                 'active' => 1,
@@ -493,7 +502,8 @@ class SMS {
         return false;
     }
 
-    function unset_session() {
+    function unset_session()
+    {
 
 
         $data = array(
@@ -513,24 +523,25 @@ class SMS {
      *
      * @param bool $perm_par If not given just control user logged in or not
      */
-    public function control($perm_par = FALSE) {
+    public function control($perm_par = FALSE)
+    {
 
         $perm_id = $this->get_perm_id($perm_par);
         $this->update_activity();
 
         // if user or user's group not allowed
-        if (!$this->is_allowed($perm_id) OR ! $this->is_group_allowed($perm_id)) {
+        if (!$this->is_allowed($perm_id) or !$this->is_group_allowed($perm_id)) {
             if ($this->config_vars['no_permission']) {
                 $this->error($this->CI->lang->line('sms_error_no_access'));
                 redirect($this->config_vars['no_permission']);
             }
-//			else {
-////				echo $this->CI->lang->line('sms_error_no_access');
-////				
-////                             die();
-//                show_error($this->CI->lang->line('sms_error_no_access'), 403, "SMS");
-//                die();
-//                               
+            //			else {
+            ////				echo $this->CI->lang->line('sms_error_no_access');
+            ////				
+            ////                             die();
+            //                show_error($this->CI->lang->line('sms_error_no_access'), 403, "SMS");
+            //                die();
+            //                               
         }
     }
 
@@ -540,11 +551,12 @@ class SMS {
      * Destroys the CodeIgniter session and remove cookies to log out user.
      * @return bool If session destroy successful
      */
-    public function logout() {
+    public function logout()
+    {
         $query = $this->sms_db->set('warning', 0);
-         $query = $this->sms_db->where('user_id', $this->CI->session->userdata('id'));
-         $query = $this->sms_db->update('sms_security');
-         
+        $query = $this->sms_db->where('user_id', $this->CI->session->userdata('id'));
+        $query = $this->sms_db->update('sms_security');
+
         if ($this->config_vars['use_cookies'] == TRUE) {
             $cookie = array(
                 'name' => 'user',
@@ -554,7 +566,7 @@ class SMS {
             );
             $this->CI->input->set_cookie($cookie);
         }
-        
+
         return $this->CI->session->sess_destroy();
     }
 
@@ -565,7 +577,8 @@ class SMS {
      * @param int $user_id User id to log in
      * @return bool TRUE if login successful.
      */
-    public function login_fast($user_id) {
+    public function login_fast($user_id)
+    {
 
         $query = $this->sms_db->where('id', $user_id);
         $query = $this->sms_db->where('banned', 0);
@@ -590,7 +603,7 @@ class SMS {
                 'dob' => $row->dob,
                 'last_login' => $row->last_login,
                 'running_session_id' => $this->running_session()->id,
-               
+
                 'loggedin' => TRUE
             );
 
@@ -606,7 +619,8 @@ class SMS {
      * @param int $user_id User id to reset
      * @return bool Reset fails/succeeds
      */
-    public function reset_login_attempts($user_id) {
+    public function reset_login_attempts($user_id)
+    {
 
         $data['login_attempts'] = null;
         $this->sms_db->where('id', $user_id);
@@ -619,7 +633,8 @@ class SMS {
      * @param string $email Email for account to remind
      * @return bool Remind fails/succeeds
      */
-    public function remind_password($email) {
+    public function remind_password($email)
+    {
 
         $query = $this->sms_db->where('email', $email);
         $query = $this->sms_db->get($this->config_vars['users']);
@@ -638,13 +653,11 @@ class SMS {
             $this->CI->email->to($row->email);
             $this->CI->email->subject($this->CI->lang->line('sms_email_reset_subject'));
             $this->CI->email->message($this->CI->lang->line('sms_email_reset_text') . site_url() . $this->config_vars['reset_password_link'] . $row->id . '/' . $ver_code);
-            if($this->CI->email->send()){
+            if ($this->CI->email->send()) {
                 return true;
-            }else{
+            } else {
                 return false;
             }
-
-           
         }
         return FALSE;
     }
@@ -656,7 +669,8 @@ class SMS {
      * @param string $ver_code Verification code for account
      * @return bool Password reset fails/succeeds
      */
-    public function reset_password($user_id, $ver_code) {
+    public function reset_password($user_id, $ver_code)
+    {
 
         $query = $this->sms_db->where('id', $user_id);
         $query = $this->sms_db->where('verification_code', $ver_code);
@@ -671,7 +685,7 @@ class SMS {
                 'pass' => $this->hash_password($pass, $user_id)
             );
 
-            if ($this->config_vars['totp_active'] == TRUE AND $this->config_vars['totp_reset_over_reset_password'] == TRUE) {
+            if ($this->config_vars['totp_active'] == TRUE and $this->config_vars['totp_reset_over_reset_password'] == TRUE) {
                 $data['totp_secret'] = NULL;
             }
 
@@ -700,7 +714,8 @@ class SMS {
      * @param int|bool $user_id User id to update or FALSE for current user
      * @return bool Update fails/succeeds
      */
-    public function update_last_login($user_id = FALSE) {
+    public function update_last_login($user_id = FALSE)
+    {
 
         if ($user_id == FALSE)
             $user_id = $this->CI->session->userdata('id');
@@ -719,7 +734,8 @@ class SMS {
      * @param string $email User email
      * @return bool
      */
-    public function update_login_attempts($email) {
+    public function update_login_attempts($email)
+    {
 
         $user_id = $this->get_user_id($email);
 
@@ -759,7 +775,8 @@ class SMS {
      * @param int $expire 
      * @return bool Update fails/succeeds
      */
-    public function update_remember($user_id, $expression = null, $expire = null) {
+    public function update_remember($user_id, $expression = null, $expire = null)
+    {
 
         $data['remember_time'] = $expire;
         $data['remember_exp'] = $expression;
@@ -780,7 +797,8 @@ class SMS {
      * @param string $name User's name
      * @return int|bool False if ce fails or returns user id if successful
      */
-    public function create_user($email, $pass, $name = FALSE, $full_name, $gender, $role, $dob, $address, $contact, $image) {
+    public function create_user($email, $pass, $full_name, $gender, $role, $dob, $address, $contact, $image, $name = FALSE)
+    {
 
         $valid = TRUE;
 
@@ -804,7 +822,7 @@ class SMS {
             $this->error($this->CI->lang->line('sms_error_email_invalid'));
             $valid = FALSE;
         }
-        if (strlen($pass) < $this->config_vars['min'] OR strlen($pass) > $this->config_vars['max']) {
+        if (strlen($pass) < $this->config_vars['min'] or strlen($pass) > $this->config_vars['max']) {
             $this->error($this->CI->lang->line('sms_error_password_invalid'));
             $valid = FALSE;
         }
@@ -837,39 +855,39 @@ class SMS {
         if ($this->sms_db->insert($this->config_vars['users'], $data)) {
 
             $user_id = $this->sms_db->insert_id();
-             // sms_security
-             $this->sms_db->set('user_id', $user_id);
-             $this->sms_db->insert($this->config_vars['tbl_sms_security']);
+            // sms_security
+            $this->sms_db->set('user_id', $user_id);
+            $this->sms_db->insert($this->config_vars['tbl_sms_security']);
 
             //permission and role
             $this->add_member($user_id, $role);
             $this->allow_user($user_id, $role);
-                $data = null;
-                $data['banned'] = 1;
+            $data = null;
+            $data['banned'] = 1;
 
-                $this->sms_db->where('id', $user_id);
-                $this->sms_db->update($this->config_vars['users'], $data);
+            $this->sms_db->where('id', $user_id);
+            $this->sms_db->update($this->config_vars['users'], $data);
 
-                // sends verifition ( !! e-mail settings must be set)
-                if(!$this->send_verification($user_id, $name, $pass)){
-                    $this->send_verification($user_id, $name, $pass);
-                }
-            
+            // sends verifition ( !! e-mail settings must be set)
+            if (!$this->send_verification($user_id, $name, $pass)) {
+                $this->send_verification($user_id, $name, $pass);
+            }
+
 
             // Update to correct salted password
             $data = null;
             $data['pass'] = $this->hash_password($pass, $user_id);
             $this->sms_db->where('id', $user_id);
             $this->sms_db->update($this->config_vars['users'], $data);
-            
-           
+
+
             return $user_id;
         } else {
             return FALSE;
         }
     }
 
-    
+
     //tested
     /**
      * Update user
@@ -880,22 +898,24 @@ class SMS {
      * @param string|bool $name User's name, or FALSE if not to be updated
      * @return bool Update fails/succeeds
      */
-    public function sms_security($user_id=NULL){
-        if($user_id!=NULL){
-       $query =  $this->sms_db->where('user_id', $user_id);
-        }else{
-             $query =  $this->sms_db->where('user_id', $this->session->userdata('id'));
+    public function sms_security($user_id = NULL)
+    {
+        if ($user_id != NULL) {
+            $query =  $this->sms_db->where('user_id', $user_id);
+        } else {
+            $query =  $this->sms_db->where('user_id', $this->session->userdata('id'));
         }
-          $query =   $this->sms_db->get($this->config_vars['tbl_sms_security']);
-        if($query->num_rows()>0){
-          
+        $query =   $this->sms_db->get($this->config_vars['tbl_sms_security']);
+        if ($query->num_rows() > 0) {
+
             return $query->row();
-        }else{
+        } else {
             $query =  $this->sms_db->set('user_id', $user_id);
-             $query =   $this->sms_db->insert($this->config_vars['tbl_sms_security']);
+            $query =   $this->sms_db->insert($this->config_vars['tbl_sms_security']);
         }
     }
-    public function update_user($user_id, $email =NULL, $pass = NULL, $name = NULL ,$contact = NULL, $address=NULL) {
+    public function update_user($user_id, $email = NULL, $pass = NULL, $name = NULL, $contact = NULL, $address = NULL)
+    {
 
         $data = array();
         $valid = TRUE;
@@ -919,7 +939,7 @@ class SMS {
         }
 
         if ($pass != NULL) {
-            if (strlen($pass) < $this->config_vars['min'] OR strlen($pass) > $this->config_vars['max']) {
+            if (strlen($pass) < $this->config_vars['min'] or strlen($pass) > $this->config_vars['max']) {
                 $this->error($this->CI->lang->line('sms_error_password_invalid'));
                 $valid = FALSE;
             }
@@ -941,12 +961,12 @@ class SMS {
             }
             $data['name'] = $name;
         }
-         if ($contact != NULL) {
-          
+        if ($contact != NULL) {
+
             $data['contact'] = $contact;
         }
         if ($address != NULL) {
-          
+
             $data['address'] = $address;
         }
 
@@ -970,7 +990,8 @@ class SMS {
      * @param bool $include_banneds Include banned users
      * @return array Array of users
      */
-    public function list_users($group_par = FALSE, $limit = FALSE, $offset = FALSE, $include_banneds = FALSE) {
+    public function list_users($group_par = FALSE, $limit = FALSE, $offset = FALSE, $include_banneds = FALSE)
+    {
 
         // if group_par is given
         if ($group_par != FALSE) {
@@ -978,15 +999,15 @@ class SMS {
             //$group_par = $this->get_group_id($group_par);
 
             $this->sms_db->select('*')
-                    ->from($this->config_vars['users'])
-                    //->join($this->config_vars['user_to_group'], $this->config_vars['users'] . ".id = " . $this->config_vars['user_to_group'] . ".user_id")
-                    ->where("role", $group_par);
+                ->from($this->config_vars['users'])
+                //->join($this->config_vars['user_to_group'], $this->config_vars['users'] . ".id = " . $this->config_vars['user_to_group'] . ".user_id")
+                ->where("role", $group_par);
 
             // if group_par is not given, lists all users
         } else {
 
             $this->sms_db->select('*')
-                    ->from($this->config_vars['users']);
+                ->from($this->config_vars['users']);
         }
 
         // banneds
@@ -1015,22 +1036,23 @@ class SMS {
      * @param int|bool $user_id User id to get or FALSE for current user
      * @return object User information
      */
-    public function get_user($user_id = FALSE, $role=FALSE) {
+    public function get_user($user_id = FALSE, $role = FALSE)
+    {
 
-        if ($user_id == FALSE){
+        if ($user_id == FALSE) {
             $user = $this->CI->session->userdata('id');
-         $query = $this->sms_db->where('id', $user);
+            $query = $this->sms_db->where('id', $user);
         }
-        if($user_id!=FALSE){
-            if(is_numeric($user_id)){
-                $query = $this->sms_db->where('id', $user_id); 
-            }else{
-              $query = $this->sms_db->where('name', $user_id);   
+        if ($user_id != FALSE) {
+            if (is_numeric($user_id)) {
+                $query = $this->sms_db->where('id', $user_id);
+            } else {
+                $query = $this->sms_db->where('name', $user_id);
             }
         }
-       if($role!=FALSE){
-          $query = $this->sms_db->where('role', $role);      
-       }
+        if ($role != FALSE) {
+            $query = $this->sms_db->where('role', $role);
+        }
         $query = $this->sms_db->get($this->config_vars['users']);
 
         if ($query->num_rows() <= 0) {
@@ -1047,7 +1069,8 @@ class SMS {
      * @param string $ver_code Code to validate against
      * @return bool Activation fails/succeeds
      */
-    public function verify_user($user_id, $ver_code) {
+    public function verify_user($user_id, $ver_code)
+    {
 
         $query = $this->sms_db->where('id', $user_id);
         $query = $this->sms_db->where('verification_code', $ver_code);
@@ -1074,24 +1097,23 @@ class SMS {
      * @param int $user_id User id to send verification email to
      * @todo return success indicator
      */
-    public function send_verification($user_id, $usrname=NULL, $password=NULL) {
+    public function send_verification($user_id, $usrname = NULL, $password = NULL)
+    {
 
         $query = $this->sms_db->where('id', $user_id);
         $query = $this->sms_db->get($this->config_vars['users']);
-        
+
         if ($query->num_rows() > 0) {
             $row = $query->row();
-            if($password!=NULL){
-            $pass = $password;
-          
-        }else{
-            $pass =' **********';
-           
-        }
-           $username = $row->name;
+            if ($password != NULL) {
+                $pass = $password;
+            } else {
+                $pass = ' **********';
+            }
+            $username = $row->name;
             $ver_code = random_string('alnum', 16);
-            
-            
+
+
             $data['verification_code'] = $ver_code;
 
             $this->sms_db->where('id', $user_id);
@@ -1100,32 +1122,31 @@ class SMS {
             $this->CI->email->from($this->config_vars['email'], $this->config_vars['name']);
             $this->CI->email->to($row->email);
             $this->CI->email->subject($this->CI->lang->line('sms_email_verification_subject'));
-            $dataa['row']=$row;
-            $dataa['username']= $username;
+            $dataa['row'] = $row;
+            $dataa['username'] = $username;
             $dataa['password'] = $pass;
             $dataa['ver_code'] = $ver_code;
             $dataa['link'] = site_url() . $this->config_vars['verification_link'] . $user_id . '/' . $ver_code;
             $body = $this->CI->load->view("email/verification", $dataa, TRUE);
             $this->CI->email->message($body);
-            if($this->CI->email->send()){
-                if($this->config_vars['register_user_data_log']==TRUE){
-                    $write = 'username:' . $row->name . " Password: " . $password." user_id: ".$row->id." Verification Code: ".$ver_code; // delete on live 
+            if ($this->CI->email->send()) {
+                if ($this->config_vars['register_user_data_log'] == TRUE) {
+                    $write = 'username:' . $row->name . " Password: " . $password . " user_id: " . $row->id . " Verification Code: " . $ver_code; // delete on live 
 
-             write_file('./data/userlog/'.$row->name.'_register_log.txt', $write); //delete on live
-            
+                    write_file('./data/userlog/' . $row->name . '_register_log.txt', $write); //delete on live
+
                 }
-                 
-                return TRUE;
-            }else{
-                if($this->config_vars['register_user_data_log']==TRUE){
-                    $write = 'username:' . $row->name . " Password: " . $password." user_id: ".$row->id." Verification Code: ".$ver_code; // delete on live 
 
-             write_file('./data/userlog/'.$row->name.'_register_log.txt', $write); //delete on live
-            
+                return TRUE;
+            } else {
+                if ($this->config_vars['register_user_data_log'] == TRUE) {
+                    $write = 'username:' . $row->name . " Password: " . $password . " user_id: " . $row->id . " Verification Code: " . $ver_code; // delete on live 
+
+                    write_file('./data/userlog/' . $row->name . '_register_log.txt', $write); //delete on live
+
                 }
                 return FALSE;
             }
-           
         }
     }
 
@@ -1136,7 +1157,8 @@ class SMS {
      * @param int $user_id User id to delete
      * @return bool Delete fails/succeeds
      */
-    public function delete_user($user_id) {
+    public function delete_user($user_id)
+    {
 
         // delete from perm_to_user
         $this->sms_db->where('user_id', $user_id);
@@ -1162,7 +1184,8 @@ class SMS {
      * @param int $user_id User id to ban
      * @return bool Ban fails/succeeds
      */
-    public function ban_user($user_id) {
+    public function ban_user($user_id)
+    {
 
         $data = array(
             'banned' => 1,
@@ -1182,7 +1205,8 @@ class SMS {
      * @param int $user_id User id to activate
      * @return bool Activation fails/succeeds
      */
-    public function unban_user($user_id) {
+    public function unban_user($user_id)
+    {
 
         $data = array(
             'banned' => 0
@@ -1200,7 +1224,8 @@ class SMS {
      * @param int $user_id User id to check
      * @return bool False if banned, True if not
      */
-    public function is_banned($user_id) {
+    public function is_banned($user_id)
+    {
 
         $query = $this->sms_db->where('id', $user_id);
         $query = $this->sms_db->where('banned', 1);
@@ -1220,7 +1245,8 @@ class SMS {
      *
      * @return bool
      */
-    public function user_exist_by_name($name) {
+    public function user_exist_by_name($name)
+    {
         $query = $this->sms_db->where('name', $name);
 
         $query = $this->sms_db->get($this->config_vars['users']);
@@ -1238,7 +1264,8 @@ class SMS {
      *
      * @return bool
      */
-    public function user_exist_by_email($user_email) {
+    public function user_exist_by_email($user_email)
+    {
         $query = $this->sms_db->where('email', $user_email);
 
         $query = $this->sms_db->get($this->config_vars['users']);
@@ -1255,7 +1282,8 @@ class SMS {
      * @param string|bool $email Email address for user
      * @return int User id
      */
-    public function get_user_id($email = FALSE) {
+    public function get_user_id($email = FALSE)
+    {
 
         if (!$email) {
             $query = $this->sms_db->where('id', $this->CI->session->userdata('id'));
@@ -1270,7 +1298,6 @@ class SMS {
             return FALSE;
         }
         return $query->row()->id;
-        
     }
 
     /**
@@ -1279,7 +1306,8 @@ class SMS {
      * @param int|bool $user_id User id to get or FALSE for current user
      * @return array Groups
      */
-    public function get_user_groups($user_id = FALSE) {
+    public function get_user_groups($user_id = FALSE)
+    {
 
         if ($user_id == FALSE) {
             $user_id = $this->CI->session->userdata('id');
@@ -1300,7 +1328,8 @@ class SMS {
      * @param int|bool $user_id User id to update or FALSE for current user
      * @return bool Update fails/succeeds
      */
-    public function update_activity($user_id = FALSE) {
+    public function update_activity($user_id = FALSE)
+    {
 
         if ($user_id == FALSE)
             $user_id = $this->CI->session->userdata('id');
@@ -1324,7 +1353,8 @@ class SMS {
      * @param $userid
      * @return string Hashed password
      */
-    function hash_password($pass, $userid) {
+    function hash_password($pass, $userid)
+    {
 
         $salt = md5($userid);
         return hash($this->config_vars['hash'], $salt . $pass);
@@ -1341,7 +1371,8 @@ class SMS {
      * @param string $definition Description of the group
      * @return int|bool Group id or FALSE on fail
      */
-    public function create_group($group_name, $definition = '') {
+    public function create_group($group_name, $definition = '')
+    {
 
         $query = $this->sms_db->get_where($this->config_vars['groups'], array('name' => $group_name));
 
@@ -1367,7 +1398,8 @@ class SMS {
      * @param string $group_name New group name
      * @return bool Update success/failure
      */
-    public function update_group($group_par, $group_name = FALSE, $definition = FALSE) {
+    public function update_group($group_par, $group_name = FALSE, $definition = FALSE)
+    {
 
         $group_id = $this->get_group_id($group_par);
 
@@ -1391,7 +1423,8 @@ class SMS {
      * @param int $group_id User id to delete
      * @return bool Delete success/failure
      */
-    public function delete_group($group_par) {
+    public function delete_group($group_par)
+    {
 
         $group_id = $this->get_group_id($group_par);
 
@@ -1427,7 +1460,8 @@ class SMS {
      * @param int|string $group_par Group id or name to add user to
      * @return bool Add success/failure
      */
-    public function add_member($user_id, $group_par) {
+    public function add_member($user_id, $group_par)
+    {
 
         $group_id = $this->get_group_id($group_par);
 
@@ -1461,7 +1495,8 @@ class SMS {
      * @param int|string $group_par Group id or name to remove user from
      * @return bool Remove success/failure
      */
-    public function remove_member($user_id, $group_par) {
+    public function remove_member($user_id, $group_par)
+    {
 
         $group_par = $this->get_group_id($group_par);
         $this->sms_db->where('user_id', $user_id);
@@ -1476,7 +1511,8 @@ class SMS {
      * @param int|string $group_par Group id or name to add user to
      * @return bool Add success/failure
      */
-    public function add_subgroup($group_par, $subgroup_par) {
+    public function add_subgroup($group_par, $subgroup_par)
+    {
 
         $group_id = $this->get_group_id($group_par);
         $subgroup_id = $this->get_group_id($subgroup_par);
@@ -1514,7 +1550,8 @@ class SMS {
      * @param int|string $subgroup_par Sub-Group id or name to remove
      * @return bool Remove success/failure
      */
-    public function remove_subgroup($group_par, $subgroup_par) {
+    public function remove_subgroup($group_par, $subgroup_par)
+    {
 
         $group_par = $this->get_group_id($group_par);
         $subgroup_par = $this->get_group_id($subgroup_par);
@@ -1530,7 +1567,8 @@ class SMS {
      * @param int $user_id User id to remove from all groups
      * @return bool Remove success/failure
      */
-    public function remove_member_from_all($user_id) {
+    public function remove_member_from_all($user_id)
+    {
 
         $this->sms_db->where('user_id', $user_id);
         return $this->sms_db->delete($this->config_vars['user_to_group']);
@@ -1544,7 +1582,8 @@ class SMS {
      * @param int|bool $user_id User id, if not given current user
      * @return bool
      */
-    public function is_member($group_par, $user_id = FALSE) {
+    public function is_member($group_par, $user_id = FALSE)
+    {
 
         // if user_id FALSE (not given), current user
         if (!$user_id) {
@@ -1573,7 +1612,8 @@ class SMS {
      * @param int $user_id User id to check, if it is not given checks current user
      * @return bool
      */
-    public function is_admin($user_id = FALSE) {
+    public function is_admin($user_id = FALSE)
+    {
 
         return $this->is_member($this->config_vars['admin_group'], $user_id);
     }
@@ -1584,7 +1624,8 @@ class SMS {
      * List all groups
      * @return object Array of groups
      */
-    public function list_groups() {
+    public function list_groups()
+    {
 
         $query = $this->sms_db->get($this->config_vars['groups']);
         return $query->result();
@@ -1597,7 +1638,8 @@ class SMS {
      * @param int $group_id Group id to get
      * @return string Group name
      */
-    public function get_group_name($group_id) {
+    public function get_group_name($group_id)
+    {
 
         $query = $this->sms_db->where('id', $group_id);
         $query = $this->sms_db->get($this->config_vars['groups']);
@@ -1616,7 +1658,8 @@ class SMS {
      * @param int|string $group_par Group id or name to get
      * @return int Group id
      */
-    public function get_group_id($group_par) {
+    public function get_group_id($group_par)
+    {
 
         if (is_numeric($group_par)) {
             return $group_par;
@@ -1638,7 +1681,8 @@ class SMS {
      * @param int|string $group_par Group id or name to get
      * @return object Array of subgroup_id's
      */
-    public function get_subgroups($group_par) {
+    public function get_subgroups($group_par)
+    {
 
         $group_id = $this->get_group_id($group_par);
 
@@ -1663,7 +1707,8 @@ class SMS {
      * @param string $definition Permission description
      * @return int|bool Permission id or FALSE on fail
      */
-    public function create_perm($perm_name, $definition = '') {
+    public function create_perm($perm_name, $definition = '')
+    {
 
         $query = $this->sms_db->get_where($this->config_vars['perms'], array('name' => $perm_name));
 
@@ -1689,7 +1734,8 @@ class SMS {
      * @param string $definition Permission description
      * @return bool Update success/failure
      */
-    public function update_perm($perm_par, $perm_name = FALSE, $definition = FALSE) {
+    public function update_perm($perm_par, $perm_name = FALSE, $definition = FALSE)
+    {
 
         $perm_id = $this->get_perm_id($perm_par);
 
@@ -1710,7 +1756,8 @@ class SMS {
      * @param int|string $perm_par Permission id or perm name to delete
      * @return bool Delete success/failure
      */
-    public function delete_perm($perm_par) {
+    public function delete_perm($perm_par)
+    {
 
         $perm_id = $this->get_perm_id($perm_par);
 
@@ -1735,7 +1782,8 @@ class SMS {
      * @param int|bool $user_id User id to check, or if FALSE checks current user
      * @return bool
      */
-    public function is_allowed($perm_par, $user_id = FALSE) {
+    public function is_allowed($perm_par, $user_id = FALSE)
+    {
 
         if ($user_id == FALSE) {
             $user_id = $this->CI->session->userdata('id');
@@ -1775,7 +1823,8 @@ class SMS {
      * @param int|string|bool $group_par Group id or name to check, or if FALSE checks all user groups
      * @return bool
      */
-    public function is_group_allowed($perm_par, $group_par = FALSE) {
+    public function is_group_allowed($perm_par, $group_par = FALSE)
+    {
 
         $perm_id = $this->get_perm_id($perm_par);
 
@@ -1806,8 +1855,10 @@ class SMS {
         // checks current user's all groups
         else {
             // if public is allowed or he is admin
-            if ($this->is_admin($this->CI->session->userdata('id')) OR
-                    $this->is_group_allowed($perm_id, $this->config_vars['public_group'])) {
+            if (
+                $this->is_admin($this->CI->session->userdata('id')) or
+                $this->is_group_allowed($perm_id, $this->config_vars['public_group'])
+            ) {
                 return TRUE;
             }
 
@@ -1834,7 +1885,8 @@ class SMS {
      * @param int $perm_par Permission id or name to allow
      * @return bool Allow success/failure
      */
-    public function allow_user($user_id, $perm_par) {
+    public function allow_user($user_id, $perm_par)
+    {
 
         $perm_id = $this->get_perm_id($perm_par);
 
@@ -1867,7 +1919,8 @@ class SMS {
      * @param int $perm_par Permission id or name to deny
      * @return bool Deny success/failure
      */
-    public function deny_user($user_id, $perm_par) {
+    public function deny_user($user_id, $perm_par)
+    {
 
         $perm_id = $this->get_perm_id($perm_par);
 
@@ -1885,7 +1938,8 @@ class SMS {
      * @param int $perm_par Permission id or name to allow
      * @return bool Allow success/failure
      */
-    public function allow_group($group_par, $perm_par) {
+    public function allow_group($group_par, $perm_par)
+    {
 
         $perm_id = $this->get_perm_id($perm_par);
 
@@ -1924,7 +1978,8 @@ class SMS {
      * @param int $perm_par Permission id or name to deny
      * @return bool Deny success/failure
      */
-    public function deny_group($group_par, $perm_par) {
+    public function deny_group($group_par, $perm_par)
+    {
 
         $perm_id = $this->get_perm_id($perm_par);
         $group_id = $this->get_group_id($group_par);
@@ -1941,7 +1996,8 @@ class SMS {
      * List all permissions
      * @return object Array of permissions
      */
-    public function list_perms() {
+    public function list_perms()
+    {
 
         $query = $this->sms_db->get($this->config_vars['perms']);
         return $query->result();
@@ -1954,7 +2010,8 @@ class SMS {
      * @param int|string $perm_par Permission id or name to get
      * @return int Permission id or NULL if perm does not exist
      */
-    public function get_perm_id($perm_par) {
+    public function get_perm_id($perm_par)
+    {
 
         if (is_numeric($perm_par)) {
             return $perm_par;
@@ -1983,9 +2040,10 @@ class SMS {
      * @param string $message Message body/content
      * @return bool Send successful/failed
      */
-    public function send_pm($sender_id, $receiver_id, $title, $message) {
+    public function send_pm($sender_id, $receiver_id, $title, $message)
+    {
 
-        if (!is_numeric($receiver_id) OR $sender_id == $receiver_id) {
+        if (!is_numeric($receiver_id) or $sender_id == $receiver_id) {
             $this->error($this->CI->lang->line('sms_error_self_pm'));
             return FALSE;
         }
@@ -2034,7 +2092,8 @@ class SMS {
      * @param int $receiver_id User id of private message receiver
      * @return object Array of private messages
      */
-    public function list_pms($limit = 5, $offset = 0, $receiver_id = FALSE, $sender_id = FALSE) {
+    public function list_pms($limit = 5, $offset = 0, $receiver_id = FALSE, $sender_id = FALSE)
+    {
 
         $query = '';
 
@@ -2059,7 +2118,8 @@ class SMS {
      * @param bool $set_as_read Whether or not to mark message as read
      * @return object Private message
      */
-    public function get_pm($pm_id, $set_as_read = TRUE) {
+    public function get_pm($pm_id, $set_as_read = TRUE)
+    {
 
         $query = $this->sms_db->where('id', $pm_id);
         $query = $this->sms_db->get($this->config_vars['pms']);
@@ -2069,7 +2129,7 @@ class SMS {
             return FALSE;
         }
 
-        if ($set_as_read){
+        if ($set_as_read) {
             $this->set_as_read_pm($pm_id);
         }
         return $query->row();
@@ -2082,7 +2142,8 @@ class SMS {
      * @param int $pm_id Private message id to be deleted
      * @return bool Delete success/failure
      */
-    public function delete_pm($pm_id) {
+    public function delete_pm($pm_id)
+    {
 
         return $this->sms_db->delete($this->config_vars['pms'], array('id' => $pm_id));
     }
@@ -2094,7 +2155,8 @@ class SMS {
      * @param int|bool $receiver_id User id for message receiver, if FALSE returns for current user
      * @return int Number of unread messages
      */
-    public function count_unread_pms($receiver_id = FALSE) {
+    public function count_unread_pms($receiver_id = FALSE)
+    {
 
         if (!$receiver_id) {
             $receiver_id = $this->CI->session->userdata('id');
@@ -2113,7 +2175,8 @@ class SMS {
      * Set private message as read
      * @param int $pm_id Private message id to mark as read
      */
-    public function set_as_read_pm($pm_id) {
+    public function set_as_read_pm($pm_id)
+    {
 
         $data = array(
             'date_read' => date('Y-m-d H:i:s')
@@ -2132,7 +2195,8 @@ class SMS {
      * @param string $message Message to add to array
      * @param boolean $flashdata if TRUE add $message to CI flashdata (deflault: FALSE)
      */
-    public function error($message = '', $flashdata = FALSE) {
+    public function error($message = '', $flashdata = FALSE)
+    {
         $this->errors[] = $message;
         if ($flashdata) {
             $this->flash_errors[] = $message;
@@ -2150,7 +2214,8 @@ class SMS {
      * @see http://ellislab.com/codeigniter/user-guide/libraries/sessions.html
      * @param boolean $include_non_flash TRUE if it should stow basic errors as flashdata (default = FALSE)
      */
-    public function keep_errors($include_non_flash = FALSE) {
+    public function keep_errors($include_non_flash = FALSE)
+    {
         // NOTE: keep_flashdata() overwrites anything new that has been added to flashdata so we are manually reviving flash data
         // $this->CI->session->keep_flashdata('errors');
 
@@ -2167,7 +2232,8 @@ class SMS {
      * Return array of errors
      * @return array Array of messages, empty array if no errors
      */
-    public function get_errors_array() {
+    public function get_errors_array()
+    {
         return $this->errors;
     }
 
@@ -2177,7 +2243,8 @@ class SMS {
      * Prints string of errors separated by delimiter
      * @param string $divider Separator for errors
      */
-    public function print_errors($divider = '<br />') {
+    public function print_errors($divider = '<br />')
+    {
         $msg = '';
         $msg_num = count($this->errors);
         $i = 1;
@@ -2199,7 +2266,8 @@ class SMS {
      * 
      * Removes errors from error list and clears all associated flashdata
      */
-    public function clear_errors() {
+    public function clear_errors()
+    {
         $this->errors = array();
         $this->CI->session->set_flashdata('errors', $this->errors);
     }
@@ -2212,7 +2280,8 @@ class SMS {
      * @param string $message Message to add to infos array
      * @param boolean $flashdata if TRUE add $message to CI flashdata (deflault: FALSE)
      */
-    public function info($message = '', $flashdata = FALSE) {
+    public function info($message = '', $flashdata = FALSE)
+    {
         $this->infos[] = $message;
         if ($flashdata) {
             $this->flash_infos[] = $message;
@@ -2230,7 +2299,8 @@ class SMS {
      * @see http://ellislab.com/codeigniter/user-guide/libraries/sessions.html
      * @param boolean $include_non_flash TRUE if it should stow basic infos as flashdata (default = FALSE)
      */
-    public function keep_infos($include_non_flash = FALSE) {
+    public function keep_infos($include_non_flash = FALSE)
+    {
         // NOTE: keep_flashdata() overwrites anything new that has been added to flashdata so we are manually reviving flash data
         // $this->CI->session->keep_flashdata('infos');
 
@@ -2247,7 +2317,8 @@ class SMS {
      * Return array of infos
      * @return array Array of messages, empty array if no errors
      */
-    public function get_infos_array() {
+    public function get_infos_array()
+    {
         return $this->infos;
     }
 
@@ -2258,7 +2329,8 @@ class SMS {
      * @param string $divider Separator for info
      *
      */
-    public function print_infos($divider = '<br />') {
+    public function print_infos($divider = '<br />')
+    {
 
         $msg = '';
         $msg_num = count($this->infos);
@@ -2279,7 +2351,8 @@ class SMS {
      * 
      * Removes info messages from info list and clears all associated flashdata
      */
-    public function clear_infos() {
+    public function clear_infos()
+    {
         $this->infos = array();
         $this->CI->session->set_flashdata('infos', $this->infos);
     }
@@ -2297,7 +2370,8 @@ class SMS {
      * @param int $user_id ; if not given current user
      * @return bool
      */
-    public function set_user_var($key, $value, $user_id = FALSE) {
+    public function set_user_var($key, $value, $user_id = FALSE)
+    {
 
         if (!$user_id) {
             $user_id = $this->CI->session->userdata('id');
@@ -2342,7 +2416,8 @@ class SMS {
      * @param int $user_id ; if not given current user
      * @return bool
      */
-    public function unset_user_var($key, $user_id = FALSE) {
+    public function unset_user_var($key, $user_id = FALSE)
+    {
 
         if (!$user_id) {
             $user_id = $this->CI->session->userdata('id');
@@ -2367,7 +2442,8 @@ class SMS {
      * @param int $user_id ; if not given current user
      * @return bool|string , FALSE if var is not set, the value of var if set
      */
-    public function get_user_var($key, $user_id = FALSE) {
+    public function get_user_var($key, $user_id = FALSE)
+    {
 
         if (!$user_id) {
             $user_id = $this->CI->session->userdata('id');
@@ -2399,7 +2475,8 @@ class SMS {
      * @param int $user_id ; if not given current user
      * @return bool|array , FALSE if var is not set, the value of var if set
      */
-    public function get_user_vars($user_id = FALSE) {
+    public function get_user_vars($user_id = FALSE)
+    {
 
         if (!$user_id) {
             $user_id = $this->CI->session->userdata('id');
@@ -2425,7 +2502,8 @@ class SMS {
      * @param int $user_id ; if not given current user
      * @return bool|array, FALSE if no user vars, otherwise array
      */
-    public function list_user_var_keys($user_id = FALSE) {
+    public function list_user_var_keys($user_id = FALSE)
+    {
 
         if (!$user_id) {
             $user_id = $this->CI->session->userdata('id');
@@ -2461,7 +2539,8 @@ class SMS {
      * @param string $value
      * @return bool
      */
-    public function set_system_var($key, $value) {
+    public function set_system_var($key, $value)
+    {
 
         // if var not set, set
         if ($this->get_system_var($key) === FALSE) {
@@ -2492,7 +2571,8 @@ class SMS {
      * @param string $key
      * @return bool
      */
-    public function unset_system_var($key) {
+    public function unset_system_var($key)
+    {
 
         $this->sms_db->where('data_key', $key);
 
@@ -2506,7 +2586,8 @@ class SMS {
      * @param string $key
      * @return bool|string , FALSE if var is not set, the value of var if set
      */
-    public function get_system_var($key) {
+    public function get_system_var($key)
+    {
 
         $query = $this->sms_db->where('data_key', $key);
 
@@ -2527,7 +2608,8 @@ class SMS {
      * Return array of variable keys or FALSE
      * @return bool|array , FALSE if var is not set, the value of var if set
      */
-    public function list_system_var_keys() {
+    public function list_system_var_keys()
+    {
         $query = $this->sms_db->select('data_key');
         $query = $this->sms_db->get($this->config_vars['system_variables']);
         // if variable not set
@@ -2538,7 +2620,8 @@ class SMS {
         }
     }
 
-    public function generate_recaptcha_field() {
+    public function generate_recaptcha_field()
+    {
         $content = '';
         if ($this->config_vars['ddos_protection'] && $this->config_vars['recaptcha_active']) {
             if (($this->config_vars['use_cookies'] == TRUE && $this->CI->input->cookie('reCAPTCHA', TRUE) == 'true') || ($this->config_vars['use_cookies'] == FALSE && $this->CI->session->tempdata('reCAPTCHA') == 'true')) {
@@ -2550,7 +2633,8 @@ class SMS {
         return $content;
     }
 
-    public function update_user_totp_secret($user_id = FALSE, $secret) {
+    public function update_user_totp_secret($user_id = FALSE, $secret)
+    {
 
         if ($user_id == FALSE)
             $user_id = $this->CI->session->userdata('id');
@@ -2561,7 +2645,8 @@ class SMS {
         return $this->sms_db->update($this->config_vars['users'], $data);
     }
 
-    public function generate_unique_totp_secret() {
+    public function generate_unique_totp_secret()
+    {
         $ga = new PHPGangsta_GoogleAuthenticator();
         $stop = false;
         while (!$stop) {
@@ -2575,20 +2660,21 @@ class SMS {
         }
     }
 
-    public function generate_totp_qrcode($secret) {
+    public function generate_totp_qrcode($secret)
+    {
         $ga = new PHPGangsta_GoogleAuthenticator();
         return $ga->getQRCodeGoogleUrl($this->config_vars['name'], $secret);
     }
-    
-      public function list_month(){
-        
+
+    public function list_month()
+    {
+
         $query = $this->sms_db->get('sms_account_month');
-        if($query->num_rows() > 0){
+        if ($query->num_rows() > 0) {
             return $query->result();
         }
         return false;
     }
-
 }
 
 // end class
