@@ -113,4 +113,43 @@ echo "enter some valid information";
 }
 return;
 }
+
+
+function studentlogin()
+{
+	global $con;
+	if ($_SERVER['REQUEST_METHOD'] == "POST") {
+		//something was posted
+		$username = $_POST['username'];
+		$user_id = $_POST['user_id'];
+
+		if (!empty($username) && !empty($password) && !is_numeric($username)) {
+
+			//save to database
+			$query = "SELECT * FROM student WHERE username = '$username' limit 1 ";
+
+			$result = mysqli_query($con, $query);
+
+			if ($result) {
+				if ($result && mysqli_num_rows($result) > 0) {
+					$user_data = mysqli_fetch_assoc($result);
+
+					if ($user_data['password'] === $password) {
+						$_SESSION['user_id'] = $user_data['user_id'];
+
+						header("location: index.php");
+					}
+				}
+			}
+
+			echo "Wrong username and password!";
+		} else {
+			echo "please enter some valid information!";
+		}
+	}
+	return;
+}
+
+
+
 ?>
