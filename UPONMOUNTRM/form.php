@@ -1,6 +1,9 @@
 <?php
 session_start();
 include("connection.php");
+include("function.php");
+
+
 ?>
 
 <head>
@@ -52,7 +55,7 @@ include("connection.php");
      <input type="radio" name="gender"> Other
     </div>
     <div class="button">
-     <input type="submit" name="Register" value="Register">
+     <button name="adduser">Register</button>
     </div>
    </div>
 

@@ -15,7 +15,12 @@ function adduser(){
    $user_id = rand(999, 999999999999);
 
    $query = "INSERT INTO user (user_id, firstname, lastname, phone, email, dateofb, color, gender) values('$user_id', '$firstname', '$phone', '$email', '$dateofb', '$color', '$gender')";
+   mysqli_query($con, $query);
+   die;
+  }else{
+   echo "enter some valid information";
   }
  }
+ return;
 }
 ?>
