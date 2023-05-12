@@ -646,7 +646,7 @@
              <option>Option four</option>
             </select>
            </div>
-          </div>
+          <!-- </div> -->
           <!-- <div class="form-group row">
            <label class="control-label col-md-3 col-sm-3 ">Select Custom</label>
            <div class="col-md-9 col-sm-9 ">
@@ -762,9 +762,9 @@
              <option>Option six</option>
             </select>
            </div>
-          </div>
+          <!-- </div> -->
 
-          <div class="control-group row">
+          <!-- <div class="control-group row">
            <label class="control-label col-md-3 col-sm-3 ">Input Tags</label>
            <div class="col-md-9 col-sm-9 ">
             <input id="tags_1" type="text" class="tags form-control" value="social, adverts, sales" />
@@ -874,10 +874,10 @@
              </label>
             </div>
            </div>
-          </div>
+          </div> -->
 
 
-          <div class="ln_solid"></div>
+          <!-- <div class="ln_solid"></div>
           <div class="form-group">
            <div class="col-md-9 col-sm-9  offset-md-3">
             <button type="button" class="btn btn-primary">Cancel</button>
@@ -888,8 +888,8 @@
 
          </form>
         </div>
-       </div>
-      <!-- </div> --> -->
+       </div> -->
+      <!-- </div> --> 
 
 
       <!-- <div class="col-md-6 col-sm-12 ">
@@ -970,7 +970,7 @@
         <!-- </div>
        </div>
       </div>
-     </div> --> -->
+     </div> --> 
 
      <!-- <div class="col-md-12 col-sm-12 ">
       <div class="x_panel">
