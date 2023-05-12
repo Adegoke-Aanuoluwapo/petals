@@ -750,7 +750,7 @@
            </div>
           </div>
           <div class="form-group row"> -->
-           <label class="control-label col-md-3 col-sm-3 ">Select Multiple</label>
+           <!-- <label class="control-label col-md-3 col-sm-3 ">Select Multiple</label>
            <div class="col-md-9 col-sm-9 ">
             <select class="select2_multiple form-control" multiple="multiple">
              <option>Choose option</option>
@@ -761,7 +761,7 @@
              <option>Option five</option>
              <option>Option six</option>
             </select>
-           </div>
+           </div> -->
           <!-- </div> -->
 
           <!-- <div class="control-group row">
