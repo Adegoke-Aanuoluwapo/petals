@@ -58,7 +58,7 @@
 
      <br />
 
-     <!-- sidebar menu -->
+     <!-- sidebar menu
      <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
       <div class="menu_section">
        <h3>General</h3>
@@ -159,7 +159,7 @@
        </ul>
       </div>
 
-     </div>
+     </div> -->
      <!-- /sidebar menu -->
 
      <!-- /menu footer buttons -->
@@ -182,7 +182,7 @@
    </div>
 
    <!-- top navigation -->
-   <div class="top_nav">
+   <!-- <div class="top_nav">
     <div class="nav_menu">
      <div class="nav toggle">
       <a id="menu_toggle"><i class="fa fa-bars"></i></a>
@@ -271,7 +271,7 @@
       </ul>
      </nav>
     </div>
-   </div>
+   </div> -->
    <!-- /top navigation -->
 
    <!-- page content -->
@@ -353,7 +353,7 @@
             </div>
            </div>
           </div>
-          <div class="item form-group">
+          <!-- <div class="item form-group">
            <label class="col-form-label col-md-3 col-sm-3 label-align">Date Of Birth <span class="required">*</span>
            </label>
            <div class="col-md-6 col-sm-6 ">
@@ -374,7 +374,7 @@
             <button class="btn btn-primary" type="reset">Reset</button>
             <button type="submit" class="btn btn-success">Submit</button>
            </div>
-          </div>
+          </div> -->
 
          </form>
         </div>
@@ -382,7 +382,7 @@
       </div>
      </div>
 
-     <div class="row">
+     <!-- <div class="row">
       <div class="col-md-6 ">
        <div class="x_panel">
         <div class="x_title">
@@ -523,7 +523,7 @@
         <div class="x_content">
 
          <!-- start form for validation -->
-         <form id="demo-form" data-parsley-validate>
+         <!-- <form id="demo-form" data-parsley-validate>
           <label for="fullname">Full Name * :</label>
           <input type="text" id="fullname" class="form-control" name="fullname" required />
 
@@ -566,17 +566,17 @@
             <br />
             <span class="btn btn-primary">Validate form</span>
 
-         </form>
+         </form> -->
          <!-- end form for validations -->
 
-        </div>
+        <!-- </div>
        </div>
 
 
       </div>
 
-      <div class="col-md-6 ">
-       <div class="x_panel">
+      <!-- <div class="col-md-6 "> -->
+       <!-- <div class="x_panel">
         <div class="x_title">
          <h2>Form Basic Elements <small>different form elements</small></h2>
          <ul class="nav navbar-right panel_toolbox">
@@ -615,8 +615,8 @@
            <div class="col-md-9 col-sm-9 ">
             <input type="text" class="form-control" readonly="readonly" placeholder="Read-Only Input">
            </div>
-          </div>
-          <div class="form-group row">
+          </div> -->
+          <!-- <div class="form-group row">
            <label class="control-label col-md-3 col-sm-3 ">Date Of Birth <span class="required">*</span>
            </label>
            <div class="col-md-9 col-sm-9 ">
@@ -635,7 +635,7 @@
             <input type="text" name="country" id="autocomplete-custom-append" class="form-control col-md-10" />
            </div>
           </div>
-          <div class="form-group row">
+          <div class="form-group row"> -->
            <label class="control-label col-md-3 col-sm-3 ">Select</label>
            <div class="col-md-9 col-sm-9 ">
             <select class="form-control">
@@ -647,7 +647,7 @@
             </select>
            </div>
           </div>
-          <div class="form-group row">
+          <!-- <div class="form-group row">
            <label class="control-label col-md-3 col-sm-3 ">Select Custom</label>
            <div class="col-md-9 col-sm-9 ">
             <select class="select2_single form-control" tabindex="-1">
@@ -749,7 +749,7 @@
             </select>
            </div>
           </div>
-          <div class="form-group row">
+          <div class="form-group row"> -->
            <label class="control-label col-md-3 col-sm-3 ">Select Multiple</label>
            <div class="col-md-9 col-sm-9 ">
             <select class="select2_multiple form-control" multiple="multiple">
@@ -889,10 +889,10 @@
          </form>
         </div>
        </div>
-      </div>
+      <!-- </div> --> -->
 
 
-      <div class="col-md-6 col-sm-12 ">
+      <!-- <div class="col-md-6 col-sm-12 ">
        <div class="x_panel">
         <div class="x_title">
          <h2>Form Buttons <small>Sessions</small></h2>
@@ -955,24 +955,24 @@
                <li><a class="dropdown-item" href="#">Separated link</a>
                </li>
               </ul>
-             </div>
+             </div> -->
              <!-- /btn-group -->
-            </div>
-            <div class="input-group">
-             <input type="text" class="form-control">
+            <!-- </div>
+            <!-- <div class="input-group"> -->
+             <!-- <input type="text" class="form-control">
              <span class="input-group-btn">
               <button type="button" class="btn btn-primary">Go!</button>
-             </span>
-            </div>
+             </span> -->
+            <!-- </div>
            </div>
           </div>
-         </form>
-        </div>
+         </form> -->
+        <!-- </div>
        </div>
       </div>
-     </div>
+     </div> --> -->
 
-     <div class="col-md-12 col-sm-12 ">
+     <!-- <div class="col-md-12 col-sm-12 ">
       <div class="x_panel">
        <div class="x_title">
         <h2>Text areas<small>Sessions</small></h2>
@@ -1263,10 +1263,10 @@
           <input type="text" id="last-name2" name="last-name" required="required" class="form-control col-md-7 ">
          </div>
         </div>
-       </form>
+       </form> --> -->
 
 
-       <h4>Vertical labels</h4>
+       <!-- <h4>Vertical labels</h4>
        <p class="font-gray-dark">
         For making labels vertical you have two options, either use the apropiate grid <b>.col-</b> class or wrap the form in the <b>form-vertical</b> class.
        </p>
@@ -1307,21 +1307,21 @@
       </div>
      </div>
     </div>
-   </div>
+   </div> -->
    <!-- /page content -->
 
    <!-- footer content -->
-   <footer>
+   <!-- <footer>
     <div class="pull-right">
      Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
     </div>
     <div class="clearfix"></div>
-   </footer>
+   </footer> -->
    <!-- /footer content -->
-  </div>
- </div>
+  <!-- </div>
+ </div> -->
 
- <!-- jQuery -->
+ <!-- jQuery
  <script src="../vendors/jquery/dist/jquery.min.js"></script>
  <!-- Bootstrap -->
  <script src="../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -1355,7 +1355,7 @@
  <!-- starrr -->
  <script src="../vendors/starrr/dist/starrr.js"></script>
  <!-- Custom Theme Scripts -->
- <script src="../build/js/custom.min.js"></script>
+ <script src="../build/js/custom.min.js"></script> -->
 
 </body>
 
