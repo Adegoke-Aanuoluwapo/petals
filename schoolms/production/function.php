@@ -84,34 +84,35 @@ function loginUser()
 	return;
 }
 
-?>
-<?php
-function addstudent(){
-global $con;
 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-	$user_id = $_POST["user_id"];
-$surname = $_POST["surname"];
-$firstname = $_POST["firstname"];
-$dob = $_POST["dob"];
-$sex = $_POST["sex"];
-$class = $_POST["class"];
 
-if(!empty($username) && !empty($password) && !is_numeric($username)) {
-$user_id = rand(999, 999999999999);
+function addstudent()
+{
+	global $con;
 
-$query = "INSERT INTO register (user_id, firstname, lastname, email, username, password) values
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+		$user_id = $_POST["user_id"];
+		$surname = $_POST["surname"];
+		$firstname = $_POST["firstname"];
+		$dob = $_POST["dob"];
+		$sex = $_POST["sex"];
+		$class = $_POST["class"];
+
+		if (!empty($username) && !empty($password) && !is_numeric($username)) {
+			$user_id = rand(999, 999999999999);
+
+			$query = "INSERT INTO student (user_id, surname, firstname, dob, sex, class ) values
 ('$user_id', '$surname', '$firstname', '$dob', '$sex', '$class')";
 
-mysqli_query($con, $query);
+			mysqli_query($con, $query);
 
-header('location:signup.php#signin');
-die;
-}else{
-echo "enter some valid information";
-}
-}
-return;
+			header('location:signup.php#signin');
+			die;
+		} else {
+			echo "enter some valid information";
+		}
+	}
+	return;
 }
 
 
@@ -123,7 +124,7 @@ function studentlogin()
 		$username = $_POST['username'];
 		$user_id = $_POST['user_id'];
 
-		if (!empty($username) && !empty($password) && !is_numeric($username)) {
+		if (!empty($username) && !empty($user_id) && !is_numeric($username)) {
 
 			//save to database
 			$query = "SELECT * FROM student WHERE username = '$username' limit 1 ";
@@ -134,7 +135,7 @@ function studentlogin()
 				if ($result && mysqli_num_rows($result) > 0) {
 					$user_data = mysqli_fetch_assoc($result);
 
-					if ($user_data['password'] === $password) {
+					if ($user_data['username'] === $username) {
 						$_SESSION['user_id'] = $user_data['user_id'];
 
 						header("location: index.php");
@@ -149,7 +150,3 @@ function studentlogin()
 	}
 	return;
 }
-
-
-
-?>
