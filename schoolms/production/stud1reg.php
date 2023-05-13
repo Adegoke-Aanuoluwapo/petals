@@ -1,3 +1,19 @@
+<?php
+session_start();
+include("connection.php");
+include("function.php");
+
+if (isset($_POST['add'])) {
+   addUser();
+}
+
+if (isset($_POST['login'])) {
+   loginUser();
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +24,7 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-   <title>Gentelella Alela! | </title>
+   <title>Gentelella | </title>
 
    <!-- Bootstrap -->
    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -321,28 +337,43 @@
                            <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
                               <div class="item form-group">
-                                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">First Name <span class="required">*</span>
+                                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="surname">Surname <span class="required">*</span>
                                  </label>
                                  <div class="col-md-6 col-sm-6 ">
                                     <input type="text" id="first-name" required="required" class="form-control ">
                                  </div>
                               </div>
                               <div class="item form-group">
-                                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Last Name <span class="required">*</span>
+                                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="firstname">First Name <span class="required">*</span>
                                  </label>
                                  <div class="col-md-6 col-sm-6 ">
-                                    <input type="text" id="last-name" name="last-name" required="required" class="form-control">
+                                    <input type="text" id="last-name" name="first-name" required="required" class="form-control">
                                  </div>
                               </div>
                               <div class="item form-group">
-                                 <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Middle Name / Initial</label>
+                                 <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Date of Birth</label>
                                  <div class="col-md-6 col-sm-6 ">
-                                    <input id="middle-name" class="form-control" type="text" name="middle-name">
+                                    <input id="middle-name" class="form-control" type="date" name="dob">
                                  </div>
                               </div>
                               <div class="item form-group">
                                  <label class="col-form-label col-md-3 col-sm-3 label-align">Gender</label>
-                                 <select>
+                                 <div class="col-md-6 col-sm-6 ">
+                                    <select id="middle-name" class="form-control" required name="sex">
+                                       <option value="">Choose..</option>
+                                       <option value="press">Male</option>
+                                       <option value="net">Female</option>
+                                       <option value="mouth">Others</option>
+                                    </select>
+                                 </div>
+                                 <div class="item form-group">
+                                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="firstname">Class <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 ">
+                                       <input type="text" id="last-name" name="class" required="required" class="form-control">
+                                    </div>
+                                 </div>
+                                 <!-- <select>
                                     <option>Male</option>
                                     <option>Female</option>
                                  </select>
@@ -353,11 +384,11 @@
                                        </label>
                                        <label class="btn btn-primary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
                                           <input type="radio" name="gender" value="female" class="join-btn"> Female
-                                       </label>
-                                    </div>
-                                 </div>
+                                       </label> -->
                               </div>
-                              <!-- <div class="item form-group">
+                        </div>
+                     </div>
+                     <!-- <div class="item form-group">
            <label class="col-form-label col-md-3 col-sm-3 label-align">Date Of Birth <span class="required">*</span>
            </label>
            <div class="col-md-6 col-sm-6 ">
@@ -370,23 +401,23 @@
              }
             </script>
            </div>
-          </div>
-          <div class="ln_solid"></div>
-          <div class="item form-group">
-           <div class="col-md-6 col-sm-6 offset-md-3">
-            <button class="btn btn-primary" type="button">Cancel</button>
-            <button class="btn btn-primary" type="reset">Reset</button>
-            <button type="submit" class="btn btn-success">Submit</button>
-           </div>
-          </div> -->
-
-                           </form>
+          </div>-->
+                     <div class="ln_solid"></div>
+                     <div class="item form-group">
+                        <div class="col-md-6 col-sm-6 offset-md-3">
+                           <button class="btn btn-primary" type="button">Cancel</button>
+                           <button class="btn btn-primary" type="reset">Reset</button>
+                           <button type="submit" class="btn btn-success">Submit</button>
                         </div>
                      </div>
+
+                     </form>
                   </div>
                </div>
+            </div>
+         </div>
 
-               <!-- <div class="row">
+         <!-- <div class="row">
       <div class="col-md-6 ">
        <div class="x_panel">
         <div class="x_title">
@@ -527,7 +558,7 @@
         <div class="x_content">
 
           start form for validation -->
-               <!-- <form id="demo-form" data-parsley-validate>
+         <!-- <form id="demo-form" data-parsley-validate>
           <label for="fullname">Full Name * :</label>
           <input type="text" id="fullname" class="form-control" name="fullname" required />
 
@@ -571,16 +602,16 @@
             <span class="btn btn-primary">Validate form</span>
 
          </form> -->
-               <!-- end form for validations -->
+         <!-- end form for validations -->
 
-               <!-- </div>
+         <!-- </div>
        </div>
 
 
       </div>
 
        <div class="col-md-6 "> -->
-               <!-- <div class="x_panel">
+         <!-- <div class="x_panel">
         <div class="x_title">
          <h2>Form Basic Elements <small>different form elements</small></h2>
          <ul class="nav navbar-right panel_toolbox">
@@ -620,7 +651,7 @@
             <input type="text" class="form-control" readonly="readonly" placeholder="Read-Only Input">
            </div>
           </div> -->
-               <!-- <div class="form-group row">
+         <!-- <div class="form-group row">
            <label class="control-label col-md-3 col-sm-3 ">Date Of Birth <span class="required">*</span>
            </label>
            <div class="col-md-9 col-sm-9 ">
@@ -640,18 +671,18 @@
            </div>
           </div>
           <div class="form-group row"> -->
-               <label class="control-label col-md-3 col-sm-3 ">Select</label>
-               <div class="col-md-9 col-sm-9 ">
-                  <select class="form-control">
-                     <option>Choose option</option>
-                     <option>Option one</option>
-                     <option>Option two</option>
-                     <option>Option three</option>
-                     <option>Option four</option>
-                  </select>
-               </div>
-               <!-- </div> -->
-               <!-- <div class="form-group row">
+         <label class="control-label col-md-3 col-sm-3 ">Select</label>
+         <div class="col-md-9 col-sm-9 ">
+            <select class="form-control">
+               <option>Choose option</option>
+               <option>Option one</option>
+               <option>Option two</option>
+               <option>Option three</option>
+               <option>Option four</option>
+            </select>
+         </div>
+         <!-- </div> -->
+         <!-- <div class="form-group row">
            <label class="control-label col-md-3 col-sm-3 ">Select Custom</label>
            <div class="col-md-9 col-sm-9 ">
             <select class="select2_single form-control" tabindex="-1">
@@ -754,7 +785,7 @@
            </div>
           </div>
           <div class="form-group row"> -->
-               <!-- <label class="control-label col-md-3 col-sm-3 ">Select Multiple</label>
+         <!-- <label class="control-label col-md-3 col-sm-3 ">Select Multiple</label>
            <div class="col-md-9 col-sm-9 ">
             <select class="select2_multiple form-control" multiple="multiple">
              <option>Choose option</option>
@@ -766,9 +797,9 @@
              <option>Option six</option>
             </select>
            </div> -->
-               <!-- </div> -->
+         <!-- </div> -->
 
-               <!-- <div class="control-group row">
+         <!-- <div class="control-group row">
            <label class="control-label col-md-3 col-sm-3 ">Input Tags</label>
            <div class="col-md-9 col-sm-9 ">
             <input id="tags_1" type="text" class="tags form-control" value="social, adverts, sales" />
@@ -881,7 +912,7 @@
           </div> -->
 
 
-               <!-- <div class="ln_solid"></div>
+         <!-- <div class="ln_solid"></div>
           <div class="form-group">
            <div class="col-md-9 col-sm-9  offset-md-3">
             <button type="button" class="btn btn-primary">Cancel</button>
@@ -893,10 +924,10 @@
          </form>
         </div>
        </div> -->
-               <!-- </div> -->
+         <!-- </div> -->
 
 
-               <!-- <div class="col-md-6 col-sm-12 ">
+         <!-- <div class="col-md-6 col-sm-12 ">
        <div class="x_panel">
         <div class="x_title">
          <h2>Form Buttons <small>Sessions</small></h2>
@@ -960,23 +991,23 @@
                </li>
               </ul>
              </div> -->
-               <!-- /btn-group -->
-               <!-- </div>
+         <!-- /btn-group -->
+         <!-- </div>
             <!-- <div class="input-group"> -->
-               <!-- <input type="text" class="form-control">
+         <!-- <input type="text" class="form-control">
              <span class="input-group-btn">
               <button type="button" class="btn btn-primary">Go!</button>
              </span> -->
-               <!-- </div>
+         <!-- </div>
            </div>
           </div>
          </form> -->
-               <!-- </div>
+         <!-- </div>
        </div>
       </div>
      </div> -->
 
-               <!-- <div class="col-md-12 col-sm-12 ">
+         <!-- <div class="col-md-12 col-sm-12 ">
       <div class="x_panel">
        <div class="x_title">
         <h2>Text areas<small>Sessions</small></h2>
@@ -1270,7 +1301,7 @@
        </form> --> -->
 
 
-               <!-- <h4>Vertical labels</h4>
+         <!-- <h4>Vertical labels</h4>
        <p class="font-gray-dark">
         For making labels vertical you have two options, either use the apropiate grid <b>.col-</b> class or wrap the form in the <b>form-vertical</b> class.
        </p>
@@ -1312,54 +1343,54 @@
      </div>
     </div>
    </div> -->
-               <!-- /page content -->
+         <!-- /page content -->
 
-               <!-- footer content -->
-               <!-- <footer>
+         <!-- footer content -->
+         <!-- <footer>
     <div class="pull-right">
      Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
     </div>
     <div class="clearfix"></div>
    </footer> -->
-               <!-- /footer content -->
-               <!-- </div>
+         <!-- /footer content -->
+         <!-- </div>
  </div> -->
 
-               <!-- jQuery
+         <!-- jQuery
  <script src="../vendors/jquery/dist/jquery.min.js"></script>
  <!-- Bootstrap -->
-               <script src="../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-               <!-- FastClick -->
-               <script src="../vendors/fastclick/lib/fastclick.js"></script>
-               <!-- NProgress -->
-               <script src="../vendors/nprogress/nprogress.js"></script>
-               <!-- bootstrap-progressbar -->
-               <script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
-               <!-- iCheck -->
-               <script src="../vendors/iCheck/icheck.min.js"></script>
-               <!-- bootstrap-daterangepicker -->
-               <script src="../vendors/moment/min/moment.min.js"></script>
-               <script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
-               <!-- bootstrap-wysiwyg -->
-               <script src="../vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
-               <script src="../vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
-               <script src="../vendors/google-code-prettify/src/prettify.js"></script>
-               <!-- jQuery Tags Input -->
-               <script src="../vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
-               <!-- Switchery -->
-               <script src="../vendors/switchery/dist/switchery.min.js"></script>
-               <!-- Select2 -->
-               <script src="../vendors/select2/dist/js/select2.full.min.js"></script>
-               <!-- Parsley -->
-               <script src="../vendors/parsleyjs/dist/parsley.min.js"></script>
-               <!-- Autosize -->
-               <script src="../vendors/autosize/dist/autosize.min.js"></script>
-               <!-- jQuery autocomplete -->
-               <script src="../vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
-               <!-- starrr -->
-               <script src="../vendors/starrr/dist/starrr.js"></script>
-               <!-- Custom Theme Scripts -->
-               <script src="../build/js/custom.min.js"></script> -->
+         <script src="../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+         <!-- FastClick -->
+         <script src="../vendors/fastclick/lib/fastclick.js"></script>
+         <!-- NProgress -->
+         <script src="../vendors/nprogress/nprogress.js"></script>
+         <!-- bootstrap-progressbar -->
+         <script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+         <!-- iCheck -->
+         <script src="../vendors/iCheck/icheck.min.js"></script>
+         <!-- bootstrap-daterangepicker -->
+         <script src="../vendors/moment/min/moment.min.js"></script>
+         <script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+         <!-- bootstrap-wysiwyg -->
+         <script src="../vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+         <script src="../vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
+         <script src="../vendors/google-code-prettify/src/prettify.js"></script>
+         <!-- jQuery Tags Input -->
+         <script src="../vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
+         <!-- Switchery -->
+         <script src="../vendors/switchery/dist/switchery.min.js"></script>
+         <!-- Select2 -->
+         <script src="../vendors/select2/dist/js/select2.full.min.js"></script>
+         <!-- Parsley -->
+         <script src="../vendors/parsleyjs/dist/parsley.min.js"></script>
+         <!-- Autosize -->
+         <script src="../vendors/autosize/dist/autosize.min.js"></script>
+         <!-- jQuery autocomplete -->
+         <script src="../vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
+         <!-- starrr -->
+         <script src="../vendors/starrr/dist/starrr.js"></script>
+         <!-- Custom Theme Scripts -->
+         <script src="../build/js/custom.min.js"></script> -->
 
 </body>
 

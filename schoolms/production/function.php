@@ -138,7 +138,7 @@ function studentlogin()
 					if ($user_data['username'] === $username) {
 						$_SESSION['user_id'] = $user_data['user_id'];
 
-						header("location: index.php");
+						header("location: stud1reg.php");
 					}
 				}
 			}

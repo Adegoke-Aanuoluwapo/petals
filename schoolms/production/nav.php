@@ -19,7 +19,7 @@
       <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu">
           <li><a href="index.php">Admin</a></li>
-          <li><a href="studreg.php">Student</a></li>
+          <li><a href="stud1reg.php">Student</a></li>
           <li><a href="parreg.php">Parent</a></li>
         </ul>
       </li>
