@@ -4,7 +4,7 @@ include("connection.php");
 include("function.php");
 
 if (isset($_POST['add'])) {
-   addUser();
+   addstudent();
 }
 
 if (isset($_POST['login'])) {
@@ -340,14 +340,14 @@ if (isset($_POST['login'])) {
                                  <label class="col-form-label col-md-3 col-sm-3 label-align" for="surname">Surname <span class="required">*</span>
                                  </label>
                                  <div class="col-md-6 col-sm-6 ">
-                                    <input type="text" id="first-name" required="required" class="form-control ">
+                                    <input type="text" id="first-name" required="required" class="form-control" name="surname">
                                  </div>
                               </div>
                               <div class="item form-group">
                                  <label class="col-form-label col-md-3 col-sm-3 label-align" for="firstname">First Name <span class="required">*</span>
                                  </label>
                                  <div class="col-md-6 col-sm-6 ">
-                                    <input type="text" id="last-name" name="first-name" required="required" class="form-control">
+                                    <input type="text" id="last-name" name="firstname" required="required" class="form-control">
                                  </div>
                               </div>
                               <div class="item form-group">
@@ -373,19 +373,12 @@ if (isset($_POST['login'])) {
                                        <input type="text" id="last-name" name="class" required="required" class="form-control">
                                     </div>
                                  </div>
-                                 <!-- <select>
-                                    <option>Male</option>
-                                    <option>Female</option>
-                                 </select>
                                  <div class="col-md-6 col-sm-6 ">
                                     <div id="gender" class="btn-group" data-toggle="buttons">
                                        <label class="btn btn-secondary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-                                          <input type="radio" name="gender" value="male" class="join-btn"> &nbsp; Male &nbsp;
+                                          <input type="text" name="reg" value="male" class="join-btn">
                                        </label>
-                                       <label class="btn btn-primary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-                                          <input type="radio" name="gender" value="female" class="join-btn"> Female
-                                       </label> -->
-                              </div>
+                                 </div>
                         </div>
                      </div>
                      <!-- <div class="item form-group">
