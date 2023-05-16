@@ -100,12 +100,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" )
 			$dateofbirth = $_POST["dateofbirth"];
 			$sex = $_POST["sex"];
 			$class = $_POST["class"];
-			$regno = $_POST["regno"];
+			$regno = $_POST["reg"];
 	
 			if(!empty($surname)) {
 				$user_id = rand(999, 999999999999);
 	
-				$query = "INSERT INTO student (user_id, surname, firstname, dateofbirth, sex, class, regno) values
+				$query = "INSERT INTO student (user_id, surname, firstname, dob, sex, class, reg) values
 				('$user_id', '$surname', '$firstname', '$dateofbirth', '$sex', '$class', '$regno')";
 	
 				mysqli_query($con, $query);
