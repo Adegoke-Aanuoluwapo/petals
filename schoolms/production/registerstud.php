@@ -65,38 +65,30 @@ if (isset($_POST['registerstudent'])) {
 											<div class="clearfix"></div>
 										</div>
 										<div class="x_content">
-											<table class="table">
-												<thead>
-													<tr>
-														<th>First Name</th>
-														<th>Last Name</th>
-														<th>Username</th>
-													</tr>
-												</thead>
-											</table>
+
 
 
 											<br />
 											<form method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
 												<div class="item form-group">
-													<label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">First Name <span class="required">*</span>
+													<label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Surname <span class="required">*</span>
 													</label>
 													<div class="col-md-6 col-sm-6 ">
 														<input type="text" id="first-name" name="surname" required="required" class="form-control ">
 													</div>
 												</div>
 												<div class="item form-group">
-													<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Last Name <span class="required">*</span>
+													<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">First Name <span class="required">*</span>
 													</label>
 													<div class="col-md-6 col-sm-6 ">
-														<input type="text" id="last-name" name="lastname" required="required" class="form-control">
+														<input type="text" id="last-name" name="firstname" required="required" class="form-control">
 													</div>
 												</div>
 												<div class="item form-group">
 													<label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">registration Number</label>
 													<div class="col-md-6 col-sm-6 ">
-														<input id="middle-name" class="form-control" type="text" name="regno">
+														<input id="middle-name" class="form-control" type="text" name="reg">
 													</div>
 												</div>
 												<div class="item form-group">
@@ -123,7 +115,7 @@ if (isset($_POST['registerstudent'])) {
 													<label class="col-form-label col-md-3 col-sm-3 label-align">Date Of Birth <span class="required">*</span>
 													</label>
 													<div class="col-md-6 col-sm-6 ">
-														<input id="birthday" class="date-picker form-control" name="dateofbirth" placeholder="dd-mm-yyyy" type="text" required="required" type="text" onfocus="this.type='date'" onmouseover="this.type='date'" onclick="this.type='date'" onblur="this.type='text'" onmouseout="timeFunctionLong(this)">
+														<input id="birthday" class="date-picker form-control" name="dob" placeholder="dd-mm-yyyy" type="text" required="required" type="text" onfocus="this.type='date'" onmouseover="this.type='date'" onclick="this.type='date'" onblur="this.type='text'" onmouseout="timeFunctionLong(this)">
 														<script>
 															function timeFunctionLong(input) {
 																setTimeout(function() {
@@ -141,6 +133,34 @@ if (isset($_POST['registerstudent'])) {
 												</div>
 
 											</form>
+
+											<table class="table">
+												<thead>
+													<tr>
+														<th>sn</th>
+														<th>surname</th>
+														<th>firstname</th>
+														<th>Register No</th>
+														<th>class</th>
+														<th>Dates of Birth</th>
+													</tr>
+												</thead>
+												<tbody>
+													<?php $i = 1;
+													$sql = $con->query("SELECT * FROM student");
+													while ($rows = $sql->fetch_assoc()) {
+													?>
+
+														<th scope="row"><?= $i++ ?></th>
+														<td><?= $rows['surname'] ?></td>
+														<td><?= $rows['firstname'] ?></td>
+														<td><?= $rows['reg'] ?></td>
+														<td><?= $rows['class'] ?></td>
+														<td><?= $rows['dob'] ?></td>
+														</tr>
+													<?php } ?>
+												</tbody>
+											</table>
 										</div>
 									</div>
 								</div>
