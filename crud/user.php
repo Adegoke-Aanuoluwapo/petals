@@ -9,9 +9,14 @@ if(isset($_POST['submit'])){
  $state= $_POST['state'];
 
 
- $sql = "insert into `members` (fullname, 'phone', 'email', 'sex', 'status', 'state')  value('$fullname','$phone', '$email', '$sex', '$state' )";
+ $sql = "insert into `members` (fullname, 'phone', 'email', 'sex', 'status', 'state')  value('$fullname','$phone', '$email', '$sex', ,'$status','$state' )";
 
  $result = mysqli_query($con, $sql);
+ if($result){
+  echo "Data inserted successfully";
+ }else{
+  die(mysqli_error($con));
+ }
 }
 
 
@@ -54,7 +59,7 @@ if(isset($_POST['submit'])){
     <input type="email" class="form-control" id="exampleInputPassword1" name="email" placeholder="Enter your email" autocomplete="off">
     <div class="mb-3">
      <label class="form-label">Sex</label>
-     <select name="position" id="" class="form-control">
+     <select name="sex" id="" class="form-control">
       <option>Pick your sex</option>
       <option value="member">Male</option>
       <option value="worker">Female</option>
@@ -74,7 +79,7 @@ if(isset($_POST['submit'])){
     </div>
     <div class="mb-3">
      <label for="exampleInputPassword1" class="form-label">State</label>
-     <select name="position" id="" class="form-control">
+     <select name="state" id="" class="form-control">
       <option>State</option>
       <option value="abuja">Abuja</option>
       <option value="lagos">Lagos</option>
