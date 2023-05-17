@@ -14,33 +14,33 @@
 </head>
 
 <body>
- <div class="container">
+ <div class="container my-5">
   <form method="post">
    <div class="mb-3">
-    <label  class="form-label">Full Names</label>
-    <input type="email" class="form-control" name="fullname">
-    
+    <label class="form-label">Full Names</label>
+    <input type="email" class="form-control" name="fullname" placeholder="Enter your fullnames">
+
    </div>
    <div class="mb-3">
-    <label  class="form-label">Phone</label>
-    <input type="tel" class="form-control"  name="phone">
+    <label class="form-label">Phone</label>
+    <input type="tel" class="form-control" name="phone" placeholder="Enter your phone number">
    </div>
    <div class="mb-3">
     <label class="form-label">Email</label>
-    <input type="email" class="form-control" id="exampleInputPassword1" name="email">
+    <input type="email" class="form-control" id="exampleInputPassword1" name="email" placeholder="Enter your email">
     <div class="mb-3">
-     <label  class="form-label">Sex</label>
+     <label class="form-label">Sex</label>
      <select name="position" id="" class="form-control">
-      <option>Sex</option>
+      <option>Pick your sex</option>
       <option value="member">Male</option>
       <option value="worker">Female</option>
      </select>
 
     </div>
     <div class="mb-3">
-     <label  class="form-label">Status</label>
+     <label class="form-label">Status</label>
      <select name="status" id="" class="form-control">
-      <option>Status</option>
+      <option>choose your status</option>
       <option value="member">Member</option>
       <option value="worker">Worker</option>
 
@@ -60,10 +60,7 @@
     </div>
 
    </div>
-   <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-   </div>
+   
    <button type="submit" class="btn btn-primary">Submit</button>
   </form>
  </div>
