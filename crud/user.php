@@ -9,6 +9,9 @@ if(isset($_POST['submit'])){
  $state= $_POST['state'];
 
 
+ $sql = "insert into `members` (fullname, 'phone', 'email', 'sex', 'status', 'state')  value('$fullname','$phone', '$email', '$sex', '$state' )";
+
+ $result = mysqli_query($con, $sql);
 }
 
 
