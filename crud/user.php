@@ -17,39 +17,40 @@
  <div class="container">
   <form method="post">
    <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Full Names</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    <label  class="form-label">Full Names</label>
+    <input type="email" class="form-control" name="fullname">
+    
    </div>
    <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Phone</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" name="phone">
+    <label  class="form-label">Phone</label>
+    <input type="tel" class="form-control"  name="phone">
    </div>
    <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Email</label>
+    <label class="form-label">Email</label>
     <input type="email" class="form-control" id="exampleInputPassword1" name="email">
     <div class="mb-3">
-     <label for="exampleInputPassword1" class="form-label">Sex</label>
-     <select name="position" id="">Sex</select>
-     <select name="position" id="" value="male">Male</select>
-     <select name="position" id="" value="female">Female</select>
-     <input type="password" class="form-control" id="exampleInputPassword1" name="position">
+     <label  class="form-label">Sex</label>
+     <select name="position" id="" class="form-control">
+      <option>Sex</option>
+      <option value="member">Male</option>
+      <option value="worker">Female</option>
+     </select>
+
     </div>
     <div class="mb-3">
-     <label for="exampleInputPassword1" class="form-label">Position</label>
-     <select name="position" id="">
+     <label  class="form-label">Status</label>
+     <select name="status" id="" class="form-control">
       <option>Status</option>
       <option value="member">Member</option>
       <option value="worker">Worker</option>
 
      </select>
-     <select name="position" id="" value="member">member</select>
-     <select name="position" id="" value="worker">worker</select>
-     <input type="password" class="form-control" id="exampleInputPassword1" name="position">
+
+
     </div>
     <div class="mb-3">
      <label for="exampleInputPassword1" class="form-label">State</label>
-     <select name="position" id="">
+     <select name="position" id="" class="form-control">
       <option>State</option>
       <option value="abuja">Abuja</option>
       <option value="lagos">Lagos</option>
