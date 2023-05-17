@@ -1,3 +1,24 @@
+<?php
+include 'connect.php';
+if(isset($_POST['submit'])){
+ $fullname=$_POST['fullname'];
+ $phone = $_POST['phone'];
+ $email= $_POST['email'];
+ $sex= $_POST['sex'];
+ $status= $_POST['status'];
+ $state= $_POST['state'];
+
+
+}
+
+
+
+
+?>
+
+
+
+
 <!doctype html>
 <html lang="en">
 
@@ -18,16 +39,16 @@
   <form method="post">
    <div class="mb-3">
     <label class="form-label">Full Names</label>
-    <input type="email" class="form-control" name="fullname" placeholder="Enter your fullnames">
+    <input type="text" class="form-control" name="fullname" placeholder="Enter your fullnames" autocomplete="off">
 
    </div>
    <div class="mb-3">
     <label class="form-label">Phone</label>
-    <input type="tel" class="form-control" name="phone" placeholder="Enter your phone number">
+    <input type="tel" class="form-control" name="phone" placeholder="Enter your phone number" autocomplete="off">
    </div>
    <div class="mb-3">
     <label class="form-label">Email</label>
-    <input type="email" class="form-control" id="exampleInputPassword1" name="email" placeholder="Enter your email">
+    <input type="email" class="form-control" id="exampleInputPassword1" name="email" placeholder="Enter your email" autocomplete="off">
     <div class="mb-3">
      <label class="form-label">Sex</label>
      <select name="position" id="" class="form-control">
@@ -60,8 +81,8 @@
     </div>
 
    </div>
-   
-   <button type="submit" class="btn btn-primary">Submit</button>
+
+   <button type="submit" class="btn btn-primary" name="submit">Submit</button>
   </form>
  </div>
 
