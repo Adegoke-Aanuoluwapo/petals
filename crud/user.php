@@ -37,18 +37,25 @@
     </div>
     <div class="mb-3">
      <label for="exampleInputPassword1" class="form-label">Position</label>
-     <select name="position" id="">position</select>
+     <select name="position" id="">
+      <option>Status</option>
+      <option value="member">Member</option>
+      <option value="worker">Worker</option>
+
+     </select>
      <select name="position" id="" value="member">member</select>
      <select name="position" id="" value="worker">worker</select>
      <input type="password" class="form-control" id="exampleInputPassword1" name="position">
     </div>
     <div class="mb-3">
      <label for="exampleInputPassword1" class="form-label">State</label>
-     <select name="position" id="">state</select>
-     <select name="position" id="" value="abuja">Abuja</select>
-     <select name="position" id="" value="lagos">Lagos</select>
-     <select name="position" id="" value="ondo">Ondo</select>
-     <input type="password" class="form-control" id="exampleInputPassword1" name="position">
+     <select name="position" id="">
+      <option>State</option>
+      <option value="abuja">Abuja</option>
+      <option value="lagos">Lagos</option>
+      <option value="ondo">Ondo</option>
+     </select>
+
     </div>
 
    </div>
