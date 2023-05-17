@@ -11,7 +11,7 @@ if(isset($_POST['submit'])){
 
  $sql = "insert into `members` (fullname, 'phone', 'email', 'sex', 'status', 'state')  value('$fullname','$phone', '$email', '$sex', ,'$status','$state' )";
 
- $result = mysqli_query($con, $sql);
+ $result = mysqli_query($con, $query);
  if($result){
   echo "Data inserted successfully";
  }else{
