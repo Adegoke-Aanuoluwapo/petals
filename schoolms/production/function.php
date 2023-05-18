@@ -94,7 +94,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" )
 	function regStudent(){
 		global $con;
 	
-		if($_SERVER["REQUEST_METHOD"] == "POST"){
+		if(isset($_POST['submit'])){
 			$surname = $_POST["surname"];
 			$firstname = $_POST["firstname"];
 			$dateofbirth = $_POST["dob"];
