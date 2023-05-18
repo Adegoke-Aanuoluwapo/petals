@@ -3,8 +3,8 @@ session_start();
 include("connection.php");
 include("function.php");
 
-if (isset($_POST['registerstudent'])) {
- regStudent();
+if (isset($_POST['registerparent'])) {
+ addParent();
 }
 ?>
 
@@ -73,28 +73,28 @@ if (isset($_POST['registerstudent'])) {
             <div class="item form-group">
              <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Registration Number</label>
              <div class="col-md-6 col-sm-6 ">
-              <input id="middle-name" class="form-control" type="text" name="regno">
+              <input id="middle-name" class="form-control" type="text" name="regno" autocomplete="off">
              </div>
             </div>
             <div class="item form-group">
              <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Surname <span class="required">*</span>
              </label>
              <div class="col-md-6 col-sm-6 ">
-              <input type="text" id="first-name" name="surname" required="required" class="form-control ">
+              <input type="text" id="first-name" name="surname" required="required" class="form-control " autocomplete="off">
              </div>
             </div>
             <div class="item form-group">
              <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Other Names <span class="required">*</span>
              </label>
              <div class="col-md-6 col-sm-6 ">
-              <input type="text" id="last-name" name="othernames" required="required" class="form-control">
+              <input type="text" id="last-name" name="othernames" required="required" class="form-control" autocomplete="off">
              </div>
             </div>
 
             <div class="item form-group">
              <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Email<span class="required">*</span></label>
              <div class="col-md-6 col-sm-6 ">
-              <input type="email" id="last-name" name="email" required="required" class="form-control">
+              <input type="email" id="last-name" name="email" required="required" class="form-control" autocomplete="off">
              </div>
             </div>
             <div class="item form-group">
@@ -111,8 +111,8 @@ if (isset($_POST['registerstudent'])) {
              <label class="col-form-label col-md-3 col-sm-3 label-align">Phone <span class="required">*</span>
              </label>
              <div class="col-md-6 col-sm-6 ">
-              <input id="birthday" class="date-picker form-control" name="dob" placeholder="phone" type="text" required="required" type="tel" >
-             
+              <input id="birthday" class="date-picker form-control" name="dob" placeholder="phone" type="text" required="required" type="tel" autocomplete="off">
+
              </div>
             </div>
             <div class="ln_solid"></div>

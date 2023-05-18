@@ -117,10 +117,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" )
 			}
 		}  
 		return;
-	};
+	}
 	function addParent(){
 		global $con;
-	if(isset($_POST['submit'])){
+	if($_SERVER["REQUEST_METHOD"] == "POST"){
 		$regno = $_POST['regno'];
 		$surname =$_POST['surname'];
 		$othernames=$_POST['othernames'];
@@ -130,6 +130,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" )
 
 
 		$query = "INSERT INTO parent(regno, surname, othernames, email, sex, phone) VALUES('$regno','$surname', '$othernames', '$email', '$sex', '$phone' )";
+		 mysqli_query($con, $query);
 	}
 	};
 
