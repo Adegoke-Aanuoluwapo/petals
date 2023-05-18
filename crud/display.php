@@ -36,7 +36,18 @@ $sql = "SELECT * FROM members ";
 $result = mysqli_query($con, $sql);
 if($result){
  
- while($row = mysqli_fetch_assoc($result));
+ while($row = mysqli_fetch_assoc($result)){
+   $id = $row['id'];
+   $fullname=$row['fullname'];
+   $phone=$row['phone'];
+   $email=$row['email'];
+   $sex=$row['sex'];
+   $status=$row['status'];
+   $state=$row['state'];
+   
+
+ }
+
 }
 
 
