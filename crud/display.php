@@ -22,10 +22,11 @@
     <th scope="col">Sex</th>
     <th scope="col">Status</th>
     <th scope="col">State</th>
+    <th scope="col">Operation</th>
    </tr>
   </thead>
   <tbody>
-   <tr>
+   <!-- <tr>
     <th scope="row">1</th>
     <td>Mark</td>
     <td>Otto</td>
@@ -36,12 +37,24 @@
     <td>Jacob</td>
     <td>Thornton</td>
     <td>@fat</td>
+    <td>Thornton</td>
+    <td>@fat</td>
    </tr>
    <tr>
     <th scope="row">3</th>
     <td colspan="2">Larry the Bird</td>
     <td>@twitter</td>
    </tr>
+   <tr>
+    <th scope="row">3</th>
+    <td colspan="2">Larry the Bird</td>
+    <td>@twitter</td>
+   </tr>
+   <tr>
+    <th scope="row">3</th>
+    <td colspan="2">Larry the Bird</td>
+    <td>@twitter</td>
+   </tr> -->
   </tbody>
  </table>
 </body>
