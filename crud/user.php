@@ -1,20 +1,20 @@
 <?php
 include 'connect.php';
-if(isset($_POST['submit'])){
- $fullname=$_POST['fullname'];
+if (isset($_POST['submit'])) {
+ $fullname = $_POST['fullname'];
  $phone = $_POST['phone'];
- $email= $_POST['email'];
- $sex= $_POST['sex'];
- $status= $_POST['status'];
- $state= $_POST['state'];
+ $email = $_POST['email'];
+ $sex = $_POST['sex'];
+ $status = $_POST['status'];
+ $state = $_POST['state'];
 
 
- $sql = "insert into `members` (fullname, 'phone', 'email', 'sex', 'status', 'state')  value('$fullname','$phone', '$email', '$sex', ,'$status','$state' )";
+ $sql = "INSERT into members (fullname, phone, email, sex, status, state)  VALUES('$fullname','$phone', '$email', '$sex', '$status','$state' )";
 
- $result = mysqli_query($con, $query);
- if($result){
+ $result = mysqli_query($con, $sql);
+ if ($result) {
   echo "Data inserted successfully";
- }else{
+ } else {
   die(mysqli_error($con));
  }
 }
