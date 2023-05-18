@@ -70,7 +70,12 @@ if (isset($_POST['registerstudent'])) {
 
            <br />
            <form method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
-
+            <div class="item form-group">
+             <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Registration Number</label>
+             <div class="col-md-6 col-sm-6 ">
+              <input id="middle-name" class="form-control" type="text" name="regno">
+             </div>
+            </div>
             <div class="item form-group">
              <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Surname <span class="required">*</span>
              </label>
@@ -79,56 +84,41 @@ if (isset($_POST['registerstudent'])) {
              </div>
             </div>
             <div class="item form-group">
-             <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">First Name <span class="required">*</span>
+             <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Other Names <span class="required">*</span>
              </label>
              <div class="col-md-6 col-sm-6 ">
-              <input type="text" id="last-name" name="firstname" required="required" class="form-control">
+              <input type="text" id="last-name" name="othernames" required="required" class="form-control">
              </div>
             </div>
+
             <div class="item form-group">
-             <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">registration Number</label>
+             <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Email<span class="required">*</span></label>
              <div class="col-md-6 col-sm-6 ">
-              <input id="middle-name" class="form-control" type="text" name="reg">
+              <input type="email" id="last-name" name="email" required="required" class="form-control">
              </div>
             </div>
             <div class="item form-group">
-             <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">class</label>
-             <div class="col-md-6 col-sm-6 ">
-              <select class="form-control" name="class">
-               <option>Class</option>
-               <option>JSS 1</option>
-               <option>JSS 2</option>
-              </select>
-             </div>
-            </div>
-            <div class="item form-group">
-             <label class="col-form-label col-md-3 col-sm-3 label-align">Sex</label>
+             <label class="col-form-label col-md-3 col-sm-3 label-align">Sex<span class="required">*</span></label>
              <div class="col-md-6 col-sm-6 ">
               <select class="form-control" name="sex">
                <option>Gender</option>
-               <option>Male</option>
-               <option>Female</option>
+               <option value="male">Male</option>
+               <option value="female">Female</option>
               </select>
              </div>
             </div>
             <div class="item form-group">
-             <label class="col-form-label col-md-3 col-sm-3 label-align">Date Of Birth <span class="required">*</span>
+             <label class="col-form-label col-md-3 col-sm-3 label-align">Phone <span class="required">*</span>
              </label>
              <div class="col-md-6 col-sm-6 ">
-              <input id="birthday" class="date-picker form-control" name="dob" placeholder="dd-mm-yyyy" type="text" required="required" type="text" onfocus="this.type='date'" onmouseover="this.type='date'" onclick="this.type='date'" onblur="this.type='text'" onmouseout="timeFunctionLong(this)">
-              <script>
-               function timeFunctionLong(input) {
-                setTimeout(function() {
-                 input.type = 'text';
-                }, 60000);
-               }
-              </script>
+              <input id="birthday" class="date-picker form-control" name="dob" placeholder="phone" type="text" required="required" type="tel" >
+             
              </div>
             </div>
             <div class="ln_solid"></div>
             <div class="item form-group">
              <div class="col-md-6 col-sm-6 offset-md-3">
-              <button type="submit" name="registerstudent" class="btn btn-success">Submit</button>
+              <button type="submit" name="registerparent" class="btn btn-success">Submit</button>
              </div>
             </div>
 
@@ -138,25 +128,27 @@ if (isset($_POST['registerstudent'])) {
             <thead>
              <tr>
               <th>sn</th>
-              <th>surname</th>
-              <th>firstname</th>
               <th>Register No</th>
-              <th>class</th>
-              <th>Dates of Birth</th>
+              <th>surname</th>
+              <th>Othernames</th>
+
+              <th>Email</th>
+              <th>phone</th>
              </tr>
             </thead>
             <tbody>
              <?php $i = 1;
-             $sql = $con->query("SELECT * FROM student");
+             $sql = $con->query("SELECT * FROM parent");
              while ($rows = $sql->fetch_assoc()) {
              ?>
 
               <th scope="row"><?= $i++ ?></th>
+              <td><?= $rows['regno'] ?></td>
               <td><?= $rows['surname'] ?></td>
-              <td><?= $rows['firstname'] ?></td>
-              <td><?= $rows['reg'] ?></td>
-              <td><?= $rows['class'] ?></td>
-              <td><?= $rows['dob'] ?></td>
+              <td><?= $rows['othernames'] ?></td>
+              <td><?= $rows['email'] ?></td>
+              <td><?= $rows['sex'] ?></td>
+              <td><?= $rows['phone'] ?></td>
               </tr>
              <?php } ?>
             </tbody>
