@@ -1,3 +1,8 @@
+<?php 
+include 'connect.php'
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,6 +31,18 @@
    </tr>
   </thead>
   <tbody>
+<?php 
+$sql = "SELECT * FROM members ";
+$result = mysqli_query($con, $sql);
+if($result){
+ 
+ while($row = mysqli_fetch_assoc($result));
+}
+
+
+?>
+
+
    <!-- <tr>
     <th scope="row">1</th>
     <td>Mark</td>
