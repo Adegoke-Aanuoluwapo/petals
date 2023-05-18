@@ -117,8 +117,21 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" )
 			}
 		}  
 		return;
-	} 
+	};
+	function addParent(){
+		global $con;
+	if(isset($_POST['submit'])){
+		$regno = $_POST['regno'];
+		$surname =$_POST['surname'];
+		$othernames=$_POST['othernames'];
+		$email = $_POST['email'];
+		$sex =$_POST['sex'];
+		$phone=$_POST['phone'];
 
+
+		$query = "INSERT INTO parent(regno, surname, othernames, email, sex, phone) VALUES('$regno','$surname', '$othernames', '$email', '$sex', '$phone' )";
+	}
+	};
 
    
 ?>  
