@@ -61,8 +61,8 @@ if (isset($_POST['submit'])) {
      <label class="form-label">Sex</label>
      <select name="sex" id="" class="form-control">
       <option>Pick your sex</option>
-      <option value="member">Male</option>
-      <option value="worker">Female</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
      </select>
 
     </div>
@@ -93,6 +93,38 @@ if (isset($_POST['submit'])) {
    <button type="submit" class="btn btn-primary" name="submit">Submit</button>
   </form>
  </div>
+ <table class="table">
+  <thead>
+   <tr>
+    <th>sn</th>
+    <th>Full Names</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th>Sex</th>
+    <th>Status</th>
+    <th>State</th>
+   </tr>
+  </thead>
+  <tbody>
+   <tr>
+    <?php
+    $i = 1;
+    $sql = $con->query("SELECT * FROM members");
+    while ($rows = $sql->fetch_assoc()) {
+    ?>
+     <th scope="row"><?= $i++ ?> </th>
+     <td><?= $rows['fullname'] ?></td>
+     <td><?= $rows['phone'] ?></td>
+     <td><?= $rows['email'] ?></td>
+     <td><?= $rows['sex'] ?></td>
+     <td><?= $rows['status'] ?></td>
+     <td><?= $rows['state'] ?></td>
+   </tr>
+  <?php } ?>
+
+
+  </tbody>
+ </table>
 
 
 </body>
