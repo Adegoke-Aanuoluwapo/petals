@@ -93,8 +93,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" )
 
 	function regStudent(){
 		global $con;
-	
-		if(isset($_POST['submit'])){
+
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$surname = $_POST["surname"];
 			$firstname = $_POST["firstname"];
 			$dateofbirth = $_POST["dob"];
@@ -145,7 +145,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" )
 			$email= $_POST['email'];
 
 			$query = "INSERT INTO staff(firstname, lastname, phone, sex, dob, email) VALUES('$firstname', '$lastname', '$phone', '$sex', '$dob', '$email')";
-			mysqli_query($con, $query);
+			$result= mysqli_query($con, $query);
+			if($result){
+				echo "you have succesffully added staff";
+			}
+			else {
+			die(mysqli_error($con));
+			}
 		}
 	}
 
