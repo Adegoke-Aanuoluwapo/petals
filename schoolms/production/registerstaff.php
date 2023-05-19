@@ -101,14 +101,14 @@ if (isset($_POST['registerparent'])) {
              <label class="col-form-label col-md-3 col-sm-3 label-align">Date of Birth<span class="required">*</span></label>
              <div class="col-md-6 col-sm-6 ">
               <input type="date" id="last-name" name="dob" required="required" class="form-control" autocomplete="off">
-             
+
              </div>
             </div>
             <div class="item form-group">
              <label class="col-form-label col-md-3 col-sm-3 label-align">Email <span class="required">*</span>
              </label>
              <div class="col-md-6 col-sm-6 ">
-              <input id="birthday" class="date-picker form-control" name="email" placeholder="phone" type="text" required="required" type="email" autocomplete="off">
+              <input id="birthday" class="date-picker form-control" name="email" placeholder="email" type="text" required="required" type="email" autocomplete="off">
 
              </div>
             </div>

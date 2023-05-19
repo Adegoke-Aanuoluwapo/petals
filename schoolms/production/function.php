@@ -134,6 +134,21 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" )
 	}
 	};
 
+	function addStaff(){
+		global $con;
+		if(isset($_POST['submit'])){
+			$firstname=['firstname'];
+			$lastname=['lastname'];
+			$phone=['phone'];
+			$sex=['sex'];
+			$dob=['dob'];
+			$email=['email'];
+
+			$query = "INSERT INTO staff(firstname, lastname, phone, sex, dob, email) VALUES('$firstname', '$lastname', '$phone', '$sex', '$dob', '$email')";
+			mysqli_query($con, $query);
+		}
+	}
+
    
 ?>  
 
