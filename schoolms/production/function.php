@@ -136,13 +136,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" )
 
 	function addStaff(){
 		global $con;
-		if(isset($_POST['submit'])){
-			$firstname=['firstname'];
-			$lastname=['lastname'];
-			$phone=['phone'];
-			$sex=['sex'];
-			$dob=['dob'];
-			$email=['email'];
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+			$firstname=$_POST['firstname'];
+			$lastname= $_POST['lastname'];
+			$phone= $_POST['phone'];
+			$sex= $_POST['sex'];
+			$dob= $_POST['dob'];
+			$email= $_POST['email'];
 
 			$query = "INSERT INTO staff(firstname, lastname, phone, sex, dob, email) VALUES('$firstname', '$lastname', '$phone', '$sex', '$dob', '$email')";
 			mysqli_query($con, $query);

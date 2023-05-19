@@ -3,8 +3,8 @@ session_start();
 include("connection.php");
 include("function.php");
 
-if (isset($_POST['registerparent'])) {
- addParent();
+if (isset($_POST['registerstaff'])) {
+ addStaff();
 }
 ?>
 
@@ -94,7 +94,11 @@ if (isset($_POST['registerparent'])) {
             <div class="item form-group">
              <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">sex<span class="required">*</span></label>
              <div class="col-md-6 col-sm-6 ">
-              <input type="text" id="last-name" name="sex" required="required" class="form-control" autocomplete="off">
+              <select class="form-control" name="sex">
+               <option>Gender</option>
+               <option value="male">Male</option>
+               <option value="female">Female</option>
+              </select>
              </div>
             </div>
             <div class="item form-group">
@@ -115,7 +119,7 @@ if (isset($_POST['registerparent'])) {
             <div class="ln_solid"></div>
             <div class="item form-group">
              <div class="col-md-6 col-sm-6 offset-md-3">
-              <button type="submit" name="registerparent" class="btn btn-success">Submit</button>
+              <button type="submit" name="registerstaff" class="btn btn-success">Submit</button>
              </div>
             </div>
 
@@ -138,17 +142,17 @@ if (isset($_POST['registerparent'])) {
             </thead>
             <tbody>
              <?php $i = 1;
-             $sql = $con->query("SELECT * FROM parent");
+             $sql = $con->query("SELECT * FROM staff");
              while ($rows = $sql->fetch_assoc()) {
              ?>
 
               <th scope="row"><?= $i++ ?></th>
-              <td><?= $rows['regno'] ?></td>
-              <td><?= $rows['surname'] ?></td>
-              <td><?= $rows['othernames'] ?></td>
-              <td><?= $rows['email'] ?></td>
-              <td><?= $rows['sex'] ?></td>
+              <td><?= $rows['firstname'] ?></td>
+              <td><?= $rows['lastname'] ?></td>
               <td><?= $rows['phone'] ?></td>
+              <td><?= $rows['sex'] ?></td>
+              <td><?= $rows['dob'] ?></td>
+              <td><?= $rows['email'] ?></td>
               <td><button><a href="updatepar.php?updateparid= '.$id.' ">Update</a></button></td>
               <td><button><a href=''>Delete</a></button></td>
               </tr>
