@@ -52,6 +52,12 @@ include 'connect.php'
       <td>' . $sex . '</td>
          <td>' . $status . '</td>
             <td>' . $state . '</td>
+            <td>
+        <button class="btn btn-primary"><a href="update.php" class="text-light">Update</a></button>
+          <button class="btn btn-danger"><a href="delete.php?deleteid='.$id.'" class="text-light">Delete</a></button>
+
+      </td>
+
    </tr>';
         }
       }
@@ -60,7 +66,6 @@ include 'connect.php'
       ?>
 
 
-     
     </tbody>
   </table>
 </body>
