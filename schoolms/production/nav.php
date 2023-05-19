@@ -4,7 +4,7 @@
   </div>
   <div class="profile_info">
     <span>Welcome,</span>
-    <h2>Mega Mind</h2>
+    <h2>Immaculate</h2>
   </div>
 </div>
 <!-- /menu profile quick info -->
@@ -21,6 +21,7 @@
           <li><a href="index.php">Dashboard</a></li>
           <li><a href="registerstud.php">Register Students</a></li>
           <li><a href="registerpar.php">Register Parents</a></li>
+          <li><a href="registerstaff.php">Register Staff</a></li>
 
         </ul>
       </li>
