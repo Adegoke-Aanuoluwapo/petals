@@ -44,7 +44,10 @@ if($result){
    $sex=$row['sex'];
    $status=$row['status'];
    $state=$row['state'];
-   
+   echo '<tr>
+   <th scope="row">'.$id.'</th>
+   <td>'.$fullname.'</td>
+   </tr>';
 
  }
 
