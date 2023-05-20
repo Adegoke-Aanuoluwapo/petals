@@ -143,6 +143,7 @@ if (isset($_POST['registerparent'])) {
                                        <?php $i = 1;
                                        $sql = $con->query("SELECT * FROM parent");
                                        while ($rows = $sql->fetch_assoc()) {
+                                          
                                        ?>
 
                                           <th scope="row"><?= $i++ ?></th>
