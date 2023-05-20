@@ -154,7 +154,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" )
 			}
 		}
 	}
-	function upadateStaff(){}
+	function upadateStaff(){
+		$id = $_GET['updateid'];
+		$sql = "SELECT * FROM staff";
+	}
 
    
 ?>  
