@@ -154,11 +154,26 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" )
 			}
 		}
 	}
-	function upadateStaff(){
+	function upadateParent(){
 		global $con; 
 		$id = $_GET['updateid'];
 		$sql = "SELECT * FROM staff WHERE id = $id";
 		$result = mysqli_query($con, $sql);
+		if(isset($_POST['submit'])){
+		$regno = $_POST['regno'];
+		$surname = $_POST['surname'];
+		$othernames = $_POST['othernames'];
+		$email = $_POST['email'];
+		$sex = $_POST['sex'];
+		$phone = $_POST['phone'];
+$sql = "UPDATE parent set id ='$id', regno='$regno', surname='$surname', othernames='$othernames', email='$email', sex ='$sex', phone= '$phone'";
+$result =mysqli_query($con, $sql);
+if($result){
+	echo 'data updated successfully';
+}
+
+
+		}
 	}
 
    
