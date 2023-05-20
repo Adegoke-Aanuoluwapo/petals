@@ -143,7 +143,10 @@ if (isset($_POST['registerparent'])) {
                                        <?php $i = 1;
                                        $sql = $con->query("SELECT * FROM parent");
                                        while ($rows = $sql->fetch_assoc()) {
-                                          
+                                          $id=$row['id'];
+                                          $regno=$row['regno'];
+                                          $surname=$row['surname']
+
                                        ?>
 
                                           <th scope="row"><?= $i++ ?></th>
@@ -153,7 +156,7 @@ if (isset($_POST['registerparent'])) {
                                           <td><?= $rows['email'] ?></td>
                                           <td><?= $rows['sex'] ?></td>
                                           <td><?= $rows['phone'] ?></td>
-                                          <td><button><a href="updatepar.php?updateparid= '.$id.' ">Update</a></button></td>
+                                          <td><button><a href="updatepar.php?updateparid= '$rows[.'id'.] ">Update</a></button></td>
                                           <td><button><a href=''>Delete</a></button></td>
                                           </tr>
                                        <?php } ?>
