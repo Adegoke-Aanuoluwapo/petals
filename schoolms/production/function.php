@@ -155,8 +155,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" )
 		}
 	}
 	function upadateStaff(){
+		global $con; 
 		$id = $_GET['updateid'];
-		$sql = "SELECT * FROM staff";
+		$sql = "SELECT * FROM staff WHERE id = $id";
+		$result = mysqli_query($con, $sql);
 	}
 
    
