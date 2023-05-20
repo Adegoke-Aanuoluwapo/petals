@@ -143,30 +143,34 @@ if (isset($_POST['registerparent'])) {
                                        <?php $i = 1;
                                        $sql = $con->query("SELECT * FROM parent");
                                        while ($rows = $sql->fetch_assoc()) {
-                                          $id=$row['id'];
-                                          $regno=$row['regno'];
-                                          $surname=$row['surname'];
-                                          $othernames=$row['othernames'];
-                                          $email =$row['email'];
-                                          $sex=$row['email'];
-                                          $phone=$row['phone'];
+                                          $id = $rows['id'];
+                                          $regno = $rows['regno'];
+                                          $surname = $rows['surname'];
+                                          $othernames = $rows['othernames'];
+                                          $email = $rows['email'];
+                                          $sex = $rows['email'];
+                                          $phone = $rows['phone'];
                                           echo '<tr>
+                                          <th scope="row">' . $id . '</th>
                                           
-                                          </tr>'
+    <td>' . $regno . '</td>
+     <td>' . $surname . '</td>
+      <td>' . $othernames . '</td>
+         <td>' . $email . '</td>
+            <td>' . $sex . '</td>
+            <td>' . $phone . '</td>
+            <td>
+        <button class="btn btn-primary"><a href="update.php?updateid=' . $id . '" class="text-light">Update</a></button>
+          <button class="btn btn-danger"><a href="delete.php?deleteid=' . $id . '" class="text-light">Delete</a></button>
 
+      </td>
+
+                                          </tr>';
+               } 
                                        ?>
 
-                                          <th scope="row"><?= $i++ ?></th>
-                                          <td><?= $rows['regno'] ?></td>
-                                          <td><?= $rows['surname'] ?></td>
-                                          <td><?= $rows['othernames'] ?></td>
-                                          <td><?= $rows['email'] ?></td>
-                                          <td><?= $rows['sex'] ?></td>
-                                          <td><?= $rows['phone'] ?></td>
-                                          <td><button><a href="updatepar.php?updateparid= '$rows[.'id'.] ">Update</a></button></td>
-                                          <td><button><a href=''>Delete</a></button></td>
-                                          </tr>
-                                       <?php } ?>
+                                       
+                                      
                                     </tbody>
                                  </table>
                               </div>
