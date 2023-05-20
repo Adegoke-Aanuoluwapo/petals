@@ -145,7 +145,14 @@ if (isset($_POST['registerparent'])) {
                                        while ($rows = $sql->fetch_assoc()) {
                                           $id=$row['id'];
                                           $regno=$row['regno'];
-                                          $surname=$row['surname']
+                                          $surname=$row['surname'];
+                                          $othernames=$row['othernames'];
+                                          $email =$row['email'];
+                                          $sex=$row['email'];
+                                          $phone=$row['phone'];
+                                          echo '<tr>
+                                          
+                                          </tr>'
 
                                        ?>
 
