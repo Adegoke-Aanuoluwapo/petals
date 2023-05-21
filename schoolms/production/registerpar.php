@@ -6,9 +6,9 @@ include("function.php");
 if (isset($_POST['registerparent'])) {
    addParent();
 };
-if (isset($_POST['updateParent'])) {
-   $id = $_POST['updateParent'];
-   upadateParent($sn);
+if (isset($_POST['update'])) {
+   $id = $_POST['update'];
+   upadateParent($id);
 }
 ?>
 
