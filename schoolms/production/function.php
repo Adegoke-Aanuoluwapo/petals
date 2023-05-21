@@ -167,8 +167,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" )
 		$phone = $_POST['phone'];
 $sql = "UPDATE parent set id ='$id', regno='$regno', surname='$surname', othernames='$othernames', email='$email', sex ='$sex', phone= '$phone'";
 $result =mysqli_query($con, $sql);
-		// $sql = "SELECT * FROM staff WHERE id = $id";
-		// $result = mysqli_query($con, $sql);
+		
 if($result){
 	echo 'data updated successfully';
 }
