@@ -165,7 +165,7 @@ if (isset($_POST['update'])) {
             <td>' . $phone . '</td>
             <td>
         <button class="btn btn-primary" name="update"><a href="update.php?updateid=' . $id . '" class="text-light">Update</a></button>
-          <button class="btn btn-danger"><a href="delete.php?deleteid=' . $id . '" class="text-light">Delete</a></button>
+          <button class="btn btn-danger" name="delete"><a href="delete.php?deleteid=' . $id . '" class="text-light">Delete</a></button>
 
       </td>
 
