@@ -154,9 +154,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" )
 			}
 		}
 	}
-	function upadateParent(){
+	function upadateParent($id){
 		global $con; 
-		$id = $_GET['updateid'];
+		
 		$sql = "SELECT * FROM staff WHERE id = $id";
 		$result = mysqli_query($con, $sql);
 		if(isset($_POST['submit'])){
