@@ -6,6 +6,7 @@ include("function.php");
 if (isset($_POST['registerstaff'])) {
  addStaff();
 }
+
 ?>
 
 

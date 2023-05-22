@@ -155,17 +155,17 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" )
 		}
 	}
 	function upadateParent($id){
-		global $con; 
-		
-		
-		if(isset($_POST['update'])){
+		global $con;
+
+
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$regno = $_POST['regno'];
 		$surname = $_POST['surname'];
 		$othernames = $_POST['othernames'];
 		$email = $_POST['email'];
 		$sex = $_POST['sex'];
 		$phone = $_POST['phone'];
-$sql = "UPDATE parent set id ='$id', regno='$regno', surname='$surname', othernames='$othernames', email='$email', sex ='$sex', phone= '$phone'";
+$sql = "UPDATE parent set  regno='$regno', surname='$surname', othernames='$othernames', email='$email', sex ='$sex', phone= '$phone' WHERE id ='$id'";
 $result =mysqli_query($con, $sql);
 		
 if($result){
