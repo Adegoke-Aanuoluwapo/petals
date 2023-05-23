@@ -106,8 +106,8 @@ if (isset($_POST['registerstudent'])) {
 													<div class="col-md-6 col-sm-6 ">
 														<select class="form-control" name="sex">
 															<option>Gender</option>
-															<option>Male</option>
-															<option>Female</option>
+															<option value="male">Male</option>
+															<option value="female">Female</option>
 														</select>
 													</div>
 												</div>

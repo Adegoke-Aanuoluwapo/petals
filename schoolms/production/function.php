@@ -105,8 +105,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" )
 			if(!empty($surname)) {
 				$user_id = rand(1, 9999);
 	
-				$query = "INSERT INTO student (user_id, surname, firstname, dob, sex, class, reg) values
-				('$user_id', '$surname', '$firstname', '$dateofbirth', '$sex', '$class', '$regno')";
+				$query = "INSERT INTO student ( surname, firstname, dob, sex, class, reg) values
+				( '$surname', '$firstname', '$dateofbirth', '$sex', '$class', '$regno')";
 	
 				mysqli_query($con, $query);
 	
