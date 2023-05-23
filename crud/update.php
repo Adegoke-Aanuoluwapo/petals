@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
  $state = $_POST['state'];
 
 
- $sql = "UPDATE members set id='$id',fullname='$fullname', phone='$phone',email='$email',sex='$sex', status='$status', state='$state' where id=$id ";
+ $sql = "UPDATE members set fullname='$fullname', phone='$phone',email='$email',sex='$sex', status='$status', state='$state' where id=$id ";
 
  $result = mysqli_query($con, $sql);
  if ($result) {
