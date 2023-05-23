@@ -142,6 +142,7 @@ if (isset($_POST['registerstudent'])) {
 														<th>firstname</th>
 														<th>Register No</th>
 														<th>class</th>
+														<th>Sex</th>
 														<th>Dates of Birth</th>
 													</tr>
 												</thead>
@@ -156,6 +157,7 @@ if (isset($_POST['registerstudent'])) {
 														<td><?= $rows['firstname'] ?></td>
 														<td><?= $rows['reg'] ?></td>
 														<td><?= $rows['class'] ?></td>
+														<td><?= $rows['sex'] ?></td>
 														<td><?= $rows['dob'] ?></td>
 														</tr>
 													<?php } ?>
