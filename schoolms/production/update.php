@@ -122,7 +122,7 @@ if (isset($_POST['update'])) {
             <div class="ln_solid"></div>
             <div class="item form-group">
              <div class="col-md-6 col-sm-6 offset-md-3">
-              <button type="submit" name="registerparent" class="btn btn-success">Submit</button>
+              <button type="submit" name="update" class="btn btn-success">Update</button>
              </div>
             </div>
 
