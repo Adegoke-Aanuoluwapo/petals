@@ -128,8 +128,8 @@ if (isset($_POST['update'])) {
              <div class="col-md-6 col-sm-6 ">
               <select class="form-control" name="sex">
 
-               <option value="<?php $status == 'male' ? 'selected' : ''; ?>">Male</option>
-               <option value="<?php $status == 'female' ? 'selected' : ''; ?>">Female</option>
+               <option <?php $status == 'male' ? 'selected' : ''; ?>value="male">Male</option>
+               <option <?php $status == 'female' ? 'selected' : ''; ?>value="female">Female</option>
               </select>
              </div>
             </div>
@@ -137,7 +137,7 @@ if (isset($_POST['update'])) {
              <label class="col-form-label col-md-3 col-sm-3 label-align">Phone <span class="required">*</span>
              </label>
              <div class="col-md-6 col-sm-6 ">
-              <input id="birthday" class="date-picker form-control" name="phone" placeholder="phone" type="text" required="required" type="tel" autocomplete="off">
+              <input id="birthday" class="date-picker form-control" name="phone" placeholder="phone" type="text" required="required" type="tel" autocomplete="off" value="">
 
              </div>
             </div>
