@@ -5,22 +5,22 @@ include("function.php");
 
 
 
-if (isset($_POST['update'])) {
- $id = $_POST['update'];
+if (isset($_POST['submit'])) {
+ $id = $_POST['submit'];
  upadateParent($id);
-}
+};
 $id = $_GET['updateid'];
-$sql = "SELECT from parent where id =$id";
+$sql = "SELECT * from parent where id ='$id'";
 $result = mysqli_query($con, $sql);
 $row = mysqli_fetch_assoc($result);
-$regno = $_POST['regno'];
-$surname = $_POST['surname'];
-$othernames = $_POST['othernames'];
-$email = $_POST['email'];
-$sex = $_POST['sex'];
-$phone = $_POST['phone'];
+$regno = $row['regno'];
+$surname = $row['surname'];
+$othernames = $row['othernames'];
+$email = $row['email'];
+$sex = $row['sex'];
+$phone = $row['phone'];
 
-if (isset($_POST['update'])) {
+if (isset($_POST['submit'])) {
  $regno = $_POST['regno'];
  $surname = $_POST['surname'];
  $othernames = $_POST['othernames'];
@@ -31,7 +31,9 @@ if (isset($_POST['update'])) {
  $sql = "UPDATE parent set regno='$regno', surname='$surname', othernames='$othernames',email='$email', sex='$sex', phone='$phone'";
  $result = mysqli_query($con, $sql);
 }
-
+// if($result){
+//  header("location:registerpar.php");
+// }
 ?>
 
 
@@ -128,8 +130,8 @@ if (isset($_POST['update'])) {
              <div class="col-md-6 col-sm-6 ">
               <select class="form-control" name="sex">
 
-               <option <?php $status == 'male' ? 'selected' : ''; ?>value="male">Male</option>
-               <option <?php $status == 'female' ? 'selected' : ''; ?>value="female">Female</option>
+               <option <?php $sex == 'male' ? 'selected' : ''; ?> value="male">Male</option>
+               <option <?php $sex == 'female' ? 'selected' : ''; ?> value="female">Female</option>
               </select>
              </div>
             </div>
@@ -144,7 +146,7 @@ if (isset($_POST['update'])) {
             <div class="ln_solid"></div>
             <div class="item form-group">
              <div class="col-md-6 col-sm-6 offset-md-3">
-              <button type="submit" name="update" class="btn btn-success">Update</button>
+              <button type="submit" name="submit" class="btn btn-success">Update</button>
              </div>
             </div>
 
