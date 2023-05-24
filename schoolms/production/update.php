@@ -9,6 +9,11 @@ if (isset($_POST['update'])) {
  $id = $_POST['update'];
  upadateParent($id);
 }
+$id = $_GET['updateid'];
+$sql = "SELECT from parent where id =$id";
+$result = mysqli_query($con, $sql);
+$row = mysqli_fetch_assoc($result);
+
 ?>
 
 
