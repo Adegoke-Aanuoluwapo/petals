@@ -3,7 +3,7 @@ session_start();
 include("connection.php");
 include("function.php");
 
-if($_)
+
 
 if (isset($_POST['update'])) {
  $id = $_POST['update'];
@@ -13,6 +13,12 @@ $id = $_GET['updateid'];
 $sql = "SELECT from parent where id =$id";
 $result = mysqli_query($con, $sql);
 $row = mysqli_fetch_assoc($result);
+$regno = $_POST['regno'];
+$surname = $_POST['surname'];
+$othernames = $_POST['othernames'];
+$email = $_POST['email'];
+$sex = $_POST['sex'];
+$phone = $_POST['phone'];
 
 ?>
 
