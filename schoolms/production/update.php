@@ -20,6 +20,18 @@ $email = $_POST['email'];
 $sex = $_POST['sex'];
 $phone = $_POST['phone'];
 
+if (isset($_POST['update'])){
+ $regno = $_POST['regno'];
+ $surname = $_POST['surname'];
+ $othernames = $_POST['othernames'];
+ $email = $_POST['email'];
+ $sex = $_POST['sex'];
+ $phone = $_POST['phone'];
+
+ $sql = "UPDATE parent set regno='$regno', surname='$surname', othernames='$othernames',email='$email', sex='$sex', phone='$phone'";
+
+}
+
 ?>
 
 
