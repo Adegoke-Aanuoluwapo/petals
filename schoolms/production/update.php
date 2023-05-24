@@ -137,7 +137,7 @@ if (isset($_POST['update'])) {
              <label class="col-form-label col-md-3 col-sm-3 label-align">Phone <span class="required">*</span>
              </label>
              <div class="col-md-6 col-sm-6 ">
-              <input id="birthday" class="date-picker form-control" name="phone" placeholder="phone" type="text" required="required" type="tel" autocomplete="off" value="">
+              <input id="birthday" class="date-picker form-control" name="phone" placeholder="phone" type="text" required="required" type="tel" autocomplete="off" value="<?php echo $phone ?>">
 
              </div>
             </div>
