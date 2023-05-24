@@ -3,9 +3,8 @@ session_start();
 include("connection.php");
 include("function.php");
 
-if (isset($_POST['registerparent'])) {
- addParent();
-};
+if($_)
+
 if (isset($_POST['update'])) {
  $id = $_POST['update'];
  upadateParent($id);
