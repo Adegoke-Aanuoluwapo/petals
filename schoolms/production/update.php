@@ -20,7 +20,7 @@ $email = $_POST['email'];
 $sex = $_POST['sex'];
 $phone = $_POST['phone'];
 
-if (isset($_POST['update'])){
+if (isset($_POST['update'])) {
  $regno = $_POST['regno'];
  $surname = $_POST['surname'];
  $othernames = $_POST['othernames'];
@@ -29,7 +29,7 @@ if (isset($_POST['update'])){
  $phone = $_POST['phone'];
 
  $sql = "UPDATE parent set regno='$regno', surname='$surname', othernames='$othernames',email='$email', sex='$sex', phone='$phone'";
-
+ $result = mysqli_query($con, $sql);
 }
 
 ?>
@@ -99,37 +99,37 @@ if (isset($_POST['update'])){
             <div class="item form-group">
              <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Registration Number</label>
              <div class="col-md-6 col-sm-6 ">
-              <input id="middle-name" class="form-control" type="text" name="regno" autocomplete="off">
+              <input id="middle-name" class="form-control" type="text" name="regno" autocomplete="off" value="<?php echo $regno ?>">
              </div>
             </div>
             <div class="item form-group">
              <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Surname <span class="required">*</span>
              </label>
              <div class="col-md-6 col-sm-6 ">
-              <input type="text" id="first-name" name="surname" required="required" class="form-control " autocomplete="off">
+              <input type="text" id="first-name" name="surname" required="required" class="form-control " autocomplete="off" value="<?php echo $surname ?>">
              </div>
             </div>
             <div class="item form-group">
              <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Other Names <span class="required">*</span>
              </label>
              <div class="col-md-6 col-sm-6 ">
-              <input type="text" id="last-name" name="othernames" required="required" class="form-control" autocomplete="off">
+              <input type="text" id="last-name" name="othernames" required="required" class="form-control" autocomplete="off" value="<?php echo $othernames ?>">
              </div>
             </div>
 
             <div class="item form-group">
              <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Email<span class="required">*</span></label>
              <div class="col-md-6 col-sm-6 ">
-              <input type="email" id="last-name" name="email" required="required" class="form-control" autocomplete="off">
+              <input type="email" id="last-name" name="email" required="required" class="form-control" autocomplete="off" value="<?php echo $email ?>">
              </div>
             </div>
             <div class="item form-group">
              <label class="col-form-label col-md-3 col-sm-3 label-align">Sex<span class="required">*</span></label>
              <div class="col-md-6 col-sm-6 ">
               <select class="form-control" name="sex">
-               <option>Gender</option>
-               <option value="male">Male</option>
-               <option value="female">Female</option>
+
+               <option value="<?php $status == 'male' ? 'selected' : ''; ?>">Male</option>
+               <option value="<?php $status == 'female' ? 'selected' : ''; ?>">Female</option>
               </select>
              </div>
             </div>
