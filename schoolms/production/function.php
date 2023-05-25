@@ -175,29 +175,22 @@ if($result){
 
 		}
 	}
-function Addclass($class, $note)
+function Addclass()
 {
-	$class = $_POST['class'];
-	$note = $_POST['note'];
 	global $con;
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+		$class = $_POST['class'];
+		$note = $_POST['note'];
 
-	// if (sqL1('staffclass', 'staff', $sfclass) > 0) {
-	// 	echo 'Error';
-	// 	return;
-	// }
-	// if (empty($sfclass)) {
-	// 	echo 'Error';
-	// 	return;
-	
+$sql = "INSERT INTO class(class, note) VALUES('$class', '$note')";
 
-	$query = "INSERT INTO class (staff, note) values
-			('$class','$note')";
+$result = mysqli_query($con, $sql);
+if($result){
+				echo "class added successfully";
+}
 
-	$con->query($query);
-	echo 'Success';
+	}
 
-
-	return;
 } 
 
 ?>  

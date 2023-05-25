@@ -3,7 +3,7 @@ session_start();
 include("function.php");
 
 if (isset($_POST['Addclass'])) {
- Addclass($class, $note);
+ Addclass();
  
 }
 
