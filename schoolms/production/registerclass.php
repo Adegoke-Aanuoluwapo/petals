@@ -4,6 +4,8 @@ include("function.php");
 
 if (isset($_POST['Addclass'])) {
  Addclass($class, $note);
+ $class =$_POST['class'];
+ $note = $_POST['note'];
 }
 
 // if (isset($_POST['EditStaff'])) {
