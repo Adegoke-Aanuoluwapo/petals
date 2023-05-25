@@ -175,8 +175,29 @@ if($result){
 
 		}
 	}
+function Addclass($class, $note)
+{
+	global $con;
 
-   
+	// if (sqL1('staffclass', 'staff', $sfclass) > 0) {
+	// 	echo 'Error';
+	// 	return;
+	// }
+	// if (empty($sfclass)) {
+	// 	echo 'Error';
+	// 	return;
+	
+
+	$query = "INSERT INTO class (staff, note) values
+			('$class','$note')";
+
+	$con->query($query);
+	echo 'Success';
+
+
+	return;
+} 
+
 ?>  
 
 
