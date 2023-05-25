@@ -98,6 +98,10 @@ if (isset($_POST['registerstudent'])) {
 															<option>Class</option>
 															<option>JSS 1</option>
 															<option>JSS 2</option>
+															<option>JSS 3</option>
+															<option>SSS 1</option>
+															<option>SSS 2</option>
+															<option>SSS 3</option>
 														</select>
 													</div>
 												</div>

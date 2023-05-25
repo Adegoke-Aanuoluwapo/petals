@@ -195,6 +195,8 @@ if (isset($_POST['Addclass'])) {
         <?php $i = 1;
         $sql = $con->query("SELECT * FROM class");
         while ($rows = $sql->fetch_assoc()) {
+          $class=$row['class'];
+          $note =$row['note'];
         ?>
 
          <tr>
