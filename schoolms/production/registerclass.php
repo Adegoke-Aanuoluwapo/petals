@@ -165,7 +165,7 @@ if (isset($_POST['Addclass'])) {
           <div class="ln_solid"></div>
           <div class="item form-group">
            <div class="col-md-6 col-sm-6 offset-md-3">
-            <button type="submit" name="Addclass" class="btn btn-success">Register Staff</button>
+            <button type="submit" name="Addclass" class="btn btn-success">Register Class</button>
            </div>
           </div>
 
@@ -196,8 +196,8 @@ if (isset($_POST['Addclass'])) {
         <?php $i = 1;
         $sql = $con->query("SELECT * FROM class");
         while ($rows = $sql->fetch_assoc()) {
-          $class=$row['class'];
-          $note =$row['note'];
+          $class=$rows['class'];
+          $note =$rows['note'];
         ?>
 
          <tr>
@@ -207,7 +207,7 @@ if (isset($_POST['Addclass'])) {
           <td><?= $rows['note'] ?></td>
           <td>
            <form method="POST">
-            <button class="btn btn-success" type="submit" name="deleteStaff" value="<?= $rows['sn'] ?>">Delete</button>
+            <button class="btn btn-success" type="submit" name="deleteStaff" value="<?= $rows['id'] ?>">Delete</button>
            </form>
           <td>
 

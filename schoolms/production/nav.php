@@ -22,6 +22,7 @@
           <li><a href="registerstud.php">Register Students</a></li>
           <li><a href="registerpar.php">Register Parents</a></li>
           <li><a href="registerstaff.php">Register Staff</a></li>
+          <li><a href="registerclass.php">Register Class</a></li>
 
         </ul>
       </li>

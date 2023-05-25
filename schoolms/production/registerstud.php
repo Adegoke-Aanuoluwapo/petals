@@ -95,13 +95,12 @@ if (isset($_POST['registerstudent'])) {
 													<label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">class</label>
 													<div class="col-md-6 col-sm-6 ">
 														<select class="form-control" name="class">
-															<option>Class</option>
-															<option>JSS 1</option>
-															<option>JSS 2</option>
-															<option>JSS 3</option>
-															<option>SSS 1</option>
-															<option>SSS 2</option>
-															<option>SSS 3</option>
+															<option><?php echo $rows['class'] ?></option>
+															<?php $i = 1;
+															$sql = $con->query("SELECT * FROM class");
+															while ($rows = $sql->fetch_assoc()) {
+																echo	'<option>' . $rows['class'] . '</option>';
+															} ?>
 														</select>
 													</div>
 												</div>
