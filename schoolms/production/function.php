@@ -177,6 +177,8 @@ if($result){
 	}
 function Addclass($class, $note)
 {
+	$class = $_POST['class'];
+	$note = $_POST['note'];
 	global $con;
 
 	// if (sqL1('staffclass', 'staff', $sfclass) > 0) {
