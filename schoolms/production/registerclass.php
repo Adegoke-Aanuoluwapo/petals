@@ -1,6 +1,7 @@
 <?php
 session_start();
 include("function.php");
+include("connection.php");
 
 if (isset($_POST['Addclass'])) {
  Addclass();
