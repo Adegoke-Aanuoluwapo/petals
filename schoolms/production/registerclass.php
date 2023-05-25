@@ -163,7 +163,7 @@ if (isset($_POST['Addclass'])) {
           <div class="ln_solid"></div>
           <div class="item form-group">
            <div class="col-md-6 col-sm-6 offset-md-3">
-            <button type="submit" name="Addclaff" class="btn btn-success">Register Staff</button>
+            <button type="submit" name="Addclass" class="btn btn-success">Register Staff</button>
            </div>
           </div>
 
