@@ -1,0 +1,107 @@
+ *{
+     margin: 0; padding: 0;
+     box-sizing: border-box;
+     font-family: 'Times New Roman', Times, serif
+ }
+ body{
+     color: #ffff;
+     display: flex;
+     height: 100vh;
+     justify-content: center;
+     background: rgb(218, 128, 10);
+     align-items: center;
+     padding: 10px
+ }
+ .container{
+     max-width: 700px;
+     width: 100%;
+     padding: 25px 30px;
+     border-radius: 25px;
+     background: rgb(200, 120, 20)
+ }
+ .container .header{font-size: 25px;
+    font-weight: 500;
+    position: relative;
+    text-align: center;
+    padding: 0 0 20px 0;
+
+ }
+ .container .header::before{
+     content: '';
+     position: absolute;
+     height: 3px;
+     left: 0;
+     bottom: 0;
+     bottom: 100%;
+     background: rgb(209, 199, 185);
+
+ }
+ .container form .details{
+     margin-top: 25px;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-between;
+ }
+ form .details .box{width: calc(100% / 2 - 20px);
+    margin-bottom: 15px;
+
+ }
+ .details .box .details{ display: block;
+    font-weight: 500;
+    margin-bottom: 5px
+
+ }
+ .details .box input{
+     height: 45px;
+     width: 100%;
+     outline: none;
+     border-radius: 5px;
+     border: 1px solid #fff;
+     padding-left: 15px;
+     font-size: 16px;
+     border-bottom-width: 2px;
+     transition: all 0.3s ease;
+ }
+.details .box input:focus,
+.details .box input:valid{ 
+    border: pink
+
+}
+.gender .gender-title{
+    font-size: 20px;
+    font-weight: 500;
+    border-bottom: 2px solid;
+}
+.button{
+    text-align: center;
+
+}
+.button input{
+    padding: 10px 0;
+    margin-top: 10px;
+    height: 100%;
+    width: 50%;
+    font-size: 20px;
+    color: #ffff;
+    border: none;
+    font-weight: 500;
+    border-radius: 50px;
+    background: rgb(240, 130, 50);
+    letter-spacing: 1px;
+}
+.button input:hover{
+    background:rgb(138, 59, 3)
+}
+
+@media(max-width: 584){
+    .container{
+        max-width: 100px;
+    }
+    form .details .box{
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    form .gender .gender-title{
+        width: 100%
+    }
+}

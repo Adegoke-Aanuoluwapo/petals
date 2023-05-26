@@ -32,10 +32,10 @@
     <label for="Date">Date of Birth</label>:<br>
     <input type="date" ; placeholder="date" input class="fname" f><br>
    </div>
-   <div>
+   <!-- <div>
     <label for="color">Select your favorite color</label><br>
     <input type="color" ; placeholder="Color"><button class="color" ; value="rgb">color</button><br>
-   </div>
+   </div> -->
    <div>
     <label for="Sex">Sex</label>:<br>
     <select name="sex" ; id="sex">
