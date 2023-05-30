@@ -8,9 +8,12 @@ if (isset($_POST['AddSubject'])) {
  addSubject();
 }
 
-// if(isset($_POST['EditSubject'])){
-//       EditSubject();
-// }
+if(isset($_POST['DeleteSubject'])){
+      global $con;
+      $subject = $_POST['DeleteSubject'];
+      $sql =$con->query("DELETE FROM subjects WHERE subject = '$subject'") or die(mysqli_error($con));
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -187,7 +190,7 @@ if (isset($_POST['AddSubject'])) {
               <td>
 
                <form method="POST">
-                <button class="btn btn-success" name="EditSub" value="<?= $rows['id'] ?>">UPDATE</button>
+                <button class="btn btn-success" name="EditSubject" value="<?= $rows['id'] ?>">UPDATE</button>
                </form>
               </td>
              </tr>

@@ -98,7 +98,7 @@ if (isset($_POST['registerstudent'])) {
             </tr>
             <tr>
              <th>Dates of Birth</th>
-             <td><?= $row['dob'] ?></td>
+             <td><?= $rows['dob'] ?></td>
             </tr>
 
 

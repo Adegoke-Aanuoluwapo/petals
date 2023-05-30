@@ -8,9 +8,7 @@ if (isset($_POST['Addclass'])) {
  
 }
 
-// if (isset($_POST['EditStaff'])) {
-//  $sn = $_POST['EditStaff'];
-//  EditStaff($sn);
+
 
 ?>
 
@@ -47,7 +45,7 @@ if (isset($_POST['Addclass'])) {
       <div class="">
        <div class="page-title">
         <div class="title_left">
-         <h3>Manage Staff</h3>
+         <h3>Register Class</h3>
         </div>
 
         <div class="title_right">
@@ -78,13 +76,14 @@ if (isset($_POST['Addclass'])) {
        </script>
        <?php if (isset($_POST['class'])) {
         $id = $_POST['class'];
+        
         $sql = $con->query("SELECT * FROM class WHERE id= '$id' ");
         $row = mysqli_fetch_assoc($sql);  ?>
         <div class="row">
          <div class="col-md-12 col-sm-12 ">
           <div class="x_panel">
            <div class="x_title">
-            <h2>Staff <small>Update Staff</small></h2>
+            <h2>Staff <small>Update Class</small></h2>
             <div class="clearfix"></div>
            </div>
            <div>
@@ -97,14 +96,14 @@ if (isset($_POST['Addclass'])) {
               <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">class <span class="required">*</span>
               </label>
               <div class="col-md-6 col-sm-6 ">
-               <input type="text" id="first-name" name="firstname" value="<?= $row['class'] ?>" required="required" class="form-control ">
+               <input type="text" id="first-name" name="firstname" value="<?= $rows['class'] ?>" required="required" class="form-control ">
               </div>
              </div>
              <div class="item form-group">
               <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Note <span class="required">*</span>
               </label>
               <div class="col-md-6 col-sm-6 ">
-               <input type="text" id="last-name" name="lastname" value="<?= $row['note'] ?>" required="required" class="form-control">
+               <input type="text" id="last-name" name="lastname" value="<?= $rows['note'] ?>" required="required" class="form-control">
               </div>
              </div>
              
@@ -118,7 +117,7 @@ if (isset($_POST['Addclass'])) {
            <div class="ln_solid"></div>
            <div class="item form-group">
             <div class="col-md-6 col-sm-6 offset-md-3">
-             <button type="submit" name="EditStaff" value="<?= $sn ?>" class="btn btn-success">Update User</button>
+             <button type="submit" name="Addclass" value="<?= $id ?>" class="btn btn-success">Update User</button>
             </div>
            </div>
 
@@ -134,7 +133,7 @@ if (isset($_POST['Addclass'])) {
       <div class="col-md-12 col-sm-12 ">
        <div class="x_panel">
         <div class="x_title">
-         <h2>Student <small>Register Staff</small></h2>
+         <h2>Student <small>Register Class</small></h2>
          <div class="clearfix"></div>
         </div>
         <div>
