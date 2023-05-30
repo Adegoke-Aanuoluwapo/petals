@@ -23,6 +23,7 @@
           <li><a href="registerpar.php">Register Parents</a></li>
           <li><a href="registerstaff.php">Register Staff</a></li>
           <li><a href="registerclass.php">Register Class</a></li>
+          <li><a href="addsubject.php">Register Subjects</a></li>
 
         </ul>
       </li>

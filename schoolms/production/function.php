@@ -220,6 +220,13 @@ function addSubject(){
 		}
 	}
 }
+function EditSubject($id, $subject, $note){
+	global $con;
+	$con->query("UPDATE subjects SET subject='$subject', note='$note' where id =''$id");
+	echo 'Success';
+	return;
+	
+}
 
 ?>
 
