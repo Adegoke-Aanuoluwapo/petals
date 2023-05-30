@@ -95,7 +95,7 @@ if (isset($_POST['registerstudent'])) {
 													<label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">class</label>
 													<div class="col-md-6 col-sm-6 ">
 														<select class="form-control" name="class">
-															<option><?php echo $rows['class'] ?></option>
+															<option>Select class</option>
 															<?php $i = 1;
 															$sql = $con->query("SELECT * FROM class");
 															while ($rows = $sql->fetch_assoc()) {
@@ -128,7 +128,14 @@ if (isset($_POST['registerstudent'])) {
 														</script>
 													</div>
 												</div>
+												<div class="item form-group">
+													<label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Parent</label>
+													<div class="col-md-6 col-sm-6 ">
+														<input id="middle-name" class="form-control" type="text" name="parent">
+													</div>
+												</div>
 												<div class="ln_solid"></div>
+
 												<div class="item form-group">
 													<div class="col-md-6 col-sm-6 offset-md-3">
 														<button type="submit" name="registerstudent" class="btn btn-success">Submit</button>
@@ -147,6 +154,7 @@ if (isset($_POST['registerstudent'])) {
 														<th>class</th>
 														<th>Sex</th>
 														<th>Dates of Birth</th>
+
 													</tr>
 												</thead>
 												<tbody>
@@ -156,7 +164,7 @@ if (isset($_POST['registerstudent'])) {
 													?>
 
 														<th scope="row"><?= $i++ ?></th>
-														<td><?= $rows['surname'] ?></td>
+														<td><a href="studentprofile.php?id<?= $rows['id'] ?>"><?= $rows['surname'] ?></a></td>
 														<td><?= $rows['firstname'] ?></td>
 														<td><?= $rows['reg'] ?></td>
 														<td><?= $rows['class'] ?></td>

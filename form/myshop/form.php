@@ -4,50 +4,58 @@
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Login Page</title>
+ <title>Document</title>
  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
- <h4>Login Page</h4>
- <div>
-  <form action="reg.html" method="GET">
-   <div>
-    <label for="name">First Name:</label><br>
-    <input type="text" ; placeholder="FirstName" input class="fname"><br>
-   </div>
-   <div>
-    <label for="Lastname">Last Name</label><br>
-    <input type="text" ; placeholder="Last Name" ; input class="Lname"><br>
-   </div>
-   <div>
-    <label for="Number">Phone Number</label><br>
-    <input type="number" ; placeholder="Phone Number" input class="number"><br>
-   </div>
-   <div>
-    <label for="mail">Email</label><br>
-    <input type="text" ; placeholder="Email" input class="Email"><br>
-   </div>
-   <div>
-    <label for="Date">Date of Birth</label>:<br>
-    <input type="date" ; placeholder="date" input class="fname" f><br>
-   </div>
-   <!-- <div>
-    <label for="color">Select your favorite color</label><br>
-    <input type="color" ; placeholder="Color"><button class="color" ; value="rgb">color</button><br>
-   </div> -->
-   <div>
-    <label for="Sex">Sex</label>:<br>
-    <select name="sex" ; id="sex">
-     <option value="male">MALE</option>
-     <option value="female">FEMALE</option>
-    </select><br>
-   </div>
+ <div class="container">
+  <div class="header">Registration</div>
+  <form action="login.html" method="GET">
+   <div class="details">
+    <div class="box">
+     <span class="details">First Name</span>
+     <input type="text" placeholder="Enter Your First Name" name="First Name">
 
-   <button>Submit</button>
+    </div>
+    <div class="box">
+     <span class="details">Last Name</span>
+     <input type="text" placeholder="Enter Your Last Name" name="Last Name">
+    </div>
 
+
+    <div class="box">
+     <span class="details">Phone Number</span>
+     <input type="phone" placeholder="Enter Your Phone Number" name="Phone Number">
+    </div>
+    <div class="box">
+     <span class="details">Email</span>
+     <input type="email" placeholder="Enter Your mail" name="Email">
+    </div>
+
+    <div class="box">
+     <span class="details">Date of Birth</span>
+     <input type="date" placeholder="Enter Your DOB" name="DOB">
+    </div>
+    <div class="box">
+     <span class="details">Favorite Color</span>
+     <input type="color" placeholder="Enter Your Favorite Color" name="Color">
+    </div>
+   </div>
+   <div class="gender">
+    <span class="gender-title">Gender</span>
+    <div class="category">
+     <input type="radio" name="gender"> Male
+     <input type="radio" name="gender"> Female
+     <input type="radio" name="gender"> Other
+    </div>
+    <div class="button">
+     <input type="submit" name="Register" value="Register">
+    </div>
+   </div>
 
   </form>
+
  </div>
 </body>
 
