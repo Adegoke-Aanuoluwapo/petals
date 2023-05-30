@@ -1,6 +1,7 @@
 <?php
 session_start();
 include("function.php");
+include("connection.php");
 
 if(isset($_POST['AddUser'])){
 	AddStudent();
@@ -116,7 +117,7 @@ if(isset($_POST['deleteUser'])){
 											</tr>
 										</thead>
 										 <tbody>
-										<?php $i=1; $sql = $db->query("SELECT * FROM studentuser LIMIT 4,3") ;
+										<?php $i=1; $sql = $con->query("SELECT * FROM results LIMIT 4,3") ;
 										  while($rows = $sql->fetch_assoc()) {
 							     ?>
 									    

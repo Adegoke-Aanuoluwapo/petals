@@ -206,6 +206,21 @@ function Addresult()
 	}
 }
 
+function addSubject(){
+	global $con;
+	if ($_SERVER["REQUEST_METHOD"] == "POST"){
+		$subject = $_POST['subject'];
+		$note = $_POST['note'];
+
+		$sql = "INSERT INTO subjects(subject, note) VALUES('$subject', '$note')";
+
+		$result = mysqli_query($con, $sql);
+		if($result){
+			echo "subject added successfully";
+		}
+	}
+}
+
 ?>
 
 
@@ -213,4 +228,3 @@ function Addresult()
 
 
 
-?>
