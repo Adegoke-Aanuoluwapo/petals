@@ -72,14 +72,15 @@ if (isset($_POST['deleteUser'])) {
 							<?php
 							if (array_key_exists('AddResult', $_POST)) {
 								$subject = $_POST['subject'];
-								$studentid = $_POST['studentid'];
+								$student = $_POST['studentid'];
 								$class = $_POST['class'];
 								$ca1 = $_POST['ca1'];
 								$ca2 = $_POST['ca2'];
 								$exam = $_POST['exam'];
 
+
 								$i = 0;
-								while ($i < count($studentid)) {
+								while ($i < count($student)) {
 									$e = $i++;
 
 
@@ -90,9 +91,9 @@ if (isset($_POST['deleteUser'])) {
 									$exa = $exam[$e];
 									$total = (int)$c1 + (int)$c2 + (int)$exa;
 
-									$sql = $con->query("SELECT * FROM results WHERE studentid='$student' AND class='$clas' AND subject='$subject' ");
+									$sql = $con->query("SELECT * FROM results WHERE id='$student' AND class='$clas' AND subject='$subject' ");
 									if (mysqli_num_rows($sql) == 0) {
-										addResult($student, $clas, $subject, $c1, $c2, $exa, $total);
+										addResult($student, $clas, $subject, $c1, $c2, $exa);
 									}
 								}
 							}
@@ -108,7 +109,7 @@ if (isset($_POST['deleteUser'])) {
 											<table class="table">
 												<thead>
 													<tr>
-														<th>#</th>
+														<th>sn</th>
 														<th>Surname</th>
 														<th>Other</th>
 														<th>class</th>
@@ -116,22 +117,24 @@ if (isset($_POST['deleteUser'])) {
 														<th>CA2</th>
 														<th>Exam</th>
 
+
 													</tr>
 												</thead>
 												<tbody>
 													<?php $i = 1;
-													$sql = $con->query("SELECT * FROM student");
+													$sql = $con->query("SELECT * FROM student LIMIT 4,6");
 													while ($rows = $sql->fetch_assoc()) {
 													?>
 
 														<tr>
 															<th scope="row"><?= $i++ ?></th>
 															<td><a href="studentprofile.php?sn=<?= $rows['id'] ?>"><?= $rows['surname'] ?></a></td>
-															<td><?= $rows['firstname'] ?> <input type="hidden" name="studentid[]" value="<?= $rows['id'] ?>"></td>
+															<td><?= $rows['firstname'] ?> <input type="hidden" name="id[]" value="<?= $rows['id'] ?>"></td>
 															<td><input type="text" name="class[]" value="<?= $rows['class'] ?>" class="form-control"></td>
 															<td><input type="number" name="ca1[]" min="0" max="20" class="form-control"></td>
 															<td><input type="number" name="ca2[]" min="0" max="20" class="form-control"></td>
 															<td><input type="number" name="exam[]" min="0" max="60" class="form-control"></td>
+
 
 														</tr>
 													<?php  } ?>

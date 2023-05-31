@@ -28,6 +28,26 @@ function adduser()
 }
 
 
+function parentData($id, $option=''){
+	global $con;
+	$sql = $con->query("SELECT * FROM parent WHERE id='$id'");
+	$row = mysqli_fetch_assoc($sql);
+	if($option==''){
+		return $row['surname']. ' '.$row['othername'];
+	}else{
+		return $row[$option];
+	}
+}
+function studentData($id, $option=''){
+	global $con;
+	$sql =$con->query("SELECT * FROM student WHERE id = '$id' ");
+	$row = mysqli_fetch_assoc($sql);
+}
+
+
+
+
+
 function check_login($con)
 {
 	if (isset($_SESSION['user_id'])) {
@@ -186,25 +206,27 @@ function Addclass()
 }
 
 
-function Addresult()
+function Addresult($studentid, $class, $subject,$ca1, $ca2,$exam	 )
 {
 	global $con;
-	if ($_SERVER["REQUEST_METHOD"] == "POST") {
-		$subject = $_POST['subject'];
-		$studentid = $_POST['studentid'];
-		$class = $_POST['class'];
-		$ca1 =$_POST['ca1'];
-		$ca2=$_POST['ca2'];
-		$exam =$_POST['exam'];
 
-		$sql = "INSERT INTO results(subject, studentid, class, ca1, ca2, exam) VALUES('$subject', '$studentid', '$class', '$ca1', '$ca2', '$exam')";
+		
+
+
+		$sql = "INSERT INTO results( studentid, class,subject, ca1, ca2, exam, total) VALUES( '$studentid', '$class','$subject', '$ca1', '$ca2', '$exam' )";
 
 		$result = mysqli_query($con, $sql);
 		if ($result) {
 			echo "class added successfully";
 		}
+		return;
 	}
-}
+	function sqL1($table, $col, $value){
+		global $con;
+		$sql = $con->query("SELECT * from $table where $col='$value'");
+		return mysqli_num_rows($sql);
+	}
+
 
 function addSubject(){
 	global $con;
