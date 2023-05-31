@@ -3,7 +3,7 @@ session_start();
 include("connection.php");
 include("function.php");
 
-
+$id = $_GET['id'];
 
 if (isset($_POST['EditUser'])) {
    $id = $_POST['EditUser'];
@@ -162,28 +162,29 @@ $rows = $sql->fetch_assoc();
                                        <td><?= $rows['firstname'] ?></td>
                                     </tr>
                                     <tr>
-                                       <th>class</th>
-                                       <td><?= $rows['class'] ?></td>
+                                       <th>Date of birth</th>
+                                       <td><?= $rows['dob'] ?></td>
                                     </tr>
                                     <tr>
                                        <th>sex</th>
                                        <td><?= $rows['sex'] ?></td>
                                     </tr>
                                     <tr>
+                                       <th>class</th>
+                                       <td><?= $rows['class'] ?></td>
+                                    </tr>
+                                    <tr>
                                        <th>registrationnumber</th>
                                        <td><?= $rows['reg'] ?></td>
                                     </tr>
-                                    <tr>
-                                       <th>dateofbirth</th>
-                                       <td><?= $rows['dob'] ?></td>
-                                    </tr>
+
                                     <tr>
                                        <th>Parent Data</th>
-                                       <td><a href="parentprofile.php?sn=<?= $rows['parent'] ?>"><?= parentData($rows['parent']) ?></a></td>
+                                       <td><a href="parentprofile.php?id=<?= $rows['parent'] ?>"><?= parentData($rows['parent']) ?></a></td>
                                     </tr>
                                     <tr>
                                        <th>Subject Data</th>
-                                       <td><a href="addsubject.php?sn=<?= $rows['parent'] ?>"><?= parentData($rows['parent']) ?></a></td>
+                                       <td><a href="addsubject.php?id=<?= $rows['parent'] ?>"><?= parentData($rows['parent']) ?></a></td>
                                     </tr>
 
 
@@ -193,7 +194,7 @@ $rows = $sql->fetch_assoc();
                                     ?>
 
                                        <th scope="row"><?= $i++ ?></th>
-                                       <td><a href="studentprofile.php?id<?= $rows['id'] ?>"><?= $rows['surname'] ?></a></td>
+                                       <td><a href="studentprofile.php?id=<?= $rows['id'] ?>"><?= $rows['surname'] ?></a></td>
 
 
 
