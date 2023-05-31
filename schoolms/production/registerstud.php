@@ -164,7 +164,7 @@ if (isset($_POST['registerstudent'])) {
 													?>
 
 														<th scope="row"><?= $i++ ?></th>
-														<td><a href="studentprofile.php?id<?= $rows['id'] ?>"><?= $rows['surname'] ?></a></td>
+														<td><a href="studentprofile.php?id=<?= $rows['id'] ?>"><?= $rows['surname'] ?></a></td>
 														<td><?= $rows['firstname'] ?></td>
 														<td><?= $rows['reg'] ?></td>
 														<td><?= $rows['class'] ?></td>

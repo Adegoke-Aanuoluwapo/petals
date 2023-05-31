@@ -10,7 +10,7 @@ $id = $_GET['id'];
 
 if (isset($_POST['LinkStudent'])) {
  $parent = $_POST['student'];
- $sql = $con->query("UPDATE parent SET student='$parent' where id = '$id'") or die($con->error);
+ $sql = $con->query("UPDATE parent SET student='$student' where id = '$id'") or die($con->error);
  header('location: registerpar.php');
  exit;
 }
@@ -139,8 +139,63 @@ $rows = $sql->fetch_assoc();
 
            <br />
 
-
            <table class="table table-hover">
+
+            <tr>
+             <th>Surname</th>
+             <td><?= $rows['surname'] ?></td>
+            </tr>
+            <tr>
+             <th>Other</th>
+             <td><?= $rows['othername'] ?></td>
+            </tr>
+            <tr>
+             <th>Phone Number</th>
+             <td><?= $rows['phone'] ?></td>
+            </tr>
+            <tr>
+             <th>sex</th>
+             <td><?= $rows['sex'] ?></td>
+            </tr>
+            <tr>
+             <th>Email</th>
+             <td><?= $rows['email'] ?></td>
+            </tr>
+            <tr>
+             <th>Parent Data</th>
+             <td><a href="studentprofile.php?id=<?= $rows['student'] ?>"><?= studentData($rows['student']) ?></a></td>
+            </tr>
+
+           </table>
+
+           <form method="post" enctype="multipart/form-data">
+            Select image to upload:
+            <input type="file" class="btn btn-primary" name="fileToUpload" id="fileToUpload">
+            <input type="submit" class="btn btn-primary" value="Upload Image" name="submit">
+           </form>
+
+           <form method="POST">
+            <button class="btn btn-success" type="submit" name="deleteParent" value="<?= $rows['id'] ?>">Delete</button>
+           </form>
+
+           <form method="POST" action="addstudent.php">
+            <button class="btn btn-success" name="EditParent" value="<?= $rows['id'] ?>">UPDATE</button>
+           </form>
+
+           <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Select Child</button>
+
+
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+
+
+
+
+     <!-- <table class="table table-hover">
 
 
 
@@ -175,14 +230,10 @@ $rows = $sql->fetch_assoc();
             </tr>
 
             <tr>
-             <th>Parent Data</th>
-             <td><a href="studentprofile.php?id=<?= $rows['student'] ?>"><?= parentData($rows['student']) ?></a></td>
+             <th>Student Data</th>
+             <td><a href="studentprofile.php?id=<?= $rows['student'] ?>"><?= studentData($rows['student']) ?></a></td>
             </tr>
-            <tr>
-             <th>Subject Data</th>
-             <td><a href="addsubject.php?id=<?= $rows['parent'] ?>"><?= parentData($rows['parent']) ?></a></td>
-            </tr>
-
+         
 
             <?php $i = 1;
             $sql = $con->query("SELECT * FROM parent");
@@ -205,7 +256,7 @@ $rows = $sql->fetch_assoc();
         </div>
        </div>
       </div>
-     </div>
+     </div> -->
      <!-- /page content -->
 
      <!-- footer content -->

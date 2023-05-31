@@ -24,7 +24,11 @@
           <li><a href="registerstaff.php">Register Staff</a></li>
           <li><a href="registerclass.php">Register Class</a></li>
           <li><a href="addsubject.php">Register Subjects</a></li>
+          <li><a href="parentprofile.php">Parent Profile</a></li>
+          <li><a href="studentprofile.php">Student Profile</a></li>
           <li><a href="addresults.php">Results</a></li>
+
+
 
         </ul>
       </li>

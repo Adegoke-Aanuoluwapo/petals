@@ -31,21 +31,21 @@ function adduser()
 function parentData($id, $option=''){
 	global $con;
 	$sql = $con->query("SELECT * FROM parent WHERE id='$id'");
-	$row = mysqli_fetch_assoc($sql);
+	$rows = mysqli_fetch_assoc($sql);
 	if($option==''){
-		return $row['surname']. ' '.$row['othername'];
+		return $rows['surname']. ' '.$rows['firstname'];
 	}else{
-		return $row[$option];
+		return $rows[$option];
 	}
 }
 function studentData($id, $option=''){
 	global $con;
 	$sql =$con->query("SELECT * FROM student WHERE id = '$id' ");
-	$row = mysqli_fetch_assoc($sql);
+	$rows = mysqli_fetch_assoc($sql);
 	if ($option == '') {
-		return $row['surname'] . ' ' . $row['othername'];
+		return $rows['surname'] . ' ' . $rows['othername'];
 	} else {
-		return $row[$option];
+		return $rows[$option];
 	}
 }
 
@@ -282,11 +282,3 @@ function EditSubject($id, $subject, $note){
 	return;
 	
 }
-
-?>
-
-
-
-
-
-

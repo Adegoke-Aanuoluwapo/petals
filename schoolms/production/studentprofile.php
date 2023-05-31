@@ -180,41 +180,78 @@ $rows = $sql->fetch_assoc();
 
                                     <tr>
                                        <th>Parent Data</th>
-                                       <td><a href="parentprofile.php?id=<?= $rows['parent'] ?>"><?= parentData($rows['parent']) ?></a></td>
+                                       <td><a href="parentprofile.php?id=<?= $rows['parent'] ?>"><?= parentData($row['parent']) ?></a></td>
                                     </tr>
+
+
                                     <tr>
                                        <th>Subject Data</th>
-                                       <td><a href="addsubject.php?id=<?= $rows['parent'] ?>"><?= parentData($rows['parent']) ?></a></td>
+                                       <td><a href="addsubject.php?sn=<?= $rows['parent'] ?>"><?= parentData($rows['parent']) ?></a></td>_
                                     </tr>
 
 
-                                    <?php $i = 1;
-                                    $sql = $con->query("SELECT * FROM student");
-                                    while ($rows = $sql->fetch_assoc()) {
-                                    ?>
-
-                                       <th scope="row"><?= $i++ ?></th>
-                                       <td><a href="studentprofile.php?id=<?= $rows['id'] ?>"><?= $rows['surname'] ?></a></td>
-
-
-
-
-
-                                       </tr>
-                                    <?php } ?>
 
                                  </table>
+                                 <form method="post" enctype="multipart/form-data">
+                                    Select image to upload:
+                                    <input type="file" class="btn btn-primary" name="fileToUpload" id="fileToUpload">
+                                    <input type="submit" class="btn btn-primary" value="Upload Image" name="submit">
+                                 </form>
+                                 <form method="POST">
+                                    <button class="btn btn-success" type="submit" name="deleteUser" value="<?= $rows['id'] ?>">Delete</button>
+                                 </form>
+
+                                 <form method="POST" action="addstudent.php">
+                                    <button class="btn btn-success" name="EditData" value="<?= $rows['id'] ?>">UPDATE</button>
+                                 </form>
+
+                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Select Parent</button>
                               </div>
                            </div>
                         </div>
                      </div>
                   </div>
                </div>
+
+
+
                <!-- /page content -->
 
                <!-- footer content -->
                <?php include("footer.php"); ?>
                <!-- /footer content -->
+            </div>
+         </div>
+
+         <div>
+
+            <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
+               <div class="modal-dialog modal-sm">
+                  <div class="modal-content">
+                     <form method="POST">
+                        <div class="modal-header">
+                           <h4 class="modal-title" id="myModalLabel2">Update Parent</h4>
+                           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                           </button>
+                        </div>
+                        <div class="modal-body">
+                           <label>Select Parent</label>
+                           <select class="form-control" name="parent" required>
+                              <option value="">Select Option...</option>
+                              <?php $i = 1;
+                              $sql = $db->query("SELECT * FROM parentuser");
+                              while ($rows = $sql->fetch_assoc()) {
+                                 echo   '<option value="' . $rows['sn'] . '">' . $rows['surname'] . ' ' . $rows['othername'] . '</option>';
+                              } ?>
+                           </select>
+                        </div>
+                        <div class="modal-footer">
+                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                           <button type="submit" class="btn btn-primary" name="LinkParent">Save changes</button>
+                        </div>
+                     </form>
+                  </div>
+               </div>
             </div>
          </div>
 
