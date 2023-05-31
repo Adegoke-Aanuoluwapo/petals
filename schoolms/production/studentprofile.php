@@ -3,7 +3,7 @@ session_start();
 include("connection.php");
 include("function.php");
 
-$id = $_POST['id'];
+
 
 if (isset($_POST['EditUser'])) {
    $id = $_POST['EditUser'];
@@ -66,7 +66,7 @@ if (isset($_POST["submit"])) {
    } else {
       if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 
-         $sql = $con->query("UPDATE studentuser SET picture = '$file_name' WHERE sn = '$sn' ") or die($con->error);
+         $sql = $con->query("UPDATE studentuser SET picture = '$file_name' WHERE id = '$id' ") or die($con->error);
 
          if ($sql) {
             echo "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
@@ -79,7 +79,9 @@ if (isset($_POST["submit"])) {
       }
    }
 }
+
 $sql = $con->query("SELECT * FROM student WHERE id='$id' ");
+
 $rows = $sql->fetch_assoc();
 
 ?>

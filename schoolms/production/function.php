@@ -42,7 +42,40 @@ function studentData($id, $option=''){
 	global $con;
 	$sql =$con->query("SELECT * FROM student WHERE id = '$id' ");
 	$row = mysqli_fetch_assoc($sql);
+	if ($option == '') {
+		return $row['surname'] . ' ' . $row['othername'];
+	} else {
+		return $row[$option];
+	}
 }
+
+function EditUser($id){
+	global $con;
+	$surname=$_POST['surname'];
+	$othername=$_POST['othername'];
+	$dob = $_POST['dob'];
+	$sex = $_POST['sex'];
+	$class =$_POST['class'];
+	$reg =$_POST['reg'];
+	if (empty($surname) || empty($reg) || is_numeric($surname)) {
+		echo "invalid information";
+		return;
+}
+
+$sql = "UPDATE student SET
+surname='$surname',
+othername='$othername',
+dob ='$dob',
+sex='$sex',
+class='$class'
+
+";
+
+$con->query($sql) or mysqli_error($con);
+echo 'success';
+}
+
+
 
 
 
