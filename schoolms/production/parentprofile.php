@@ -57,7 +57,7 @@ if (isset($_POST["submit"])) {
  } else {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 
-   $sql = $con->query("UPDATE studentuser SET picture = '$file_name' WHERE id = '$id' ") or die($con->error);
+   $sql = $con->query("UPDATE parent SET picture = '$file_name' WHERE id = '$id' ") or die($con->error);
 
    if ($sql) {
     echo "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
@@ -147,7 +147,7 @@ $rows = $sql->fetch_assoc();
             </tr>
             <tr>
              <th>Other</th>
-             <td><?= $rows['othername'] ?></td>
+             <td><?= $rows['othernames'] ?></td>
             </tr>
             <tr>
              <th>Phone Number</th>
@@ -161,10 +161,7 @@ $rows = $sql->fetch_assoc();
              <th>Email</th>
              <td><?= $rows['email'] ?></td>
             </tr>
-            <tr>
-             <th>Parent Data</th>
-             <td><a href="studentprofile.php?id=<?= $rows['student'] ?>"><?= studentData($rows['student']) ?></a></td>
-            </tr>
+
 
            </table>
 

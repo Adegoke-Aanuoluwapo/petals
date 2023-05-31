@@ -186,12 +186,65 @@ $rows = $sql->fetch_assoc();
 
                                     <tr>
                                        <th>Subject Data</th>
-                                       <td><a href="addsubject.php?sn=<?= $rows['parent'] ?>"><?= parentData($rows['parent']) ?></a></td>_
+                                       <td><a href="addsubject.php?id=<?= $rows['parent'] ?>"><?= parentData($rows['parent']) ?></a></td>_
                                     </tr>
 
 
 
                                  </table>
+                                 <div class="x_panel">
+                                    <div class="x_title">
+                                       <h2>Bordered table <small>Bordered table subtitle</small></h2>
+                                       <ul class="nav navbar-right panel_toolbox">
+                                          <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                          </li>
+                                          <li class="dropdown">
+                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item" href="#">Settings 1</a>
+                                                <a class="dropdown-item" href="#">Settings 2</a>
+                                             </div>
+                                          </li>
+                                          <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                          </li>
+                                       </ul>
+                                       <div class="clearfix"></div>
+                                    </div>
+                                    <div class="x_content">
+
+                                       <table class="table table-bordered">
+                                          <thead>
+                                             <tr>
+                                                <th>#</th>
+                                                <th>First Name</th>
+                                                <th>Last Name</th>
+                                                <th>Username</th>
+                                             </tr>
+                                          </thead>
+                                          <tbody>
+                                             <tr>
+                                                <th scope="row">1</th>
+                                                <td>Mark</td>
+                                                <td>Otto</td>
+                                                <td>@mdo</td>
+                                             </tr>
+                                             <tr>
+                                                <th scope="row">2</th>
+                                                <td>Jacob</td>
+                                                <td>Thornton</td>
+                                                <td>@fat</td>
+                                             </tr>
+                                             <tr>
+                                                <th scope="row">3</th>
+                                                <td>Larry</td>
+                                                <td>the Bird</td>
+                                                <td>@twitter</td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+
+                                    </div>
+                                 </div>
                                  <form method="post" enctype="multipart/form-data">
                                     Select image to upload:
                                     <input type="file" class="btn btn-primary" name="fileToUpload" id="fileToUpload">
@@ -212,49 +265,41 @@ $rows = $sql->fetch_assoc();
                      </div>
                   </div>
                </div>
-
-
-
                <!-- /page content -->
-
                <!-- footer content -->
                <?php include("footer.php"); ?>
                <!-- /footer content -->
             </div>
          </div>
 
-         <div>
-
-            <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
-               <div class="modal-dialog modal-sm">
-                  <div class="modal-content">
-                     <form method="POST">
-                        <div class="modal-header">
-                           <h4 class="modal-title" id="myModalLabel2">Update Parent</h4>
-                           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
-                           </button>
-                        </div>
-                        <div class="modal-body">
-                           <label>Select Parent</label>
-                           <select class="form-control" name="parent" required>
-                              <option value="">Select Option...</option>
-                              <?php $i = 1;
-                              $sql = $db->query("SELECT * FROM parentuser");
-                              while ($rows = $sql->fetch_assoc()) {
-                                 echo   '<option value="' . $rows['sn'] . '">' . $rows['surname'] . ' ' . $rows['othername'] . '</option>';
-                              } ?>
-                           </select>
-                        </div>
-                        <div class="modal-footer">
-                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                           <button type="submit" class="btn btn-primary" name="LinkParent">Save changes</button>
-                        </div>
-                     </form>
-                  </div>
+         <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+               <div class="modal-content">
+                  <form method="POST">
+                     <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel2">Update Parent</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                        </button>
+                     </div>
+                     <div class="modal-body">
+                        <label>Select Parent</label>
+                        <select class="form-control" name="parent" required>
+                           <option value="">Select Option...</option>
+                           <?php $i = 1;
+                           $sql = $db->query("SELECT * FROM parent");
+                           while ($rows = $sql->fetch_assoc()) {
+                              echo   '<option value="' . $rows['sn'] . '">' . $rows['surname'] . ' ' . $rows['othername'] . '</option>';
+                           } ?>
+                        </select>
+                     </div>
+                     <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" name="LinkParent">Save changes</button>
+                     </div>
+                  </form>
                </div>
             </div>
          </div>
-
          <!-- jQuery -->
          <script src="../vendors/jquery/dist/jquery.min.js"></script>
          <!-- Bootstrap -->

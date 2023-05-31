@@ -33,7 +33,7 @@ function parentData($id, $option=''){
 	$sql = $con->query("SELECT * FROM parent WHERE id='$id'");
 	$rows = mysqli_fetch_assoc($sql);
 	if($option==''){
-		return $rows['surname']. ' '.$rows['firstname'];
+		return $rows['surname']. ' '.$rows['othernames'];
 	}else{
 		return $rows[$option];
 	}
