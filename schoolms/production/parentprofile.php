@@ -5,22 +5,13 @@ include("function.php");
 
 $id = $_GET['id'];
 
-if (isset($_POST['EditUser'])) {
- $id = $_POST['EditUser'];
- EditUser($id);
-}
-if (isset($_POST['deleteUser'])) {
- $id = $_POST['deleteUser'];
-
- $sql = $con->query("DELETE FROM student where id = '$id'") or die($con->error);
- header('location: regstudent.php');
-}
 
 
-if (isset($_POST['LinkParent'])) {
- $parent = $_POST['parent'];
- $sql = $con->query("UPDATE student SET parent='$parent' where id = '$id'") or die($con->error);
- header('location: regstudent.php');
+
+if (isset($_POST['LinkStudent'])) {
+ $parent = $_POST['student'];
+ $sql = $con->query("UPDATE parent SET student='$parent' where id = '$id'") or die($con->error);
+ header('location: registerpar.php');
  exit;
 }
 
@@ -80,7 +71,7 @@ if (isset($_POST["submit"])) {
  }
 }
 
-$sql = $con->query("SELECT * FROM student WHERE id='$id' ");
+$sql = $con->query("SELECT * FROM parent WHERE id='$id' ");
 
 $rows = $sql->fetch_assoc();
 
@@ -159,28 +150,33 @@ $rows = $sql->fetch_assoc();
             </tr>
             <tr>
              <th>Other</th>
-             <td><?= $rows['firstname'] ?></td>
+             <td><?= $rows['othernames'] ?></td>
             </tr>
             <tr>
-             <th>Date of birth</th>
-             <td><?= $rows['dob'] ?></td>
+             <th>Email</th>
+             <td><?= $rows['email'] ?></td>
             </tr>
             <tr>
              <th>sex</th>
              <td><?= $rows['sex'] ?></td>
             </tr>
             <tr>
-             <th>class</th>
-             <td><?= $rows['class'] ?></td>
+             <th>Email</th>
+             <td><?= $rows['email'] ?></td>
+            </tr>
+            <tr>
+            <tr>
+             <th>Phone</th>
+             <td><?= $rows['phone'] ?></td>
             </tr>
             <tr>
              <th>registrationnumber</th>
-             <td><?= $rows['reg'] ?></td>
+             <td><?= $rows['regno'] ?></td>
             </tr>
 
             <tr>
              <th>Parent Data</th>
-             <td><a href="parentprofile.php?id=<?= $rows['parent'] ?>"><?= parentData($rows['parent']) ?></a></td>
+             <td><a href="studentprofile.php?id=<?= $rows['student'] ?>"><?= parentData($rows['student']) ?></a></td>
             </tr>
             <tr>
              <th>Subject Data</th>
@@ -189,7 +185,7 @@ $rows = $sql->fetch_assoc();
 
 
             <?php $i = 1;
-            $sql = $con->query("SELECT * FROM student");
+            $sql = $con->query("SELECT * FROM parent");
             while ($rows = $sql->fetch_assoc()) {
             ?>
 
