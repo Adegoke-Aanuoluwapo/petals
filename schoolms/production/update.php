@@ -7,7 +7,7 @@ include("function.php");
 
 if (isset($_POST['submit'])) {
  $id = $_POST['submit'];
- upadateParent($id);
+ //upadateParent($id);
 };
 $id = $_GET['updateid'];
 $sql = "SELECT * from parent where id ='$id'";
@@ -28,8 +28,8 @@ if (isset($_POST['submit'])) {
  $sex = $_POST['sex'];
  $phone = $_POST['phone'];
 
- $sql = "UPDATE parent set regno='$regno', surname='$surname', othernames='$othernames',email='$email', sex='$sex', phone='$phone'";
- $result = mysqli_query($con, $sql);
+ // $sql = "UPDATE parent set regno='$regno', surname='$surname', othernames='$othernames',email='$email', sex='$sex', phone='$phone'";
+ // $result = mysqli_query($con, $sql);
 }
 // if($result){
 //  header("location:registerpar.php");

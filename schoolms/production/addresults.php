@@ -91,7 +91,7 @@ if (isset($_POST['deleteUser'])) {
 									$exa = $exam[$e];
 									$total = (int)$c1 + (int)$c2 + (int)$exa;
 
-									$sql = $con->query("SELECT * FROM results WHERE id='$student' AND class='$clas' AND subject='$subject' ");
+									$sql = $con->query("SELECT * FROM results WHERE studentid='$student' AND class='$clas' AND subject='$subject' ");
 									if (mysqli_num_rows($sql) == 0) {
 										addResult($student, $clas, $subject, $c1, $c2, $exa);
 									}
@@ -128,8 +128,8 @@ if (isset($_POST['deleteUser'])) {
 
 														<tr>
 															<th scope="row"><?= $i++ ?></th>
-															<td><a href="studentprofile.php?sn=<?= $rows['id'] ?>"><?= $rows['surname'] ?></a></td>
-															<td><?= $rows['firstname'] ?> <input type="hidden" name="id[]" value="<?= $rows['id'] ?>"></td>
+															<td><a href="studentprofile.php?id=<?= $rows['id'] ?>"><?= $rows['surname'] ?></a></td>
+															<td><?= $rows['firstname'] ?> <input type="hidden" name="reg[]" value="<?= $rows['reg'] ?>"></td>
 															<td><input type="text" name="class[]" value="<?= $rows['class'] ?>" class="form-control"></td>
 															<td><input type="number" name="ca1[]" min="0" max="20" class="form-control"></td>
 															<td><input type="number" name="ca2[]" min="0" max="20" class="form-control"></td>

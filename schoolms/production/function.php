@@ -28,19 +28,21 @@ function adduser()
 }
 
 
-function parentData($id, $option=''){
+function parentData($id, $option = '')
+{
 	global $con;
 	$sql = $con->query("SELECT * FROM parent WHERE id='$id'");
 	$rows = mysqli_fetch_assoc($sql);
-	if($option==''){
-		return $rows['surname']. ' '.$rows['othernames'];
-	}else{
+	if ($option == '') {
+		return $rows['surname'] . ' ' . $rows['othernames'];
+	} else {
 		return $rows[$option];
 	}
 }
-function studentData($id, $option=''){
+function studentData($id, $option = '')
+{
 	global $con;
-	$sql =$con->query("SELECT * FROM student WHERE id = '$id' ");
+	$sql = $con->query("SELECT * FROM student WHERE id = '$id' ");
 	$rows = mysqli_fetch_assoc($sql);
 	if ($option == '') {
 		return $rows['surname'] . ' ' . $rows['othername'];
@@ -49,20 +51,21 @@ function studentData($id, $option=''){
 	}
 }
 
-function EditUser($id){
+function EditUser($id)
+{
 	global $con;
-	$surname=$_POST['surname'];
-	$othername=$_POST['othername'];
+	$surname = $_POST['surname'];
+	$othername = $_POST['othername'];
 	$dob = $_POST['dob'];
 	$sex = $_POST['sex'];
-	$class =$_POST['class'];
-	$reg =$_POST['reg'];
+	$class = $_POST['class'];
+	$reg = $_POST['reg'];
 	if (empty($surname) || empty($reg) || is_numeric($surname)) {
 		echo "invalid information";
 		return;
-}
+	}
 
-$sql = "UPDATE student SET
+	$sql = "UPDATE student SET
 surname='$surname',
 othername='$othername',
 dob ='$dob',
@@ -71,8 +74,8 @@ class='$class'
 
 ";
 
-$con->query($sql) or mysqli_error($con);
-echo 'success';
+	$con->query($sql) or mysqli_error($con);
+	echo 'success';
 }
 
 
@@ -202,26 +205,17 @@ function addStaff()
 		}
 	}
 }
-function upadateParent($id)
+function upadateParent($id, $regno, $surname, $othernames, $email, $sex, $phone)
 {
 	global $con;
 
 
-	if ($_SERVER["REQUEST_METHOD"] == "POST") {
-		$regno = $_POST['regno'];
-		$surname = $_POST['surname'];
-		$othernames = $_POST['othernames'];
-		$email = $_POST['email'];
-		$sex = $_POST['sex'];
-		$phone = $_POST['phone'];
-		$sql = "UPDATE parent set  regno='$regno', surname='$surname', othernames='$othernames', email='$email', sex ='$sex', phone= '$phone' WHERE id ='$id'";
-		$result = mysqli_query($con, $sql);
 
-		if ($result) {
-			echo 'data updated successfully';
-		}
-	}
+	$con->query("UPDATE parent set  regno='$regno', surname='$surname', othernames='$othernames', email='$email', sex ='$sex', phone= '$phone' WHERE id ='$id'");
+
+	echo 'success';
 }
+
 function Addclass()
 {
 	global $con;
@@ -239,46 +233,48 @@ function Addclass()
 }
 
 
-function Addresult($studentid, $class, $subject,$ca1, $ca2,$exam	 )
+function Addresult($studentid, $class, $subject, $ca1, $ca2, $exam)
 {
 	global $con;
 
-		
 
 
-		$sql = "INSERT INTO results( studentid, class,subject, ca1, ca2, exam, total) VALUES( '$studentid', '$class','$subject', '$ca1', '$ca2', '$exam' )";
 
-		$result = mysqli_query($con, $sql);
-		if ($result) {
-			echo "class added successfully";
-		}
-		return;
+	$sql = "INSERT INTO results( studentid, class,subject, ca1, ca2, exam, total) VALUES( '$studentid', '$class','$subject', '$ca1', '$ca2', '$exam' )";
+
+	$result = mysqli_query($con, $sql);
+	if ($result) {
+		echo "class added successfully";
 	}
-	function sqL1($table, $col, $value){
-		global $con;
-		$sql = $con->query("SELECT * from $table where $col='$value'");
-		return mysqli_num_rows($sql);
-	}
-
-
-function addSubject(){
+	return;
+}
+function sqL1($table, $col, $value)
+{
 	global $con;
-	if ($_SERVER["REQUEST_METHOD"] == "POST"){
+	$sql = $con->query("SELECT * from $table where $col='$value'");
+	return mysqli_num_rows($sql);
+}
+
+
+function addSubject()
+{
+	global $con;
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$subject = $_POST['subject'];
 		$note = $_POST['note'];
 
 		$sql = "INSERT INTO subjects(subject, note) VALUES('$subject', '$note')";
 
 		$result = mysqli_query($con, $sql);
-		if($result){
+		if ($result) {
 			echo "subject added successfully";
 		}
 	}
 }
-function EditSubject($id, $subject, $note){
+function EditSubject($id, $subject, $note)
+{
 	global $con;
 	$con->query("UPDATE subjects SET subject='$subject', note='$note' where id =''$id");
 	echo 'Success';
 	return;
-	
 }
