@@ -215,12 +215,17 @@ $rows = $sql->fetch_assoc();
                             </tr>
                           </thead>
                           <tbody>
-                            <?php $i; $sql= $con->query("SELECT * FROM results WHERE studentid ='$id'");
-                            while($rows = $sql->fetch_assoc()) {?>
-                            <tr>
-                              <th scope="row"><?= $i++?></th>
-                              <td><a href="addresult.php?id=<?=$rows['id'] ?>"><?= $rows['subject']?></a></td>
-                            </tr>
+                            <?php $i;
+                            $sql = $con->query("SELECT * FROM results WHERE studentid ='$id'");
+                            while ($rows = $sql->fetch_assoc()) { ?>
+                              <tr>
+                                <th scope="row"><?= $i++ ?></th>
+                                <td><a href="addresult.php?id=<?= $rows['id'] ?>"><?= $rows['subject'] ?></a></td>
+                                <td><?= $rows['ca1'] ?></td>
+                                <td><?= $rows['ca2'] ?></td>
+                                <td><?= $rows['exam'] ?></td>
+                                <td><?= $rows['total'] ?></td>
+                              </tr>
 
                             <?php } ?>
                           </tbody>
