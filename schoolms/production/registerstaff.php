@@ -154,7 +154,7 @@ if (isset($_POST['registerstaff'])) {
               <td><?= $rows['sex'] ?></td>
               <td><?= $rows['dob'] ?></td>
               <td><?= $rows['email'] ?></td>
-              <td><button><a href="updatepar.php?updateparid= '.$id.' ">Update</a></button></td>
+              <td><button name="editStaff" value="<?php echo $row['id'] ?>"><a href='updatestaff.php?='>Update</a></button></td>
               <td><button><a href=''>Delete</a></button></td>
               </tr>
              <?php } ?>

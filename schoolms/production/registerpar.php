@@ -8,7 +8,7 @@ if (isset($_POST['registerparent'])) {
 };
 if (isset($_POST['update'])) {
    $id = $_POST['update'];
-   upadateParent($id);
+  // upadateParent($id);
 }
 ?>
 
