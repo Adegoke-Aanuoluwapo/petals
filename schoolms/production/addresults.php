@@ -4,6 +4,7 @@ include("function.php");
 include("connection.php");
 
 if (isset($_POST['AddUser'])) {
+	global $con;
 	AddStudent();
 }
 
@@ -72,7 +73,7 @@ if (isset($_POST['deleteUser'])) {
 							<?php
 							if (array_key_exists('AddResult', $_POST)) {
 								$subject = $_POST['subject'];
-								$student = $_POST['studentid'];
+								$studentid = $_POST['studentid'];
 								$class = $_POST['class'];
 								$ca1 = $_POST['ca1'];
 								$ca2 = $_POST['ca2'];
@@ -80,7 +81,7 @@ if (isset($_POST['deleteUser'])) {
 
 
 								$i = 0;
-								while ($i < count($student)) {
+								while ($i < count($studentid)) {
 									$e = $i++;
 
 
@@ -93,7 +94,7 @@ if (isset($_POST['deleteUser'])) {
 
 									$sql = $con->query("SELECT * FROM results WHERE studentid='$student' AND class='$clas' AND subject='$subject' ");
 									if (mysqli_num_rows($sql) == 0) {
-										addResult($student, $clas, $subject, $c1, $c2, $exa);
+										addResult($student, $clas, $subject, $c1, $c2, $exa, $total);
 									}
 								}
 							}
@@ -129,7 +130,7 @@ if (isset($_POST['deleteUser'])) {
 														<tr>
 															<th scope="row"><?= $i++ ?></th>
 															<td><a href="studentprofile.php?id=<?= $rows['id'] ?>"><?= $rows['surname'] ?></a></td>
-															<td><?= $rows['firstname'] ?> <input type="hidden" name="reg[]" value="<?= $rows['reg'] ?>"></td>
+															<td><?= $rows['firstname'] ?> <input type="hidden" name="studentid[]" value="<?= $rows['id'] ?>"></td>
 															<td><input type="text" name="class[]" value="<?= $rows['class'] ?>" class="form-control"></td>
 															<td><input type="number" name="ca1[]" min="0" max="20" class="form-control"></td>
 															<td><input type="number" name="ca2[]" min="0" max="20" class="form-control"></td>

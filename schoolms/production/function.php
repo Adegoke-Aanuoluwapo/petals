@@ -35,7 +35,9 @@ function parentData($id, $option = '')
 	$rows = mysqli_fetch_assoc($sql);
 	if ($option == '') {
 		return $rows['surname'] . ' ' . $rows['othernames'];
-	} else {
+	}
+	
+	else {
 		return $rows[$option];
 	}
 }
@@ -233,14 +235,14 @@ function Addclass()
 }
 
 
-function Addresult($studentid, $class, $subject, $ca1, $ca2, $exam)
+function Addresult($studentid, $class, $subject, $ca1, $ca2, $exam, $total)
 {
 	global $con;
 
 
 
 
-	$sql = "INSERT INTO results( studentid, class,subject, ca1, ca2, exam, total) VALUES( '$studentid', '$class','$subject', '$ca1', '$ca2', '$exam' )";
+	$sql = "INSERT INTO results(studentid, class, subject, ca1, ca2, exam, total) VALUES( '$studentid', '$class','$subject', '$ca1', '$ca2', '$exam', '$total' )";
 
 	$result = mysqli_query($con, $sql);
 	if ($result) {

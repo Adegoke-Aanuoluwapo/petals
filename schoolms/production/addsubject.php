@@ -15,11 +15,11 @@ if(isset($_POST['DeleteSubject'])){
 }
 if(isset($_POST['EditSubject'])){
       global $con;
-      EditSubject($id, $subject, $note);
-      
+
+      $subject = $_POST['EditSubject'];
       
       // global $con;
-      // $sql=$con->query("UPDATE subjects where subject = '$subjects', note='$note'") or die(mysqli_error($con));
+       $sql=$con->query("UPDATE subjects WHERE subject ='$subject', note ='$note'") or die(mysqli_error($con));
 }
 
 ?>
