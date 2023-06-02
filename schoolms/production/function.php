@@ -280,3 +280,7 @@ function EditSubject($id, $subject, $note)
 	echo 'Success';
 	return;
 }
+function Average($ca1, $ca2, $exams){
+	global $con;
+	
+}
