@@ -225,7 +225,11 @@ $rows = $sql->fetch_assoc();
                                 <td><?= $rows['ca2'] ?></td>
                                 <td><?= $rows['exam'] ?></td>
                                 <td><?= $rows['total'] ?></td>
+                                <td><?= getAverage($rows['subject'], $rows['class'])  ?></td>
+                                <td><?= getGrade($rows['total']) ?></td>
+                                <td><?=getRemark($rows['total']) ?></td>
                               </tr>
+
 
                             <?php } ?>
                           </tbody>
