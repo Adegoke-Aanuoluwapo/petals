@@ -314,4 +314,5 @@ function getRemark($total){
 	if($total >= 70){
 		$remark ='Excellence';
 	}
+	return $remark;
 }
