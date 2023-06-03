@@ -1,3 +1,10 @@
+<?php
+include("connections.php");
+include("funcions.php");
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
