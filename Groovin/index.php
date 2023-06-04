@@ -1,6 +1,6 @@
 <?php
-include("./forms/connections.php");
-include(".forms/functions.php");
+include("./connections.php");
+include("./functions.php");
 if(isset($_POST['submit'])){
   contact(
     $name,
