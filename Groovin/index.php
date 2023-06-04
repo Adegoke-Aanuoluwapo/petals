@@ -1,13 +1,13 @@
 <?php
-// include("./forms/connections.php");
-// include(".forms/functions.php");
-// if(isset($_POST['submit'])){
-//   contact(
-//     $name,
-//     $email,
-//     $subject,
-//     $message);
-// }
+include("./forms/connections.php");
+include(".forms/functions.php");
+if(isset($_POST['submit'])){
+  contact(
+    $name,
+    $email,
+    $subject,
+    $message);
+}
 
 ?>
 
