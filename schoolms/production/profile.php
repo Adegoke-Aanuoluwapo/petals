@@ -203,7 +203,7 @@ $rows = $sql->fetch_assoc();
                         <table class="table table-bordered">
                           <thead>
                             <tr>
-                              <th>#</th>
+                              <th>s/n</th>
                               <th>Subject</th>
                               <th>CA1</th>
                               <th>CA2</th>
@@ -215,19 +215,19 @@ $rows = $sql->fetch_assoc();
                             </tr>
                           </thead>
                           <tbody>
-                            <?php $i;
+                            <?php $i=1;
                             $sql = $con->query("SELECT * FROM results WHERE studentid ='$id'");
                             while ($rows = $sql->fetch_assoc()) { ?>
                               <tr>
                                 <th scope="row"><?= $i++ ?></th>
-                                <td><a href="addresult.php?id=<?= $rows['id'] ?>"><?= $rows['subject'] ?></a></td>
+                                <td><a href="addresult.php?id= <?= $rows['id'] ?>"><?= $rows['subject'] ?></a></td>
                                 <td><?= $rows['ca1'] ?></td>
                                 <td><?= $rows['ca2'] ?></td>
                                 <td><?= $rows['exam'] ?></td>
                                 <td><?= $rows['total'] ?></td>
                                 <td><?= getAverage($rows['subject'], $rows['class'])  ?></td>
                                 <td><?= getGrade($rows['total']) ?></td>
-                                <td><?=getRemark($rows['total']) ?></td>
+                                <td><?= getRemark($rows['total']) ?></td>
                               </tr>
 
 
