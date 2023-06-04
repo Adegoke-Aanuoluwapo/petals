@@ -1,6 +1,13 @@
 <?php
-include("connections.php");
-include("funcions.php");
+// include("./forms/connections.php");
+// include(".forms/functions.php");
+// if(isset($_POST['submit'])){
+//   contact(
+//     $name,
+//     $email,
+//     $subject,
+//     $message);
+// }
 
 ?>
 
@@ -83,7 +90,7 @@ include("funcions.php");
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-
+      <?php contact('Aanuoluwapo', 'Aanummaculate@gmail.com', 'prayer', 'Please pray for me'); ?>
     </div>
   </header><!-- End Header -->
 
