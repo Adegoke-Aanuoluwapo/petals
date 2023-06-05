@@ -30,6 +30,9 @@ function adduser()
 
 function parentData($id, $option = '')
 {
+	if(is_null($id)){
+		return '';
+	}
 	global $con;
 	$sql = $con->query("SELECT * FROM parent WHERE id='$id'");
 	$rows = mysqli_fetch_assoc($sql);
