@@ -216,11 +216,11 @@ $rows = $sql->fetch_assoc();
                           </thead>
                           <tbody>
                             <?php $i=1;
-                            $sql = $con->query("SELECT * FROM results WHERE studentid ='$id'");
+                            $sql = $con->query("SELECT * FROM results WHERE studentid='$id' ");
                             while ($rows = $sql->fetch_assoc()) { ?>
                               <tr>
                                 <th scope="row"><?= $i++ ?></th>
-                                <td><a href="addresult.php?id= <?= $rows['id'] ?>"><?= $rows['subject'] ?></a></td>
+                                <td><a href="addresult.php?id=<?= $rows['studentid'] ?>"><?= $rows['subject'] ?></a></td>
                                 <td><?= $rows['ca1'] ?></td>
                                 <td><?= $rows['ca2'] ?></td>
                                 <td><?= $rows['exam'] ?></td>
