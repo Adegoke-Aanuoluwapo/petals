@@ -35,9 +35,7 @@ function parentData($id, $option = '')
 	$rows = mysqli_fetch_assoc($sql);
 	if ($option == '') {
 		return $rows['surname'] . ' ' . $rows['othernames'];
-	}
-	
-	else {
+	} else {
 		return $rows[$option];
 	}
 }
@@ -280,21 +278,22 @@ function EditSubject($id, $subject, $note)
 	echo 'Success';
 	return;
 }
-function getAverage($subject, $class){
+function getAverage($subject, $class)
+{
 	global $con;
-	$sql=$con->query("SELECT * FROM results WHERE subject='$subject' AND class='$class'");
+	$sql = $con->query("SELECT * FROM results WHERE subject='$subject' AND class='$class'");
 	$num = mysqli_num_rows($sql);
 
-	$sql =$con->query("SELECT SUM(total) AS all_score FROM results WHERE subject='$subject' AND class='$class'");
+	$sql = $con->query("SELECT SUM(total) AS all_score FROM results WHERE subject='$subject' AND class='$class'");
 	$rows = mysqli_fetch_assoc($sql);
-	return number_format($rows['all_score']/$num, 2);
+	return number_format($rows['all_score'] / $num, 2);
 }
-function getGrade($total){
+function getGrade($total)
+{
 	global $con;
-	if ($total > 70 && $total <= 100){
+	if ($total > 70 && $total <= 100) {
 		$grade = 'A';
-	}
-	elseif($total >= 60 && $total < 70){
+	} elseif ($total >= 60 && $total < 70) {
 		$grade = "B";
 	} elseif ($total >= 50 && $total < 60) {
 		$grade = "C";
@@ -302,17 +301,26 @@ function getGrade($total){
 		$grade = "D";
 	} elseif ($total >= 30 && $total < 40) {
 		$grade = "E";
-	}
-	 else {
+	} else {
 		$grade = "F";
 	}
 	return $grade;
 }
 
-function getRemark($total){
+function getRemark($total)
+{
 	global $con;
-	if($total >= 70){
-		$remark ='Excellence';
+	$remark = '';
+	if ($total >= 70) {
+		$remark = 'Excellence';
+	} elseif ($total >= 60 && $total < 70) {
+		$remark = 'Very Good';
+	} elseif ($total >= 50 && $total < 60) {
+		$remark = 'Good';
+	} elseif ($total >= 40 && $total < 50) {
+		$remark = 'Pass';
+	} elseif ($total >= 0 && $total < 40) {
+		$remark = 'Fail';
 	}
 	return $remark;
 }
