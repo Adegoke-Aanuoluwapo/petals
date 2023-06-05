@@ -327,3 +327,15 @@ function getRemark($total)
 	}
 	return $remark;
 }
+
+function SubjectPosition($id, $class, $subject){
+global $con;
+$i=1;
+$sql = $con->query("SELECT * FROM results WHERE subject='$subject' AND class = '$class' ORDER BY total DESC");
+while($row = mysqli_fetch_assoc($sql)){
+	$e=$i++;
+	if($row['studentid']==$id){
+		return $e;
+	}
+}
+}
