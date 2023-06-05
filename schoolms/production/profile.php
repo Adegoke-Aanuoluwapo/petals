@@ -179,9 +179,19 @@ $rows = $sql->fetch_assoc();
 
 
                     </table>
-
-
                     <div class="x_content">
+                      <table>
+                        <tr>
+                          <td>No in Class<br></td>
+
+                          <td>No in Class<br></td>
+
+                          <td>No in Class<br></td>
+                          <td>No in Class<br></td>
+                          <td>No in Class<br></td>
+                        </tr>
+
+                      </table>
 
                       <table class="table table-bordered">
                         <thead>
@@ -210,7 +220,7 @@ $rows = $sql->fetch_assoc();
                               <td><?= $rows['exam'] ?></td>
                               <td><?= $rows['total'] ?></td>
                               <td><?= getAverage($rows['subject'], $rows['class'])  ?></td>
-                              <td><?= getGrade($rows['total']) ?></td>
+                              <td><?= subjectPosition($id, $rows['class'], $rows['subject']) ?></td>
                               <td><?= getGrade($rows['total']) ?></td>
                               <td><?= getRemark($rows['total']) ?></td>
                             </tr>

@@ -339,3 +339,29 @@ while($row = mysqli_fetch_assoc($sql)){
 	}
 }
 }
+
+function noInClass($class){
+	global $con;
+	$sql = $con->query("SELECT * FROM student WHERE class = '$class");
+	return mysqli_num_rows($sql);
+}
+function obtainableMarks($id){
+	global $con;
+	$sql = $con->query("SELECT * FROM results WHERE studentid ='$id'");
+	return mysqli_num_rows($sql) *100;
+}
+function totalAverage(){
+	global $con;
+	$sql = $con->query("SELECT SUM(total)  AS tscore FROM results ");
+	$rows = mysqli_fetch_assoc($sql);
+	$score = $rows['tscore']; 
+	$sql = $con->query("SELECT * FROM results ");
+	$total = mysqli_num_rows($sql)*100;
+	return 100*$score/$total;
+}
+function totalScore($id){
+	global $con;
+	$sql = $con->query("SELECT SUM(total) AS tscore FROM resullts WHERE studentid ='$id'");
+	$rows=mysqli_fetch_assoc($sql);
+	return $rows['tscore'];
+}
