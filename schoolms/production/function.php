@@ -342,7 +342,7 @@ while($row = mysqli_fetch_assoc($sql)){
 
 function noInClass($class){
 	global $con;
-	$sql = $con->query("SELECT * FROM student WHERE class = '$class");
+	$sql = $con->query("SELECT * FROM student WHERE class = '$class'");
 	return mysqli_num_rows($sql);
 }
 function obtainableMarks($id){
@@ -361,7 +361,7 @@ function totalAverage(){
 }
 function totalScore($id){
 	global $con;
-	$sql = $con->query("SELECT SUM(total) AS tscore FROM resullts WHERE studentid ='$id'");
+	$sql = $con->query("SELECT SUM(total) AS tscore FROM results WHERE studentid ='$id'");
 	$rows=mysqli_fetch_assoc($sql);
 	return $rows['tscore'];
 }

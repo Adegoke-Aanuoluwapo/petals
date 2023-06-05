@@ -180,6 +180,7 @@ $rows = $sql->fetch_assoc();
 
                     </table>
                     <div class="x_content">
+                      <?php $class = $rows['class'] ?>
                       <table>
                         <tr>
                           <td>No in Class<br><?= noInClass($class) ?></td>
