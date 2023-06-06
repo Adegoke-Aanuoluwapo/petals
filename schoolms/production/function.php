@@ -368,7 +368,12 @@ function totalScore($id){
 
 function library($id, $title, $quantity, $picture){
 	global $con;
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+		$id = $_POST['id'];
+		$title = $_POST['title'];
+		$quantity = $_POST['quantity'];
 
+		
 	$sql = $con->query("INSERT INTO library(title, quantity, picture)Values('$title', '$quantity', '$picture' )");
 	$result = mysqli_query($con, $sql);
 	return $result;
