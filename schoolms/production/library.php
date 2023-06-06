@@ -200,10 +200,10 @@ $rows = $sql->fetch_assoc();
                                           <td><?= $rows['quantity'] ?></td>
                                           <td><?= $rows['picture'] ?></td>
 
-
-                                          <form method="POST">
-                                             <button class="btn btn-success" type="submit" name="deleteBooks" value="<?= $rows['id'] ?>">Delete</button>
-                                          </form>
+                                          <td>
+                                             <form method="POST">
+                                                <button class="btn btn-success" type="submit" name="deleteBooks" value="<?= $rows['id'] ?>">Delete</button>
+                                             </form>
                                           </td>
                                           <td>
                                              <form method="POST">

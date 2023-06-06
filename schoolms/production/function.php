@@ -30,7 +30,7 @@ function adduser()
 
 function parentData($id, $option = '')
 {
-	if(is_null($id)){
+	if (is_null($id)) {
 		return '';
 	}
 	global $con;
@@ -328,54 +328,61 @@ function getRemark($total)
 	return $remark;
 }
 
-function SubjectPosition($id, $class, $subject){
-global $con;
-$i=1;
-$sql = $con->query("SELECT * FROM results WHERE subject='$subject' AND class = '$class' ORDER BY total DESC");
-while($row = mysqli_fetch_assoc($sql)){
-	$e=$i++;
-	if($row['studentid']==$id){
-		return $e;
+function SubjectPosition($id, $class, $subject)
+{
+	global $con;
+	$i = 1;
+	$sql = $con->query("SELECT * FROM results WHERE subject='$subject' AND class = '$class' ORDER BY total DESC");
+	while ($row = mysqli_fetch_assoc($sql)) {
+		$e = $i++;
+		if ($row['studentid'] == $id) {
+			return $e;
+		}
 	}
 }
-}
 
-function noInClass($class){
+function noInClass($class)
+{
 	global $con;
 	$sql = $con->query("SELECT * FROM student WHERE class = '$class'");
 	return mysqli_num_rows($sql);
 }
-function obtainableMarks($id){
+function obtainableMarks($id)
+{
 	global $con;
 	$sql = $con->query("SELECT * FROM results WHERE studentid ='$id'");
-	return mysqli_num_rows($sql) *100;
+	return mysqli_num_rows($sql) * 100;
 }
-function totalAverage(){
+function totalAverage()
+{
 	global $con;
 	$sql = $con->query("SELECT SUM(total)  AS tscore FROM results ");
 	$rows = mysqli_fetch_assoc($sql);
-	$score = $rows['tscore']; 
+	$score = $rows['tscore'];
 	$sql = $con->query("SELECT * FROM results ");
-	$total = mysqli_num_rows($sql)*100;
-	return 100*$score/$total;
+	$total = mysqli_num_rows($sql) * 100;
+	return 100 * $score / $total;
 }
-function totalScore($id){
+function totalScore($id)
+{
 	global $con;
 	$sql = $con->query("SELECT SUM(total) AS tscore FROM results WHERE studentid ='$id'");
-	$rows=mysqli_fetch_assoc($sql);
+	$rows = mysqli_fetch_assoc($sql);
 	return $rows['tscore'];
 }
 
-function library($id, $title, $quantity, $picture){
+function library($id, $title, $quantity, $picture)
+{
 	global $con;
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$id = $_POST['id'];
 		$title = $_POST['title'];
+		$discription = $_POST['discription'];
 		$quantity = $_POST['quantity'];
-$picture= $_POST['picture'];
+		$picture = $_POST['picture'];
 
-	$sql = $con->query("INSERT INTO library(title, quantity, picture)Values('$title', '$quantity', '$picture' )");
-	$result = mysqli_query($con, $sql);
-	return $result;
+		$sql = "INSERT INTO library( title, discription, quantity, picture) Values('$title', '$discription', '$quantity', '$picture' )";
+		$result = mysqli_query($con, $sql);
+		return $result;
 	}
 }
