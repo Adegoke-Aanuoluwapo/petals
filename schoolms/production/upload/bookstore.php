@@ -1,27 +1,21 @@
 <?php
 session_start();
 include("function.php");
-include("connection.php");
 
-$id = $_GET['id'];
+@$sn = $_GET['sn'];
 
-if (isset($_POST['EditUser'])) {
- $id = $_POST['EditUser'];
- EditUser($id);
+if (isset($_POST['EditBooks'])) {
+ $sn = $_POST['EditBooks'];
+ EditBooks($sn);
 }
 
-if (isset($_POST['deleteUser'])) {
- $id = $_POST['deleteUser'];
+if (isset($_POST['deleteBook'])) {
+ $sn = $_POST['deleteBook'];
 
- $sql = $con->query("DELETE FROM library WHERE id = '$id' ") or die($con->error);
- header('location: library.php');
+ $sql = $db->query("DELETE FROM book WHERE sn = '$sn' ") or die($db->error);
+ header('location: book.php');
  exit;
 }
-
-
-
-
-
 
 $target_dir = "upload/";
 @$file_name =  basename($_FILES["fileToUpload"]["name"]);
@@ -30,33 +24,7 @@ $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 // Check if image file is a actual image or fake image
 if (isset($_POST["submit"])) {
- // $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
- // if($check !== false) {
- //     echo "File is an image - " . $check["mime"] . ".";
- //     $uploadOk = 1;
- // } else {
- //     echo "File is not an image.";
- //     $uploadOk = 0;
- // }
 
- // Check if file already exists
- if (file_exists($target_file)) {
-  echo "Sorry, file already exists.";
-  $uploadOk = 0;
- }
- // Check file size
- if ($_FILES["fileToUpload"]["size"] > 50000000) {
-  echo "Sorry, your file is too large.";
-  $uploadOk = 0;
- }
- // Allow certain file formats
- if (
-  $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-  && $imageFileType != "gif"
- ) {
-  echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-  $uploadOk = 0;
- }
  // Check if $uploadOk is set to 0 by an error
  if ($uploadOk == 0) {
   echo "Sorry, your file was not uploaded.";
@@ -64,12 +32,12 @@ if (isset($_POST["submit"])) {
  } else {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 
-   $sql = $con->query("UPDATE library SET picture = '$file_name' WHERE id = '$id' ") or die($con->error);
+   $sql = $db->query("UPDATE book SET picture = '$file_name' WHERE sn = '$sn' ") or die($db->error);
 
    if ($sql) {
     echo "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
    } else {
-    die($con->error);
+    die($db->error);
     unlink('upload/' . $file_name);
    }
   } else {
@@ -77,7 +45,7 @@ if (isset($_POST["submit"])) {
   }
  }
 }
-$sql = $con->query("SELECT * FROM library WHERE id='$id' ");
+$sql = $db->query("SELECT * FROM book WHERE sn='$sn' ");
 $rows = $sql->fetch_assoc();
 
 ?>
@@ -86,6 +54,7 @@ $rows = $sql->fetch_assoc();
 <html lang="en">
 
 <head>
+ <link rel="stylesheet" href="store.css">
  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
  <!-- Meta, title, CSS, favicons, etc. -->
  <meta charset="utf-8">
@@ -115,7 +84,7 @@ $rows = $sql->fetch_assoc();
       <div class="">
        <div class="page-title">
         <div class="title_left">
-         <h3> Book Profile</h3>
+         <h3> Students Profile</h3>
         </div>
 
         <div class="title_right">
@@ -138,70 +107,60 @@ $rows = $sql->fetch_assoc();
 
         <div class="col-md-12 col-sm-12 ">
          <div class="x_panel">
-          <img src="<?= 'upload/' . $rows['picture'] ?>" alt="" />
-          <div class="x_title">Registered Book</div>
 
-          <table class="table table-hover">
+          <div class="x_title">Registered Students</div>
 
-           <tr>
-            <th>Title</th>
-            <td><?= $rows['title'] ?></td>
-           </tr>
-           <tr>
-            <th>Description</th>
-            <td><?= $rows['discription'] ?></td>
-           </tr>
-           <tr>
-            <th>Title</th>
-            <td><?= $rows['title'] ?></td>
-           </tr>
-         
-          
-           
-          
-
-           
-
-          </table>
-          <div class="x_content">
-           <?php $class = $rows['title'] ?>
+          <?php $i = 1;
+          $sql = $db->query("SELECT * FROM book");
+          while ($rows = $sql->fetch_assoc()) { ?>
 
 
-          </div>
+           <div class="allflex">
+            <div class="asee">
+             <img src="<?= 'upload/' . $rows['picture'] ?>" width="300px">
+             <h2><a href="bookprofile.php?sn=<?= $rows['sn'] ?>"><?= $rows['name'] ?></a></h2><br>
+             <div class="vf">
+              <div>
+               <p>Description of books : </p>
+              </div>
+              <div>
+               <p><?= $rows['description'] ?></p>
+              </div>
+             </div>
+             <div class="vf">
+              <div>
+               <p>Number of books : </p>
+              </div>
+              <div>
+               <p><?= $rows['quality'] ?></p>
+              </div>
+             </div>
+             <button class="btn btn-success">Borrow Book</button>
+
+            </div>
+           </div>
+
+
+
+
+          <?php  } ?>
          </div>
-
-         <form method="post" enctype="multipart/form-data">
-          Select image to upload:
-          <input type="file" class="btn btn-primary" name="fileToUpload" id="fileToUpload">
-          <input type="submit" class="btn btn-primary" value="Upload Image" name="submit">
-         </form>
-         <form method="POST">
-          <button class="btn btn-success" type="submit" name="deleteUser" value="<?= $rows['id'] ?>">Delete</button>
-         </form>
-
-         <form method="POST" action="addstudent.php">
-          <button class="btn btn-success" name="EditData" value="<?= $rows['id'] ?>">UPDATE</button>
-         </form>
-
-         <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Select Parent</button> -->
-
         </div>
        </div>
       </div>
      </div>
     </div>
+
+
+    <!-- /page content -->
+
+    <!-- footer content -->
+    <?php include("footer.php"); ?>
+    <!-- /footer content -->
    </div>
-
-
-   <!-- /page content -->
-
-   <!-- footer content -->
-   <?php include("footer.php"); ?>
-   <!-- /footer content -->
   </div>
  </div>
-
- 
+ </div>
  <!-- /modals -->
 
 

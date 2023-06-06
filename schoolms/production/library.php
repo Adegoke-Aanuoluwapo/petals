@@ -194,16 +194,16 @@ $rows = $sql->fetch_assoc();
                                        ?>
 
                                           <th scope="row"><?= $i++ ?></th>
-                                          <!-- <td><a href="studentprofile.php?id=<?= $rows['id'] ?>"><?= $rows['surname'] ?></a></td> -->
+                                           <td><a href="bookprofile.php?id=<?= $rows['id'] ?>"></a></td>
                                           <td><?= $rows['title'] ?></td>
                                           <td><?= $rows['discription'] ?></td>
                                           <td><?= $rows['quantity'] ?></td>
                                           <td><?= $rows['picture'] ?></td>
 
                                           <td>
-                                             <form method="POST">
-                                                <button class="btn btn-success" type="submit" name="deleteBooks" value="<?= $rows['id'] ?>">Delete</button>
-                                             </form>
+                                          <form method="POST">
+                                             <button class="btn btn-success" type="submit" name="deleteBooks" value="<?= $rows['id'] ?>">Delete</button>
+                                          </form>
                                           </td>
                                           <td>
                                              <form method="POST">
