@@ -3,7 +3,7 @@ session_start();
 include("connection.php");
 include("function.php");
 
-if (isset($_POST['addBook'])) {
+if (isset($_POST['addBooks'])) {
    library($id, $title, $quantity, $picture);
 }
 if (isset($_POST['editBook'])) {
