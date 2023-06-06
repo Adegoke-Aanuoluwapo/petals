@@ -372,10 +372,10 @@ function library($id, $title, $quantity, $picture){
 		$id = $_POST['id'];
 		$title = $_POST['title'];
 		$quantity = $_POST['quantity'];
+$picture= $_POST['picture'];
 
-		
 	$sql = $con->query("INSERT INTO library(title, quantity, picture)Values('$title', '$quantity', '$picture' )");
 	$result = mysqli_query($con, $sql);
 	return $result;
-
+	}
 }
