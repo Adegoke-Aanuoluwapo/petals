@@ -365,3 +365,12 @@ function totalScore($id){
 	$rows=mysqli_fetch_assoc($sql);
 	return $rows['tscore'];
 }
+
+function library($id, $title, $quantity, $picture){
+	global $con;
+
+	$sql = $con->query("INSERT INTO library(title, quantity, picture)Values('$title', '$quantity', '$picture' )");
+	$result = mysqli_query($con, $sql);
+	return $result;
+
+}
