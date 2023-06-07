@@ -1,6 +1,7 @@
 <?php
 session_start();
 include("function.php");
+include("connection.php");
 
 $id = $_GET['id'];
 
@@ -12,7 +13,7 @@ if (isset($_POST['EditBooks'])) {
 if (isset($_POST['deleteBook'])) {
  $id = $_POST['deleteBook'];
 
- $sql = $db->query("DELETE FROM library WHERE id = '$id' ") or die($con->error);
+ $sql = $con->query("DELETE FROM library WHERE id = '$id' ") or die($con->error);
  header('location: library.php');
  exit;
 }
@@ -32,12 +33,12 @@ if (isset($_POST["submit"])) {
  } else {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 
-   $sql = $db->query("UPDATE book SET picture = '$file_name' WHERE sn = '$sn' ") or die($db->error);
+   $sql = $con->query("UPDATE library SET picture = '$file_name' WHERE id = '$id' ") or die($con->error);
 
    if ($sql) {
     echo "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
    } else {
-    die($db->error);
+    die($con->error);
     unlink('upload/' . $file_name);
    }
   } else {
@@ -117,8 +118,8 @@ $rows = $sql->fetch_assoc();
 
            <div class="allflex">
             <div class="asee">
-             <img src="<?= 'upload/' . $rows['picture'] ?>" width="300px">
-             <h2><a href="bookprofile.php?sn=<?= $rows['sn'] ?>"><?= $rows['name'] ?></a></h2><br>
+             <img src="<?= 'upload/' . $rows['picture'] ?>" width="100px">
+             <h2><a href="bookprofile.php?id=<?= $rows['id'] ?>"><?= $rows['name'] ?></a></h2><br>
              <div class="vf">
               <div>
                <p>Description of books : </p>
