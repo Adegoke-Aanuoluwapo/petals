@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("functions.php");
+include("function.php");
 
 $id = $_GET['id'];
 

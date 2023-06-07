@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("functions.php");
+include("function.php");
 
 $id = $_GET['id'];
 
@@ -45,7 +45,7 @@ if (isset($_POST["submit"])) {
   }
  }
 }
-$sql = $db->query("SELECT * FROM book WHERE sn='$sn' ");
+$sql = $con->query("SELECT * FROM book WHERE id='$id' ");
 $rows = $sql->fetch_assoc();
 
 ?>
