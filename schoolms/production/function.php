@@ -371,33 +371,33 @@ function totalScore($id)
 	return $rows['tscore'];
 }
 
-function library($id, $title, $quantity, $picture)
+function library()
 {
 	global $con;
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
-		$id = $_POST['id'];
+	//	$id = $_POST['id'];
 		$title = $_POST['title'];
 		$discription = $_POST['discription'];
 		$quantity = $_POST['quantity'];
-		$picture = $_POST['picture'];
 
-		$sql = "INSERT INTO library( title, discription, quantity, picture) Values('$title', '$discription', '$quantity', '$picture' )";
+
+		$sql = "INSERT INTO library( title, discription, quantity) Values('$title', '$discription', '$quantity' )";
 		$result = mysqli_query($con, $sql);
 		return $result;
 	}
 }
 
-function borrow(){
+function borrow()
+{
 	global $con;
-	if(($_SERVER["REQUEST_METHOD"] == "POST")){
-$studentid=$_POST['studentid'];
-$title = $_POST['title'];
-$bdate =$_POST['bdate'];
-$rdate=$_POST['rdate'];
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+		$studentid = $_POST['studentid'];
+		$title = $_POST['title'];
 
-$sql = "INSERT into borrow(studentid, title, bdate, rdate) VALUES('$studentid', '$title', '$bdate', '$rdate')";
-$result = mysqli_query($con, $sql);
-return $result;
+		$rdate = $_POST['rdate'];
 
+		$sql = "INSERT into borrow(studentid, title,  rdate) VALUES('$studentid', '$title', '$rdate')";
+		$result = mysqli_query($con, $sql);
+		return $result;
 	}
 }

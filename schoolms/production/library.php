@@ -4,7 +4,7 @@ include("connection.php");
 include("function.php");
 
 if (isset($_POST['addBooks'])) {
-   library($id, $title, $quantity, $picture);
+   library();
 }
 if (isset($_POST['editBook'])) {
    editBook($id);
@@ -166,12 +166,7 @@ $rows = $sql->fetch_assoc();
                                        </div>
                                     </div>
 
-                                 </form>
-                                 <form method="post" enctype="multipart/form-data">
-                                    Select image to upload:
-                                    <input type="file" class="btn btn-primary" name="fileToUpload" id="fileToUpload">
-                                    <input type="submit" class="btn btn-primary" value="Upload Image" name="submit">
-                                 </form>
+                                 
 
                                  <table class="table">
                                     <thead>
@@ -198,7 +193,7 @@ $rows = $sql->fetch_assoc();
                                           <td><?= $rows['title'] ?></td>
                                           <td><?= $rows['discription'] ?></td>
                                           <td><?= $rows['quantity'] ?></td>
-                                          <td><?= $rows['picture'] ?></td>
+                                          
 
                                           <td>
                                           <form method="POST">

@@ -3,8 +3,8 @@ session_start();
 include("function.php");
 include("connection.php");
 
-if (isset($_POST['Addclass'])) {
-  Addclass();
+if (isset($_POST['borrow'])) {
+  borrow();
 }
 
 
@@ -73,10 +73,10 @@ if (isset($_POST['Addclass'])) {
                   document.getElementById("me").innerHTML = d.toLocaleTimeString();
                 }
               </script>
-              <?php if (isset($_POST['class'])) {
-                $id = $_POST['class'];
+              <?php if (isset($_POST['library'])) {
+                $id = $_POST['library'];
 
-                $sql = $con->query("SELECT * FROM class WHERE id= '$id' ");
+                $sql = $con->query("SELECT * FROM library WHERE id= '$id' ");
                 $row = mysqli_fetch_assoc($sql);  ?>
                 <div class="row">
                   <div class="col-md-12 col-sm-12 ">
@@ -153,25 +153,19 @@ if (isset($_POST['Addclass'])) {
 
 
                   <div class="item form-group">
-                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">name<span class="required">*</span>
+                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Title<span class="required">*</span>
                     </label>
                     <div class="col-md-6 col-sm-6 ">
-                      <input type="text" id="last-name" name="name" required="required" class="form-control">
+                      <input type="text" id="last-name" name="title" required="required" class="form-control">
                     </div>
                   </div>
-                  <div class="item form-group">
-                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Borrow Date <span class="required">*</span>
-                    </label>
-                    <div class="col-md-6 col-sm-6 ">
-                      <input type="text" id="last-name" name="bdate" required="required" class="form-control">
-                    </div>
-                  </div>
+
 
                   <div class="item form-group">
                     <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Return Date <span class="required">*</span>
                     </label>
                     <div class="col-md-6 col-sm-6 ">
-                      <input type="text" id="last-name" name="rdate" required="required" class="form-control">
+                      <input type="date" id="last-name" name="rdate" required="required" class="form-control">
                     </div>
                   </div>
 
@@ -179,7 +173,7 @@ if (isset($_POST['Addclass'])) {
               <div class="ln_solid"></div>
               <div class="item form-group">
                 <div class="col-md-6 col-sm-6 offset-md-3">
-                  <button type="submit" name="Addclass" class="btn btn-success">Register Class</button>
+                  <button type="submit" name="borrow" class="btn btn-success">Register Class</button>
                 </div>
               </div>
 
@@ -209,17 +203,21 @@ if (isset($_POST['Addclass'])) {
           </thead>
           <tbody>
             <?php $i = 1;
-            $sql = $con->query("SELECT * FROM class");
+            $sql = $con->query("SELECT * FROM library");
             while ($rows = $sql->fetch_assoc()) {
-              $class = $rows['class'];
-              $note = $rows['note'];
+              $studentid = $rows['studentid'];
+              $title = $rows['title'];
+              $bdate = $rows['bdate'];
+              $rdate = $rows['rdate'];
             ?>
 
               <tr>
                 <th scope="row"><?= $i++ ?></th>
 
-                <td><?= $rows['class'] ?></td>
-                <td><?= $rows['note'] ?></td>
+                <td><?= $rows['studentid'] ?></td>
+                <td><?= $rows['title'] ?></td>
+                <td><?= $rows['bdate'] ?></td>
+                <td><?= $rows['rdate'] ?></td>
                 <td>
                   <form method="POST">
                     <button class="btn btn-success" type="submit" name="deleteStaff" value="<?= $rows['id'] ?>">Delete</button>
