@@ -12,7 +12,7 @@ if (isset($_POST['EditBooks'])) {
 if (isset($_POST['deleteBook'])) {
  $id = $_POST['deleteBook'];
 
- $sql = $db->query("DELETE FROM library WHERE sn = '$sn' ") or die($db->error);
+ $sql = $db->query("DELETE FROM library WHERE id = '$id' ") or die($con->error);
  header('location: library.php');
  exit;
 }
@@ -45,7 +45,7 @@ if (isset($_POST["submit"])) {
   }
  }
 }
-$sql = $con->query("SELECT * FROM book WHERE id='$id' ");
+$sql = $con->query("SELECT * FROM library WHERE id='$id' ");
 $rows = $sql->fetch_assoc();
 
 ?>
