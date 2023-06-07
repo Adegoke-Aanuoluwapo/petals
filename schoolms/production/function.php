@@ -375,7 +375,7 @@ function library()
 {
 	global $con;
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	//	$id = $_POST['id'];
+		//	$id = $_POST['id'];
 		$title = $_POST['title'];
 		$discription = $_POST['discription'];
 		$quantity = $_POST['quantity'];
@@ -391,12 +391,12 @@ function borrow()
 {
 	global $con;
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
-		$studentid = $_POST['studentid'];
+		$studentname = $_POST['studentname'];
 		$title = $_POST['title'];
 
 		$rdate = $_POST['rdate'];
 
-		$sql = "INSERT into borrow(studentid, title,  rdate) VALUES('$studentid', '$title', '$rdate')";
+		$sql = "INSERT into borrow(studentname, title,  rdate) VALUES('$studentname', '$title', '$rdate')";
 		$result = mysqli_query($con, $sql);
 		return $result;
 	}

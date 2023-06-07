@@ -3,7 +3,7 @@ session_start();
 include("function.php");
 include("connection.php");
 
-$id = $_GET['id'];
+@$id = $_GET['id'];
 
 if (isset($_POST['EditBooks'])) {
  $sn = $_POST['EditBooks'];
