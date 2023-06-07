@@ -203,8 +203,9 @@ if (isset($_POST['borrow'])) {
           </thead>
           <tbody>
             <?php $i = 1;
-            $sql = $con->query("SELECT * FROM library");
+            $sql = $con->query("SELECT * FROM borrow");
             while ($rows = $sql->fetch_assoc()) {
+              $id = $rows['id'];
               $studentid = $rows['studentid'];
               $title = $rows['title'];
               $bdate = $rows['bdate'];

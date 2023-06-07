@@ -1,18 +1,18 @@
 <?php
 session_start();
 include("function.php");
-
-$id = $_GET['id'];
+global $con;
+@$id = $_GET['id'];
 
 if (isset($_POST['EditBooks'])) {
- $sn = $_POST['EditBooks'];
+ $id = $_POST['EditBooks'];
  EditBooks($id);
 }
 
 if (isset($_POST['deleteBook'])) {
  $id = $_POST['deleteBook'];
 
- $sql = $db->query("DELETE FROM library WHERE sn = '$sn' ") or die($db->error);
+ $sql = $db->query("DELETE FROM library WHERE id = '$id' ") or die($con->error);
  header('location: library.php');
  exit;
 }
@@ -45,8 +45,9 @@ if (isset($_POST["submit"])) {
   }
  }
 }
-$sql = $db->query("SELECT * FROM book WHERE sn='$sn' ");
-$rows = $sql->fetch_assoc();
+global $con;
+//$sql = $con->query("SELECT * FROM library WHERE id='$id' ");
+//$rows = $sql->fetch_assoc();
 
 ?>
 
