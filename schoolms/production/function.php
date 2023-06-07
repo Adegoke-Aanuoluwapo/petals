@@ -386,3 +386,18 @@ function library($id, $title, $quantity, $picture)
 		return $result;
 	}
 }
+
+function borrow(){
+	global $con;
+	if(($_SERVER["REQUEST_METHOD"] == "POST")){
+$studentid=$_POST['studentid'];
+$title = $_POST['title'];
+$bdate =$_POST['bdate'];
+$rdate=$_POST['rdate'];
+
+$sql = "INSERT into borrow(studentid, title, bdate, rdate) VALUES('$studentid', '$title', '$bdate', '$rdate')";
+$result = mysqli_query($con, $sql);
+return $result;
+
+	}
+}
