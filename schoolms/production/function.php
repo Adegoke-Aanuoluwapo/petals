@@ -401,3 +401,13 @@ function borrow()
 		return $result;
 	}
 }
+function editborrow($id){
+	global $con;
+	$studentname =$_POST['studentname'];
+	$title = $_POST['title'];
+	$rdate = $_POST['rdate'];
+	$con->query("UPDATE borrow SET studentname='$studentname', title='$title', rdate='$rdate'");
+	echo "success";
+	return;
+
+}

@@ -7,7 +7,9 @@ if (isset($_POST['borrow'])) {
   borrow();
 }
 
-
+if (isset($_POST['updateborrow'])) {
+  editborrow($d);
+}
 
 ?>
 
@@ -73,16 +75,16 @@ if (isset($_POST['borrow'])) {
                   document.getElementById("me").innerHTML = d.toLocaleTimeString();
                 }
               </script>
-              <?php if (isset($_POST['library'])) {
-                $id = $_POST['library'];
+              <?php if (isset($_POST['updateborrow'])) {
+                $id = $_POST['borrow'];
 
-                $sql = $con->query("SELECT * FROM library WHERE id= '$id' ");
+                $sql = $con->query("SELECT * FROM borrow WHERE id= '$id' ");
                 $row = mysqli_fetch_assoc($sql);  ?>
                 <div class="row">
                   <div class="col-md-12 col-sm-12 ">
                     <div class="x_panel">
                       <div class="x_title">
-                        <h2>Staff <small>Update Class</small></h2>
+                        <h2>Staff <small>Update Borrow</small></h2>
                         <div class="clearfix"></div>
                       </div>
                       <div>
@@ -116,7 +118,7 @@ if (isset($_POST['borrow'])) {
                       <div class="ln_solid"></div>
                       <div class="item form-group">
                         <div class="col-md-6 col-sm-6 offset-md-3">
-                          <button type="submit" name="Addclass" value="<?= $id ?>" class="btn btn-success">Update User</button>
+                          <button type="submit" name="updateborrow" value="<?= $id ?>" class="btn btn-success">Update Library</button>
                         </div>
                       </div>
 
@@ -162,14 +164,14 @@ if (isset($_POST['borrow'])) {
                                   <div class="col-md-6 col-sm-6 ">
                                     <select class="form-control">
                                       <option>Pick a book</option>
-                                      <?php $i=1; 
+                                      <?php $i = 1;
                                       $sql = $con->query("SELECT * FROM library");
-                                      while($rows = $sql->fetch_assoc()){
-                                        echo '<option>' . $rows['title']. ' '. $rows['discription']. '</option>';
+                                      while ($rows = $sql->fetch_assoc()) {
+                                        echo '<option>' . $rows['title'] . ' ' . $rows['discription'] . '</option>';
                                       }
                                       ?>
                                     </select>
-                                    
+
                                   </div>
                                 </div>
 
