@@ -107,6 +107,13 @@ if (isset($_POST['updateborrow'])) {
                               <input type="text" id="last-name" name="title" value="<?= $rows['title'] ?>" required="required" class="form-control">
                             </div>
                           </div>
+                          <div class="item form-group">
+                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Return Date<span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 ">
+                              <input type="text" id="last-name" name="rdate" value="<?= $rows['rdate'] ?>" required="required" class="form-control">
+                            </div>
+                          </div>
 
                       </div>
 
