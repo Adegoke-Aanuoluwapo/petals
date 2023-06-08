@@ -165,7 +165,7 @@ if (isset($_POST['borrow'])) {
                                       <?php $i=1; 
                                       $sql = $con->query("SELECT * FROM library");
                                       while($rows = $sql->fetch_assoc()){
-                                        echo '<option>' . $rows['title']. '</option>';
+                                        echo '<option>' . $rows['title']. ' '. $rows['discription']. '</option>';
                                       }
                                       ?>
                                     </select>
