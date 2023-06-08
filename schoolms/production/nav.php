@@ -27,7 +27,9 @@
           <li><a href="parentprofile.php">Parent Profile</a></li>
           <li><a href="studentprofile.php">Student Profile</a></li>
           <li><a href="library.php">Library</a></li>
+          <li><a href="borrow.php">Borrow Books</a></li>
           <li><a href="addresults.php">Results</a></li>
+
 
 
 
