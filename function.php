@@ -324,7 +324,7 @@ if(sqL1('staffclass','staff',$sfclass)>0){echo 'Error'; return; }
 
 			$db->query($query);
 			echo 'Success';
-
+C:\xampp\htdocs\petals\function.php
 	  
 	return;
 } 

@@ -7,8 +7,8 @@ if (isset($_POST['borrow'])) {
   borrow();
 }
 
-if (isset($_POST['updateborrow'])) {
-  $id = $_POST['updateborrow'];
+if (isset($_POST['editborrow'])) {
+  $id = $_POST['editborrow'];
   editborrow($id);
 }
 
@@ -126,7 +126,7 @@ if (isset($_POST['updateborrow'])) {
                       <div class="ln_solid"></div>
                       <div class="item form-group">
                         <div class="col-md-6 col-sm-6 offset-md-3">
-                          <button type="submit" name="updateborrow" value="<?= $id ?>" class="btn btn-success">Update Borrow</button>
+                          <button type="submit" name="editborrow" value="<?= $rows['id'] ?>" class="btn btn-success">Update Borrow</button>
                         </div>
                       </div>
 
@@ -235,13 +235,13 @@ if (isset($_POST['updateborrow'])) {
                                 <tr>
                                   <th scope="row"><?= $i++ ?></th>
 
-                                  <td><a href="studentprofile.php?id=<?= $rows['id'] ?>"><?= $rows['studentname'] ?></a></td>
+                                  <td><a href="updateborrow.php?id=<?= $rows['id'] ?>"><?= $rows['studentname'] ?></a></td>
                                   <td><?= $rows['title'] ?></td>
                                   <td><?= $rows['bdate'] ?></td>
                                   <td><?= $rows['rdate'] ?></td>
                                   <td>
                                     <form method="POST">
-                                      <button class="btn btn-success" type="submit" name="deleteStaff" value="<?= $rows['id'] ?>">Delete</button>
+                                      <button class="btn btn-success" type="submit" name="deleteborrow" value="<?= $rows['id'] ?>">Delete</button>
                                     </form>
                                   <td>
 
