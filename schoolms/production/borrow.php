@@ -79,7 +79,7 @@ if (isset($_POST['updateborrow'])) {
                 $id = $_POST['borrow'];
 
                 $sql = $con->query("SELECT * FROM borrow WHERE id= '$id' ");
-                $row = mysqli_fetch_assoc($sql);  ?>
+                $rows = mysqli_fetch_assoc($sql);  ?>
                 <div class="row">
                   <div class="col-md-12 col-sm-12 ">
                     <div class="x_panel">
@@ -94,17 +94,17 @@ if (isset($_POST['updateborrow'])) {
                         <form method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
                           <div class="item form-group">
-                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">class <span class="required">*</span>
+                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Student Name <span class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 ">
-                              <input type="text" id="first-name" name="firstname" value="<?= $rows['class'] ?>" required="required" class="form-control ">
+                              <input type="text" id="first-name" name="studentname" value="<?= $rows['studentname'] ?>" required="required" class="form-control ">
                             </div>
                           </div>
                           <div class="item form-group">
-                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Note <span class="required">*</span>
+                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Title <span class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 ">
-                              <input type="text" id="last-name" name="lastname" value="<?= $rows['note'] ?>" required="required" class="form-control">
+                              <input type="text" id="last-name" name="title" value="<?= $rows['title'] ?>" required="required" class="form-control">
                             </div>
                           </div>
 
