@@ -8,7 +8,8 @@ if (isset($_POST['borrow'])) {
 }
 
 if (isset($_POST['updateborrow'])) {
-  editborrow($d);
+  $id = $_POST['updateborrow'];
+  editborrow($id);
 }
 
 ?>
@@ -76,7 +77,7 @@ if (isset($_POST['updateborrow'])) {
                 }
               </script>
               <?php if (isset($_POST['updateborrow'])) {
-                $id = $_POST['borrow'];
+                $id = $_POST['updateborrow'];
 
                 $sql = $con->query("SELECT * FROM borrow WHERE id= '$id' ");
                 $rows = mysqli_fetch_assoc($sql);  ?>
@@ -169,7 +170,7 @@ if (isset($_POST['updateborrow'])) {
                                   <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Title<span class="required">*</span>
                                   </label>
                                   <div class="col-md-6 col-sm-6 ">
-                                    <select class="form-control">
+                                    <select class="form-control" name="title">
                                       <option>Pick a book</option>
                                       <?php $i = 1;
                                       $sql = $con->query("SELECT * FROM library");
@@ -215,7 +216,7 @@ if (isset($_POST['updateborrow'])) {
                               <tr>
                                 <th>sn</th>
                                 <th>Student Name</th>
-                                <th>name</th>
+                                <th>Title</th>
                                 <th>Borrow Date</th>
                                 <th>Return Date</th>
                               </tr>
@@ -234,7 +235,7 @@ if (isset($_POST['updateborrow'])) {
                                 <tr>
                                   <th scope="row"><?= $i++ ?></th>
 
-                                  <td><?= $rows['studentname'] ?></td>
+                                  <td><a href="studentprofile.php?id=<?= $rows['id'] ?>"><?= $rows['studentname'] ?></a></td>
                                   <td><?= $rows['title'] ?></td>
                                   <td><?= $rows['bdate'] ?></td>
                                   <td><?= $rows['rdate'] ?></td>
@@ -245,7 +246,7 @@ if (isset($_POST['updateborrow'])) {
                                   <td>
 
                                     <form method="POST">
-                                      <button class="btn btn-success" name="Staff" value="<?= $rows['id'] ?>">UPDATE</button>
+                                      <button class="btn btn-success" name="updateborrow" value="<?= $rows['id'] ?>">UPDATE</button>
                                     </form>
                                   </td>
                                 </tr>
