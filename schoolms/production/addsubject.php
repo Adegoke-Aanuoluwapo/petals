@@ -17,9 +17,11 @@ if (isset($_POST['EditSubject'])) {
       global $con;
 
       $id = $_POST['EditSubject'];
+      $subject = $_POST['subject'];
+      $note = $_POST['note'];
 
       // global $con;
-      $sql = $con->query("UPDATE subjects WHERE subject ='$subject', note ='$note' WHERE id='$id'") or die(mysqli_error($con));
+      $sql = $con->query("UPDATE subjects SET subject ='$subject', note ='$note' WHERE id='$id'") or die(mysqli_error($con));
 }
 
 ?>
@@ -76,8 +78,8 @@ if (isset($_POST['EditSubject'])) {
 
 
 
-                                          <?php if (isset($_POST['EditSubject'])) {
-                                                $id = $_POST['EditSubject'];
+                                          <?php if (isset($_POST['editSubject'])) {
+                                                $id = $_POST['editSubject'];
                                                 $sql = $con->query("SELECT * FROM subjects WHERE id= '$id' ");
                                                 $row = mysqli_fetch_assoc($sql);  ?>
                                                 <div class="row">
@@ -198,7 +200,7 @@ if (isset($_POST['EditSubject'])) {
                                                                                     <td>
 
                                                                                           <form method="POST">
-                                                                                                <button class="btn btn-success" name="EditSubject" value="<?= $rows['id'] ?>">UPDATE</button>
+                                                                                                <button class="btn btn-success" name="editSubject" value="<?= $rows['id'] ?>">UPDATE</button>
                                                                                           </form>
                                                                                     </td>
                                                                               </tr>
