@@ -234,6 +234,13 @@ function Addclass()
 		}
 	}
 }
+function deleteClass($id){
+	$id = $_POST['deleteCass'];
+	$class = $_POST['class'];
+	$note = $_POST['note'];
+	$sql = "DELETE FROM class ";
+
+}
 
 
 function Addresult($studentid, $class, $subject, $ca1, $ca2, $exam, $total)
