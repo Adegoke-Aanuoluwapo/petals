@@ -103,12 +103,12 @@ if (isset($_POST['editborrow'])) {
                                 <?php $i = 1;
                                 $sql = $con->query("SELECT * FROM student");
                                 while ($rows = $sql->fetch_assoc()) {
-                                  echo "<option>" . $rows['surname'] . ' ' . $rows['firstname'] . "</option>";
+                                  echo '<option>' . $rows['surname'] . ' ' . $rows['firstname'] . '</option>';
                                 }
                                 ?>
 
                               </select>
-                              <input type="text" id="last-name" name="studentname" value="<?= $rows['studentname'] ?>" required="required" class="form-control">
+
 
                             </div>
                           </div>
@@ -121,12 +121,12 @@ if (isset($_POST['editborrow'])) {
                                 <?php $i = 1;
                                 $sql = $con->query("SELECT * FROM library");
                                 while ($rows = $sql->fetch_assoc()) {
-                                  echo "<option>" . $rows['title'] . ' ' . $rows['discription'] . "</option>";
+                                  echo '<option>' . $rows['title'] . ' ' . $rows['discription'] . '</option>';
                                 }
                                 ?>
 
                               </select>
-                              <input type="text" id="last-name" name="title" value="<?= $rows['title'] ?>" required="required" class="form-control">
+
                             </div>
                           </div>
                           <div class="item form-group">
