@@ -234,12 +234,13 @@ function Addclass()
 		}
 	}
 }
-function deleteClass($id){
-	$id = $_POST['deleteCass'];
+function EditClass($id)
+{
+	$id = $_POST['editclass'];
 	$class = $_POST['class'];
 	$note = $_POST['note'];
-	$sql = "DELETE FROM class ";
-
+	$sql = "UPDATE class SET class = '$class', note='$note' where id = '$id' ";
+	return;
 }
 
 
@@ -392,6 +393,16 @@ function library()
 		$result = mysqli_query($con, $sql);
 		return $result;
 	}
+}
+function EditLibrary($id)
+{
+	global $con;
+	$id = $_POST['editlibrary'];
+	$title = $_POST['title'];
+	$discription = $_POST['discription'];
+	$quantity = $_POST['quantity'];
+	$sql = "UPDATE library SET title = '$title', discription = '$discription', quantity = '$quantity' WHERE id = '$id' ";
+	$con->query($sql) or die(mysqli_error($sql));
 }
 
 function borrow()

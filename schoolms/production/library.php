@@ -6,70 +6,15 @@ include("function.php");
 if (isset($_POST['addBooks'])) {
    library();
 }
-if (isset($_POST['editBook'])) {
-   editBook($id);
+if (isset($_POST['editlibrary'])) {
+   EditLibrary($id);
 }
 
 if (isset($_POST['deleteBook'])) {
-   deleteBook($id);
+   
 }
 
-$target_dir = "upload/";
-@$file_name =  basename($_FILES["fileToUpload"]["name"]);
-@$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-$uploadOk = 1;
-$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-// Check if image file is a actual image or fake image
-if (isset($_POST["submit"])) {
-   // $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-   // if($check !== false) {
-   //     echo "File is an image - " . $check["mime"] . ".";
-   //     $uploadOk = 1;
-   // } else {
-   //     echo "File is not an image.";
-   //     $uploadOk = 0;
-   // }
 
-   // Check if file already exists
-   if (file_exists($target_file)) {
-      echo "Sorry, file already exists.";
-      $uploadOk = 0;
-   }
-   // Check file size
-   if ($_FILES["fileToUpload"]["size"] > 50000000) {
-      echo "Sorry, your file is too large.";
-      $uploadOk = 0;
-   }
-   // Allow certain file formats
-   if (
-      $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-      && $imageFileType != "gif"
-   ) {
-      echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-      $uploadOk = 0;
-   }
-   // Check if $uploadOk is set to 0 by an error
-   if ($uploadOk == 0) {
-      echo "Sorry, your file was not uploaded.";
-      // if everything is ok, try to upload file
-   } else {
-      if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-
-         $sql = $con->query("UPDATE library SET picture = '$file_name' WHERE id = '$id' ") or die($con->error);
-
-         if ($sql) {
-            echo "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
-         } else {
-            die($con->error);
-            unlink('upload/' . $file_name);
-         }
-      } else {
-         echo "Sorry, there was an error uploading your file.";
-      }
-   }
-}
-$sql = $con->query("SELECT * FROM library WHERE id='$id' ");
-$rows = $sql->fetch_assoc();
 ?>
 
 
@@ -121,52 +66,116 @@ $rows = $sql->fetch_assoc();
                         </div>
                      </div>
                      <div class="clearfix"></div>
-                     <div class="row">
-                        <div class="col-md-12 col-sm-12 ">
-                           <div class="x_panel">
-                              <div class="x_title">
-                                 <h2>Student <small>Register Student</small></h2>
-                                 <div class="clearfix"></div>
+
+                     <?php if (isset($_POST['editbooks'])) {
+                        $id = $_POST['editbooks'];
+                        $sql = $con->query("SELECT * FROM library WHERE id = '$id'");
+                        $rows = mysqli_fetch_assoc($sql);
+                     ?>
+
+                        <div class="row">
+                           <div class="col-md-12 col-sm-12 ">
+                              <div class="x_panel">
+                                 <div class="x_title">
+                                    <h2>Library <small>Update Libray</small></h2>
+                                    <div class="clearfix"></div>
+                                 </div>
+                                 <div class="x_content">
+
+
+
+                                    <br />
+                                    <form method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+
+                                       <div class="item form-group">
+                                          <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">title <span class="required">*</span>
+                                          </label>
+                                          <div class="col-md-6 col-sm-6 ">
+                                             <input type="text" id="first-name" name="title" value="<?= $rows['title'] ?>" required="required" class="form-control ">
+                                          </div>
+                                       </div>
+                                       <div class="item form-group">
+                                          <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Discription<span class="required">*</span>
+                                          </label>
+                                          <div class="col-md-6 col-sm-6 ">
+                                             <input type="text" id="last-name" name="discription" required="required" value="<?= $rows['discription'] ?>" class="form-control">
+                                          </div>
+                                       </div>
+                                       <div class="item form-group">
+                                          <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Quantity</label>
+                                          <div class="col-md-6 col-sm-6 ">
+                                             <input id="middle-name" class="form-control" type="text" name="quantity" value="<?= $rows['quantity'] ?>">
+                                          </div>
+                                       </div>
+
+
+
+                                       <div class="ln_solid"></div>
+
+                                       <div class="item form-group">
+                                          <div class="col-md-6 col-sm-6 offset-md-3">
+                                             <button type="submit" name="editlibrary" class="btn btn-success" value="<?= $rows['id'] ?>">Update Library</button>
+                                          </div>
+                                       </div>
+
+                                    </form>
+                                 </div>
                               </div>
-                              <div class="x_content">
+                           </div>
 
-
-
-                                 <br />
-                                 <form method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
-
-                                    <div class="item form-group">
-                                       <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">title <span class="required">*</span>
-                                       </label>
-                                       <div class="col-md-6 col-sm-6 ">
-                                          <input type="text" id="first-name" name="title" required="required" class="form-control ">
-                                       </div>
-                                    </div>
-                                    <div class="item form-group">
-                                       <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Discription<span class="required">*</span>
-                                       </label>
-                                       <div class="col-md-6 col-sm-6 ">
-                                          <input type="text" id="last-name" name="discription" required="required" class="form-control">
-                                       </div>
-                                    </div>
-                                    <div class="item form-group">
-                                       <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Quantity</label>
-                                       <div class="col-md-6 col-sm-6 ">
-                                          <input id="middle-name" class="form-control" type="text" name="quantity">
-                                       </div>
+                        <?php } else { ?>
+                           <div class="row">
+                              <div class="col-md-12 col-sm-12 ">
+                                 <div class="x_panel">
+                                    <div class="x_title">
+                                       <h2>Library <small>Library</small></h2>
+                                       <div class="clearfix"></div>
                                     </div>
 
 
+                                    <form method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
-                                    <div class="ln_solid"></div>
-
-                                    <div class="item form-group">
-                                       <div class="col-md-6 col-sm-6 offset-md-3">
-                                          <button type="submit" name="addBooks" class="btn btn-success">Submit</button>
+                                       <div class="item form-group">
+                                          <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Title<span class="required">*</span>
+                                          </label>
+                                          <div class="col-md-6 col-sm-6 ">
+                                             <input type="text" id="first-name" name="title" required="required" class="form-control ">
+                                          </div>
                                        </div>
-                                    </div>
+                                       <div class="item form-group">
+                                          <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Discription <span class="required">*</span>
+                                          </label>
+                                          <div class="col-md-6 col-sm-6 ">
+                                             <input type="text" id="last-name" name="discription" required="required" class="form-control">
+                                          </div>
+                                       </div>
+                                       <div class="item form-group">
+                                          <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Quantity <span class="required">*</span>
+                                          </label>
+                                          <div class="col-md-6 col-sm-6 ">
+                                             <input type="text" id="last-name" name="quantity" required="required" class="form-control">
+                                          </div>
+                                       </div>
 
-                                 
+                                       <div class="ln_solid"></div>
+                                       <div class="item form-group">
+                                          <div class="col-md-6 col-sm-6 offset-md-3">
+                                             <button type="submit" name="addBooks" class="btn btn-success">Add Books</button>
+                                          </div>
+                                       </div>
+
+                                    </form>
+                                 </div>
+                              </div>
+                           </div>
+
+                        <?php   } ?>
+
+                        <div class="row">
+
+                           <div class="col-md-12 col-sm-12 ">
+                              <div class="x_panel">
+                                 <div class="x_title">Registered Books</div>
 
                                  <table class="table">
                                     <thead>
@@ -189,20 +198,20 @@ $rows = $sql->fetch_assoc();
                                        ?>
 
                                           <th scope="row"><?= $i++ ?></th>
-                                           <td><a href="bookprofile.php?id=<?= $rows['id'] ?>"></a></td>
+                                          
                                           <td><?= $rows['title'] ?></td>
                                           <td><?= $rows['discription'] ?></td>
                                           <td><?= $rows['quantity'] ?></td>
-                                          
+
 
                                           <td>
-                                          <form method="POST">
-                                             <button class="btn btn-success" type="submit" name="deleteBooks" value="<?= $rows['id'] ?>">Delete</button>
-                                          </form>
+                                             <form method="POST">
+                                                <button class="btn btn-success" type="submit" name="deleteBooks" value="<?= $rows['id'] ?>">Delete</button>
+                                             </form>
                                           </td>
                                           <td>
                                              <form method="POST">
-                                                <button class="btn btn-success" type="submit" name="deleteBooks" value="<?= $rows['id'] ?>">Edit</button>
+                                                <button class="btn btn-success" type="submit" name="editbooks" value="<?= $rows['id'] ?>">Edit</button>
                                              </form>
                                           </td>
                                           </tr>
@@ -213,7 +222,7 @@ $rows = $sql->fetch_assoc();
                               </div>
                            </div>
                         </div>
-                     </div>
+                        </div>
                   </div>
                </div>
                <!-- /page content -->
