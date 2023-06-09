@@ -419,9 +419,12 @@ function borrow()
 		return $result;
 	}
 }
-function editborrow($id)
+function EditBorrow($id)
 {
 	global $con;
+
+	$id = $_POST['editborrow'];
+
 	$studentname = $_POST['studentname'];
 	$title = $_POST['title'];
 	$rdate = $_POST['rdate'];

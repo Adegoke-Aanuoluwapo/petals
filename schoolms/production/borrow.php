@@ -9,7 +9,7 @@ if (isset($_POST['borrow'])) {
 
 if (isset($_POST['editborrow'])) {
   $id = $_POST['editborrow'];
-  editborrow($id);
+  Editborrow($id);
 }
 
 ?>
@@ -47,7 +47,7 @@ if (isset($_POST['editborrow'])) {
             <div class="">
               <div class="page-title">
                 <div class="title_left">
-                  <h3>Register Class</h3>
+                  <h3>Borrow Book</h3>
                 </div>
 
                 <div class="title_right">
@@ -85,7 +85,7 @@ if (isset($_POST['editborrow'])) {
                   <div class="col-md-12 col-sm-12 ">
                     <div class="x_panel">
                       <div class="x_title">
-                        <h2>Staff <small>Update Borrow</small></h2>
+                        <h2>Student <small>Update Borrow</small></h2>
                         <div class="clearfix"></div>
                       </div>
                       <div>
@@ -98,21 +98,42 @@ if (isset($_POST['editborrow'])) {
                             <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Student Name <span class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 ">
-                              <input type="text" id="first-name" name="studentname" value="<?= $rows['studentname'] ?>" required="required" class="form-control ">
+                              <select class="form-control">
+                                <option name="studentname" value="<?= $rows['studentname'] ?>">
+                                  <?php $i = 1;
+                                  $sql = $con->query("SELECT * FROM student");
+                                  while ($rows = $sql->fetch_assoc()) {
+                                    echo "<option>" . $rows['surname'] . ' ' . $rows['firstname'] . "</option>";
+                                  }
+                                  ?>
+                                </option>
+                              </select>
+
                             </div>
                           </div>
                           <div class="item form-group">
                             <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Title <span class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 ">
-                              <input type="text" id="last-name" name="title" value="<?= $rows['title'] ?>" required="required" class="form-control">
+                              <select class="form-control">
+                                <option name="studentname" value="<?= $rows['title'] ?>">
+                                  <?php $i = 1;
+                                  $sql = $con->query("SELECT * FROM library");
+                                  while ($rows = $sql->fetch_assoc()) {
+                                    echo "<option>" . $rows['title'] . ' ' . "</option>";
+                                  }
+                                  ?>
+                                </option>
+                              </select>
+
                             </div>
                           </div>
                           <div class="item form-group">
                             <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Return Date<span class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 ">
-                              <input type="text" id="last-name" name="rdate" value="<?= $rows['rdate'] ?>" required="required" class="form-control">
+
+                              <input type="date" id="last-name" name="rdate" value="<?= $rows['rdate'] ?>" required="required" class="form-control">
                             </div>
                           </div>
 
@@ -137,7 +158,7 @@ if (isset($_POST['editborrow'])) {
                         <div class="col-md-12 col-sm-12 ">
                           <div class="x_panel">
                             <div class="x_title">
-                              <h2>Student <small>Register Class</small></h2>
+                              <h2>Student <small>Borrow Books</small></h2>
                               <div class="clearfix"></div>
                             </div>
                             <div>
