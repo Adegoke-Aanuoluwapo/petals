@@ -11,7 +11,9 @@ if (isset($_POST['editlibrary'])) {
 }
 
 if (isset($_POST['deleteBook'])) {
-   
+   global $con;
+   $id = $_POST['deleteBook'];
+   $sql = $con->query("DELETE FROM library WHERE id = '$id'") or die(mysqli_error($con));
 }
 
 
@@ -198,7 +200,7 @@ if (isset($_POST['deleteBook'])) {
                                        ?>
 
                                           <th scope="row"><?= $i++ ?></th>
-                                          
+
                                           <td><?= $rows['title'] ?></td>
                                           <td><?= $rows['discription'] ?></td>
                                           <td><?= $rows['quantity'] ?></td>
@@ -206,7 +208,7 @@ if (isset($_POST['deleteBook'])) {
 
                                           <td>
                                              <form method="POST">
-                                                <button class="btn btn-success" type="submit" name="deleteBooks" value="<?= $rows['id'] ?>">Delete</button>
+                                                <button class="btn btn-success" type="submit" name="deleteBook" value="<?= $rows['id'] ?>">Delete</button>
                                              </form>
                                           </td>
                                           <td>

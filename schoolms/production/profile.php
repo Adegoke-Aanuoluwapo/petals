@@ -176,7 +176,9 @@ $rows = $sql->fetch_assoc();
                       <th>Parent Data</th>
                       <td><a href="parentprofile.php?id=<?= $rows['parent'] ?>"><?= parentData($rows['parent']) ?></a></td>
                       </tr>
-
+                      <th>Library Data</th>
+                      <td><a href="parentprofile.php?id=<?= $rows['parent'] ?>"><?= parentData($rows['parent']) ?></a></td>
+                      </tr>
 
                     </table>
                     <div class="x_content">
@@ -188,8 +190,8 @@ $rows = $sql->fetch_assoc();
                           <td>Total Score<br><?= totalScore($id) ?></td>
 
                           <td>Obtainable<br><?= obtainableMarks($id) ?></td>
-                          <td>Remarks (%)<br><?= number_format(100*totalScore($id)/obtainableMarks($id),2)?>% </td>
-                          <td>Total Average<br><?= number_format(totalAverage(),2) ?>%</td>
+                          <td>Remarks (%)<br><?= number_format(100 * totalScore($id) / obtainableMarks($id), 2) ?>% </td>
+                          <td>Total Average<br><?= number_format(totalAverage(), 2) ?>%</td>
                         </tr>
 
                       </table>
