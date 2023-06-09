@@ -98,16 +98,17 @@ if (isset($_POST['editborrow'])) {
                             <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Student Name <span class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 ">
-                              <select class="form-control">
-                                <option name="studentname" value="<?= $rows['studentname'] ?>">
-                                  <?php $i = 1;
-                                  $sql = $con->query("SELECT * FROM student");
-                                  while ($rows = $sql->fetch_assoc()) {
-                                    echo "<option>" . $rows['surname'] . ' ' . $rows['firstname'] . "</option>";
-                                  }
-                                  ?>
-                                </option>
+                              <select class="form-control" name="studentname">
+                                <option> select student</option>
+                                <?php $i = 1;
+                                $sql = $con->query("SELECT * FROM student");
+                                while ($rows = $sql->fetch_assoc()) {
+                                  echo "<option>" . $rows['surname'] . ' ' . $rows['firstname'] . "</option>";
+                                }
+                                ?>
+
                               </select>
+                              <input type="text" id="last-name" name="studentname" value="<?= $rows['studentname'] ?>" required="required" class="form-control">
 
                             </div>
                           </div>
@@ -115,17 +116,17 @@ if (isset($_POST['editborrow'])) {
                             <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Title <span class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 ">
-                              <select class="form-control">
-                                <option name="studentname" value="<?= $rows['title'] ?>">
-                                  <?php $i = 1;
-                                  $sql = $con->query("SELECT * FROM library");
-                                  while ($rows = $sql->fetch_assoc()) {
-                                    echo "<option>" . $rows['title'] . ' ' . "</option>";
-                                  }
-                                  ?>
-                                </option>
-                              </select>
+                              <select class="form-control" name="title">
+                                <option>Select Title </option>
+                                <?php $i = 1;
+                                $sql = $con->query("SELECT * FROM library");
+                                while ($rows = $sql->fetch_assoc()) {
+                                  echo "<option>" . $rows['title'] . ' ' . $rows['discription'] . "</option>";
+                                }
+                                ?>
 
+                              </select>
+                              <input type="text" id="last-name" name="title" value="<?= $rows['title'] ?>" required="required" class="form-control">
                             </div>
                           </div>
                           <div class="item form-group">
