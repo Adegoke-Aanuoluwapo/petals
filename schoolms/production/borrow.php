@@ -13,7 +13,7 @@ if (isset($_POST['editborrow'])) {
 }
 if(isset($_POST['delete'])){
   $id = $_POST['delete'];
-  $sql = $con->query("DELETE FROM borrow")
+  $sql = $con->query("DELETE FROM borrow WHERE student")
 
 }
 
