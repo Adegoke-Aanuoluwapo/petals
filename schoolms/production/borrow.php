@@ -11,6 +11,7 @@ if (isset($_POST['editborrow'])) {
   $id = $_POST['editborrow'];
   Editborrow($id);
 }
+if(isset($_))
 
 ?>
 
