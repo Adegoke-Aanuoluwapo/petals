@@ -12,6 +12,7 @@ if (isset($_POST['editborrow'])) {
   Editborrow($id);
 }
 if(isset($_POST['delete'])){
+  $id = $_POST['delete'];
   
 }
 
