@@ -241,6 +241,7 @@ function EditClass($id)
 	$class = $_POST['class'];
 	$note = $_POST['note'];
 	$sql = "UPDATE class SET class = '$class', note='$note' where id = '$id' ";
+	$con->query($sql) or  mysqli_error($con);
 	return;
 }
 
