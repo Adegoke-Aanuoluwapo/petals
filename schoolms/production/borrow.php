@@ -6,9 +6,9 @@ include("connection.php");
 if (isset($_POST['borrow'])) {
   borrow();
 }
-$id = $_GET['id'];
+
 if (isset($_POST['editborrow'])) {
-  $id = $_POST['editborrow'];
+
   Editborrow($id);
 }
 if (isset($_POST['deleteborrow'])) {
