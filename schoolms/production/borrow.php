@@ -14,6 +14,7 @@ if (isset($_POST['editborrow'])) {
 if (isset($_POST['deleteborrow'])) {
   $id = $_POST['deleteborrow'];
   $sql = $con->query("DELETE FROM borrow WHERE id ='$id'") or die($con->error);
+  header('location:borrow.php');
   exit;
 }
 
