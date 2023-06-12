@@ -110,40 +110,41 @@ global $con;
 
           <div class="x_title">Registered Students</div>
 
-          <?php $i = 1;
-          $sql = $con->query("SELECT * FROM library WHERE id = '$id'");
-          $rows = mysqli_fetch_assoc($sql)  ?>
+          <?php if(isset($_POST['bookstore'])) {
+           $sql = $con->query("SELECT * FROM library WHERE id = '$id'");
+           $rows = mysqli_fetch_assoc($sql);
+            ?>
 
 
-           <div class="allflex">
-            <div class="asee">
-             <img src="<?= 'upload/' . $rows['picture'] ?>" width="300px">
-             <h2><a href="bookprofile.php?sn=<?= $rows['sn'] ?>"><?= $rows['name'] ?></a></h2><br>
-             <div class="vf">
-              <div>
-               <p>Description of books : </p>
-              </div>
-              <div>
-               <p><?= $rows['description'] ?></p>
-              </div>
+          <div class="allflex">
+           <div class="asee">
+            <img src="<?= 'upload/' . $rows['picture'] ?>" width="300px">
+            <h2><a href="bookprofile.php?sn=<?= $rows['sn'] ?>"><?= $rows['name'] ?></a></h2><br>
+            <div class="vf">
+             <div>
+              <p>Description of books : </p>
              </div>
-             <div class="vf">
-              <div>
-               <p>Number of books : </p>
-              </div>
-              <div>
-               <p><?= $rows['quality'] ?></p>
-              </div>
+             <div>
+              <p><?= $rows['description'] ?></p>
              </div>
-             <button class="btn btn-success">Borrow Book</button>
-
             </div>
+            <div class="vf">
+             <div>
+              <p>Number of books : </p>
+             </div>
+             <div>
+              <p><?= $rows['quality'] ?></p>
+             </div>
+            </div>
+            <button class="btn btn-success">Borrow Book</button>
+
            </div>
+          </div>
 
 
+<?php }?>
 
 
-          <?php  } ?>
          </div>
         </div>
        </div>
