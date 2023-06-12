@@ -11,8 +11,8 @@ if (isset($_POST['editborrow'])) {
   $id = $_POST['editborrow'];
   Editborrow($id);
 }
-if (isset($_POST['delete'])) {
-  $id = $_POST['delete'];
+if (isset($_POST['deleteborrow'])) {
+  $id = $_POST['deleteborrow'];
   $sql = $con->query("DELETE FROM borrow WHERE id ='$id'") or die($con->error);
   exit;
 }
