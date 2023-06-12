@@ -5,7 +5,6 @@ global $con;
 @$id = $_GET['id'];
 
 if (isset($_POST['EditBooks'])) {
- $id = $_POST['EditBooks'];
  EditBooks($id);
 }
 
@@ -112,8 +111,8 @@ global $con;
           <div class="x_title">Registered Students</div>
 
           <?php $i = 1;
-          $sql = $con->query("SELECT * FROM library");
-          while ($rows = $sql->fetch_assoc()) { ?>
+          $sql = $con->query("SELECT * FROM library WHERE id = '$id'");
+          $rows = mysqli_fetch_assoc($sql)  ?>
 
 
            <div class="allflex">
