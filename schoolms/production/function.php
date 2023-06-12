@@ -236,7 +236,8 @@ function Addclass()
 }
 function EditClass($id)
 {
-	$id = $_POST['editclass'];
+	global $con;
+	$id = $_POST['editClass'];
 	$class = $_POST['class'];
 	$note = $_POST['note'];
 	$sql = "UPDATE class SET class = '$class', note='$note' where id = '$id' ";

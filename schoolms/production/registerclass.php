@@ -11,7 +11,7 @@ if (isset($_POST['DeleteClass'])) {
   $class = $_POST['DeleteClass'];
   $sql = $con->query("DELETE FROM class WHERE  class ='$class'") or die(mysqli_error($con));
 }
-if (isset($_POST['EditClass'])) {
+if (isset($_POST['editClass'])) {
   EditClass($id);
 }
 
@@ -123,7 +123,7 @@ if (isset($_POST['EditClass'])) {
                     <div class="ln_solid"></div>
                     <div class="item form-group">
                       <div class="col-md-6 col-sm-6 offset-md-3">
-                        <button type="submit" name="Addclass" value="<?= $id ?>" class="btn btn-success">Update User</button>
+                        <button type="submit" name="editClass" value="<?= $id ?>" class="btn btn-success">Update User</button>
                       </div>
                     </div>
 
