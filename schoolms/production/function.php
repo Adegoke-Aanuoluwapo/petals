@@ -404,7 +404,7 @@ function EditLibrary($id)
 	$discription = $_POST['discription'];
 	$quantity = $_POST['quantity'];
 	$sql = "UPDATE library SET title = '$title', discription = '$discription', quantity = '$quantity' WHERE id = '$id' ";
-	$con->query($sql) or die(mysqli_error($sql));
+	$con->query($sql) or die(mysqli_error($con));
 }
 
 function borrow()
@@ -438,7 +438,14 @@ function EditBorrow($id)
 
 function GetSubjectTitle($id){
 	global $con;
-	$sql=$con->query("SELECT * FROM subjects WHERE id='$id'");
+	$sql=$con->query("SELECT * FROM library WHERE id='$id'");
 	$rows= mysqli_fetch_assoc($sql);
+	return @$rows['title'];
 	
+}
+function GetNameTitle($id){
+	global $con;
+	$sql = $con->query("SELECT * FROM student WHERE id = '$id'");
+	$rows = mysqli_fetch_assoc($sql);
+	return $rows['surname'] .' '.$rows['firstname']; 
 }

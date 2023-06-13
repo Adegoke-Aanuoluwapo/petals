@@ -104,16 +104,8 @@ if (isset($_POST['deleteborrow'])) {
                             <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Student Name <span class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 ">
-                              <select class="form-control" name="studentname">
-                                <option> select student</option>
-                                <?php $i = 1;
-                                $sql = $con->query("SELECT * FROM student");
-                                while ($rows = $sql->fetch_assoc()) {
-                                  echo '<option>' . $rows['surname'] . ' ' . $rows['firstname'] . '</option>';
-                                }
-                                ?>
+                                    <input class="form-control" name="studentname" type="text" value="<?= $rows['studentname'] ?>" />
 
-                              </select>
 
 
                             </div>
@@ -122,16 +114,9 @@ if (isset($_POST['deleteborrow'])) {
                             <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Title <span class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 ">
-                              <select class="form-control" name="title">
-                                <option>Select Title </option>
-                                <?php $i = 1;
-                                $sql = $con->query("SELECT * FROM library");
-                                while ($rows = $sql->fetch_assoc()) {
-                                  echo '<option>' . $rows['title'] . ' ' . $rows['discription'] . '</option>';
-                                }
-                                ?>
+                               <input class="form-control" name="title" type="text" value="<?= $rows['title'] ?>" />
 
-                              </select>
+                            
 
                             </div>
                           </div>
@@ -179,6 +164,7 @@ if (isset($_POST['deleteborrow'])) {
                                   <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Student Name <span class="required">*</span>
                                   </label>
                                   <div class="col-md-6 col-sm-6 ">
+                                    
                                     <select class="form-control" name="studentname">
                                       <option>Select student </option>
                                       <?php $i = 1;
@@ -263,8 +249,8 @@ if (isset($_POST['deleteborrow'])) {
                                 <tr>
                                   <th scope="row"><?= $i++ ?></th>
 
-                                  <td><a href="updateborrow.php?id=<?= $rows['id'] ?>"><?= $rows['studentname'] ?></a></td>
-                                  <td><?= $rows['title'] ?></td>
+                                  <td><a href="updateborrow.php?id=<?= $rows['studentname'] ?>"><?=  GetNameTitle($rows['studentname']) ?></a></td>
+                                  <td><?= $rows['title'] ?><?= GetSubjectTitle($rows['title'])?></td>
                                   <td><?= $rows['bdate'] ?></td>
                                   <td><?= $rows['rdate'] ?></td>
                                   <td>
