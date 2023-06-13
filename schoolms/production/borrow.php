@@ -184,7 +184,7 @@ if (isset($_POST['deleteborrow'])) {
                                       <?php $i = 1;
                                       $sql = $con->query("SELECT * FROM student");
                                       while ($rows = $sql->fetch_assoc()) {
-                                        echo '<option>' . $rows['surname'] . ' ' . $rows['firstname'] . '</option>';
+                                        echo '<option value="' .$rows['id'].'">' . $rows['surname'] . ' ' . $rows['firstname'] . '</option>';
                                       } ?>
 
                                     </select>

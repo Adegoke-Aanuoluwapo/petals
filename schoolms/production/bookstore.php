@@ -44,10 +44,15 @@ if (isset($_POST["submit"])) {
   }
  }
 }
-global $con;
-//$sql = $con->query("SELECT * FROM library WHERE id='$id' ");
-//$rows = $sql->fetch_assoc();
 
+
+$sql = $con->query("SELECT * FROM book WHERE id='$id' ");
+$rows = $sql->fetch_assoc();
+
+
+// if(isset($_POST[])) {
+//           
+//              }
 ?>
 
 <!DOCTYPE html>
@@ -107,14 +112,12 @@ global $con;
 
         <div class="col-md-12 col-sm-12 ">
          <div class="x_panel">
+         
 
           <div class="x_title">Registered Students</div>
-
-          <?php if(isset($_POST['bookstore'])) {
-           $sql = $con->query("SELECT * FROM library WHERE id = '$id'");
-           $rows = mysqli_fetch_assoc($sql);
-            ?>
-
+ <?php $i=1; $sql = $con->query("SELECT * FROM books");
+          while($rows = $sql->fetch_assoc()) { ?>
+          
 
           <div class="allflex">
            <div class="asee">
@@ -141,8 +144,8 @@ global $con;
            </div>
           </div>
 
+    <?php } ?>
 
-<?php }?>
 
 
          </div>

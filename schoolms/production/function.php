@@ -435,3 +435,10 @@ function EditBorrow($id)
 
 	return;
 }
+
+function GetSubjectTitle($id){
+	global $con;
+	$sql=$con->query("SELECT * FROM subjects WHERE id='$id'");
+	$rows= mysqli_fetch_assoc($sql);
+	
+}
