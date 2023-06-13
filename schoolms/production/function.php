@@ -449,3 +449,9 @@ function GetNameTitle($id){
 	$rows = mysqli_fetch_assoc($sql);
 	return $rows['surname'] .' '.$rows['firstname']; 
 }
+function noBook($id){
+	global $con;
+	$sql = $con->query("SELECT * FROM  borrow WHERE id = '$id'");
+	$noBooks=mysqli_num_rows($sql);
+	return $noBooks;
+}
