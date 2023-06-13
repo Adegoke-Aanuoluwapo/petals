@@ -1,20 +1,9 @@
 <?php
 session_start();
 include("function.php");
-global $con;
+include("connection.php");
+
 @$id = $_GET['id'];
-
-if (isset($_POST['EditBooks'])) {
- EditBooks($id);
-}
-
-if (isset($_POST['deleteBook'])) {
- $id = $_POST['deleteBook'];
-
- $sql = $db->query("DELETE FROM library WHERE id = '$id' ") or die($con->error);
- header('location: library.php');
- exit;
-}
 
 $target_dir = "upload/";
 @$file_name =  basename($_FILES["fileToUpload"]["name"]);
@@ -46,13 +35,10 @@ if (isset($_POST["submit"])) {
 }
 
 
-$sql = $con->query("SELECT * FROM book WHERE id='$id' ");
+$sql = $con->query("SELECT * FROM library WHERE quantity='$quantity' ");
 $rows = $sql->fetch_assoc();
 
 
-// if(isset($_POST[])) {
-//           
-//              }
 ?>
 
 <!DOCTYPE html>
@@ -115,14 +101,14 @@ $rows = $sql->fetch_assoc();
          
 
           <div class="x_title">Registered Students</div>
- <?php $i=1; $sql = $con->query("SELECT * FROM books");
+              <?php $i=1; $sql = $con->query("SELECT * FROM library");
           while($rows = $sql->fetch_assoc()) { ?>
           
 
           <div class="allflex">
            <div class="asee">
             <img src="<?= 'upload/' . $rows['picture'] ?>" width="300px">
-            <h2><a href="bookprofile.php?sn=<?= $rows['sn'] ?>"><?= $rows['name'] ?></a></h2><br>
+            <h2><a href="bookprofile.php?sn=<?= $rows['id'] ?>"><?= $rows['title'] ?></a></h2><br>
             <div class="vf">
              <div>
               <p>Description of books : </p>
@@ -136,7 +122,7 @@ $rows = $sql->fetch_assoc();
               <p>Number of books : </p>
              </div>
              <div>
-              <p><?= $rows['quality'] ?></p>
+              <p><?= $rows['quantity'] ?></p>
              </div>
             </div>
             <button class="btn btn-success">Borrow Book</button>

@@ -148,13 +148,10 @@ $rows = $sql->fetch_assoc();
                     <table class="table table-hover">
 
                       <tr>
-                        <th>Surname</th>
-                        <td><?= $rows['surname'] ?></td>
+                        <th>Student Names</th>
+                        <td><?= $rows['surname']. ' '.$rows['firstname'] ?></td>
                       </tr>
-                      <tr>
-                        <th>First Name</th>
-                        <td><?= $rows['firstname'] ?></td>
-                      </tr>
+                      
                       <tr>
                         <th>dateofbirth</th>
                         <td><?= $rows['dob'] ?></td>
