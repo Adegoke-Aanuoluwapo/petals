@@ -114,7 +114,7 @@ $rows = $sql->fetch_assoc();
               <p>Description of books : </p>
              </div>
              <div>
-              <p><?= $rows['description'] ?></p>
+              <p><?= $rows['discription'] ?></p>
              </div>
             </div>
             <div class="vf">
