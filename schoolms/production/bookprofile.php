@@ -13,7 +13,7 @@ if (isset($_POST['EditUser'])) {
 if (isset($_POST['deleteUser'])) {
  $id = $_POST['deleteUser'];
 
- $sql = $con->query("DELETE FROM library WHERE id = '$id' ") or die($con->error);
+ $sql = $con->query("DELETE FROM library WHERE id = '$id' ");
  header('location: library.php');
  exit;
 }

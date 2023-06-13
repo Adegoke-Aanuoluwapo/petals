@@ -105,7 +105,7 @@ $rows = $sql->fetch_assoc();
           while($rows = $sql->fetch_assoc()) { ?>
           
 
-          <div class="allflex">
+          <div class="allflex" style="display:flex">
            <div class="asee">
             <img src="<?= 'upload/' . $rows['picture'] ?>" width="300px">
             <h2><a href="bookprofile.php?sn=<?= $rows['id'] ?>"><?= $rows['title'] ?></a></h2><br>
