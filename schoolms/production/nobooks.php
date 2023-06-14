@@ -96,19 +96,24 @@ $rows = $sql->fetch_assoc();
 
        <div class="row">
 
+
         <div class="col-md-12 col-sm-12 ">
          <div class="x_panel">
-         
+            <img src="<?= 'upload/' . $rows['picture'] ?>" width="300px">
+         <div class="x_title">Registered Students
+         </div>
 
-          <div class="x_title">Registered Students</div>
+          <div class="table">
+            <tr><td>Number Borrowed<br><?= noBooK($name)?> Books</td><td><?=GetupTitle($row['surname']) ?></td></tr>
+          </div>
               <?php $i=1; $sql = $con->query("SELECT * FROM library");
           while($rows = $sql->fetch_assoc()) { ?>
           
 
           <div class="grid">
            <div class="asee">
-            <img src="<?= 'upload/' . $rows['picture'] ?>" width="300px">
-            <h2><a href="bookprofile.php?sn=<?= $rows['id'] ?>"><?= $rows['title'] ?></a></h2><br>
+            
+            <h2><a href="bookprofile.php?id=<?= $rows['id'] ?>"><?= $rows['title'] ?></a></h2><br>
             <div class="g-col-6 g-col-md-4">
              <div>
               <p>Description of books : </p>
@@ -122,13 +127,10 @@ $rows = $sql->fetch_assoc();
               <p>Number of books : </p>
              </div>
              <div class="g-col-6 g-col-md-4">
-              <p><?= $rows['quantity'] ?></p>
-             </div>
-              <div class="g-col-6 g-col-md-4">
-              <p><?= noBook($rows['quantity']) ?></p>
+              <p><?= $rows['quantity']-noBook($rows['id']) ?></p>
              </div>
             </div>
-            <button class="btn btn-success">Borrow Book</button>
+            <button type="submit" class="btn btn-success"><a href="borrow.php">Borrow Book</a></button>
 
            </div>
           </div>

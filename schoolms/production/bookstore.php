@@ -125,7 +125,7 @@ $rows = $sql->fetch_assoc();
               <p><?= $rows['quantity'] ?></p>
              </div>
             </div>
-            <button class="btn btn-success">Borrow Book</button>
+            <button class="btn btn-success"><a href="borrow.php">Borrow Book</a></button>
 
            </div>
           </div>

@@ -29,6 +29,7 @@
           <li><a href="library.php">Library</a></li>
           <li><a href="borrow.php">Borrow Books</a></li>
           <li><a href="addresults.php">Results</a></li>
+          <li><a href="bookstore.php">Book Store</a></li>
 
 
 
