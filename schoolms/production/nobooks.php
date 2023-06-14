@@ -103,9 +103,10 @@ $rows = $sql->fetch_assoc();
          <div class="x_title">Registered Students
          </div>
 
-          <div class="table">
-            <tr><td>Number Borrowed<br><?= noBooK($name)?> Books</td><td><?=GetupTitle($row['surname']) ?></td></tr>
-          </div>
+          <table class="table">
+            <tr><td>Number Borrowed<br><?= noBook($rows['title'])?> Books</td><td><?=GetupTitle($id) ?></td></tr>
+
+          </table>
               <?php $i=1; $sql = $con->query("SELECT * FROM library");
           while($rows = $sql->fetch_assoc()) { ?>
           
