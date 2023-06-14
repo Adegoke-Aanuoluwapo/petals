@@ -20,13 +20,14 @@ if (isset($_POST["submit"])) {
  } else {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 
-   $sql = $db->query("UPDATE book SET picture = '$file_name' WHERE sn = '$sn' ") or die($db->error);
+   $sql = $db->query("UPDATE book SET picture = '$file_name' WHERE id = '$id' ") or die($con->error);
 
    if ($sql) {
     echo "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
    } else {
-    die($db->error);
+    die($con->error);
     unlink('upload/' . $file_name);
+    
    }
   } else {
    echo "Sorry, there was an error uploading your file.";
@@ -35,7 +36,7 @@ if (isset($_POST["submit"])) {
 }
 
 
-$sql = $con->query("SELECT * FROM library WHERE quantity='$quantity' ");
+$sql = $con->query("SELECT * FROM borrow WHERE title='$title' ");
 $rows = $sql->fetch_assoc();
 
 
