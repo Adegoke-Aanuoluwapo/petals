@@ -124,6 +124,9 @@ $rows = $sql->fetch_assoc();
              <div class="g-col-6 g-col-md-4">
               <p><?= $rows['quantity'] ?></p>
              </div>
+              <div class="g-col-6 g-col-md-4">
+              <p><?= noBook($rows['quantity']) ?></p>
+             </div>
             </div>
             <button class="btn btn-success">Borrow Book</button>
 
