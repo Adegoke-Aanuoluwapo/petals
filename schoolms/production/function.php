@@ -456,9 +456,9 @@ function noBook($name){
 	$noBooks = mysqli_num_rows($sql);
 	return $noBooks;
 }
-function GetupTitle($title){
+function GetupTitle($id){
 	global $con;
-	$sql = $con->query("SELECT * FROM  borrow WHERE title = '$title'");
+	$sql = $con->query("SELECT * FROM  student WHERE id = '$id'");
 $row = mysqli_fetch_assoc($sql);
-return  $row['title'];
+return  $row['surname']. ' '. $row['firstname'];
 }
