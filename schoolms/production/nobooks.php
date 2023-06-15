@@ -105,12 +105,22 @@ $rows = $sql->fetch_assoc();
          </div>
 
           <table class="table">
-            <tr><td>Number Borrowed<br><?= noBook($rows['title'])?> Books</td><td><?=GetupTitle($id) ?></td></tr>
+            <tr><td>Number Borrowed<br><?= noBook($rows['title'])?> Books</td></tr>
 
           </table>
-              <?php $i=1; $sql = $con->query("SELECT * FROM library");
+
+          <table class="table">
+            <tr>
+              <td>sn</td>
+              <td>Name of Student</td>
+              <td>Class</td>
+              <td>Date of Birth</td>
+            </tr>
+                  <?php $i=1; $sql = $con->query("SELECT * FROM library");
           while($rows = $sql->fetch_assoc()) { ?>
           
+          </table>
+        
 
           <div class="grid">
            <div class="asee">
