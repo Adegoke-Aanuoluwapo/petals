@@ -105,7 +105,7 @@ $rows = $sql->fetch_assoc();
          </div>
 
           <table class="table">
-            <tr><td>Number Borrowed<br><?= noBook($rows['title'])?> Books</td></tr>
+            <tr><td>Number Borrowed<br><?= @noBook($rows['title'])?> Books</td></tr>
 
           </table>
 
@@ -116,11 +116,13 @@ $rows = $sql->fetch_assoc();
               <td>Class</td>
               <td>Date of Birth</td>
             </tr>
-                  <?php $title=$_GET['title']; $i=1; $sql = $con->query("SELECT * FROM borrow WHERE title = '$title'");
+                  <?php $i=1; @$title = $_GET['title'];  $sql = $con->query("SELECT * FROM borrow WHERE title = '$title'");
           while($rows = $sql->fetch_assoc()) { ?>
           <tr>
-            <td><?=$row['id']?></td>
+            <td><?=$rows['id']?></td>
              <td><?= GetNameTitle($rows['surname'])?></td>
+             <td><?= GetSubjectTitle($rows['surname']) ?></td>
+              <td><?= GetStudentDate($rows['surname']) ?></td>
           </tr>
           
           </table>

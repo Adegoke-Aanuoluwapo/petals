@@ -258,9 +258,14 @@ if (isset($_POST['deleteborrow'])) {
                                       <button class="btn btn-success" type="submit" name="deleteborrow" value="<?= $rows['id'] ?>">Delete</button>
                                     </form>
                                   <td>
-
+                                  <td>
                                     <form method="POST">
                                       <button class="btn btn-success" name="updateborrow" value="<?= $rows['id'] ?>">UPDATE</button>
+                                    </form>
+                                  </td>
+                                  <td>
+                                    <form method="POST">
+                                      <button class="btn btn-success" name="updateborrow" value="<?= $rows['id'] ?>">RETURN</button>
                                     </form>
                                   </td>
                                 </tr>
