@@ -250,7 +250,7 @@ if (isset($_POST['deleteborrow'])) {
                                   <th scope="row"><?= $i++ ?></th>
 
                                   <td><a href="updateborrow.php?id=<?= $rows['studentname'] ?>"><?=  GetNameTitle($rows['studentname']) ?></a></td>
-                                  <td><?= $rows['title'] ?><?= GetSubjectTitle($rows['title'])?></td>
+                                  <td><a href="nobooks.php"><?= $rows['title'] ?><?= GetSubjectTitle($rows['title'])?></a></td>
                                   <td><?= $rows['bdate'] ?></td>
                                   <td><?= $rows['rdate'] ?></td>
                                   <td>

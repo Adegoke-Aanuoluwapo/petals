@@ -116,8 +116,12 @@ $rows = $sql->fetch_assoc();
               <td>Class</td>
               <td>Date of Birth</td>
             </tr>
-                  <?php $i=1; $sql = $con->query("SELECT * FROM library");
+                  <?php $title=$_GET['title']; $i=1; $sql = $con->query("SELECT * FROM borrow WHERE title = '$title'");
           while($rows = $sql->fetch_assoc()) { ?>
+          <tr>
+            <td><?=$row['id']?></td>
+             <td><?= GetNameTitle($rows['surname'])?></td>
+          </tr>
           
           </table>
         
@@ -131,7 +135,7 @@ $rows = $sql->fetch_assoc();
               <p>Description of books : </p>
              </div>
              <div class="g-col-6 g-col-md-4">
-              <p><?= $rows['discription'] ?></p>
+              <p><?= $rows['studentname'] ?></p>
              </div>
             </div>
             <div class="g-col-6 g-col-md-4">
@@ -139,10 +143,10 @@ $rows = $sql->fetch_assoc();
               <p>Number of books : </p>
              </div>
              <div class="g-col-6 g-col-md-4">
-              <p><?= $rows['quantity']-noBook($rows['id']) ?></p>
+              <p><?= $rows['rdate']?></p>
              </div>
             </div>
-            <button type="submit" class="btn btn-success"><a href="borrow.php">Borrow Book</a></button>
+           
 
            </div>
           </div>

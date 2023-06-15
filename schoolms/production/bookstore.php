@@ -122,7 +122,7 @@ $rows = $sql->fetch_assoc();
               <p>Number of books : </p>
              </div>
              <div>
-              <p><?= $rows['quantity'] ?></p>
+              <p><?= $rows['quantity']-noBook($rows['id'])  ?></p>
              </div>
             </div>
             <button class="btn btn-success"><a href="borrow.php">Borrow Book</a></button>

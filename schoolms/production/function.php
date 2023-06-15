@@ -443,6 +443,12 @@ function GetSubjectTitle($id){
 	return @$rows['title'];
 	
 }
+function GetStudentTitle($id){
+	global $con;
+	$sql= $con->query("SELECT * FROM student where id = '$id'");
+	$rows=mysqli_fetch_assoc($sql);
+	return $rows['surname']. ' '. $rows['firstname'];
+}
 function GetNameTitle($id){
 	global $con;
 	$sql = $con->query("SELECT * FROM student WHERE id = '$id'");
