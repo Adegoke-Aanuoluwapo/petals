@@ -84,59 +84,45 @@ if (isset($_POST['deleteborrow'])) {
               </script>  
   
   
-  <div class="row">
-                  <div class="col-md-12 col-sm-12 ">
-                    <div class="x_panel">
-                      <div class="x_title">
-                        <h2>Student <small>Update Borrow</small></h2>
-                        <div class="clearfix"></div>
-                      </div>
-                      <div>
+   <div class="row">
 
+                      <div class="col-md-12 col-sm-12 ">
+                        <div class="x_panel">
+                          <div class="x_title">Registered Class</div>
+                          <table class="table">
+                            <thead>
+                              <tr>
+                                <th>sn</th>
+                                <th>Student Name</th>
+                                <th>Title</th>
+                                <th>Borrow Date</th>
+                                <th>Return Date</th>
+                                <th>Actual Return Date</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <?php $i = 1;
+                              $sql = $con->query("SELECT * FROM borrow");
+                              while ($rows = $sql->fetch_assoc()) {
+                                $id = $rows['id'];
+                                $studentname = $rows['studentname'];
+                                $title = $rows['title'];
+                                $bdate = $rows['bdate'];
+                                $rdate = $rows['rdate'];
+                              ?>
 
+                                <tr>
+                                  <th scope="row"><?= $i++ ?></th>
 
-                        <form method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
-
-                          <div class="item form-group">
-                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Student Name <span class="required">*</span>
-                            </label>
-                            <div class="col-md-6 col-sm-6 ">
-                                    <input class="form-control" name="studentname" type="text" value="<?= $rows['studentname'] ?>" />
-
-
-
-                            </div>
-                          </div>
-                          <div class="item form-group">
-                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Title <span class="required">*</span>
-                            </label>
-                            <div class="col-md-6 col-sm-6 ">
-                               <input class="form-control" name="title" type="text" value="<?= $rows['title'] ?>" />
-
-                            
-
-                            </div>
-                          </div>
-                          <div class="item form-group">
-                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Return Date<span class="required">*</span>
-                            </label>
-                            <div class="col-md-6 col-sm-6 ">
-
-                              <input type="date" id="last-name" name="rdate" value="<?= $rows['rdate'] ?>" required="required" class="form-control">
-                            </div>
-                          </div>
-
-                      </div>
-                      <div class="ln_solid"></div>
-                      <div class="item form-group">
-                        <div class="col-md-6 col-sm-6 offset-md-3">
-                          <button type="submit" name="editborrow" value="<?= $rows['id'] ?>" class="btn btn-success">Return Book</button>
-                        </div>
-                      </div>
-
-
-
-
+                                  <td><a href="updateborrow.php?id=<?= $rows['studentname'] ?>"><?=  GetNameTitle($rows['studentname']) ?></a></td>
+                                  <td><a href="nobooks.php"><?= $rows['title'] ?><?= GetSubjectTitle($rows['title'])?></a></td>
+                                  <td><?= $rows['bdate'] ?></td>
+                                  <td><?= $rows['rdate'] ?></td>
+                                  <td>
+                                    <form method="POST">
+                                      <button class="btn btn-success" type="submit" name="deleteborrow" value="<?= $rows['id'] ?>">RETURN</button>
+                                    </form>
+                             <?php } ?>
 
                        <!-- /page content -->
 
