@@ -15,6 +15,9 @@
   <li>Current File Dir: <?php  echo $_SERVER['PHP_SELF'];?></li>
   <li>Request URI: <?php  echo $_SERVER['REQUEST_URI'];?></li>
   <li>Server Software: <?php  echo $_SERVER['SERVER_SOFTWARE'];?></li>
+  <li>Client Info: <?php  echo $_SERVER['HTTP_USER_AGENT'];?></li>
+  <li>Remote Address: <?php  echo $_SERVER['REMOTE_ADDR'];?></li>
+ <li>Remote Port: <?php  echo $_SERVER['REMOTE_PORT'];?></li>
  </ul>
  
 </body>
