@@ -5,17 +5,21 @@ echo $_POST['name'];
 echo $_POST['age'];
 }
 
-?>
+?> 
 
-<a href="<?php echo $_SERVER['PHP_SELF']; ?>?name=John&age=34">Click</a>
+
 
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
-  <label for="name">Name 
+ <div> 
+<label for="name">Name 
  </label>
- <input type="text" name="name"><br>
+ <input type="text" name="name">
+ </div><br>
+ <div>
  <label for="name">Age 
  </label>
- <input type="text" name="age"><br>
+ <input type="text" name="age">
+ </div><br>
  <input type="submit" name="submit">
  </form>
 

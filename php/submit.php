@@ -47,6 +47,30 @@ if(isset($_POST['submit'])){
  <input type="text" name="code"><br>
  <input type="submit" name="submit">
  </form>
- 
+ <table>
+    <thead>
+    <tr>
+        <th>sn</th>
+        <th>name</th>
+        <th>code</th>
+    </tr>
+    </thead>
+    <tbody>
+        <?php $i = 1; $sql = $con->query("SELECT * FROM people ");
+        while($rows = $sql->fetch_assoc()){
+                $id = $rows['id'];
+                $name=$rows['name'];
+                $code =$rows['code'];
+
+       
+        ?>
+        <tr>
+            <td><?=  $rows['id'] ?></td>
+            <td><?= $rows['name'] ?></td>
+            <td><?= $rows['code'] ?></td>
+        </tr>
+        <?php } ?>
+    </tbody>
+ </table>
 </body>
 </html>
