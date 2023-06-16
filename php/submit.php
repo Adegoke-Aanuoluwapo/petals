@@ -1,3 +1,20 @@
+<?php 
+$dbhost = "localhost";
+$dbuser = "root";
+$dbpass = "";
+$dbname = "grit";
+
+if(!$con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname)){
+    die("failed to connect");
+}
+?>
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +23,6 @@
  <title>Document</title>
 </head>
 <body>
- <?php  <h1>Hello
- </h1> ?>
+ <?php   ?>
 </body>
 </html>
