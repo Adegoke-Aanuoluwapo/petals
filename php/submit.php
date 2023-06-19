@@ -56,7 +56,7 @@ if(isset($_POST['submit'])){
     </tr>
     </thead>
     <tbody>
-        <?php $i = 1; $sql = $con->query("SELECT * FROM people ");
+        <?php $i = 1; $sql = $con->query("SELECT name FROM `people` where id ='$name' ");
         while($rows = $sql->fetch_assoc()){
                 $id = $rows['id'];
                 $name=$rows['name'];
