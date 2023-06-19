@@ -1,8 +1,9 @@
 <?php
+session_start();
 include("connection.php");
 include("function.php");
 
-if(isset($_POST["submit"])){
+if(isset($_POST["addcategory"])){
 addCategory();
 }
 
@@ -91,7 +92,7 @@ addCategory();
 											<label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Title <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" id="first-name" required="required" class="form-control " name="title">
+												<input type="text" name="title" id="first-name" required="required" class="form-control " >
 											</div>
 										</div>
 										<div class="item form-group">
@@ -101,25 +102,14 @@ addCategory();
 												<input type="text" id="last-name" name="note" required="required" class="form-control">
 											</div>
 										</div>
-										<div class="item form-group">
-											<label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Created </label>
-											<div class="col-md-6 col-sm-6 ">
-												<input id="middle-name" class="form-control" type="text" name="created_at">
-											</div>
-										</div>
-											<div class="item form-group">
-											<label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Status </label>
-											<div class="col-md-6 col-sm-6 ">
-												<input id="middle-name" class="form-control" type="text" name="status">
-											</div>
-										</div>
+									
 										
 									
 										<div class="ln_solid"></div>
 										<div class="item form-group">
 											<div class="col-md-6 col-sm-6 offset-md-3">
 											
-												<button type="submit" class="btn btn-success" name="submit">Submit</button>
+												<button type="submit" name="addcategory" class="btn btn-success" >Submit</button>
 											</div>
 										</div>
 
