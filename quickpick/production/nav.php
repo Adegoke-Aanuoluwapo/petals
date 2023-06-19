@@ -6,7 +6,7 @@
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
-                <h2>John Doe</h2>
+                <h2>Ebuy</h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -22,7 +22,7 @@
                     <ul class="nav child_menu">
                       <li><a href="addcategory.php">Add Category</a></li>
                       <li><a href="categorylist.php">List of Category</a></li>
-                      <li><a href="index3.html">Dashboard3</a></li>
+                     
                     </ul>
                   </li>
                 </ul>
