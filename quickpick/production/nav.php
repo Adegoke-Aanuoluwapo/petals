@@ -29,8 +29,8 @@
                  <ul class="nav side-menu">
                   <li><a><i class="fa fa-home"></i> Item <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="addcategory.php">Add item</a></li>
-                      <li><a href="index2.html">List of Category</a></li>
+                      <li><a href="additms.php">Add item</a></li>
+                      <li><a href="itemslist.php">Item List</a></li>
                       <li><a href="index3.html">Dashboard3</a></li>
                     </ul>
                   </li>

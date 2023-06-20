@@ -90,13 +90,20 @@ addCategory();
 									<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
 										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Title <span class="required">*</span>
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Cat Id <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" name="title" id="first-name" required="required" class="form-control " >
+												<input type="text" name="cat_id" id="first-name" required="required" class="form-control " >
 											</div>
 										</div>
 										<div class="item form-group">
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Title <span class="required">*</span>
+											</label>
+											<div class="col-md-6 col-sm-6 ">
+												<input type="text" id="last-name" name="title" required="required" class="form-control">
+											</div>
+										</div>
+          <div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Note <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
@@ -110,7 +117,7 @@ addCategory();
 										<div class="item form-group">
 											<div class="col-md-6 col-sm-6 offset-md-3">
 											
-												<button type="submit" name="addcategory" class="btn btn-success" >Submit</button>
+												<button type="submit" name="additems" class="btn btn-success" >Submit</button>
 											</div>
 										</div>
 
