@@ -1,7 +1,6 @@
 <?php
-session_start();
-include("connection.php");
-include("function.php");
+include("connect.php");
+include("functions.php");
 
 if(isset($_POST["addcategory"])){
 	global $con;
@@ -87,7 +86,7 @@ addCategory();
 								</div>
 								<div class="x_content">
 									<br />
-									<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+									<form id="demo-form2"method="POST" data-parsley-validate class="form-horizontal form-label-left">
 
 										<div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Title <span class="required">*</span>
