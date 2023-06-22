@@ -92,7 +92,7 @@ addItems();
 												<option>Select items...</option>
 												<?php  $i=1; $sql = $con->query("SELECT * FROM category");
 												while ( $rows = $sql->fetch_assoc()){
-													echo '<option>' .$rows['title']. '</option>';
+													echo '<option value=" '.$rows['sn'].'" >' .$rows['title']. '</option>';
 												}
 												?>
 											</select>

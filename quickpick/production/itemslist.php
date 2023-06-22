@@ -107,6 +107,7 @@ if(isset($_POST["deleteCategory"])){
                             <th>
                               <input type="checkbox" id="check-all" class="flat">
                             </th>
+                             <th class="column-title">Cat ID </th>
                             <th class="column-title">title </th>
                             <th class="column-title">note </th>
                             
@@ -120,14 +121,17 @@ if(isset($_POST["deleteCategory"])){
                         <tbody>
                            <?php 
                           
-                           $i = 1; $sql = $con->query("SELECT * FROM category ");
+                           $i = 1; $sql = $con->query("SELECT * FROM items ");
                         while ($rows =$sql->fetch_assoc()) {?>
                           <tr class="even pointer">
                             <th scope="row"><?= $i++ ?></th>
                             <td class="a-center ">
+                              <?= $rows['cat_id']?>
+                            </td>
+                            <td class="a-center ">
                               <?= $rows['title']?>
                             </td>
-                            <td class=" "><?= $rows['note']?></td>
+                            <td class="a-center "><?= $rows['note']?></td>
                             <form method="POST">
                              <td class=" "><button class="btn btn-success">UPDATE</button></td>
                              <td class=" "><button type="submit" class="btn btn-danger" name="deleteCategory" value="<?= $rows['sn']?>">DELETE</button></td>
