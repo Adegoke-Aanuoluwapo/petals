@@ -104,12 +104,13 @@ if(isset($_POST["deleteCategory"])){
                       <table class="table table-striped jambo_table bulk_action">
                         <thead>
                           <tr class="headings">
-                            <th>
-                              <input type="checkbox" id="check-all" class="flat">
-                            </th>
+                            
+                           <th class="column-title">sn </th>
                              <th class="column-title">Cat ID </th>
                             <th class="column-title">title </th>
                             <th class="column-title">note </th>
+                             <th class="column-title">Update </th>
+                              <th class="column-title">Delete </th>
                             
                            
                             

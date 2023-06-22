@@ -19,14 +19,14 @@ function addCategory(){
 function addItems(){
  global $con;
  if($_SERVER["REQUEST_METHOD"] == "POST"){
-  $catid = $_POST['cat_id'];
+  $cat_id = $_POST['cat_id'];
   $title = $_POST['title'];
   $note = $_POST['note'];
  
 
-  $sql = "INSERT INTO items(cat_id, title, note) VALUES('$catid', '$title', '$note')";
+  $sql = "INSERT INTO items(cat_id, title, note) VALUES('$cat_id', '$title', '$note')";
   $result = mysqli_query($con, $sql);
-
+   header("location:itemslist.php");
   return $result;
 
 

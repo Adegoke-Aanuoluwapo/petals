@@ -88,11 +88,11 @@ addItems();
 											</label>
 
 											<div class="col-md-6 col-sm-6 "> 
-											<select class="form-control" name="title">
+											<select class="form-control" name="cat_id">
 												<option>Select items...</option>
 												<?php  $i=1; $sql = $con->query("SELECT * FROM category");
 												while ( $rows = $sql->fetch_assoc()){
-													echo '<option value=" '.$rows['sn'].'" >' .$rows['title']. '</option>';
+													echo '<option  >' .$rows['title']. '</option>';
 												}
 												?>
 											</select>
