@@ -105,8 +105,8 @@ include("connect.php")
                             </th>
                             <th class="column-title">Invoice </th>
                             <th class="column-title">Invoice Date </th>
-                            <th class="column-title"><button class="btn btn-success">UPDATE</button> </th>
-                            <th class="column-title"><button class="btn btn-danger">DELETE</button> </th>
+                            <th class="column-title"> </th>
+                            <th class="column-title"> </th>
                            
                             
                             </th>
@@ -116,7 +116,7 @@ include("connect.php")
                        
                         <tbody>
                            <?php 
-                           global $con;
+                          
                            $i = 1; $sql = $con->query("SELECT * FROM category ");
                         while ($rows =$sql->fetch_assoc()) {?>
                           <tr class="even pointer">
@@ -125,6 +125,9 @@ include("connect.php")
                               <?= $rows['title']?>
                             </td>
                             <td class=" "><?= $rows['note']?></td>
+                             <td class=" "><button class="btn btn-success">UPDATE</button></td>
+                             <td class=" "><button class="btn btn-danger">DELETE</button></td>
+                            
                             
                           </tr>
                          
