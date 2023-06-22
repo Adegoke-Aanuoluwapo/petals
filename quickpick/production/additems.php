@@ -1,5 +1,4 @@
 <?php
-session_start();
 include "connect.php";
 include "functions.php";
 
@@ -73,12 +72,7 @@ addItems();
 										</li>
 										<li class="dropdown">
 											<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-											<ul class="dropdown-menu" role="menu">
-												<li><a class="dropdown-item" href="#">Settings 1</a>
-												</li>
-												<li><a class="dropdown-item" href="#">Settings 2</a>
-												</li>
-											</ul>
+											
 										</li>
 										<li><a class="close-link"><i class="fa fa-close"></i></a>
 										</li>
@@ -90,11 +84,20 @@ addItems();
 									<form id="demo-form2" method="post" data-parsley-validate class="form-horizontal form-label-left">
 
 										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Cat Id <span class="required">*</span>
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Cat Id 
 											</label>
-											<div class="col-md-6 col-sm-6 ">
-												<input type="text" name="cat_id" id="first-name" required="required" class="form-control " >
+
+											<div class="col-md-6 col-sm-6 "> 
+											<select class="form-control" name="title">
+												<option>Select items...</option>
+												<?php  $i=1; $sql = $con->query("SELECT * FROM category");
+												while ( $rows = $sql->fetch_assoc()){
+													echo '<option>' .$rows['title']. '</option>';
+												}
+												?>
+											</select>
 											</div>
+										
 										</div>
 										<div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Title <span class="required">*</span>

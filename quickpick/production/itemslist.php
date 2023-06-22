@@ -107,8 +107,8 @@ if(isset($_POST["deleteCategory"])){
                             <th>
                               <input type="checkbox" id="check-all" class="flat">
                             </th>
-                            <th class="column-title">Invoice </th>
-                            <th class="column-title">Invoice Date </th>
+                            <th class="column-title">title </th>
+                            <th class="column-title">note </th>
                             
                            
                             

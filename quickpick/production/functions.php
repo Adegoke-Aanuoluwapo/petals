@@ -1,6 +1,6 @@
 <?php 
 
-
+include("connect.php");
 function addCategory(){
  global $con;
  
@@ -12,7 +12,7 @@ function addCategory(){
 		$sql = "INSERT INTO category (title, note) VALUES('$title', '$note')";
   mysqli_query($con, $sql);
   
-  
+  return;
  }
 }
 
