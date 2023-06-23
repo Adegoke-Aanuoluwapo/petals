@@ -50,6 +50,8 @@ if(isset($_POST['updatecate'])){
 					$rows = mysqli_fetch_assoc($sql); 	
 			?>
 
+      
+
 <div class="right_col" role="main">
 				<div class="">
 					<div class="page-title">
@@ -226,7 +228,7 @@ if(isset($_POST['updatecate'])){
                             </td>
                             <td class=" "><?= $rows['note']?></td>
                             <form method="POST">
-                             <td class=" "><button class="btn btn-success" name="updatecategory">UPDATE</button></td>
+                             <td class=" "><button class="btn btn-success"  value="<?= $rows['sn']?>" name="updatecategory">UPDATE</button></td>
                              <td class=" "><button type="submit" class="btn btn-danger" name="deleteCategory" value="<?= $rows['sn']?>">DELETE</button></td>
                             </form>
                             

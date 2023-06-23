@@ -223,7 +223,7 @@ if(isset($_POST["deleteItems"])){
                             <td class="a-center "><?= $rows['note']?></td>
                             <td class="a-center "><?= $rows['created_at']?></td>
                             <form method="POST">
-                             <td class=" "><button class="btn btn-success" name="updateitems">UPDATE</button></td>
+                             <td class=" "><button class="btn btn-success" value="<?= $rows['sn']?>" name="updateitems">UPDATE</button></td>
                              <td class=" "><button type="submit" class="btn btn-danger" name="deleteItems" value="<?= $rows['sn']?>">DELETE</button></td>
                             </form>
                             

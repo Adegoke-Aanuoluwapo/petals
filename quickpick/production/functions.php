@@ -43,3 +43,21 @@ function addItems(){
 
  }
 }
+
+function addPayment(){
+ global $con;
+ if($_SERVER["REQUEST_METHOD"] == "POST"){
+  $trid = $_POST['trid'];
+  $user_id = $_POST['user_id'];
+  $amount = $_POST['amount'];
+  
+ 
+
+  $sql = "INSERT INTO amount(trid, user_id, amount) VALUES('$trid', '$user_id', '$amount')";
+  $result = mysqli_query($con, $sql);
+   header("location:paymentlist.php");
+  return $result;
+
+
+ }
+}
