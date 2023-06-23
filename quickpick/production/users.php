@@ -2,9 +2,9 @@
 include "connect.php";
 include "functions.php";
 
-if(isset($_POST["Addpayment"])){
+if(isset($_POST["additems"])){
 	global $con;
-addPayment();
+addItems();
 }
 
 
@@ -121,7 +121,7 @@ addPayment();
 										<div class="item form-group">
 											<div class="col-md-6 col-sm-6 offset-md-3">
 											
-												<button type="submit" name="Addpayment" class="btn btn-success" >Submit</button>
+												<button type="submit" name="additems" class="btn btn-success" >Submit</button>
 											</div>
 										</div>
 
