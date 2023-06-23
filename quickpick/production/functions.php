@@ -15,6 +15,17 @@ function addCategory(){
   return;
  }
 }
+function updateCategory($sn){
+ global $con;
+
+$sn =$_POST['updatecate'];
+ $title = $_POST['title'];
+ $note = $_POST['note'];
+
+ $sql = "UPDATE category SET title = '$title', note = '$note' WHERE sn = '$sn'";
+ $con->query($sql) or mysqli_error($con);
+ return;
+}
 
 function addItems(){
  global $con;

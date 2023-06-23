@@ -8,6 +8,11 @@ if(isset($_POST["deleteCategory"])){
 
 }
 
+if(isset($_POST['updatecate'])){
+  
+  updateCategory($sn);
+
+}
 ?>
 
 <!DOCTYPE html>
@@ -93,14 +98,14 @@ if(isset($_POST["deleteCategory"])){
 											<label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Title <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" name="title" id="first-name" required="required" class="form-control " >
+												<input type="text" name="title" id="first-name"  class="form-control" value="<?= $rows['title']?>" >
 											</div>
 										</div>
 										<div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Note <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" id="last-name" name="note" required="required" class="form-control">
+												<input type="text" id="last-name" name="note"  class="form-control" value="<?= $rows['note']?>">
 											</div>
 										</div>
 									
@@ -110,7 +115,7 @@ if(isset($_POST["deleteCategory"])){
 										<div class="item form-group">
 											<div class="col-md-6 col-sm-6 offset-md-3">
 											
-												<button type="submit" name="addcategory" class="btn btn-success" >Submit</button>
+												<button type="submit" name="updatecate" class="btn btn-success" >Submit</button>
 											</div>
 										</div>
 
@@ -220,7 +225,7 @@ if(isset($_POST["deleteCategory"])){
                             </td>
                             <td class=" "><?= $rows['note']?></td>
                             <form method="POST">
-                             <td class=" "><button class="btn btn-success">UPDATE</button></td>
+                             <td class=" "><button class="btn btn-success" name="updatecategory">UPDATE</button></td>
                              <td class=" "><button type="submit" class="btn btn-danger" name="deleteCategory" value="<?= $rows['sn']?>">DELETE</button></td>
                             </form>
                             
