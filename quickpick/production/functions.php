@@ -61,3 +61,17 @@ function addPayment(){
 
  }
 }
+
+function addUsers(){
+global $con;
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+ $name = $_POST['name'];
+ $email= $_POST['email'];
+ $password =$_POST['password'];
+ $address = $_POST['address'];
+
+ $sql = "INSERT INTO users(name, email, password, address) VALUES('$name', '$email', '$password', '$address')";
+ $result= mysqli_query($con, $sql);
+ return $result;
+}
+}

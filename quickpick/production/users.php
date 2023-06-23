@@ -2,9 +2,9 @@
 include "connect.php";
 include "functions.php";
 
-if(isset($_POST["additems"])){
+if(isset($_POST["AddUsers"])){
 	global $con;
-addItems();
+addUsers();
 }
 
 
@@ -82,37 +82,36 @@ addItems();
 								<div class="x_content">
 									<br />
 									<form id="demo-form2" method="post" data-parsley-validate class="form-horizontal form-label-left">
-
-										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Cat Id 
-											</label>
-
-											<div class="col-md-6 col-sm-6 "> 
-											<select class="form-control" name="cat_id">
-												<option>Select items...</option>
-												<?php  $i=1; $sql = $con->query("SELECT * FROM category");
-												while ( $rows = $sql->fetch_assoc()){
-													echo '<option  >' .$rows['title']. '</option>';
-												}
-												?>
-											</select>
-											</div>
-										
-										</div>
-										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Title <span class="required">*</span>
+           <div class="item form-group">
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Name <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" id="last-name" name="title" required="required" class="form-control">
+												<input type="text" id="last-name" name="name" required="required" class="form-control">
+											</div>
+										</div>
+										
+										<div class="item form-group">
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Email <span class="required">*</span>
+											</label>
+											<div class="col-md-6 col-sm-6 ">
+												<input type="email" id="last-name" name="email" required="required" class="form-control">
 											</div>
 										</div>
           <div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Note <span class="required">*</span>
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">password <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" id="last-name" name="note" required="required" class="form-control">
+												<input type="password" id="last-name" name="password" required="required" class="form-control">
 											</div>
 										</div>
+           <div class="item form-group">
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Address <span class="required">*</span>
+											</label>
+											<div class="col-md-6 col-sm-6 ">
+												<input type="text" id="last-name" name="address" required="required" class="form-control">
+											</div>
+										</div>
+										
 										
 									
 										
@@ -121,7 +120,7 @@ addItems();
 										<div class="item form-group">
 											<div class="col-md-6 col-sm-6 offset-md-3">
 											
-												<button type="submit" name="additems" class="btn btn-success" >Submit</button>
+												<button type="submit" name="AddUsers" class="btn btn-success" >Submit</button>
 											</div>
 										</div>
 
