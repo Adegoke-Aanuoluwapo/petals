@@ -35,6 +35,15 @@
                     </ul>
                   </li>
                 </ul>
+                 <ul class="nav side-menu">
+                  <li><a><i class="fa fa-home"></i> Payment <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="payment.php">Payment Details</a></li>
+                      <li><a href="itemslist.php">Item List</a></li>
+                     
+                    </ul>
+                  </li>
+                </ul>
                  
              
                 

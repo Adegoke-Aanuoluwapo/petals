@@ -9,7 +9,7 @@ if(isset($_POST["deleteCategory"])){
 }
 
 if(isset($_POST['updatecate'])){
-  
+
   updateCategory($sn);
 
 }
@@ -45,6 +45,7 @@ if(isset($_POST['updatecate'])){
 
 			<?php if(isset($_POST['updatecategory'])){
 					$sn = $_POST['updatecategory'];
+          
 					$sql = $con->query("SELECT * FROM category WHERE sn ='$sn' ");
 					$rows = mysqli_fetch_assoc($sql); 	
 			?>
@@ -92,13 +93,13 @@ if(isset($_POST['updatecate'])){
 								</div>
 								<div class="x_content">
 									<br />
-									<form id="demo-form2"method="POST" data-parsley-validate class="form-horizontal form-label-left">
+									<form method = "POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
 										<div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Title <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" name="title" id="first-name"  class="form-control" value="<?= $rows['title']?>" >
+												<input type="text" name="title" id="first-name"  class="form-control" value="<?=   $rows['title'] ?>" >
 											</div>
 										</div>
 										<div class="item form-group">
@@ -200,11 +201,11 @@ if(isset($_POST['updatecate'])){
                       <table class="table table-striped jambo_table bulk_action">
                         <thead>
                           <tr class="headings">
-                            <th>
-                              <input type="checkbox" id="check-all" class="flat">
-                            </th>
-                            <th class="column-title">Invoice </th>
-                            <th class="column-title">Invoice Date </th>
+                            <th class="column-title">sn </th>
+                            <th class="column-title">Title </th>
+                            <th class="column-title">Note </th>
+                             <th class="column-title">UPDATE </th>
+                              <th class="column-title">DELETE </th>
                             
                            
                             
