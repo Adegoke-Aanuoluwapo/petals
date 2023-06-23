@@ -1,5 +1,6 @@
 <?php 
 include("functions.php");
+include("connect.php");
 
 if(isset($_POST["deleteItems"])){
 	global $con;
@@ -67,7 +68,7 @@ if(isset($_POST["deleteItems"])){
 					<div class="row">
 						<div class="col-md-12 col-sm-12 ">
 							<div class="x_panel">
-								<div class="x_title">
+								<!-- <div class="x_title">
 									<h2>Item list <small>varieties of items</small></h2>
 									<ul class="nav navbar-right panel_toolbox">
 										<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
@@ -85,34 +86,41 @@ if(isset($_POST["deleteItems"])){
 										</li>
 									</ul>
 									<div class="clearfix"></div>
-								</div>
+								</div> -->
 								<div class="x_content">
 									<br />
-									<form id="demo-form2"method="POST" data-parsley-validate class="form-horizontal form-label-left">
+									<form method="POST"  id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
                   <div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">CatID <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text"  id="first-name" required="required" class="form-control " value="<?= $rows['cat_id']?>" >
+												<input type="text" name="cat_id" id="first-name"  class="form-control "value="<?php $rows['cat_id']?>"  />
 											</div>
 										</div>
 										<div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Title <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" name="title" id="first-name" required="required" class="form-control " value="<?= $rows['title']?>" >
+												<input type="text" name="title" id="first-name"  class="form-control " value="<?= $rows['title']?>" />
 											</div>
 										</div>
+                   
 										<div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Note <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" id="last-name" name="note" required="required" class="form-control" value="<?= $rows['note']?>" >
+												<input type="text"  name="note"  class="form-control" value="<?= $rows['note']?>" />
 											</div>
 										</div>
 									
-										
+										 <div class="item form-group">
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Created Time <span class="required">*</span>
+											</label>
+											<div class="col-md-6 col-sm-6 ">
+												<input type="date" name="title"   class="form-control " value="<?= $rows['created_at']?>" />
+											</div>
+										</div>
 									
 										<div class="ln_solid"></div>
 										<div class="item form-group">
@@ -188,6 +196,7 @@ if(isset($_POST["deleteItems"])){
                              <th class="column-title">Cat ID </th>
                             <th class="column-title">title </th>
                             <th class="column-title">note </th>
+                             <th class="column-title">Created time </th>
                              <th class="column-title">Update </th>
                               <th class="column-title">Delete </th>
                             
@@ -212,6 +221,7 @@ if(isset($_POST["deleteItems"])){
                               <?= $rows['title']?>
                             </td>
                             <td class="a-center "><?= $rows['note']?></td>
+                            <td class="a-center "><?= $rows['created_at']?></td>
                             <form method="POST">
                              <td class=" "><button class="btn btn-success" name="updateitems">UPDATE</button></td>
                              <td class=" "><button type="submit" class="btn btn-danger" name="deleteItems" value="<?= $rows['sn']?>">DELETE</button></td>
