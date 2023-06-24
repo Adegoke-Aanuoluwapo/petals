@@ -53,7 +53,7 @@ function addPayment(){
   
  
 
-  $sql = "INSERT INTO amount(trid, user_id, amount) VALUES('$trid', '$user_id', '$amount')";
+  $sql = "INSERT INTO payments(trid, user_id, amount) VALUES('$trid', '$user_id', '$amount')";
   $result = mysqli_query($con, $sql);
    header("location:paymentlist.php");
   return $result;

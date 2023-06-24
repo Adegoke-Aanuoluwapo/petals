@@ -84,33 +84,33 @@ addPayment();
 									<form id="demo-form2" method="post" data-parsley-validate class="form-horizontal form-label-left">
 
 										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Cat Id 
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Transaction ID 
 											</label>
 
+											<input type="text" id="last-name" name="trid" required="required" class="form-control">
+										</div>
+										<div class="item form-group">
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">User ID <span class="required">*</span>
+											</label>
+											<div class="col-md-6 col-sm-6 ">
+											
 											<div class="col-md-6 col-sm-6 "> 
-											<select class="form-control" name="cat_id">
+											<select class="form-control" name="user_id">
 												<option>Select items...</option>
-												<?php  $i=1; $sql = $con->query("SELECT * FROM category");
+												<?php  $i=1; $sql = $con->query("SELECT * FROM users");
 												while ( $rows = $sql->fetch_assoc()){
-													echo '<option  >' .$rows['title']. '</option>';
+													echo '<option value="'.$rows['sn'].'" >' .$rows['name']. '</option>';
 												}
 												?>
 											</select>
 											</div>
-										
-										</div>
-										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Title <span class="required">*</span>
-											</label>
-											<div class="col-md-6 col-sm-6 ">
-												<input type="text" id="last-name" name="title" required="required" class="form-control">
 											</div>
 										</div>
           <div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Note <span class="required">*</span>
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Amount <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" id="last-name" name="note" required="required" class="form-control">
+												<input type="text" id="last-name" name="amount" required="required" class="form-control">
 											</div>
 										</div>
 										
