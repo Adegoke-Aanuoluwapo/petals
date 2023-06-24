@@ -86,17 +86,18 @@ addPayment();
 										<div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Transaction ID 
 											</label>
-
+											<div class="col-md-6 col-sm-6 ">
 											<input type="text" id="last-name" name="trid" required="required" class="form-control">
 										</div>
+										</div>
+										
+
 										<div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">User ID <span class="required">*</span>
 											</label>
-											<div class="col-md-6 col-sm-6 ">
-											
 											<div class="col-md-6 col-sm-6 "> 
 											<select class="form-control" name="user_id">
-												<option>Select items...</option>
+												<option>Select users...</option>
 												<?php  $i=1; $sql = $con->query("SELECT * FROM users");
 												while ( $rows = $sql->fetch_assoc()){
 													echo '<option value="'.$rows['sn'].'" >' .$rows['name']. '</option>';
@@ -105,8 +106,8 @@ addPayment();
 											</select>
 											</div>
 											</div>
-										</div>
-          <div class="item form-group">
+
+											 <div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Amount <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
@@ -114,9 +115,6 @@ addPayment();
 											</div>
 										</div>
 										
-									
-										
-									
 										<div class="ln_solid"></div>
 										<div class="item form-group">
 											<div class="col-md-6 col-sm-6 offset-md-3">
@@ -124,6 +122,13 @@ addPayment();
 												<button type="submit" name="Addpayment" class="btn btn-success" >Submit</button>
 											</div>
 										</div>
+
+										</div>
+         
+									
+										
+									
+										
 
 									</form>
 								</div>
