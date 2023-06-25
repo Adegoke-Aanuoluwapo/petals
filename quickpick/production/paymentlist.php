@@ -162,6 +162,8 @@ if(isset($_POST['updatecate'])){
             <?php } ?>
           </div>
         </div>
+
+        
         <!-- /page content -->
 
         <!-- footer content -->
