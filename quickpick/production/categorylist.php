@@ -6,10 +6,11 @@ if(isset($_POST["deleteCategory"])){
 	$sn = $_POST['deleteCategory'];
 	$sql = $con->query("DELETE FROM category WHERE sn = '$sn' ")or die($con->error);
 
-}
+};
 
 if(isset($_POST['updatecate'])){
-
+    global $con;
+    $sn = $_POST['updatecate'];
   updateCategory($sn);
 
 }
@@ -43,8 +44,8 @@ if(isset($_POST['updatecate'])){
         <!-- page content -->
 
 
-			<?php if(isset($_POST['updatecategory'])){
-					$sn = $_POST['updatecategory'];
+			<?php if(isset($_GET['sn'])){
+					$sn = $_GET['sn'];
           
 					$sql = $con->query("SELECT * FROM category WHERE sn ='$sn' ");
 					$rows = mysqli_fetch_assoc($sql); 	
@@ -76,21 +77,7 @@ if(isset($_POST['updatecate'])){
 							<div class="x_panel">
 								<div class="x_title">
 									<h2>Form Design <small>different form elements</small></h2>
-									<ul class="nav navbar-right panel_toolbox">
-										<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-										</li>
-										<li class="dropdown">
-											<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-											<ul class="dropdown-menu" role="menu">
-												<li><a class="dropdown-item" href="#">Settings 1</a>
-												</li>
-												<li><a class="dropdown-item" href="#">Settings 2</a>
-												</li>
-											</ul>
-										</li>
-										<li><a class="close-link"><i class="fa fa-close"></i></a>
-										</li>
-									</ul>
+									
 									<div class="clearfix"></div>
 								</div>
 								<div class="x_content">
@@ -142,16 +129,7 @@ if(isset($_POST['updatecate'])){
               
               </div>
 
-              <div class="title_right">
-                <div class="col-md-5 col-sm-5   form-group pull-right top_search">
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
-                    </span>
-                  </div>
-                </div>
-              </div>
+             
             </div>
 
             <div class="clearfix"></div>
@@ -185,12 +163,8 @@ if(isset($_POST['updatecate'])){
                 <div class="x_panel">
                   <div class="x_title">
                    
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                       
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
+                   
+                     
                     </ul>
                     <div class="clearfix"></div>
                   </div>
@@ -206,6 +180,7 @@ if(isset($_POST['updatecate'])){
                             <th class="column-title">sn </th>
                             <th class="column-title">Title </th>
                             <th class="column-title">Note </th>
+                            <th class="column-title">Created </th>
                              <th class="column-title">UPDATE </th>
                               <th class="column-title">DELETE </th>
                             
@@ -227,9 +202,10 @@ if(isset($_POST['updatecate'])){
                               <?= $rows['title']?>
                             </td>
                             <td class=" "><?= $rows['note']?></td>
+                            <td class=" "><?= $rows['created_at']?></td>
                             <form method="POST">
-                             <td class=" "><button class="btn btn-success"  value="<?= $rows['sn']?>" name="updatecategory">UPDATE</button></td>
-                             <td class=" "><button type="submit" class="btn btn-danger" name="deleteCategory" value="<?= $rows['sn']?>">DELETE</button></td>
+                             <td class=" "><a class="btn btn-success" name="updatecategory" href="categorylist.php?sn=<?= $rows['sn']?>">UPDATE</a></td>
+                             <td class=" "><a type="submit" class="btn btn-danger" name="deleteCategory" value="<?= $rows['sn']?>">DELETE</a></td>
                             </form>
                             
                           </tr>

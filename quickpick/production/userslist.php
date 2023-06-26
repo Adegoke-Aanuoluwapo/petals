@@ -95,22 +95,17 @@ if(isset($_POST["deleteUser"])){
 												<input type="text"  name="note"  class="form-control" value="<?= $rows['note']?>" />
 											</div>
 										</div>
-									
-										 <div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Created Time <span class="required">*</span>
-											</label>
-											<div class="col-md-6 col-sm-6 ">
-												<input type="date" name="title"   class="form-control " value="<?= $rows['created_at']?>" />
-											</div>
-										</div>
-									
-										<div class="ln_solid"></div>
-										<div class="item form-group">
+									<div class="item form-group">
 											<div class="col-md-6 col-sm-6 offset-md-3">
 											
 												<button type="submit" name="addcategory" class="btn btn-success" >Submit</button>
 											</div>
 										</div>
+										 
+										</div>
+									
+										<div class="ln_solid"></div>
+										
 
 									</form>
 								</div>

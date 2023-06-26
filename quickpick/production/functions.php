@@ -18,11 +18,12 @@ function addCategory(){
 function updateCategory($sn){
  global $con;
 
-$sn =$_POST['updatecate'];
+$sn = $_GET['sn'];
  $title = $_POST['title'];
  $note = $_POST['note'];
+ 
 
- $sql = "UPDATE category SET title = '$title', note = '$note' WHERE sn = '$sn'";
+ $sql = "UPDATE category SET title = '$title', note = '$note'  WHERE sn = '$sn'";
  $con->query($sql) or mysqli_error($con);
  return;
 }
