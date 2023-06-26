@@ -126,7 +126,7 @@ if(isset($_POST["deleteItems"])){
 										<div class="item form-group">
 											<div class="col-md-6 col-sm-6 offset-md-3">
 											
-												<button type="submit" name="addcategory" class="btn btn-success" >Submit</button>
+												<button type="submit" name="addcategory" class="btn btn-success" ></button>
 											</div>
 										</div>
 
@@ -173,19 +173,14 @@ if(isset($_POST["deleteItems"])){
                 <div class="x_panel">
                   <div class="x_title">
                    
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                       
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
+                      
+                    
                     <div class="clearfix"></div>
                   </div>
 
                   <div class="x_content">
 
-                    <p>Add class <code>bulk_action</code> to table for bulk actions options on row select</p>
+                    <p>Item List </p>
 
                     <div class="table-responsive">
                       <table class="table table-striped jambo_table bulk_action">
@@ -223,7 +218,8 @@ if(isset($_POST["deleteItems"])){
                             <td class="a-center "><?= $rows['note']?></td>
                             <td class="a-center "><?= $rows['created_at']?></td>
                             <form method="POST">
-                             <td class=" "><button class="btn btn-success" value="<?= $rows['sn']?>" name="updateitems">UPDATE</button></td>
+                             <td class=" "><button class="btn btn-success" value="<?= $rows['sn']?>" name="updateitems">
+                            <a href="itemslist.php?sn=<?= $rows['sn']?>">UPDATE</a></button></td>
                              <td class=" "><button type="submit" class="btn btn-danger" name="deleteItems" value="<?= $rows['sn']?>">DELETE</button></td>
                             </form>
                             
