@@ -173,7 +173,11 @@ if(isset($_POST["deleteItems"])){
                 <div class="x_panel">
                   <div class="x_title">
                    
-                      
+                   
+                  
+
+
+                  
                     
                     <div class="clearfix"></div>
                   </div>
