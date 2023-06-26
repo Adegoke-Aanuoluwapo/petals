@@ -76,3 +76,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
  return $result;
 }
 }
+
+function SqLx($table, $key, $val, $pin){
+ global $con;
+ $sql= $con->query("SELECT * FROM $table WHERE $key='$val'");
+ $row = mysqli_fetch_assoc($sql);
+ return $row[$pin];
+}
