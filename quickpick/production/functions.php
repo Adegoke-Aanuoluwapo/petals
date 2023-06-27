@@ -109,3 +109,10 @@ function SqLx($table, $key, $val, $pin){
  $row = mysqli_fetch_assoc($sql);
  return $row[$pin];
 }
+
+function Qty($cat_id){
+ global $con;
+ 
+ $sql= $con->query("SELECT * FROM items WHERE cat_id='$cat_id'");
+ return mysqli_num_rows($sql);
+}

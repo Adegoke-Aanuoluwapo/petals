@@ -180,6 +180,7 @@ if(isset($_POST['updatecate'])){
                             <th class="column-title">sn </th>
                             <th class="column-title">Title </th>
                             <th class="column-title">Note </th>
+                            <th class="column-title">Quantity </th>
                             <th class="column-title">Created </th>
                              <th class="column-title">UPDATE </th>
                               <th class="column-title">DELETE </th>
@@ -202,6 +203,7 @@ if(isset($_POST['updatecate'])){
                               <?= $rows['title']?>
                             </td>
                             <td class=" "><?= $rows['note']?></td>
+                            <td class=" "><?= Qty($rows['sn'])?></td>
                             <td class=" "><?= $rows['created_at']?></td>
                             <form method="POST">
                              <td class=" "><a class="btn btn-success" name="updatecategory" href="categorylist.php?sn=<?= $rows['sn']?>">UPDATE</a></td>

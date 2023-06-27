@@ -83,32 +83,39 @@ addUsers();
 									<br />
 									<form id="demo-form2" method="post" data-parsley-validate class="form-horizontal form-label-left">
            <div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Name <span class="required">*</span>
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Transaction ID <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" id="last-name" name="name" required="required" class="form-control">
+												<input type="text" id="last-name" name="trid" required="required" class="form-control">
 											</div>
 										</div>
 										
 										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Email <span class="required">*</span>
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">User ID <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="email" id="last-name" name="email" required="required" class="form-control">
+												<input type="email" id="last-name" name="user_id" required="required" class="form-control">
 											</div>
 										</div>
           <div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">password <span class="required">*</span>
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Quantity <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="password" id="last-name" name="password" required="required" class="form-control">
+												<input type="text" id="last-name" name="quantity" required="required" class="form-control">
 											</div>
 										</div>
            <div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Address <span class="required">*</span>
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Cost Price <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" id="last-name" name="address" required="required" class="form-control">
+												<input type="text" id="last-name" name="cost_price" required="required" class="form-control">
+											</div>
+										</div>
+										 <div class="item form-group">
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Selling Price <span class="required">*</span>
+											</label>
+											<div class="col-md-6 col-sm-6 ">
+												<input type="text" id="last-name" name="selling_price" required="required" class="form-control">
 											</div>
 										</div>
 										
