@@ -116,3 +116,18 @@ function Qty($cat_id){
  $sql= $con->query("SELECT * FROM items WHERE cat_id='$cat_id'");
  return mysqli_num_rows($sql);
 }
+
+function AddStock(){
+ global $con;
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+ $user_id = $_POST['user_id   '];
+ $email= $_POST['email'];
+ $password =$_POST['password'];
+ $address = $_POST['address'];
+
+ $sql = "INSERT INTO users(name, email, password, address) VALUES('$name', '$email', '$password', '$address')";
+ $result= mysqli_query($con, $sql);
+ return $result;
+}
+
+}
