@@ -20,6 +20,53 @@ $target = 'upload/';
 @$targetfile = $target.$_FILES['picture']['name'];  //upload/picture.jpg
 
 @move_uploaded_file($_FILES['picture']['tmp_name'],$targetfile);
+$uploadOK = 1;
+$mageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+if(isset($_POST['submit'])){
+
+};
+if(file_exists($target_file)){
+  echo "Sorry, file already exist";
+  $uploadOK = 0;
+}
+
+//check if $uploadOK is set to 0 by an error;
+if ($_FILES["fileToUpload"]["size"] > 50000000) {
+      echo "Sorry, your file is too large.";
+      $uploadOk = 0;
+   }
+   // Allow certain file formats
+   if (
+      $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+      && $imageFileType != "gif"
+   ) {
+      echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+      $uploadOk = 0;
+   }
+   // Check if $uploadOk is set to 0 by an error
+   if ($uploadOk == 0) {
+      echo "Sorry, your file was not uploaded.";
+      // if everything is ok, try to upload file
+   } else {
+      if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+
+         $sql = $con->query("UPDATE items SET picture = '$file_name' WHERE sn = '$sn' ") or die($con->error);
+
+         if ($sql) {
+            echo "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
+         } else {
+            die($con->error);
+            unlink('upload/' . $file_name);
+         }
+      } else {
+         echo "Sorry, there was an error uploading your file.";
+      }
+   }
+
+
+
+
 
 
 ?>
