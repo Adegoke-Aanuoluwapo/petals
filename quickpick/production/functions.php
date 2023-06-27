@@ -31,16 +31,28 @@ $sn = $_GET['sn'];
 
 function UpdateItems($sn){
  global $con;
-$sn = $_GET['sn'];
-$cat_id = $_POST['cat_id'];
+
+ if(array_key_exists('updateItems', $_POST)){
+
+  $cat_id = $_POST['cat_id'];
 $title = $_POST['title'];
 $note = $_POST['note'];
-$picture = $_POST['picture'];
-$sql = "UPDATE items SET cat_id = '$cat_id', title = '$title', note = '$note', picture = '$picture' WHERE sn = '$sn'";
+$sn = $_GET['sn'];
+
+
+$target = 'upload/';
+$targetfile = $target.$_FILES['picture']['name'];  //upload/picture.jpg
+
+move_uploaded_file($_FILES['picture']['tmp_name'],$targetfile);
+
+$sql = "UPDATE items SET cat_id = '$cat_id', title = '$title', note = '$note', picture = '$targetfile' WHERE sn = '$sn'";
 $con->query($sql) or mysqli_error($con);
 
 
 }
+
+ }
+
 
 function addItems(){
  global $con;

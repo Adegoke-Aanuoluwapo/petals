@@ -13,56 +13,17 @@ if(isset($_POST['updateItems'])){
   global $con;
   $sn = $_POST['updateItems'];
   UpdateItems($con);
+
+
+
+
+
+
+
+
 }
 
 
-$target = 'upload/';
-@$targetfile = $target.$_FILES['picture']['name'];  //upload/picture.jpg
-
-@move_uploaded_file($_FILES['picture']['tmp_name'],$targetfile);
-$uploadOK = 1;
-$mageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-
-if(isset($_POST['submit'])){
-
-};
-if(file_exists($target_file)){
-  echo "Sorry, file already exist";
-  $uploadOK = 0;
-}
-
-//check if $uploadOK is set to 0 by an error;
-if ($_FILES["fileToUpload"]["size"] > 50000000) {
-      echo "Sorry, your file is too large.";
-      $uploadOk = 0;
-   }
-   // Allow certain file formats
-   if (
-      $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-      && $imageFileType != "gif"
-   ) {
-      echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-      $uploadOk = 0;
-   }
-   // Check if $uploadOk is set to 0 by an error
-   if ($uploadOk == 0) {
-      echo "Sorry, your file was not uploaded.";
-      // if everything is ok, try to upload file
-   } else {
-      if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-
-         $sql = $con->query("UPDATE items SET picture = '$file_name' WHERE sn = '$sn' ") or die($con->error);
-
-         if ($sql) {
-            echo "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
-         } else {
-            die($con->error);
-            unlink('upload/' . $file_name);
-         }
-      } else {
-         echo "Sorry, there was an error uploading your file.";
-      }
-   }
 
 
 
@@ -103,7 +64,7 @@ if ($_FILES["fileToUpload"]["size"] > 50000000) {
 			<?php if(isset($_GET['sn'])){
 					$sn = $_GET['sn'];
 					$sql = $con->query("SELECT * FROM items WHERE sn ='$sn' ");
-					$rows = mysqli_fetch_assoc($sql); 	
+					$row = mysqli_fetch_assoc($sql); 	
 			?>
 
 <div class="right_col" role="main">
@@ -137,14 +98,27 @@ if ($_FILES["fileToUpload"]["size"] > 50000000) {
 											<label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">CatID <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" name="cat_id" id="first-name"  class="form-control "value="<?php $rows['cat_id']?>"  />
+                      <select  class="form-control " name="cat_id">
+                        <option>Select category</option>
+                        <?php
+                         echo '<option value="' .$rows['cat_id'].'">' .SqLx('category', 'sn', $rows['cat_id'], 'title'). '</option>';
+                        
+                        $i = 1; $sql = $con->query("SELECT * FROM category ");
+                        
+                        while($rows = $sql->fetch_assoc()){
+                          echo '<option value="'.$rows['$sn'].'">' .$rows['title'].'</option>';
+                        }
+                        ?>
+                      </select>
+
+												
 											</div>
 										</div>
 										<div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Title <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" name="title" id="first-name"  class="form-control " value="<?= $rows['title']?>" />
+												<input type="text" name="title" id="first-name"  class="form-control " value="<?= $row['title']?>" />
 											</div>
 										</div>
                    
@@ -152,14 +126,14 @@ if ($_FILES["fileToUpload"]["size"] > 50000000) {
 											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Note <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text"  name="note"  class="form-control" value="<?= $rows['note']?>" />
+												<input type="text"  name="note"  class="form-control" value="<?= $row['note']?>" />
 											</div>
 										</div>
                     <div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Picture <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="file"  name="note"  class="form-control"  />
+												<input type="file"  name="picture"  class="form-control"  />
 											</div>
 										</div>
 									<div class="item form-group">
@@ -258,7 +232,7 @@ if ($_FILES["fileToUpload"]["size"] > 50000000) {
                           <tr class="even pointer">
                             <th scope="row"><?= $i++ ?></th>
                             <td class="a-center ">
-                              <?= $rows['cat_id']?>
+                              <?= SqLx('category', 'sn', $rows['cat_id'], 'title')?>
                             </td>
                             <td class="a-center ">
                               <?= $rows['title']?>
