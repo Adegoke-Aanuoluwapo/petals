@@ -28,6 +28,20 @@ $sn = $_GET['sn'];
  return;
 }
 
+
+function UpdateItems($sn){
+ global $con;
+$sn = $_GET['sn'];
+$cat_id = $_POST['cat_id'];
+$title = $_POST['title'];
+$note = $_POST['note'];
+$picture = $_POST['picture'];
+$sql = "UPDATE items SET cat_id = '$cat_id', title = '$title', note = '$note', picture = '$picture' WHERE sn = '$sn'";
+$con->query($sql) or mysqli_error($con);
+
+
+}
+
 function addItems(){
  global $con;
  if($_SERVER["REQUEST_METHOD"] == "POST"){

@@ -9,6 +9,19 @@ if(isset($_POST["deleteItems"])){
 
 }
 
+if(isset($_POST['updateItems'])){
+  global $con;
+  $sn = $_POST['updateItems'];
+  UpdateItems($con);
+}
+
+
+$target = 'upload/';
+@$targetfile = $target.$_FILES['picture']['name'];  //upload/picture.jpg
+
+@move_uploaded_file($_FILES['picture']['tmp_name'],$targetfile);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -40,8 +53,8 @@ if(isset($_POST["deleteItems"])){
         
 
 
-			<?php if(isset($_POST['updateitems'])){
-					$sn = $_POST['updateitems'];
+			<?php if(isset($_GET['sn'])){
+					$sn = $_GET['sn'];
 					$sql = $con->query("SELECT * FROM items WHERE sn ='$sn' ");
 					$rows = mysqli_fetch_assoc($sql); 	
 			?>
@@ -68,28 +81,10 @@ if(isset($_POST["deleteItems"])){
 					<div class="row">
 						<div class="col-md-12 col-sm-12 ">
 							<div class="x_panel">
-								<!-- <div class="x_title">
-									<h2>Item list <small>varieties of items</small></h2>
-									<ul class="nav navbar-right panel_toolbox">
-										<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-										</li>
-										<li class="dropdown">
-											<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-											<ul class="dropdown-menu" role="menu">
-												<li><a class="dropdown-item" href="#">Settings 1</a>
-												</li>
-												<li><a class="dropdown-item" href="#">Settings 2</a>
-												</li>
-											</ul>
-										</li>
-										<li><a class="close-link"><i class="fa fa-close"></i></a>
-										</li>
-									</ul>
-									<div class="clearfix"></div>
-								</div> -->
+								
 								<div class="x_content">
 									<br />
-									<form method="POST"  id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+									<form method="POST" enctype="multipart/form-data" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
                   <div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">CatID <span class="required">*</span>
@@ -113,23 +108,25 @@ if(isset($_POST["deleteItems"])){
 												<input type="text"  name="note"  class="form-control" value="<?= $rows['note']?>" />
 											</div>
 										</div>
-									
-										 <div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Created Time <span class="required">*</span>
+                    <div class="item form-group">
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Picture <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="date" name="title"   class="form-control " value="<?= $rows['created_at']?>" />
+												<input type="file"  name="note"  class="form-control"  />
 											</div>
 										</div>
-									
-										<div class="ln_solid"></div>
-										<div class="item form-group">
+									<div class="item form-group">
 											<div class="col-md-6 col-sm-6 offset-md-3">
 											
-												<button type="submit" name="addcategory" class="btn btn-success" ></button>
+												<button type="submit" name="updateItems" class="btn btn-success" >Update Items</button>
 											</div>
 										</div>
 
+										
+										</div>
+									
+										<div class="ln_solid"></div>
+										
 									</form>
 								</div>
 							</div>
@@ -222,8 +219,8 @@ if(isset($_POST["deleteItems"])){
                             <td class="a-center "><?= $rows['note']?></td>
                             <td class="a-center "><?= $rows['created_at']?></td>
                             <form method="POST">
-                             <td class=" "><button class="btn btn-success" value="<?= $rows['sn']?>" name="updateitems">
-                            <a href="itemslist.php?sn=<?= $rows['sn']?>">UPDATE</a></button></td>
+                             <td class=" ">
+                            <a class="btn btn-success"  name="updateitemslist" href="itemslist.php?sn=<?= $rows['sn']?>">UPDATE</a></td>
                              <td class=" "><button type="submit" class="btn btn-danger" name="deleteItems" value="<?= $rows['sn']?>">DELETE</button></td>
                             </form>
                             
