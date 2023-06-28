@@ -246,7 +246,7 @@ if(isset($_POST['updateItems'])){
                             <td class="a-center "><?= $rows['quantity']?></td>
                             <td class="a-center "><?= $rows['cost_price']?></td>
                             <td class="a-center "><?= $rows['selling_price']?></td>
-                            <td class="a-center "><?= Qty($rows['sn'])?></td>
+                            <td class="a-center "><?= QuantStock($rows['sn'])?></td>
                             <td class="a-center "><?= $rows['created_at']?></td>
                             <form method="POST">
                              <td class=" ">

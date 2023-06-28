@@ -117,6 +117,12 @@ function Qty($cat_id){
  return mysqli_num_rows($sql);
 }
 
+function QuantStock($item_id){
+  global $con;
+  $sql = $con->query("SELECT * FROM stock where item_id='$item_id'");
+  return mysqli_num_rows($sql);
+}
+
 function AddStock(){
  global $con;
 if($_SERVER["REQUEST_METHOD"] == "POST"){
