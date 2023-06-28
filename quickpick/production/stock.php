@@ -82,13 +82,7 @@ addUsers();
 								<div class="x_content">
 									<br />
 									<form id="demo-form2" method="post" data-parsley-validate class="form-horizontal form-label-left">
-           <div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Transaction ID <span class="required">*</span>
-											</label>
-											<div class="col-md-6 col-sm-6 ">
-												<input type="text" id="last-name" name="trid" required="required" class="form-control">
-											</div>
-										</div>
+          
 										
 										<div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">User ID <span class="required">*</span>
