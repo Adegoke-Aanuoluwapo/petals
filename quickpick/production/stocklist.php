@@ -219,8 +219,6 @@ if(isset($_POST['updateItems'])){
                                
                              <th class="column-title">Created time </th>
                              
-                             <th class="column-title">Update </th>
-                              <th class="column-title">Delete </th>
                             
                            
                             
@@ -248,11 +246,7 @@ if(isset($_POST['updateItems'])){
                             <td class="a-center "><?= $rows['selling_price']?></td>
                             
                             <td class="a-center "><?= $rows['created_at']?></td>
-                            <form method="POST">
-                             <td class=" ">
-                            <a class="btn btn-success"  name="updateitemslist" href="itemslist.php?sn=<?= $rows['sn']?>">UPDATE</a></td>
-                             <td class=" "><button type="submit" class="btn btn-danger" name="deleteItems" value="<?= $rows['sn']?>">DELETE</button></td>
-                            </form>
+                          
                             
                           </tr>
                          

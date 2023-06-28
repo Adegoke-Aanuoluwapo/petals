@@ -74,7 +74,7 @@ function addItems(){
 function addPayment(){
  global $con;
  if($_SERVER["REQUEST_METHOD"] == "POST"){
-  $trid = $_POST['trid'];
+  $trid = rand(0, 9999);
   $user_id = $_POST['user_id'];
   $amount = $_POST['amount'];
   
@@ -101,6 +101,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
  $result= mysqli_query($con, $sql);
  return $result;
 }
+}
+
+function EditUsers(){
+  global $con;
+  if(isset($_POST['edituser'])){
+    $sn = $_GET['sn'];
+     $name = $_POST['name'];
+ $email= $_POST['email'];
+ $password =$_POST['password'];
+ $address = $_POST['address'];
+
+ $sql =("UPDATE users SET name= '$name', email = '$email', password = '$password', address = '$address' WHERE sn = '$sn'");
+$con->query($sql);
+return;
+  }
 }
 
 function SqLx($table, $key, $val, $pin){
