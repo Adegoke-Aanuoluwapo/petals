@@ -59,7 +59,7 @@
                   <li><a><i class="fa fa-home"></i> Stock <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="stock.php">Add Stock </a></li>
-                      <li><a href="itemslist.php">Stock Details</a></li>
+                      <li><a href="stocklist.php">Stock Details</a></li>
                      
                     </ul>
                   </li>
