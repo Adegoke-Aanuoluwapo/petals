@@ -210,9 +210,12 @@ if(isset($_POST['updateItems'])){
                           <tr class="headings">
                             
                            <th class="column-title">sn </th>
-                             <th class="column-title">Cat ID </th>
-                            <th class="column-title">title </th>
-                            <th class="column-title">note </th>
+                             
+                            <th class="column-title">Item ID </th>
+                            <th class="column-title">Transaction ID </th>
+                            <th class="column-title">quantity </th>
+                             <th class="column-title">Cost Price </th>
+                              <th class="column-title">Selling Price </th>
                              <th class="column-title">Created time </th>
                              <th class="column-title">Update </th>
                               <th class="column-title">Delete </th>
@@ -227,17 +230,20 @@ if(isset($_POST['updateItems'])){
                         <tbody>
                            <?php 
                           
-                           $i = 1; $sql = $con->query("SELECT * FROM items ");
+                           $i = 1; $sql = $con->query("SELECT * FROM stock ");
                         while ($rows =$sql->fetch_assoc()) {?>
                           <tr class="even pointer">
                             <th scope="row"><?= $i++ ?></th>
                             <td class="a-center ">
-                              <?= SqLx('category', 'sn', $rows['cat_id'], 'title')?>
+                              <?= SqLx('items', 'sn', $rows['item_id'], 'title')?>
                             </td>
                             <td class="a-center ">
-                              <?= $rows['title']?>
+                              <?= $rows['trid']?>
                             </td>
-                            <td class="a-center "><?= $rows['note']?></td>
+                            
+                            <td class="a-center "><?= $rows['quantity']?></td>
+                            <td class="a-center "><?= $rows['cost_price']?></td>
+                            <td class="a-center "><?= $rows['selling_price']?></td>
                             <td class="a-center "><?= $rows['created_at']?></td>
                             <form method="POST">
                              <td class=" ">
