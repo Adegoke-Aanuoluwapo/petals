@@ -2,9 +2,9 @@
 include "connect.php";
 include "functions.php";
 
-if(isset($_POST["AddUsers"])){
+if(isset($_POST["AddStock"])){
 	global $con;
-addUsers();
+addStock();
 }
 
 
@@ -88,7 +88,15 @@ addUsers();
 											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">User ID <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="email" id="last-name" name="user_id" required="required" class="form-control">
+												<select name="item_id" class="form-control">
+													<option>Select user</option>
+													<?php $i = 1; $sql = $con->query("SELECT * FROM items");
+													while($rows= $sql->fetch_assoc()){
+														echo '<option value="'.$rows['sn'].'">' .$rows['title']. '</option>';
+													}
+													?>
+												</select>
+											
 											</div>
 										</div>
           <div class="item form-group">
@@ -121,7 +129,7 @@ addUsers();
 										<div class="item form-group">
 											<div class="col-md-6 col-sm-6 offset-md-3">
 											
-												<button type="submit" name="AddUsers" class="btn btn-success" >Submit</button>
+												<button type="submit" name="AddStock" class="btn btn-success" >Submit</button>
 											</div>
 										</div>
 

@@ -120,14 +120,15 @@ function Qty($cat_id){
 function AddStock(){
  global $con;
 if($_SERVER["REQUEST_METHOD"] == "POST"){
- $user_id = $_POST['user_id   '];
- $email= $_POST['email'];
- $password =$_POST['password'];
- $address = $_POST['address'];
+ $trid = rand(0, 9999);
+ $item_id= $_POST['item_id'];
+ $quantity =$_POST['quantity'];
+ $cost_price = $_POST['cost_price'];
+ $selling_price = $_POST['selling_price'];
 
- $sql = "INSERT INTO users(name, email, password, address) VALUES('$name', '$email', '$password', '$address')";
- $result= mysqli_query($con, $sql);
- return $result;
+ $sql = "INSERT INTO stock(trid,item_id, quantity, cost_price, selling_price) VALUES('$trid','$item_id', '$quantity', '$cost_price', '$selling_price')";
+ mysqli_query($con, $sql);
+ return;
 }
 
 }
