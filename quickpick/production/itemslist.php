@@ -213,6 +213,8 @@ if(isset($_POST['updateItems'])){
                              <th class="column-title">Cat ID </th>
                             <th class="column-title">title </th>
                             <th class="column-title">note </th>
+                            <th class="column-title">Quantity </th>
+                            <th class="column-title">Number of Stock </th>
                              <th class="column-title">Created time </th>
                              <th class="column-title">Update </th>
                               <th class="column-title">Delete </th>
@@ -238,6 +240,8 @@ if(isset($_POST['updateItems'])){
                               <?= $rows['title']?>
                             </td>
                             <td class="a-center "><?= $rows['note']?></td>
+                            <td class="a-center "><?= totalQty($rows['sn'])?></td>
+                            <td class="a-center "><?= QuantStock($rows['sn'])?></td>
                             <td class="a-center "><?= $rows['created_at']?></td>
                             <form method="POST">
                              <td class=" ">
