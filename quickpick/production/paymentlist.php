@@ -43,10 +43,10 @@ if(isset($_POST['updatecate'])){
         <!-- page content -->
 
 
-			<?php if(isset($_POST['updatecategory'])){
-					$sn = $_POST['updatecategory'];
+			<?php if(isset($_GET['sn'])){
+					$sn = $_GET['sn'];
           
-					$sql = $con->query("SELECT * FROM category WHERE sn ='$sn' ");
+					$sql = $con->query("SELECT * FROM payments WHERE sn ='$sn' ");
 					$rows = mysqli_fetch_assoc($sql); 	
 			?>
 
@@ -64,17 +64,17 @@ if(isset($_POST['updatecate'])){
 									<form method = "POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
 										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Title <span class="required">*</span>
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Transaction ID <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" name="title" id="first-name"  class="form-control" value="<?=   $rows['title'] ?>" >
+												<input type="text" name="title" id="first-name"  class="form-control" value="<?=   $rows['trid'] ?>" >
 											</div>
 										</div>
 										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Note <span class="required">*</span>
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">User ID<span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" id="last-name" name="note"  class="form-control" value="<?= $rows['note']?>">
+												<input type="text" id="last-name" name="user_id"  class="form-control" value="<?=  SqLx('users', 'sn', $rows['user_id'], 'name' )?>">
 											</div>
 										</div>
 									
@@ -142,7 +142,7 @@ if(isset($_POST['updatecate'])){
                              <td class=" "><?= $rows['amount']?></td>
                               <td class=" "><?= $rows['created_at']?></td>
                             <form method="POST">
-                             <td class=" "><button class="btn btn-success"  value="<?= $rows['sn']?>" name="updatecategory">UPDATE</button></td>
+                             <td class=" "><a type="submit" href="paymentlist.php?sn=<?= $rows['sn']?>" class="btn btn-success"  >UPDATE</a></td>
                              <td class=" "><button type="submit" class="btn btn-danger" name="deleteCategory" value="<?= $rows['sn']?>">DELETE</button></td>
                             </form>
                             

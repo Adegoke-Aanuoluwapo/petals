@@ -12,7 +12,7 @@ if(isset($_POST["deleteItems"])){
 if(isset($_POST['updateItems'])){
   global $con;
   $sn = $_POST['updateItems'];
-  UpdateItems($con);
+  UpdateItems($sn);
 
 
 

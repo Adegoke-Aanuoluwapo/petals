@@ -9,6 +9,12 @@ if(isset($_POST["deleteUser"])){
 
 }
 
+if(isset($_POST['edituser'])){
+  global $con;
+  $sn = $_POST['edituser'];
+  EditUsers();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -40,9 +46,9 @@ if(isset($_POST["deleteUser"])){
         
 
 
-			<?php if(isset($_POST['updateitems'])){
-					$sn = $_POST['updateitems'];
-					$sql = $con->query("SELECT * FROM items WHERE sn ='$sn' ");
+			<?php if(isset($_GET['sn'])){
+					$sn = $_GET['sn'];
+					$sql = $con->query("SELECT * FROM users WHERE sn ='$sn' ");
 					$rows = mysqli_fetch_assoc($sql); 	
 			?>
 
@@ -71,34 +77,48 @@ if(isset($_POST["deleteUser"])){
 							
 								<div class="x_content">
 									<br />
-									<form method="POST"  id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+									<form method="POST"  id="demo-form2" enctype="multipart/form-data" data-parsley-validate class="form-horizontal form-label-left">
 
                   <div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">CatID <span class="required">*</span>
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Names <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" name="cat_id" id="first-name"  class="form-control "value="<?php $rows['cat_id']?>"  />
+												<input type="text" name="name" id="first-name"  class="form-control "value="<?= $rows['name']?>"  />
 											</div>
 										</div>
 										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Title <span class="required">*</span>
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Email <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" name="title" id="first-name"  class="form-control " value="<?= $rows['title']?>" />
+												<input type="text" name="email" id="first-name"  class="form-control " value="<?= $rows['email']?>" />
 											</div>
 										</div>
-                   
-										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Note <span class="required">*</span>
+                   <div class="item form-group">
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Password<span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text"  name="note"  class="form-control" value="<?= $rows['note']?>" />
+												<input type="text"  name="password"  class="form-control" value="<?= $rows['password']?>" />
+											</div>
+										</div>
+
+										<div class="item form-group">
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Address<span class="required">*</span>
+											</label>
+											<div class="col-md-6 col-sm-6 ">
+												<input type="text"  name="address"  class="form-control" value="<?= $rows['address']?>" />
+											</div>
+										</div>
+                    <div class="item form-group">
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Picture<span class="required">*</span>
+											</label>
+											<div class="col-md-6 col-sm-6 ">
+												<input type="file"  name="picture"  class="form-control" />
 											</div>
 										</div>
 									<div class="item form-group">
 											<div class="col-md-6 col-sm-6 offset-md-3">
 											
-												<button type="submit" name="addcategory" class="btn btn-success" >Submit</button>
+												<button type="submit" name="edituser" class="btn btn-success" >Submit</button>
 											</div>
 										</div>
 										 
@@ -187,7 +207,7 @@ if(isset($_POST["deleteUser"])){
                             <td class="a-center "><?= $rows['address']?></td>
                             <td class="a-center "><?= $rows['created_at']?></td>
                             <form method="POST">
-                             <td class=" "><button class="btn btn-success" value="<?= $rows['sn']?>" name="updateitems">UPDATE</button></td>
+                             <td class=" "><a href= "userslist.php?sn=<?= $rows['sn']?>" type="submit" class="btn btn-success">UPDATE</a></td>
                              <td class=" "><button type="submit" class="btn btn-danger" name="deleteUser" value="<?= $rows['sn']?>">DELETE</button></td>
                             </form>
                             

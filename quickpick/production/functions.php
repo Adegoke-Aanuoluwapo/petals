@@ -111,9 +111,13 @@ function EditUsers(){
  $email= $_POST['email'];
  $password =$_POST['password'];
  $address = $_POST['address'];
+ $target = 'upload/';
+$targetfile = $target.$_FILES['picture']['name'];  //upload/picture.jpg
 
- $sql =("UPDATE users SET name= '$name', email = '$email', password = '$password', address = '$address' WHERE sn = '$sn'");
-$con->query($sql);
+move_uploaded_file($_FILES['picture']['tmp_name'],$targetfile);
+
+ $sql =("UPDATE users SET name= '$name', email = '$email', password = '$password', address = '$address', picture = '$targetfile' WHERE sn = '$sn'");
+$con->query($sql)or mysqli_error($con);
 return;
   }
 }
