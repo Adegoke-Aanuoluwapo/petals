@@ -1,30 +1,11 @@
-<?php
- echo "Hello Admin"
-?>
 
-<html>
- <header>
-  <title>Food Order Website</title>
-<link rel="stylesheet" href="../css/admin.css">
- </header>
- <body>
-  <!-- Menu Section Starts -->
-  <div class="menu text-center">
-   <div class="wrapper">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Admin</a></li>
-        <li><a href="#">Category</a></li>
-        <li><a href="#">Food</a></li>
-        <li><a href="#">Order</a></li>
-    </ul>
-   </div>
-  </div>
-   <!-- Menu Section Ends -->
+
+
+  <?php include("parcel/menu.php") ?>
     <!-- Main content Starts -->
   <div class="main-content">
     <div class="wrapper">
-      <h1>DASHBOARD</h1>
+      <h1>Manage Admin</h1>
       
       
       <div class="clearfix"></div> 
@@ -33,11 +14,5 @@
   </div>
    <!-- Main content Ends -->
     <!-- Footer content Starts -->
-  <div class="footer">
-   <div class="wrapper">
-    <p class="text-center">2023 All right Reserved, Some restaurant. Developed by -<a href="#">Immaculate</a></p>
-   </div>
-  </div>
+  <?php include("./parcel/footer.php")?>
    <!-- Footer content Ends -->
- </body>
-</html>
