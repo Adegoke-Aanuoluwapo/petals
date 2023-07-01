@@ -6,9 +6,44 @@
   <div class="main-content">
     <div class="wrapper">
       <h1>Manage Admin</h1>
+
+      <table class="tbl-full">
+       <tr>
+        <th>SN</th>
+        <th>Full Names</th>
+        <th> User Names</th>
+        <th>Actions</th>
+       </tr>
+       <tr>
+        <td>1</td>
+        <td>Aanuoluwapo</td>
+        <td>Mercy</td>
+        <td>
+         Update 
+         Delete 
+         </td>
+       </tr>
+       <tr>
+        <td>1</td>
+        <td>Aanuoluwapo</td>
+        <td>Mercy</td>
+        <td>
+         Update 
+         Delete 
+         </td>
+       </tr>
+       <tr>
+        <td>1</td>
+        <td>Aanuoluwapo</td>
+        <td>Mercy</td>
+        <td>
+         Update 
+         Delete 
+         </td>
+       </tr>
+      </table>
       
-      
-      <div class="clearfix"></div> 
+     
     </div>
    
   </div>
