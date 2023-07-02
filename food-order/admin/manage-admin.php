@@ -6,7 +6,8 @@
   <div class="main-content">
     <div class="wrapper">
       <h1>Manage Admin</h1>
-
+        <!--Button -->
+        <button></button>
       <table class="tbl-full">
        <tr>
         <th>SN</th>
