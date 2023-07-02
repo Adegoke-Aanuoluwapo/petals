@@ -6,8 +6,11 @@
   <div class="main-content">
     <div class="wrapper">
       <h1>Manage Admin</h1>
+
+      <br />
         <!--Button -->
-        <a href="#">Add Admin</a>
+        <a href="#" class="btn-primary">Add Admin</a>
+         <br /> <br /> <br />
       <table class="tbl-full">
        <tr>
         <th>SN</th>
