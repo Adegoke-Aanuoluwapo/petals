@@ -36,7 +36,8 @@ table tr td{
  padding: 1%;
   text-align: left;
 }
-.btn-primary{
+.btn-primary{ background-color: #1e90ff;padding: 1%; color: white;
+  text-decoration: none; font-weight: bold;
   
 }
 /*CSS for Menu*/
