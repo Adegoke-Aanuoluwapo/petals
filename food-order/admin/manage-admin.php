@@ -7,7 +7,7 @@
     <div class="wrapper">
       <h1>Manage Admin</h1>
         <!--Button -->
-        <button></button>
+        <a href="#">Add Admin</a>
       <table class="tbl-full">
        <tr>
         <th>SN</th>
