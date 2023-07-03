@@ -23,8 +23,8 @@
         <td>Aanuoluwapo</td>
         <td>Mercy</td>
         <td>
-         Update 
-         Delete 
+      <a class="btn-secondary" href="#">   Update </a>
+        <a href="#"> Delete </a>
          </td>
        </tr>
        <tr>
