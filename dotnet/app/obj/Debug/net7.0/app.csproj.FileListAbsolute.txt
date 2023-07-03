@@ -13,3 +13,18 @@ C:\Users\HIS MERCY\Desktop\dotnet\app\obj\Debug\net7.0\refint\app.dll
 C:\Users\HIS MERCY\Desktop\dotnet\app\obj\Debug\net7.0\app.pdb
 C:\Users\HIS MERCY\Desktop\dotnet\app\obj\Debug\net7.0\app.genruntimeconfig.cache
 C:\Users\HIS MERCY\Desktop\dotnet\app\obj\Debug\net7.0\ref\app.dll
+C:\xampp\htdocs\petals\dotnet\app\bin\Debug\net7.0\app.exe
+C:\xampp\htdocs\petals\dotnet\app\bin\Debug\net7.0\app.deps.json
+C:\xampp\htdocs\petals\dotnet\app\bin\Debug\net7.0\app.runtimeconfig.json
+C:\xampp\htdocs\petals\dotnet\app\bin\Debug\net7.0\app.dll
+C:\xampp\htdocs\petals\dotnet\app\bin\Debug\net7.0\app.pdb
+C:\xampp\htdocs\petals\dotnet\app\obj\Debug\net7.0\app.csproj.AssemblyReference.cache
+C:\xampp\htdocs\petals\dotnet\app\obj\Debug\net7.0\app.GeneratedMSBuildEditorConfig.editorconfig
+C:\xampp\htdocs\petals\dotnet\app\obj\Debug\net7.0\app.AssemblyInfoInputs.cache
+C:\xampp\htdocs\petals\dotnet\app\obj\Debug\net7.0\app.AssemblyInfo.cs
+C:\xampp\htdocs\petals\dotnet\app\obj\Debug\net7.0\app.csproj.CoreCompileInputs.cache
+C:\xampp\htdocs\petals\dotnet\app\obj\Debug\net7.0\app.dll
+C:\xampp\htdocs\petals\dotnet\app\obj\Debug\net7.0\refint\app.dll
+C:\xampp\htdocs\petals\dotnet\app\obj\Debug\net7.0\app.pdb
+C:\xampp\htdocs\petals\dotnet\app\obj\Debug\net7.0\app.genruntimeconfig.cache
+C:\xampp\htdocs\petals\dotnet\app\obj\Debug\net7.0\ref\app.dll

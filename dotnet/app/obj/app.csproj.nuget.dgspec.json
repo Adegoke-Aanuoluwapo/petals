@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HIS MERCY\\Desktop\\dotnet\\app\\app.csproj": {}
+    "C:\\xampp\\htdocs\\petals\\dotnet\\app\\app.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HIS MERCY\\Desktop\\dotnet\\app\\app.csproj": {
+    "C:\\xampp\\htdocs\\petals\\dotnet\\app\\app.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HIS MERCY\\Desktop\\dotnet\\app\\app.csproj",
+        "projectUniqueName": "C:\\xampp\\htdocs\\petals\\dotnet\\app\\app.csproj",
         "projectName": "app",
-        "projectPath": "C:\\Users\\HIS MERCY\\Desktop\\dotnet\\app\\app.csproj",
+        "projectPath": "C:\\xampp\\htdocs\\petals\\dotnet\\app\\app.csproj",
         "packagesPath": "C:\\Users\\HIS MERCY\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HIS MERCY\\Desktop\\dotnet\\app\\obj\\",
+        "outputPath": "C:\\xampp\\htdocs\\petals\\dotnet\\app\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HIS MERCY\\AppData\\Roaming\\NuGet\\NuGet.Config"
