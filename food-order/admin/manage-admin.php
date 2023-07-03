@@ -24,7 +24,7 @@
         <td>Mercy</td>
         <td>
       <a class="btn-secondary" href="#">   Update </a>
-        <a class="btn-secondary" href="#"> Delete </a>
+        <a class="btn-danger" href="#"> Delete </a>
          </td>
        </tr>
        <tr>
@@ -33,7 +33,7 @@
         <td>Mercy</td>
         <td>
           <a class="btn-secondary" href="#">   Update </a>
-        <a class="btn-secondary" href="#"> Delete </a>
+        <a class="btn-danger" href="#"> Delete </a>
         
          </td>
        </tr>
@@ -43,7 +43,7 @@
         <td>Mercy</td>
         <td>
           <a class="btn-secondary" href="#">   Update </a>
-        <a class="btn-secondary" href="#"> Delete </a>
+        <a class="btn-danger" href="#"> Delete </a>
          
          </td>
        </tr>
