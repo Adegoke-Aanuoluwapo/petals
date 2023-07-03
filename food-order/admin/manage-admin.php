@@ -24,7 +24,7 @@
         <td>Mercy</td>
         <td>
       <a class="btn-secondary" href="#">   Update </a>
-        <a href="#"> Delete </a>
+        <a class="btn-secondary" href="#"> Delete </a>
          </td>
        </tr>
        <tr>
@@ -32,8 +32,9 @@
         <td>Aanuoluwapo</td>
         <td>Mercy</td>
         <td>
-         Update 
-         Delete 
+          <a class="btn-secondary" href="#">   Update </a>
+        <a class="btn-secondary" href="#"> Delete </a>
+        
          </td>
        </tr>
        <tr>
@@ -41,8 +42,9 @@
         <td>Aanuoluwapo</td>
         <td>Mercy</td>
         <td>
-         Update 
-         Delete 
+          <a class="btn-secondary" href="#">   Update </a>
+        <a class="btn-secondary" href="#"> Delete </a>
+         
          </td>
        </tr>
       </table>
