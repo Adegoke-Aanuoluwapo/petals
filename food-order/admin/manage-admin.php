@@ -23,8 +23,8 @@
         <td>Aanuoluwapo</td>
         <td>Mercy</td>
         <td>
-      <a class="btn-secondary" href="#">   Update </a>
-        <a class="btn-danger" href="#"> Delete </a>
+            <a class="btn-secondary" href="#">   Update </a>
+            <a href="#" class="btn-danger"> Delete </a>
          </td>
        </tr>
        <tr>
@@ -33,7 +33,7 @@
         <td>Mercy</td>
         <td>
           <a class="btn-secondary" href="#">   Update </a>
-        <a class="btn-danger" href="#"> Delete </a>
+          <a class="btn-danger" href="#"> Delete </a>
         
          </td>
        </tr>
@@ -42,9 +42,8 @@
         <td>Aanuoluwapo</td>
         <td>Mercy</td>
         <td>
-          <a class="btn-secondary" href="#">   Update </a>
-        <a class="btn-danger" href="#"> Delete </a>
-         
+              <a class="btn-secondary" href="#">   Update </a>
+              <a class="btn-danger" href="#"> Delete </a>
          </td>
        </tr>
       </table>
