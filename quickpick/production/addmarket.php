@@ -89,7 +89,7 @@ while($rows = $sql->fetch_assoc()){ ?>
                               <p><strong>Note:<?= $rows['note'] ?> </strong> </p>
                               <ul class="list-unstyled">
                                 <li><i class="fa fa-building"></i> <?= SqLx('category', 'sn', $rows['cat_id'] ,'title')  ?> </li>
-                                <li><i class="fa fa-phone"></i> Phone #: </li>
+                               
                               </ul>
                             </div>
                             <div class="right col-md-5 col-sm-5 text-center">
@@ -119,6 +119,11 @@ while($rows = $sql->fetch_assoc()){ ?>
                       </div>
 
                       <?php } ?>;
+                       <?php $i = 1;  $sql = $con->query("SELECT * from  stock");
+                                while($row = $sql->fetch_assoc()){
+                                ?>
+                                <li><i class="fa fa-phone"></i> <?= ($row['selling_price']) ?> </li>
+                                <?php } ?>
 
                      
                       
