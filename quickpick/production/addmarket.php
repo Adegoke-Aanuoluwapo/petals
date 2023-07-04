@@ -76,10 +76,6 @@
 global $con; $i = 1;
    $sql=$con->query("SELECT * from items ");
 while($rows = $sql->fetch_assoc()){ ?>
-
-
-
-
                       <div class="col-md-4 col-sm-4  profile_details">
                         <div class="well profile_view">
                           <div class="col-sm-12">
@@ -95,6 +91,8 @@ while($rows = $sql->fetch_assoc()){ ?>
                             <div class="right col-md-5 col-sm-5 text-center">
                               <img src="<?= $rows['picture'] ?>" alt="" class="img-circle img-fluid">
                             </div>
+                            <p><strong>Price:<?= CurrentPrice($rows['sn']) ?> </strong> </p>
+                            
                           </div>
                           <div class=" profile-bottom text-center">
                             <div class=" col-sm-6 emphasis">
@@ -119,11 +117,7 @@ while($rows = $sql->fetch_assoc()){ ?>
                       </div>
 
                       <?php } ?>;
-                       <?php $i = 1;  $sql = $con->query("SELECT * from  stock");
-                                while($row = $sql->fetch_assoc()){
-                                ?>
-                                <li><i class="fa fa-phone"></i> <?= ($row['selling_price']) ?> </li>
-                                <?php } ?>
+                      
 
                      
                       

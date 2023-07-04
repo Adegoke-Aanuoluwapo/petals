@@ -16,18 +16,7 @@ if(isset($_POST['updateItems'])){
 
 
 
-
-
-
-
-
 }
-
-
-
-
-
-
 
 
 ?>
@@ -241,7 +230,7 @@ if(isset($_POST['updateItems'])){
                             </td>
                             <td class="a-center "><?= $rows['note']?></td>
                             <td class="a-center "><?= totalQty($rows['sn'])?></td>
-                            <td class="a-center "><?= QuantPrice($rows['sn'])?></td>
+                            <td class="a-center "><?= CurrentPrice($rows['sn'])?></td>
                             <td class="a-center "><?= $rows['created_at']?></td>
                             <form method="POST">
                              <td class=" ">

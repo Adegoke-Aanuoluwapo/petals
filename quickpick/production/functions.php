@@ -142,6 +142,7 @@ function QuantStock($item_id){
   return mysqli_num_rows($sql);
 }
 
+
 function totalQty($item_id){
   global $con;
   $sql = $con->query("SELECT SUM(quantity)  AS total FROM stock WHERE item_id = '$item_id'");
@@ -149,7 +150,7 @@ function totalQty($item_id){
   return $rows['total'];
 }
 
-function QuantPrice($item_id){
+function CurrentPrice($item_id){
   global $con;
 
   $sql = $con->query("SELECT * FROM stock WHERE item_id = '$item_id' ORDER BY sn DESC LIMIT 1");
