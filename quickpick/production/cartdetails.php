@@ -11,6 +11,7 @@ $sn = $_GET['sn'];
  $rows = mysqli_fetch_assoc($sql);
  }
  if(isset($_POST['addcart'])){
+  global $con;
   AddCart();
  }
 
@@ -85,7 +86,7 @@ $sn = $_GET['sn'];
 <div class="col-md-12 col-sm-12 ">
         <div class="x_panel">
       
-            <div class="x_title">Details</div>
+            <div class="x_title">Details</h2></div>
             
                 
                 <div class="container" >
@@ -98,14 +99,16 @@ $sn = $_GET['sn'];
 <input type="button" onclick="incrementValue()" value="+"  >
 
 <hr class="bg-warning">
-<h2>item: <?= $rows['title'] ?></h2> 
+
                     <h2>description: <?= $rows['note'] ?></h2>
                     <h2>price: <strike>N</strike><?= CurrentPrice($rows['sn']) ?><br><br>
 <span>select color</span>
 <input type="color" id="colorpicker" class="bg-warning">
 </div>
 
-
+<input name="item_id" type="text"  />
+<input name="quantity" type="text"  />
+<input name="item_id" type="text" />
                    
                     
                     <form>

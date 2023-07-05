@@ -179,8 +179,8 @@ function AddCart(){
   if($_SERVER["REQUEST_METHOD"] == "POST"){
     $item_id = $_POST['item_id'];
      $quantity = $_POST['quantity'];
-      $price = $_POST['price'];
-      $sql= $con->query("INSERT INTO carts(item_id, quantity, price) VALUES('$item_id', '$quantity', '$price')");
+      $selling_price = $_POST['selling_price'];
+      $sql= $con->query("INSERT INTO carts(item_id, quantity, selling_price) VALUES('$item_id', '$quantity', '$selling_price')");
       mysqli_query($con, $sql);
       return;
   }
