@@ -86,25 +86,7 @@ $sn = $_GET['sn'];
 <div class="col-md-12 col-sm-12 ">
         <div class="x_panel">
       
-            <div class="x_title">Details</h2></div>
-            
-                
-                <div class="container" >
-              
-                
-                    <img src="<?=$rows['picture'] ?>" width="200" alt=""/>
-                    
-<input type="button" onclick="decrementValue()" value="-"  />
-<input type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="number" style="width:50px;" disabled/>
-<input type="button" onclick="incrementValue()" value="+"  >
-
-<hr class="bg-warning">
-
-                    <h2>description: <?= $rows['note'] ?></h2>
-                    <h2>price: <strike>N</strike><?= CurrentPrice($rows['sn']) ?><br><br>
-<span>select color</span>
-<input type="color" id="colorpicker" class="bg-warning">
-</div>
+       
 
 <input name="item_id" type="text"  />
 <input name="quantity" type="text"  />
@@ -112,8 +94,7 @@ $sn = $_GET['sn'];
                    
                     
                     <form>
-                       <a type="submit" href="addcarts.php" class="btn btn-warning text-white" style="width:100%;"><i class="fa fa-shopping-cart"></i>  ADD TO CART</a>
-       
+         <button type="submit" name="addcart"class="btn btn-warning text-white" style="width:100%;"><i class="fa fa-shopping-cart"></i>  ADD TO CART</button>
 </form>        
     </div>
 
