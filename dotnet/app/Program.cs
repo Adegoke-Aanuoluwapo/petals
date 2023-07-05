@@ -21,6 +21,9 @@ namespace app
    string lastName = "Bright";
    string Fullname = firstName + lastName;
    Console.WriteLine(Fullname);
+   string message = "C#";
+   message += "string";
+   Console.WriteLine(message);
    }
   }
 }
