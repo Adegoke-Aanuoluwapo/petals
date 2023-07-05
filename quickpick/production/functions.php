@@ -173,3 +173,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 
 }
+
+function AddCart(){
+  global $con;
+  if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $item_id = $_POST['item_id'];
+     $quantity = $_POST['quantity'];
+      $price = $_POST['price'];
+      $sql= $con->query("INSERT INTO carts(item_id, quantity, price) VALUES('$item_id', '$quantity', '$price')");
+      mysqli_query($con, $sql);
+      return;
+  }
+
+}

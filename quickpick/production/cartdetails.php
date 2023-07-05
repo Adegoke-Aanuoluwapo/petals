@@ -10,6 +10,9 @@ $sn = $_GET['sn'];
  $sql = $con->query("SELECT * from items WHERE sn = '$sn'");
  $rows = mysqli_fetch_assoc($sql);
  }
+ if(isset($_POST['addcart'])){
+  AddCart();
+ }
 
 
 
@@ -106,7 +109,7 @@ $sn = $_GET['sn'];
                    
                     
                     <form>
-        <button type="submit" class="btn btn-warning text-white" style="width:100%;"><i class="fa fa-shopping-cart"></i>  ADD TO CART</button>
+        <button type="submit" name="addcart"class="btn btn-warning text-white" style="width:100%;"><i class="fa fa-shopping-cart"></i>  ADD TO CART</button>
 </form>        
     </div>
 
