@@ -1,5 +1,8 @@
  <?php 
- include("functions.php")
+ include("functions.php");
+
+
+ 
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,7 +59,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Contacts Design</h3>
+                <h3>Good details</h3>
               </div>
 
               <div class="title_right">
@@ -73,23 +76,7 @@
 
             <div class="clearfix"></div>
 
-            <div class="row">
-                <div class="x_panel">
-                  <div class="x_content">
-                      <div class="col-md-12 col-sm-12  text-center">
-                        <ul class="pagination pagination-split">
-                          <li><a href="#">A</a></li>
-                          <li><a href="#">B</a></li>
-                          <li><a href="#">C</a></li>
-                          <li><a href="#">D</a></li>
-                          <li><a href="#">E</a></li>
-                          <li>...</li>
-                          <li><a href="#">W</a></li>
-                          <li><a href="#">X</a></li>
-                          <li><a href="#">Y</a></li>
-                          <li><a href="#">Z</a></li>
-                        </ul>
-                      </div>
+          
 
                       
  
@@ -108,7 +95,7 @@
              <h2>selling price : <strike>N</strike><?= CurrentPrice($rows['sn']) ?></h2>   
              
             <h2><a href="cart_detail.php?sn=<?= $rows['sn']?>" style="text-decoration:underline;">view details</a></h2><br>      
-                 <button type="submit" name="button" class=" btn btn-warning me text-light " title="add to cart" style="width:100%;"><i class="fa fa-shopping-cart"></i> ADD  CART</button>
+                 <a type="submit" href="cartdetails.php?sn=<?= $rows['sn'] ?>" class=" btn btn-warning me text-light " title="add to cart" style="width:100%;"><i class="fa fa-shopping-cart"></i> ADD  CART</a>
 
                  
               </div>

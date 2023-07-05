@@ -5,10 +5,12 @@ include("functions.php");
 
 
 
+ if(isset($_GET['sn'])){
+$sn = $_GET['sn'];
+ $sql = $con->query("SELECT * from items WHERE sn = '$sn'");
+ $rows = mysqli_fetch_assoc($sql);
+ }
 
-
-$sql = $con->query("SELECT * FROM items ") ;
-$rows = $sql->fetch_assoc();
 
 
 
@@ -86,7 +88,7 @@ $rows = $sql->fetch_assoc();
                 <div class="container" >
               
                 
-                    <img src="<?=$rows['picture'] ?>" alt=""/>
+                    <img src="<?=$rows['picture'] ?>" width="200" alt=""/>
                     
 <input type="button" onclick="decrementValue()" value="-"  />
 <input type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="number" style="width:50px;" disabled/>
