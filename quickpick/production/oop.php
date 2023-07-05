@@ -29,10 +29,11 @@ echo $user1->name;
     <style>
       .container{
         display: grid;
-        background-color: aliceblue; 
+      margin-left: 400px;
        
         grid-template-areas: 'a  b ''d c';
-        
+        height: 100px;
+        width: 100px;
       }
       .a{
         background-color: red;
@@ -42,8 +43,8 @@ echo $user1->name;
         border-top-left-radius: 100%;
          height:200px;
         width: 200px;
-    
-        padding-right: -25%;
+    padding: 15px;
+        border-color: 5px solid green;
         
       }
       .b{
@@ -52,23 +53,23 @@ echo $user1->name;
          border-top-right-radius: 100%;
         height:200px;
         width: 200px;
-       
+       padding: 15px;
         grid: b;
       }
       .c{
         background-color: black;
         border-color: 1px solid grey;
         
-         height:100px;
-        width: 100px;
-       
+         height:200px;
+        width: 200px;
+       padding: 15px;
         grid: c;
         border-bottom-left-radius: 100%;
       }
       .d{
         background-color: purple;
         border-color: 1px solid grey;
-       
+       padding: 15px;
          height:200px;
         width: 200px;
         grid:d;

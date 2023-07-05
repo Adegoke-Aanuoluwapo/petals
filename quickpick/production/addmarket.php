@@ -11,6 +11,26 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>Gentelella Alela! | </title>
+  <style>
+       .me{
+        display:none;
+      
+       }
+       .cm:hover .me {
+        display:block;
+       }
+
+       .cm:hover {
+        transform: scale(0.9);
+        box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.2), 0 6px 20px 0 rgba(0,0,0,0.19) ;
+        
+        
+       }
+       .cm{
+        transition: all o.2s;
+       
+       }
+        </style>
 
 	<?php include("header.php") ?>;
 </head>
@@ -71,56 +91,38 @@
                         </ul>
                       </div>
 
-                      <div class="clearfix"></div>
-<?php
-global $con; $i = 1;
-   $sql=$con->query("SELECT * from items ");
-while($rows = $sql->fetch_assoc()){ ?>
-                      <div class="col-md-4 col-sm-4  profile_details">
-                        <div class="well profile_view">
-                          <div class="col-sm-12">
-                            <h4 class="brief"><i><?= $rows['title'] ?></i></h4>
-                            <div class="left col-md-7 col-sm-7">
-                              <h2></h2>
-                              <p><strong>Note:<?= $rows['note'] ?> </strong> </p>
-                              <ul class="list-unstyled">
-                                <li><i class="fa fa-building"></i> <?= SqLx('category', 'sn', $rows['cat_id'] ,'title')  ?> </li>
-                               
-                              </ul>
-                            </div>
-                            <div class="right col-md-5 col-sm-5 text-center">
-                              <img src="<?= $rows['picture'] ?>" alt="" class="img-circle img-fluid">
-                            </div>
-                            <p><strong>Price:<?= CurrentPrice($rows['sn']) ?> </strong> </p>
-                            
-                          </div>
-                          <div class=" profile-bottom text-center">
-                            <div class=" col-sm-6 emphasis">
-                              <p class="ratings">
-                                <a>4.0</a>
-                                <a href="#"><span class="fa fa-star"></span></a>
-                                <a href="#"><span class="fa fa-star"></span></a>
-                                <a href="#"><span class="fa fa-star"></span></a>
-                                <a href="#"><span class="fa fa-star"></span></a>
-                                <a href="#"><span class="fa fa-star-o"></span></a>
-                              </p>
-                            </div>
-                            <div class=" col-sm-6 emphasis">
-                              <button type="button" class="btn btn-success btn-sm"> <i class="fa fa-user">
-                                </i> <i class="fa fa-comments-o"></i> </button>
-                              <button type="button" class="btn btn-primary btn-sm">
-                                <i class="fa fa-user"> </i> View Profile
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      
+ 
+          <div class="row">
 
-                      <?php } ?>;
+          <?php $i=1; $sql = $con->query("SELECT * FROM items") ;
+							                  while($rows = $sql->fetch_assoc()) { ?>
+											  	      
+            <div class="col-md-4 col-sm-4  ">
+              <div class="x_panel tile fixed_height_300 cm">
+              <img src="<?= $rows['picture'] ?>" alt="" style="width:200px; height:200px;" >
+              
+              <h3 class="text-warning"><?= $rows['title'] ?></h3>
+               
+            
+             <h2>selling price : <strike>N</strike><?= CurrentPrice($rows['sn']) ?></h2>   
+             
+            <h2><a href="cart_detail.php?sn=<?= $rows['sn']?>" style="text-decoration:underline;">view details</a></h2><br>      
+                 <button type="submit" name="button" class=" btn btn-warning me text-light " title="add to cart" style="width:100%;"><i class="fa fa-shopping-cart"></i> ADD  CART</button>
+
+                 
+              </div>
+            </div>
+            <?php } ?>
+
+                                            
+            
+          </div>
+          
                       
 
                      
-                      
+                      </div>
                      
                   </div>
                 </div>
