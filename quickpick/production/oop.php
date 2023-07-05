@@ -31,8 +31,7 @@ echo $user1->name;
         display: grid;
         background-color: aliceblue; 
        
-        grid-template-areas: 'a  b'
-                              'd c';
+        grid-template-areas: 'a  b ''d c';
         
       }
       .a{
@@ -41,9 +40,9 @@ echo $user1->name;
         grid:a;
         
         border-top-left-radius: 100%;
-         height:100px;
-        width: 100px;
-        padding: 285px;
+         height:200px;
+        width: 200px;
+    
         padding-right: -25%;
         
       }
@@ -51,9 +50,9 @@ echo $user1->name;
         background-color: blue;
         border-color: 1px solid grey;
          border-top-right-radius: 100%;
-        height:100px;
-        width: 100px;
-        padding: 285px;
+        height:200px;
+        width: 200px;
+       
         grid: b;
       }
       .c{
@@ -62,16 +61,16 @@ echo $user1->name;
         
          height:100px;
         width: 100px;
-        padding: 285px;
+       
         grid: c;
         border-bottom-left-radius: 100%;
       }
       .d{
         background-color: purple;
         border-color: 1px solid grey;
-        padding: 285px;
-         height:100px;
-        width: 100px;
+       
+         height:200px;
+        width: 200px;
         grid:d;
         border-bottom-right-radius: 100%;
         
