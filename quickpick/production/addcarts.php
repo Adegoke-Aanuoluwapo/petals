@@ -5,12 +5,8 @@ include("functions.php");
 
 
 
- if(isset($_GET['sn'])){
-$sn = $_GET['sn'];
- $sql = $con->query("SELECT * from items WHERE sn = '$sn'");
- $rows = mysqli_fetch_assoc($sql);
- }
- if(isset($_POST['addcart'])){
+
+ if(isset($_POST['AddToCart'])){
   global $con;
   AddCart();
  }
@@ -88,12 +84,13 @@ $sn = $_GET['sn'];
       
        
 
-<input name="item_id" type="text"  />
-<input name="quantity" type="text"  />
-<input name="item_id" type="text" />
+
                    
                     
-                    <form>
+                    <form method="post">
+                     <input name="item_id" type="text"  />
+<input name="quantity" type="text"  />
+<input name="selling_price" type="text" />
          <button type="submit" name="addcart"class="btn btn-warning text-white" style="width:100%;"><i class="fa fa-shopping-cart"></i>  ADD TO CART</button>
 </form>        
     </div>

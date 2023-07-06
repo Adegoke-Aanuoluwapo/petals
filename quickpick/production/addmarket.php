@@ -2,7 +2,11 @@
  include("functions.php");
 
 
- 
+  if(isset($_POST['AddToCart'])){
+  global $con;
+  AddCart();
+ }
+
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -84,7 +88,7 @@
 
           <?php $i=1; $sql = $con->query("SELECT * FROM items") ;
 							                  while($rows = $sql->fetch_assoc()) { ?>
-											  	      
+										  	      
             <div class="col-md-4 col-sm-4  ">
               <div class="x_panel tile fixed_height_300 cm">
               <img src="<?= $rows['picture'] ?>" alt="" style="width:200px; height:200px;" >
@@ -95,11 +99,18 @@
              <h2>selling price : <strike>N</strike><?= CurrentPrice($rows['sn']) ?></h2>   
              
             <h2><a href="cart_detail.php?sn=<?= $rows['sn']?>" style="text-decoration:underline;">view details</a></h2><br>      
-                 <a type="submit" href="cartdetails.php?sn=<?= $rows['sn'] ?>" class=" btn btn-warning me text-light " title="add to cart" style="width:100%;"><i class="fa fa-shopping-cart"></i> ADD  CART</a>
+                <form method="post">	
+                  <input type="hidden" name="selling_price" value="<?= CurrentPrice($rows['sn']) ?>">
+                  <input type="hidden" name="item_id" value="<?= $rows['sn'] ?>">
+                  
+                   <button type="submit" name="AddToCart" class=" btn btn-warning me text-light " style="width:100%;"><i class="fa fa-shopping-cart"></i> ADD  CART</button>
+                </form>
+
 
                  
               </div>
             </div>
+          
             <?php } ?>
 
                                             

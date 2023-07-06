@@ -180,7 +180,7 @@ function AddCart(){
     $item_id = $_POST['item_id'];
      $quantity = $_POST['quantity'];
       $selling_price = $_POST['selling_price'];
-      $sql= $con->query("INSERT INTO carts(item_id, quantity, selling_price) VALUES('$item_id', '$quantity', '$selling_price')");
+      $sql= "INSERT INTO carts(item_id, quantity, selling_price) VALUES('$item_id', '$quantity', '$selling_price')";
       mysqli_query($con, $sql);
       return;
   }
