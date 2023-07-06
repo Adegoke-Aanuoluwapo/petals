@@ -1,5 +1,60 @@
+<?php include("functions.php")?>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="images/favicon.ico" type="image/ico" />
+
+    <title>Gentelella Alela!</title>
+
+    
+    <style>
+ 
+    
 
 
+        </style>
+   <?php include("header.php") ?>     
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+          
+
+            <br />
+
+       
+          
+        <!-- top navigation -->
+   <?php include("nav.php")?>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <!-- top tiles -->
+         
+          <!-- /top tiles -->
+
+         
+          <br />
+          
+    
+
+    
 
 
 <div class="right_col" role="main">
@@ -26,7 +81,6 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-
 
                   </div>
                 </div>
@@ -59,12 +113,12 @@
                           <tr class="headings">
                             <th class="column-title">sn </th>
                             <th class="column-title">Item ID</th>
-                            
+                           
                             <th class="column-title">Quantity </th>
                             <th class="column-title">Price </th>
                             <th class="column-title">Created </th>
                            
-                              <th class="column-title">REMOVE </th>
+                              <th class="column-title">ACTION </th>
                             
                            
                             
@@ -81,15 +135,20 @@
                           <tr class="even pointer">
                             <th scope="row"><?= $i++ ?></th>
                             <td class="a-center ">
-                              <?= $rows['title']?>
+                             
                             </td>
+
                             <td class=" "><?= $rows['item_id']?></td>
-                            <td class=" "><?= Qty($rows['sn'])?></td>
+                            <td class=" "><?= $rows['quantity']?></td>
+                            <td class=" "><?= $rows['selling_price']?></td>
                             
+                            
+                            
+
                             <td class=" "><?= $rows['created_at']?></td>
                             <form method="POST">
-                             <td class=" "><a class="btn btn-success" name="updatecategory" href="categorylist.php?sn=<?= $rows['sn']?>">UPDATE</a></td>
-                             <td class=" "><a type="submit" class="btn btn-danger" name="deleteCategory" value="<?= $rows['sn']?>">DELETE</a></td>
+                             <td class=" "><a class="btn btn-success" name="updatecategory" href="categorylist.php?sn=<?= $rows['sn']?>">REMOVE</a></td>
+                             
                             </form>
                             
                           </tr>
