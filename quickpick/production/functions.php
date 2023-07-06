@@ -176,7 +176,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 function AddCart(){
   global $con;
-  if($_SERVER["REQUEST_METHOD"] == "POST"){
+ 
     $item_id = $_POST['item_id'];
      $quantity = $_POST['quantity'];
       $selling_price = $_POST['selling_price'];
@@ -185,4 +185,7 @@ function AddCart(){
       return;
   }
 
+function discount(){
+  global $con;
+  
 }

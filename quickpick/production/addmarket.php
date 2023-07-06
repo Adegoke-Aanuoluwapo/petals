@@ -101,8 +101,9 @@
             <h2><a href="cart_detail.php?sn=<?= $rows['sn']?>" style="text-decoration:underline;">view details</a></h2><br>      
                 <form method="post">	
                   <input type="hidden" name="selling_price" value="<?= CurrentPrice($rows['sn']) ?>">
+                   <input type="hidden" name="quantity" value="1">
                   <input type="hidden" name="item_id" value="<?= $rows['sn'] ?>">
-                  
+
                    <button type="submit" name="AddToCart" class=" btn btn-warning me text-light " style="width:100%;"><i class="fa fa-shopping-cart"></i> ADD  CART</button>
                 </form>
 
