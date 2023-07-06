@@ -5,11 +5,7 @@ include("functions.php");
 
 
 
- if(isset($_GET['sn'])){
-$sn = $_GET['sn'];
- $sql = $con->query("SELECT * from items WHERE sn = '$sn'");
- $rows = mysqli_fetch_assoc($sql);
- }
+
  if(isset($_POST['addcart'])){
   global $con;
   AddCart();
@@ -79,7 +75,14 @@ $sn = $_GET['sn'];
 
     
 
-                 
+    <?php  if(isset($_GET['sn'])){
+$sn = $_GET['sn'];
+$item_id = $_POST['item_id'];
+$quantity = $_POST['quantity'];
+$selling_price = $_POST['selling_price'];
+ $sql = $con->query("SELECT * from carts");
+ $rows = mysqli_fetch_assoc($sql);
+ } ?>           
               
           <div class="row">
 
@@ -100,7 +103,8 @@ $sn = $_GET['sn'];
 
 <hr class="bg-warning">
 
-                    <h2>description: <?= $rows['note'] ?></h2>
+                    <h2>description: <?= SqLx('items', $rows['$item_id'], 'sn', 'title') ?></h2>
+                    <h2>Quantity: <?= $rows['quantity']?></h2>
                     <h2>price: <strike>N</strike><?= CurrentPrice($rows['sn']) ?><br><br>
 <span>select color</span>
 <input type="color" id="colorpicker" class="bg-warning">
