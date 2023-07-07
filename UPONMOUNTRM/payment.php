@@ -1,66 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="form.css">
-  <title>paystack</title>
-</head>
-
-<body>
-  <div class="container">
-    <form id="paymentForm">
-
-      <!-- <div class="form-group">
-    <label for="first-name">First Name</label>
-    <input type="text" id="first-name" />
-   </div> -->
-      <!-- <div class="box">
-    <span class="details">First Name</span>
-    <input type="text" placeholder="Enter Your First Name" name="First Name">
-
-   </div>
-   <div class="form-group">
-    <label for="last-name">Last Name</label>
-    <input type="text" id="last-name" />
-   </div>
-   <div class="form-group">
-    <label for="email">Email Address</label>
-    <input type="email" id="email-address" required />
-   </div>
-   <div class="form-group">
-    <label for="amount">Amount</label>
-    <input type="tel" id="amount" required />
-   </div> -->
-      <div class="container">
-        <div class="header">God Loves a cheeful giver</div>
-        <form action="login.html" method="GET">
-          <div class="details">
-            <div class="box">
-              <span class="details">First Name</span>
-              <input type="text" placeholder="Enter Your First Name" name="First Name" id="first-name">
-
+<?php include("nav.php") ?>
+<section class="section-box box-gray-100 mt-120 mb-20">
+        <div class="container">
+          <div class="icon-wave">
+            <div class="row">
+              <div class="col-lg-12 mb-60"><span class="text-body-capitalized text-uppercase"></span>
+                <h2 class="text-heading-3 color-gray-900 mt-10">Partner with God</h2>
+                <p class="text-body-text color-gray-600 mt-20">Let your resource be deposited where no moth could destroy.<br class="d-lg-block d-none"> God will surely rebuke devourers for your sake</p>
+              </div>
+             
+              <div class="col-lg-8">
+                <div class="row">
+                  <form  method="POST" style="margin-left: 50%;">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                       <span class="details">First Name</span>
+              
+                      <input class="form-control" type="text" name="FirstName" placeholder="Enter Your First Name" id="first-name">
+                    </div>
+                  </div>
+                   <div class="col-lg-6">
+                    <div class="form-group">
+                       <span class="details">Last Name</span>
+              
+                      <input class="form-control" type="text" name="LastName" placeholder="Enter Your Last Name" id="last-name">
+                    </div>
+                  </div>
+                   <div class="col-lg-6">
+                    <div class="form-group">
+                       <span class="details">Email Address</span>
+              
+                      <input class="form-control" type="email" name="email-address" placeholder="Enter Your Email" id="first-name">
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <span class="details">Amount</span>
+                      <input class="form-control" type="number" value="" placeholder="Your email"  name="amount" id="amount">
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                       <span class="details">Phone Number</span>
+                      <input class="form-control" type="text" name="phone" placeholder="Phone number">
+                    </div>
+                  </div>
+                 
+                  <div class="col-lg-12 mt-15">
+                    <button class="btn btn-black icon-arrow-right-white mr-40 mb-20" stype="submit">Donate</button><br class="d-lg-none d-block">
+                  </div>
+                  </form>
+                </div>
+              </div>
             </div>
-            <div class="box">
-              <span class="details">Last Name</span>
-              <input type="text" placeholder="Enter Your Last Name" name="Last Name" id="last-name">
-            </div>
-            <div class="box">
-              <span class="details">Email</span>
-              <input type="email" placeholder="Enter Your mail" name="Email" id="email-address">
-            </div>
-            <div class="box">
-              <span class="details">Amount</span>
-              <input type="email" placeholder="Enter Your mail" name="amount" id="amount">
-            </div>
-            <div class="box">
-              <span class="details">Phone</span>
-              <input type="email" placeholder="Enter Your mail" name="phone" id="phone">
-            </div>
-
-        </form>
-      </div>
+          </div>
+        </div>
+      </section>
 
       <script src="https://js.paystack.co/v1/inline.js"></script>
 
@@ -90,11 +84,30 @@
         }
       </script>
       <div class="button" style="margin-left:50px; ">
-        <button style="width: 70px; padding:15px; border-radius:25px" type="submit" onclick="payWithPaystack()"> Pay </button>
+        <button class="btn btn-primary" type="submit" onclick="payWithPaystack()"> Pay </button>
       </div>
 
       <script src="https://js.paystack.co/v1/inline.js"></script>
 
-</body>
 
+<?php include("footer.php") ?>
+<script src="assets/js/vendors/modernizr-3.6.0.min.js"></script>
+    <script src="assets/js/vendors/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/vendors/jquery-migrate-3.3.0.min.js"></script>
+    <script src="assets/js/vendors/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/vendors/waypoints.js"></script>
+    <script src="assets/js/vendors/wow.js"></script>
+    <script src="assets/js/vendors/magnific-popup.js"></script>
+    <script src="assets/js/vendors/perfect-scrollbar.min.js"></script>
+    <script src="assets/js/vendors/select2.min.js"></script>
+    <script src="assets/js/vendors/isotope.js"></script>
+    <script src="assets/js/vendors/scrollup.js"></script>
+    <script src="assets/js/vendors/counterup.js"></script>
+    <script src="assets/js/vendors/slick.js"></script>
+    <script src="assets/js/vendors/jquery.elevatezoom.js"></script>
+    <script src="assets/js/vendors/swiper-bundle.min.js"></script>
+    <script src="assets/js/vendors/noUISlider.js"></script>
+    <script src="assets/js/vendors/slider.js"></script>
+    <script src="assets/js/main.js?v=1.0"></script>
+  </body>
 </html>

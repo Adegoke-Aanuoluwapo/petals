@@ -62,7 +62,19 @@
                     <ul class="sub-menu">
                       <li>
                         <a href="page-contact.html"
-                          ><i class="fi fi-rr-paper-plane"></i>Contact</a
+                          ><i class="fi fi-rr-paper-plane"></i>Radio Programs
+                          </a
+                        >
+                      </li>
+                      <li>
+                        <a href="solar.php"
+                          ><i class="fi fi-rr-paper-plane"></i>Solar Light
+                          </a
+                        >
+                      </li><li>
+                        <a href="page-contact.html"
+                          ><i class="fi fi-rr-paper-plane"></i>Bus Project
+                          </a
                         >
                       </li>
                       <li>
