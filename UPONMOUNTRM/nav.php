@@ -33,7 +33,7 @@
         </div>
       </div>
     </div>
-    <header class="header sticky-bar">
+    <header class="header sticky-bar header-style-3">
       <div class="container">
         <div class="main-header">
           <div class="header-left">
@@ -58,7 +58,7 @@
                     
                   </li>
                   <li class="has-children">
-                    <a href="#">Pages</a>
+                    <a href="#">Donations</a>
                     <ul class="sub-menu">
                       <li>
                         <a href="page-contact.html"
@@ -87,48 +87,8 @@
                       </li>
                     </ul>
                   </li>
-                  <li class="has-children">
-                    <a href="#">Blog</a>
-                    <ul class="sub-menu">
-                      <li>
-                        <a class="closer" href="blog-1.html"
-                          ><i class="fi fi-rr-edit"></i>Blog Archive - 1</a
-                        >
-                      </li>
-                      <li>
-                        <a class="closer" href="blog-2.html"
-                          ><i class="fi fi-rr-edit"></i>Blog Archive - 2</a
-                        >
-                      </li>
-                      <li class="hr"><span></span></li>
-                      <li>
-                        <a href="blog-single.html"
-                          ><i class="fi fi-rr-document-signed"></i>Blog
-                          Single</a
-                        >
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="has-children">
-                    <a href="#">Shop</a>
-                    <ul class="sub-menu">
-                      <li>
-                        <a class="closer" href="page-shop-grid-1.html"
-                          ><i class="fi fi-rr-edit"></i>Shop Grid - 1</a
-                        >
-                      </li>
-                      <li>
-                        <a class="closer" href="page-shop-grid-2.html"
-                          ><i class="fi fi-rr-edit"></i>Shop Grid - 2</a
-                        >
-                      </li>
-                      <li>
-                        <a class="closer" href="page-shop-single.html"
-                          ><i class="fi fi-rr-edit"></i>Product Details</a
-                        >
-                      </li>
-                    </ul>
-                  </li>
+                 
+                 
                 </ul>
               </nav>
               <div class="burger-icon burger-icon-white">
