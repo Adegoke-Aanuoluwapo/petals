@@ -24,6 +24,8 @@ namespace app
    string message = "C#";
    message += "string";
    Console.WriteLine(message);
+   string nessage = "Adebimpe";
+   Console.WriteLine(nessage.Length);
    }
   }
 }
