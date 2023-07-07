@@ -50,18 +50,18 @@
                     
                   </li>
                   <li class="">
-                    <a href="page-about-2.html">About</a>
+                    <a href="page-about-2.php">About</a>
                     
                   </li>
                   <li class="">
-                    <a href="page-service-1.html">Services</a>
+                    <a href="page-service-1.php">Services</a>
                     
                   </li>
                   <li class="has-children">
                     <a href="#">Donations</a>
                     <ul class="sub-menu">
                       <li>
-                        <a href="page-contact.html"
+                        <a href="radio.php"
                           ><i class="fi fi-rr-paper-plane"></i>Radio Programs
                           </a
                         >
@@ -145,24 +145,11 @@
                 <ul class="mobile-menu font-heading">
                   <li class="has-children">
                     <a class="active" href="index-6.html">Home</a>
-                    <ul class="sub-menu">
-                      <li><a href="index.html">Homepage - 1</a></li>
-                      <li><a href="index-2.html">Homepage - 2</a></li>
-                      <li><a href="index-3.html">Homepage - 3</a></li>
-                      <li><a href="index-4.html">Homepage - 4</a></li>
-                      <li><a href="index-5.html">Homepage - 5</a></li>
-                      <li><a href="index-6.html">Homepage - 6</a></li>
-                      <li><a href="index-7.html">Homepage - 7</a></li>
-                      <li><a href="index-8.html">Homepage - 8</a></li>
-                    </ul>
+                    
                   </li>
-                  <li class="has-children">
-                    <a href="page-about-1.html">About</a>
-                    <ul class="sub-menu">
-                      <li><a href="page-about-1.html">About Us - 1</a></li>
-                      <li><a href="page-about-2.html">About Us - 2</a></li>
-                      <li><a href="page-about-3.html">About Us - 3</a></li>
-                    </ul>
+                  
+                    <a href="page-about-2.php">About</a>
+                   
                   </li>
                   <li class="">
                     <a href="page-service-1.html">Services</a>
