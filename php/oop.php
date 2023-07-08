@@ -6,13 +6,17 @@ class User{
  public $email;
  public $password;
 
+ function set_name($name){
+  $this->name = $name;
+ }
 }
 
 $user1 = new User();
 
-$user1->name = 'Brad';
+$user1->set_name("Brad");
 
-var_dump($user1)
+
+echo $user1->name
 
 
 ?>
