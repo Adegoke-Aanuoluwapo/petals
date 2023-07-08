@@ -26,6 +26,18 @@ namespace app
    Console.WriteLine(message);
    string nessage = "Adebimpe";
    Console.WriteLine(nessage.Length);
+   string condition = "sunny";
+   bool free = true;
+
+
+   if(free & condition =="sunny")
+   {
+    Console.WriteLine("Let's go outside");
+   }
+   else
+   {
+    Console.WriteLine("Just stay home.");
+   }
    }
   }
 }
