@@ -24,11 +24,10 @@ $user1 = new User('Brad', 'brad@gmail.com', '34344');
 $user2 = new User('Ejire', 'Ejire@gmail.com', '34443');
 
 
-$user1->set_name("Brad");
-$user2->set_name("ajike");
 
-echo $user1->get_name()." <br>";
-echo $user2->get_name()
+
+echo $user1->email ."<br>";
+echo $user2->name
 
 
 
