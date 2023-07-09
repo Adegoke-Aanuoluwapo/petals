@@ -20,10 +20,9 @@ class User{
  }
 }
 
-$user1 = new User();
-$user2 = new User();
-$user3 = new User();
-$user4 = new User();
+$user1 = new User('Brad', 'brad@gmail.com', '34344');
+$user2 = new User('Ejire', 'Ejire@gmail.com', '34443');
+
 
 $user1->set_name("Brad");
 $user2->set_name("ajike");
