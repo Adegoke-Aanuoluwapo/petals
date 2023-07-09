@@ -38,10 +38,10 @@ namespace app
    {
     Console.WriteLine("Just stay home.");
    }
-   void SayHi(){
-    Conslole.WriteLine("Hello, hi");
+   void SayHi(string name){
+    Console.WriteLine($"Hello {name}");
    }
-   SayHi()
+   SayHi("Ajike");
    }
   }
 }
