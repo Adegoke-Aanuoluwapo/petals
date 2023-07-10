@@ -57,55 +57,10 @@
     
 
 
-<div class="right_col" role="main">
-          <div class="">
-            <div class="page-title">
-              <div class="title_left">
-              
-              </div>
-
-             
-            </div>
-
-            <div class="clearfix"></div>
-
-            <div class="row" style="display: block;">
-              <div class="col-md-6 col-sm-6  ">
-                <div class="x_panel">
-                  <div class="x_title">
-                   
-                     
-                    
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
-
-                  </div>
-                </div>
-              </div>
-
-
-
-              <div class="clearfix"></div>
-
-
-              <div class="clearfix"></div>
-
-              <div class="col-md-12 col-sm-12  ">
-                <div class="x_panel">
-                  <div class="x_title">
-                   
-                   
-                     
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
 
                   <div class="x_content">
 
-                    <p>Add class <code>bulk_action</code> to table for bulk actions options on row select</p>
+                    <p>Cart <code>bulk_action</code> to table for bulk actions options on row select</p>
 
                     <div class="table-responsive">
                       <table class="table table-striped jambo_table bulk_action">
@@ -137,8 +92,10 @@
                         
                           
                             <td >
+                              <input type="hidden" id="item<?=$x?>" value="<?=$rows['sn']?>" />
                             <input type="button" onclick="decrementValue('<?=$x?>')" value="-"  />
-<input type="number" name="quantity" value="1" maxlength="2" max="10" size="1" id="number<?=$x?>" style="width:50px;" readonly/>
+                            
+<input type="number" name="quantity" value="<?=$rows['quantity']?>" maxlength="2" max="10" size="1" id="number<?=$x?>" style="width:50px;" readonly/>
 <input type="button" onclick="incrementValue('<?=$x?>')" value="+"  >
 
 
@@ -165,10 +122,18 @@
                           <?php } ?>
                         </tbody>
                       </table>
+                      <div style="margin-right:300px; float:right">
+                    <div style="display:flex">
+                  <h2>Total:</h2>
+                  <h2> <strike>N</strike></h2> <h2 id="total"></h2>
+                  </div>
+                    </div>
+                     
                     </div>
                     <script type="text/javascript">
 							function incrementValue(v)
 {
+  var sn = document.getElementById('item' +v).value;
     var p = document.getElementById('p'+v).value;
     var value = parseInt(document.getElementById('number'+v).value, 10);
     value = isNaN(value) ? 0 : value;
@@ -178,10 +143,12 @@
             var x = p * value;
             $('#st'+v).html(x);
             addAll();
+            changeQty(sn, value)
     }
 }
 	function decrementValue(v)
-{
+{ 
+  var sn = document.getElementById('item' +v).value;
     var p = document.getElementById('p'+v).value;
     var value = parseInt(document.getElementById('number'+v).value, 10);
     value = isNaN(value) ? 0 : value;
@@ -191,8 +158,32 @@
             var x = p * value;
             $('#st'+v).html(x);
             addAll();
+             changeQty(sn, value)
     }
 }
+function addAll(){
+    var i = 1;
+    var x = <?=$x?>;
+    var sum = 0;
+    while(i<=x){
+        var p = document.getElementById('p'+i).value; 
+        var value = parseInt(document.getElementById('number'+i).value, 10);
+    value = isNaN(value) ? 0 : value;  
+sum += p * value;
+i++;
+    }
+    $('#total').html(sum);
+}
+function changeQty(sn, value){
+
+  $.ajax({
+    type: 'get',
+    url: 'functions.php?sn='+sn+'&val='+value
+  }).done(function(data){
+    
+  })
+}
+
 </script>
 						
                   </div>

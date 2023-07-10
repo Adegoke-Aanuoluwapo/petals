@@ -1,6 +1,12 @@
 <?php 
 
 include("connect.php");
+
+if(isset($_GET['val'])){
+  $val = $_GET['val'];
+  $sn = $_GET['sn'];
+  $con->query("UPDATE carts SET quantity = '$val' WHERE sn = '$sn'");
+}
 function addCategory(){
  global $con;
  
@@ -179,8 +185,10 @@ function AddCart(){
  
     $item_id = $_POST['item_id'];
      $quantity = $_POST['quantity'];
+     $sales_id = $_POST['sales_id'];
       $selling_price = $_POST['selling_price'];
-      $sql= "INSERT INTO carts(item_id, quantity, selling_price) VALUES('$item_id', '$quantity', '$selling_price')";
+
+      $sql= "INSERT INTO carts(item_id, quantity, sales_id, selling_price) VALUES('$item_id', '$quantity', '$sales_id', '$selling_price')";
       mysqli_query($con, $sql);
       return;
   }
