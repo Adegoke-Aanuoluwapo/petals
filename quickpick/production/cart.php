@@ -126,13 +126,13 @@
                         </thead>
 
                         <tbody>
-                        <?php $i=1; $sql = $db ->query("SELECT * FROM cart") ;
+                        <?php $i=1; $sql = $con ->query("SELECT * FROM carts") ;
 										  while($rows = $sql->fetch_assoc()) {
                                             $x = $i++;
                             ?>
                           <tr class="even pointer">
                            
-                            <td><img src="<?= sqLx('items','sn',$rows['itemid'],'picture') ?>" width="100" style="padding-right:10px; float: left"/><?= ucfirst(sqLx('items','sn',$rows['itemid'],'title')) ?><br><strike>N</strike><?= $rows['price']?><input type="hidden" value="<?= $rows['price']?>" id="p<?=$x?>"></td>
+                            <td><img src="<?= sqLx('items','sn',$rows['item_id'],'picture') ?>" width="100" style="padding-right:10px; float: left"/><?= ucfirst(sqLx('items','sn',$rows['item_id'],'title')) ?><br><strike>N</strike><?= $rows['selling_price']?><input type="hidden" value="<?= $rows['selling_price']?>" id="p<?=$x?>"></td>
                             
                         
                           
@@ -153,7 +153,7 @@
 
 </td>
                            
-                            <td><strike>N</strike><span id="st<?=$x?>"><?=$rows['price']?></span></td>
+                            <td><strike>N</strike><span id="st<?=$x?>"><?=$rows['selling_price']?></span></td>
                             <td>
 											  <form method="POST">
 											  <button class="btn btn-outline-danger" type="submit" name="deletecat" value="<?= $rows['sn'] ?>">
@@ -166,7 +166,34 @@
                         </tbody>
                       </table>
                     </div>
-							
+                    <script type="text/javascript">
+							function incrementValue(v)
+{
+    var p = document.getElementById('p'+v).value;
+    var value = parseInt(document.getElementById('number'+v).value, 10);
+    value = isNaN(value) ? 0 : value;
+    if(value<10){
+        value++;
+            document.getElementById('number'+v).value = value;
+            var x = p * value;
+            $('#st'+v).html(x);
+            addAll();
+    }
+}
+	function decrementValue(v)
+{
+    var p = document.getElementById('p'+v).value;
+    var value = parseInt(document.getElementById('number'+v).value, 10);
+    value = isNaN(value) ? 0 : value;
+    if(value>1){
+        value--;
+            document.getElementById('number'+v).value = value;
+            var x = p * value;
+            $('#st'+v).html(x);
+            addAll();
+    }
+}
+</script>
 						
                   </div>
                 </div>
