@@ -39,7 +39,7 @@ namespace app
     Console.WriteLine("Just stay home.");
    }
    void SayHi(string name){
-    Console.WriteLine($"Hello {name}");
+    return $"Hello {name}";
    }
    SayHi("Ajike");
    }
