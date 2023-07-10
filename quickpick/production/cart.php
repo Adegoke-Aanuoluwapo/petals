@@ -111,50 +111,58 @@
                       <table class="table table-striped jambo_table bulk_action">
                         <thead>
                           <tr class="headings">
-                            <th class="column-title">sn </th>
-                            <th class="column-title">Item ID</th>
                            
-                            <th class="column-title">Quantity </th>
-                            <th class="column-title">Price </th>
-                            <th class="column-title">Created </th>
-                           
-                              <th class="column-title">ACTION </th>
+                            <th class="column-title">item</th>
                             
-                           
                             
+                            
+                            <th class="column-title">quantity</th>
+                            <th class="column-title">amount</th>
+                            <th class="column-title">Remove</th>
+                          
+
                             </th>
-                            
                           </tr>
                         </thead>
-                       
+
                         <tbody>
-                           <?php 
-                          
-                           $i = 1; $sql = $con->query("SELECT * FROM carts ");
-                        while ($rows =$sql->fetch_assoc()) {?>
+                        <?php $i=1; $sql = $db ->query("SELECT * FROM cart") ;
+										  while($rows = $sql->fetch_assoc()) {
+                                            $x = $i++;
+                            ?>
                           <tr class="even pointer">
-                            <th scope="row"><?= $i++ ?></th>
-                            <td class="a-center ">
-                             
-                            </td>
+                           
+                            <td><img src="<?= sqLx('items','sn',$rows['itemid'],'picture') ?>" width="100" style="padding-right:10px; float: left"/><?= ucfirst(sqLx('items','sn',$rows['itemid'],'title')) ?><br><strike>N</strike><?= $rows['price']?><input type="hidden" value="<?= $rows['price']?>" id="p<?=$x?>"></td>
+                            
+                        
+                          
+                            <td >
+                            <input type="button" onclick="decrementValue('<?=$x?>')" value="-"  />
+<input type="number" name="quantity" value="1" maxlength="2" max="10" size="1" id="number<?=$x?>" style="width:50px;" readonly/>
+<input type="button" onclick="incrementValue('<?=$x?>')" value="+"  >
 
-                            <td class=" "><?= $rows['item_id']?></td>
-                            <td class=" "><?= $rows['quantity']?></td>
-                            <td class=" "><?= $rows['selling_price']?></td>
-                            
-                            
-                            
 
-                            <td class=" "><?= $rows['created_at']?></td>
-                            <form method="POST">
-                             <td class=" "><a class="btn btn-success" name="updatecategory" href="categorylist.php?sn=<?= $rows['sn']?>">REMOVE</a></td>
-                             
-                            </form>
-                            
+
+
+
+                   
+                    
+                                          </td>
+
+    
+
+</td>
+                           
+                            <td><strike>N</strike><span id="st<?=$x?>"><?=$rows['price']?></span></td>
+                            <td>
+											  <form method="POST">
+											  <button class="btn btn-outline-danger" type="submit" name="deletecat" value="<?= $rows['sn'] ?>">
+                                              <i class="fa fa-close"></i></button>
+
+										      </form>
+                        
                           </tr>
-                         
-                         
-                        <?php } ?>
+                          <?php } ?>
                         </tbody>
                       </table>
                     </div>
