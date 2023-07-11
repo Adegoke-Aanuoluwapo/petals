@@ -8,11 +8,11 @@
     <script>
         $(document).ready(function(){
           $("#btn").click(function(){
-              $("#test").load("ajax_info.txt", {
+              $("#test").load("data.txt", {
                 Name: "Daniel",
                 Lastname: "Nielsen"
               }, function(){
-                alert("Hi there")
+                alert("Hi there!");
               });
           });
            
