@@ -1,3 +1,9 @@
+<?php 
+include("dbh.php");
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,5 +15,24 @@
 </head>
 <body>
  
+ <div id="demo">
+  <?php
+  $sql = "SELECT * FROM comments";
+  $result = mysqli_query($conn,$sql); 
+  if(mysqli_num_rows($result) >0){
+    while($row = mysqli_fetch_assoc($result))
+    {
+     
+     echo "<p>";
+     echo $row['author'];
+        echo "<br>";
+     echo $row['message'];
+     echo "</p>";
+        
+
+    }
+  }
+  ?>
+ </div>
 </body>
 </html>
