@@ -4,22 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script>
+        $(document).ready(function(){
+          $("#btn").click(function(){
+              $("#test").load("data.txt");
+          });
+           
+        });
+    </script>
   </head>
   <body>
-  <div id="demo">
-<h2>The XMLHttpRequest Object</h2>
-<button type="button" onclick="loadDoc()">Change Content</button>
+<div id="test">
+  <p>This is the first content</p>
 </div>
+<button id="btn">Click to change </button>
 
-<script>
-function loadDoc() {
-  const xhttp = new XMLHttpRequest();
-  xhttp.onload = function() {
-    document.getElementById("demo").innerHTML =
-    this.responseText;
-  }
-  xhttp.open("GET", "ajax_info.txt");
-  xhttp.send();
-}
-</script>
+
 </html>
