@@ -122,14 +122,13 @@
                           <?php } ?>
                         </tbody>
                       </table>
+                      
                       <div style="margin-right:300px; float:right">
                     <div style="display:flex">
-                  <h2>Total:</h2>
+                    <h2 >Total:</h2>
                   <h2> <strike>N</strike></h2> <h2 id="total"></h2>
                   </div>
-                    </div>
-                     
-                    </div>
+                </div>
                     <script type="text/javascript">
 							function incrementValue(v)
 {
@@ -200,6 +199,39 @@ function changeQty(sn, value){
         <!-- /footer content -->
       </div>
     </div>
+
+
+    <!-- calendar modal -->
+   <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <form method="POST">
+          <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel2">Update Parent</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <label>Select Parent</label>
+            <select class="form-control" name="parent" required>
+              <option value="">Select Option...</option>
+              <?php $i = 1;
+              $sql = $con->query("SELECT * FROM parent");
+              while ($rows = $sql->fetch_assoc()) {
+                echo '<option value="' . $rows['id'] . '">' . $rows['surname'] . ' ' . $rows['othername'] . '</option>';
+              } ?>
+            </select>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" name="LinkParent">Save changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- /modals -->
+        
 
     <!-- jQuery -->
     <script src="../vendors/jquery/dist/jquery.min.js"></script>

@@ -182,18 +182,23 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 function AddCart(){
   global $con;
- 
+     
+    
     $item_id = $_POST['item_id'];
      $quantity = $_POST['quantity'];
-     $sales_id = $_POST['sales_id'];
+     $sales_id = rand(0, 9999);
       $selling_price = $_POST['selling_price'];
 
-      $sql= "INSERT INTO carts(item_id, quantity, sales_id, selling_price) VALUES('$item_id', '$quantity', '$sales_id', '$selling_price')";
+      $sql= "INSERT INTO carts(item_id, quantity,sales_id, selling_price) VALUES( '$item_id', '$quantity', '$sales_id', '$selling_price')";
       mysqli_query($con, $sql);
       return;
   }
 
-function discount(){
+function checkOut(){
   global $con;
-  
+  $sales_id = $_POST['sale_id'];
+  $user_id = $_POST['user_id'];
+  $sql = "INSERT INTO checkout(sales_id, user_id) values('$sales_id', '$user_id')";
+  mysqli_query($con, $sql);
+  return;
 }
