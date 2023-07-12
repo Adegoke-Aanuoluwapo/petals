@@ -250,7 +250,7 @@ $rows = $sql->fetch_assoc();
                   </form>
 
                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Select Parent</button>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Select Parent</button>
+                 
 
                 </div>
               </div>

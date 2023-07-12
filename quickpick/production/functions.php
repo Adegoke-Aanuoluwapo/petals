@@ -99,11 +99,13 @@ function addUsers(){
 global $con;
 if($_SERVER["REQUEST_METHOD"] == "POST"){
  $name = $_POST['name'];
+ $user_id = rand(0, 9999);
  $email= $_POST['email'];
+ $phone = $_POST['phone'];
  $password =$_POST['password'];
- $address = $_POST['address'];
+ 
 
- $sql = "INSERT INTO users(name, email, password, address) VALUES('$name', '$email', '$password', '$address')";
+ $sql = "INSERT INTO users(name, user_id, email, phone, password) VALUES('$name', '$user_id', '$email','$phone', '$password')";
  $result= mysqli_query($con, $sql);
  return $result;
 }
