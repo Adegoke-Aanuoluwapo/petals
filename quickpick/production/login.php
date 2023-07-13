@@ -1,3 +1,24 @@
+<?php
+session_start();
+include "connect.php";
+include "functions.php";
+
+if(isset($_POST["AddUsers"])){
+	global $con;
+addUsers();
+}
+if(isset($_POST["login"])){
+	global $con;
+loginUser();
+}
+
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -30,18 +51,22 @@
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
-            <form>
+          <form method="POST">
               <h1>Login Form</h1>
               <div>
-                <input type="text" class="form-control" placeholder="Username" required="" />
+                <input type="email" class="form-control" placeholder="Email" required="" name="email" />
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Password" required="" />
+                <input type="password" class="form-control" placeholder="Password" required="" name="password" />
               </div>
               <div>
-                <a class="btn btn-default submit" href="index.html">Log in</a>
-                <a class="reset_pass" href="#">Lost your password?</a>
+                
+                <div>
+                <button type="submit" name="login" class="btn btn-success" >Log in</button>
+                  <a class="reset_pass" href="#">Lost your password?</a>
               </div>
+              
+             
 
               <div class="clearfix"></div>
 
@@ -53,10 +78,7 @@
                 <div class="clearfix"></div>
                 <br />
 
-                <div>
-                  <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
-                  <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 4 template. Privacy and Terms</p>
-                </div>
+              
               </div>
             </form>
           </section>
@@ -64,9 +86,9 @@
 
         <div id="register" class="animate form registration_form">
           <section class="login_content">
-            <form>
+             <form id="demo-form2" method="post" data-parsley-validate class="form-horizontal form-label-left">
               <h1>Create Account</h1>
-             <div>
+              <div>
                
                 <input type="text" class="form-control" placeholder="Enter your name" required="" name="name" />
               </div>
@@ -96,10 +118,7 @@
                 <div class="clearfix"></div>
                 <br />
 
-                <div>
-                  <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
-                  <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 4 template. Privacy and Terms</p>
-                </div>
+               
               </div>
             </form>
           </section>
