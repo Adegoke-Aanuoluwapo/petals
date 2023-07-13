@@ -121,7 +121,8 @@ function loginUser(){
     
       if($result && mysqli_num_rows($result) > 0){
         $user_data = mysqli_fetch_assoc($result);
-        if($user_data['password'] == $password){
+        if($user_data['password'] == $password)
+        {
           $_SESSION['email'] = $user_data['email'];
           header("location: index.php"); exit;
         }
