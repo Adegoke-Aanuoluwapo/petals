@@ -114,6 +114,7 @@ function loginUser(){
   global $con;
   $email = $_POST['email'];
   $password = $_POST['password'];
+
   if(!empty($email) && !empty($password)){
     $sql = "SELECT * FROM users WHERE email = '$email' LIMIT 1";
     $result = mysqli_query($con, $sql);
@@ -121,12 +122,12 @@ function loginUser(){
       if($result && mysqli_num_rows($result) > 0){
         $user_data = mysqli_fetch_all($result);
         if($user_data['password'] === $password){
-          $SESSION['user_id'] = $user_data['user_id'];
+          $_SESSION['email'] = $user_data['email'];
           header("location: index.php");
         }
       }
     }
-    echo "Wrong username and password";
+    echo "Wrong email and password";
 
   }
   else{
@@ -134,6 +135,8 @@ function loginUser(){
   }
   return;
 }
+  
+  
 
 // function EditUsers(){
 //   global $con;

@@ -43,13 +43,13 @@ loginUser();
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
-            <form>
+            <form method="POST">
               <h1>Login Form</h1>
               <div>
                 <input type="email" class="form-control" placeholder="Email" required="" name="email" />
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Password" required="" name="passord" />
+                <input type="password" class="form-control" placeholder="Password" required="" name="password" />
               </div>
               <div>
                 
