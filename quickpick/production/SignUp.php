@@ -39,10 +39,10 @@ addUsers();
 
   <body class="login">
     <div>
-    
+     
 
-
-        <div id="register" class="animate form registration_form">
+      <div class="login_wrapper">
+        <div class="animate form login_form">
           <section class="login_content">
             <form id="demo-form2" method="post" data-parsley-validate class="form-horizontal form-label-left">
               <h1>Create Account</h1>
@@ -71,7 +71,7 @@ addUsers();
 
               <div class="separator">
                 <p class="change_link">Already a member ?
-                  <a href="signin.php" name="login" class="to_register"> Log in </a>
+                  <a href="signin.php" class="to_register"> Log in </a>
                 </p>
 
                 <div class="clearfix"></div>
@@ -82,8 +82,9 @@ addUsers();
             </form>
           </section>
         </div>
+
+       
       </div>
-      
     </div>
   </body>
 </html>

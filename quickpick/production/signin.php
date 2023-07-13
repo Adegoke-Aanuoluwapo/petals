@@ -1,3 +1,18 @@
+<?php
+include "connect.php";
+include "functions.php";
+
+if(isset($_POST["login"])){
+	global $con;
+loginUser();
+}
+
+
+
+
+?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,14 +46,16 @@
             <form>
               <h1>Login Form</h1>
               <div>
-                <input type="text" class="form-control" placeholder="Username" required="" />
+                <input type="email" class="form-control" placeholder="Email" required="" name="email" />
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Password" required="" />
+                <input type="password" class="form-control" placeholder="Password" required="" name="passord" />
               </div>
               <div>
                 
-                <a class="btn btn-default submit" href="SignUp.php" >Log in</a>
+                <div>
+                <button type="submit" name="login" class="btn btn-success" >Submit</button>
+              </div>
                 <a class="reset_pass" href="#">Lost your password?</a>
               </div>
 

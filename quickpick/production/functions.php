@@ -110,25 +110,49 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
  return $result;
 }
 }
-
-function EditUsers(){
+function loginUser(){
   global $con;
-  if(isset($_POST['edituser'])){
-    $sn = $_GET['sn'];
-     $name = $_POST['name'];
- $email= $_POST['email'];
- $password =$_POST['password'];
- $address = $_POST['address'];
- $target = 'upload/';
-$targetfile = $target.$_FILES['picture']['name'];  //upload/picture.jpg
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+  if(!empty($email) && !empty($password)){
+    $sql = "SELECT * FROM users WHERE email = '$email' LIMIT 1";
+    $result = mysqli_query($con, $sql);
+    if($result){
+      if($result && mysqli_num_rows($result) > 0){
+        $user_data = mysqli_fetch_all($result);
+        if($user_data['password'] === $password){
+          $SESSION['user_id'] = $user_data['user_id'];
+          header("location: index.php");
+        }
+      }
+    }
+    echo "Wrong username and password";
 
-move_uploaded_file($_FILES['picture']['tmp_name'],$targetfile);
-
- $sql =("UPDATE users SET name= '$name', email = '$email', password = '$password', address = '$address', picture = '$targetfile' WHERE sn = '$sn'");
-$con->query($sql)or mysqli_error($con);
-return;
   }
+  else{
+    echo "Please enter some valid information";
+  }
+  return;
 }
+
+// function EditUsers(){
+//   global $con;
+//   if(isset($_POST['edituser'])){
+//     $sn = $_GET['sn'];
+//      $name = $_POST['name'];
+//  $email= $_POST['email'];
+//  $password =$_POST['password'];
+//  $address = $_POST['address'];
+//  $target = 'upload/';
+// $targetfile = $target.$_FILES['picture']['name'];  //upload/picture.jpg
+
+// move_uploaded_file($_FILES['picture']['tmp_name'],$targetfile);
+
+//  $sql =("UPDATE users SET name= '$name', email = '$email', password = '$password', address = '$address', picture = '$targetfile' WHERE sn = '$sn'");
+// $con->query($sql)or mysqli_error($con);
+// return;
+//   }
+// }
 
 function SqLx($table, $key, $val, $pin){
  global $con;
