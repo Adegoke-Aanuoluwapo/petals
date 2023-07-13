@@ -118,14 +118,14 @@ function loginUser(){
   if(!empty($email) && !empty($password)){
     $sql = "SELECT * FROM users WHERE email = '$email' LIMIT 1";
     $result = mysqli_query($con, $sql);
-    if($result){
+    
       if($result && mysqli_num_rows($result) > 0){
-        $user_data = mysqli_fetch_all($result);
-        if($user_data['password'] === $password){
+        $user_data = mysqli_fetch_assoc($result);
+        if($user_data['password'] == $password){
           $_SESSION['email'] = $user_data['email'];
-          header("location: index.php");
+          header("location: index.php"); exit;
         }
-      }
+      
     }
     echo "Wrong email and password";
 
