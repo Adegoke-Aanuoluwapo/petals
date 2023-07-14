@@ -1,6 +1,6 @@
 <?php 
-$str = '{"a": 1, "b":2, "c":3}';
-$arr = json_decode($str);
+$obj = (object) true;
 
-var_dump($arr, true)
+var_dump($obj->scalar);
+
 ?>
