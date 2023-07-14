@@ -46,7 +46,7 @@
               <nav class="nav-main-menu d-none d-xl-block">
                 <ul class="main-menu">
                   <li class="">
-                    <a class="active " href="index-6.html">Home</a>
+                    <a class="active " href="index-6.php">Home</a>
                     
                   </li>
                   <li class="">
