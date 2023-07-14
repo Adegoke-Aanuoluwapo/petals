@@ -17,6 +17,12 @@ public function addTax(float $rate){
 public function applydiscount(float $rate){
  $this->amount -= $this->amount * $rate /100 ;
 }
+public function getAmount():float{
+ return $this->amount; 
+}
+public function __destruct(){
+  echo "Destruct ". $this->description  . '<br>';
+}
 }
 
  

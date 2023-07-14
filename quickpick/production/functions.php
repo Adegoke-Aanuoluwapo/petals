@@ -136,6 +136,14 @@ function loginUser(){
   }
   return;
 }
+
+
+function LogOut(){
+  global $con;
+  session_destroy();
+  header("location:signin.php");
+  exit;
+}
   
   
 
@@ -232,3 +240,4 @@ function checkOut(){
   mysqli_query($con, $sql);
   return;
 }
+
