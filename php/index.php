@@ -1,6 +1,8 @@
 <?php 
-$obj = (object) true;
+include("trans.php");
 
-var_dump($obj->scalar);
+$transaction = new Transaction(5, 'Test');
+
+
 
 ?>
