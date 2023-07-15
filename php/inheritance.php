@@ -1,5 +1,6 @@
 <?php
-
+ require_once 'SavingAccount.php';
+ 
 class BankAccount{
  private $balance;
  public function getBalance(){
