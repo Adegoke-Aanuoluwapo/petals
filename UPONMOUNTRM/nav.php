@@ -17,7 +17,7 @@
     <link
       rel="shortcut icon"
       type="image/x-icon"
-      href="assets/imgs/template/favicon.svg"
+      
     />
     <link href="assets/css/style.css" rel="stylesheet" />
     <title>Upon Mount Zion Ministry</title>
@@ -42,7 +42,7 @@
                 ><img alt="UMZ" width="80" src="assets/imgs/template/UPMZRM.jpg"
               /></a>
             </div>
-            <div class="header-nav">
+            <div class="header-nav" style="margin-left:350px">
               <nav class="nav-main-menu d-none d-xl-block">
                 <ul class="main-menu">
                   <li class="">
@@ -60,6 +60,12 @@
                   <li class="has-children">
                     <a href="#">Donations</a>
                     <ul class="sub-menu">
+                      <li>
+                        <a href="jesuscares.php"
+                          ><i class="fi fi-rr-paper-plane"></i>Jesus Cares Missions
+                          </a
+                        >
+                      </li>
                       <li>
                         <a href="radio.php"
                           ><i class="fi fi-rr-paper-plane"></i>Radio Programs
@@ -98,9 +104,7 @@
                         >
                       </li>
                     </ul>
-                  </li>
-                 
-                 
+                  </li> 
                 </ul>
               </nav>
               <div class="burger-icon burger-icon-white">
