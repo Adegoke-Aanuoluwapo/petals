@@ -63,11 +63,11 @@ var_dump(checkdate(2,29,2004));
 // echo(strtotime("last Sunday")). '<br>';
 // echo time(). '<br>';
 // echo(strtotime("02 January 1970") . "<br>");
-echo '<br>';
-$dob='2002-12-31';
-$time = strtotime($dob);
-$birthday = date('D', $time);
+//echo '<br>';
+//$dob='2002-12-31';
+//$time = strtotime($dob);
+//$birthday = date('D', $time);
 //$birthday = date('jS-F,Y h:iA');
-echo $birthday;
+//echo $birthday;
 
 
