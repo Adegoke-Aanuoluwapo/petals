@@ -1,4 +1,6 @@
 <?php
+
+declare(strict_types=1);
 class BankAccount{
  public float $balance = 0;
 
@@ -10,6 +12,6 @@ class BankAccount{
 
 
 
-$account = new BankAccount("100.5");
+$account = new BankAccount(100.25);
 var_dump($account->balance)
 ?>
