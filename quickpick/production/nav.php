@@ -91,8 +91,8 @@
                 <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
               </a>
               <form action="logout.php" method="post">
-                <button type="submit" name="Logout"  data-toggle="tooltip" data-placement="top" title="Logout">
-                    <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                <button  name="Logout"  data-toggle="tooltip" data-placement="top" title="Logout" type="submit">
+                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
                 </button>
              
               </form>

@@ -138,13 +138,7 @@ function loginUser(){
 }
 
 
-function LogOut(){
-  global $con;
-  session_destroy();
-  header("location:signin.php");
-  exit;
-}
-  
+
   
 
 // function EditUsers(){

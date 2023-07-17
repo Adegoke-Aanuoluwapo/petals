@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta http-equiv="X-UA-Compatible" content="IE=edge">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Document</title>
-</head>
-<body>
- 
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+   
+  </head>
+  <body>
+
+
+    <script>
+      let person = {
+       firstName: 'john',
+       lastName: 'Doe',
+       greet: function(){
+        console.log('Hello, World');
+       },
+       getFullName: function(){
+        return this.firstName + ' ' + this.lastName;
+       }
+
+      };
+      
+
+      
+    
+     console.log(person.getFullName());
+    </script>
+  </body>
 </html>
-<script>
- let person = {
-  firstName: 'john',
-  lastName: 'Doe'
- };
- person.greet = function(){
-  console.log('Hello!');
-
-  person.greet()
-
- }
-</script>

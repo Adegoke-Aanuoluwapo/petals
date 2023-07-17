@@ -8,3 +8,4 @@ header('location: login.php');
 }else{
  print_r("An error occured while performing action");
 }
+?>
