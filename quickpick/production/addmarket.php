@@ -1,6 +1,9 @@
  <?php 
  include("functions.php");
+session_start();
 
+
+if(!isset($_SESSION['email'])){header('location: login.php'); }
 
   if(isset($_POST['AddToCart'])){
   global $con;
