@@ -4,9 +4,6 @@ session_start();
 if(!isset($_SESSION['email'])){header('location: login.php'); }
 
 
-if(isset($_POST['logout'])){
-    LogOut();}
-
 
 if(isset($_POST["deleteCategory"])){
 	global $con;
