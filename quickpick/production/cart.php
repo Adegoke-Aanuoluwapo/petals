@@ -204,8 +204,37 @@ function changeQty(sn, value){
                 </div>
               </div>
             </div>
-            
-            
+            <div class="col-md-9 col-sm-9 ">
+                  <div id="chart_plot_01" class="demo-placeholder"></div>
+                </div>
+                <div class="col-md-3 col-sm-3  bg-white">
+                  <div class="x_title">
+                    <h2>Top Campaign Performance</h2>
+                   
+                                            
+                    <div class="clearfix"></div>
+                  </div>
+                          <?= $rows['selling_price'] ?>
+                  <div class="col-md-12 col-sm-12 ">
+                    <div>
+                      <p> </p>
+                      <div class="">
+                        <div class="progress progress_sm" style="width: 76%;">
+                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="80"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <p>Checkout</p>
+                      <div class="">
+                        <div style="width: 76%;">
+                      </div>
+                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                
           </div>
         </div>
         <!-- /page content -->
