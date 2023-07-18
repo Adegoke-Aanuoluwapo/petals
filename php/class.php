@@ -2,7 +2,8 @@
 
 declare(strict_types=1);
 class BankAccount{
- public float $balance = 0;
+ public float $balance;
+ public $accountNumber;
 
  public function __construct(float $balance)
 {
@@ -12,6 +13,9 @@ class BankAccount{
 
 
 
-$account = new BankAccount(100.25);
-var_dump($account->balance)
+$account = new BankAccount();
+$account->accountNumber = 1;
+$account->balance = 100;
+echo ($account->accountNumber)
+
 ?>

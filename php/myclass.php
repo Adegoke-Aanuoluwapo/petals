@@ -8,4 +8,5 @@ class Myclass
  }
 }
 
-$user = new User('joe', 'secure');
+$user = new Myclass('joe', 'secure');
+echo ($user);
