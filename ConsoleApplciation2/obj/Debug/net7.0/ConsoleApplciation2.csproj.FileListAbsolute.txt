@@ -1,0 +1,15 @@
+C:\xampp\htdocs\petals\ConsoleApplciation2\bin\Debug\net7.0\ConsoleApplciation2.exe
+C:\xampp\htdocs\petals\ConsoleApplciation2\bin\Debug\net7.0\ConsoleApplciation2.deps.json
+C:\xampp\htdocs\petals\ConsoleApplciation2\bin\Debug\net7.0\ConsoleApplciation2.runtimeconfig.json
+C:\xampp\htdocs\petals\ConsoleApplciation2\bin\Debug\net7.0\ConsoleApplciation2.dll
+C:\xampp\htdocs\petals\ConsoleApplciation2\bin\Debug\net7.0\ConsoleApplciation2.pdb
+C:\xampp\htdocs\petals\ConsoleApplciation2\obj\Debug\net7.0\ConsoleApplciation2.csproj.AssemblyReference.cache
+C:\xampp\htdocs\petals\ConsoleApplciation2\obj\Debug\net7.0\ConsoleApplciation2.GeneratedMSBuildEditorConfig.editorconfig
+C:\xampp\htdocs\petals\ConsoleApplciation2\obj\Debug\net7.0\ConsoleApplciation2.AssemblyInfoInputs.cache
+C:\xampp\htdocs\petals\ConsoleApplciation2\obj\Debug\net7.0\ConsoleApplciation2.AssemblyInfo.cs
+C:\xampp\htdocs\petals\ConsoleApplciation2\obj\Debug\net7.0\ConsoleApplciation2.csproj.CoreCompileInputs.cache
+C:\xampp\htdocs\petals\ConsoleApplciation2\obj\Debug\net7.0\ConsoleApplciation2.dll
+C:\xampp\htdocs\petals\ConsoleApplciation2\obj\Debug\net7.0\refint\ConsoleApplciation2.dll
+C:\xampp\htdocs\petals\ConsoleApplciation2\obj\Debug\net7.0\ConsoleApplciation2.pdb
+C:\xampp\htdocs\petals\ConsoleApplciation2\obj\Debug\net7.0\ConsoleApplciation2.genruntimeconfig.cache
+C:\xampp\htdocs\petals\ConsoleApplciation2\obj\Debug\net7.0\ref\ConsoleApplciation2.dll

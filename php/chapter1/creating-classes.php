@@ -6,7 +6,7 @@ class Product
     public $name = 'soap';
     public $price; 
 
-    public function __construct($name, $price)
+    public function __construct($name= 'Car', $price= 100)
     {
         $this->name = $name;
          $this->price = $price;
@@ -35,7 +35,7 @@ class Product
 // $soapObject2->price = 670;
 // $priceAsCurrency = $soapObject2->priceAsCurrency();
 // var_dump($priceAsCurrency);
-$product = new Product('Soap', 300);
+$product = new Product(price: 4500);
 
-print $product->name;
+print $product->name . '<br>';
 print $product->price;

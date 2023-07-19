@@ -9,11 +9,6 @@ if(isset($_POST["deleteUser"])){
 
 }
 
-if(isset($_POST['edituser'])){
-  global $con;
-  $sn = $_POST['edituser'];
-  EditUsers();
-}
 
 ?>
 
@@ -178,7 +173,7 @@ if(isset($_POST['edituser'])){
                              <th class="column-title">Name </th>
                             <th class="column-title">Email </th>
                             <th class="column-title">Password</th>
-                            <th class="column-title">Address</th>
+                         
                              <th class="column-title">Created time </th>
                              <th class="column-title">Update </th>
                               <th class="column-title">Delete </th>
@@ -198,13 +193,13 @@ if(isset($_POST['edituser'])){
                           <tr class="even pointer">
                             <th scope="row"><?= $i++ ?></th>
                             <td class="a-center ">
-                              <?= $rows['name']?>
+                            <a href="usersprofile.php?sn=<?=$rows['sn']?>">  <?= $rows['name']?></a>
                             </td>
                             <td class="a-center ">
                               <?= $rows['email']?>
                             </td>
                             <td class="a-center "><?= $rows['password']?></td>
-                            <td class="a-center "><?= $rows['address']?></td>
+                            
                             <td class="a-center "><?= $rows['created_at']?></td>
                             <form method="POST">
                              <td class=" "><a href= "userslist.php?sn=<?= $rows['sn']?>" type="submit" class="btn btn-success">UPDATE</a></td>
