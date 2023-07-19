@@ -45,7 +45,7 @@
                   </li>
                 </ul>
                    </ul>
-                 <ul class="nav side-menu">
+                <ul class="nav side-menu">
                   <li><a><i class="fa fa-home"></i> Users <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="users.php">User Details</a></li>
@@ -63,11 +63,12 @@
                      
                     </ul>
                   </li>
-                   <ul class="nav side-menu">
+                 </ul>
+                  <ul class="nav side-menu">
                   <li><a><i class="fa fa-home"></i> Market <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="addmarket.php">Market details </a></li>
-                      
+                     
                      
                     </ul>
                   </li>

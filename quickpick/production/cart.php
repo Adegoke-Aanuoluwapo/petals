@@ -1,9 +1,14 @@
 <?php include("functions.php");
-
 session_start();
 
 
 if(!isset($_SESSION['email'])){header('location: login.php'); }
+if(isset($_POST['checkout'])){
+  global $con;
+  checkOut();
+  
+}
+
 ?>
 
 
@@ -134,8 +139,9 @@ if(!isset($_SESSION['email'])){header('location: login.php'); }
                         </tbody>
                       </table>
                       <div class></div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Checkout</button>
-                        
+                      <form method="POST">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm" name="checkout">Checkout</button>
+                        </form>
                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Select Parent</button>
                       <div style="margin-right:300px; float:right">
                     <div style="display:flex">
