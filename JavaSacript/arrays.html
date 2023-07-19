@@ -17,7 +17,21 @@
 console.log(e.toString());
 let f;
 f = new Date("2023-07-18T10:15:00+01:00");
-console.log(f.toString())
+console.log(f.toString());
+let g; 
+g = new Date(2019, 7, 2, 11, 30,  27, 0);
+console.log(g.toString())
+console.log(g.getFullYear());
+console.log(g.getMonth());
+console.log(g.getHours());
+console.log(g.getMinutes());
+console.log(g.getSeconds());
+console.log(g.getMilliseconds());
+console.log(g.getUTCHours());
+g.setMinutes(10);
+g.setDate(5);
+console.log(g.toString())
+
 
  </script>
 </body>

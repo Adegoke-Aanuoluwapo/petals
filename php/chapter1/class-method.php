@@ -5,13 +5,18 @@ class Product
 {
     public $name = 'soap';
     public $price = 100; 
-
-    public function priceAsCurrency($currencySymbol)
+    
+    public function __construct($name, $price)
     {
-            $priceAsCurrency = $this->price /100;
-            return $currencySymbol.$priceAsCurrency;   
+            $this->name= $name;
+            $this->price= $price;
+    }
+    public function priceAsCurrency($divisor = 1,$currencySymbol = '$')
+    {
+            $priceAsCurrency = $this->price /$divisor;
+            return $currencySymbol . $priceAsCurrency;   
     }
 }
 
 $product = new Product();
-var_dump($product->priceAsCurrency('$'));
+print $product->priceAsCurrency();
