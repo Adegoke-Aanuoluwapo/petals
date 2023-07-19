@@ -4,9 +4,7 @@ session_start();
 
 if(!isset($_SESSION['email'])){header('location: login.php'); }
 if(isset($_POST['checkout'])){
-  global $con;
-  checkOut();
-  
+  checkOut();  
 }
 
 ?>
@@ -72,10 +70,6 @@ if(isset($_POST['checkout'])){
 
                   <div class="x_content">
 
-                  
-
-                    <p>Cart <code>bulk_action</code> to table for bulk actions options on row select</p>
-
                     <div class="table-responsive">
                       
                       <table class="table table-striped jambo_table bulk_action">
@@ -97,7 +91,8 @@ if(isset($_POST['checkout'])){
                         </thead>
 
                         <tbody>
-                        <?php $i=1; $sql = $con ->query("SELECT * FROM carts") ;
+                        <?php $sales_id = $_SESSION['sales_id'];
+                         $i=1; $sql = $con ->query("SELECT * FROM carts WHERE sales_id='$sales_id'") ;
 										  while($rows = $sql->fetch_assoc()) {
                                             $x = $i++;
                             ?>
@@ -140,9 +135,8 @@ if(isset($_POST['checkout'])){
                       </table>
                       <div class></div>
                       <form method="POST">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm" name="checkout">Checkout</button>
+                        <button type="submit" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm" name="checkout">Checkout</button>
                         </form>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Select Parent</button>
                       <div style="margin-right:300px; float:right">
                     <div style="display:flex">
                     <h2 >Total:</h2>
@@ -210,37 +204,7 @@ function changeQty(sn, value){
                 </div>
               </div>
             </div>
-            <div class="col-md-9 col-sm-9 ">
-                  <div id="chart_plot_01" class="demo-placeholder"></div>
-                </div>
-                <div class="col-md-3 col-sm-3  bg-white">
-                  <div class="x_title">
-                    <h2>Top Campaign Performance</h2>
-                   
-                                            
-                    <div class="clearfix"></div>
-                  </div>
-                          <?= $rows['selling_price'] ?>
-                  <div class="col-md-12 col-sm-12 ">
-                    <div>
-                      <p> </p>
-                      <div class="">
-                        <div class="progress progress_sm" style="width: 76%;">
-                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="80"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <p>Checkout</p>
-                      <div class="">
-                        <div style="width: 76%;">
-                      </div>
-                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                
+           
           </div>
         </div>
         <!-- /page content -->

@@ -198,7 +198,8 @@ function AddCart(){
     
     $item_id = $_POST['item_id'];
      $quantity = $_POST['quantity'];
-     $sales_id = rand(0, 9999);
+     if(!isset($_SESSION['sales_id'])){$_SESSION['sales_id']=rand(); }
+     $sales_id = $_SESSION['sales_id'];
       $selling_price = $_POST['selling_price'];
 
       $sql= "INSERT INTO carts(item_id, quantity,sales_id, selling_price) VALUES( '$item_id', '$quantity', '$sales_id', '$selling_price')";
@@ -208,10 +209,11 @@ function AddCart(){
 
 function checkOut(){
   global $con;
-  $sales_id = $_POST['sale_id'];
-  $user_id = $_POST['user_id'];
+  $sales_id = $_SESSION['sales_id'];
+  $user_id = $_SESSION['user_id'];
   $sql = "INSERT INTO checkout(sales_id, user_id) values('$sales_id', '$user_id')";
   mysqli_query($con, $sql);
+  unset($_SESSION['sales_id']);
   return;
 }
 
