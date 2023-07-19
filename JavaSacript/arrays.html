@@ -30,7 +30,18 @@ console.log(g.getMilliseconds());
 console.log(g.getUTCHours());
 g.setMinutes(10);
 g.setDate(5);
-console.log(g.toString())
+g.setUTCHours(4);
+console.log(g.toString());
+console.log(g.toISOString());
+console.log(g.toLocaleString("en-AU"));
+console.log(g.toLocaleString("en-US"));
+console.log(g.toLocaleString("en-NG"));
+console.log(g.toLocaleString("en-US", {
+  timeZone: "America/Los_Angeles"
+}));
+console.log(JSON.stringify({
+  myDate: g
+}));
 
 
  </script>
