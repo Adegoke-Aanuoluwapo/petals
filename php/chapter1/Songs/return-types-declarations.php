@@ -14,3 +14,7 @@ $song2 = new Song('Gratitude', 445);
 
 $playlist->addSong($song1);
 $playlist->addSong($song2);
+
+if ($playlist->getLength() < 10){
+ print 'Short playlist....'. '<br>';
+}
