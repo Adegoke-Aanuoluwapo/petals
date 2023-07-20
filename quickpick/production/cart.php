@@ -1,5 +1,5 @@
 <?php include("functions.php");
-session_start();
+//session_start();
 
 
 if(!isset($_SESSION['email'])){header('location: login.php'); }

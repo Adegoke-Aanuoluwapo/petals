@@ -46,7 +46,7 @@ if(isset($_GET['sn'])){
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Tables <small>Some examples to get you started</small></h3>
+                <h3>Tables <small>User Profile</small></h3>
               </div>
 
               <div class="title_right">
@@ -116,7 +116,7 @@ if(isset($_GET['sn'])){
 
                                     <tr>
                                        <th>Items Quantity</th>
-                                       <td><?= cartQuantity($rows['quantity']) ?></a></td>
+                                       <td><?= cartQuantity($rows['sn']) ?></a></td>
                                     </tr>
 
 

@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 include("connect.php");
 
 if(isset($_GET['val'])){
@@ -216,11 +216,19 @@ function checkOut(){
   unset($_SESSION['sales_id']);
   return;
 }
-
-function cartQuantity($sales_id){
+//var_dump($_SESSION['sales_id']);
+function cartQuantity($sales_id){ 
   global $con;
+// $sql = $con->query("SELECT sales_id FROM checkout WHERE user_id = $user_id ");
   $sql = $con->query("SELECT SUM(quantity) AS total FROM carts WHERE sales_id = '$sales_id' ");
-  $rows = mysqli_fetch_all($sql);
+  //$rows = $sql->fetch_assoc();
+    $rows = mysqli_fetch_all($sql);
   return $rows['quantity'];
+  //var_dump($rows['sales_id']) ;
+}
+
+function cartItems(){
+  global $con;
+  $sql = $con->query("SELECT * FROM carts WHERE "); 
 }
 
