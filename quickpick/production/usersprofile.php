@@ -106,17 +106,17 @@ if(isset($_GET['sn'])){
                                        <td><?= $rows['phone'] ?></td>
                                     </tr>
                                     <tr>
-                                       <th>class</th>
+                                       <th>Password</th>
                                        <td><?= $rows['password'] ?></td>
                                     </tr>
                                     <tr>
-                                       <th>registrationnumber</th>
-                                       <td><?= $rows['reg'] ?></td>
+                                       <th>order date</th>
+                                       <td><?= $rows['created_at'] ?></td>
                                     </tr>
 
                                     <tr>
-                                       <th>Parent Data</th>
-                                       <td><a href="parentprofile.php?id=<?= $rows['parent'] ?>"><?= parentData($row['parent']) ?></a></td>
+                                       <th>Items Quantity</th>
+                                       <td><?= cartQuantity($rows['quantity']) ?></a></td>
                                     </tr>
 
 
