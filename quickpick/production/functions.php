@@ -217,3 +217,10 @@ function checkOut(){
   return;
 }
 
+function cartQuantity($sales_id){
+  global $con;
+  $sql = $con->query("SELECT SUM(quantity) AS total FROM carts WHERE sales_id = '$sales_id' ");
+  $rows = mysqli_fetch_all($sql);
+  return $rows['quantity'];
+}
+

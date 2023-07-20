@@ -63,8 +63,8 @@ if(isset($_GET['sn'])){
 
             <div class="clearfix"></div>
 
-            <div class="row" style="display: block;">
-              <div class="col-md-6 col-sm-6  ">
+            <div class="row">
+              <div class="col-md-12 col-sm-12  ">
                 <div class="x_panel">
                   <div class="x_title">
                     <h2>Basic Tables <small>basic table subtitle</small></h2>
