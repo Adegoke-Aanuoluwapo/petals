@@ -1,10 +1,10 @@
 <?php
 
-
+declare(strict_types=1)
 
 require_once 'song.php';
 
-$song = new Song("Blackberry", 'Number of plays');
+$song = new Song("Blackberry", 1234);
 
 
-print $song->name;
+var_dump($song);
