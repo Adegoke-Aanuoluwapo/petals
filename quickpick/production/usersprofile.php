@@ -1,13 +1,32 @@
 <?php
 include("functions.php");
 
+$user_id = '';
 if(isset($_GET['sn'])){
  $sn = $_GET['sn'];
  $sql = $con->query("SELECT * FROM users where sn = '$sn'");
  $rows = mysqli_fetch_assoc($sql);
  
+$user_id = $rows['user_id'];
+
+
+$query = $con->query("SELECT DISTINCT items.title,items.sn,carts.sales_id,checkout.user_id  FROM items LEFT JOIN carts ON items.sn = carts.item_id LEFT JOIN checkout ON carts.sales_id = checkout.sales_id WHERE checkout.user_id = '$user_id'");
+
+
+$quantityQuery = $con->query("SELECT SUM(carts.quantity) AS 'items_quantity' FROM items LEFT JOIN carts ON items.sn = carts.item_id LEFT JOIN checkout ON carts.sales_id = checkout.sales_id WHERE checkout.user_id = '$user_id'");
+
+$quantity = $quantityQuery->fetch_assoc();
+
+$amounts = $con->query("SELECT SUM(carts.quantity * carts.selling_price) AS amount FROM items LEFT JOIN carts ON items.sn = carts.item_id LEFT JOIN checkout ON carts.sales_id = checkout.sales_id WHERE checkout.user_id = '$user_id'");
+
+$amount = $amounts->fetch_assoc();
+
+$prices = $con->query("SELECT (carts.quantity * carts.selling_price) AS price FROM items LEFT JOIN carts ON items.sn = carts.item_id LEFT JOIN checkout ON carts.sales_id = checkout.sales_id WHERE checkout.user_id = '$user_id'");
+$price = $prices->fetch_assoc();
 
 }
+
+
 
 
 
@@ -116,13 +135,26 @@ if(isset($_GET['sn'])){
 
                                     <tr>
                                        <th>Items Quantity</th>
-                                       <td><?= cartQuantity($rows['sn']) ?></a></td>
+                                       <td><?= $quantity['items_quantity'] ?></a></td>
+                                    </tr>
+                                     <tr>
+                                       <th>Items carted</th>
+                                       <?php while ($items = $query->fetch_assoc()): ?>
+                                        
+                                        <td><?= $items['title'] ?></td>
+
+                                        <?php endwhile ?>
+
                                     </tr>
 
-
                                     <tr>
-                                       <th>Subject Data</th>
-                                       <td><a href="addsubject.php?id=<?= $rows['parent'] ?>"><?= parentData($rows['parent']) ?></a></td>_
+                                       <th>Prices</th>
+                                       
+                                       <?php while ($items = $query->fetch_assoc()): ?>
+                                        
+                                        <td><?= $items['title'] ?></td>
+
+                                        <?php endwhile ?>
                                     </tr>
 
 
