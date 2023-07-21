@@ -7,14 +7,16 @@ class Book
     public $price;
     public $weight;
     public $fileSize;
+    public $type;
 
-    public function __construct(string $title, string $author, int $price, $weight, $fileSize){
+    public function __construct(string $title, string $author, int $price, string $type, int $weight = 0, int $fileSize = 0 ){
      $this->title = $title;
      $this->author = $author;
      $this->price = $price;
+       $this->type = $type;
      $this->weight = $weight;
      $this->fileSize = $fileSize;
-
+    
     }
 
     public function getTitle(): string
@@ -37,4 +39,16 @@ class Book
     {
        return $this->fileSize;
     }
+  public function print(): string
+  {
+      $string = "{$this->title}, {$this->author}, ";
+      if ($this->type === 'physical')
+      {
+         $string .="Weight: {$this->weight}";
+      }elseif($this->type === 'digital'){
+         $string .="Filesize: {$this->fileSize}";
+      }
+      return $string;
+  }
 }
+
