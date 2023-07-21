@@ -5,17 +5,13 @@ class Book
     public $title;
     public $author;
     public $price;
-    public $weight;
-    public $fileSize;
-    public $type;
+  
 
-    public function __construct(string $title, string $author, int $price, string $type, int $weight = 0, int $fileSize = 0 ){
+    public function __construct(string $title, string $author, int $price ){
      $this->title = $title;
      $this->author = $author;
      $this->price = $price;
-       $this->type = $type;
-     $this->weight = $weight;
-     $this->fileSize = $fileSize;
+     
     
     }
 
@@ -31,24 +27,11 @@ class Book
     {
        return $this->price;
     }
-      public function getWeight(): int
+    
+
+   public function getPriceAsCurrency():string
     {
-       return $this->weight;
-    }
-      public function getFileSize(): int
-    {
-       return $this->fileSize;
-    }
-  public function print(): string
-  {
-      $string = "{$this->title}, {$this->author}, ";
-      if ($this->type === 'physical')
-      {
-         $string .="Weight: {$this->weight}";
-      }elseif($this->type === 'digital'){
-         $string .="Filesize: {$this->fileSize}";
-      }
-      return $string;
-  }
+     return "$" . $this->price / 100;
+    } 
 }
 

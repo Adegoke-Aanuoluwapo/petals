@@ -2,7 +2,7 @@
 
 require_once "Book.php";
 
-class DigitalBook
+class DigitalBook extends Book
 {
  
     public $title;
@@ -33,6 +33,7 @@ class DigitalBook
     {
        return $this->price;
     }
+   
   
       public function getFileSize(): int
     {

@@ -1,7 +1,7 @@
 <?php
 
 require_once "Book.php";
-class physicalBook
+class physicalBook extends Book
 {
  
     public $title;
@@ -33,6 +33,7 @@ class physicalBook
     {
        return $this->price;
     }
+  
       public function getWeight(): int
     {
        return $this->weight;
@@ -42,4 +43,5 @@ class physicalBook
     {
      return "{$this->title}, {$this->author}, weight: {$this->weight}";
     }
+   
 }
