@@ -5,4 +5,5 @@ $digitalBook = new Book('A Random Book', 'Jane Doe', 30000);
 var_dump($physicalBook). '<br>';
 print $physicalBook->title . '<br>';
 
-print $physicalBook->getAuthor();
+print $physicalBook->getAuthor(). '<br> ';
+print $physicalBook->getPrice();

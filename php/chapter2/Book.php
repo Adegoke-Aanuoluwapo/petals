@@ -5,11 +5,16 @@ class Book
     public $title;
     public $author;
     public $price;
+    public $weight;
+    public $fileSize;
 
-    public function __construct(string $title, string $author, int $price){
+    public function __construct(string $title, string $author, int $price, $weight, $fileSize){
      $this->title = $title;
      $this->author = $author;
      $this->price = $price;
+     $this->weight = $weight;
+     $this->fileSize = $fileSize;
+
     }
 
     public function getTitle(): string
@@ -23,5 +28,13 @@ class Book
      public function getPrice(): int
     {
        return $this->price;
+    }
+      public function getWeight(): int
+    {
+       return $this->weight;
+    }
+      public function getFileSize(): int
+    {
+       return $this->fileSize;
     }
 }
