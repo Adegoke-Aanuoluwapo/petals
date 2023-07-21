@@ -1,23 +1,23 @@
 <?php
 
 require_once "Book.php";
-class physicalBook
+
+class DigitalBook
 {
  
     public $title;
     public $author;
     public $price;
-    public $weight;
+    
+    public $fileSize;
     
 
-
-    public function __construct(string $title, string $author, int $price, int $weight = 0,  ){
+    public function __construct(string $title, string $author, int $price, int $fileSize = 0 ){
      $this->title = $title;
      $this->author = $author;
      $this->price = $price;
-       
-     $this->weight = $weight;
-    
+
+     $this->fileSize = $fileSize;
     
     }
 
@@ -33,13 +33,13 @@ class physicalBook
     {
        return $this->price;
     }
-      public function getWeight(): int
+  
+      public function getFileSize(): int
     {
-       return $this->weight;
+       return $this->fileSize;
     }
-   
-    public function print(): string
+      public function print(): string
     {
-     return "{$this->title}, {$this->author}, weight: {$this->weight}";
+     return "{$this->title}, {$this->author}, FileSize: {$this->fileSize}";
     }
 }
