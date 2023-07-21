@@ -223,7 +223,7 @@ function cartQuantity($sales_id){
   $sql = $con->query("SELECT SUM(quantity) AS total FROM carts WHERE sales_id = '$sales_id' ");
   //$rows = $sql->fetch_assoc();
     $rows = mysqli_fetch_all($sql);
-  return $rows['quantity'];
+  return number_format($rows['quantity']);
   //var_dump($rows['sales_id']) ;
 }
 
