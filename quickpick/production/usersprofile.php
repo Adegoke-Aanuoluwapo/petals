@@ -152,7 +152,7 @@ $price = $prices->fetch_assoc();
                                        
                                        <?php while ($items = $query->fetch_assoc()): ?>
                                         
-                                        <td><?= $prices['selling_price'] ?></td>
+                                        <td><?= $amount['amount'] ?></td>
 
                                         <?php endwhile ?>
                                     </tr>
