@@ -141,7 +141,7 @@ $price = $prices->fetch_assoc();
                                        <th>Items carted</th>
                                        <?php while ($items = $query->fetch_assoc()): ?>
                                         
-                                        <td><?= $items['title'] ?></td>
+                                        <td><?= $items['amount'] ?></td>
 
                                         <?php endwhile ?>
 
@@ -152,7 +152,7 @@ $price = $prices->fetch_assoc();
                                        
                                        <?php while ($items = $query->fetch_assoc()): ?>
                                         
-                                        <td><?= $items['title'] ?></td>
+                                        <td><?= $items['price'] ?></td>
 
                                         <?php endwhile ?>
                                     </tr>
