@@ -152,12 +152,29 @@ $price = $prices->fetch_assoc();
                                        
                                        <?php while ($items = $query->fetch_assoc()): ?>
                                         
+                                        <td><?= $price['price'] ?></td>
+
+                                        <?php endwhile ?>
+                                    </tr>
+                                      <tr>
+                                       <th></th>
+                                       
+                                       <?php while ($items = $query->fetch_assoc()): ?>
+                                        
                                         <td><?= $amount['amount'] ?></td>
 
                                         <?php endwhile ?>
                                     </tr>
 
+                                   <tr>
+                                       <th>Amount</th>
+                                       
+                                       <?php while ($items = $query->fetch_assoc()): ?>
+                                        
+                                        <td><?= $amount['amount'] ?></td>
 
+                                        <?php endwhile ?>
+                                    </tr>
 
                                  </table>
 
