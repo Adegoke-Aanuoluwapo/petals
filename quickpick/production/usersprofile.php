@@ -183,13 +183,14 @@ $price = $priceQuery->fetch_assoc();
                                   </thead>
                                   <tbody>
                                     <tr>
+                                      <td><?= $quantity['items_quantity'] ?></td>
                                       <td><?= $items['title'] ?></td>
                                        <td><?php while ($items = $query->fetch_assoc()): ?>
                                         
-                                        <td><?= $amount['amount'] ?></td>
+                                        <?= $amount['amount'] ?>
 
                                         <?php endwhile ?></td>
-                                        <td></td>
+                                        
                                     </tr>
                                   </tbody>
                                   
