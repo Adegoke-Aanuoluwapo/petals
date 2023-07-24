@@ -163,7 +163,7 @@ function QuantStock($item_id){
 
 function totalQty($item_id){
   global $con;
-  $sql = $con->query("SELECT SUM(quantity)  AS total FROM stock WHERE item_id = '$item_id'");
+  $sql = $con->query("SELECT SUM(quantity)  AS total FROM stock WHERE sales_id = '$item_id'");
   $rows = $sql->fetch_assoc();
   return $rows['total'];
 }

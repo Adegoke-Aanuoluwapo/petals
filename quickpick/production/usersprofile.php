@@ -190,6 +190,7 @@ $price = $priceQuery->fetch_assoc();
                                         <?= $amount['amount'] ?>
 
                                         <?php endwhile ?></td>
+                                        <td><?= totalQty($rows['sn']) ?></td>
                                         
                                     </tr>
                                   </tbody>
