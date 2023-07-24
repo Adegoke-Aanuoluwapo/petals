@@ -2,7 +2,7 @@
 //session_start();
 
 
-if(!isset($_SESSION['email'])){header('location: login.php'); }
+if(!isset($_SESSION['email'])){header('location: usersprofile.php'); }
 if(isset($_POST['checkout'])){
   checkOut();  
 }

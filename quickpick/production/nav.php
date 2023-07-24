@@ -6,7 +6,7 @@
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
-                <h2>Ebuy</h2>
+                <h2>Quickpick</h2>
               </div>
             </div>
             <!-- /menu profile quick info -->

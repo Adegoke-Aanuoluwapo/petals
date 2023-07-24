@@ -27,9 +27,6 @@ $price = $priceQuery->fetch_assoc();
 }
 
 
-
-
-
 ?>
 
 
