@@ -17,12 +17,12 @@ $quantityQuery = $con->query("SELECT SUM(carts.quantity) AS 'items_quantity' FRO
 
 $quantity = $quantityQuery->fetch_assoc();
 
-$amounts = $con->query("SELECT SUM(carts.quantity * carts.selling_price) AS amount FROM items LEFT JOIN carts ON items.sn = carts.item_id LEFT JOIN checkout ON carts.sales_id = checkout.sales_id WHERE checkout.user_id = '$user_id'");
+$amountQuery = $con->query("SELECT SUM(carts.quantity * carts.selling_price) AS amount FROM items LEFT JOIN carts ON items.sn = carts.item_id LEFT JOIN checkout ON carts.sales_id = checkout.sales_id WHERE checkout.user_id = '$user_id'");
 
-$amount = $amounts->fetch_assoc();
+$amount = $amountQuery->fetch_assoc();
 
-$prices = $con->query("SELECT (carts.quantity * carts.selling_price) AS price FROM items LEFT JOIN carts ON items.sn = carts.item_id LEFT JOIN checkout ON carts.sales_id = checkout.sales_id WHERE checkout.user_id = '$user_id'");
-$price = $prices->fetch_assoc();
+$priceQuery = $con->query("SELECT (carts.quantity * carts.selling_price) AS price FROM items LEFT JOIN carts ON items.sn = carts.item_id LEFT JOIN checkout ON carts.sales_id = checkout.sales_id WHERE checkout.user_id = '$user_id'");
+$price = $priceQuery->fetch_assoc();
 
 }
 
