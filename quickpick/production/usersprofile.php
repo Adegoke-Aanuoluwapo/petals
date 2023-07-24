@@ -132,7 +132,7 @@ $price = $priceQuery->fetch_assoc();
 
                                     <tr>
                                        <th>Items Quantity</th>
-                                       <td><?= $quantity['items_quantity'] ?></a></td>
+                                       <td><?= $quantity['items_quantity'] ?></td>
                                     </tr>
                                      <tr>
                                        <th>Items carted</th>
@@ -147,7 +147,7 @@ $price = $priceQuery->fetch_assoc();
                                     <tr>
                                        <th>Prices</th>
                                        
-                                       <?php while ($items = $query->fetch_assoc()): ?>
+                                       <?php while ($prices = $query->fetch_assoc()): ?>
                                         
                                         <td><?= $price['price'] ?></td>
 
@@ -183,7 +183,13 @@ $price = $priceQuery->fetch_assoc();
                                   </thead>
                                   <tbody>
                                     <tr>
-                                      <td></td>
+                                      <td><?= $items['title'] ?></td>
+                                       <td><?php while ($items = $query->fetch_assoc()): ?>
+                                        
+                                        <td><?= $amount['amount'] ?></td>
+
+                                        <?php endwhile ?></td>
+                                        <td></td>
                                     </tr>
                                   </tbody>
                                   
