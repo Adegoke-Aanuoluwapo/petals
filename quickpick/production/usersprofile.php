@@ -174,6 +174,21 @@ $price = $priceQuery->fetch_assoc();
                                     </tr>
 
                                  </table>
+                                 <table>
+                                  <thead>
+                                        <tr><th>Items</th>
+                                        <th>Quantity</th>
+                                        <th>Prices</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td></td>
+                                    </tr>
+                                  </tbody>
+                                  
+                                  
+                                 </table>
 
                   </div>
                 </div>
