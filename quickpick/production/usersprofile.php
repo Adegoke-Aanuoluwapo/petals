@@ -24,6 +24,9 @@ $amount = $amountQuery->fetch_assoc();
 $priceQuery = $con->query("SELECT (carts.quantity * carts.selling_price) AS price FROM items LEFT JOIN carts ON items.sn = carts.item_id LEFT JOIN checkout ON carts.sales_id = checkout.sales_id WHERE checkout.user_id = '$user_id'");
 $price = $priceQuery->fetch_assoc();
 
+$detailQuery =$con->query("SELECT items.title, carts.quantity, carts.selling_price FROM items LEFT JOIN carts ON items.sn = carts.item_id LEFT JOIN checkout ON carts.sales_id = checkout.sales_id WHERE checkout.user_id = '$user_id'");
+$detail = $detailQuery->fetch_assoc();
+
 }
 
 
