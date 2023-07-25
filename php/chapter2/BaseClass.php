@@ -1,6 +1,6 @@
 <?php
-
-class BaseClass
+require_once "SubClass.php";
+class BaseClass  extends SubClass
 {
-  
+   
 }
