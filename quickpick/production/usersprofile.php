@@ -156,8 +156,9 @@ $detail = $detailQuery->fetch_assoc();
 
                                         <?php endwhile ?>
                                     </tr>
+                                    <tr><td><?= $detail($rows['sn' ], $sales_id) ?></td></tr>
                                       <tr>
-                                       <th></th>
+                                       
                                        
                                        <?php while ($items = $query->fetch_assoc()): ?>
                                         
@@ -196,6 +197,7 @@ $detail = $detailQuery->fetch_assoc();
                                         <td><?= totalQty($rows['sn']) ?></td>
                                         
                                     </tr>
+                                    
                                   </tbody>
                                   
                                   
