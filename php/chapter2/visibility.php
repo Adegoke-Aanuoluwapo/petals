@@ -4,4 +4,5 @@
  require_once "SubClass.php";
 
  $baseObject = new BaseClass();
- print $baseObject->publicProperty;
+ print $baseObject->getprotectedProperty();
+ 
