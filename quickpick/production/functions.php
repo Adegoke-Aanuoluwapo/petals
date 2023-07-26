@@ -1,5 +1,5 @@
 <?php 
-session_start();
+
 include("connect.php");
 
 if(isset($_GET['val'])){
@@ -217,20 +217,20 @@ function checkOut(){
   return;
 }
 //var_dump($_SESSION['sales_id']);
-function cartQuantity($sales_id){ 
+function cartAmount($sales_id){ 
   global $con;
-// $sql = $con->query("SELECT sales_id FROM checkout WHERE user_id = $user_id ");
-  $sql = $con->query("SELECT SUM(quantity) AS total FROM carts WHERE sales_id = '$sales_id' ");
-  //$rows = $sql->fetch_assoc();
-    $rows = mysqli_fetch_assoc($sql);
-  return number_format($rows['quantity']);
-  //var_dump($rows['sales_id']) ;
+
+  $sql = $con->query("SELECT SUM(selling_price) AS total FROM carts WHERE sales_id = '$sales_id' ");
+  
+    $quant = $sql->fetch_assoc();
+ return $quant['total'];
+ 
 }
 
-function cartItems($sales_id){
+function cartItems($item_id){
   global $con;
-  $sql = $con->query("SELECT item_id FROM carts WHERE item_id = '$sales_id' ");
-  $rows= mysqli_fetch_assoc($sql);
+  $sql = $con->query("SELECT item_id FROM  carts WHERE sales_id = '$item_id' ");
+  $rows= $sql->fetch_assoc();
   return $rows[ 'item_id']; 
 }
 

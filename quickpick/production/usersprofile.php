@@ -147,56 +147,31 @@ $detail = $detailQuery->fetch_assoc();
 
                                     </tr>
 
-                                    <tr>
-                                       <th>Prices</th>
-                                       
-                                       <?php while ($prices = $query->fetch_assoc()): ?>
-                                        
-                                        <td><?= $price['price'] ?></td>
-
-                                        <?php endwhile ?>
-                                    </tr>
-                                    <tr><td><?= $detail($rows['sn' ], $sales_id) ?></td></tr>
-                                      <tr>
-                                       
-                                       
-                                       <?php while ($items = $query->fetch_assoc()): ?>
-                                        
-                                        <td><?= $amount['amount'] ?></td>
-
-                                        <?php endwhile ?>
-                                    </tr>
-
-                                   <tr>
-                                       <th>Amount</th>
-                                       
-                                       <?php while ($items = $query->fetch_assoc()): ?>
-                                        
-                                        <td><?= $amount['amount'] ?></td>
-
-                                        <?php endwhile ?>
-                                    </tr>
-
+                                   
                                  </table>
+                                 <h4>Transaction History</h4>
                                  <table>
                                   <thead>
-                                        <tr><th>Items</th>
-                                        <th>Quantity</th>
-                                        <th>Prices</th>
+                                        <tr><th>Transaction ID</th>
+                                        <th>Amount</th>
+                                        <th>Cart Items</th>
                                       </tr>
                                   </thead>
                                   <tbody>
+                                    <?php 
+                                   
+                                    $i = 1; $sql = $con->query("SELECT * FROM checkout WHERE user_id = '$user_id' ");
+                                    while ($rows = mysqli_fetch_assoc($sql)){
+                                    
+                                    ?>
                                     <tr>
-                                      <td><?= $quantity['items_quantity'] ?></td>
-                                      <td><?= $items['title'] ?></td>
-                                       <td><?php while ($items = $query->fetch_assoc()): ?>
-                                        
-                                        <?= $amount['amount'] ?>
-
-                                        <?php endwhile ?></td>
-                                        <td><?= totalQty($rows['sn']) ?></td>
-                                        
+                                      
+                                      <td><?= $rows['sales_id'] ?></td>
+                                   
+                                         <td><strike>N</strike><?= number_format(cartAmount($rows['sales_id'])) ?></td><br>
+                                         <td><?= cartItems($rows['sales_id']) ?></td>
                                     </tr>
+                                  <?php  } ?>
                                     
                                   </tbody>
                                   

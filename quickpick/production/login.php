@@ -30,7 +30,7 @@ loginUser();
 
     <title>Gentelella Alela! | </title>
 
-   <?php include("header.php")?>
+  <?include ("header.php") ?>
   </head>
 
   <body class="login">
@@ -41,22 +41,18 @@ loginUser();
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
-          <form method="POST">
+            <form method="POST">
               <h1>Login Form</h1>
               <div>
-                <input type="email" class="form-control" placeholder="Email" required="" name="email" />
+                <input type="email" class="form-control" placeholder="email" name="email" required="" />
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Password" required="" name="password" />
+                <input type="password" class="form-control" name="password" placeholder="Password" required="" />
               </div>
               <div>
-                
-                <div>
-                <button type="submit" name="login" class="btn btn-success" >Log in</button>
-                  <a class="reset_pass" href="#">Lost your password?</a>
+                <button class="btn btn-default submit" name="login">Log in</button>
+                <a class="reset_pass" href="#">Lost your password?</a>
               </div>
-              
-             
 
               <div class="clearfix"></div>
 
@@ -68,7 +64,10 @@ loginUser();
                 <div class="clearfix"></div>
                 <br />
 
-              
+                <div>
+                  <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
+                  <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 4 template. Privacy and Terms</p>
+                </div>
               </div>
             </form>
           </section>
@@ -76,28 +75,24 @@ loginUser();
 
         <div id="register" class="animate form registration_form">
           <section class="login_content">
-             <form id="demo-form2" method="post" data-parsley-validate class="form-horizontal form-label-left">
+            <form method="POST">
               <h1>Create Account</h1>
               <div>
-               
-                <input type="text" class="form-control" placeholder="Enter your name" required="" name="name" />
+                <input type="text" class="form-control" name="name" placeholder="name" required="" />
+              </div>
+              <div>
+                <input type="email" class="form-control" name="email" placeholder="Email" required="" />
+              </div>
+              <div>
+                <input type="tel" class="form-control" name="phone" placeholder="phonenumber" required="" />
+              </div><br/>
+               <div>
+                <input type="password" class="form-control" name="password" placeholder="password" required="" />
+                </div>
+              <div>
+                <button type="submit" name="AddUsers" class="btn btn-default submit" >Submit</button>
               </div>
 
-              <div>
-                <input type="email" class="form-control" placeholder="Email" required="" name="email" />
-              </div>
-
-              <div>
-                <input type="tel" class="form-control" placeholder="Phone number" required="" name="phone" />
-              </div>
-              <br>
-
-              <div>
-                <input type="password" class="form-control" placeholder="Password" required=""  name="password"/>
-              </div>
-              <div>
-                <button type="submit" name="AddUsers" class="btn btn-success" >Submit</button>
-              </div>
               <div class="clearfix"></div>
 
               <div class="separator">
@@ -108,7 +103,10 @@ loginUser();
                 <div class="clearfix"></div>
                 <br />
 
-               
+                <div>
+                  <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
+                  <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 4 template. Privacy and Terms</p>
+                </div>
               </div>
             </form>
           </section>
@@ -117,3 +115,4 @@ loginUser();
     </div>
   </body>
 </html>
+
