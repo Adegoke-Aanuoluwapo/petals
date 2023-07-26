@@ -9,8 +9,4 @@ $song = new Song('Yesterday', 100);
 
 $fakeSong = 'This is not a song.. it is a string';
 
-$beatleSongs->songs[] = $song;
-$beatleSongs->songs[] = $fakeSong;
-
-var_dump($beatleSongs->songs);
 
