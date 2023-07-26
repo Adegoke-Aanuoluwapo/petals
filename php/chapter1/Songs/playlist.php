@@ -3,7 +3,7 @@
 class Playlist
 {
 
-    public $songs = [];
+    private $songs = [];
 
     public function addSong(Song $song): void
     {
