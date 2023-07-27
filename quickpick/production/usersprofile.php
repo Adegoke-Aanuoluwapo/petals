@@ -139,11 +139,18 @@ $detail = $detailQuery->fetch_assoc();
                                     </tr>
                                      <tr>
                                        <th>Items carted</th>
-                                       <?php while ($items = $query->fetch_assoc()): ?>
+                                        <?php while ($items = $query->fetch_assoc()): ?>
                                         
                                         <td><?= $items['title'] ?></td>
 
                                         <?php endwhile ?>
+
+                                      
+                                       
+                                        
+                                       
+
+                                      
 
                                     </tr>
 
@@ -169,7 +176,11 @@ $detail = $detailQuery->fetch_assoc();
                                       <td><?= $rows['sales_id'] ?></td>
                                    
                                          <td><strike>N</strike><?= number_format(cartAmount($rows['sales_id'])) ?></td><br>
-                                         <td><?= cartItems($rows['sales_id']) ?></td>
+                                         <?php while ($items = $sql->fetch_assoc()): ?>
+                                         <td><?php $x = cartItems($rows['sales_id']); 
+                                         echo cartTitle($x) ?></td>
+                                              <?php endwhile ?>
+                                         
                                     </tr>
                                   <?php  } ?>
                                     

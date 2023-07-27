@@ -220,17 +220,26 @@ function checkOut(){
 function cartAmount($sales_id){ 
   global $con;
 
-  $sql = $con->query("SELECT SUM(selling_price) AS total FROM carts WHERE sales_id = '$sales_id' ");
+  $sql = $con->query("SELECT SUM(quantity*selling_price) AS total FROM carts WHERE sales_id = '$sales_id' ");
   
     $quant = $sql->fetch_assoc();
  return $quant['total'];
  
 }
 
-function cartItems($item_id){
+function cartItems($sales_id){
   global $con;
-  $sql = $con->query("SELECT item_id FROM  carts WHERE sales_id = '$item_id' ");
-  $rows= $sql->fetch_assoc();
+  $sql = $con->query("SELECT item_id FROM carts WHERE sales_id = '$sales_id' ");
+  $rows = $sql->fetch_assoc();
+ // $sql = $con->query("SELECT title FROM items WHERE title = '$item_id'");
   return $rows[ 'item_id']; 
 }
-
+function cartTitle($title){
+  global $con;
+   $sql = $con->query("SELECT title FROM items WHERE items.sn = '$title'");
+   while($rows = $sql->fetch_assoc()){
+    echo $rows['title'];
+   }
+   
+   
+}

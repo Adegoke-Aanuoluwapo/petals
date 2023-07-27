@@ -1,8 +1,8 @@
 <?php include("functions.php");
-//session_start();
+session_start();
 
 
-if(!isset($_SESSION['email'])){header('location: usersprofile.php'); }
+if(isset($_SESSION['email'])){header("cart.php"); }
 if(isset($_POST['checkout'])){
   checkOut();  
 }
@@ -91,8 +91,8 @@ if(isset($_POST['checkout'])){
                         </thead>
 
                         <tbody>
-                        <?php $sales_id = $_SESSION['sales_id'];
-                         $i=1; $sql = $con ->query("SELECT * FROM carts WHERE sales_id='$sales_id'") ;
+                        <?php //$sales_id = $_SESSION['sales_id'];
+                         $i=1; $sql = $con ->query("SELECT * FROM carts ") ;
 										  while($rows = $sql->fetch_assoc()) {
                                             $x = $i++;
                             ?>
