@@ -1,5 +1,7 @@
-<?php include("functions.php");
-session_start();
+<?php session_start();
+if(!isset($_SESSION['sales_id'])){header('location: addmarket.php'); }
+include("functions.php");
+
 
 if(isset($_POST['deletecat'])){
   global $con;
@@ -95,8 +97,8 @@ if(isset($_POST['checkout'])){
                         </thead>
 
                         <tbody>
-                        <?php //$sales_id = $_SESSION['sales_id'];
-                         $i=1; $sql = $con ->query("SELECT * FROM carts ") ;
+                        <?php  $sales_id = $_SESSION['sales_id'];
+                         $i=1; $sql = $con ->query("SELECT * FROM carts WHERE sales_id='$sales_id' ");
 										  while($rows = $sql->fetch_assoc()) {
                                             $x = $i++;
                             ?>

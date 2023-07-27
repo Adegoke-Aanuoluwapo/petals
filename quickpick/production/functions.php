@@ -117,14 +117,13 @@ function loginUser(){
   $password = $_POST['password'];
 
   if(!empty($email) && !empty($password)){
-    $sql = "SELECT * FROM users WHERE email = '$email'  LIMIT 1";
+    $sql = "SELECT * FROM users WHERE email = '$email' ";
     $result = mysqli_query($con, $sql);
     
-      if($result && mysqli_num_rows($result) > 0){
+      if($result && mysqli_num_rows($result) == 1){
         $user_data = mysqli_fetch_assoc($result);
         if($user_data['password'] == $password)
         {
-          $_SESSION['email'] = $user_data['email'];
           $_SESSION['user_id'] = $user_data['user_id'];
           header("location: index.php"); exit;
         }
@@ -235,7 +234,7 @@ function cartItems($sales_id){
   $sql = $con->query("SELECT item_id FROM carts WHERE sales_id = '$sales_id' ");
  
   while( $rows = $sql->fetch_assoc()){
-      echo $rows[ 'item_id'];
+      echo cartTitle($rows[ 'item_id']).', ';
   }
  // $sql = $con->query("SELECT title FROM items WHERE title = '$item_id'");
    
@@ -244,7 +243,7 @@ function cartTitle($title){
   global $con;
    $sql = $con->query("SELECT title FROM items WHERE sn = '$title'");
   while($rows = $sql->fetch_assoc()){
-return $rows['sn'];
+return $rows['title'];
   } 
      
    
