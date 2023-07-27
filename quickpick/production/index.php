@@ -15,7 +15,7 @@ if(!isset($_SESSION['user_id'])){header('location: login.php'); }
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" href="images/favicon.ico" type="image/ico" />
 
-    <title>Gentelella Alela!</title>
+    <title>Home Page</title>
 <?php include("header.php") ?>
    
   </head>

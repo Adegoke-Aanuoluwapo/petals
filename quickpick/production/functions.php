@@ -244,9 +244,13 @@ function cartTitle($title){
    $sql = $con->query("SELECT title FROM items WHERE sn = '$title'");
   while($rows = $sql->fetch_assoc()){
 return $rows['title'];
-  } 
-     
+  }   
    
-   
-   
+}
+function totalUsers(){
+  global $con;
+  $sql = $con->query("SELECT * FROM users");
+  $num = $sql->fetch_assoc();
+  return m
+
 }
