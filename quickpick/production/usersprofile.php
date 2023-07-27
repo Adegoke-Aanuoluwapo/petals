@@ -176,10 +176,10 @@ $detail = $detailQuery->fetch_assoc();
                                       <td><?= $rows['sales_id'] ?></td>
                                    
                                          <td><strike>N</strike><?= number_format(cartAmount($rows['sales_id'])) ?></td><br>
-                                         <?php while ($items = $sql->fetch_assoc()): ?>
+                                         
                                          <td><?php $x = cartItems($rows['sales_id']); 
                                          echo cartTitle($x) ?></td>
-                                              <?php endwhile ?>
+                                              
                                          
                                     </tr>
                                   <?php  } ?>
