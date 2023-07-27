@@ -1,5 +1,6 @@
 <?php 
 
+
 include("connect.php");
 
 if(isset($_GET['val'])){
@@ -200,6 +201,7 @@ function AddCart(){
      $quantity = $_POST['quantity'];
      if(!isset($_SESSION['sales_id'])){$_SESSION['sales_id']=rand(); }
      $sales_id = $_SESSION['sales_id'];
+
       $selling_price = $_POST['selling_price'];
 
       $sql= "INSERT INTO carts(item_id, quantity,sales_id, selling_price) VALUES( '$item_id', '$quantity', '$sales_id', '$selling_price')";
@@ -209,6 +211,7 @@ function AddCart(){
 
 function checkOut(){
   global $con;
+  
   $sales_id = $_SESSION['sales_id'];
   $user_id = $_SESSION['user_id'];
   $sql = "INSERT INTO checkout(sales_id, user_id) values('$sales_id', '$user_id')";
@@ -230,16 +233,21 @@ function cartAmount($sales_id){
 function cartItems($sales_id){
   global $con;
   $sql = $con->query("SELECT item_id FROM carts WHERE sales_id = '$sales_id' ");
-  $rows = $sql->fetch_assoc();
+ 
+  while( $rows = $sql->fetch_assoc()){
+      echo $rows[ 'item_id'];
+  }
  // $sql = $con->query("SELECT title FROM items WHERE title = '$item_id'");
-  return $rows[ 'item_id']; 
+   
 }
 function cartTitle($title){
   global $con;
-   $sql = $con->query("SELECT title FROM items WHERE items.sn = '$title'");
-   while($rows = $sql->fetch_assoc()){
-    echo $rows['title'];
-   }
+   $sql = $con->query("SELECT title FROM items WHERE sn = '$title'");
+  while($rows = $sql->fetch_assoc()){
+return $rows['sn'];
+  } 
+     
+   
    
    
 }

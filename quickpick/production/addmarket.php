@@ -1,9 +1,10 @@
  <?php 
+ session_start();
  include("functions.php");
 
 
 
-if(!isset($_SESSION['email'])){}
+if(!isset($_SESSION['email'])){header("login.php");}
 
   if(isset($_POST['AddToCart'])){
   global $con;

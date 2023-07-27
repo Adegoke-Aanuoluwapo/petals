@@ -1,7 +1,11 @@
 <?php include("functions.php");
 session_start();
 
-
+if(isset($_POST['deletecat'])){
+  global $con;
+  $sn = $_POST['deletecat'];
+  $sql = $con->query("DELETE  FROM carts WHERE sn ='$sn'");
+}
 if(isset($_SESSION['email'])){header("cart.php"); }
 if(isset($_POST['checkout'])){
   checkOut();  
