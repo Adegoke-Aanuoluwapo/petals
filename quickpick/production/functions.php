@@ -249,8 +249,8 @@ return $rows['title'];
 }
 function totalUsers(){
   global $con;
-  $sql = $con->query("SELECT * FROM users");
+  $sql = $con->query("SELECT COUNT(users.sn) FROM users");
   $num = $sql->fetch_assoc();
-  return m
+  return $num;
 
 }
