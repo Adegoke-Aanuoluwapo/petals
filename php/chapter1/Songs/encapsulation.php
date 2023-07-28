@@ -10,3 +10,5 @@ $song = new Song('Yesterday', 100);
 $fakeSong = 'This is not a song.. it is a string';
 
 
+$beatSongs = new Playlist();
+$beatSongs-> 

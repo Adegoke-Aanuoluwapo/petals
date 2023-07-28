@@ -9,8 +9,8 @@ class Playlist
     {
        $this->songs[] = $song; 
     }
-    public function getLength(): int
+    public function getSongs(): array
     {
-        return count($this->songs);
+        return $this->songs;
     }
 }
