@@ -11,4 +11,5 @@ $fakeSong = 'This is not a song.. it is a string';
 
 
 $beatSongs = new Playlist();
-$beatSongs-> 
+$beatSongs->addSong($song);
+var_dump($beatSongs->getSongs()); 
