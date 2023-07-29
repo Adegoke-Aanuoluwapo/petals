@@ -4,7 +4,7 @@
 class Song
 {
   public $name;
-  public $numberofPlays;
+  public int $numberofPlays;
 
   public function __construct(string $name, int $numberofPlays)
   {
