@@ -25,4 +25,7 @@ class Song
   }
 
   public function getRating():int|float
+  {
+    return $this->rating;
+  }
 }
