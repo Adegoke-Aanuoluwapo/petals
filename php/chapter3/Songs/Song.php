@@ -15,4 +15,14 @@ class Song
     $this->name = $name; 
     $this->numberofPlays = $numberofPlays; 
   }
+
+
+  public function setRating(int|float $rating):void{
+    $rating = max(0, $rating);
+    $this->rating = min(5, $rating);
+
+
+  }
+
+  public function getRating():int|float
 }
