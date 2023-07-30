@@ -1,3 +1,5 @@
 <?php
 
-define('CREATED', 201);
+const CREATED = 201;
+
+print CREATED;
