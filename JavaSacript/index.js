@@ -13,8 +13,9 @@ document.getElementById("ylabel").innerHTML = y;
 document.getElementById("zlabel").innerHTML = z;
 
 }
-let a = 0;
+let a = false;
 let b = true;
 
+
 document.getElementById("bol").innerHTML = Boolean(a);
-document.getElementById("bol").innerHTML = Boolean(b);
+document.getElementById("greet").innerHTML = Boolean(b);
