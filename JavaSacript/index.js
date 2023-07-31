@@ -13,3 +13,8 @@ document.getElementById("ylabel").innerHTML = y;
 document.getElementById("zlabel").innerHTML = z;
 
 }
+let a = 0;
+let b = true;
+
+document.getElementById("bol").innerHTML = Boolean(a);
+document.getElementById("bol").innerHTML = Boolean(b);
