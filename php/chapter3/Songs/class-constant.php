@@ -1,5 +1,3 @@
 <?php
 
-const CREATED = 201;
-
-print CREATED;
+require_once 'Http.php';
