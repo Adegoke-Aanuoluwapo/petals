@@ -21,6 +21,12 @@ public class HelloWorld
         {
             Console.WriteLine("20 is greater than 18");
         }
+        int x = 20;
+        int y = 18;
+        if(x > y)
+        {
+            Console.WriteLine("y is greater than x");
+        }
 
  }
 }
