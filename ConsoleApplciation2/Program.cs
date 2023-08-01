@@ -14,7 +14,13 @@ public class HelloWorld
         Console.WriteLine(phrase.ToUpper());
         Console.WriteLine(phrase.ToLower());
         Console.WriteLine(phrase.Contains("Academy"));
-        Console.WriteLine(phrase[3]);
+        Console.WriteLine(phrase.Substring(8));
+        Console.WriteLine(phrase.Substring(8,3));
+        Console.WriteLine( 5 / 2.0);
+        if(20 > 18)
+        {
+            Console.WriteLine("20 is greater than 18");
+        }
 
  }
 }

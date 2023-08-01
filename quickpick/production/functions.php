@@ -249,8 +249,7 @@ return $rows['title'];
 }
 function totalUsers(){
   global $con;
-  $sql = $con->query("SELECT * FROM users");
+  $sql = $con->query("SELECT * FROM users ");
   	return mysqli_num_rows($sql);
-
-
+    
 }

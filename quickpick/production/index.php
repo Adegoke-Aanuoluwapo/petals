@@ -1,6 +1,8 @@
 <?php 
+
 session_start();
 if(!isset($_SESSION['user_id'])){header('location: login.php'); }
+include("functions.php");
 
 
 
@@ -26,7 +28,7 @@ if(!isset($_SESSION['user_id'])){header('location: login.php'); }
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Quiclpick</span></a>
+              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Quickpick</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -42,7 +44,7 @@ if(!isset($_SESSION['user_id'])){header('location: login.php'); }
           <div class="tile_count">
             <div class="col-md-2 col-sm-4  tile_stats_count">
               <span class="count_top"><i class="fa fa-user"></i> Total Users</span>
-              <div class="count"></div>
+              <div class="count"><?= totalUsers() ?></div>
               <span class="count_bottom"><i class="green">4% </i> From last Week</span>
             </div>
             <div class="col-md-2 col-sm-4  tile_stats_count">
