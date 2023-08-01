@@ -27,6 +27,15 @@ public class HelloWorld
         {
             Console.WriteLine("y is greater than x");
         }
+        int time = 20;
+        if (time < 18)
+        {
+            Console.WriteLine("Good Day");  
+        }
+        else
+        {
+            Console.WriteLine("Good Morning"); 
+        }
 
  }
 }
