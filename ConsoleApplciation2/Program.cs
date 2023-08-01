@@ -36,6 +36,8 @@ public class HelloWorld
         {
             Console.WriteLine("Good Morning"); 
         }
+  string[] cars = { "Volvo", "BMW", "Ford", "Mazda" };
 
+  Console.WriteLine(cars);
  }
 }
