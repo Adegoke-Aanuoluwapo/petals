@@ -38,6 +38,10 @@ public class HelloWorld
         }
   string[] cars = { "Volvo", "BMW", "Ford", "Mazda" };
 
-  Console.WriteLine(cars);
+  Console.WriteLine(cars[3]);
+  for (int i =0; i < cars.Length; i++)
+  {
+    Console.WriteLine(cars[i]);
+  }
  }
 }
