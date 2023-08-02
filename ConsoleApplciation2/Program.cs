@@ -43,5 +43,9 @@ public class HelloWorld
   {
     Console.WriteLine(cars[i]);
   }
+  foreach (string i in cars)
+  {
+    Console.WriteLine(i);
+  }
  }
 }
