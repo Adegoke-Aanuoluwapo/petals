@@ -47,5 +47,10 @@ public class HelloWorld
   {
     Console.WriteLine(i);
   }
+  Array.Sort(cars);
+  foreach(string i in cars)
+  {
+    Console.WriteLine(i);
+  }
  }
 }
