@@ -8,6 +8,10 @@ namespace MyApplication
  
 public class HelloWorld
 {
+  static void MyMethod(string fname, int age)
+  {
+   Console.WriteLine(fname + " is " + age);
+  }
     public static void Main(string[] args)
     {   
         string phrase = "Giraffe Academy";
@@ -47,10 +51,7 @@ public class HelloWorld
   {
     Console.WriteLine(cars[i]);
   }
-  foreach (string i in cars)
-  {
-    Console.WriteLine(i);
-  }
+ 
   Array.Sort(cars);
   foreach(string i in cars)
   {
@@ -66,10 +67,24 @@ public class HelloWorld
    Console.WriteLine(numbers[1, 1]);  // Outputs 6
    numbers[0, 0] = 5;
    Console.WriteLine(numbers[0, 0]);
+   foreach (string i in cars)
+   {
+    Console.WriteLine(i);
+   }
    foreach (int i in numbers)
    {
     Console.WriteLine(i);
    }
+   for (int i = 0; i < numbers.GetLength(0); i++)
+   {
+    for (int j = 0; j < numbers.GetLength(1); j++)
+    {
+     Console.WriteLine(numbers[i, j]);
+    }
+   }
+   MyMethod("Liam", 23);
+   MyMethod("Jenny", 45);
+   MyMethod("Anja", 15);
   }
 }
 }
