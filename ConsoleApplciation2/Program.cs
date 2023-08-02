@@ -1,6 +1,10 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using System;
+using System.Linq;
+
+namespace MyApplication
+{
  
 public class HelloWorld
 {
@@ -52,5 +56,20 @@ public class HelloWorld
   {
     Console.WriteLine(i);
   }
- }
+   int[] myNumbers = { 5, 1, 8, 9 };
+   Console.WriteLine(myNumbers.Max());  // returns the largest value
+   Console.WriteLine(myNumbers.Min());  // returns the smallest value
+   Console.WriteLine(myNumbers.Sum());
+   int[,] numbers = { { 1, 4, 2 }, { 3, 6, 8 } };
+
+   Console.WriteLine(numbers[0, 2]);  // Outputs 2
+   Console.WriteLine(numbers[1, 1]);  // Outputs 6
+   numbers[0, 0] = 5;
+   Console.WriteLine(numbers[0, 0]);
+   foreach (int i in numbers)
+   {
+    Console.WriteLine(i);
+   }
+  }
+}
 }
