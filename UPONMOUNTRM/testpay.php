@@ -5,70 +5,42 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>Test Pay</title>
 </head>
 
 <body>
-  <form action="reg.html" method="GET">
-    <div>
-      <label for="name">First Name:</label><br>
-      <input type="text" ; placeholder="FirstName" input class="fname"><br>
-    </div>
-    <div>
-      <label for="Lastname">Last Name</label><br>
-      <input type="text" ; placeholder="Last Name" ; input class="Lname"><br>
-    </div>
-    <div>
-      <label for="Number">Phone Number</label><br>
-      <input type="number" ; placeholder="Phone Number" input class="number"><br>
-    </div>
-    <div>
-      <label for="mail">Email</label><br>
-      <input type="text" ; placeholder="Email" input class="Email"><br>
-    </div>
-    <div>
-      <label for="Date">Date of Birth</label>:<br>
-      <input type="date" ; placeholder="date" input class="fname" f><br>
-    </div>
-    <div>
-      <label for="color">Select your favorite color</label><br>
-      <input type="color" ; placeholder="Color"><button class="color" ; value="rgb">color</button><br>
-    </div>
-    <div>
-      <label for="Sex">Sex</label>:<br>
-      <select name="sex" ; id="sex">
-        <option value="male">MALE</option>
-        <option value="female">FEMALE</option>
-      </select><br>
-    </div>
+  <div class="container">
+    <div class="header">Partner with God</div>
+    <form id="paymentForm">
+      <div class="details" style="display: block; ;">
+        <div class="box" style="margin-left: 170px;">
+          <span class="details">Email</span>
+          <input type="email" placeholder="Enter Your Email" name="Email" id="email-address" required>
 
-    <button>Submit</button>
+        </div>
+        <div class="box" style="margin-left: 170px;">
+          <span class="details">Amount</span>
+          <input type="tel" placeholder="Enter Amount" name="Password" id="amount" required>
+        </div>
+        <div class="box" style="margin-left: 170px;">
+          <span class="details">First Name</span>
+          <input type="text" placeholder="Enter First Name" name="firstname" required id="first-name" />
+        </div>
+        <div class="box" style="margin-left: 170px;">
+          <span class="details">Last Name</span>
+          <input type="text" placeholder="Enter Lastname" name="firstname" id="last-name" required id="first-name" />
+        </div>
+       
+        <div class="button">
+          <button type="submit" onclick="payWithPaystack()"> Pay </button>
+
+        </div>
+      </div>
+    </form>
+  </div>
 
 
-  </form>
-
-
-  <form id="paymentForm">
-    <div class="form-group">
-      <label for="email">Email Address</label>
-      <input type="email" id="email-address" required />
-    </div>
-    <div class="form-group">
-      <label for="amount">Amount</label>
-      <input type="tel" id="amount" required />
-    </div>
-    <div class="form-group">
-      <label for="first-name">First Name</label>
-      <input type="text" id="first-name" />
-    </div>
-    <div class="form-group">
-      <label for="last-name">Last Name</label>
-      <input type="text" id="last-name" />
-    </div>
-    <div class="form-submit">
-      <button type="submit" onclick="payWithPaystack()"> Pay </button>
-    </div>
-  </form>
   <script>
     const paymentForm = document.getElementById('paymentForm');
     paymentForm.addEventListener("submit", payWithPaystack, false);
