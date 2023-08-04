@@ -10,6 +10,10 @@
 </head>
 
 <body>
+  
+
+
+
   <div class="container">
     <div class="header">Partner with God</div>
     <form id="paymentForm">
@@ -31,9 +35,10 @@
           <span class="details">Last Name</span>
           <input type="text" placeholder="Enter Lastname" name="firstname" id="last-name" required id="first-name" />
         </div>
-       
+
         <div class="button">
           <button type="submit" onclick="payWithPaystack()"> Pay </button>
+          
 
         </div>
       </div>
