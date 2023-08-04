@@ -28,7 +28,7 @@
               <li><a href="blog-2.html">Our Blog</a></li>
               <li><a href="page-pricing-1.html">Plans &amp; Pricing</a></li>
               
-              <li><a href="blog-1.html">News &amp; Events</a></li>
+             
             </ul>
           </div>
           <div class="col-lg-3 width-20 mb-30">
@@ -36,16 +36,14 @@
             <ul class="menu-footer mt-20">
               <li><a href="page-faqs-1.html">FAQs</a></li>
               
-              <li><a href="page-contact.html">Contact Us</a></li>
-              <li><a href="#">Support Center</a></li>
+             
             </ul>
           </div>
           <div class="col-lg-3 width-16">
             <h4 class="text-heading-5">Useful links</h4>
             <ul class="menu-footer mt-20">
               <li><a href="#">Request an offer</a></li>
-              <li><a href="#">How it works</a></li>
-              <li><a href="page-pricing-2.html">Pricing</a></li>
+             
            
             </ul>
           </div>

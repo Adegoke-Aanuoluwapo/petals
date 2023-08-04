@@ -13,17 +13,17 @@ include("nav.php");
         <div class="container mt-90">
           <div class="row">
             <div class="col-lg-4 col-sm-12 pr-30">
-              <div class="card-grid-style-4"><span class="tag-dot">Company</span><a class="text-heading-4" href="blog-single.html">We can blend colors multiple ways, the most common</a>
+              <div class="card-grid-style-4"><span class="tag-dot">Hospital</span><a class="text-heading-4" href="blog-single.html">We can blend colors multiple ways, the most common</a>
                 <div class="grid-4-img"><a href="blog-single.html"><img src="assets/imgs/page/homepage1/img-news-1.png" alt="Agon"></a></div>
               </div>
             </div>
             <div class="col-lg-4 col-sm-12 pr-30">
-              <div class="card-grid-style-4"><span class="tag-dot">Marketing Event</span><a class="text-heading-4" href="blog-single.html">How To Blow Through Capital At An Incredible Rate</a>
+              <div class="card-grid-style-4"><span class="tag-dot">Villages</span><a class="text-heading-4" href="blog-single.html">How To Blow Through Capital At An Incredible Rate</a>
                 <div class="grid-4-img"><a href="blog-single.html"><img src="assets/imgs/page/homepage1/img-news-2.png" alt="Agon"></a></div>
               </div>
             </div>
             <div class="col-lg-4 col-sm-12 pr-30">
-              <div class="card-grid-style-4"><span class="tag-dot">Customer Services</span><a class="text-heading-4" href="blog-single.html">Design Studios That Everyone Should Know About?</a>
+              <div class="card-grid-style-4"><span class="tag-dot">Prisons</span><a class="text-heading-4" href="blog-single.html">Design Studios That Everyone Should Know About?</a>
                 <div class="grid-4-img color-bg-4"><a href="blog-single.html"><img src="assets/imgs/page/homepage1/img-news-3.png" alt="Agon"></a></div>
               </div>
             </div>

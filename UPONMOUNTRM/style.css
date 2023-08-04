@@ -10,7 +10,7 @@
   display: flex;
   height: 100vh;
   justify-content: center;
-  background: rgb(218, 128, 10);
+ color: var(--light) !important;
   align-items: center;
   padding: 10px
  }
@@ -20,7 +20,7 @@
   width: 100%;
   padding: 25px 30px;
   border-radius: 25px;
-  background: rgb(200, 120, 20)
+  background: #FDE2E4
  }
 
  .container .header {
@@ -87,6 +87,7 @@
 
  .button {
   text-align: center;
+  cursor: pointer;
 
  }
 

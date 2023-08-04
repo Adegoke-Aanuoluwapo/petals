@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  
+
 
 
 
@@ -37,8 +37,8 @@
         </div>
 
         <div class="button">
-          <button type="submit" onclick="payWithPaystack()"> Pay </button>
-          
+          <button type="submit" class="button" onclick="payWithPaystack()"> Proceed to Support</button>
+
 
         </div>
       </div>
