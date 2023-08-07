@@ -140,7 +140,7 @@
               <div class="box-image mt-30 mb-30">
                 <a
                   class="popup-youtube btn-play-video btn-play-middle"
-                  href="https://www.youtube.com/watch?v=ea-I4sqgVGY"
+                  href="https://www.youtube.com/uponmountzionrmtv880"
                 ></a
                 ><img
                   class="img-responsive bdrd-16"
