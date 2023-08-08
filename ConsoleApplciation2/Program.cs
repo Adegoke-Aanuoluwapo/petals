@@ -85,6 +85,18 @@ public class HelloWorld
    MyMethod("Liam", 23);
    MyMethod("Jenny", 45);
    MyMethod("Anja", 15);
+    string firstFriend = "Scott";
+        string secondFriend = "Travis";
+        Console.WriteLine ($"My  friends are {secondFriend} and {firstFriend}");
+        Console.WriteLine($"the name {secondFriend} has {secondFriend.Length} letters");
+        Console.WriteLine($"the name {firstFriend} has {firstFriend.Length} letters");
+        string greet = "Hello";
+        Console.WriteLine($"         {greet}           ");
+         Console.WriteLine($"  ***{greet}***    ");
+         string trimgreet = greet.TrimStart();
+        
+         Console.WriteLine($"[{trimgreet}]");
   }
+ 
 }
 }
