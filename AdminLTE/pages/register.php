@@ -2,12 +2,10 @@
 
 require_once("myclass.php");
 
+$Pro->Alert();
 
 
 
-// if(isset($_POST['register'])){
-//   RegisterUser();
-// }
 
 ?>
 

@@ -1,5 +1,6 @@
 <?php
 require_once('myclass.php');
+$pro->Aler();
 ?>
 
 <!DOCTYPE html>

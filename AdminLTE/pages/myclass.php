@@ -48,6 +48,51 @@ class Profile
   }
   return;
  }
+ function Alert(){
+  global $count, $report;
+  echo '
+                <div class="card card-warning card-outline">
+                  <div class="card-header">
+                    <h3 class="card-title">
+                      <i class="fas fa-edit"></i>
+                      Toastr Examples
+                    </h3>
+                  </div>
+                  <div class="card-body">
+                    <button
+                      type="button"
+                      class="btn btn-success toastrDefaultSuccess"
+                    >
+                      Launch Success Toast
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-info toastrDefaultInfo"
+                    >
+                      Launch Info Toast
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger toastrDefaultError"
+                    >
+                      Launch Error Toast
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-warning toastrDefaultWarning"
+                    >
+                      Launch Warning Toast
+                    </button>
+                    <div class="text-muted mt-3">
+                      For more examples look at
+                      <a href="https://codeseven.github.io/toastr/"
+                        >https://codeseven.github.io/toastr/</a
+                      >
+                    </div>
+                  </div>
+                  <!-- /.card -->
+                </div>';
+ }
 }
 
 $Pro = new Profile();
