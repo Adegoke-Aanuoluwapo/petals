@@ -27,7 +27,7 @@
       <div class="card">
        <div class="card-header">
         <h3 class="card-title">Staff List</h3>
-        <button  class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#addStaffModal">
+        <button style="margin-left:1200px" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#addStaffModal">
          Add Staff
         </button>
        </div>

@@ -1,6 +1,7 @@
 <?php
 require_once('myclass.php');
-$pro->Aler();
+$report = 'Operation Successful';
+$count = 1;
 ?>
 
 <!DOCTYPE html>
