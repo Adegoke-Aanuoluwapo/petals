@@ -9,7 +9,7 @@ require_once("../myclass.php")
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="T3IvrB0h5oKZq9yQsfXOqyjjpzPz1IgOBTYgfBEj">
+    <meta name="csrf-token" content="0OzxVDSEJRbqFudWSXVqiCRmMILjMfsW0Q58DQGF">
     <title>Students
     </title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -19,7 +19,7 @@ require_once("../myclass.php")
     <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
     <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
     <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=jRmqx-XSADPwXvXSSOrHscmAZ8jFvEfTwioM1bQ_F0rLSRSG2L6JXuUrrSA2LNfDGq0B7VcGje_wCf4LaxckRRsk5nbDIaVoaK9cq8PpATM" charset="UTF-8"></script>
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=ZTJNQJd-3GvUolmwySPS6dtA7Ik7BE3YxSqgZRO6vcor1n2yBVleqVrgpaFB8Nk51iV1Gdg6XgJDRSU3AFhglydxvYchPwu6S4T243R9MZA" charset="UTF-8"></script>
     <script src="https://portal.schoolpetal.com/assets/js/littlealert.js"></script>
 
     <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
@@ -50,7 +50,7 @@ require_once("../myclass.php")
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
-        <?php include("../nav.php") ?>
+
 
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <ul class="navbar-nav">
@@ -473,10 +473,10 @@ require_once("../myclass.php")
                                 </h3>
                             </div>
                             <div class="card-body">
-                                <form method="POST" class="row">
-                                    <!-- id="registerStudent"-->
-                                    <div class="col-md-4 form-group">
+                                <form action="" id="registerStudent" class="row">
+                                    <div class=" col-md-4 form-group">
                                         <label>Guardian <span class="text-danger">*</span></label>
+
                                         <select name="name" class="form-control ">
                                             <!--id="guardian"  -->
                                             <option>Select Guardian</option>
@@ -486,28 +486,35 @@ require_once("../myclass.php")
                                                 echo '<option>' . $rows['name'] .  '</option';
                                             } ?>
                                         </select>
+
                                     </div>
-                                    <div class=" col-md-4 form-group">
+
+                                    <div class=" col-md-3 form-group">
                                         <label>Prospective Class <span class="text-danger">*</span></label>
                                         <select id="class" class="form-control select2bs4">
                                             <option>Select Guardian</option>
                                             <?php $i = 1;
                                             $sql = $con->query("SELECT * FROM class");
-                                            while ($rows = mysqli_fetch_assoc($sql)) {
+                                            while ($rows = $sql->fetch_assoc()) {
+                                                echo '<option>' . $rows['class'] .  '</option';
+                                            } ?>
+                                        </select>
+                                        
+                                    </div>
+                                    <div class=" col-md-3 form-group">
+                                        <label>Prospective Class <span class="text-danger">*</span></label>
+                                        <select id="class" class="form-control select2bs4">
+                                            <option>Select Guardian</option>
+                                            <?php $i = 1;
+                                            $sql = $con->query("SELECT * FROM class");
+                                            while ($rows = $sql->fetch_assoc()) {
                                                 echo '<option>' . $rows['class'] .  '</option';
                                             } ?>
                                         </select>
                                     </div>
-
-                                    <div class="col-md-4 form-group">
+                                    <div class=" col-md-4 form-group">
                                         <label>Class Arm <span class="text-danger">*</span></label>
-                                        <select name="arm" class="form-control select2bs4">
-                                            <option>Select arm</option>
-                                            <?php $i = 1;
-                                            $sql = $con->query("SELECT * FROM arm");
-                                            while ($rows = $sql->fetch_assoc()) {
-                                                echo "<option>" . $rows['arm'] .  "</option";
-                                            } ?>
+                                        <select id="arm" class="form-control select2bs4">
                                         </select>
                                     </div>
 
@@ -587,7 +594,7 @@ require_once("../myclass.php")
 
      $.ajaxSetup({
       headers: {
-       'Authorization': `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDcyMDkwN2Y5MDU0NDFmYTAyZGUyNTI3MTg4MmUxOWE5NTYwOGU5NDM0ZjgxYmVmOGIyMTEwNmEyNDFhMjNhOGMzNWNkNmUxNTM0ZDU1YzIiLCJpYXQiOjE2OTE1Njg2NjIuODk3Mzg2LCJuYmYiOjE2OTE1Njg2NjIuODk3MzkyLCJleHAiOjE3MjMxOTEwNjIuODc1MTI2LCJzdWIiOiIyMCIsInNjb3BlcyI6W119.lDc1DW09Az8DtpF5XcY1Q9sY9UzmzXmnw2TyPQOzGqiaI5dG_HTy9iSj_jjoe399UvZghay_ApYXMAeXMzNMGStYODN40q5N4QgaJyfmcIwU608vbVNab9ScM3E0Rb-Q8fUH_y_BBzauC0rW7hqR4h-yjcx31uGOWtcyq1MMBXohmURDVKovZ19L8t-soWV37oxjEf5kTXaE-Nz9B8LqGbJN1vE18oUmYuYmkhpS952qjTrkzwwQyNEsj6FnXoQmGTIcneQImh3GFfMEgX3MmVTpH5m2nRn-kO2FXo4QZk3LBjqMoQZ8UdW66x-SNUZU0p455w9dO-HupBiCJLzLN7IaO5JOWSfOZbWO0Xt2CnatV7y9lVNpzbfLtov_YjUHGhZaS1O2Ar3_dxlcFanp57vIUXOkzrrH7VM_3Bojd5kLwzfvLg0KW1dcYA3wBl4C9R9bGaWl8W-jZ2hub-G0sabDSgPv02nXpUHZbqBhVVsjjcxkjnFurrgfNe6UrmI-XIS9GkaLMT6vcVbWmrJI1iEzJ_Fk3J923XwyxqLyI-GpU9860hIPZxdO8aflfAltty0zJbC1_cbthYMdP75XlU9_954msv1Z2jLdc1JVe_px0U6m-U49UjjgFnml6uTBr1JmTJqlEolVDrY3Vcw8ej3gwrDPQQbhr3AiO5iJmp8`
+       'Authorization': `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGU1ZDE2OGVjYzljNGU3MjMzMDZjZjU1YWM1ZTQwMmQ4Y2Y0NDU5OTRkOTRjNmI0MDc3YmVjNzI3NzMzMDQ4NTYwZDJkZGZjMjYyMTVhYzUiLCJpYXQiOjE2OTE2ODQ2NzAuMzEyOTY5LCJuYmYiOjE2OTE2ODQ2NzAuMzEyOTgsImV4cCI6MTcyMzMwNzA3MC4yODk0ODUsInN1YiI6IjIwIiwic2NvcGVzIjpbXX0.qtakQ2qnRn3KA8utu97NDE2uCzRn7FMbeDbGPrXSHrvxgJX7syEbcnN31Q1OcJFGDF9iOW7qMqSyIWRn8elK8lY-XyZep1di_U4f_PVstnryMlwPt52z95JLjHuy9TUVgmY_oN47FHrty8G72LJVhu-KeaVmLZDo5qWTgB3osgFxlHq9KA9KNJk53PEONb-np0jH2f6xQhH4uzkDrhuoMByYxNRw41I_mQh6K1imTofzA4-GIKFTYuaXgn1yK0guoC8-cSI1pJZmBaZvuk-AHUBJPTuDuq1Fm0xVW6ezUq4l6UmYTWy7JjHV-z1dyUrCSoiyvJXzGp_XkKDjNbf-1N2D4KZZV9kfBR95NmZxmJ0L-iPSA5ROvbbLK9bF2c40MeeXi9m7vyOyz1Rv1qpPcfq1mfEyM1MjoXy42SSJk7vE0dY93CJZnL1y8gJarK1gQbyeawC36VrDNwZ2pqRjY6mKuFtcGv3qcUI1sAxLQ4G0-3Wy4AO3MlMhspBUdNRvEcAiHYJICGvoKqgvznQ9HOq-ZrvpePbr34wrXlhgOJXTzFgg5Q3QbUBNdyRWrIc9CAVdNfH0XsUe5OYfNhNGl8KLTqLGu8Q7oQRklasRTfCHmYrq6F-TWebBaOiemmz6tUSm_Q02SSByM6OL760inbZf6fp9oAADB6Ojqk_g6u0`
       }
      });
 
@@ -771,9 +778,9 @@ require_once("../myclass.php")
         <script src="https://portal.schoolpetal.com/assets/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
 
-        <script src="https://portal.schoolpetal.com/assets/js/adminlte.js"></script>
+        <!-- <script src="https://portal.schoolpetal.com/assets/js/adminlte.js"></script>
 
-        <!-- <script>
+  <script>
    $(function() {
     $('.select2').select2()
     $('.select2bs4').select2({

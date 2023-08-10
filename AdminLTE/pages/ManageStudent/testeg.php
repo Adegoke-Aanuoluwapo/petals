@@ -5,7 +5,7 @@
  <meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <meta name="csrf-token" content="N0WfAfyEuDPxMmRpZDMvfINnKUfBBbgCPbJVI7oF">
- <title> Students
+ <title>Guardians
  </title>
  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
  <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/fontawesome-free/css/all.min.css">
@@ -14,7 +14,7 @@
  <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
  <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
  <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
- <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=n7P0cASCz3dCKY67MUBjJ0WAUtJ0vrjzSo093vhjqC43JHA9SVsoKv2jZuRY98ClK9FGnZL63Vsr8gyfWmR1xkHINW7eh0pwv0pzqZY-uXc" charset="UTF-8"></script>
+ <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=pdirWit7oIKQ6I3UzNlG6bqM8N299slcT2Nm3Gx2E2kWH31XvphqBgU9t1ICbjyEIAMAZKsbH5MlzY_HlwxCr1OSGQ1N16JRuk-hVZxf-3g" charset="UTF-8"></script>
  <script src="https://portal.schoolpetal.com/assets/js/littlealert.js"></script>
 
  <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
@@ -439,19 +439,17 @@
 
   <div class="content-wrapper">
    <div class="littleAlert"></div>
-   <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-
 
    <div class="content-header">
     <div class="container-fluid">
      <div class="row mb-2">
       <div class="col-sm-6">
-       <h1 class="m-0">Students</h1>
+       <h1 class="m-0">Guardians</h1>
       </div>
       <div class="col-sm-6">
        <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="/control/dashboard">Home</a></li>
-        <li class="breadcrumb-item active">Students</li>
+        <li class="breadcrumb-item active">Guardians</li>
        </ol>
       </div>
      </div>
@@ -461,33 +459,96 @@
 
    <section class="content">
     <div class="row">
-     <div class="col-md-4 offset-md-8 mb-3">
-      <form action="">
-       <div class="input-group input-group-">
-        <input type="search" name="student" class="form-control form-control-sm" placeholder="Search Student">
-        <div class="input-group-append">
-         <button type="submit" class="btn btn-sm btn-default searchStudent">
-          <i class="fa fa-search"></i>
-         </button>
+     <div class="col-md-12 col-12">
+      <div class="card card-secondary card-outline">
+       <div class="card-header">
+        <h3 class="card-title ">
+         <i class="fa fa-plus-square" aria-hidden="true"></i>
+         Register Guardian
+        </h3>
+       </div>
+       <div class="card-body">
+        <form action="" id="registerGuardian" class="row">
+         <div class=" col-md-4 form-group">
+          <label>Name</label>
+          <input type="text" name="name" class="form-control" placeholder="Gurdians name">
+         </div>
+         <div class=" col-md-4 form-group">
+          <label>Home Address</label>
+          <input type="text" name="address" class="form-control" placeholder="Lekki, Nigeria">
+         </div>
+         <div class=" col-md-4 form-group">
+          <label>Email Address</label>
+          <input type="email" name="email" class="form-control" placeholder="mail@gmail.com">
+         </div>
+         <div class=" col-md-4 form-group">
+          <label>Phone Number</label>
+          <input type="text" name="phone" class="form-control" placeholder="090000000000">
+         </div>
+         <div class=" col-md-4 form-group">
+          <label>State of Origin</label>
+          <input type="text" name="state" class="form-control" placeholder="Lagos">
+         </div>
+         <div class=" col-md-4 form-group">
+          <label>L.G.A</label>
+          <input type="text" name="lga" class="form-control" placeholder="ikeja">
+         </div>
+
+         <div class="col-md-12">
+          <button class="btn btn-secondary float-right registerGuardian">Register Gurdian</button>
+         </div>
+        </form>
+       </div>
+
+
+
+      </div>
+
+
+      <div class="card card-secondary card-outline">
+       <div class="card-header">
+        <h3 class="card-title ">
+         <i class="fa fa-list-alt" aria-hidden="true"></i>
+         Guardians List
+        </h3>
+       </div>
+       <div class="card-body p-1">
+        <div class="table-responsive">
+         <table id="example1" class="table mb-0 table-bordered table-hover table-striped">
+          <thead>
+           <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th></th>
+           </tr>
+          </thead>
+          <tbody id="guardian_body_list">
+
+          </tbody>
+         </table>
+        </div>
+
+        <div id="page_links">
+
         </div>
        </div>
-      </form>
-     </div>
-    </div>
-    <div class="row" id="student_list_body">
 
-    </div>
+      </div>
 
-    <div class="row">
-     <div class="col-12 pageLinks">
+
+
      </div>
+
     </div>
    </section>
 
 
    <script src="https://portal.schoolpetal.com/assets/plugins/jquery/jquery.min.js"></script>
 
-   <!-- <script>
+   <script>
     $(function() {
      $.ajaxSetup({
       headers: {
@@ -496,110 +557,113 @@
      });
 
 
-
-     function fetchStudent() {
+     function fetchParentSummary() {
       page = '1'
       $.ajax({
        method: 'get',
-       url: api_url + 'get_all_student?page=' + page
+       url: api_url + 'fetch_guardians_info_summmary?page=' + page
       }).done(function(res) {
-       body = $('#student_list_body');
-       body.html(``);
-       res.data.data.forEach(stu => {
-        btn = (stu.status == 1) ? `<button type="button" class="btn btn-success btn-xs  btn-block"><b> <i class="fa fa-user-check"></i> Active</b></button>` :
-         `<button type="button" class="btn btn-danger btn-xs  btn-block"> <b><i class="fa fa-user-times"></i> Not Active</b></button>`;
+       body = $('#guardian_body_list');
+       body.html(``)
+       res.data.data.map((guard, index) => {
         body.append(`
-                            <div class=" col-lg-3 col-md-4">
-                                <div class="card card-secondary card-outline">
-                                    <div class="card-body pb-1 box-profile">
-                                        <div class="text-center">
-                                            <img class="profile-user-img img-fluid img-circle"
-                                                src="${api_url_root+stu.photo}" alt="${stu.firstname}">
-                                        </div>
-                                        <h3 class="profile-username text-center">${stu.surname + ' ' +stu.firstname}</h3>
-                                        <p class="text-muted mb-0 text-center">${stu.class.class} <sup>${(stu.arm)? stu.arm.arm :''}</sup> | ${stu.sex}</p>
-                                        ${btn}
-                                        <div class="text-center">
-                                            <a href="/control/student/${stu.id}">Go-to-profile <i class="fas fa-arrow-circle-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <tr>
+                                <td>${index+1 + ((page-1) * 100)}</td>
+                                <td>${guard.guardian_name}</td>
+                                <td>${guard.guardian_email}</td>
+                                <td>${guard.guardian_phone}</td>
+                                <td>${guard.guardian_address}</td>
+                                <td> <a href="/control/guardian_profile/${guard.id}"> Profile <i class="fa fa-arrow-circle-right"></i> </a> </td>
+                            </tr>
                         `)
-       });
-       $('.pageLinks').html(dropPaginatedPages(res.data.links))
-      }).fail(function(res) {
-       console.log(res);
-      })
+       })
+
+       link_body = $('#page_links')
+       link_body.html(dropPaginatedPages(res.data.links));
+
+
+      }).fail(function(res) {})
      }
 
 
-
-     fetchStudent();
-
-     $('.searchStudent').on('click', function(e) {
+     $('#registerGuardian').on('submit', function(e) {
       e.preventDefault();
+      form = $(this);
 
-      btn = $(this)
-      q = $('input[name="student"]').val();
+      name = $(form).find('input[name="name"]').val();
+      address = $(form).find('input[name="address"]').val();
+      email = $(form).find('input[name="email"]').val();
+      phone = $(form).find('input[name="phone"]').val();
+      state = $(form).find('input[name="state"]').val();
+      lga = $(form).find('input[name="lga"]').val();
 
-      if (!q) {
-       littleAlert('Pls add a search parameter', 1);
+      if (!name || !address || !email || !phone || !phone) {
+       littleAlert('All fields are required', 1);
        return;
       }
 
-      btn.attr('disabled', 'disabled');
-      btn.html(`<span class="spinner-border spinner-border-sm" aria-hidden="true"></span>`);
-
       $.ajax({
-       method: 'get',
-       url: api_url + 'search_student/' + q
-      }).done(function(res) {
-       console.log(res);
-       btn.removeAttr('disabled');
-       btn.html(`<i class="fa fa-search"></i>`);
-
-       if (res.data.length == 0) {
-        littleAlert(`No result found for this search <b> '${q}' </b>`, 1);
-        return;
+       method: 'post',
+       url: api_url + 'create_guardian_profile',
+       data: {
+        guardian_name: name,
+        guardian_address: address,
+        guardian_email: email,
+        guardian_phone: phone,
+        state: state,
+        lga: lga,
+       },
+       beforeSend: () => {
+        btnProcess('.registerGuardian', 'Register Guardian', 'before')
        }
+      }).done(function(res) {
+       littleAlert(res.message);
+       btnProcess('.registerGuardian', 'Register Guardian', 'after')
+       body = $('#guardian_body_list');
+       body.prepend(`
+                        <tr>
+                            <td>#</td>
+                            <td>${name}</td>
+                            <td>${email}</td>
+                            <td>${phone}</td>
+                            <td>${address}</td>
+                            <td> <a href="#"> Profile<i class="fa fa-arrow-circle-right"></i> </a> </td>
+                        </tr>
+                    `)
 
-
-       body = $('#student_list_body');
-       body.html(`<div class=" col-12"><h3>Search Result for <b>'${q}'</b></h3></div>`);
-       res.data.forEach(stu => {
-        btn = (stu.status == 1) ? `<button type="button" class="btn btn-success btn-xs  btn-block"><b> <i class="fa fa-user-check"></i> Active</b></button>` :
-         `<button type="button" class="btn btn-danger btn-xs  btn-block"> <b><i class="fa fa-user-times"></i> Not Active</b></button>`;
-        body.append(`
-                            <div class=" col-lg-3 col-md-4">
-                                <div class="card card-secondary card-outline">
-                                    <div class="card-body pb-1 box-profile">
-                                        <div class="text-center">
-                                            <img class="profile-user-img img-fluid img-circle"
-                                                src="${api_url_root+'assets/img/students/user.png'}" alt="${stu.firstname}">
-                                        </div>
-                                        <h3 class="profile-username text-center">${stu.surname + ' ' +stu.firstname}</h3>
-                                        <p class="text-muted mb-0 text-center">${stu.class.class} <sup>${(stu.arm)? stu.arm.arm :''}</sup> | ${stu.sex}</p>
-                                        ${btn}
-                                        <div class="text-center">
-                                            <a href="/control/student/${stu.id}">Go-to-profile <i class="fas fa-arrow-circle-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        `)
-       });
+       fetchParentSummary();
+       form[0].reset();
 
 
       }).fail(function(res) {
        parseError(res.responseJSON);
-       btn.removeAttr('disabled');
-       btn.html(`<i class="fa fa-search"></i>`);
+       btnProcess('.registerGuardian', 'Register Guardian', 'after')
       })
      })
 
+
+
+
+
+
+     setTimeout(() => {
+      $("#example1").DataTable({
+       "responsive": true,
+       "lengthChange": false,
+       "autoWidth": false,
+       "buttons": ["copy", "csv", "excel", "pdf", "print"],
+       "paging": false,
+       "searching": true,
+       "ordering": true,
+       "info": true,
+       "autoWidth": true,
+       "responsive": false,
+      }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+     }, 2500);
+
+     fetchParentSummary();
     })
-   </script> -->
+   </script>
 
 
   </div>
@@ -637,7 +701,7 @@
 
   <script src="https://portal.schoolpetal.com/assets/js/adminlte.js"></script>
 
-  <!-- <script>
+  <script>
    $(function() {
     $('.select2').select2()
     $('.select2bs4').select2({
@@ -662,7 +726,7 @@
      });
     }
    })
-  </script> -->
+  </script>
 </body>
 
 </html>

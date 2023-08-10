@@ -91,6 +91,19 @@ function AddParent(){
   return;
 
 }
+  function AddStudent()
+  {
+    global $con;
+    $parent = $_POST['parent'];
+    $class = $_POST['class'];
+    $surname = $_POST['surname'];
+    $firstname = $_POST['firstname'];
+    $state = $_POST['state'];
+    $lga = $_POST['lga'];
+    $sql = "INSERT INTO parents(name, address, email, phone, state, lga) VALUES('$name', '$address', '$email', '$phone', '$state', '$lga')";
+    mysqli_query($con, $sql);
+    return;
+  }
 
 }
 
