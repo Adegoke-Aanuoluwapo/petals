@@ -471,10 +471,12 @@
                                 <form action="" id="registerStudent" class="row">
                                     <div class=" col-md-4 form-group">
                                         <label>Guardian <span class="text-danger">*</span></label>
-                                        <select id="guardian" class="form-control select2bs4">
-                                            <?php $i = 1; $sql = $con->query("SELECT * FROM parents");
-                                            while($rows = mysqli_fetch_assoc($sql)){
-                                                echo "<option>" .$rows['fullname']. "</option"; 
+                                        <select name="name" class="form-control select2bs4">
+                                            <!--id="guardian"  -->
+                                            <?php $i = 1;
+                                            $sql = $con->query("SELECT * FROM parents");
+                                            while ($rows = mysqli_fetch_assoc($sql)) {
+                                                echo "<option>" . $rows['name'] . "</option";
                                             }
                                             ?>
 
