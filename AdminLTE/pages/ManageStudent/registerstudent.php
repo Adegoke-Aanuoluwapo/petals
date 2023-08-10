@@ -1,3 +1,8 @@
+<?php
+require_once("../myclass.php")
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,7 +50,7 @@
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
-
+        <?php include("../nav.php") ?>
 
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <ul class="navbar-nav">
@@ -468,31 +473,31 @@
                                 </h3>
                             </div>
                             <div class="card-body">
-                                <form action="" id="registerStudent" class="row">
-                                    <div class=" col-md-4 form-group">
+                                <form method="POST" class="row">
+                                    <!-- id="registerStudent"-->
+                                    <div class="col-md-4 form-group">
                                         <label>Guardian <span class="text-danger">*</span></label>
-                                        <select name="name" class="form-control select2bs4">
+                                        <select name="name" class="form-control ">
                                             <!--id="guardian"  -->
+                                            <option>Select Guardian</option>
                                             <?php $i = 1;
                                             $sql = $con->query("SELECT * FROM parents");
-                                            while ($rows = mysqli_fetch_assoc($sql)) {
-                                                echo "<option>" . $rows['name'] . "</option";
-                                            }
-                                            ?>
-
+                                            while ($rows = $sql->fetch_assoc()) {
+                                                echo '<option>' . $rows['name'] .  '</option';
+                                            } ?>
                                         </select>
                                     </div>
 
-                                    <div class=" col-md-4 form-group">
-                                        <label>Prospective Class <span class="text-danger">*</span></label>
-                                        <select class="form-control select2bs4">
-                                            <!--id="class" -->
-                                        </select>
-                                    </div>
-
-                                    <div class=" col-md-4 form-group">
+                              
+                                    <div class="col-md-4 form-group">
                                         <label>Class Arm <span class="text-danger">*</span></label>
-                                        <select id="arm" class="form-control select2bs4">
+                                        <select name="arm" class="form-control select2bs4">
+                                            <option>Select arm</option>
+                                            <?php $i = 1;
+                                            $sql = $con->query("SELECT * FROM arm");
+                                            while ($rows = $sql->fetch_assoc()) {
+                                                echo "<option>" . $rows['arm'] .  "</option";
+                                            } ?>
                                         </select>
                                     </div>
 
