@@ -559,7 +559,7 @@
 
    <script src="https://portal.schoolpetal.com/assets/plugins/jquery/jquery.min.js"></script>
 
-   <script>
+   <!-- <script>
     $(function() {
 
      $.ajaxSetup({
@@ -712,7 +712,7 @@
      }, 2500);
 
     })
-   </script>
+   </script> -->
 
 
   </div>
@@ -750,7 +750,7 @@
 
   <script src="https://portal.schoolpetal.com/assets/js/adminlte.js"></script>
 
-  <script>
+  <!-- <script>
    $(function() {
     $('.select2').select2()
     $('.select2bs4').select2({
@@ -775,7 +775,7 @@
      });
     }
    })
-  </script>
+  </script> -->
 </body>
 
 </html>
