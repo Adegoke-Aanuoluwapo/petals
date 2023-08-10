@@ -1,169 +1,169 @@
+<?php
+require_once("../myclass.php")
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
- <meta charset="utf-8">
- <meta name="viewport" content="width=device-width, initial-scale=1">
- <meta name="csrf-token" content="yUByY45jI8iQViYdL2G97ZoivfsDEdM9NX19S0B8">
- <title>Guardians
- </title>
- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
- <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/fontawesome-free/css/all.min.css">
- <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/css/adminlte.min.css">
- <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/select2/css/select2.min.css">
- <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
- <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
- <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
- <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=_JgYLorUcnNBUEPTbU7d2lWo09jUSZEV5N2YniFn342BX_CRhjQMgQEvnstjvDjxnXqYFDcK2NVU5V15Yo8jOuZNyVKR0LFpbBTAshLaNYU" charset="UTF-8"></script>
- <script src="https://portal.schoolpetal.com/assets/js/littlealert.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="yUByY45jI8iQViYdL2G97ZoivfsDEdM9NX19S0B8">
+    <title>Guardians
+    </title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/css/adminlte.min.css">
+    <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+    <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+    <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=_JgYLorUcnNBUEPTbU7d2lWo09jUSZEV5N2YniFn342BX_CRhjQMgQEvnstjvDjxnXqYFDcK2NVU5V15Yo8jOuZNyVKR0LFpbBTAshLaNYU" charset="UTF-8"></script>
+    <script src="https://portal.schoolpetal.com/assets/js/littlealert.js"></script>
 
- <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
- <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
- <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 
 
- 
 
- <style>
-  .profile_pics {
-   width: 50px;
-   height: 50px;
-  }
 
-  .object-cover {
-   object-fit: cover;
-  }
+    <style>
+        .profile_pics {
+            width: 50px;
+            height: 50px;
+        }
 
-  .profile-user-img {
-   width: 100px;
-   height: 100px;
-  }
- </style>
+        .object-cover {
+            object-fit: cover;
+        }
+
+        .profile-user-img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
 
 
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
- <div class="wrapper">
+    <div class="wrapper">
+        <?php
+        include("..nav.php");
+        ?>
+        <div class="content-wrapper">
+            <div class="littleAlert"></div>
+
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0">Guardians</h1>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="/control/dashboard">Home</a></li>
+                                <li class="breadcrumb-item active">Guardians</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
-<?php
- include("../nav.php");
-?>
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12 col-12">
+                        <div class="card card-secondary card-outline">
+                            <div class="card-header">
+                                <h3 class="card-title ">
+                                    <i class="fa fa-plus-square" aria-hidden="true"></i>
+                                    Register Guardian
+                                </h3>
+                            </div>
+                            <div class="card-body">
+                                <form action="" id="registerGuardian" class="row">
+                                    <div class=" col-md-4 form-group">
+                                        <label>Name</label>
+                                        <input type="text" name="name" class="form-control" placeholder="Gurdians name">
+                                    </div>
+                                    <div class=" col-md-4 form-group">
+                                        <label>Home Address</label>
+                                        <input type="text" name="address" class="form-control" placeholder="Lekki, Nigeria">
+                                    </div>
+                                    <div class=" col-md-4 form-group">
+                                        <label>Email Address</label>
+                                        <input type="email" name="email" class="form-control" placeholder="mail@gmail.com">
+                                    </div>
+                                    <div class=" col-md-4 form-group">
+                                        <label>Phone Number</label>
+                                        <input type="text" name="phone" class="form-control" placeholder="090000000000">
+                                    </div>
+                                    <div class=" col-md-4 form-group">
+                                        <label>State of Origin</label>
+                                        <input type="text" name="state" class="form-control" placeholder="Lagos">
+                                    </div>
+                                    <div class=" col-md-4 form-group">
+                                        <label>L.G.A</label>
+                                        <input type="text" name="lga" class="form-control" placeholder="ikeja">
+                                    </div>
 
-
-  <div class="content-wrapper">
-   <div class="littleAlert"></div>
-
-   <div class="content-header">
-    <div class="container-fluid">
-     <div class="row mb-2">
-      <div class="col-sm-6">
-       <h1 class="m-0">Guardians</h1>
-      </div>
-      <div class="col-sm-6">
-       <ol class="breadcrumb float-sm-right">
-        <li class="breadcrumb-item"><a href="/control/dashboard">Home</a></li>
-        <li class="breadcrumb-item active">Guardians</li>
-       </ol>
-      </div>
-     </div>
-    </div>
-   </div>
-
-
-   <section class="content">
-    <div class="row">
-     <div class="col-md-12 col-12">
-      <div class="card card-secondary card-outline">
-       <div class="card-header">
-        <h3 class="card-title ">
-         <i class="fa fa-plus-square" aria-hidden="true"></i>
-         Register Guardian
-        </h3>
-       </div>
-       <div class="card-body">
-        <form action="" id="registerGuardian" class="row">
-         <div class=" col-md-4 form-group">
-          <label>Name</label>
-          <input type="text" name="name" class="form-control" placeholder="Gurdians name">
-         </div>
-         <div class=" col-md-4 form-group">
-          <label>Home Address</label>
-          <input type="text" name="address" class="form-control" placeholder="Lekki, Nigeria">
-         </div>
-         <div class=" col-md-4 form-group">
-          <label>Email Address</label>
-          <input type="email" name="email" class="form-control" placeholder="mail@gmail.com">
-         </div>
-         <div class=" col-md-4 form-group">
-          <label>Phone Number</label>
-          <input type="text" name="phone" class="form-control" placeholder="090000000000">
-         </div>
-         <div class=" col-md-4 form-group">
-          <label>State of Origin</label>
-          <input type="text" name="state" class="form-control" placeholder="Lagos">
-         </div>
-         <div class=" col-md-4 form-group">
-          <label>L.G.A</label>
-          <input type="text" name="lga" class="form-control" placeholder="ikeja">
-         </div>
-
-         <div class="col-md-12">
-          <button class="btn btn-secondary float-right registerGuardian">Register Gurdian</button>
-         </div>
-        </form>
-       </div>
+                                    <div class="col-md-12">
+                                        <button class="btn btn-secondary float-right registerGuardian" name="addparent">Register Gurdian</button>
+                                    </div>
+                                </form>
+                            </div>
 
 
 
-      </div>
+                        </div>
 
 
-      <div class="card card-secondary card-outline">
-       <div class="card-header">
-        <h3 class="card-title ">
-         <i class="fa fa-list-alt" aria-hidden="true"></i>
-         Guardians List
-        </h3>
-       </div>
-       <div class="card-body p-1">
-        <div class="table-responsive">
-         <table id="example1" class="table mb-0 table-bordered table-hover table-striped">
-          <thead>
-           <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Address</th>
-            <th></th>
-           </tr>
-          </thead>
-          <tbody id="guardian_body_list">
+                        <div class="card card-secondary card-outline">
+                            <div class="card-header">
+                                <h3 class="card-title ">
+                                    <i class="fa fa-list-alt" aria-hidden="true"></i>
+                                    Guardians List
+                                </h3>
+                            </div>
+                            <div class="card-body p-1">
+                                <div class="table-responsive">
+                                    <table id="example1" class="table mb-0 table-bordered table-hover table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Name</th>
+                                                <th>Email</th>
+                                                <th>Phone</th>
+                                                <th>Address</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="guardian_body_list">
 
-          </tbody>
-         </table>
-        </div>
+                                        </tbody>
+                                    </table>
+                                </div>
 
-        <div id="page_links">
+                                <div id="page_links">
 
-        </div>
-       </div>
+                                </div>
+                            </div>
 
-      </div>
-
-
-
-     </div>
-
-    </div>
-   </section>
+                        </div>
 
 
-   <script src="https://portal.schoolpetal.com/assets/plugins/jquery/jquery.min.js"></script>
 
-   <script>
+                    </div>
+
+                </div>
+            </section>
+
+
+            <script src="https://portal.schoolpetal.com/assets/plugins/jquery/jquery.min.js"></script>
+
+            <!-- <script>
     $(function() {
      $.ajaxSetup({
       headers: {
@@ -341,7 +341,7 @@
      });
     }
    })
-  </script>
+  </script> -->
 </body>
 
 </html>

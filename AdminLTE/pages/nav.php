@@ -64,7 +64,7 @@
           <ul class="nav nav-treeview">
             <li class="nav-item">
               <a href="../pages/ManageStudent/registerguardian.php" class="nav-link">
-                
+
                 <i class="far fa-circle nav-icon"></i>
                 <p>Register Guardians</p>
               </a>
@@ -122,257 +122,271 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="../pages/layout/top-nav.html" class="nav-link">
+              <a href="../pages/classmanagement/CatArm.php" class="nav-link">
+
                 <i class="far fa-circle nav-icon"></i>
                 <p>Category/Arm</p>
               </a>
             </li>
-
             <li class="nav-item">
-              <a href="../pages/layout/boxed.html" class="nav-link">
+              <a href="../pages/classmanagement/class.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Classes</p>
               </a>
             </li>
-
-
           </ul>
-        </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-subscript"></i>
-            <p>
-              Subject info
-              <i class="fas fa-angle-left right"></i>
-
-            </p>
+          <a href="../pages/layout/top-nav.html" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>Category/Arm</p>
           </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="../pages/layout/top-nav.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Create/View Subjects</p>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a href="../pages/layout/boxed.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>View Subject Teachers</p>
-              </a>
-            </li>
-
-
-          </ul>
         </li>
+
         <li class="nav-item">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-subscript"></i>
-            <p>
-              Results Mgm
-              <i class="fas fa-angle-left right"></i>
-
-            </p>
+          <a href="../pages/layout/boxed.html" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>Classes</p>
           </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="../pages/layout/top-nav.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Students Result</p>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a href="../pages/layout/boxed.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Class Results</p>
-              </a>
-            </li>
-
-
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-toolbox"></i>
-            <p>
-              School Settings
-              <i class="fas fa-angle-left right"></i>
-
-            </p>
-          </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="../pages/layout/top-nav.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Result Settings</p>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a href="../pages/layout/boxed.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Permission Setup</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="../pages/layout/boxed.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>General Setup</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="../pages/layout/boxed.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Registration Slots</p>
-              </a>
-            </li>
-
-
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-money-bill-wave-alt"></i>
-            <p>
-              Managemant Promotions
-              <i class="fas fa-angle-left right"></i>
-
-            </p>
-          </a>
-
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fa fa-sticky-note"></i>
-            <p>
-              School fees Control
-              <i class="fas fa-angle-left right"></i>
-
-            </p>
-          </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="../pages/layout/top-nav.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Create Fee Category</p>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a href="../pages/layout/boxed.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Set School Fees</p>
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-copy"></i>
-            <p>
-              Levy Payment Report
-              <i class="fas fa-angle-left right"></i>
-
-            </p>
-          </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="../pages/layout/top-nav.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Daily Payments</p>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a href="../pages/layout/boxed.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Weekly Payments</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="../pages/layout/boxed.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Termly Payments</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="../pages/layout/boxed.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Fees Across Data Range</p>
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-copy"></i>
-            <p>
-              Student Result
-              <i class="fas fa-angle-left right"></i>
-
-            </p>
-          </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="../pages/layout/top-nav.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Result Settings</p>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a href="../pages/layout/boxed.html" class="nav-link">
-                <i class="fa fa-book nav-icon"></i>
-                <p>Student Result</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="../pages/layout/boxed.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Upload Result</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="../pages/layout/boxed.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>View Broad Result</p>
-              </a>
-            </li>
-
-
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-copy"></i>
-            <p>
-              Student Result
-              <i class="fas fa-angle-left right"></i>
-
-            </p>
-          </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="../pages/layout/top-nav.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Result Settings</p>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a href="../pages/layout/boxed.html" class="nav-link">
-                <i class="fa fa-user nav-icon"></i>
-                <p>My Profile</p>
-              </a>
-            </li>
-
-
-
-          </ul>
         </li>
 
-        </li>
+
+      </ul>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="nav-icon fas fa-subscript"></i>
+          <p>
+            Subject info
+            <i class="fas fa-angle-left right"></i>
+
+          </p>
+        </a>
+        <ul class="nav nav-treeview">
+          <li class="nav-item">
+            <a href="../pages/layout/top-nav.html" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Create/View Subjects</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="../pages/layout/boxed.html" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>View Subject Teachers</p>
+            </a>
+          </li>
+
+
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="nav-icon fas fa-subscript"></i>
+          <p>
+            Results Mgm
+            <i class="fas fa-angle-left right"></i>
+
+          </p>
+        </a>
+        <ul class="nav nav-treeview">
+          <li class="nav-item">
+            <a href="../pages/layout/top-nav.html" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Students Result</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="../pages/layout/boxed.html" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Class Results</p>
+            </a>
+          </li>
+
+
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="nav-icon fas fa-toolbox"></i>
+          <p>
+            School Settings
+            <i class="fas fa-angle-left right"></i>
+
+          </p>
+        </a>
+        <ul class="nav nav-treeview">
+          <li class="nav-item">
+            <a href="../pages/layout/top-nav.html" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Result Settings</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="../pages/layout/boxed.html" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Permission Setup</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="../pages/layout/boxed.html" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>General Setup</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="../pages/layout/boxed.html" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Registration Slots</p>
+            </a>
+          </li>
+
+
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="nav-icon fas fa-money-bill-wave-alt"></i>
+          <p>
+            Managemant Promotions
+            <i class="fas fa-angle-left right"></i>
+
+          </p>
+        </a>
+
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="nav-icon fa fa-sticky-note"></i>
+          <p>
+            School fees Control
+            <i class="fas fa-angle-left right"></i>
+
+          </p>
+        </a>
+        <ul class="nav nav-treeview">
+          <li class="nav-item">
+            <a href="../pages/layout/top-nav.html" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Create Fee Category</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="../pages/layout/boxed.html" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Set School Fees</p>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="nav-icon fas fa-copy"></i>
+          <p>
+            Levy Payment Report
+            <i class="fas fa-angle-left right"></i>
+
+          </p>
+        </a>
+        <ul class="nav nav-treeview">
+          <li class="nav-item">
+            <a href="../pages/layout/top-nav.html" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Daily Payments</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="../pages/layout/boxed.html" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Weekly Payments</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="../pages/layout/boxed.html" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Termly Payments</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="../pages/layout/boxed.html" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Fees Across Data Range</p>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="nav-icon fas fa-copy"></i>
+          <p>
+            Student Result
+            <i class="fas fa-angle-left right"></i>
+
+          </p>
+        </a>
+        <ul class="nav nav-treeview">
+          <li class="nav-item">
+            <a href="../pages/layout/top-nav.html" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Result Settings</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="../pages/layout/boxed.html" class="nav-link">
+              <i class="fa fa-book nav-icon"></i>
+              <p>Student Result</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="../pages/layout/boxed.html" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Upload Result</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="../pages/layout/boxed.html" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>View Broad Result</p>
+            </a>
+          </li>
+
+
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="nav-icon fas fa-copy"></i>
+          <p>
+            Student Result
+            <i class="fas fa-angle-left right"></i>
+
+          </p>
+        </a>
+        <ul class="nav nav-treeview">
+          <li class="nav-item">
+            <a href="../pages/layout/top-nav.html" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Result Settings</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="../pages/layout/boxed.html" class="nav-link">
+              <i class="fa fa-user nav-icon"></i>
+              <p>My Profile</p>
+            </a>
+          </li>
+
+
+
+        </ul>
+      </li>
+
+      </li>
       </ul>
     </nav>
     <!-- /.sidebar-menu -->

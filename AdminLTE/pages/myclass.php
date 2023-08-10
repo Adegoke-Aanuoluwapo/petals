@@ -12,6 +12,14 @@ class Profile
   } else if (array_key_exists('register', $_POST)) {
    $this->SignUp();
   }
+  elseif(isset($_POST['createCategory'])){
+   $this->Cat(); 
+  } elseif (isset($_POST['createArm'])) {
+      $this->Arm();
+    }
+   elseif(isset($_POST['addparent'])){
+    $this-> AddParent();
+   }
  }
  public function SignUp()
  {
@@ -52,6 +60,38 @@ class Profile
   global $count, $report;
  return $count==1 ? "toastr.error('".$report."')" : "toastr.success('".$report."')";
  }
+function  Cat(){
+ global $con;
+ $class = $_POST['class'];
+
+ $sql = "INSERT INTO class(class) VALUE('$class')";
+ mysqli_query($con, $sql);
+ return;
+}
+
+function  Arm(){
+ global $con;
+ $arm = $_POST['arm'];
+
+ $sql = "INSERT INTO arm(arm) VALUE('$arm')";
+ mysqli_query($con, $sql);
+ return;
+}
+
+function AddParent(){
+ global $con;
+ $name = $_POST['name'];
+ $address = $_POST['address'];
+ $email = $_POST['email'];
+ $phone = $_POST['phone'];
+  $state = $_POST['state'];
+  $lga = $_POST['lga'];
+  $sql = "INSERT INTO parents(name, address, email, phone, state, lga) VALUES('$name', '$address', '$email', '$phone', '$state', '$lga')";
+  mysqli_query($con, $sql);
+  return;
+
+}
+
 }
 
 $Pro = new Profile();
