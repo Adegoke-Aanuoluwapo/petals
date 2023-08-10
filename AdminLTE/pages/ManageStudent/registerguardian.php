@@ -83,7 +83,8 @@ require_once("../myclass.php")
                                 </h3>
                             </div>
                             <div class="card-body">
-                                <form action="" id="registerGuardian" class="row">
+                                <form method="POST" class="row">
+                                    <!--action="" id="registerGuardian" -->
                                     <div class=" col-md-4 form-group">
                                         <label>Name</label>
                                         <input type="text" name="name" class="form-control" placeholder="Gurdians name">
