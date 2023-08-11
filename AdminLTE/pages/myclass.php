@@ -19,7 +19,9 @@ class Profile
     }
    elseif(isset($_POST['addparent'])){
     $this-> AddParent();
-   }
+   } elseif (isset($_POST['addstudent'])) {
+      $this->AddStudent();
+    }
  }
  public function SignUp()
  {
@@ -94,13 +96,15 @@ function AddParent(){
   function AddStudent()
   {
     global $con;
-    $parent = $_POST['parent'];
+    $guardian = $_POST['guardian'];
     $class = $_POST['class'];
+    $arm = $_POST['arm'];
     $surname = $_POST['surname'];
     $firstname = $_POST['firstname'];
-    $state = $_POST['state'];
-    $lga = $_POST['lga'];
-    $sql = "INSERT INTO parents(name, address, email, phone, state, lga) VALUES('$name', '$address', '$email', '$phone', '$state', '$lga')";
+    $othernames = $_POST['othernames'];
+    $gender = $_POST['gender'];
+    $reg = $_POST['reg'];
+    $sql = "INSERT INTO students(guardian, class, arm, surname,firstname, othernames, gender, reg) VALUES('$guardian', '$class', '$arm', '$surname', '$firstname', '$othernames', '$gender', '$reg')";
     mysqli_query($con, $sql);
     return;
   }
