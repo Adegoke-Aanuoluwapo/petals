@@ -12,22 +12,26 @@ require_once("../myclass.php")
     <meta name="csrf-token" content="T3IvrB0h5oKZq9yQsfXOqyjjpzPz1IgOBTYgfBEj">
     <title>Students
     </title>
+    <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/css/adminlte.min.css">
-    <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/select2/css/select2.min.css">
-    <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
-    <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
-    <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=jRmqx-XSADPwXvXSSOrHscmAZ8jFvEfTwioM1bQ_F0rLSRSG2L6JXuUrrSA2LNfDGq0B7VcGje_wCf4LaxckRRsk5nbDIaVoaK9cq8PpATM" charset="UTF-8"></script>
-    <script src="https://portal.schoolpetal.com/assets/js/littlealert.js"></script>
-
-    <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-    <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-
-
-    <link rel="icon" href="https://portal.schoolpetal.com/assets/img/favicon.png">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet" href="../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="../plugins/jqvmap/jqvmap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
 
     <style>
         .profile_pics {
@@ -479,34 +483,25 @@ require_once("../myclass.php")
                                         <label>Guardian <span class="text-danger">*</span></label>
                                         <select name="name" class="form-control ">
                                             <!--id="guardian"  -->
-                                            <option>Select Guardian</option>
-                                            <?php $i = 1;
-                                            $sql = $con->query("SELECT * FROM parents");
-                                            while ($rows = $sql->fetch_assoc()) {
-                                                echo '<option>' . $rows['name'] .  '</option';
-                                            } ?>
+                                            >
                                         </select>
                                     </div>
                                     <div class=" col-md-4 form-group">
                                         <label>Prospective Class <span class="text-danger">*</span></label>
                                         <select id="class" class="form-control select2bs4">
                                             <option>Select Guardian</option>
-                                            <?php $i = 1;
-                                            $sql = $con->query("SELECT * FROM class");
-                                            while ($rows = mysqli_fetch_assoc($sql)) {
-                                                echo '<option>' . $rows['class'] .  '</option';
-                                            } ?>
+
                                         </select>
                                     </div>
 
                                     <div class="col-md-4 form-group">
                                         <label>Class Arm <span class="text-danger">*</span></label>
                                         <select name="arm" class="form-control select2bs4">
-                                            <option>Select arm</option>
+                                            <option>Select Guardian</option>
                                             <?php $i = 1;
-                                            $sql = $con->query("SELECT * FROM arm");
+                                            $sql = $con->query("SELECT * FROM parents");
                                             while ($rows = $sql->fetch_assoc()) {
-                                                echo "<option>" . $rows['arm'] .  "</option";
+                                                echo '<option>' . $rows['name'] .  '</option';
                                             } ?>
                                         </select>
                                     </div>
@@ -749,29 +744,40 @@ require_once("../myclass.php")
         </footer>
 
 
-        <script src="https://portal.schoolpetal.com/assets/plugins/jquery/jquery.min.js"></script>
-        <script src="https://portal.schoolpetal.com/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
-        <script src="https://portal.schoolpetal.com/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="https://portal.schoolpetal.com/assets/plugins/select2/js/select2.full.min.js"></script>
-        <script src="https://portal.schoolpetal.com/assets/plugins/sweetalert2/sweetalert2.min.js"></script>
-
-
-
-        <script src="https://portal.schoolpetal.com/assets/plugins/datatables/jquery.dataTables.min.js"></script>
-        <script src="https://portal.schoolpetal.com/assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-        <script src="https://portal.schoolpetal.com/assets/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-        <script src="https://portal.schoolpetal.com/assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-        <script src="https://portal.schoolpetal.com/assets/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-        <script src="https://portal.schoolpetal.com/assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-        <script src="https://portal.schoolpetal.com/assets/plugins/jszip/jszip.min.js"></script>
-        <script src="https://portal.schoolpetal.com/assets/plugins/pdfmake/pdfmake.min.js"></script>
-        <script src="https://portal.schoolpetal.com/assets/plugins/pdfmake/vfs_fonts.js"></script>
-        <script src="https://portal.schoolpetal.com/assets/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-        <script src="https://portal.schoolpetal.com/assets/plugins/datatables-buttons/js/buttons.print.min.js"></script>
-        <script src="https://portal.schoolpetal.com/assets/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-
-
-        <script src="https://portal.schoolpetal.com/assets/js/adminlte.js"></script>
+        <!-- jQuery -->
+        <script src="../plugins/jquery/jquery.min.js"></script>
+        <!-- jQuery UI 1.11.4 -->
+        <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+        <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+        <script>
+            $.widget.bridge('uibutton', $.ui.button)
+        </script>
+        <!-- Bootstrap 4 -->
+        <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- ChartJS -->
+        <script src="../plugins/chart.js/Chart.min.js"></script>
+        <!-- Sparkline -->
+        <script src="../plugins/sparklines/sparkline.js"></script>
+        <!-- JQVMap -->
+        <script src="../plugins/jqvmap/jquery.vmap.min.js"></script>
+        <script src="../plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+        <!-- jQuery Knob Chart -->
+        <script src="../plugins/jquery-knob/jquery.knob.min.js"></script>
+        <!-- daterangepicker -->
+        <script src="../plugins/moment/moment.min.js"></script>
+        <script src="../plugins/daterangepicker/daterangepicker.js"></script>
+        <!-- Tempusdominus Bootstrap 4 -->
+        <script src="../../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+        <!-- Summernote -->
+        <script src=".../../plugins/summernote/summernote-bs4.min.js"></script>
+        <!-- overlayScrollbars -->
+        <script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../dist/js/adminlte.js"></script>
+        <!-- AdminLTE for demo purposes -->
+        <script src="../dist/js/demo.js"></script>
+        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+        <script src="../dist/js/pages/dashboard.js"></script>
 
         <!-- <script>
    $(function() {

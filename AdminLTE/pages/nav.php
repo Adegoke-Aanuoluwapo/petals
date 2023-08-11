@@ -135,22 +135,9 @@
               </a>
             </li>
           </ul>
-        <li class="nav-item">
-          <a href="../pages/layout/top-nav.html" class="nav-link">
-            <i class="far fa-circle nav-icon"></i>
-            <p>Category/Arm</p>
-          </a>
-        </li>
+       
 
-        <li class="nav-item">
-          <a href="../pages/layout/boxed.html" class="nav-link">
-            <i class="far fa-circle nav-icon"></i>
-            <p>Classes</p>
-          </a>
-        </li>
-
-
-      </ul>
+    
       </li>
       <li class="nav-item">
         <a href="#" class="nav-link">

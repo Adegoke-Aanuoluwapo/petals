@@ -138,10 +138,22 @@ require_once("../myclass.php")
                                                 <th>Email</th>
                                                 <th>Phone</th>
                                                 <th>Address</th>
-                                                <th></th>
+
                                             </tr>
                                         </thead>
                                         <tbody id="guardian_body_list">
+                                            <?php $i = 1;
+                                            $sql = $con->query("SELECT * FROM parents");
+                                            while ($rows = mysqli_fetch_assoc($sql)) {  ?>
+                                                <tr>
+                                                    <td><?=$i++ ?></td>
+                                                    <td><?= $rows['name'] ?></td>
+                                                    <td><?= $rows['email'] ?></td>
+                                                    <td><?= $rows['phone'] ?></td>
+                                                    <td><?= $rows['address'] ?></td>
+                                                </tr>
+                                            <?php } ?>
+
 
                                         </tbody>
                                     </table>

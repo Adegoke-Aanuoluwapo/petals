@@ -1,3 +1,8 @@
+<?php 
+require_once("../myclass.php");
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -470,27 +475,39 @@
        <div class="card-body">
         <form action="" id="registerGuardian" class="row">
          <div class=" col-md-4 form-group">
-          <label>Name</label>
+          <label>Guardian</label>
+          <select name="name" class="form-control ">
+           <!--id="guardian"  -->
+           <option>Select Guardian</option>
+       
+          </select>
+         </div>
+         <div class=" col-md-4 form-group">
+          <label>Prospective Class</label>
           <input type="text" name="name" class="form-control" placeholder="Gurdians name">
          </div>
          <div class=" col-md-4 form-group">
-          <label>Home Address</label>
+          <label>Class Arm</label>
           <input type="text" name="address" class="form-control" placeholder="Lekki, Nigeria">
          </div>
-         <div class=" col-md-4 form-group">
-          <label>Email Address</label>
+         <div class=" col-md-3 form-group">
+          <label>Surname</label>
           <input type="email" name="email" class="form-control" placeholder="mail@gmail.com">
          </div>
-         <div class=" col-md-4 form-group">
-          <label>Phone Number</label>
+         <div class=" col-md-3 form-group">
+          <label>Firstname</label>
           <input type="text" name="phone" class="form-control" placeholder="090000000000">
          </div>
-         <div class=" col-md-4 form-group">
-          <label>State of Origin</label>
+         <div class=" col-md-3 form-group">
+          <label>other names</label>
           <input type="text" name="state" class="form-control" placeholder="Lagos">
          </div>
-         <div class=" col-md-4 form-group">
-          <label>L.G.A</label>
+         <div class=" col-md-3 form-group">
+          <label>Gender</label>
+          <input type="text" name="lga" class="form-control" placeholder="ikeja">
+         </div>
+         <div class=" col-md-3 form-group">
+          <label>Reg Number</label>
           <input type="text" name="lga" class="form-control" placeholder="ikeja">
          </div>
 
