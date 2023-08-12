@@ -1,3 +1,7 @@
+<?php
+include("myclass.php")
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -179,7 +183,7 @@
       <div class="col-sm-6">
        <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item active">Dashboard v1</li>
+        <li class="breadcrumb-item active">Dashboard </li>
        </ol>
       </div><!-- /.col -->
      </div><!-- /.row -->
@@ -241,20 +245,20 @@
        </button>
       </div>
       <div class="modal-body">
-       <form action="" class="row" id="addStaffForm">
+       <form method="POST">
         <div class="col-md-6 form-group">
          <label>Name</label>
-         <input type="text" name="name" class="form-control" placeholder="Thomas Gideon">
+         <input type="text" name="name" class="form-control" placeholder="Enter your name">
         </div>
 
         <div class="col-md-6 form-group">
          <label>Email</label>
-         <input type="email" name="email" class="form-control" placeholder="staff@schoolpetal.com">
+         <input type="email" name="email" class="form-control" placeholder="Enter email">
         </div>
 
         <div class="col-md-6 form-group">
          <label>Phone</label>
-         <input type="text" name="phone" class="form-control" placeholder="09000000000">
+         <input type="text" name="phone" class="form-control" placeholder="enter phone">
         </div>
 
         <div class="col-md-6 form-group">
@@ -267,7 +271,7 @@
          </select>
         </div>
         <div class="col-12 form-group">
-         <button type="submit" class="btn btn-secondary float-right addStaff ">Add Staff</button>
+         <button type="submit" class="btn btn-secondary float-right addStaff " name="addstaff">Add Staff</button>
         </div>
        </form>
       </div>
