@@ -1,5 +1,5 @@
 <?php
-require_once("../myclass.php")
+require_once("./myclass.php")
 ?>
 
 <!DOCTYPE html>
@@ -11,21 +11,26 @@ require_once("../myclass.php")
     <meta name="csrf-token" content="yUByY45jI8iQViYdL2G97ZoivfsDEdM9NX19S0B8">
     <title>Guardians
     </title>
+    <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/css/adminlte.min.css">
-    <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/select2/css/select2.min.css">
-    <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
-    <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
-    <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=_JgYLorUcnNBUEPTbU7d2lWo09jUSZEV5N2YniFn342BX_CRhjQMgQEvnstjvDjxnXqYFDcK2NVU5V15Yo8jOuZNyVKR0LFpbBTAshLaNYU" charset="UTF-8"></script>
-    <script src="https://portal.schoolpetal.com/assets/js/littlealert.js"></script>
-
-    <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-    <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-
-
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet" href="../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="../plugins/jqvmap/jqvmap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
 
 
     <style>
@@ -50,7 +55,7 @@ require_once("../myclass.php")
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
         <?php
-        include("../nav.php");
+        include("./nav.php");
         ?>
         <div class="content-wrapper">
             <div class="littleAlert"></div>
@@ -146,7 +151,7 @@ require_once("../myclass.php")
                                             $sql = $con->query("SELECT * FROM parents");
                                             while ($rows = mysqli_fetch_assoc($sql)) {  ?>
                                                 <tr>
-                                                    <td><?=$i++ ?></td>
+                                                    <td><?= $i++ ?></td>
                                                     <td><?= $rows['name'] ?></td>
                                                     <td><?= $rows['email'] ?></td>
                                                     <td><?= $rows['phone'] ?></td>
@@ -355,6 +360,57 @@ require_once("../myclass.php")
     }
    })
   </script> -->
+            <!-- Control Sidebar -->
+            <aside class="control-sidebar control-sidebar-dark">
+                <!-- Control sidebar content goes here -->
+            </aside>
+            <!-- /.control-sidebar -->
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery -->
+        <script src="../plugins/jquery/jquery.min.js"></script>
+        <!-- jQuery UI 1.11.4 -->
+        <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+        <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+        <script>
+            $.widget.bridge('uibutton', $.ui.button)
+        </script>
+
+        <!-- jQuery -->
+        <script src="../plugins/jquery/jquery.min.js"></script>
+        <!-- jQuery UI 1.11.4 -->
+        <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+        <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+        <script>
+            $.widget.bridge('uibutton', $.ui.button)
+        </script>
+        <!-- Bootstrap 4 -->
+        <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- ChartJS -->
+        <script src="../plugins/chart.js/Chart.min.js"></script>
+        <!-- Sparkline -->
+        <script src="../plugins/sparklines/sparkline.js"></script>
+        <!-- JQVMap -->
+        <script src="../plugins/jqvmap/jquery.vmap.min.js"></script>
+        <script src="../plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+        <!-- jQuery Knob Chart -->
+        <script src="../plugins/jquery-knob/jquery.knob.min.js"></script>
+        <!-- daterangepicker -->
+        <script src="../plugins/moment/moment.min.js"></script>
+        <script src="../plugins/daterangepicker/daterangepicker.js"></script>
+        <!-- Tempusdominus Bootstrap 4 -->
+        <script src="../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+        <!-- Summernote -->
+        <script src="../plugins/summernote/summernote-bs4.min.js"></script>
+        <!-- overlayScrollbars -->
+        <script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../dist/js/adminlte.js"></script>
+        <!-- AdminLTE for demo purposes -->
+        <!-- <script src="../dist/js/demo.js"></script> -->
+        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+        <script src="../dist/js/pages/dashboard.js"></script>
 </body>
 
 </html>
