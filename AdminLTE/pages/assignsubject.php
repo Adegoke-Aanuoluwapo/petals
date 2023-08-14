@@ -48,7 +48,7 @@
 
 <body class="hold-transition sidebar-mini layout-fixed">
  <div class="wrapper">
-
+<?php include("nav.php") ?>
 
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
    <ul class="navbar-nav">
