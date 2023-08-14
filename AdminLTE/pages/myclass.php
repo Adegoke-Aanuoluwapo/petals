@@ -23,6 +23,8 @@ class Profile
       $this->AddStudent();
     } elseif (isset($_POST['addstaff'])) {
       $this->AddStaff();
+    } elseif (isset($_POST['addsubject'])) {
+      $this->AddSubject();
     }
  }
  public function SignUp()
@@ -69,6 +71,14 @@ function  Cat(){
  $class = $_POST['class'];
 
  $sql = "INSERT INTO class(class) VALUE('$class')";
+ mysqli_query($con, $sql);
+ return;
+}
+function  AddSubject(){
+ global $con;
+ $subject = $_POST['subject'];
+
+ $sql = "INSERT INTO subjects(subject) VALUE('$subject')";
  mysqli_query($con, $sql);
  return;
 }
