@@ -1,3 +1,7 @@
+<?php
+include("myclass.php");
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,7 +55,7 @@
  <div class="wrapper">
   <?php include("nav.php") ?>
 
- 
+
 
 
   <div class="content-wrapper">
@@ -100,7 +104,22 @@
             <th></th>
            </tr>
           </thead>
-          <tbody id="staff_list_body">
+          <tbody>
+           <?php
+           $i = 1;
+           $sql = $con->query("SELECT * FROM staff");
+           while ($rows = mysqli_fetch_assoc($sql)) { ?>
+            <tr>
+             <td><?= $i++ ?></td>
+             <td><?= $rows['name'] ?></td>
+             <td><?= $rows['email'] ?></td>
+             <td><?= $rows['phone'] ?></td>
+             <td><?= $rows['role'] ?></td>
+            </tr>
+
+           <?php } ?>
+
+
 
           </tbody>
          </table>
@@ -156,7 +175,7 @@
          </select>
         </div>
         <div class="col-12 form-group">
-         <button type="submit" class="btn btn-secondary float-right addStaff " name="addStaff">Add Staff</button>
+         <button type="submit" class="btn btn-secondary float-right addStaff " name="addstaff">Add Staff</button>
         </div>
        </form>
       </div>

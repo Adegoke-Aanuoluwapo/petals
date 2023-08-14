@@ -301,8 +301,8 @@
           </a>
         <li class="nav-item">
           <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-chart-pie"></i>
-            <p>Log Out</p>
+          
+            
             <form method="POST" action="logout.php">
               <button type="submit" name="Logout"><i class="nav-icon fas fa-chart-pie"></i>
                 <p>Log Out</p>
