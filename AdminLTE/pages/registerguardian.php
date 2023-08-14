@@ -140,9 +140,11 @@ require_once("./myclass.php")
                                             <tr>
                                                 <th>#</th>
                                                 <th>Name</th>
+                                                <th>Address</th>
                                                 <th>Email</th>
                                                 <th>Phone</th>
-                                                <th>Address</th>
+                                                <th>State</th>
+                                                <th>LGA</th>
 
                                             </tr>
                                         </thead>
@@ -153,9 +155,11 @@ require_once("./myclass.php")
                                                 <tr>
                                                     <td><?= $i++ ?></td>
                                                     <td><?= $rows['name'] ?></td>
+                                                    <td><?= $rows['address'] ?></td>
                                                     <td><?= $rows['email'] ?></td>
                                                     <td><?= $rows['phone'] ?></td>
-                                                    <td><?= $rows['address'] ?></td>
+                                                    <td><?= $rows['state'] ?></td>
+                                                    <td><?= $rows['lga'] ?></td>
                                                 </tr>
                                             <?php } ?>
 
