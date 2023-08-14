@@ -94,7 +94,7 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="../pages/layout/top-nav.html" class="nav-link">
+              <a href="addstaff.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Add New Staff</p>
               </a>
@@ -277,33 +277,7 @@
 
             </p>
           </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="../pages/layout/top-nav.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Daily Payments</p>
-              </a>
-            </li>
 
-            <li class="nav-item">
-              <a href="../pages/layout/boxed.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Weekly Payments</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="../pages/layout/boxed.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Termly Payments</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="../pages/layout/boxed.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Fees Across Data Range</p>
-              </a>
-            </li>
-          </ul>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link">
@@ -314,63 +288,31 @@
 
             </p>
           </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="../pages/layout/top-nav.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Result Settings</p>
-              </a>
-            </li>
 
-            <li class="nav-item">
-              <a href="../pages/layout/boxed.html" class="nav-link">
-                <i class="fa fa-book nav-icon"></i>
-                <p>Student Result</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="../pages/layout/boxed.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Upload Result</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="../pages/layout/boxed.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>View Broad Result</p>
-              </a>
-            </li>
-
-
-          </ul>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-copy"></i>
             <p>
-              Student Result
+              My Profile
               <i class="fas fa-angle-left right"></i>
 
             </p>
           </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="../pages/layout/top-nav.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Result Settings</p>
-              </a>
-            </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-chart-pie"></i>
+            <p>Log Out</p>
+            <form method="POST" action="logout.php">
+              <button type="submit" name="Logout"><i class="nav-icon fas fa-chart-pie"></i>
+                <p>Log Out</p>
+              </button>
+            </form>
+          </a>
 
-            <li class="nav-item">
-              <a href="../pages/layout/boxed.html" class="nav-link">
-                <i class="fa fa-user nav-icon"></i>
-                <p>My Profile</p>
-              </a>
-            </li>
+          <i class="right-fas fa-angle-left"></i>
+        </li>
 
-
-
-          </ul>
         </li>
 
         </li>
