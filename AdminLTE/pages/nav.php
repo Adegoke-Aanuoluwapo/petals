@@ -177,14 +177,14 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="../pages/layout/top-nav.html" class="nav-link">
+              <a href="results.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Students Result</p>
               </a>
             </li>
 
             <li class="nav-item">
-              <a href="../pages/layout/boxed.html" class="nav-link">
+              <a href="classresult.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Class Results</p>
               </a>
@@ -204,7 +204,7 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="../pages/layout/top-nav.html" class="nav-link">
+              <a href="resultsetting.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Result Settings</p>
               </a>
