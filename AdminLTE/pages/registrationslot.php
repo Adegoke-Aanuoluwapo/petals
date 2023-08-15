@@ -8,22 +8,24 @@
  <title>Subscriptions
  </title>
  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
- <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/fontawesome-free/css/all.min.css">
- <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/css/adminlte.min.css">
- <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/select2/css/select2.min.css">
- <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
- <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
- <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
- <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=Bn468LXhoFjbY2kKQ2hzYLWmUWItQvb82-6LaprrqazmrvxiscprY4t7KT1Ytna-vDzgHapwKx8gBoz61TEqzwi8ZQtIw_NfbMeNhrvPQbg" charset="UTF-8"></script>
- <script src="https://portal.schoolpetal.com/assets/js/littlealert.js"></script>
-
- <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
- <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
- <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-
-
- <link rel="icon" href="https://portal.schoolpetal.com/assets/img/favicon.png">
-
+ <!-- Font Awesome -->
+ <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+ <!-- Ionicons -->
+ <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+ <!-- Tempusdominus Bootstrap 4 -->
+ <link rel="stylesheet" href="../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+ <!-- iCheck -->
+ <link rel="stylesheet" href="../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+ <!-- JQVMap -->
+ <link rel="stylesheet" href="../plugins/jqvmap/jqvmap.min.css">
+ <!-- Theme style -->
+ <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+ <!-- overlayScrollbars -->
+ <link rel="stylesheet" href="../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+ <!-- Daterange picker -->
+ <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
+ <!-- summernote -->
+ <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
  <style>
   .profile_pics {
    width: 50px;
@@ -91,350 +93,7 @@
    </ul>
   </nav>
 
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
-
-   <a href="#" class="brand-link">
-    <img src="https://apis.schoolpetal.com/assets/img/schools/8012145schoolpetal-international-school.jpg" alt="SchoolPetal Logo" class="brand-image img-circle elevation-3" style="opacity: .5">
-    <span class="brand-text font-weight-bolder">School Petal</span>
-   </a>
-
-   <div class="sidebar">
-    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-     <div class="image">
-
-     </div>
-     <img src="https://apis.schoolpetal.com/assets/img/students/user.png" class="profile_pics object-cover img-circle elevation-2   " alt="Img">
-
-     <div class="info">
-      <a href="#" class="d-block">SchoolPetal</a>
-     </div>
-    </div>
-    <nav class="mt-2">
-     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-
-      <li class="nav-item">
-       <a href="/control/dashboard" class="nav-link">
-        <i class="fa fa-home" aria-hidden="true"></i>
-        <p>Dashboard</p>
-       </a>
-      </li>
-
-
-
-      <li class="nav-item">
-       <a href="#" class="nav-link">
-        <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-        <p>
-         Manage Students
-         <i class="fas fa-angle-left right"></i>
-        </p>
-       </a>
-       <ul class="nav nav-treeview">
-        <li class="nav-item">
-         <a href="/control/register_guardian" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>Register Guardians</p>
-         </a>
-        </li>
-
-        <li class="nav-item">
-         <a href="/control/register_student" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>Register Students</p>
-         </a>
-        </li>
-
-        <li class="nav-item">
-         <a href="/control/all_student" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>All Students</p>
-         </a>
-        </li>
-
-       </ul>
-      </li>
-
-      <li class="nav-item">
-       <a href="#" class="nav-link">
-        <i class="fas fa-user-plus"></i>
-        <p>
-         Staff Management
-         <i class="fas fa-angle-left right"></i>
-        </p>
-       </a>
-       <ul class="nav nav-treeview">
-        <li class="nav-item">
-         <a href="/control/add_staff" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>Add New Staff</p>
-         </a>
-        </li>
-
-        <li class="nav-item">
-         <a href="#" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>View All Staffs</p>
-         </a>
-        </li>
-
-
-       </ul>
-      </li>
-
-
-
-
-
-
-
-
-
-      <li class="nav-item">
-       <a href="#" class="nav-link">
-        <i class="fa fa-clipboard" aria-hidden="true"></i>
-        <p>
-         Class Management
-         <i class="fas fa-angle-left right"></i>
-        </p>
-       </a>
-       <ul class="nav nav-treeview">
-        <li class="nav-item">
-         <a href="/control/category_arm" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>Category/Arm</p>
-         </a>
-        </li>
-
-        <li class="nav-item">
-         <a href="/control/create_class" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>Classes</p>
-         </a>
-        </li>
-       </ul>
-      </li>
-
-      <li class="nav-item">
-       <a href="#" class="nav-link">
-        <i class="fas fa-subscript"></i>
-        <p>
-         Subjects Info
-         <i class="fas fa-angle-left right"></i>
-        </p>
-       </a>
-       <ul class="nav nav-treeview">
-        <li class="nav-item">
-         <a href="/control/add_subject" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>Create/View Subjects</p>
-         </a>
-        </li>
-
-        <li class="nav-item">
-         <a href="/control/subject/assign" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>View Subject Teachers</p>
-         </a>
-        </li>
-
-
-       </ul>
-      </li>
-
-
-      <li class="nav-item">
-       <a href="#" class="nav-link">
-        <i class="fas fa-subscript"></i>
-        <p>
-         Results Mgm
-         <i class="fas fa-angle-left right"></i>
-        </p>
-       </a>
-       <ul class="nav nav-treeview">
-        <li class="nav-item">
-         <a href="/control/result/check/" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>Students Results</p>
-         </a>
-        </li>
-
-        <li class="nav-item">
-         <a href="/control/result/class/" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>Class Result </p>
-         </a>
-        </li>
-
-
-       </ul>
-      </li>
-
-
-
-      <li class="nav-item">
-       <a href="#" class="nav-link">
-        <i class="fas fa-toolbox"> </i>
-        <p>
-         School Settings
-         <i class="fas fa-angle-left right"></i>
-        </p>
-       </a>
-       <ul class="nav nav-treeview">
-        <li class="nav-item">
-         <a href="/control/setting/result" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>Results Settings</p>
-         </a>
-        </li>
-        <li class="nav-item">
-         <a href="/control/setting/permission" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>Permission Setup</p>
-         </a>
-        </li>
-        <li class="nav-item">
-         <a href="/control/setting/general" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>General Setup</p>
-         </a>
-        </li>
-
-        <li class="nav-item">
-         <a href="/control/setting/sub/10" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>Registration Slots</p>
-         </a>
-        </li>
-
-       </ul>
-      </li>
-
-
-
-      <li class="nav-item">
-       <a href="/control/managepromotion" class="nav-link">
-        <i class="fas fa-scroll    "></i>
-        <p>Manage Promotions</p>
-       </a>
-      </li>
-
-
-
-
-      <li class="nav-item">
-       <a href="#" class="nav-link">
-        <i class="fas fa-money-bill-wave-alt"></i>
-        <p>
-         School Fees Control
-         <i class="fas fa-angle-left right"></i>
-        </p>
-       </a>
-       <ul class="nav nav-treeview">
-        <li class="nav-item">
-         <a href="/control/fee" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>Create Fee Category</p>
-         </a>
-        </li>
-
-        <li class="nav-item">
-         <a href="/control/set_fee" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>Set School Fee</p>
-         </a>
-        </li>
-
-
-       </ul>
-      </li>
-
-      <li class="nav-item">
-       <a href="#" class="nav-link">
-        <i class="fa fa-sticky-note" aria-hidden="true"></i>
-        <p>
-         Levy Payment Report
-         <i class="fas fa-angle-left right"></i>
-        </p>
-       </a>
-       <ul class="nav nav-treeview">
-        <li class="nav-item">
-         <a href="/control/fee/daily" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>Daily Payments</p>
-         </a>
-        </li>
-        <li class="nav-item">
-         <a href="/control/fee/weekly" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>Weekly Payments</p>
-         </a>
-        </li>
-        <li class="nav-item">
-         <a href="/control/fee/termly" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>Termly Payments</p>
-         </a>
-        </li>
-
-        <li class="nav-item">
-         <a href="/control/fee/range" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>Fee Across Date Range</p>
-         </a>
-        </li>
-       </ul>
-      </li>
-
-
-      <li class="nav-item">
-       <a href="#" class="nav-link">
-        <i class="fa fa-book" aria-hidden="true"></i>
-        <p>
-         Student Result
-         <i class="fas fa-angle-left right"></i>
-        </p>
-       </a>
-       <ul class="nav nav-treeview">
-        <li class="nav-item">
-         <a href="/control/result/upload/" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>Upload Result</p>
-         </a>
-        </li>
-
-        <li class="nav-item">
-         <a href="/control/broad-sheet" class="nav-link">
-          <i class="far fa-circle nav-icon"></i>
-          <p>View Broad Sheet</p>
-         </a>
-        </li>
-
-
-       </ul>
-      </li>
-
-
-
-
-      <li class="nav-item">
-       <a href="#" class="nav-link">
-        <i class="fa fa-user" aria-hidden="true"></i>
-        <p>My Profile</p>
-       </a>
-      </li>
-
-
-      <li class="nav-item">
-       <a href="/logout" onclick="return confirm('Are you sure you want to log out')" class="nav-link">
-        <i class="fa fa-power-off" aria-hidden="true"></i>
-        <p>Log Out</p>
-       </a>
-      </li>
-
-     </ul>
-    </nav>
-   </div>
-  </aside>
+<?php include("nav.php")?>
 
 
   <div class="content-wrapper">
@@ -774,57 +433,78 @@
    </div>
   </footer>
 
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+   <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+ </div>
+ <!-- ./wrapper -->
 
-  <script src="https://portal.schoolpetal.com/assets/plugins/jquery/jquery.min.js"></script>
-  <script src="https://portal.schoolpetal.com/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
-  <script src="https://portal.schoolpetal.com/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="https://portal.schoolpetal.com/assets/plugins/select2/js/select2.full.min.js"></script>
-  <script src="https://portal.schoolpetal.com/assets/plugins/sweetalert2/sweetalert2.min.js"></script>
+ <!-- jQuery -->
+ <script src="../plugins/jquery/jquery.min.js"></script>
+ <!-- jQuery UI 1.11.4 -->
+ <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+ <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+ <script>
+  $.widget.bridge('uibutton', $.ui.button)
+ </script>
+ <!-- Bootstrap 4 -->
+ <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+ <!-- ChartJS -->
+ <script src="../plugins/chart.js/Chart.min.js"></script>
+ <!-- Sparkline -->
+ <script src="../plugins/sparklines/sparkline.js"></script>
+ <!-- JQVMap -->
+ <script src="../plugins/jqvmap/jquery.vmap.min.js"></script>
+ <script src="../plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+ <!-- jQuery Knob Chart -->
+ <script src="../plugins/jquery-knob/jquery.knob.min.js"></script>
+ <!-- daterangepicker -->
+ <script src="../plugins/moment/moment.min.js"></script>
+ <script src="../plugins/daterangepicker/daterangepicker.js"></script>
+ <!-- Tempusdominus Bootstrap 4 -->
+ <script src="../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+ <!-- Summernote -->
+ <script src="../plugins/summernote/summernote-bs4.min.js"></script>
+ <!-- overlayScrollbars -->
+ <script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+ <!-- AdminLTE App -->
+ <script src="../dist/js/adminlte.js"></script>
+ <!-- AdminLTE for demo purposes -->
+ <script src="../dist/js/demo.js"></script>
+ <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+ <script src="../dist/js/pages/dashboard.js"></script>
 
 
+ <script src="https://portal.schoolpetal.com/assets/js/adminlte.js"></script>
 
-  <script src="https://portal.schoolpetal.com/assets/plugins/datatables/jquery.dataTables.min.js"></script>
-  <script src="https://portal.schoolpetal.com/assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-  <script src="https://portal.schoolpetal.com/assets/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-  <script src="https://portal.schoolpetal.com/assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-  <script src="https://portal.schoolpetal.com/assets/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-  <script src="https://portal.schoolpetal.com/assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-  <script src="https://portal.schoolpetal.com/assets/plugins/jszip/jszip.min.js"></script>
-  <script src="https://portal.schoolpetal.com/assets/plugins/pdfmake/pdfmake.min.js"></script>
-  <script src="https://portal.schoolpetal.com/assets/plugins/pdfmake/vfs_fonts.js"></script>
-  <script src="https://portal.schoolpetal.com/assets/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-  <script src="https://portal.schoolpetal.com/assets/plugins/datatables-buttons/js/buttons.print.min.js"></script>
-  <script src="https://portal.schoolpetal.com/assets/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-
-
-  <script src="https://portal.schoolpetal.com/assets/js/adminlte.js"></script>
-
-  <script>
-   $(function() {
-    $('.select2').select2()
-    $('.select2bs4').select2({
-     theme: 'bootstrap4'
-    })
+ <script>
+  $(function() {
+   $('.select2').select2()
+   $('.select2bs4').select2({
+    theme: 'bootstrap4'
    })
-  </script>
+  })
+ </script>
 
-  <script>
-   $(function() {
-    var Toast = Swal.mixin({
-     toast: true,
-     position: 'top-end',
-     showConfirmButton: false,
-     timer: 3000
+ <script>
+  $(function() {
+   var Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000
+   });
+
+   function firstToast(icon = "success", message = 'Done') {
+    Toast.fire({
+     icon: icon,
+     title: message
     });
-
-    function firstToast(icon = "success", message = 'Done') {
-     Toast.fire({
-      icon: icon,
-      title: message
-     });
-    }
-   })
-  </script>
+   }
+  })
+ </script>
 </body>
 
 </html>
