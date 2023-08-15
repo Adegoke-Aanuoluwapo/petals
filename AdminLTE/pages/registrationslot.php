@@ -238,7 +238,7 @@
     </div>
    </section>
 
-
+<!-- 
    <script src="https://portal.schoolpetal.com/assets/plugins/jquery/jquery.min.js"></script>
 
    <script>
@@ -420,7 +420,7 @@
 
 
     })
-   </script>
+   </script> -->
 
 
   </div>
@@ -477,8 +477,8 @@
  <script src="../dist/js/pages/dashboard.js"></script>
 
 
- <script src="https://portal.schoolpetal.com/assets/js/adminlte.js"></script>
-
+ <!-- <script src="https://portal.schoolpetal.com/assets/js/adminlte.js"></script> -->
+<!-- 
  <script>
   $(function() {
    $('.select2').select2()
@@ -486,9 +486,9 @@
     theme: 'bootstrap4'
    })
   })
- </script>
+ </script> -->
 
- <script>
+ <!-- <script>
   $(function() {
    var Toast = Swal.mixin({
     toast: true,
@@ -504,7 +504,7 @@
     });
    }
   })
- </script>
+ </script> -->
 </body>
 
 </html>
