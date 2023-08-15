@@ -284,30 +284,78 @@
                 <i class="far fa-circle nav-icon"></i>
                 <p>
                   Daily Payment
-                  <i class="fas fa-angle-left right"></i>
+
 
                 </p>
               </a>
+            </li>
+            <li class="nav-item">
               <a href="weeklyfee.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>
                   Weekly Payment
-                  <i class="fas fa-angle-left right"></i>
 
                 </p>
               </a>
+            </li>
+            <li class="nav-item">
               <a href="termlyfee.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>
                   Termly fee
-                  <i class="fas fa-angle-left right"></i>
+
 
                 </p>
               </a>
 
             </li>
+            <li class="nav-item">
+              <a href="feesrange.php" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>
+                  Fees across range
+
+
+                </p>
+              </a>
+
+            </li>
+          </ul>
         </li>
-    
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-copy"></i>
+            <p>
+              Student Result
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+
+            <li class="nav-item">
+              <a href="uploadresult.php" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>
+                  Upload Result
+
+
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="dailyfee.php" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>
+                  View Result
+
+
+                </p>
+              </a>
+            </li>
+
+          </ul>
+        </li>
+
 
         <li class="nav-item">
           <a href="#" class="nav-link">
