@@ -211,7 +211,7 @@
             </li>
 
             <li class="nav-item">
-              <a href="../pages/layout/boxed.html" class="nav-link">
+              <a href="resultpermission.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Permission Setup</p>
               </a>
