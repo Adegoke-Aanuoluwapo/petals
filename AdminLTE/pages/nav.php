@@ -217,13 +217,13 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="../pages/layout/boxed.html" class="nav-link">
+              <a href="generalsetup.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>General Setup</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="../pages/layout/boxed.html" class="nav-link">
+              <a href="registrationslot.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Registration Slots</p>
               </a>
