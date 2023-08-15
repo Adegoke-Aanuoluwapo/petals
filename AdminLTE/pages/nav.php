@@ -233,7 +233,7 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="managepromotion.php" class="nav-link">
             <i class="nav-icon fas fa-money-bill-wave-alt"></i>
             <p>
               Managemant Promotions
@@ -244,7 +244,7 @@
 
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="" class="nav-link">
             <i class="nav-icon fa fa-sticky-note"></i>
             <p>
               School fees Control
@@ -254,42 +254,61 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="../pages/layout/top-nav.html" class="nav-link">
+              <a href="feescontrol.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Create Fee Category</p>
               </a>
             </li>
 
             <li class="nav-item">
-              <a href="../pages/layout/boxed.html" class="nav-link">
+              <a href="setfee.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Set School Fees</p>
               </a>
             </li>
           </ul>
         </li>
+
         <li class="nav-item">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-copy"></i>
             <p>
               Levy Payment Report
               <i class="fas fa-angle-left right"></i>
-
             </p>
           </a>
+          <ul class="nav nav-treeview">
 
+            <li class="nav-item">
+              <a href="dailyfee.php" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>
+                  Daily Payment
+                  <i class="fas fa-angle-left right"></i>
+
+                </p>
+              </a>
+              <a href="weeklyfee.php" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>
+                  Weekly Payment
+                  <i class="fas fa-angle-left right"></i>
+
+                </p>
+              </a>
+              <a href="termlyfee.php" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>
+                  Termly fee
+                  <i class="fas fa-angle-left right"></i>
+
+                </p>
+              </a>
+
+            </li>
         </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-copy"></i>
-            <p>
-              Student Result
-              <i class="fas fa-angle-left right"></i>
+    
 
-            </p>
-          </a>
-
-        </li>
         <li class="nav-item">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-copy"></i>
@@ -301,8 +320,8 @@
           </a>
         <li class="nav-item">
           <a href="#" class="nav-link">
-          
-            
+
+
             <form method="POST" action="logout.php">
               <button type="submit" name="Logout"><i class="nav-icon fas fa-chart-pie"></i>
                 <p>Log Out</p>
