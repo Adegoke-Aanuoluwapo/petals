@@ -118,6 +118,20 @@ function AddParent(){
     mysqli_query($con, $sql);
     return;
   }
+  function staffRole($role){
+    $post = '';
+    if($role == 7 ){
+      $post = 'Teacher';
+    }elseif($role == 8){
+      $post = 'Accountant';
+    }
+    elseif($role == 9){
+      $post = 'Administrator';
+    }
+    return $role;
+    
+    }
+  
   function AddStudent()
   {
     global $con;
