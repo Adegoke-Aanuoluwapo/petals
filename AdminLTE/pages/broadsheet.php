@@ -5,7 +5,7 @@
  <meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <meta name="csrf-token" content="xJ0Dnex9A8BkkhE42oMC01Coy5hwpVgijyJ0PChF">
- <title>Upload Results
+ <title>Broad Sheet
  </title>
  <!-- Google Font: Source Sans Pro -->
  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -27,6 +27,7 @@
  <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
  <!-- summernote -->
  <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
+
  <style>
   .profile_pics {
    width: 50px;
@@ -93,6 +94,7 @@
     </li>
    </ul>
   </nav>
+
 <?php include("nav.php") ?>
 
 
@@ -103,12 +105,12 @@
     <div class="container-fluid">
      <div class="row mb-2">
       <div class="col-sm-6">
-       <h1 class="m-0">Upload Result</h1>
+       <h1 class="m-0">Broad Sheet</h1>
       </div>
       <div class="col-sm-6">
        <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="/control/dashboard">Home</a></li>
-        <li class="breadcrumb-item active">Result</li>
+        <li class="breadcrumb-item active">Broad Sheet</li>
        </ol>
       </div>
      </div>
@@ -123,14 +125,14 @@
        <div class="col-md-4">
         <div class="card card-secondary card-outline">
          <div class="card-body">
-          <form id="startResult">
+          <form id="loadSheet">
            <div class="form-group">
             <label>Select Programme</label>
             <select name="program" id="program" class="form-control select2bs4">
             </select>
            </div>
            <div class="form-group">
-            <button class="btn btn-secondary float-right startResult">Start Result</button>
+            <button class="btn btn-secondary float-right loadSheet">View Sheet</button>
            </div>
            <input type="hidden" id="setup">
           </form>
@@ -153,6 +155,13 @@
          <table id="example1" class="table mb-0 table-bordered table-hover table-striped">
           <thead>
            <tr>
+            <td colspan="2"></td>
+            <th colspan="5" class="text-center"> 1<sup>st</sup> Term </th>
+            <th colspan="5" class="text-center">2<sup>nd</sup> Term</th>
+            <th colspan="5" class="text-center">3<sup>rd</sup> Term</th>
+            <th></th>
+           </tr>
+           <tr>
             <th>#</th>
             <th>Student</th>
             <th class="ca1">CA1</th>
@@ -160,8 +169,22 @@
             <th class="ca3">CA3</th>
             <th class="exam">Exam</th>
             <th>Total</th>
-            <th></th>
+
+            <th class="ca1">CA1</th>
+            <th class="ca2">CA2</th>
+            <th class="ca3">CA3</th>
+            <th class="exam">Exam</th>
+            <th>Total</th>
+
+            <th class="ca1">CA1</th>
+            <th class="ca2">CA2</th>
+            <th class="ca3">CA3</th>
+            <th class="exam">Exam</th>
+            <th>Total</th>
+            <th>£f</th>
+
            </tr>
+
           </thead>
           <tbody id="result_body">
 
@@ -207,50 +230,35 @@
 
      fetchProgram();
 
-
-     $('#startResult').on('submit', function(e) {
+     $('#loadSheet').on('submit', function(e) {
       e.preventDefault();
-      form = $(this);
-      program = $(form).find('select[name=program]').val();
-      if (!program) {
-       littleAlert('Pls select a program to start result', 1);
+      prog = $($(this)).find('select[name="program"]').val();
+      if (!prog) {
+       littleAlert('Pls select a program', 1);
        return;
       }
+      location.href = `/control/broad-sheet/${prog}`;
+      btnProcess('.loadSheet', '', 'before');
+     });
 
-      $.ajax({
-       method: 'post',
-       url: api_url + 'start_result',
-       data: {
-        set_id: program
-       },
-       beforeSend: () => {
-        btnProcess('.startResult', '', 'before');
-       }
-      }).done(function(res) {
-       littleAlert(res.message);
-       btnProcess('.startResult', 'Start Result', 'after');
-       location.href = `/control/result/upload/${program}`
-      }).fail(function(res) {
-       parseError(res.responseJSON);
-       btnProcess('.startResult', 'Start Result', 'after');
-      })
-     })
+
 
 
      function loadProgram() {
       program = `0`;
+      console.log(program);
       body = $('#result_body');
       if (program == 0) {
-       littleAlert('Pls select a program to upload/edit result', 1);
+       littleAlert('Pls select a program view result', 1);
        return;
       }
       $.ajax({
        method: 'get',
-       url: api_url + `load/program/${program}?page=1`,
+       url: api_url + `broad/${program}`,
        beforeSend: () => {
         body.html(`
                             <tr>
-                                <td colspan="12">
+                                <td colspan="20">
                                     <div class="text-center">
                                         <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
                                         <i> Loading ... </i>
@@ -260,231 +268,57 @@
                         `)
        }
       }).done(function(res) {
-       $('.t_text').html(`${res.cap} Result`);
+       $('.t_text').html(`${res.cap} Broad Sheet`);
        body = $('#result_body');
        set = res.setup;
        body.html(``);
-       if (!res.setup) {
-        body.html(`
-                            <tr>
-                                <td colspan="12"><div class="text-center"><b>Result Setup is not complete <br> Contact an admin to complete setup</b></div></td>
-                            </tr>
-                        `);
-        return;
-       }
-       $('#setup').val(JSON.stringify(set));
-       $('.ca1').html(`CA1 (${set.ca1})`);
-       $('.ca2').html(`CA2 (${set.ca2})`);
-       $('.ca3').html(`CA3 (${set.ca3})`);
-       $('.exam').html(`Exam (${set.exam})`);
-       littleAlert('You can now edit student result');
-       res.data.data.map((rsu, index) => {
+       res.data.map((stu, index) => {
+        first = checkRes(stu.first);
+        second = checkRes(stu.second);
+        third = checkRes(stu.third);
+        //total = first.total + second.total + third.total ;
+        total = parseInt((first.total > 0) ? first.total : 0) + parseInt((second.total > 0) ? second.total : 0) + parseInt((third.total > 0) ? third.total : 0);
+        divisor = ((first.total > 0) ? 1 : 0) + ((second.total > 0) ? 1 : 0) + ((third.total > 0) ? 1 : 0);
+        ef = total / divisor;
         body.append(`
                             <tr class="single">
                                 <td>${index+1}</td>
-                                <td>${rsu.student.surname} ${rsu.student.firstname}</td>
-                                <td>
-                                    <input type="hidden" name="id" value="${rsu.id}">
-                                    <input type="number" name="ca1" class="form-control" value="${rsu.t1}" ${(set.ca1 == 0) ? 'disabled' : ''} style="width: 70px; height: 30px">
-                                </td>
-                                <td><input type="number" name="ca2" class="form-control" value="${rsu.t2}" ${(set.ca2 == 0) ? 'disabled' : ''} style="width: 70px; height: 30px"></td>
-                                <td><input type="number" name="ca3" class="form-control" value="${rsu.t3}" ${(set.ca3 == 0) ? 'disabled' : ''}  style="width: 70px; height: 30px"></td>
-                                <td><input type="number" name="exam" class="form-control" value="${rsu.exam}" ${(set.exam == 0) ? 'disabled' : ''} style="width: 70px; height: 30px"></td>
-                                <td>${parseInt(rsu.t1) + parseInt(rsu.t2) + parseInt(rsu.t3) + parseInt(rsu.exam)}</td>
-                                <td><button class="btn btn-xs btn-success save_change float-right"><i class="fas fa-save"></i> Save</button></td>
+                                <td>${stu.surname} ${stu.firstname}</td>
+                                <td>${first.t1}</td>
+                                <td>${first.t2}</td>
+                                <td>${first.t3}</td>
+                                <td>${first.exam}</td>
+                                <td>${first.total}</td>
+
+                                <td>${second.t1}</td>
+                                <td>${second.t2}</td>
+                                <td>${second.t3}</td>
+                                <td>${second.exam}</td>
+                                <td>${second.total}</td>
+
+                                <td>${third.t1}</td>
+                                <td>${third.t2}</td>
+                                <td>${third.t3}</td>
+                                <td>${third.exam}</td>
+                                <td>${third.total}</td>
+
+                                <td>${ef}</td>
+
                             </tr>
                         `)
        })
 
-
-       body.append(`
-                        <tr>
-                            <td colspan="12">
-                                <button class="btn btn-success save_all float-right"><i class="fas fa-save"></i> Save all changes</button>
-                            </td>
-                        </tr>
-                    `)
-
-
-
-       $('#page_links').html(dropPaginatedPages(res.data.links))
-      }).fail(function(res) {});
+      }).fail(function(res) {
+       console.log(res);
+      });
      }
      loadProgram();
 
 
-     $('body').on('click', '.save_change', function() {
-      btn = $(this);
-      set = JSON.parse($('#setup').val());
-      error = 0;
-      parent = btn.parent();
-      td_siblings = parent.siblings()
-      //result id
-      result_id = td_siblings[2].children[0].value
-
-      ///ca1 fetch and check
-      ca1 = parseInt(td_siblings[2].children[1].value);
-      if (ca1 > set.ca1 || 0 > ca1) {
-       td_siblings[2].classList.add('bg-danger');
-       error++;
-      } else {
-       td_siblings[2].classList.remove('bg-danger');
-      }
-
-      ///ca2
-      ca2 = parseInt(td_siblings[3].children[0].value);
-      if (ca2 > set.ca2 || 0 > ca2) {
-       td_siblings[3].classList.add('bg-danger');
-       error++;
-      } else {
-       td_siblings[3].classList.remove('bg-danger');
-      }
-
-      /////ca3
-      ca3 = parseInt(td_siblings[4].children[0].value);
-      if (ca3 > set.ca3 || 0 > ca3) {
-       td_siblings[4].classList.add('bg-danger');
-       error++;
-      } else {
-       td_siblings[4].classList.remove('bg-danger');
-      }
-
-      /////exam
-      exam = parseInt(td_siblings[5].children[0].value);
-      if (exam > set.exam || 0 > exam) {
-       td_siblings[5].classList.add('bg-danger');
-       error++;
-      } else {
-       td_siblings[5].classList.remove('bg-danger');
-      }
-
-      total = ca1 + ca2 + ca3 + exam
-      if (error > 0) {
-       littleAlert(`There are ${error} errors in the score inputed, pls check and try again`, 1);
-       return;
-      }
-
-      $.ajax({
-       method: 'post',
-       url: api_url + 'update/student/result',
-       data: {
-        result_id: result_id,
-        ca1: ca1,
-        ca2: ca2,
-        ca3: ca3,
-        exam: exam
-       },
-       beforeSend: () => {
-        btn.html(`<span class="spinner-border spinner-border-sm" aria-hidden="true"></span> <i>...</i>`);
-        $('.save_change').attr('disabled', 'disabled');
-       }
-      }).done(function(res) {
-       littleAlert(res.message);
-       $('.save_change').removeAttr('disabled');
-       btn.html(`<i class="fas fa-save"></i> Save`);
-       td_siblings[6].innerHTML = total;
-      }).fail(function(res) {
-       parseError(res.responseJSON);
-       btn.html(`<i class="fas fa-save"></i> Save`);
-       $('.save_change').removeAttr('disabled');
-      })
-     })
 
 
 
 
-     $('body').on('click', '.save_all', function() {
-
-      set = JSON.parse($('#setup').val());
-      error = 0;
-
-
-      trs = $('.single')
-      data = [];
-      total = [];
-      trs.map(row => {
-       td_siblings = trs[row].children
-       //result id
-       result_id = td_siblings[2].children[0].value
-
-       ///ca1 fetch and check
-       ca1 = parseInt(td_siblings[2].children[1].value);
-       if (ca1 > set.ca1 || 0 > ca1) {
-        td_siblings[2].classList.add('bg-danger');
-        error++;
-       } else {
-        td_siblings[2].classList.remove('bg-danger');
-       }
-
-       ///ca2
-       ca2 = parseInt(td_siblings[3].children[0].value);
-       if (ca2 > set.ca2 || 0 > ca2) {
-        td_siblings[3].classList.add('bg-danger');
-        error++;
-       } else {
-        td_siblings[3].classList.remove('bg-danger');
-       }
-
-       /////ca3
-       ca3 = parseInt(td_siblings[4].children[0].value);
-       if (ca3 > set.ca3 || 0 > ca3) {
-        td_siblings[4].classList.add('bg-danger');
-        error++;
-       } else {
-        td_siblings[4].classList.remove('bg-danger');
-       }
-
-       /////exam
-       exam = parseInt(td_siblings[5].children[0].value);
-       if (exam > set.exam || 0 > exam) {
-        td_siblings[5].classList.add('bg-danger');
-        error++;
-       } else {
-        td_siblings[5].classList.remove('bg-danger');
-       }
-
-       arr = {
-        result_id: result_id,
-        ca1: ca1,
-        ca2: ca2,
-        ca3: ca3,
-        exam: exam
-       }
-       data.push(arr);
-       total.push(ca1 + ca2 + ca3 + exam);
-      });
-
-      if (error > 0) {
-       littleAlert(`There are ${error} errors in the score inputed, pls check and try again`, 1);
-       return;
-      }
-
-      $.ajax({
-       method: 'post',
-       url: api_url + 'update/student/result/all',
-       data: {
-        data: data
-       },
-       beforeSend: () => {
-        $('.save_change').attr('disabled', 'disabled');
-        btnProcess('.save_all', '', 'before');
-       }
-      }).done(function(res) {
-       littleAlert(res.message);
-       $('.save_change').removeAttr('disabled');
-       btnProcess('.save_all', '<i class="fas fa-save"></i> Save all changes', 'after');
-
-       trs.map(row => {
-        td_siblings = trs[row].children
-        td_siblings[6].innerHTML = total[row];
-       });
-
-      }).fail(function(res) {
-       parseError(res.responseJSON);
-       btnProcess('.save_all', '<i class="fas fa-save"></i> Save all changes', 'after');
-       $('.save_change').removeAttr('disabled');
-      })
-     })
     })
    </script>
 
@@ -497,6 +331,8 @@
     <b>Version</b> 2.5
    </div>
   </footer>
+
+
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -549,7 +385,6 @@
  <!-- <script src="../dist/js/demo.js"></script> -->
  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
  <script src="../dist/js/pages/dashboard.js"></script>
-
 
 
  <script src="https://portal.schoolpetal.com/assets/js/adminlte.js"></script>

@@ -129,7 +129,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="../pages/classmanagement/class.php" class="nav-link">
+              <a href="class.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Classes</p>
               </a>
@@ -343,7 +343,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="dailyfee.php" class="nav-link">
+              <a href="broadsheet.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>
                   View Result
