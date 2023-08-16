@@ -26,6 +26,7 @@ class Profile
     } elseif (isset($_POST['addsubject'])) {
       $this->AddSubject();
     }
+    
  }
  public function SignUp()
  {
@@ -128,10 +129,29 @@ function AddParent(){
     elseif($role == 9){
       $post = 'Administrator';
     }
-    return $role;
+    return $post;
     
     }
-  
+
+    function SqLx($table, $key, $value, $pin){
+      global $con;
+      $sql = $con->query("SELECT * FROM $table WHERE $key = '$value'");
+      $row= mysqli_fetch_assoc($sql);
+      return $row[$pin];
+    }
+  function getParentName($sn){
+    global $con;
+    $sql = $con->query("SELECT * FROM parents WHERE sn = '$sn'");
+    $rows = mysqli_fetch_assoc($sql);
+    return $rows['name'];
+
+  }
+  function getStudentClass($sn){
+    global $con;
+    $sql = $con->query("SELECT * FROM class WHERE sn = '$sn'");
+    $rows = mysqli_fetch_assoc($sql);
+    return $rows['class'];
+  }
   function AddStudent()
   {
     global $con;
@@ -150,4 +170,4 @@ function AddParent(){
 
 }
 
-$Pro = new Profile();
+$pro = new Profile();

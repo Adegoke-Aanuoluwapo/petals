@@ -1,3 +1,5 @@
+<?php require_once("myclass.php") ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -90,6 +92,23 @@
                     </div>
                 </div>
                 <div class="row" id="student_list_body">
+                    <?php $i = 1;
+                    $sql = $con->query("SELECT * FROM students");
+                    while ($rows = mysqli_fetch_assoc($sql)) { ?>
+                        <div class="col-lg-3 col-md-4">
+                            <div class="card card-secondary card-outline">
+                                <div class="text-center">
+                                    <img class="profile-user-img img-fluid img-circle" src="user.png" alt="">
+                                    <h3 class="profile-username text-center"><?= $rows['surname']. ' '. $rows['firstname'] ?></h3>
+                                    <p class="text-muted mb-0 text-center"><?= $rows['class'] ?> <sup><?= $rows['arm'] ?></sup> | <?= $rows['gender']?></p>
+                                    <button type="button" class="btn btn-success btn-xs  btn-block"><b> <i class="fa fa-user-check"></i> Active</b></button>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    <?php }
+                    ?>
 
                 </div>
 

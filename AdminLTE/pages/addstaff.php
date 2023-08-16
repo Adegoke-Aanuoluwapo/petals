@@ -114,7 +114,7 @@ include("myclass.php");
              <td><?= $rows['name'] ?></td>
              <td><?= $rows['email'] ?></td>
              <td><?= $rows['phone'] ?></td>
-             <td><?= $rows['role'] ?></td>
+             <td><?= $pro->staffRole($rows['role']) ?></td>
             </tr>
 
            <?php } ?>

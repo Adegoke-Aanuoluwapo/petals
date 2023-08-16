@@ -96,7 +96,7 @@ require_once("myclass.php")
                       <?php $i = 1;
                       $sql = $con->query("SELECT * FROM parents");
                       while ($rows = $sql->fetch_assoc()) {
-                        echo '<option>' . $rows['name'] . '</option>';
+                        echo '<option value="'.$rows['sn'].'">' . $rows['name'] . '</option>';
                       } ?>
                     </select>
                   </div>
@@ -108,7 +108,7 @@ require_once("myclass.php")
                       <?php $i = 1;
                       $sql = $con->query("SELECT * FROM class");
                       while ($rows = $sql->fetch_assoc()) {
-                        echo '<option>' . $rows['class'] . '</option>';
+                        echo '<option  value="' . $rows['sn'] . '">' . $rows['class'] . '</option>';
                       } ?>
                     </select>
                   </div>
@@ -120,7 +120,7 @@ require_once("myclass.php")
                       <?php $i = 1;
                       $sql = $con->query("SELECT * FROM arm");
                       while ($rows = $sql->fetch_assoc()) {
-                        echo '<option>' . $rows['arm'] . '</option>';
+                        echo '<option  value="' . $rows['sn'] . '">' . $rows['arm'] . '</option>';
                       } ?>
                     </select>
                   </div>
@@ -189,8 +189,9 @@ require_once("myclass.php")
                         <tr>
                           <td><?= $i++ ?></td>
                           <td><?= $rows['surname'] . ' ' . $rows['firstname'] ?></td>
-                          <td><?= $rows['class'] ?></td>
-                          <td><?= $rows['guardian'] ?></td>
+                          <td><?= $pro->getStudentClass($rows['class']) ?></td>
+                          
+                          <td><?= $pro->getParentName($rows['guardian']) ?></td>
                           <td><?= $rows['gender'] ?></td>
                         </tr>
                       <?php  } ?>
