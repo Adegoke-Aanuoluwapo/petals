@@ -1,301 +1,984 @@
+<?php
+require_once("myclass.php");
+
+if(isset($_GET['sn'])){
+    $sn = $_GET['sn'];
+
+    $sql = $con->query("SELECT * FROM students WHERE sn ='$sn' ");
+    $rows = mysqli_fetch_assoc($sql);
+
+
+}
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
- <meta charset="utf-8">
- <meta name="viewport" content="width=device-width, initial-scale=1">
- <meta name="csrf-token" content="H6RKhZARStAVTjfKJkHuuMF8xPlpO2rzUkJSmaoC">
- <title> Student Profile
- </title>
- <!-- Google Font: Source Sans Pro -->
- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
- <!-- Font Awesome -->
- <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
- <!-- Ionicons -->
- <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
- <!-- Tempusdominus Bootstrap 4 -->
- <link rel="stylesheet" href="../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
- <!-- iCheck -->
- <link rel="stylesheet" href="../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
- <!-- JQVMap -->
- <link rel="stylesheet" href="../plugins/jqvmap/jqvmap.min.css">
- <!-- Theme style -->
- <link rel="stylesheet" href="../dist/css/adminlte.min.css">
- <!-- overlayScrollbars -->
- <link rel="stylesheet" href="../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
- <!-- Daterange picker -->
- <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
- <!-- summernote -->
- <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="H6RKhZARStAVTjfKJkHuuMF8xPlpO2rzUkJSmaoC">
+    <title> Student Profile
+    </title>
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet" href="../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="../plugins/jqvmap/jqvmap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
 
- <style>
-  .profile_pics {
-   width: 50px;
-   height: 50px;
-  }
+    <style>
+        .profile_pics {
+            width: 50px;
+            height: 50px;
+        }
 
-  .object-cover {
-   object-fit: cover;
-  }
+        .object-cover {
+            object-fit: cover;
+        }
 
-  .profile-user-img {
-   width: 100px;
-   height: 100px;
-  }
- </style>
+        .profile-user-img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
 
 
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
- <div class="wrapper">
+    <div class="wrapper">
 
 
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-   <ul class="navbar-nav">
-    <li class="nav-item">
-     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-    </li>
-    <li class="nav-item d-none d-sm-inline-block">
-     <a href="#" class="nav-link"><b>SchoolPetal International School</b></a>
-    </li>
-   </ul>
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="#" class="nav-link"><b>SchoolPetal International School</b></a>
+                </li>
+            </ul>
 
-   <ul class="navbar-nav ml-auto">
-    <li class="nav-item">
-     <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-      <i class="fas fa-search"></i>
-     </a>
-     <div class="navbar-search-block">
-      <form class="form-inline">
-       <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-        <div class="input-group-append">
-         <button class="btn btn-navbar" type="submit">
-          <i class="fas fa-search"></i>
-         </button>
-         <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-          <i class="fas fa-times"></i>
-         </button>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <div class="navbar-search-block">
+                        <form class="form-inline">
+                            <div class="input-group input-group-sm">
+                                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                                <div class="input-group-append">
+                                    <button class="btn btn-navbar" type="submit">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                    <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+                        <i class="fas fa-user-alt"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <?php include("nav.php") ?>
+
+
+        <div class="content-wrapper">
+            <div class="littleAlert"></div>
+
+            <style>
+                .comp {
+                    position: relative;
+                    width: max-content
+                }
+
+                .comp img {
+                    display: block;
+                }
+
+                .comp i {
+                    position: absolute;
+                    bottom: 10px;
+                    right: 10px;
+                }
+            </style>
+
+
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0">Student Profile</h1>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="/control/dashboard">Home</a></li>
+                                <li class="breadcrumb-item active">Student Profile</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card card-secondary card-outline">
+                             <?php $i = 1;
+                                    $sql = $con->query("SELECT * FROM students  WHERE sn = '$sn'");
+                                    while ($rows = mysqli_fetch_assoc($sql)) { ?>
+                            <div class="card-body box-profile p-card">
+                                <div class="d-flex justify-content-center upload_new_img">
+                                    <div class="text-center comp">
+                                        <img class="profile-user-img img-fluid img-circle object-cover" src="https://apis.schoolpetal.com/assets/img/students/user.png" alt="User profile picture">
+                                        <i class="fas fa-upload "></i>
+                                    </div>
+                                </div>
+                                <h3 class="profile-username text-center"><?= $rows['surname']. ' '. $rows['firstname'] ?></h3>
+                                <p class="text-muted text-center"><?= $rows['class'] ?><sup><?= $rows['arm'] ?></sup> | Male</p>
+                                <button class="btn btn-success btn-block"><b> <i class="fa fa-user-check"></i> Activate</b></button>
+                                <a class="btn btn-primary btn-block" href="#settings" data-toggle="tab"><b> <i class="fas fa-edit"></i> Edit Profile</b></a>
+                            </div>
+                        </div>
+                          <?php } ?>
+                        <div class="card card-secondary card-outline">
+                            <div class="card-body box-profile p-card">
+                                <div class="d-flex justify-content-center upload_new_img">
+                                    <div class="text-center comp">
+                                        <img class="profile-user-img img-fluid img-circle object-cover" src="user.png" alt="User profile picture">
+                                        <i class="fas fa-upload "></i>
+                                    </div>
+                                    <?php $i = 1;
+                                    $sql = $con->query("SELECT * FROM students  WHERE sn = '$sn'");
+                                    while ($rows = mysqli_fetch_assoc($sql)) { ?>
+                                        <h3 class="profile-username text-center"><?= $rows['firstname'] ?></h3>
+                                        <button class="btn btn-success btn-block"><b> <i class="fa fa-user-check"></i> Activate</b></button>
+                                        <a class="btn btn-primary btn-block" href="#settings" data-toggle="tab"><b> <i class="fas fa-edit"></i> Edit Profile</b></a>
+                                    <?php }
+                                    ?>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                        <div class="col-md-9">
+                            <div class="card card-secondary card-outline">
+                                <div class="card-header p-2">
+                                    <ul class="nav nav-pills">
+                                        <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Profile</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#levies" data-toggle="tab">School Fees</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#result" data-toggle="tab">Result &amp; Transcript</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Settings</a></li>
+                                    </ul>
+
+                                </div>
+                                <div class="card-body">
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="activity">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between">
+                                                        <div><b>Registration No:</b> 0000021 </div>
+                                                        <div><b>Admission Date:</b> 15 Aug, 2022 </div>
+                                                    </div>
+                                                    <hr>
+                                                    <div class="d-flex justify-content-between">
+                                                        <div><b>Date Of Birth:</b> 10, Jan 2022 </div>
+                                                        <div><b>Admission Date:</b> 10, Jan 2022 </div>
+                                                    </div>
+
+                                                    <hr>
+                                                    <div class="d-flex justify-content-between">
+                                                        <div><b>Username:</b> okolo7888 </div>
+                                                        <div><b>Password:</b> 7888 </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h4 class="card-title text-bold">Parent/ Guardian Details</h4>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <div class="box-profile">
+                                                                <div class="text-center">
+                                                                    <img class="profile-user-img img-fluid img-circle" src="https://portal.schoolpetal.com/assets/img/user4-128x128.jpg" alt="User profile picture">
+                                                                </div>
+
+                                                                <h3 class="profile-username text-center">Chinere Ezeora</h3>
+
+                                                                <p class="text-muted text-center">ijapo extension</p>
+
+                                                                <div class="text-center">
+                                                                    <a href="/control/gurdian/165">Go-to-profile <i class="fas fa-arrow-circle-right"></i></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-8">
+                                                            <div class="d-flex justify-content-between">
+                                                                <div><b>Father's Name:</b> null </div>
+                                                                <div><b>Father's Phone:</b> null </div>
+                                                            </div>
+
+                                                            <hr>
+
+                                                            <div class="d-flex justify-content-between">
+                                                                <div><b>Father's Occupation:</b> null </div>
+                                                                <div><b>Father's Address:</b> null </div>
+                                                            </div>
+
+                                                            <hr>
+
+                                                            <div class="d-flex justify-content-between">
+                                                                <div><b>Mother's Name:</b> null </div>
+                                                                <div><b>Mother's Phone:</b> null </div>
+                                                            </div>
+
+                                                            <hr>
+
+                                                            <div class="d-flex justify-content-between">
+                                                                <div><b>Mother's Occupation:</b> null </div>
+                                                                <div><b>Mother's Address:</b> null </div>
+                                                            </div>
+
+                                                            <hr>
+
+                                                            <div class="d-flex justify-content-between">
+                                                                <div><b>Guardian's Name:</b> Chinere Ezeora </div>
+                                                                <div><b>Guardian's Phone:</b> 08051006426 </div>
+                                                            </div>
+
+                                                            <hr>
+
+                                                            <div class="d-flex justify-content-between">
+                                                                <div><b>Guardian's Email:</b> chinereezeora@gmail.com </div>
+                                                                <div><b>Guardian's Address:</b> ijapo extension </div>
+                                                            </div>
+
+
+
+                                                            <hr>
+
+                                                            <h5 class="text-muted">Send SMS To Gurdian</h5>
+
+                                                            <form action="">
+                                                                <div class="form-group">
+                                                                    <textarea name="" id="" rows="2" class="form-control"></textarea>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <button class="btn btn-primary" onclick="return confirm('Balance reminder will be sent to this gurdian')"> <i class="fa fa-paper-plane" aria-hidden="true"></i> Send Balance Reminder SMS</button>
+                                                                    <button class="btn btn-secondary float-right"> <i class="fa fa-paper-plane" aria-hidden="true"></i> Send </button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h4 class="card-title text-bold"> Miscellanous Details</h4>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between">
+                                                        <div><b>Blood Group:</b> null </div>
+                                                        <div><b>Geno Type:</b> null </div>
+                                                    </div>
+
+                                                    <hr>
+
+                                                    <div class="d-flex justify-content-between">
+                                                        <div><b>Ailment:</b> null </div>
+                                                        <div><b>Disablity:</b> null </div>
+                                                    </div>
+
+                                                    <hr>
+
+                                                    <div class="d-flex justify-content-between">
+                                                        <div><b>Previosu School:</b> null </div>
+                                                        <div><b>Reason For leaving:</b> null </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-pane" id="levies">
+                                            <div><a href="javascript:;" data-toggle="modal" data-target="#makePayment" class="btn btn-secondary mb-3">Make Fee Payment </a></div>
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h4 class="card-title text-bold">School Fees</h4>
+                                                </div>
+                                                <div class="card-body p-1">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-striped table-hover">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th>Fee</th>
+                                                                    <th>Amount</th>
+                                                                    <th>Discount</th>
+                                                                    <th>Total</th>
+                                                                </tr>
+
+
+
+                                                                <tr>
+                                                                    <td>Tuition Fee</td>
+                                                                    <td>₦ 12,000</td>
+                                                                    <td>₦ 0</td>
+                                                                    <td>₦ 12,000</td>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <th></th>
+                                                                    <th>₦ 12,000</th>
+                                                                    <th>₦ 0</th>
+                                                                    <th>₦ 12,000</th>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <th colspan="3">Balance Brought Foward</th>
+                                                                    <td>₦ 0</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th colspan="3">Total Owing</th>
+                                                                    <th>₦ 12,000</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th colspan="3">Amount Paid</th>
+                                                                    <th>₦ 0</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th colspan="3">Expected Payments</th>
+                                                                    <th>₦ 12,000</th>
+                                                                </tr>
+
+
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h4 class="card-title text-bold">Recent Payments</h4>
+                                                </div>
+                                                <div class="card-body p-1">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-striped table-hover">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th>Fee</th>
+                                                                    <th>Amount</th>
+                                                                    <th>Date</th>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <th>Total</th>
+                                                                    <th colspan="2">₦ 0</th>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div><a href="/control/student/fee/250" class="btn btn-block btn-secondary">View School Fee Details <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a></div>
+
+                                        </div>
+
+
+                                        <div class="tab-pane" id="result">
+
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h3 class="card-title text-bold">Results</h3>
+                                                </div>
+                                                <div class="card-body p-1">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-striped table-hover">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th>#</th>
+                                                                    <th>Session</th>
+                                                                    <th>Term</th>
+                                                                    <th>Class</th>
+                                                                    <th>Subjects</th>
+                                                                    <th>Date</th>
+                                                                    <th></th>
+                                                                </tr>
+
+
+
+                                                                <tr>
+                                                                    <td>1</td>
+                                                                    <td>2022/2023</td>
+                                                                    <td>First Term</td>
+                                                                    <td>sss 1</td>
+                                                                    <td>7</td>
+                                                                    <td>16 Aug, 2022</td>
+                                                                    <td><a class="btn btn-xs btn-info" href="/control/view-result/284"><i class="fas fa-eye"></i> View</a></td>
+                                                                </tr>
+
+
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <p class="p-0 m-0" style="page-break-before: always">
+                                            </p>
+                                            <div class="card">
+                                                <div class="card-body p-1" style="font-size: larger">
+                                                    <div style="border: solid thin #000" class="mb-1 p-2">
+                                                        <table class="" width="100%">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th>
+                                                                        <table width="100%">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td width="18%">
+                                                                                        <img width="200" class="img-circle" src="https://apis.schoolpetal.com/assets/img/schools/8012145schoolpetal-international-school.jpg">
+                                                                                    </td>
+                                                                                    <td width="64%">
+                                                                                        <div class="text-center">
+                                                                                            <h1 style="font-size: 25px; font-weight:bold;" class="mb-0">
+                                                                                                SchoolPetal International School</h1>
+                                                                                            <p class="mb-0"> </p>
+                                                                                            <h3 style="font-size: 20px;" class="mt-0">TERMLY CONTINOUS
+                                                                                                ASSESSMENT DOSSIER <br>First Term, 2022/2023 ACADEMIC SESSION </h3>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    <td width="18%">
+                                                                                        <img width="200" class="img-circle float-right" src="https://apis.schoolpetal.com/assets/img/students/user.png">
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </th>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+
+                                                    <table class="table table-bordered mb-1">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td><b>FULL NAME:</b> Okolo Odinaka Bella </td>
+                                                                <td><b>REGISTRATION NO:</b> 250</td>
+                                                                <td><b>RESULT ID:</b> 284</td>
+                                                                <td><b>CLASS:</b> sss 1</td>
+                                                                <td><b>GENDER:</b> Male</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+
+                                                    <table class="table table-bordered mb-1">
+
+
+                                                        <tbody>
+                                                            <tr>
+                                                                <th>Subjects</th>
+                                                                <th>CA1</th>
+                                                                <th>CA2</th>
+                                                                <th>CA3</th>
+                                                                <th>Exam</th>
+                                                                <th>Total</th>
+                                                                <th>Class Av</th>
+                                                                <th>Grade</th>
+                                                                <th>Remark</th>
+                                                            </tr>
+
+
+                                                            <tr>
+                                                                <td style="padding: 20px;" class="center">JAVASCRIPT</td>
+                                                                <td class="center">7</td>
+                                                                <td class="center">10</td>
+                                                                <td class="center">13</td>
+                                                                <td class="center">47</td>
+                                                                <td class="center">77</td>
+
+                                                                <td class="center">68</td>
+                                                                <td class="center">A</td>
+                                                                <td class="center">Excellent</td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td style="padding: 20px;" class="center">Data science</td>
+                                                                <td class="center">6</td>
+                                                                <td class="center">8</td>
+                                                                <td class="center">12</td>
+                                                                <td class="center">40</td>
+                                                                <td class="center">66</td>
+
+                                                                <td class="center">73</td>
+                                                                <td class="center">B</td>
+                                                                <td class="center">V. good</td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td style="padding: 20px;" class="center">CSS</td>
+                                                                <td class="center">5</td>
+                                                                <td class="center">6</td>
+                                                                <td class="center">20</td>
+                                                                <td class="center">60</td>
+                                                                <td class="center">91</td>
+
+                                                                <td class="center">78</td>
+                                                                <td class="center">A</td>
+                                                                <td class="center">Excellent</td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td style="padding: 20px;" class="center">design dynamics webpages</td>
+                                                                <td class="center">10</td>
+                                                                <td class="center">9</td>
+                                                                <td class="center">18</td>
+                                                                <td class="center">53</td>
+                                                                <td class="center">90</td>
+
+                                                                <td class="center">72</td>
+                                                                <td class="center">A</td>
+                                                                <td class="center">Excellent</td>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+
+                                                    <table class="table table-bordered">
+                                                        <tfoot>
+                                                            <tr>
+                                                                <th colspan="2">Subjects: 4</th>
+                                                                <th colspan="2">Total Score: 324</th>
+                                                                <th colspan="2">Average: 81</th>
+                                                                <th colspan="2">Class Average: </th>
+                                                                <th colspan="2">No in class: 20</th>
+                                                            </tr>
+                                                        </tfoot>
+                                                    </table>
+                                                    <table class="table table-bordered mt-1" width="100%">
+                                                        <tfoot>
+                                                            <tr>
+                                                                <th>
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <div class="row">
+                                                                                <div class="col-6">
+                                                                                    <b>Vacation Date: </b><span style="font-weight: lighter">30 Nov, 2022</span>
+                                                                                </div>
+                                                                                <div class="col-6">
+                                                                                    <b>Resumption Date: </b><span style="font-weight: lighter">9 Jan, 2023</span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+
+                                                                        <div class="col-md-12">
+                                                                            <div class="row">
+                                                                                <div class="col-6">
+                                                                                    <b>Teacher's Comment:</b><br>
+                                                                                    <span style="font-weight: lighter" class="t_rem">
+                                                                                        null
+                                                                                    </span>
+                                                                                </div>
+                                                                                <div class="col-6">
+                                                                                    <b>Principal's Comment: </b><br>
+                                                                                    <span style="font-weight: lighter" class="p_rem">
+                                                                                        null
+                                                                                    </span>
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </th>
+                                                            </tr>
+                                                        </tfoot>
+                                                    </table>
+                                                    <div class="row">
+                                                        <div class="col-12 hide-print mt-3">
+                                                            <a href="/control/result/print/s/284" target="_blank" class="btn btn-info float-right">Print</a>
+                                                            <button class="btn btn-secondary float-right mr-2 up_rem" data-data="{&quot;id&quot;:284,&quot;name&quot;:&quot;Okolo Odinaka Bella  &quot;,&quot;p_rem&quot;:null,&quot;t_rem&quot;:null}">Update Remarks</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p></p>
+                                        </div>
+
+
+                                        <div class="tab-pane" id="settings">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h4 class="card-title text-bold">Edit Basic Info</h4>
+                                                </div>
+                                                <div class="card-body">
+                                                    <form action="" id="basic_info" class="row">
+                                                        <div class=" col-md-4 form-group">
+                                                            <label>Surname </label>
+                                                            <input type="text" name="surname" class="form-control" value="Okolo" placeholder="Surname">
+                                                        </div>
+
+                                                        <div class=" col-md-4 form-group">
+                                                            <label>Firstname</label>
+                                                            <input type="text" name="firstname" class="form-control" value="Odinaka" placeholder="Firstname">
+                                                        </div>
+
+                                                        <div class=" col-md-4 form-group">
+                                                            <label>Othernames</label>
+                                                            <input type="text" name="othername" class="form-control" value="Bella" placeholder="Othernames">
+                                                        </div>
+
+                                                        <div class=" col-md-6 form-group">
+                                                            <label>Gurdian</label>
+                                                            <select name="guardian" class="form-control select2bs4" id="select_guardian">
+                                                                <option selected="" value="165">Chinere Ezeora | chinereezeora@gmail.com</option>
+                                                                <option value="164">Popoola mercy | popoolamercy@gmail.com</option>
+                                                                <option value="153">Osabusua Mercy Bose | gbolahanosabusua@gmail.com</option>
+                                                                <option value="162">Olanipekun Oluwatosin | olanipekunpeniel@gmail.com</option>
+                                                                <option value="163">Oke Joseph | okejoseph@gmail.com</option>
+                                                                <option value="160">Oduntan Arisekola | oduntanarise@gmail.com</option>
+                                                                <option value="155">Mrs Taiwo | elshaddaites@gmail.com</option>
+                                                                <option value="154">Mr Taiwo | taiwo@gmail.com</option>
+                                                                <option value="158">Mr joel | joelade@gmail.com</option>
+                                                                <option value="156">Mr agbelugbe | agbelugbe@gmail.com</option>
+                                                                <option value="198">Mia Khalifa | bbc@gmail.com</option>
+                                                                <option value="161">Joseph Bamise | josephbamise@gmail.com</option>
+                                                                <option value="197">Johnny Sins | commitallsin@gmail.com</option>
+                                                                <option value="157">fasina omlayo | oy.fasina56@gmail.com</option>
+                                                                <option value="152">Faseha oyindamola | oyindamolamonzel@gmail.com</option>
+                                                                <option value="195">dfpwer4 | Hannahmalkova60@gmail.com</option>
+                                                                <option value="165">Chinere Ezeora | chinereezeora@gmail.com</option>
+                                                                <option value="159">Bankole Joshua | banksdemola@gmail.com</option>
+                                                                <option value="196">Ayokunle Ajayi | ajayi@gmail.com</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class=" col-md-2 form-group">
+                                                            <label>Gender</label>
+                                                            <select name="gender" class="form-control select2bs4" id="">
+                                                                <option selected="">Male</option>
+                                                                <option>Male</option>
+                                                                <option>Female</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class=" col-md-4 form-group">
+                                                            <label>Registration Number</label>
+                                                            <input type="text" name="reg" class="form-control" value="0000021" placeholder="Registration Number">
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <button class="btn btn-secondary float-right basic_info">Update</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h4 class="card-title text-bold">Class &amp; Arm</h4>
+                                                </div>
+                                                <div class="card-body">
+                                                    <form action="" class="row">
+                                                        <div class="col-md-4 form-group">
+                                                            <label>Class</label>
+                                                            <select name="" id="select_class" class="form-control  select2bs4">
+                                                                <option selected="" value="16">sss 1</option>
+                                                                <option value="17">Senior 2</option>
+                                                                <option value="16">sss 1</option>
+                                                                <option value="18">sss 3</option>
+                                                                <option value="19">JSS1 2</option>
+                                                                <option value="20">jss2 2</option>
+                                                            </select>
+                                                        </div>
+
+                                                        <div class="col-md-4 form-group">
+                                                            <label>Arm</label>
+                                                            <select name="" id="select_arm" class="form-control select2bs4">
+                                                                <option selected="" value="4">A</option>
+                                                                <option value="4">A</option>
+                                                                <option value="5">B</option>
+                                                                <option value="6">C</option>
+                                                                <option value="7">R</option>
+                                                            </select>
+                                                        </div>
+
+                                                        <div class="col-md-4 form-group">
+                                                            <label class="text-white">.</label>
+                                                            <button class="btn btn-secondary btn-block">Submit</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h4 class="card-title text-bold">Change Authentication Details</h4>
+                                                </div>
+                                                <div class="card-body">
+                                                    <form id="auth_det" class="row">
+                                                        <div class="col-md-4 form-group">
+                                                            <label>Username</label>
+                                                            <input type="text" class="form-control" name="username" value="okolo7888" placeholder="Enter Username">
+                                                        </div>
+
+                                                        <div class="col-md-4 form-group">
+                                                            <label>Password</label>
+                                                            <input type="number" class="form-control" name="password" value="7888" placeholder="4-6 Digits">
+                                                        </div>
+
+                                                        <div class="col-md-4 form-group">
+                                                            <label class="text-white">.</label>
+                                                            <button class="btn btn-secondary btn-block auth_det">Submit</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h4 class="card-title text-bold">Edit Other Info</h4>
+                                                </div>
+                                                <div class="card-body">
+                                                    <form method="post" class="row" id="miscellanous">
+                                                        <div class="col-md-3 form-group">
+                                                            <label>Blood Group</label>
+                                                            <input type="text" class="form-control" name="blood_group" value="null" placeholder="Enter Blood Group ie O-">
+                                                        </div>
+
+                                                        <div class="col-md-3 form-group">
+                                                            <label>Geno Type</label>
+                                                            <input type="text" class="form-control" name="genotype" value="null" placeholder="Enter Genetype i.e AA">
+                                                        </div>
+
+                                                        <div class="col-md-3 form-group">
+                                                            <label>Ailment</label>
+                                                            <input type="text" class="form-control" name="ailment" value="null" placeholder="Enter if any">
+                                                        </div>
+
+                                                        <div class="col-md-3 form-group">
+                                                            <label>Disability</label>
+                                                            <input type="text" class="form-control" name="disability" value="null" placeholder="Enter if any">
+                                                        </div>
+
+
+                                                        <div class="col-md-6 form-group">
+                                                            <label>Previous School Attended</label>
+                                                            <input type="text" class="form-control" name="previous_school" value="null" placeholder="">
+                                                        </div>
+
+                                                        <div class="col-md-6 form-group">
+                                                            <label>Reason For Leaving Previous School</label>
+                                                            <textarea name="reason_for_leaving" rows="2" class="form-control">null</textarea>
+                                                        </div>
+
+                                                        <div class="col-md-12 ">
+                                                            <button type="button" class="btn btn-secondary float-right miscellanous">Submit</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-9">
+                    <div class="card card-secondary card-outline">
+                        <div class="card-header p-2">
+                            <ul class="nav nav-pills">
+                                <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Profile</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#levies" data-toggle="tab">School Fees</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#result" data-toggle="tab">Result & Transcript</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Settings</a></li>
+                            </ul>
+
+                        </div>
+                        <div class="card-body">
+                            <div class="tab-content">
+                                <div class="active tab-pane" id="activity">
+                                    <div class="text-center">
+                                        <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                                        <i> Loading ... </i>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane" id="levies">
+                                    <div class="text-center">
+                                        <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                                        <i> Loading ... </i>
+                                    </div>
+                                </div>
+
+
+                                <div class="tab-pane" id="result">
+                                    <div class="text-center">
+                                        <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                                        <i> Loading ... </i>
+                                    </div>
+                                </div>
+
+
+                                <div class="tab-pane" id="settings">
+                                    <div class="text-center">
+                                        <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                                        <i> Loading ... </i>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
-       </div>
-      </form>
-     </div>
-    </li>
-    <li class="nav-item">
-     <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-      <i class="fas fa-expand-arrows-alt"></i>
-     </a>
-    </li>
-    <li class="nav-item">
-     <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-      <i class="fas fa-user-alt"></i>
-     </a>
-    </li>
-   </ul>
-  </nav>
-
- <?php include("nav.php") ?>
-
-
-  <div class="content-wrapper">
-   <div class="littleAlert"></div>
-
-   <style>
-    .comp {
-     position: relative;
-     width: max-content
-    }
-
-    .comp img {
-     display: block;
-    }
-
-    .comp i {
-     position: absolute;
-     bottom: 10px;
-     right: 10px;
-    }
-   </style>
-   <link rel="stylesheet" href="https://portal.schoolpetal.com/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-
-
-   <div class="content-header">
-    <div class="container-fluid">
-     <div class="row mb-2">
-      <div class="col-sm-6">
-       <h1 class="m-0">Student Profile</h1>
-      </div>
-      <div class="col-sm-6">
-       <ol class="breadcrumb float-sm-right">
-        <li class="breadcrumb-item"><a href="/control/dashboard">Home</a></li>
-        <li class="breadcrumb-item active">Student Profile</li>
-       </ol>
-      </div>
-     </div>
-    </div>
-   </div>
-
-
-   <section class="content">
-    <div class="row">
-     <div class="col-md-3">
-      <div class="card card-secondary card-outline">
-       <div class="card-body box-profile p-card">
-        <div class="text-center">
-         <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
-         <i> Loading ... </i>
-        </div>
-       </div>
-      </div>
-     </div>
-
-     <div class="col-md-9">
-      <div class="card card-secondary card-outline">
-       <div class="card-header p-2">
-        <ul class="nav nav-pills">
-         <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Profile</a></li>
-         <li class="nav-item"><a class="nav-link" href="#levies" data-toggle="tab">School Fees</a></li>
-         <li class="nav-item"><a class="nav-link" href="#result" data-toggle="tab">Result & Transcript</a></li>
-         <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Settings</a></li>
-        </ul>
-
-       </div>
-       <div class="card-body">
-        <div class="tab-content">
-         <div class="active tab-pane" id="activity">
-          <div class="text-center">
-           <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
-           <i> Loading ... </i>
-          </div>
-         </div>
-
-         <div class="tab-pane" id="levies">
-          <div class="text-center">
-           <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
-           <i> Loading ... </i>
-          </div>
-         </div>
-
-
-         <div class="tab-pane" id="result">
-          <div class="text-center">
-           <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
-           <i> Loading ... </i>
-          </div>
-         </div>
-
-
-         <div class="tab-pane" id="settings">
-          <div class="text-center">
-           <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
-           <i> Loading ... </i>
-
-          </div>
-         </div>
-        </div>
-       </div>
-      </div>
-     </div>
-    </div>
-   </section>
+        </section>
 
 
 
 
 
-   <div class="modal fade" id="makePayment">
-    <div class="modal-dialog modal-dialog-centered ">
-     <div class="modal-content">
-      <div class="modal-header">
-       <p class="modal-title text-bold">Make Payments </p>
-       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-       </button>
-      </div>
-      <div class="modal-body">
-       <form id="make_pay" class="row">
-        <div class="col-md-6 form-group">
-         <label>Fee Category</label>
-         <select name="fee_cat" id="fee_cat" class="form-control select2bs4">
-          <option selected disabled>Select Fee Category</option>
-          <option value="">Tution Fee</option>
-          <option value="">Sport Levy</option>
-         </select>
+        <div class="modal fade" id="makePayment">
+            <div class="modal-dialog modal-dialog-centered ">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <p class="modal-title text-bold">Make Payments </p>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="make_pay" class="row">
+                            <div class="col-md-6 form-group">
+                                <label>Fee Category</label>
+                                <select name="fee_cat" id="fee_cat" class="form-control select2bs4">
+                                    <option selected disabled>Select Fee Category</option>
+                                    <option value="">Tution Fee</option>
+                                    <option value="">Sport Levy</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6 form-group">
+                                <label>Amount</label>
+                                <input type="number" name="amount" class="form-control" placeholder="Enter Amount i.e 15750">
+                            </div>
+                            <div class="col-12 form-group">
+                                <button type="submit" class="btn btn-secondary float-right make_pay">Make Payment</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
         </div>
 
-        <div class="col-md-6 form-group">
-         <label>Amount</label>
-         <input type="number" name="amount" class="form-control" placeholder="Enter Amount i.e 15750">
-        </div>
-        <div class="col-12 form-group">
-         <button type="submit" class="btn btn-secondary float-right make_pay">Make Payment</button>
-        </div>
-       </form>
-      </div>
 
-     </div>
-    </div>
-   </div>
+        <div class="modal fade" id="updateRemark">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <p class="modal-title text-bold">Update Remark (Thomas Onyemechi)</p>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="">
+                            <div class="form-group">
+                                <label>Principal Remark</label>
+                                <input type="text" name="principal" class="form-control">
+                                <input type="hidden" name="id">
+                            </div>
+                            <div class="form-group">
+                                <label>Teacher Remark</label>
+                                <input type="text" name="teacher" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <button type="button" class="btn btn-secondary float-right updateRemark">Update</button>
+                            </div>
+                        </form>
+                    </div>
 
+                </div>
+            </div>
+        </div>
 
-   <div class="modal fade" id="updateRemark">
-    <div class="modal-dialog modal-dialog-centered">
-     <div class="modal-content">
-      <div class="modal-header">
-       <p class="modal-title text-bold">Update Remark (Thomas Onyemechi)</p>
-       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-       </button>
-      </div>
-      <div class="modal-body">
-       <form action="">
-        <div class="form-group">
-         <label>Principal Remark</label>
-         <input type="text" name="principal" class="form-control">
-         <input type="hidden" name="id">
+        <div class="modal fade" id="changeImageModal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <p class="modal-title text-bold">Upload Image</p>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" class="changeImage" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <input type="hidden" name="id">
+                                <input type="file" name="image" class="form-control" accept="image/*" onchange="loadFile(event)">
+                            </div>
+                            <p><img id="output" width="200" /></p>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-secondary float-right changeImageBtn ">Update</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-         <label>Teacher Remark</label>
-         <input type="text" name="teacher" class="form-control">
-        </div>
-        <div class="form-group">
-         <button type="button" class="btn btn-secondary float-right updateRemark">Update</button>
-        </div>
-       </form>
-      </div>
-
-     </div>
-    </div>
-   </div>
-
-   <div class="modal fade" id="changeImageModal">
-    <div class="modal-dialog modal-dialog-centered">
-     <div class="modal-content">
-      <div class="modal-header">
-       <p class="modal-title text-bold">Upload Image</p>
-       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-       </button>
-      </div>
-      <div class="modal-body">
-       <form action="" class="changeImage" enctype="multipart/form-data">
-        <div class="form-group">
-         <input type="hidden" name="id">
-         <input type="file" name="image" class="form-control" accept="image/*" onchange="loadFile(event)">
-        </div>
-        <p><img id="output" width="200" /></p>
-        <div class="form-group">
-         <button type="submit" class="btn btn-secondary float-right changeImageBtn ">Update</button>
-        </div>
-       </form>
-      </div>
-     </div>
-    </div>
-   </div>
 
 
-   <!-- <script src="https://portal.schoolpetal.com/assets/plugins/jquery/jquery.min.js"></script>
+        <!-- <script src="https://portal.schoolpetal.com/assets/plugins/jquery/jquery.min.js"></script>
    <script src="https://portal.schoolpetal.com/assets/js/results.js"></script>
 
    <script>
@@ -1086,86 +1769,86 @@
 
 
 
-  </div>
+    </div>
 
-  <footer class="main-footer">
-   <strong>Copyright &copy; <b>School Petal</b> </strong>
-   All rights reserved.
-   <div class="float-right d-none d-sm-inline-block">
-    <b>Version</b> 2.5
-   </div>
-  </footer>
+    <footer class="main-footer">
+        <strong>Copyright &copy; <b>School Petal</b> </strong>
+        All rights reserved.
+        <div class="float-right d-none d-sm-inline-block">
+            <b>Version</b> 2.5
+        </div>
+    </footer>
 
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-   <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
- </div>
- <!-- ./wrapper -->
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
 
- <!-- jQuery -->
- <script src="../plugins/jquery/jquery.min.js"></script>
- <!-- jQuery UI 1.11.4 -->
- <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
- <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
- <script>
-  $.widget.bridge('uibutton', $.ui.button)
- </script>
- <!-- Bootstrap 4 -->
- <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
- <!-- ChartJS -->
- <script src="../plugins/chart.js/Chart.min.js"></script>
- <!-- Sparkline -->
- <script src="../plugins/sparklines/sparkline.js"></script>
- <!-- JQVMap -->
- <script src="../plugins/jqvmap/jquery.vmap.min.js"></script>
- <script src="../plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
- <!-- jQuery Knob Chart -->
- <script src="../plugins/jquery-knob/jquery.knob.min.js"></script>
- <!-- daterangepicker -->
- <script src="../plugins/moment/moment.min.js"></script>
- <script src="../plugins/daterangepicker/daterangepicker.js"></script>
- <!-- Tempusdominus Bootstrap 4 -->
- <script src="../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
- <!-- Summernote -->
- <script src="../plugins/summernote/summernote-bs4.min.js"></script>
- <!-- overlayScrollbars -->
- <script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
- <!-- AdminLTE App -->
- <script src="../dist/js/adminlte.js"></script>
- <!-- AdminLTE for demo purposes -->
- <script src="../dist/js/demo.js"></script>
- <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
- <script src="../dist/js/pages/dashboard.js"></script>
+    <!-- jQuery -->
+    <script src="../plugins/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button)
+    </script>
+    <!-- Bootstrap 4 -->
+    <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- ChartJS -->
+    <script src="../plugins/chart.js/Chart.min.js"></script>
+    <!-- Sparkline -->
+    <script src="../plugins/sparklines/sparkline.js"></script>
+    <!-- JQVMap -->
+    <script src="../plugins/jqvmap/jquery.vmap.min.js"></script>
+    <script src="../plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="../plugins/jquery-knob/jquery.knob.min.js"></script>
+    <!-- daterangepicker -->
+    <script src="../plugins/moment/moment.min.js"></script>
+    <script src="../plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- Summernote -->
+    <script src="../plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../dist/js/adminlte.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../dist/js/demo.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="../dist/js/pages/dashboard.js"></script>
 
- <script>
-  $(function() {
-   $('.select2').select2()
-   $('.select2bs4').select2({
-    theme: 'bootstrap4'
-   })
-  })
- </script>
+    <script>
+        $(function() {
+            $('.select2').select2()
+            $('.select2bs4').select2({
+                theme: 'bootstrap4'
+            })
+        })
+    </script>
 
- <script>
-  $(function() {
-   var Toast = Swal.mixin({
-    toast: true,
-    position: 'top-end',
-    showConfirmButton: false,
-    timer: 3000
-   });
+    <script>
+        $(function() {
+            var Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000
+            });
 
-   function firstToast(icon = "success", message = 'Done') {
-    Toast.fire({
-     icon: icon,
-     title: message
-    });
-   }
-  })
- </script>
+            function firstToast(icon = "success", message = 'Done') {
+                Toast.fire({
+                    icon: icon,
+                    title: message
+                });
+            }
+        })
+    </script>
 </body>
 
 </html>

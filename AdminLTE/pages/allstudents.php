@@ -1,11 +1,5 @@
 <?php require_once("myclass.php"); 
 
-if(isset($_GET['sn'])){
-    $sql= $con->query("SELECT * FROM students WHERE sn = '$sn'");
-    
-
-}
-
 
 ?>
 
@@ -109,10 +103,10 @@ if(isset($_GET['sn'])){
                                 <div class="text-center">
                                     <img class="profile-user-img img-fluid img-circle" src="user.png" alt="">
                                     <h3 class="profile-username text-center"><?= $rows['surname'] . ' ' . $rows['firstname'] ?></h3>
-                                    <p class="text-muted mb-0 text-center"><?= $rows['class'] ?> <sup><?= $rows['arm'] ?></sup> | <?= $rows['gender'] ?></p>
+                                    <p class="text-muted mb-0 text-center"><?= $pro->getStudentClass($rows['class'])  ?> <sup><?=  $pro->getClassArm($rows['arm']) ?></sup> | <?= $rows['gender'] ?></p>
                                     <button type="button" class="btn btn-success btn-xs  btn-block"><b> <i class="fa fa-user-check"></i> Active</b></button>
                                     <div class="text-center">
-                                        <a href="studentprofile?sn=<?= $rows['sn'] ?> ">Go-to-profile <i class="fas fa-arrow-circle-right"></i></a>
+                                        <a href="studentprofile.php?sn=<?= $rows['sn'] ?> ">Go-to-profile <i class="fas fa-arrow-circle-right"></i></a>
                                     </div>
                                 </div>
                             </div>

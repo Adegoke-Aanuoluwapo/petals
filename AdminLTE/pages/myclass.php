@@ -152,6 +152,13 @@ function AddParent(){
     $rows = mysqli_fetch_assoc($sql);
     return $rows['class'];
   }
+  function getClassArm($sn)
+  {
+    global $con;
+    $sql = $con->query("SELECT * FROM arm WHERE sn = '$sn'");
+    $rows = mysqli_fetch_assoc($sql);
+    return $rows['arm'];
+  }
   function AddStudent()
   {
     global $con;

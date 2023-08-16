@@ -96,7 +96,7 @@ require_once("myclass.php")
                       <?php $i = 1;
                       $sql = $con->query("SELECT * FROM parents");
                       while ($rows = $sql->fetch_assoc()) {
-                        echo '<option value="'.$rows['sn'].'">' . $rows['name'] . '</option>';
+                        echo '<option value="' . $rows['sn'] . '">' . $rows['name'] . '</option>';
                       } ?>
                     </select>
                   </div>
@@ -177,9 +177,10 @@ require_once("myclass.php")
                         <th>#</th>
                         <th>Name</th>
                         <th>Class</th>
+                        <th>Arm</th>
                         <th>Gurdian</th>
                         <th>Gender</th>
-                        <th></th>
+
                       </tr>
                     </thead>
                     <tbody>
@@ -190,7 +191,9 @@ require_once("myclass.php")
                           <td><?= $i++ ?></td>
                           <td><?= $rows['surname'] . ' ' . $rows['firstname'] ?></td>
                           <td><?= $pro->getStudentClass($rows['class']) ?></td>
-                          
+                          <td><?= $pro->getClassArm($rows['arm']) ?></td>
+
+
                           <td><?= $pro->getParentName($rows['guardian']) ?></td>
                           <td><?= $rows['gender'] ?></td>
                         </tr>
