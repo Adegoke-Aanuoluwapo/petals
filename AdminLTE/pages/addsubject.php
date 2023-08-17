@@ -167,7 +167,7 @@ require_once("myclass.php")
                                                 <tr>
                                                     <td><?= $i++ ?></td>
                                                     <td><?= $rows['subject'] ?></td>
-                                                   
+                                                    <button class="btn btn-xs btn-primary editSubject" ><i class="fas fa-edit"></i></button>
                                                 </tr>
 
                                             <?php } ?>

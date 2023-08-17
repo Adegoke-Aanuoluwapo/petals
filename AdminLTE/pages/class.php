@@ -1,3 +1,5 @@
+<?php require_once("myclass.php") ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,24 +29,26 @@
     <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
     <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
-    <style>
-        .profile_pics {
-            width: 50px;
-            height: 50px;
-        }
 
-        .object-cover {
-            object-fit: cover;
-        }
+    <head>
+        <style>
+            .profile_pics {
+                width: 50px;
+                height: 50px;
+            }
 
-        .profile-user-img {
-            width: 100px;
-            height: 100px;
-        }
-    </style>
+            .object-cover {
+                object-fit: cover;
+            }
+
+            .profile-user-img {
+                width: 100px;
+                height: 100px;
+            }
+        </style>
 
 
-</head>
+    </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
@@ -93,7 +97,7 @@
                 </li>
             </ul>
         </nav>
-<?php include("nav.php")?>
+        <?php include("nav.php") ?>
 
 
         <div class="content-wrapper">
@@ -161,59 +165,7 @@
             </section>
 
 
-            <div class="modal fade" id="createClassModal">
-                <div class="modal-dialog modal-dialog-centered ">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <p class="modal-title text-bold">Create Class </p>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <form method="POST" class="row" id="createClassForm">
-                                <div class="col-md-6 form-group">
-                                    <label>Category</label>
-                                    <select name="category" id="category_list" class="form-control select2bs4">
-                                        <option>Select Class Category</option>
-                                        <?php $i=1; $sql=$con->query("SELECT * FROM class");
-                                        while($rows = $sql->fetch_assoc()){
-                                            echo '<option>' .$rows['class']. '</option';
-                                        }
-                                        ?>
 
-
-                                    </select>
-                                </div>
-
-                                <div class="col-md-6 form-group">
-                                    <label>Level</label>
-                                    <select name="level" class="form-control select2bs4" style="width: 100%;">
-                                        <option selected disabled>Select Level</option>
-                                        <option value=1> 1 </option>
-                                        <option value=2> 2 </option>
-                                        <option value=3> 3 </option>
-                                        <option value=4> 4 </option>
-                                        <option value=5> 5 </option>
-                                        <option value=6> 6 </option>
-                                        <option value=7> 7 </option>
-                                        <option value=8> 8 </option>
-                                        <option value=9> 9 </option>
-                                        <option value=10> 10 </option>
-                                    </select>
-                                </div>
-                                <div class="col-12 form-group">
-                                    <button type="submit" class="btn btn-secondary createClass float-right ">Create Class</button>
-                                </div>
-                            </form>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-
-            <script src="https://portal.schoolpetal.com/assets/plugins/jquery/jquery.min.js"></script>
 
 
             <!-- <script>
@@ -345,6 +297,57 @@
             </div>
         </footer>
 
+        <div class="modal fade" id="createClassModal">
+            <div class="modal-dialog modal-dialog-centered ">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <p class="modal-title text-bold">Create Class </p>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="POST" id="createClassForm">
+                            <div class="col-md-6 form-group">
+                                <label>Category</label>
+                                <select name="category" id="category_list" class="form-control select2bs4">
+                                    <option>Select Class Category</option>
+                                    <?php $i = 1;
+                                    $sql = $con->query("SELECT * FROM class");
+                                    while ($rows = mysqli_fetch_assoc($sql)) {
+                                        echo '<option>'  . $rows['class'] .  '</option';
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6 form-group">
+                                <label>Level</label>
+                                <select name="level" class="form-control select2bs4">
+                                    <option>Select Level</option>
+                                    <option value=1> 1 </option>
+                                    <option value=2> 2 </option>
+                                    <option value=3> 3 </option>
+                                    <option value=4> 4 </option>
+                                    <option value=5> 5 </option>
+                                    <option value=6> 6 </option>
+                                    <option value=7> 7 </option>
+                                    <option value=8> 8 </option>
+                                    <option value=9> 9 </option>
+                                    <option value=10> 10 </option>
+                                </select>
+                            </div>
+                            <div class="col-12 form-group">
+                                <button type="submit" class="btn btn-secondary createClass float-right ">Create Class</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
@@ -388,7 +391,7 @@
     <script src="../dist/js/demo.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="../dist/js/pages/dashboard.js"></script>
-    <script>
+    <!-- <script>
         $(function() {
             $('.select2').select2()
             $('.select2bs4').select2({
@@ -413,7 +416,7 @@
                 });
             }
         })
-    </script>
+    </script> -->
 </body>
 
 </html>
