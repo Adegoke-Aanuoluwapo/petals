@@ -88,6 +88,13 @@ function  Cat(){
  mysqli_query($con, $sql);
  return;
 }
+function updateCat(){
+  global $con;
+  $class = $_POST['class'];
+  $sql= $con->query("UPDATE * FROM class WHERE sn = '$class'");
+  
+
+}
 function  AddSubject(){
  global $con;
  $subject = $_POST['subject'];
