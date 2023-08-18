@@ -190,11 +190,11 @@ require_once("myclass.php")
                         <tr>
                           <td><?= $i++ ?></td>
                           <td><?= $rows['surname'] . ' ' . $rows['firstname'] ?></td>
-                          <td><?= $pro->getStudentClass($rows['class']) ?></td>
-                          <td><?= $pro->getClassArm($rows['arm']) ?></td>
+                          <td><?= $pro->SqLx('class', 'sn', $rows['class'], 'class') ?> </td>
+                          <td><?= $pro->SqLx('arm', 'sn', $rows['arm'], 'arm') ?></td>
 
 
-                          <td><?= $pro->getParentName($rows['guardian']) ?></td>
+                          <td><?= $pro->SqLx('parents', 'sn', $rows['guardian'], 'name') ?></td>
                           <td><?= $rows['gender'] ?></td>
                         </tr>
                       <?php  } ?>

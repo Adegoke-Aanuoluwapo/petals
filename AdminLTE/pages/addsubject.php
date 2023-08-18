@@ -157,6 +157,7 @@ require_once("myclass.php")
                                             <tr>
                                                 <th>Subject</th>
                                                 <th></th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                         <tbody id="subject_list_body">
@@ -167,16 +168,12 @@ require_once("myclass.php")
                                                 <tr>
                                                     <td><?= $i++ ?></td>
                                                     <td><?= $rows['subject'] ?></td>
-                                                    <button class="btn btn-xs btn-primary editSubject" ><i class="fas fa-edit"></i></button>
+                                                    <td><button class="btn btn-xs btn-primary editSubject" data-toggle="modal" data-target="#editSubjectModal" id=""><i class="fas fa-edit"></i></button></td>
                                                 </tr>
 
                                             <?php } ?>
 
-                                            <tr>
-                                                <td colspan="12">
-                                                    <div class="text-center"> <span class="spinner-border spinner-border-sm" aria-hidden="true"></span> <i>Loading Subjects ...</i> </div>
-                                                </td>
-                                            </tr>
+                                            
                                         </tbody>
                                     </table>
                                 </div>

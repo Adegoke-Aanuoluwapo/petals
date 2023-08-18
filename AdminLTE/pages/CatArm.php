@@ -267,11 +267,11 @@ require_once("myclass.php");
                                                     <td colspan="12">
                                                         <?= $rows['class'] ?>
                                                     </td>
-                                                </tr>
-                                            <?php  } ?>
+                                                    <td><button class="btn btn-xs btn-primary editSubject" data-toggle="modal" data-target="#editClassCategoryModal" id=""><i class="fas fa-edit"></i></button></td </tr>
+                                                <?php  } ?>
 
 
-                                            <!--
+                                                <!--
                                              <div class="text-center"> <span class="spinner-border spinner-border-sm" aria-hidden="true"></span> <i>Loading Category ...</i> </div>    
                                             id="category_list_body"-->
 
@@ -335,6 +335,7 @@ require_once("myclass.php");
                                                 <td colspan="12">
                                                     <?= $rows['arm'] ?>
                                                 </td>
+                                                <td><button class="btn btn-xs btn-primary editSubject" data-toggle="modal" data-target="#editClassArmModal" id=""><i class="fas fa-edit"></i></button></td>
                                             </tr>
                                         <?php  } ?>
                                         <!-- <td colspan="12">

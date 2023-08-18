@@ -310,12 +310,12 @@
                         <form method="POST" id="createClassForm">
                             <div class="col-md-6 form-group">
                                 <label>Category</label>
-                                <select name="category" id="category_list" class="form-control select2bs4">
+                                <select name="class" id="category_list" class="form-control select2bs4">
                                     <option>Select Class Category</option>
                                     <?php $i = 1;
                                     $sql = $con->query("SELECT * FROM class");
                                     while ($rows = mysqli_fetch_assoc($sql)) {
-                                        echo '<option>'  . $rows['class'] .  '</option';
+                                        echo '<option>'  . $rows['class'] .  '</option>';
                                     }
                                     ?>
                                 </select>
@@ -338,7 +338,7 @@
                                 </select>
                             </div>
                             <div class="col-12 form-group">
-                                <button type="submit" class="btn btn-secondary createClass float-right ">Create Class</button>
+                                <button type="submit" class="btn btn-secondary createClass float-right " name="createClass">Create Class</button>
                             </div>
                         </form>
                     </div>

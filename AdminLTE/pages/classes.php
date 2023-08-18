@@ -183,11 +183,10 @@
                                         <?php $i = 1;
                                         $sql = $con->query("SELECT * FROM class");
                                         while ($rows = $sql->fetch_assoc()) {
-                                            echo '<option>'  . $rows['class'] .  '</option';
+                                            echo "<option>"  . $rows['class'] .  "</option>";
                                         }
-                                        ?>
-
-                                    </select>
+                                     ?>
+                                </select>
                                 </div>
 
                                 <div class="col-md-6 form-group">
@@ -396,7 +395,7 @@
 
     <script src="https://portal.schoolpetal.com/assets/js/adminlte.js"></script>
 
-    <script>
+    <!-- <script>
         $(function() {
             $('.select2').select2()
             $('.select2bs4').select2({
@@ -421,7 +420,7 @@
                 });
             }
         })
-    </script>
+    </script> -->
 </body>
 
 </html>

@@ -25,6 +25,10 @@ class Profile
       $this->AddStaff();
     } elseif (isset($_POST['addsubject'])) {
       $this->AddSubject();
+    } elseif (isset($_POST['createClass'])) {
+      $this->createClass();
+    } elseif (isset($_POST['assignSubject'])) {
+      $this->AssignSubjects();
     }
     
  }
@@ -36,6 +40,15 @@ class Profile
   $email = $_POST['email'];
   $password = $_POST['password'];
   $sql = "INSERT INTO users(firstname, lastname, email, password) VALUES('$firstname', '$lastname', '$email', '$password')";
+  mysqli_query($con, $sql);
+  return;
+ }
+ function AssignSubjects(){
+  global $con;
+  $subject = $_POST['subject'];
+  $class   = $_POST['class'];
+  $teacher = $_POST['teacher'];
+  $sql = "INSERT INTO assign_subjects(subject, class, teacher) VALUES('$subject', '$class', '$teacher')";
   mysqli_query($con, $sql);
   return;
  }
@@ -92,6 +105,16 @@ function  Arm(){
  mysqli_query($con, $sql);
  return;
 }
+  function  createClass()
+  {
+    global $con;
+    $class = $_POST['class'];
+    $level = $_POST['level'];
+
+    $sql = "INSERT INTO create_class(class, level) VALUE('$class', '$level')";
+    mysqli_query($con, $sql);
+    return;
+  }
 
 function AddParent(){
  global $con;
@@ -139,26 +162,7 @@ function AddParent(){
       $row= mysqli_fetch_assoc($sql);
       return $row[$pin];
     }
-  function getParentName($sn){
-    global $con;
-    $sql = $con->query("SELECT * FROM parents WHERE sn = '$sn'");
-    $rows = mysqli_fetch_assoc($sql);
-    return $rows['name'];
 
-  }
-  function getStudentClass($sn){
-    global $con;
-    $sql = $con->query("SELECT * FROM class WHERE sn = '$sn'");
-    $rows = mysqli_fetch_assoc($sql);
-    return $rows['class'];
-  }
-  function getClassArm($sn)
-  {
-    global $con;
-    $sql = $con->query("SELECT * FROM arm WHERE sn = '$sn'");
-    $rows = mysqli_fetch_assoc($sql);
-    return $rows['arm'];
-  }
   function AddStudent()
   {
     global $con;
