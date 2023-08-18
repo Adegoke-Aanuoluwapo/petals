@@ -30,6 +30,9 @@ class Profile
     } elseif (isset($_POST['assignSubject'])) {
       $this->AssignSubjects();
     }
+      elseif (isset($_POST['editCat'])) {
+      $this->updateCat();
+    }
     
  }
  public function SignUp()
@@ -90,9 +93,10 @@ function  Cat(){
 }
 function updateCat(){
   global $con;
+  $sn = $_GET['sn'];
   $class = $_POST['class'];
-  $sql= $con->query("UPDATE * FROM class WHERE sn = '$class'");
-  
+  $sql= $con->query("UPDATE  class  SET class = '$class' WHERE sn = '$sn'");
+  return;
 
 }
 function  AddSubject(){

@@ -369,7 +369,7 @@ require_once("myclass.php");
                                     <input type="hidden" name="category_id">
                                 </div>
                                 <div class="form-group float-right">
-                                    <button class="btn btn-secondary updateCategory">Update Category</button>
+                                    <button class="btn btn-secondary updateCategory" name="editCat">Update Category</button>
                                 </div>
                             </form>
                         </div>
