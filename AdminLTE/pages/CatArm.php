@@ -267,11 +267,12 @@ require_once("myclass.php");
                                                     <td colspan="12">
                                                         <?= $rows['class'] ?>
                                                     </td>
-                                                    <td><button class="btn btn-xs btn-primary editSubject" data-toggle="modal" data-target="#editClassCategoryModal" id=""><i class="fas fa-edit"></i></button></td </tr>
-                                                <?php  } ?>
+                                                    <td><button class="btn btn-xs btn-primary editSubject" data-toggle="modal" data-target="#editClassCategoryModal" id=""><i class="fas fa-edit" name="updateclass"></i></button></td>
+                                                </tr>
+                                            <?php  } ?>
 
 
-                                                <!--
+                                            <!--
                                              <div class="text-center"> <span class="spinner-border spinner-border-sm" aria-hidden="true"></span> <i>Loading Category ...</i> </div>    
                                             id="category_list_body"-->
 
@@ -335,7 +336,7 @@ require_once("myclass.php");
                                                 <td colspan="12">
                                                     <?= $rows['arm'] ?>
                                                 </td>
-                                                <td><button class="btn btn-xs btn-primary editSubject" data-toggle="modal" data-target="#editClassArmModal" id=""><i class="fas fa-edit"></i></button></td>
+                                                <td><button class="btn btn-xs btn-primary editSubject" data-toggle="modal" data-target="#editClassArmModal" id=""><i class="fas fa-edit" name="updatearm"></i></button></td>
                                             </tr>
                                         <?php  } ?>
                                         <!-- <td colspan="12">
@@ -351,7 +352,14 @@ require_once("myclass.php");
                 </div>
             </section>
 
+            <?php
+            if (isset($_POST['updateclass'])) {
+                $sn = $_POST['updateclass'];
+                $sql = $con->query("SELECT * FROM class WHERE sn = '$sn'");
+                $rows = mysqli_fetch_assoc($sql);
+            }
 
+            ?>
             <div class="modal fade" id="editClassCategoryModal">
                 <div class="modal-dialog modal-dialog-centered ">
                     <div class="modal-content">
@@ -362,10 +370,12 @@ require_once("myclass.php");
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="" id="editCategoryForm">
+                            <form method="POST" id="editCategoryForm">
+
+
                                 <div class="form-group">
                                     <label>Category</label>
-                                    <input type="text" name="category" class="form-control" placeholder="Enter Class Category i.e JSS, PRY, SSS">
+                                    <input type="text" name="class" class="form-control" placeholder="Enter Class Category i.e JSS, PRY, SSS">
                                     <input type="hidden" name="category_id">
                                 </div>
                                 <div class="form-group float-right">
