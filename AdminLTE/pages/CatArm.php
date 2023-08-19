@@ -371,13 +371,16 @@ require_once("myclass.php");
                         </div>
                         <div class="modal-body">
                             <form method="POST" id="editCategoryForm">
-
+                                <?php $i =1; $sql= $con->query("SELECT * FROM class WHERE sn = '$sn'");
+                                
+                                while($rows=mysqli_fetch_assoc($sql)){?>
 
                                 <div class="form-group">
                                     <label>Category</label>
-                                    <input type="text" name="class" class="form-control" placeholder="Enter Class Category i.e JSS, PRY, SSS">
+                                    <input type="text" name="class" class="form-control" placeholder="Enter Class Category i.e JSS, PRY, SSS" value="<?= $rows['class']?>">
                                     <input type="hidden" name="category_id">
                                 </div>
+                               <?php } ?>
                                 <div class="form-group float-right">
                                     <button class="btn btn-secondary updateCategory" name="editCat">Update Category</button>
                                 </div>
