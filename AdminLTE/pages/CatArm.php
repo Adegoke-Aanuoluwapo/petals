@@ -267,7 +267,7 @@ require_once("myclass.php");
                                                     <td colspan="12">
                                                         <?= $rows['class'] ?>
                                                     </td>
-                                                    <td><a class="btn btn-xs btn-primary editSubject" data-toggle="modal" href="CatArm.php?sn=<?=$rows['sn'] ?>" data-target="#editClassCategoryModal" id=""><i class="fas fa-edit" name="updateclass"></i></a></td>
+                                                    <td><a class="btn btn-xs btn-primary editSubject" data-toggle="modal" href="CatArm.php?sn=<?= $rows['sn'] ?>" data-target="#editClassCategoryModal" id=""><i class="fas fa-edit" name="updateclass"></i></a></td>
                                                 </tr>
                                             <?php  } ?>
 
@@ -352,11 +352,7 @@ require_once("myclass.php");
                 </div>
             </section>
 
- <?php
-      if (isset($_GET['sn'])) {
-        $sn = $_GET['sn'];
-        $sql = $con->query("SELECT * FROM class WHERE sn = '$sn'");
-        $rows = mysqli_fetch_assoc($sql); ?>
+
             <div class="modal fade" id="editClassCategoryModal">
                 <div class="modal-dialog modal-dialog-centered ">
                     <div class="modal-content">
@@ -366,26 +362,32 @@ require_once("myclass.php");
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body">
-                            <form method="POST" id="editCategoryForm">
-                              
+                        <?php
+                        if (isset($_GET['sn'])) {
+                            $sn = $_GET['sn'];
+                            $sql = $con->query("SELECT * FROM class WHERE sn = '$sn'");
+                            $rows = mysqli_fetch_assoc($sql); ?>
 
-                                <div class="form-group">
-                                    <label>Category</label>
-                                    <input type="text" name="class" class="form-control" placeholder="Enter Class Category i.e JSS, PRY, SSS" value="<?= $rows['class']?>">
-                                    <input type="hidden" name="category_id">
-                                </div>
-                               
-                                <div class="form-group float-right">
-                                    <button class="btn btn-secondary updateCategory" name="editCat">Update Category</button>
-                                </div>
-                            </form>
-                        </div>
+                            <div class="modal-body">
+                                <form method="POST" id="editCategoryForm">
+
+                                    <div class="form-group">
+                                        <label>Category</label>
+                                        <input type="text" name="class" class="form-control" placeholder="Enter Class Category i.e JSS, PRY, SSS" value="<?= $rows['class'] ?>">
+
+                                    </div>
+
+                                    <div class="form-group float-right">
+                                        <button class="btn btn-secondary updateCategory" name="editCat">Update Category</button>
+                                    </div>
+                                </form>
+                            </div>
+                        <?php } ?>
 
                     </div>
                 </div>
             </div>
- <?php } ?>
+
 
             <div class="modal fade" id="editClassArmModal">
                 <div class="modal-dialog modal-dialog-centered ">
