@@ -356,8 +356,7 @@ require_once("myclass.php");
       if (isset($_GET['sn'])) {
         $sn = $_GET['sn'];
         $sql = $con->query("SELECT * FROM class WHERE sn = '$sn'");
-        $rows = mysqli_fetch_assoc($sql); 
-                ?>
+        $rows = mysqli_fetch_assoc($sql); ?>
             <div class="modal fade" id="editClassCategoryModal">
                 <div class="modal-dialog modal-dialog-centered ">
                     <div class="modal-content">
