@@ -168,12 +168,12 @@ require_once("myclass.php")
                                                 <tr>
                                                     <td><?= $i++ ?></td>
                                                     <td><?= $rows['subject'] ?></td>
-                                                    <td><button class="btn btn-xs btn-primary editSubject" data-toggle="modal" data-target="#editSubjectModal" id=""><i class="fas fa-edit"></i></button></td>
+                                                    <td><i class="fas fa-edit"></i><a class="btn btn-xs btn-primary editSubject" data-toggle="modal" data-target="#editSubjectModal" id="" href="addsubject.php?sn=<?= $rows['sn'] ?>"></a></td>
                                                 </tr>
 
                                             <?php } ?>
 
-                                            
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -184,6 +184,9 @@ require_once("myclass.php")
                 </div>
             </section>
 
+            <?php
+
+            ?>
             <div class="modal fade" id="editSubjectModal">
                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal">
                     <div class="modal-content">
