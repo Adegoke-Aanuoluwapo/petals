@@ -168,7 +168,7 @@ require_once("myclass.php")
                                                 <tr>
                                                     <td><?= $i++ ?></td>
                                                     <td><?= $rows['subject'] ?></td>
-                                                    <td><i class="fas fa-edit"></i><a class="btn btn-xs btn-primary editSubject" data-toggle="modal" data-target="#editSubjectModal" id="" href="addsubject.php?sn=<?= $rows['sn'] ?>"></a></td>
+                                                    <td><a class="btn btn-xs btn-primary editSubject" data-toggle="modal" data-target="#editSubjectModal" id="" href="addsubject.php?sn=<?= $rows['sn'] ?>"><i class="fas fa-edit"></i></a></td>
                                                 </tr>
 
                                             <?php } ?>
