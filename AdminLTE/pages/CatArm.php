@@ -352,28 +352,30 @@ require_once("myclass.php");
                 </div>
             </section>
 
-
-            <div class="modal fade" id="editClassCategoryModal">
-                <div class="modal-dialog modal-dialog-centered ">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <p class="modal-title text-bold">Edit Class Category</p>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <?php
-                        if (isset($_GET['sn'])) {
-                            $sn = $_GET['sn'];
-                            $sql = $con->query("SELECT * FROM class WHERE sn = '$sn'");
-                            $rows = mysqli_fetch_assoc($sql); ?>
+            <?php
+            if (isset($_GET['sn'])) {
+                $sn = $_GET['sn'];
+                $sql = $con->query("SELECT * FROM class WHERE sn = '$sn'");
+                $rows = mysqli_fetch_assoc($sql); ?>
+                <div class="modal fade" id="editClassCategoryModal">
+                    <div class="modal-dialog modal-dialog-centered ">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <p class="modal-title text-bold">Edit Class Category</p>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
 
                             <div class="modal-body">
                                 <form method="POST" id="editCategoryForm">
 
                                     <div class="form-group">
+
+
                                         <label>Category</label>
                                         <input type="text" name="class" class="form-control" placeholder="Enter Class Category i.e JSS, PRY, SSS" value="<?= $rows['class'] ?>">
+
 
                                     </div>
 
@@ -382,12 +384,12 @@ require_once("myclass.php");
                                     </div>
                                 </form>
                             </div>
-                        <?php } ?>
 
+
+                        </div>
                     </div>
                 </div>
-            </div>
-
+            <?php } ?>
 
             <div class="modal fade" id="editClassArmModal">
                 <div class="modal-dialog modal-dialog-centered ">
