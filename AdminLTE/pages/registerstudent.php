@@ -177,9 +177,10 @@ require_once("myclass.php")
                         <th>#</th>
                         <th>Name</th>
                         <th>Class</th>
-                        <th>Arm</th>
+
                         <th>Gurdian</th>
                         <th>Gender</th>
+                        <th></th>
 
                       </tr>
                     </thead>
@@ -190,12 +191,13 @@ require_once("myclass.php")
                         <tr>
                           <td><?= $i++ ?></td>
                           <td><?= $rows['surname'] . ' ' . $rows['firstname'] ?></td>
-                          <td><?= $pro->SqLx('class', 'sn', $rows['class'], 'class') ?> </td>
-                          <td><?= $pro->SqLx('arm', 'sn', $rows['arm'], 'arm') ?></td>
+                          <td><?= $pro->SqLx('class', 'sn', $rows['class'], 'class') ?><sup><?= $pro->SqLx('arm', 'sn', $rows['arm'], 'arm') ?></sup> </td>
+
 
 
                           <td><?= $pro->SqLx('parents', 'sn', $rows['guardian'], 'name') ?></td>
                           <td><?= $rows['gender'] ?></td>
+                          <td> <a href="studentprofile.php?sn=<?= $rows['sn'] ?>">Profile <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a> </td>
                         </tr>
                       <?php  } ?>
                     </tbody>
