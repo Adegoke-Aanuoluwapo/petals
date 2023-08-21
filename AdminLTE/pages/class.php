@@ -146,6 +146,7 @@
                                             </tr>
                                         </thead>
                                         <tbody id="class_list_body">
+                                            
                                             <tr>
                                                 <td colspan="12">
                                                     <div class="text-center"> <span class="spinner-border spinner-border-sm" aria-hidden="true"></span> <i>Loading Classes ...</i> </div>

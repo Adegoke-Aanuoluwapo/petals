@@ -1,13 +1,6 @@
 <?php
 require_once("myclass.php");
 
-if (isset($_GET['sn'])) {
-    $sn = $_GET['sn'];
-
-    $sql = $con->query("SELECT * FROM students WHERE sn ='$sn' ");
-    $rows = mysqli_fetch_assoc($sql);
-}
-
 
 ?>
 
@@ -154,10 +147,12 @@ if (isset($_GET['sn'])) {
             <section class="content">
                 <div class="row">
                     <div class="col-md-3">
-                        <?php $i = 1;
-
-                        $sql = $con->query("SELECT * FROM students WHERE sn = '$sn'");
-                        while ($rows = mysqli_fetch_assoc($sql)) { ?>
+                        <?php
+                                $sn = $_GET['sn'];
+                                $sql = $con->query("SELECT * FROM students WHERE sn = '$sn'");
+                                $rows = mysqli_fetch_assoc($sql);
+                            
+                         ?>
                             <div class="card card-secondary card-outline">
                                 <div class="card-body box-profile p-card">
                                     <div class="d-flex justify-content-center upload_new_img">
@@ -172,11 +167,10 @@ if (isset($_GET['sn'])) {
                                     <a class="btn btn-primary btn-block" href="#settings" data-toggle="tab"><b> <i class="fas fa-edit"></i> Edit Profile</b></a>
                                 </div>
                             </div>
-                        <?php }
-                        ?>
+                        
 
                     </div>
-                    Warning: Undefined variable $sn in C:\xampp\htdocs\petals\AdminLTE\pages\studentprofile.php on line 155
+
                     <div class="col-md-9">
                         <div class="card card-secondary card-outline">
                             <div class="card-header p-2">
@@ -813,6 +807,7 @@ if (isset($_GET['sn'])) {
                         </div>
                     </div>
                 </div>
+
             </section>
 
             <!-- <section class="content">
