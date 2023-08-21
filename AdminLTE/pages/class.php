@@ -315,7 +315,7 @@
                                     <?php $i = 1;
                                     $sql = $con->query("SELECT * FROM class");
                                     while ($rows = mysqli_fetch_assoc($sql)) {
-                                        echo '<option>'  . $rows['class'] .  '</option>';
+                                        echo '<option value="'.$rows['sn'].'">'  . $rows['class'] .  '</option>';
                                     }
                                     ?>
                                 </select>

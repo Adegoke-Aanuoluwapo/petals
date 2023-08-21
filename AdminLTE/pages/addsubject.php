@@ -185,12 +185,13 @@ require_once("myclass.php")
             </section>
 
             <?php
+            
             if(isset($_GET['sn'])){
                 $sn = $_GET['sn'];
                 $sql = $con->query("SELECT * FROM subjects WHERE sn = '$sn' ");
                 $rows = mysqli_fetch_assoc($sql);
-            
-
+                var_dump($rows);
+            }
             ?>
             <div class="modal fade" id="editSubjectModal">
                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal">
@@ -218,7 +219,7 @@ require_once("myclass.php")
                 </div>
             </div>
 
-            <?php } ?>
+            <?php  ?>
             <!-- <script src="https://portal.schoolpetal.com/assets/plugins/jquery/jquery.min.js"></script> -->
 
             <!-- <script>

@@ -103,7 +103,7 @@
                                 <div class="text-center">
                                     <img class="profile-user-img img-fluid img-circle" src="user.png" alt="">
                                     <h3 class="profile-username text-center"><?= $rows['surname'] . ' ' . $rows['firstname'] ?></h3>
-                                    <p class="text-muted mb-0 text-center"><?= $pro->getStudentClass($rows['class'])  ?> <sup><?=  $pro->getClassArm($rows['arm']) ?></sup> | <?= $rows['gender'] ?></p>
+                                    <p class="text-muted mb-0 text-center"><?= $pro->SqLx('class', 'sn', $rows['class'], 'class' )  ?> <sup><?=  $pro->SqLx('arm', 'sn', $rows['arm'], 'arm') ?></sup> | <?= $rows['gender'] ?></p>
                                     <button type="button" class="btn btn-success btn-xs  btn-block"><b> <i class="fa fa-user-check"></i> Active</b></button>
                                     <div class="text-center">
                                         <a href="studentprofile.php?sn=<?= $rows['sn'] ?> ">Go-to-profile <i class="fas fa-arrow-circle-right"></i></a>
