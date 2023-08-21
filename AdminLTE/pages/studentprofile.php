@@ -157,7 +157,7 @@ require_once("myclass.php");
                                 <div class="card-body box-profile p-card">
                                     <div class="d-flex justify-content-center upload_new_img">
                                         <div class="text-center comp">
-                                            <img class="profile-user-img img-fluid img-circle object-cover" src="https://apis.schoolpetal.com/assets/img/students/user.png" alt="User profile picture">
+                                            <img class="profile-user-img img-fluid img-circle object-cover" src="user.png" alt="User profile picture">
                                             <i class="fas fa-upload "></i>
                                         </div>
                                     </div>
