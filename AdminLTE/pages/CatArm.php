@@ -341,8 +341,8 @@ require_once("myclass.php");
                                         <?php  } ?>
                                         <!-- <td colspan="12">
                                                     <div class="text-center"> <span class="spinner-border spinner-border-sm" aria-hidden="true"></span> <i>Loading Arms ...</i> </div>
-                                                </td> -->
-                                        </tr>
+                                                </td>
+                                        </tr> -->
                                         </tbody>
                                     </table>
                                 </div>

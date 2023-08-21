@@ -23,6 +23,9 @@ if (isset($_GET['sn'])) {
     </title>
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css" />
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="../../plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
@@ -152,6 +155,7 @@ if (isset($_GET['sn'])) {
                 <div class="row">
                     <div class="col-md-3">
                         <?php $i = 1;
+
                         $sql = $con->query("SELECT * FROM students WHERE sn = '$sn'");
                         while ($rows = mysqli_fetch_assoc($sql)) { ?>
                             <div class="card card-secondary card-outline">
@@ -163,7 +167,7 @@ if (isset($_GET['sn'])) {
                                         </div>
                                     </div>
                                     <h3 class="profile-username text-center"><?= $rows['surname'] . ' ' . $rows['firstname'] . ' ' . $rows['othernames'] ?></h3>
-                                    <p class="text-muted text-center"><?= $pro->SqLx('class', 'sn',$rows['class'], 'class') ?><sup><?= $pro->SqLx('arm', 'sn', $rows['arm'], 'arm' )?></sup> | <?= $rows['gender'] ?></p>
+                                    <p class="text-muted text-center"><?= $pro->SqLx('class', 'sn', $rows['class'], 'class') ?><sup><?= $pro->SqLx('arm', 'sn', $rows['arm'], 'arm') ?></sup> | <?= $rows['gender'] ?></p>
                                     <button class="btn btn-success btn-block"><b> <i class="fa fa-user-check"></i> Activate</b></button>
                                     <a class="btn btn-primary btn-block" href="#settings" data-toggle="tab"><b> <i class="fas fa-edit"></i> Edit Profile</b></a>
                                 </div>
@@ -172,7 +176,7 @@ if (isset($_GET['sn'])) {
                         ?>
 
                     </div>
-
+                    Warning: Undefined variable $sn in C:\xampp\htdocs\petals\AdminLTE\pages\studentprofile.php on line 155
                     <div class="col-md-9">
                         <div class="card card-secondary card-outline">
                             <div class="card-header p-2">
