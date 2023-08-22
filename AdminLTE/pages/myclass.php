@@ -138,13 +138,13 @@ function  Arm(){
     mysqli_query($con, $sql);
     return;
   }
+  
   function  createFees()
   {
     global $con;
     $category = $_POST['category'];
-    $discription = $_POST['discription'];
-
-    $sql = "INSERT INTO fees(category, discription) VALUE('$category', '$discription')";
+    $description = $_POST['description'];
+    $sql = "INSERT INTO fees(category, description) VALUE('$category', '$description')";
     mysqli_query($con, $sql);
     return;
   }

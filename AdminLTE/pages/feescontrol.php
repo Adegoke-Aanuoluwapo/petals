@@ -1,3 +1,5 @@
+<?php require("myclass.php") ?>
+Warning: Undefined array key "discription" in C:\xampp\htdocs\petals\AdminLTE\pages\myclass.php on line 145
 <!DOCTYPE html>
 <html lang="en">
 
@@ -126,7 +128,7 @@
                 </h3>
               </div>
               <div class="card-body">
-                <form method="POST" id="createFeeCategory">
+                <form method="POST">
                   <div class=" form-group">
                     <label>Fee Category</label>
                     <input type="text" name="category" class="form-control" placeholder="School Fee">
