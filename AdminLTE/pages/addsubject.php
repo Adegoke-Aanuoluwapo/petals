@@ -185,13 +185,11 @@ require_once("myclass.php")
             </section>
 
             <?php
-            
-            if(isset($_GET['sn'])){
-                $sn = $_GET['sn'];
-                $sql = $con->query("SELECT * FROM subjects WHERE sn = '$sn' ");
-                $rows = mysqli_fetch_assoc($sql);
-                var_dump($rows);
-            }
+
+            $sn = $_POST['sn'];
+            $sql = $con->query("SELECT * FROM subjects WHERE sn = '$sn' ");
+            $rows = mysqli_fetch_assoc($sql);
+
             ?>
             <div class="modal fade" id="editSubjectModal">
                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal">
@@ -206,7 +204,7 @@ require_once("myclass.php")
                             <form action="" id="editSubjectForm">
                                 <div class="form-group">
                                     <label>Subject</label>
-                                    <input type="text" name="subject" class="form-control" placeholder="Enter Subject name i.e Mathematics, Biology">
+                                    <input type="text" name="subject" value="<?= $rows['subject'] ?>" class="form-control" placeholder="Enter Subject name i.e Mathematics, Biology">
                                     <input type="hidden" name="subject_id">
                                 </div>
                                 <div class="form-group mb-0 float-right">
@@ -219,7 +217,7 @@ require_once("myclass.php")
                 </div>
             </div>
 
-            <?php  ?>
+            ?>
             <!-- <script src="https://portal.schoolpetal.com/assets/plugins/jquery/jquery.min.js"></script> -->
 
             <!-- <script>

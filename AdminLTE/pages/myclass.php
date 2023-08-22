@@ -126,7 +126,13 @@ function  Arm(){
     mysqli_query($con, $sql);
     return;
   }
-
+function editSubject($sn){
+  global $con;
+  $subject =$_POST['subject'];
+  $sql = "UPDATE subjects SET subject = '$subject' WHERE sn = '$sn' ";
+  $con->query($sql);
+  return;
+}
 function AddParent(){
  global $con;
  $name = $_POST['name'];

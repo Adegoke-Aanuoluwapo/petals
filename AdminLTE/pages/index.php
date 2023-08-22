@@ -270,7 +270,7 @@ require_once("myclass.php");
 
               <div class="info-box-content">
                 <span class="info-box-text">Guardians</span>
-                <span class="info-box-number guardians"><?= $pro->Total('subjects') ?></span>
+                <span class="info-box-number guardians"><?= $pro->Total('parents') ?></span>
               </div>
             </div>
           </div>
@@ -328,54 +328,18 @@ require_once("myclass.php");
               <div class="card-body p-0">
                 <ul class="users-list clearfix student_body">
 
-
+                    <?php $i = 1; $sql = $con->query("SELECT * FROM students");
+                    while($rows= mysqli_fetch_assoc($sql)){ ?>
                   <li>
-                    <img src="https://apis.schoolpetal.com/assets/img/students/user.png" alt="User Image">
-                    <a class="users-list-name" href="/control/student/250">Okolo Odinaka</a>
-                    <span class="users-list-date">sss 1</span>
+                    <img src="user.png" alt="User Image">
+                    <a class="users-list-name" href="studentprofile.php?sn=<?=$rows['sn'] ?>"><?= $rows['surname'] .' '. $rows['firstname'] ?></a>
+                    <span class="users-list-date"><?= $pro->SqLx('class', 'sn',$rows['class'], 'class') ?></span>
                   </li>
+                 <?php } ?>
 
-                  <li>
-                    <img src="https://apis.schoolpetal.com/assets/img/students/user.png" alt="User Image">
-                    <a class="users-list-name" href="/control/student/249">popoola daniella</a>
-                    <span class="users-list-date">sss 1</span>
-                  </li>
+ 
 
-                  <li>
-                    <img src="https://apis.schoolpetal.com/assets/img/students/user.png" alt="User Image">
-                    <a class="users-list-name" href="/control/student/248">Bankole Ajoke</a>
-                    <span class="users-list-date">Senior 2</span>
-                  </li>
-
-                  <li>
-                    <img src="https://apis.schoolpetal.com/assets/img/students/user.png" alt="User Image">
-                    <a class="users-list-name" href="/control/student/247">Bankole Adedamola</a>
-                    <span class="users-list-date">sss 3</span>
-                  </li>
-
-                  <li>
-                    <img src="https://apis.schoolpetal.com/assets/img/students/user.png" alt="User Image">
-                    <a class="users-list-name" href="/control/student/246">Joseph Ayomide</a>
-                    <span class="users-list-date">sss 3</span>
-                  </li>
-
-                  <li>
-                    <img src="https://apis.schoolpetal.com/assets/img/students/user.png" alt="User Image">
-                    <a class="users-list-name" href="/control/student/245">Joseph Kemisola</a>
-                    <span class="users-list-date">Senior 2</span>
-                  </li>
-
-                  <li>
-                    <img src="https://apis.schoolpetal.com/assets/img/students/user.png" alt="User Image">
-                    <a class="users-list-name" href="/control/student/244">Oduntan Gbeminiyi</a>
-                    <span class="users-list-date">Senior 2</span>
-                  </li>
-
-                  <li>
-                    <img src="https://apis.schoolpetal.com/assets/img/students/user.png" alt="User Image">
-                    <a class="users-list-name" href="/control/student/243">Oduntan Busayo</a>
-                    <span class="users-list-date">sss 3</span>
-                  </li>
+  
                 </ul>
               </div>
             </div>
