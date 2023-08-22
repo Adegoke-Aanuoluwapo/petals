@@ -168,7 +168,7 @@ require_once("myclass.php")
                                                 <tr>
                                                     <td><?= $i++ ?></td>
                                                     <td><?= $rows['subject'] ?></td>
-                                                    <td><a class="btn btn-xs btn-primary editSubject" data-toggle="modal" data-target="#editSubjectModal" id="" href="addsubject.php?sn=<?= $rows['sn'] ?>"><i class="fas fa-edit"></i></a></td>
+                                                    <td><a class="btn btn-xs btn-primary editSubject" data-toggle="modal" data-target="#editSubjectModal" id="" onclick="document.getElementById('subj').value='<?= $rows['subject'] ?>'; document.getElementById('subid').value='<?= $rows['sn'] ?>' "><i class="fas fa-edit"></i></a></td>
                                                 </tr>
 
                                             <?php } ?>
@@ -186,9 +186,9 @@ require_once("myclass.php")
 
             <?php
 
-            $sn = $_GET['sn'];
-            $sql = $con->query("SELECT * FROM subjects WHERE sn = '$sn' ");
-            $rows = mysqli_fetch_assoc($sql);
+            // $sn = $_GET['sn'];
+            // $sql = $con->query("SELECT * FROM subjects WHERE sn = '$sn' ");
+            // $rows = mysqli_fetch_assoc($sql);
 
             ?>
             <div class="modal fade" id="editSubjectModal">
@@ -201,11 +201,11 @@ require_once("myclass.php")
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="" id="editSubjectForm">
+                            <form method="post">
                                 <div class="form-group">
                                     <label>Subject</label>
-                                    <input type="text" name="subject" value="<?= $rows['subject'] ?>" class="form-control" placeholder="Enter Subject name i.e Mathematics, Biology">
-                                    <input type="hidden" name="sn">
+                                    <input type="text" id="subj" name="subject" class="form-control" placeholder="Enter Subject name i.e Mathematics, Biology">
+                                    <input type="hidden" id="subid" name="sn">
                                 </div>
                                 <div class="form-group mb-0 float-right">
                                     <button class="btn btn-secondary" id="updateSubject" name="editsubject">Update Subject</button>
@@ -217,7 +217,7 @@ require_once("myclass.php")
                 </div>
             </div>
 
-            
+
             <!-- <script src="https://portal.schoolpetal.com/assets/plugins/jquery/jquery.min.js"></script> -->
 
             <!-- <script>

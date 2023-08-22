@@ -268,7 +268,7 @@ require_once("myclass.php");
                                                     <td colspan="12">
                                                         <?= $rows['class'] ?>
                                                     </td>
-                                                    <td><a class="btn btn-xs btn-primary editSubject" data-toggle="modal" href="CatArm.php?sn=<?= $rows['sn'] ?>" data-target="#editClassCategoryModal" id=""><i class="fas fa-edit" name="updateclass"></i></a></td>
+                                                    <td><a class="btn btn-xs btn-primary editSubject" data-toggle="modal"  data-target="#editClassCategoryModal" id="" onclick="document.getElementById('cat').value='<?= $rows['class'] ?>'; document.getElementById('catid').value='<?= $rows['sn'] ?>'"; ><i class="fas fa-edit" ></i></a></td>
                                                 </tr>
                                             <?php  } ?>
 
@@ -354,10 +354,10 @@ require_once("myclass.php");
             </section>
 
             <?php
-            if (isset($_GET['sn'])) {
-                $sn = $_GET['sn'];
-                $sql = $con->query("SELECT * FROM class WHERE sn = '$sn'");
-                $rows = mysqli_fetch_assoc($sql); ?>
+            // if (isset($_GET['sn'])) {
+            //     $sn = $_GET['sn'];
+            //     $sql = $con->query("SELECT * FROM class WHERE sn = '$sn'");
+            //     $rows = mysqli_fetch_assoc($sql); ?>
                 <div class="modal fade" id="editClassCategoryModal">
                     <div class="modal-dialog modal-dialog-centered ">
                         <div class="modal-content">
@@ -369,19 +369,20 @@ require_once("myclass.php");
                             </div>
 
                             <div class="modal-body">
-                                <form method="POST" id="editCategoryForm">
+                                <form method="POST" >
 
                                     <div class="form-group">
 
 
                                         <label>Category</label>
-                                        <input type="text" name="class" class="form-control" placeholder="Enter Class Category i.e JSS, PRY, SSS" value="<?= $rows['class'] ?>">
+                                        <input type="text" name="class" class="form-control" placeholder="Enter Class Category i.e JSS, PRY, SSS" id="cat">
+                                        <input type="text" name="" id="catid">
 
 
                                     </div>
 
                                     <div class="form-group float-right">
-                                        <button class="btn btn-secondary updateCategory" name="editCat">Update Category</button>
+                                        <button class="btn btn-secondary updateCategory" name="editCat" >Update Category</button>
                                     </div>
                                 </form>
                             </div>
@@ -390,7 +391,7 @@ require_once("myclass.php");
                         </div>
                     </div>
                 </div>
-            <?php } ?>
+       
 
             <div class="modal fade" id="editClassArmModal">
                 <div class="modal-dialog modal-dialog-centered ">
