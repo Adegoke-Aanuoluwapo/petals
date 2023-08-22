@@ -173,7 +173,12 @@ function AddParent(){
       $row= mysqli_fetch_assoc($sql);
       return $row[$pin];
     }
-
+function totalStudent(){
+  global $con;
+  $sql = $con->query("SELECT * FROM students");
+    return mysqli_num_rows($sql);
+  
+}
   function AddStudent()
   {
     global $con;

@@ -200,6 +200,7 @@ require_once("myclass.php");
 
       <!-- Main content -->
       <section class="content">
+        
         <div class="container-fluid">
           <!-- Small boxes (Stat box) -->
           <div class="row">
@@ -208,9 +209,9 @@ require_once("myclass.php");
               <div class="small-box bg-info">
               
                 <div class="inner">
-                  <h3>140</h3>
+                  <h3><?= $pro->totalStudent() ?></h3>
 
-                  <p>New Orders</p>
+                  <p>Students</p>
                 </div>
 
                 <div class="icon">

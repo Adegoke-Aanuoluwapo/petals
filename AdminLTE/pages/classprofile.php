@@ -197,11 +197,11 @@
            </tr>
           </thead>
           <tbody id="student_list">
-           <?php $i =1;
-           $sql = $con->query("SELECT * FROM students ");
-           while ($rows = mysqli_fetch_assoc($sql)) {  ?>
+           <?php $sn = $_GET['sn'];
+           $sql = $con->query("SELECT * FROM class ");
+           $rows = mysqli_fetch_assoc($sql)  ?>
             <tr>
-             <td><?= $i++ ?></td>
+            
              <td><?= $rows['surname']. ' '. $rows['firstname'] ?></td>
              <td><?= $rows['arm'] ?></td>
              <td><?= $rows['gender'] ?></td>
@@ -216,7 +216,7 @@
              </td>
             </tr>
 
-           <?php   } ?>
+         
 
 
           </tbody>
