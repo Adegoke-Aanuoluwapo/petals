@@ -36,6 +36,13 @@ class Profile
       $sn  = $_POST['sn'];
       $this->editSubject($sn);
     }
+       elseif (isset($_POST['EditClass'])) {
+      $sn  = $_POST['sn'];
+      $this->editClass($sn);
+    } elseif (isset($_POST['EditArm'])) {
+      $sn  = $_POST['sn'];
+      $this->editArm($sn);
+    }
     
     
  }
@@ -137,6 +144,22 @@ function editSubject($sn){
   $con->query($sql);
   return;
 }
+  function editArm($sn)
+  {
+    global $con;
+    $arm = $_POST['arm'];
+    $sql = "UPDATE arm SET arm = '$arm' WHERE sn = '$sn' ";
+    $con->query($sql);
+    return;
+  }
+  function editClass($sn)
+  {
+    global $con;
+    $class = $_POST['class'];
+    $sql = "UPDATE class SET class = 'class' WHERE sn = '$sn' ";
+    $con->query($sql);
+    return;
+  }
 function AddParent(){
  global $con;
  $name = $_POST['name'];

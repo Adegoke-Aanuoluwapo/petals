@@ -268,7 +268,7 @@ require_once("myclass.php");
                                                     <td colspan="12">
                                                         <?= $rows['class'] ?>
                                                     </td>
-                                                    <td><a class="btn btn-xs btn-primary editSubject" data-toggle="modal"  data-target="#editClassCategoryModal" id="" onclick="document.getElementById('cat').value='<?= $rows['class'] ?>'; document.getElementById('catid').value='<?= $rows['sn'] ?>'"; ><i class="fas fa-edit" ></i></a></td>
+                                                    <td><a class="btn btn-xs btn-primary editSubject" data-toggle="modal"  data-target="#editClassCategoryModal" id="" onclick="document.getElementById('cat').value='<?= $rows['class'] ?>'; document.getElementById('cat_id').value='<?= $rows['sn'] ?>'"; ><i class="fas fa-edit" ></i></a></td>
                                                 </tr>
                                             <?php  } ?>
 
@@ -328,7 +328,7 @@ require_once("myclass.php");
                                             </tr>
                                         </thead>
                                         <tbody id="arm_list_body">
-                                            <tr>
+                                            
 
                                                 <?php $i = 1;
                                                 $sql = $con->query("SELECT * FROM arm");
@@ -337,7 +337,7 @@ require_once("myclass.php");
                                                 <td colspan="12">
                                                     <?= $rows['arm'] ?>
                                                 </td>
-                                                <td><button class="btn btn-xs btn-primary editSubject" data-toggle="modal" data-target="#editClassArmModal" id=""><i class="fas fa-edit" name="updatearm"></i></button></td>
+                                                <td><button class="btn btn-xs btn-primary editSubject" data-toggle="modal" data-target="#editClassArmModal" id=""><i class="fas fa-edit" name="updatearm" onclick="document.getElementById('arm').value='<?= $rows['arm'] ?>'; document.getElementById('arm_id').value='<?= $rows['sn'] ?>'"></i></button></td>
                                             </tr>
                                         <?php  } ?>
                                         <!-- <td colspan="12">
@@ -376,7 +376,7 @@ require_once("myclass.php");
 
                                         <label>Category</label>
                                         <input type="text" name="class" class="form-control" placeholder="Enter Class Category i.e JSS, PRY, SSS" id="cat">
-                                        <input type="text" name="" id="catid">
+                                        <input type="hidden" name="" id="cat_id">
 
 
                                     </div>
@@ -406,8 +406,8 @@ require_once("myclass.php");
                             <form action="" id="editArmForm">
                                 <div class="form-group">
                                     <label>Arm</label>
-                                    <input type="text" name="arm" class="form-control" placeholder="Enter Class Amr i.e A, B, C">
-                                    <input type="hidden" name="arm_id">
+                                    <input type="text" name="arm" class="form-control" placeholder="Enter Class Amr i.e A, B, C" id='arm'>
+                                    <input type="text" name="arm_id" id='arm_id'>
                                 </div>
                                 <div class="form-group float-right">
                                     <button class="btn btn-secondary updateArm">Update Arm</button>
