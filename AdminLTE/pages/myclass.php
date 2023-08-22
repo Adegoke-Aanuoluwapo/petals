@@ -29,22 +29,23 @@ class Profile
       $this->createClass();
     } elseif (isset($_POST['assignSubject'])) {
       $this->AssignSubjects();
-    }
-      elseif (isset($_POST['editCat'])) {
-      $this->updateCat();
-    } elseif (isset($_POST['editsubject'])) {
+    } 
+    elseif (isset($_POST['editsubject'])) {
       $sn  = $_POST['sn'];
       $this->editSubject($sn);
     }
-       elseif (isset($_POST['EditClass'])) {
+    elseif (isset($_POST['editclass'])) {
       $sn  = $_POST['sn'];
       $this->editClass($sn);
-    } elseif (isset($_POST['EditArm'])) {
+    }elseif (isset($_POST['EditArm'])) {
       $sn  = $_POST['sn'];
       $this->editArm($sn);
+    } elseif (isset($_POST['createfees'])) {
+      
+      $this->createFees();
     }
     
-    
+    //Warning: Undefined array key "sn" in C:\xampp\htdocs\petals\AdminLTE\pages\myclass.php on line 38
  }
  public function SignUp()
  {
@@ -137,9 +138,19 @@ function  Arm(){
     mysqli_query($con, $sql);
     return;
   }
+  function  createFees()
+  {
+    global $con;
+    $category = $_POST['category'];
+    $discription = $_POST['discription'];
+
+    $sql = "INSERT INTO fees(category, discription) VALUE('$category', '$discription')";
+    mysqli_query($con, $sql);
+    return;
+  }
 function editSubject($sn){
   global $con;
-  $subject =$_POST['subject'];
+  $subject = $_POST['subject'];
   $sql = "UPDATE subjects SET subject = '$subject' WHERE sn = '$sn' ";
   $con->query($sql);
   return;
@@ -156,7 +167,7 @@ function editSubject($sn){
   {
     global $con;
     $class = $_POST['class'];
-    $sql = "UPDATE class SET class = 'class' WHERE sn = '$sn' ";
+    $sql = "UPDATE class SET class = '$class' WHERE sn = '$sn' ";
     $con->query($sql);
     return;
   }

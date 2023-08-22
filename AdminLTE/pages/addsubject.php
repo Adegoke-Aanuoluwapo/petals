@@ -208,7 +208,7 @@ require_once("myclass.php")
                                     <input type="hidden" id="subid" name="sn">
                                 </div>
                                 <div class="form-group mb-0 float-right">
-                                    <button class="btn btn-secondary" id="updateSubject" name="editsubject">Update Subject</button>
+                                    <button class="btn btn-secondary" name="editsubject">Update Subject</button>
                                 </div>
                             </form>
                         </div>

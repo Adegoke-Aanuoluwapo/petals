@@ -376,13 +376,13 @@ require_once("myclass.php");
 
                                         <label>Category</label>
                                         <input type="text" name="class" class="form-control" placeholder="Enter Class Category i.e JSS, PRY, SSS" id="cat">
-                                        <input type="hidden" name="" id="cat_id">
+                                        <input type="hidden" name="sn" id="cat_id">
 
 
                                     </div>
 
                                     <div class="form-group float-right">
-                                        <button class="btn btn-secondary updateCategory" name="editCat" >Update Category</button>
+                                        <button class="btn btn-secondary updateCategory" name="editclass" >Update Category</button>
                                     </div>
                                 </form>
                             </div>
@@ -403,14 +403,14 @@ require_once("myclass.php");
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="" id="editArmForm">
+                            <form method="POST">
                                 <div class="form-group">
                                     <label>Arm</label>
                                     <input type="text" name="arm" class="form-control" placeholder="Enter Class Amr i.e A, B, C" id='arm'>
-                                    <input type="text" name="arm_id" id='arm_id'>
+                                    <input type="hidden" name="sn" id='arm_id'>
                                 </div>
                                 <div class="form-group float-right">
-                                    <button class="btn btn-secondary updateArm">Update Arm</button>
+                                    <button class="btn btn-secondary updateArm" name="EditArm">Update Arm</button>
                                 </div>
                             </form>
                         </div>
@@ -530,7 +530,7 @@ require_once("myclass.php");
             </script>
 
 
-            // <script>
+             <script>
                 //     $(function() {
                 //         $.ajaxSetup({
                 //             headers: {

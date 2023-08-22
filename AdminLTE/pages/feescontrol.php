@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="csrf-token" content="Lel6mIQGDjIStRoD1FNzRptF5gS7uqqj8tLFgWLp">
-  <title> Dashboard
+  <title> Fees Contol
   </title>
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -117,134 +117,107 @@
 
       <section class="content">
         <div class="row">
-          <div class="col-lg-3 col-6">
-            <div class="small-box bg-secondary">
-              <div class="inner">
-                <h3 class="students">0</h3>
-
-                <p>Students</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-6">
-            <div class="small-box bg-secondary">
-              <div class="inner">
-                <h3 class="assigned_fee">0</h3>
-
-                <p>Assigned Fee</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-6">
-            <div class="small-box bg-secondary">
-              <div class="inner">
-                <h3 class="reveived_payment">0</h3>
-
-                <p>Reveived Payments</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-6">
-            <div class="small-box bg-secondary">
-              <div class="inner">
-                <h3 class="subject_teachers">0</h3>
-
-                <p>Subject Teachers</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-12 col-sm-6 col-md-3">
-            <div class="info-box">
-              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">Classes / Arms</span>
-                <span class="info-box-number classes">
-                  0
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-3">
-            <div class="info-box mb-3">
-              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">Subjects</span>
-                <span class="info-box-number subjects">0</span>
-              </div>
-            </div>
-          </div>
-          <div class="clearfix hidden-md-up"></div>
-
-          <div class="col-12 col-sm-6 col-md-3">
-            <div class="info-box mb-3">
-              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">Guardians</span>
-                <span class="info-box-number guardians">0</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-3">
-            <div class="info-box mb-3">
-              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">Staffs</span>
-                <span class="info-box-number staffs">0</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-
-          <div class="col-md-8">
+          <div class="col-md-6 col-12">
             <div class="card card-secondary card-outline">
               <div class="card-header">
-                <h3 class="card-title">
-                  <i class="far fa-chart-bar"></i>
-                  Fee Payment Chart
+                <h3 class="card-title ">
+                  <i class="fa fa-plus-square" aria-hidden="true"></i>
+                  Create Fee Category
                 </h3>
-
-                <div class="card-tools">
-                  <a href="#" class="text-secondary">See-More-Charts <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
-                </div>
               </div>
               <div class="card-body">
-                <div class="chart">
-                  <canvas id="barChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                </div>
+                <form method="POST" id="createFeeCategory">
+                  <div class=" form-group">
+                    <label>Fee Category</label>
+                    <input type="text" name="category" class="form-control" placeholder="School Fee">
+                  </div>
+
+                  <div class=" form-group">
+                    <label>Fee Description</label>
+                    <textarea name="description" class="form-control" col="2" placeholder="Describe fee category"></textarea>
+                  </div>
+
+                  <div class=" form-group">
+                    <button class="btn btn-secondary float-right createFeeCategory " name="createfees">Create Fee Category</button>
+                  </div>
+
+
+                </form>
               </div>
+
+
+
             </div>
           </div>
 
-          <div class="col-md-4">
-            <div class="card">
+
+          <div class="col-md-6 col-12">
+            <div class="card card-secondary card-outline">
               <div class="card-header">
-                <h3 class="card-title">
-                  <i class="fa fa-users"></i>
-                  Students
+                <h3 class="card-title ">
+                  <i class="fa fa-list-alt" aria-hidden="true"></i>
+                  Fee Categories
                 </h3>
               </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                <ul class="users-list clearfix student_body">
-
-                </ul>
+              <div class="card-body p-1">
+                <div class="table-responsive">
+                  <table class="table mb-0 table-bordered table-hover table-striped">
+                    <thead>
+                      <tr>
+                        <th>Fee</th>
+                        <th>Description</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody id="fee_list">
+                      <tr>
+                        <td>Tuition Fee</td>
+                        <td>Main Terminal School fees</td>
+                        <td><button class="btn btn-xs float-right btn-primary editFee" data-data="{&quot;id&quot;:6,&quot;school_id&quot;:&quot;2&quot;,&quot;term_id&quot;:&quot;10&quot;,&quot;fee&quot;:&quot;Tuition Fee&quot;,&quot;description&quot;:&quot;Main Terminal School fees&quot;,&quot;created_by&quot;:&quot;20&quot;,&quot;created_at&quot;:&quot;2023-08-07T11:45:29.000000Z&quot;,&quot;updated_at&quot;:&quot;2023-08-07T11:46:31.000000Z&quot;}" data-target="#editFeeModal" data-toggle="modal"><i class="fas fa-edit "></i></button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
+
+
+
             </div>
           </div>
 
         </div>
-
-
       </section>
+      <div class="modal fade" id="editFeeModal">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <p class="modal-title text-bold">Edit Fee Category </p>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="" id="updateFeeCategory">
+                <div class=" form-group">
+                  <label>Fee Category</label>
+                  <input type="text" name="fee_category" class="form-control" placeholder="School Fee">
+                  <input type="hidden" name="fee_id">
+                </div>
+
+                <div class=" form-group">
+                  <label>Fee Description</label>
+                  <textarea name="description" class="form-control" col="2" placeholder="Describe fee category"></textarea>
+                </div>
+
+                <div class=" form-group">
+                  <button class="btn btn-secondary float-right updateFeeCategory ">Update</button>
+                </div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
 
 
 
@@ -385,15 +358,6 @@
   <script>
     $.widget.bridge('uibutton', $.ui.button)
   </script>
-
-  <!-- jQuery -->
-  <script src="../plugins/jquery/jquery.min.js"></script>
-  <!-- jQuery UI 1.11.4 -->
-  <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
-  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-  <script>
-    $.widget.bridge('uibutton', $.ui.button)
-  </script>
   <!-- Bootstrap 4 -->
   <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- ChartJS -->
@@ -417,37 +381,36 @@
   <!-- AdminLTE App -->
   <script src="../dist/js/adminlte.js"></script>
   <!-- AdminLTE for demo purposes -->
-  <!-- <script src="../dist/js/demo.js"></script> -->
+  <script src="../dist/js/demo.js"></script>
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="../dist/js/pages/dashboard.js"></script>
-  <script src="https://portal.schoolpetal.com/assets/js/adminlte.js"></script>
 
   <!-- <script>
-  $(function() {
-   $('.select2').select2()
-   $('.select2bs4').select2({
-    theme: 'bootstrap4'
-   })
-  })
- </script>
+            $(function() {
+                $('.select2').select2()
+                $('.select2bs4').select2({
+                    theme: 'bootstrap4'
+                })
+            })
+        </script>
 
- <script>
-  $(function() {
-   var Toast = Swal.mixin({
-    toast: true,
-    position: 'top-end',
-    showConfirmButton: false,
-    timer: 3000
-   });
+        <script>
+            $(function() {
+                var Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000
+                });
 
-   function firstToast(icon = "success", message = 'Done') {
-    Toast.fire({
-     icon: icon,
-     title: message
-    });
-   }
-  })
- </script> -->
+                function firstToast(icon = "success", message = 'Done') {
+                    Toast.fire({
+                        icon: icon,
+                        title: message
+                    });
+                }
+            })
+        </script> -->
 </body>
 
 </html>
