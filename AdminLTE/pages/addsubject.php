@@ -186,7 +186,7 @@ require_once("myclass.php")
 
             <?php
 
-            $sn = $_POST['sn'];
+            $sn = $_GET['sn'];
             $sql = $con->query("SELECT * FROM subjects WHERE sn = '$sn' ");
             $rows = mysqli_fetch_assoc($sql);
 
@@ -205,10 +205,10 @@ require_once("myclass.php")
                                 <div class="form-group">
                                     <label>Subject</label>
                                     <input type="text" name="subject" value="<?= $rows['subject'] ?>" class="form-control" placeholder="Enter Subject name i.e Mathematics, Biology">
-                                    <input type="hidden" name="subject_id">
+                                    <input type="hidden" name="sn">
                                 </div>
                                 <div class="form-group mb-0 float-right">
-                                    <button class="btn btn-secondary" id="updateSubject">Update Subject</button>
+                                    <button class="btn btn-secondary" id="updateSubject" name="editsubject">Update Subject</button>
                                 </div>
                             </form>
                         </div>
@@ -217,7 +217,7 @@ require_once("myclass.php")
                 </div>
             </div>
 
-            ?>
+            
             <!-- <script src="https://portal.schoolpetal.com/assets/plugins/jquery/jquery.min.js"></script> -->
 
             <!-- <script>

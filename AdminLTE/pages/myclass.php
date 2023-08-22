@@ -32,7 +32,11 @@ class Profile
     }
       elseif (isset($_POST['editCat'])) {
       $this->updateCat();
+    } elseif (isset($_POST['editsubject'])) {
+      $sn  = $_POST['sn'];
+      $this->editSubject($sn);
     }
+    
     
  }
  public function SignUp()
