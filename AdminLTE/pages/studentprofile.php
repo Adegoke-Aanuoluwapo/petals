@@ -148,26 +148,26 @@ require_once("myclass.php");
                 <div class="row">
                     <div class="col-md-3">
                         <?php
-                                $sn = $_GET['sn'];
-                                $sql = $con->query("SELECT * FROM students WHERE sn = '$sn'");
-                                $rows = mysqli_fetch_assoc($sql);
-                            
-                         ?>
-                            <div class="card card-secondary card-outline">
-                                <div class="card-body box-profile p-card">
-                                    <div class="d-flex justify-content-center upload_new_img">
-                                        <div class="text-center comp">
-                                            <img class="profile-user-img img-fluid img-circle object-cover" src="user.png" alt="User profile picture">
-                                            <i class="fas fa-upload "></i>
-                                        </div>
+                        $sn = $_GET['sn'];
+                        $sql = $con->query("SELECT * FROM students WHERE sn = '$sn'");
+                        $rows = mysqli_fetch_assoc($sql);
+
+                        ?>
+                        <div class="card card-secondary card-outline">
+                            <div class="card-body box-profile p-card">
+                                <div class="d-flex justify-content-center upload_new_img">
+                                    <div class="text-center comp">
+                                        <img class="profile-user-img img-fluid img-circle object-cover" src="user.png" alt="User profile picture">
+                                        <i class="fas fa-upload "></i>
                                     </div>
-                                    <h3 class="profile-username text-center"><?= $rows['surname'] . ' ' . $rows['firstname'] . ' ' . $rows['othernames'] ?></h3>
-                                    <p class="text-muted text-center"><?= $pro->SqLx('class', 'sn', $rows['class'], 'class') ?><sup><?= $pro->SqLx('arm', 'sn', $rows['arm'], 'arm') ?></sup> | <?= $rows['gender'] ?></p>
-                                    <button class="btn btn-success btn-block"><b> <i class="fa fa-user-check"></i> Activate</b></button>
-                                    <a class="btn btn-primary btn-block" href="#settings" data-toggle="tab"><b> <i class="fas fa-edit"></i> Edit Profile</b></a>
                                 </div>
+                                <h3 class="profile-username text-center"><?= $rows['surname'] . ' ' . $rows['firstname'] . ' ' . $rows['othernames'] ?></h3>
+                                <p class="text-muted text-center"><?= $pro->SqLx('class', 'sn', $rows['class'], 'class') ?><sup><?= $pro->SqLx('arm', 'sn', $rows['arm'], 'arm') ?></sup> | <?= $rows['gender'] ?></p>
+                                <button class="btn btn-success btn-block"><b> <i class="fa fa-user-check"></i> Activate</b></button>
+                                <a class="btn btn-primary btn-block" href="#settings" data-toggle="tab"><b> <i class="fas fa-edit"></i> Edit Profile</b></a>
                             </div>
-                        
+                        </div>
+
 
                     </div>
 
@@ -188,7 +188,7 @@ require_once("myclass.php");
                                         <div class="card">
                                             <div class="card-body">
                                                 <div class="d-flex justify-content-between">
-                                                    <div><b>Registration No:</b> 0000021 </div>
+                                                    <div><b>Registration No:</b> <?= $rows['reg'] ?> </div>
                                                     <div><b>Admission Date:</b> 15 Aug, 2022 </div>
                                                 </div>
                                                 <hr>
@@ -199,8 +199,8 @@ require_once("myclass.php");
 
                                                 <hr>
                                                 <div class="d-flex justify-content-between">
-                                                    <div><b>Username:</b> okolo7888 </div>
-                                                    <div><b>Password:</b> 7888 </div>
+                                                    <div><b>Username:</b> <?= $rows['surname'] ?> </div>
+                                                    <div><b>Password:</b>12345 </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -217,7 +217,7 @@ require_once("myclass.php");
                                                                 <img class="profile-user-img img-fluid img-circle" src="https://portal.schoolpetal.com/assets/img/user4-128x128.jpg" alt="User profile picture">
                                                             </div>
 
-                                                            <h3 class="profile-username text-center">Chinere Ezeora</h3>
+                                                            <h3 class="profile-username text-center"><?= $pro->SqLx('parents', 'sn', $rows['guardian'], 'name') ?></h3>
 
                                                             <p class="text-muted text-center">ijapo extension</p>
 
