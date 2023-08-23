@@ -131,7 +131,7 @@
                 <form method="POST">
                   <div class=" form-group">
                     <label>Fee Category</label>
-                    <input type="text" name="category" class="form-control" placeholder="School Fee">
+                    <input type="text" name="fee_category" class="form-control" placeholder="School Fee">
                   </div>
 
                   <div class=" form-group">
@@ -178,9 +178,9 @@
 
                       ?>
                         <tr>
-                          <td><?= $rows['category'] ?></td>
+                          <td><?= $rows['fee_category'] ?></td>
                           <td><?= $rows['description'] ?></td>
-                          <td><button class="btn btn-xs btn-primary " data-target="#editFeeModal" data-toggle="modal"><i class="fas fa-edit " onclick="document.getElementById('cat').value='<?= $rows['category'] ?>';document.getElementById('fee_id').value='<?= $rows['sn'] ?>' "></i></button></td>
+                          <td><button class="btn btn-xs btn-primary " data-target="#editFeeModal" data-toggle="modal"><i class="fas fa-edit " onclick="document.getElementById('cat').value='<?= $rows['fee_category'] ?>';document.getElementById('fee_id').value='<?= $rows['sn'] ?>' "></i></button></td>
                         </tr>
                       <?php  } ?>
                     </tbody>
@@ -208,8 +208,8 @@
               <form method='POST' id="updateFeeCategory">
                 <div class=" form-group">
                   <label>Fee Category</label>
-                  <input type="text" name="category" id="cat" class="form-control" placeholder="School Fee">
-                  <input type="text"  id='fee_id' name="sn">
+                  <input type="text" name="fee_category" id="cat" class="form-control" placeholder="School Fee">
+                  <input type="hidden"  id='fee_id' name="sn">
                 </div>
 
                 <div class=" form-group">
