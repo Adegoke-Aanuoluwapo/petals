@@ -182,7 +182,13 @@ include("myclass.php")
                                     <div class="row">
                                         <form class="form-group col-12 m-0 p-0 d-flex justify-content-between " action="" id="viewFee">
                                             <select class="form-control mr-2" name="cla" id="cla" style="height: 30px">
-                                                <option selected disabled>Class</option>
+                                                <option >Class</option>
+                                                <?php
+                                                $i = 1; $sql = $con->query("SELECT * FROM class");
+                                                while(mysqli_fetch_assoc($sql)){
+                                                    echo '<option>' .$rows['class']. '</option>';
+                                                }
+                                                ?>
                                             </select>
 
                                             <select class="form-control mr-2" name="fee_cat" id="fee_cat" style="height: 30px">

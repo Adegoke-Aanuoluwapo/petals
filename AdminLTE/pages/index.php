@@ -213,7 +213,7 @@ require_once("myclass.php");
           <div class="col-lg-3 col-6">
             <div class="small-box bg-secondary">
               <div class="inner">
-                <h3 class="assigned_fee">#<?=number_format($pro->total_Fees()) ?></h3>
+                <h3 class="assigned_fee">₦ <?= number_format($pro->total_Fees()) ?></h3>
 
                 <p>Assigned Fee</p>
               </div>
@@ -328,18 +328,19 @@ require_once("myclass.php");
               <div class="card-body p-0">
                 <ul class="users-list clearfix student_body">
 
-                    <?php $i = 1; $sql = $con->query("SELECT * FROM students");
-                    while($rows= mysqli_fetch_assoc($sql)){ ?>
-                  <li>
-                    <img src="user.png" alt="User Image">
-                    <a class="users-list-name" href="studentprofile.php?sn=<?=$rows['sn'] ?>"><?= $rows['surname'] .' '. $rows['firstname'] ?></a>
-                    <span class="users-list-date"><?= $pro->SqLx('class', 'sn',$rows['class'], 'class') ?></span>
-                  </li>
-                 <?php } ?>
+                  <?php $i = 1;
+                  $sql = $con->query("SELECT * FROM students");
+                  while ($rows = mysqli_fetch_assoc($sql)) { ?>
+                    <li>
+                      <img src="user.png" alt="User Image">
+                      <a class="users-list-name" href="studentprofile.php?sn=<?= $rows['sn'] ?>"><?= $rows['surname'] . ' ' . $rows['firstname'] ?></a>
+                      <span class="users-list-date"><?= $pro->SqLx('class', 'sn', $rows['class'], 'class') ?></span>
+                    </li>
+                  <?php } ?>
 
- 
 
-  
+
+
                 </ul>
               </div>
             </div>
