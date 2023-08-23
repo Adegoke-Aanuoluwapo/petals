@@ -42,7 +42,11 @@ class Profile
       $this->editArm($sn);
     } elseif (isset($_POST['createfees'])) {
       
+     
       $this->createFees();
+    } elseif (isset($_POST['editfees'])) {
+      $sn  = $_POST['sn'];
+      $this->editFees($sn);
     }
     
     //Warning: Undefined array key "sn" in C:\xampp\htdocs\petals\AdminLTE\pages\myclass.php on line 38
@@ -168,6 +172,15 @@ function editSubject($sn){
     global $con;
     $class = $_POST['class'];
     $sql = "UPDATE class SET class = '$class' WHERE sn = '$sn' ";
+    $con->query($sql);
+    return;
+  }
+  function editFees($sn)
+  {
+    global $con;
+    $category = $_POST['category'];
+    $description = $_POST['description'];
+    $sql = "UPDATE fees SET category = '$category', description = '$description' WHERE sn = '$sn' ";
     $con->query($sql);
     return;
   }

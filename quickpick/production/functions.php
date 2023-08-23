@@ -30,7 +30,7 @@ $sn = $_GET['sn'];
  $note = $_POST['note'];
  
 
- $sql = "UPDATE category SET title = '$title', note = '$note'  WHERE sn = '$sn'";
+ $sql = "UPDATE category SET title = '$title', note = '$note' WHERE sn = '$sn'";
  $con->query($sql) or mysqli_error($con);
  return;
 }

@@ -1,5 +1,5 @@
 <?php require("myclass.php") ?>
-Warning: Undefined array key "discription" in C:\xampp\htdocs\petals\AdminLTE\pages\myclass.php on line 145
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -172,11 +172,17 @@ Warning: Undefined array key "discription" in C:\xampp\htdocs\petals\AdminLTE\pa
                       </tr>
                     </thead>
                     <tbody id="fee_list">
-                      <tr>
-                        <td>Tuition Fee</td>
-                        <td>Main Terminal School fees</td>
-                        <td><button class="btn btn-xs float-right btn-primary editFee" data-data="{&quot;id&quot;:6,&quot;school_id&quot;:&quot;2&quot;,&quot;term_id&quot;:&quot;10&quot;,&quot;fee&quot;:&quot;Tuition Fee&quot;,&quot;description&quot;:&quot;Main Terminal School fees&quot;,&quot;created_by&quot;:&quot;20&quot;,&quot;created_at&quot;:&quot;2023-08-07T11:45:29.000000Z&quot;,&quot;updated_at&quot;:&quot;2023-08-07T11:46:31.000000Z&quot;}" data-target="#editFeeModal" data-toggle="modal"><i class="fas fa-edit "></i></button></td>
-                      </tr>
+                      <?php $i = 1;
+                      $sql = $con->query("SELECT * FROM fees");
+                      while ($rows = mysqli_fetch_assoc($sql)) {
+
+                      ?>
+                        <tr>
+                          <td><?= $rows['category'] ?></td>
+                          <td><?= $rows['description'] ?></td>
+                          <td><button class="btn btn-xs btn-primary " data-target="#editFeeModal" data-toggle="modal"><i class="fas fa-edit " onclick="document.getElementById('cat').value='<?= $rows['category'] ?>';document.getElementById('fee_id').value='<?= $rows['sn'] ?>' "></i></button></td>
+                        </tr>
+                      <?php  } ?>
                     </tbody>
                   </table>
                 </div>
@@ -199,24 +205,24 @@ Warning: Undefined array key "discription" in C:\xampp\htdocs\petals\AdminLTE\pa
               </button>
             </div>
             <div class="modal-body">
-              <form action="" id="updateFeeCategory">
+              <form method='POST' id="updateFeeCategory">
                 <div class=" form-group">
                   <label>Fee Category</label>
-                  <input type="text" name="fee_category" class="form-control" placeholder="School Fee">
-                  <input type="hidden" name="fee_id">
+                  <input type="text" name="category" id="cat" class="form-control" placeholder="School Fee">
+                  <input type="text"  id='fee_id' name="sn">
                 </div>
 
                 <div class=" form-group">
                   <label>Fee Description</label>
-                  <textarea name="description" class="form-control" col="2" placeholder="Describe fee category"></textarea>
+                  <textarea name="description" class="form-control" col="2" id="desc" placeholder="Describe fee category"></textarea>
                 </div>
 
                 <div class=" form-group">
-                  <button class="btn btn-secondary float-right updateFeeCategory ">Update</button>
+                  <button class="btn btn-secondary float-right updateFeeCategory " name="editfees">Update</button>
                 </div>
               </form>
             </div>
-
+            
           </div>
         </div>
       </div>
