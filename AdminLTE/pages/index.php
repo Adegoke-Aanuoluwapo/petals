@@ -213,7 +213,7 @@ require_once("myclass.php");
           <div class="col-lg-3 col-6">
             <div class="small-box bg-secondary">
               <div class="inner">
-                <h3 class="assigned_fee">₦ 110,600</h3>
+                <h3 class="assigned_fee">#<?=number_format($pro->total_Fees()) ?></h3>
 
                 <p>Assigned Fee</p>
               </div>

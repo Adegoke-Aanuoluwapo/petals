@@ -149,8 +149,8 @@ function  Arm(){
     global $con;
     $category = $_POST['category'];
     $description = $_POST['description'];
-    $fee_amount = $_POST['fee_amount'];
-    $sql = "INSERT INTO fees(category, description, fee_amount) VALUES('$category', '$description', '$fee_amount')";
+   
+    $sql = "INSERT INTO fees(category, description) VALUES('$category', '$description')";
     mysqli_query($con, $sql);
     return;
   }
@@ -203,9 +203,16 @@ function setFees(){
   global $con;
   $class = $_POST['class'];
   $fee_category = $_POST['fee_category'];
-  $sql = "INSERT INTO set_fee(class, fee_category) VALUES('$class', '$fee_category')";
+    $fee_amount = $_POST['fee_amount'];
+  $sql = "INSERT INTO set_fee(class, fee_category, fee_amount) VALUES('$class', '$fee_category', '$fee_amount')";
   mysqli_query($con, $sql);
   return;
+}
+function total_Fees(){
+  global $con;
+  $sql = $con->query("SELECT sum(fee_amount)  as total FROM set_fee");
+  $rows = mysqli_fetch_assoc($sql);
+  return $rows['total'];
 }
   function AddStaff()
   {
