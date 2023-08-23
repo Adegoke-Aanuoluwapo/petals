@@ -40,10 +40,11 @@ class Profile
     }elseif (isset($_POST['EditArm'])) {
       $sn  = $_POST['sn'];
       $this->editArm($sn);
-    } elseif (isset($_POST['createfees'])) {
-      
-     
+    } elseif (isset($_POST['createfees'])) {    
       $this->createFees();
+    }
+       elseif (isset($_POST['setfees'])) {    
+      $this->setFees();
     } elseif (isset($_POST['editfees'])) {
       $sn  = $_POST['sn'];
       $this->editFees($sn);
@@ -148,7 +149,8 @@ function  Arm(){
     global $con;
     $category = $_POST['category'];
     $description = $_POST['description'];
-    $sql = "INSERT INTO fees(category, description) VALUE('$category', '$description')";
+    $fee_amount = $_POST['fee_amount'];
+    $sql = "INSERT INTO fees(category, description, fee_amount) VALUES('$category', '$description', '$fee_amount')";
     mysqli_query($con, $sql);
     return;
   }
@@ -196,6 +198,14 @@ function AddParent(){
   mysqli_query($con, $sql);
   return;
 
+}
+function setFees(){
+  global $con;
+  $class = $_POST['class'];
+  $fee_category = $_POST['fee_category'];
+  $sql = "INSERT INTO set_fee(class, fee_category) VALUES('$class', '$fee_category')";
+  mysqli_query($con, $sql);
+  return;
 }
   function AddStaff()
   {

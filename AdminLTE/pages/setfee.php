@@ -132,7 +132,7 @@ include("myclass.php")
                                 </h3>
                             </div>
                             <div class="card-body">
-                                <form action="" class="row" id="setSchoolFees">
+                                <form method="POST" class="row" id="setSchoolFees">
                                     <div class=" col-md-4 form-group">
                                         <label>Select Class</label>
                                         <select name="class" class="form-control select2bs4">
@@ -162,7 +162,7 @@ include("myclass.php")
 
 
                                     <div class="col-12 form-group">
-                                        <button class="btn btn-secondary float-right setSchoolFees ">Set Fee</button>
+                                        <button class="btn btn-secondary float-right setSchoolFees " name="setfees">Set Fee</button>
                                     </div>
 
 
