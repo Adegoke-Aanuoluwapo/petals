@@ -1,3 +1,7 @@
+<?php
+require("myclass.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -148,7 +152,30 @@
                                             $sql = $con->query("SELECT * FROM staff");
                                             while ($rows = mysqli_fetch_assoc($sql)) { ?>
                                                 <tr>
+                                                    <td><?= $rows['name'] ?></td>
+                                                    <td class="text-center">
+                                                        <input type="hidden" name="permission_id" value="20">
+                                                        <div class="icheck-primary">
+                                                            <input type="checkbox" name="reg" value="1" checked="" id="reg0">
+                                                            <label for="reg0" data-id="reg0"></label>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <div class="icheck-primary">
+                                                            <input type="checkbox" name="fee" value="0" id="fee2">
+                                                            <label for="fee2" data-id="fee2"></label>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <div class="icheck-primary">
+                                                            <input type="checkbox" name="result" value="1" checked="" id="u_result2">
+                                                            <label for="u_result2" data-id="u_result2"></label>
+                                                        </div>
+                                                    </td>
                                                     <td></td>
+                                                    <td></td>
+                                                    <td><button class="btn btn-xs btn-success save_change float-right"><i class="fas fa-save"></i> Save</button></td>
+
                                                 </tr>
                                             <?php   }
                                             ?>
