@@ -96,6 +96,16 @@ class Profile
   }
   return;
  }
+ function permission(){
+  global $con;
+  $p1 = $_POST['p1'];
+    $p2 = $_POST['p2'];
+    $p3 = $_POST['p3'];
+    $p4 = $_POST['p4'];
+    $sql = "INSERT INTO permissions(p1, p2, p3, p4) VALUES('$p1', '$p2', '$p3', '$p4')";
+    mysqli_query($con, $sql);
+    return;
+ }
  function Alert(){
   global $count, $report;
  return $count==1 ? "toastr.error('".$report."')" : "toastr.success('".$report."')";
