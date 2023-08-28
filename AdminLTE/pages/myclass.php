@@ -106,6 +106,14 @@ class Profile
     mysqli_query($con, $sql);
     return;
  }
+ function permissionresult(){
+  global $con;
+  $checked = '';
+  if ($checked){
+    echo '1';
+  }
+  
+ }
  function Alert(){
   global $count, $report;
  return $count==1 ? "toastr.error('".$report."')" : "toastr.success('".$report."')";

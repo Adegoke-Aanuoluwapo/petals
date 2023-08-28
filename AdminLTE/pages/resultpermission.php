@@ -172,7 +172,7 @@ require("myclass.php");
                                                             <label for="u_result2" data-id="u_result2"></label>
                                                         </div>
                                                     </td>
-                                                    <td></td>
+                                                    <td><input type="checkbox" name="result" ></td>
                                                     <td></td>
                                                     <td><button class="btn btn-xs btn-success save_change float-right"><i class="fas fa-save"></i> Save</button></td>
 
