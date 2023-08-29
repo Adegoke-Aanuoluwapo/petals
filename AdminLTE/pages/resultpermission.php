@@ -162,7 +162,7 @@ require("myclass.php");
                                             ?>
                                                 <form method="post">
                                                     <tr>
-                                                        <td><?= $rows['name'] ?></td>
+                                                        <td><?= $rows['name'] . ' ( '. $pro->staffRole($rows['role']). ')' ?></td>
                                                         <td class="text-center">
 
                                                             <div class="icheck-primary">
