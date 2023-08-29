@@ -94,7 +94,7 @@ class Profile
   }
   function Updatepermission()
   {
-    global $con,$report,$count;
+    global $con,$report, $count;
     $staffid = $_POST['UpdatePermission'];
     $p1 = $_POST['p1'] ?? 0;
     $p2 = $_POST['p2'] ?? 0;
@@ -158,11 +158,12 @@ class Profile
 
   function  Arm()
   {
-    global $con;
+    global $con,$report,$count;
     $arm = $_POST['arm'];
 
     $sql = "INSERT INTO arm(arm) VALUE('$arm')";
     mysqli_query($con, $sql);
+    $report = 'operation successful';
     return;
   }
   function  createClass()
@@ -188,10 +189,11 @@ class Profile
   }
   function editSubject($sn)
   {
-    global $con;
+    global $con,$report,$count;
     $subject = $_POST['subject'];
     $sql = "UPDATE subjects SET subject = '$subject' WHERE sn = '$sn' ";
     $con->query($sql);
+    $report = 'operation successful';
     return;
   }
   function editArm($sn)

@@ -1,4 +1,5 @@
 <?php
+session_start();ob_start();
 require("myclass.php");
 ?>
 
@@ -30,9 +31,9 @@ require("myclass.php");
     <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
     <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
-    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css" />
+    <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css" />
     <!-- SweetAlert2 -->
-    <link rel="stylesheet" href="../../plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css" />
+    <link rel="stylesheet" href="../plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css" />
     <style>
         .profile_pics {
             width: 50px;
@@ -256,6 +257,10 @@ require("myclass.php");
     <script src="../plugins/jquery-knob/jquery.knob.min.js"></script>
     <!-- daterangepicker -->
     <script src="../plugins/moment/moment.min.js"></script>
+    <!-- SweetAlert2 -->
+    <script src="../plugins/sweetalert2/sweetalert2.min.js"></script>
+    <!-- Toastr -->
+    <script src="../plugins/toastr/toastr.min.js"></script>
     <script src="../plugins/daterangepicker/daterangepicker.js"></script>
     <!-- Tempusdominus Bootstrap 4 -->
     <script src="../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
