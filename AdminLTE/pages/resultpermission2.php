@@ -139,29 +139,30 @@ require("myclass.php");
        </div>
        <div class="card-body p-1">
         <div class="table-responsive">
-         <table id="example1" class="table mb-0 table-bordered table-hover table-striped">
-          <thead>
-           <tr>
-            <th>sn</th>
-            <th>Staff</th>
-            <th class="text-center">Reg Mgm</th>
-            <th class="text-center">Fee Mgm</th>
-            <th class="text-center">Result</th>
-            <th class="text-center">Other</th>
-            <th></th>
-           </tr>
-          </thead>
-          <tbody id="user_body_list">
+         <form method="post">
+          <table id="example1" class="table mb-0 table-bordered table-hover table-striped">
+           <thead>
+            <tr>
+             <th>sn</th>
+             <th>Staff</th>
+             <th class="text-center">Reg Mgm</th>
+             <th class="text-center">Fee Mgm</th>
+             <th class="text-center">Result</th>
+             <th class="text-center">Other</th>
+             <th></th>
+            </tr>
+           </thead>
+           <tbody id="user_body_list">
 
-           <?php $i = 1;
-           $sql = $con->query("SELECT * FROM staff");
-           while ($rows = mysqli_fetch_assoc($sql)) {
-            $staffid = $rows['sn'];
-            if ($pro->sqL1('permissions', 'staffid', $staffid) == 0) {
-             $con->query("INSERT INTO permissions(staffid) VALUES('$staffid')");
-            }
-           ?>
-            <form method="post">
+            <?php $i = 1;
+            $sql = $con->query("SELECT * FROM staff");
+            while ($rows = mysqli_fetch_assoc($sql)) {
+             $staffid = $rows['sn'];
+             if ($pro->sqL1('permissions', 'staffid', $staffid) == 0) {
+              $con->query("INSERT INTO permissions(staffid) VALUES('$staffid')");
+             }
+            ?>
+
              <tr>
               <td><?= $rows['name'] ?></td>
               <td class="text-center">
@@ -195,13 +196,14 @@ require("myclass.php");
               <td><button class="btn btn-xs btn-success save_change float-right" type="submit" name="UpdatePermission" value="<?= $staffid ?>"><i class="fas fa-save"></i> Save</button></td>
 
              </tr>
-            </form>
-           <?php   }
-           ?>
+
+            <?php   }
+            ?>
 
 
-          </tbody>
-         </table>
+           </tbody>
+          </table>
+         </form>
         </div>
 
         <div id="page_links" style="color: rgb(36, 35, 32)">
