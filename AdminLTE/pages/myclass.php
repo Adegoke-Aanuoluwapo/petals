@@ -45,6 +45,8 @@ class Profile
       $this->editFees($sn);
     } elseif (isset($_POST['UpdatePermission'])) {
       $this->Updatepermission();
+    } elseif (isset($_POST['UpdateAllPermission'])) {
+      $this->UpdateAllPermission();
     }
   }
   public function SignUp()
@@ -94,7 +96,7 @@ class Profile
   }
   function Updatepermission()
   {
-    global $con,$report, $count;
+    global $con, $report, $count;
     $staffid = $_POST['UpdatePermission'];
     $p1 = $_POST['p1'] ?? 0;
     $p2 = $_POST['p2'] ?? 0;
@@ -102,7 +104,7 @@ class Profile
     $p4 = $_POST['p4'] ?? 0;
     $sql = "UPDATE permissions SET p1 = '$p1', p2 = '$p2', p3=  '$p3', p4 ='$p4' WHERE staffid = '$staffid'";
     $con->query($sql);
-   $report= 'operation successful' ;
+    $report = 'operation successful';
     return;
   }
 
@@ -155,26 +157,28 @@ class Profile
     mysqli_query($con, $sql);
     return;
   }
-  function UpdateAllPermission(){
-    global $con;
-   $staff = $_POST['staffid'];
+  function UpdateAllPermission()
+  {
+    global $con, $report;
+    $staff = $_POST['staffid'];
     $i = 0;
-    while($i <count($staff)){
+    while ($i < count($staff)) {
       $e = $i++;
       $staffid = $_POST['staffid'][$e];
       $p1 = $_POST['p1'][$staffid] ?? 0;
-      $p2 = $_POST['p2'][$staffid] ?? 0 ; 
-      $p3 = $_POST['p3'][$staffid] ?? 0 ;
-      $p4 = $_POST['p4'][$staffid] ?? 0 ;
-      $sql = "UPDATE permissions SET p1 = '$p1', p2 = '$p2', p3=  '$p3', p4 ='$p4' WHERE staffid = '$staffid'";
+      $p2 = $_POST['p2'][$staffid] ?? 0;
+      $p3 = $_POST['p3'][$staffid] ?? 0;
+      $p4 = $_POST['p4'][$staffid] ?? 0;
+      $sql = "UPDATE permissions SET p1 = '$p1', p2 = '$p2', p3= '$p3', p4 ='$p4' WHERE staffid = '$staffid'";
       $con->query($sql);
-      return;
     }
+    $report = 'Ok ' . json_encode($staff);
+    return;
   }
 
   function  Arm()
   {
-    global $con,$report,$count;
+    global $con, $report, $count;
     $arm = $_POST['arm'];
 
     $sql = "INSERT INTO arm(arm) VALUE('$arm')";
@@ -205,7 +209,7 @@ class Profile
   }
   function editSubject($sn)
   {
-    global $con,$report,$count;
+    global $con, $report, $count;
     $subject = $_POST['subject'];
     $sql = "UPDATE subjects SET subject = '$subject' WHERE sn = '$sn' ";
     $con->query($sql);

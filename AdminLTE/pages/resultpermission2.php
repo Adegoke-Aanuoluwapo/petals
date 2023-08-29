@@ -134,7 +134,7 @@ require("myclass.php");
        <div class="card-header">
         <h3 class="card-title ">
          <i class="fas fa-edit"></i>
-         Edit Staff Permissions <?= @$report ?>
+         Edit Staff Permissions <?= @$report . 'Z' ?>
         </h3>
        </div>
        <div class="card-body p-1">
@@ -193,7 +193,7 @@ require("myclass.php");
                </div>
               </td>
               <td></td>
-              <td><button class="btn btn-xs btn-success save_change float-right" type="submit" name="UpdateAllPermission[<?= $staffid ?>]" value="<?= $staffid ?>"><i class="fas fa-save"></i> Save</button></td>
+              <td><input type="hidden" name="staffid[]" value="<?= $staffid ?>"></td>
 
              </tr>
 
@@ -205,7 +205,7 @@ require("myclass.php");
            </tbody>
           </table>
           <td colspan="12">
-           <button class="btn btn-success save_all float-right" name="updateAllpermission"><i class='fas fa-save'></i>Save all changes</button>
+           <button class="btn btn-success save_all float-right" name="UpdateAllPermission"><i class='fas fa-save'></i>Save all changes</button>
           </td>
          </form>
         </div>
