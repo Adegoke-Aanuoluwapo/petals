@@ -157,7 +157,19 @@ class Profile
   }
   function UpdateAllPermission(){
     global $con;
-    $name;
+   $staff = $_POST['staffid'];
+    $i = 0;
+    while($i <count($staff)){
+      $e = $i++;
+      $staffid = $_POST['staffid'][$e];
+      $p1 = $_POST['p1'][$staffid] ?? 0;
+      $p2 = $_POST['p2'][$staffid] ?? 0 ; 
+      $p3 = $_POST['p3'][$staffid] ?? 0 ;
+      $p4 = $_POST['p4'][$staffid] ?? 0 ;
+      $sql = "UPDATE permissions SET p1 = '$p1', p2 = '$p2', p3=  '$p3', p4 ='$p4' WHERE staffid = '$staffid'";
+      $con->query($sql);
+      return;
+    }
   }
 
   function  Arm()

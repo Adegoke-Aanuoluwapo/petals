@@ -162,6 +162,7 @@ require("myclass.php");
                                             ?>
                                                 <form method="post">
                                                     <tr>
+                                                        <td><?= $i++ ?></td>
                                                         <td><?= $rows['name'] . ' ( '. $pro->staffRole($rows['role']). ')' ?></td>
                                                         <td class="text-center">
 
@@ -190,7 +191,7 @@ require("myclass.php");
                                                                 <label for="p4<?= $staffid ?>" data-id="p4<?= $staffid ?>"></label>
                                                             </div>
                                                         </td>
-                                                        <td></td>
+                                                        
                                                         <td><button class="btn btn-xs btn-success save_change float-right" type="submit" name="UpdatePermission" value="<?= $staffid ?>"><i class="fas fa-save"></i> Save</button></td>
 
                                                     </tr>
