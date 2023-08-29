@@ -294,6 +294,9 @@ require("myclass.php");
    }
   })
  </script> -->
+ <script>
+    <?= $pro->Alert() ?>
+ </script>
 </body>
 
 </html>

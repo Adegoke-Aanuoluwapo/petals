@@ -94,7 +94,7 @@ class Profile
   }
   function Updatepermission()
   {
-    global $con, $report;
+    global $con,$report,$count;
     $staffid = $_POST['UpdatePermission'];
     $p1 = $_POST['p1'] ?? 0;
     $p2 = $_POST['p2'] ?? 0;
@@ -102,7 +102,7 @@ class Profile
     $p4 = $_POST['p4'] ?? 0;
     $sql = "UPDATE permissions SET p1 = '$p1', p2 = '$p2', p3=  '$p3', p4 ='$p4' WHERE staffid = '$staffid'";
     $con->query($sql);
-    //$report = "successful " . $p2 . $p3;
+   $report= 'operation successful' ;
     return;
   }
 

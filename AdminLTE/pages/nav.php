@@ -1,3 +1,7 @@
+<script><?php if(isset($report)){
+  echo $pro->Alert(); 
+} ?></script>
+
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
