@@ -130,7 +130,7 @@ require("myclass.php");
                             <div class="card-header">
                                 <h3 class="card-title ">
                                     <i class="fas fa-edit"></i>
-                                    Edit Staff Permissions
+                                    Edit Staff Permissions <?= @$report ?>
                                 </h3>
                             </div>
                             <div class="card-body p-1">
@@ -148,35 +148,50 @@ require("myclass.php");
                                             </tr>
                                         </thead>
                                         <tbody id="user_body_list">
+
                                             <?php $i = 1;
                                             $sql = $con->query("SELECT * FROM staff");
-                                            while ($rows = mysqli_fetch_assoc($sql)) { ?>
-                                                <tr>
-                                                    <td><?= $rows['name'] ?></td>
-                                                    <td class="text-center">
-                                                        <input type="hidden" name="permission_id" value="20">
-                                                        <div class="icheck-primary">
-                                                            <input type="checkbox" name="reg" value="1" checked="" id="reg0">
-                                                            <label for="reg0" data-id="reg0"></label>
-                                                        </div>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <div class="icheck-primary">
-                                                            <input type="checkbox" name="fee" value="0" id="fee2">
-                                                            <label for="fee2" data-id="fee2"></label>
-                                                        </div>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <div class="icheck-primary">
-                                                            <input type="checkbox" name="result" value="1" checked="" id="u_result2">
-                                                            <label for="u_result2" data-id="u_result2"></label>
-                                                        </div>
-                                                    </td>
-                                                    <td><input type="checkbox" name="result" ></td>
-                                                    <td></td>
-                                                    <td><button class="btn btn-xs btn-success save_change float-right"><i class="fas fa-save"></i> Save</button></td>
+                                            while ($rows = mysqli_fetch_assoc($sql)) {
+                                                $staffid = $rows['sn'];
+                                                if ($pro->sqL1('permissions', 'staffid', $staffid) == 0) {
+                                                    $con->query("INSERT INTO permissions(staffid) VALUES('$staffid')");
+                                                }
+                                            ?>
+                                                <form method="post">
+                                                    <tr>
+                                                        <td><?= $rows['name'] ?></td>
+                                                        <td class="text-center">
 
-                                                </tr>
+                                                            <div class="icheck-primary">
+                                                                <input type="checkbox" name="p1" <?php if ($pro->sqLx1('permissions', 'staffid', $staffid, 'p1') == 1) { ?> checked <?php } ?> value="1" id="reg<?= $staffid ?>">
+                                                                <label for="reg<?= $staffid ?>" data-id="reg<?= $staffid ?>"></label>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center">
+
+                                                            <div class="icheck-primary">
+                                                                <input type="checkbox" name="p2" <?php if ($pro->sqLx1('permissions', 'staffid', $staffid, 'p2') == 1) { ?> checked <?php } ?> value="1" id="fee2<?= $staffid ?>">
+                                                                <label for="fee2<?= $staffid ?>" data-id="fee2<?= $staffid ?>"></label>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div class="icheck-primary">
+                                                                <input type="checkbox" name="p3" <?php if ($pro->sqLx1('permissions', 'staffid', $staffid, 'p3') == 1) { ?> checked <?php } ?> value="1" id="u_result2<?= $staffid ?>">
+                                                                <label for="u_result2<?= $staffid ?>" data-id="u_result2<?= $staffid ?>"></label>
+                                                            </div>
+                                                        </td>
+
+                                                        <td class="text-center">
+                                                            <div class="icheck-primary">
+                                                                <input type="checkbox" name="p4" <?php if ($pro->sqLx1('permissions', 'staffid', $staffid, 'p4') == 1) { ?> checked <?php }  ?> value="1" id="p4<?= $staffid ?>">
+                                                                <label for="p4<?= $staffid ?>" data-id="p4<?= $staffid ?>"></label>
+                                                            </div>
+                                                        </td>
+                                                        <td></td>
+                                                        <td><button class="btn btn-xs btn-success save_change float-right" type="submit" name="UpdatePermission" value="<?= $staffid ?>"><i class="fas fa-save"></i> Save</button></td>
+
+                                                    </tr>
+                                                </form>
                                             <?php   }
                                             ?>
 
@@ -198,176 +213,6 @@ require("myclass.php");
 
 
 
-
-            <!-- <script src="https://portal.schoolpetal.com/assets/plugins/jquery/jquery.min.js"></script>
-
-   <script>
-    $(function() {
-
-     $.ajaxSetup({
-      headers: {
-       'Authorization': `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZDU2MzQ1MGQyMGY1ODlmMTcxNGFkNTkyNTUxOGM5ZjlmMTcyNmQyNzc1MGVjMjI0ZDAwOWQ5NjZlMjViZTAyZDM1ZTc2ODI4MDA3YTIzN2QiLCJpYXQiOjE2OTIwODQ4NDAuNDAxMjY4LCJuYmYiOjE2OTIwODQ4NDAuNDAxMjc3LCJleHAiOjE3MjM3MDcyNDAuMzU4MDcyLCJzdWIiOiIyMCIsInNjb3BlcyI6W119.lCs_mz-Qn3RUZeHSaQ7z8ajONGMdyQtvtsPgEE4vpSgJafBGOnUBA2PJq2575LD-PIUL2yUqtA7F2ERuZdLfmTljSdahTpWFa-yZsez1fE_3sIuTHM3qNDFuurbWN4-7JMy6yZIHkK8hINmcqlozU4r5FyCjvOO-cLY6rc9JGwdf8iuYavE2ewGRFoJgT0bkbz1ZmP50AlmLNw5DPbfrEPlgJeqpGj-0YQ-KokbHPzIheAFBKaAPZekvpTsPb0rZxtnSQGM-ND5Xzdlv04m4Uw186f3AwPtTke3g9reeWO2iXrGkyS6LvqP8xqbqMl0XBYZRPfKq8HZi0nzFgDFrT_1J9VipAlko7eto8zaP_S_Q_HtPWXwFuS_PnLFAiWHsbLaPnmsB_WX894MllDZeYO8C8b15ip_fSn1wrzQbC4vuzGeQFjQy81K938qrk-2VxDyUKLkg3p6Oag9hgkA5JW9Dok9MjKHFoCgPlWaLgrqavSX2yqZbB8k5sTsmpjBtM0DqFgaNOV9LezwZVeeucrRfYkAyLjux4NPWbn7KMeertrYGoi82muiwGYMb6oRWFbbaZUCqu3hbTCo9_0Dod3Etd-XACyfElDGWL9mUa2GoYx9IbaDLoDcZ33M9Jn2pG1F41tNM1Pw_M-Jhm9pnSF2-fa9jxrtzPHYeiKasMz0`
-      }
-     });
-
-
-
-
-
-     function pullPermission() {
-      $.ajax({
-       method: 'get',
-       url: api_url + `users/permission?page=1`
-      }).done(function(res) {
-       body = $('#user_body_list')
-       body.html(``)
-       res.data.data.map((user, index) => {
-        body.append(`
-                            <tr class="single">
-                                <td class="align-middle">${index+1}</td>
-                                <td class="align-middle" >${user.name} (${staff_role(user.role)})</td>
-                                <td class="text-center">
-                                    <input type="hidden" name="permission_id" value="${user.permission.id}" >
-                                    <div class="icheck-primary">
-                                        <input type="checkbox" name="reg" value="${(user.permission.registration == 1) ? 1 : 0}" ${(user.permission.registration == 1) ? 'checked' :''} id="reg${index}">
-                                        <label for="reg${index}" data-id="reg${index}" ></label>
-                                    </div>
-                                </td>
-                                <td class="text-center">
-                                    <div class="icheck-primary">
-                                        <input type="checkbox" name="fee" value="${(user.permission.fee == 1) ? 1 : 0}" ${(user.permission.fee == 1) ? 'checked' :''} id="fee${index}">
-                                        <label for="fee${index}" data-id="fee${index}" ></label>
-                                    </div>
-                                </td>
-                                <td class="text-center">
-                                    <div class="icheck-primary">
-                                        <input type="checkbox" name="result" value="${(user.permission.u_result == 1) ? 1 : 0}" ${(user.permission.u_result == 1) ? 'checked' :''} id="u_result${index}">
-                                        <label for="u_result${index}" data-id="u_result${index}"></label>
-                                    </div>
-                                </td>
-
-                                <td class="text-center">
-                                    <div class="icheck-primary">
-                                        <input type="checkbox" name="other" value="${(user.permission.other == 1) ? 1 : 0}" ${(user.permission.other == 1) ? 'checked' :''} id="other${index}">
-                                        <label for="other${index}" data-id="other${index}"></label>
-                                    </div>
-                                </td>
-
-                                <td class="align-middle"><button class="btn btn-xs btn-success save_change float-right"><i class="fas fa-save"></i> Save</button></td>
-
-
-                            </tr>
-                        `)
-       })
-
-
-       body.append(`
-                        <tr>
-                            <td colspan="12">
-                                <button class="btn btn-success save_all float-right"><i class="fas fa-save"></i> Save all changes</button>
-                            </td>
-                        </tr>
-                    `)
-
-       $('#page_links').html(dropPaginatedPages(res.data.links))
-      }).fail(function(res) {})
-     }
-     pullPermission();
-
-
-     $('body').on('click', '.save_change', function() {
-      btn = $(this);
-      parent_td = btn.parent();
-      parent_siblings = parent_td.siblings()
-      ///extracting the registration permssion value and the permssion id
-      reg_parent = parent_siblings[2].children;
-      permission_id = reg_parent[0].value;
-      reg_per = reg_parent[1].children[0].value;
-      //extracting the fee permission id
-      fee_per = parent_siblings[3].children[0].children[0].value;
-      result_per = parent_siblings[4].children[0].children[0].value;
-      other_per = parent_siblings[5].children[0].children[0].value;
-      $.ajax({
-       method: 'post',
-       url: api_url + 'permission/update',
-       data: {
-        permission_id: permission_id,
-        registration: reg_per,
-        result: result_per,
-        fee: fee_per,
-        other: other_per
-       },
-       beforeSend: () => {
-        $('.save_change').attr('disabled', 'diabled');
-        btn.html(`<span class="spinner-border spinner-border-sm" aria-hidden="true"></span> ...`)
-       }
-      }).done(function(res) {
-       littleAlert(res.message);
-       $('.save_change').removeAttr('disabled');
-       btn.html(`<i class="fas fa-save"></i> Save`)
-      }).fail(function(res) {
-       parseError(res.responseJSON);
-       $('.save_change').removeAttr('disabled');
-       btn.html(`<i class="fas fa-save"></i> Save`)
-      })
-     })
-
-
-     $('body').on('click', 'label', function() {
-      label = $(this).data('id');
-      inp = $(`#${label}`);
-      new_val = (inp.val() == 0) ? 1 : 0;
-      inp.val(new_val);
-     })
-
-
-     $('body').on('click', '.save_all', function() {
-      trs = $('.single')
-      data = [];
-      trs.map(row => {
-       parent = trs[row].children
-
-       reg_parent = parent[2].children;
-       permission_id = reg_parent[0].value;
-       reg_per = reg_parent[1].children[0].value;
-       //extracting the fee permission id
-       fee_per = parent[3].children[0].children[0].value;
-       result_per = parent[4].children[0].children[0].value;
-       other_per = parent[5].children[0].children[0].value;
-
-       arr = {
-        permission_id: permission_id,
-        registration: reg_per,
-        fee: fee_per,
-        result: result_per,
-        other: other_per
-       }
-       data.push(arr)
-      });
-
-      $.ajax({
-       method: 'post',
-       url: api_url + 'permission/update_all',
-       data: {
-        data: data
-       },
-       beforeSend: () => {
-        $('.save_change').attr('disabled', 'diabled');
-        btnProcess('.save_all', '', 'before')
-       }
-      }).done(function(res) {
-       littleAlert(res.message);
-       btnProcess('.save_all', '<i class="fas fa-save"></i> Save all changes', 'after')
-       $('.save_change').removeAttr('disabled');
-      }).fail(function(res) {
-       parseError(res.responseJSON)
-       btnProcess('.save_all', '<i class="fas fa-save"></i> Save all changes', 'after')
-       $('.save_change').removeAttr('disabled');
-      })
-
-     })
-    })
-   </script> -->
 
         </div>
 
@@ -418,8 +263,8 @@ require("myclass.php");
     <script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
     <!-- AdminLTE App -->
     <script src="../dist/js/adminlte.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="../dist/js/demo.js"></script>
+    <!-- AdminLTE for demo purposes 
+    <script src="../dist/js/demo.js"></script>-->
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="../dist/js/pages/dashboard.js"></script>
 
