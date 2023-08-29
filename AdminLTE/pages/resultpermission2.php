@@ -168,34 +168,35 @@ require("myclass.php");
               <td class="text-center">
 
                <div class="icheck-primary">
-                <input type="checkbox" name="p1" <?php if ($pro->sqLx1('permissions', 'staffid', $staffid, 'p1') == 1) { ?> checked <?php } ?> value="1" id="reg<?= $staffid ?>">
+                <input type="checkbox" name="p1[]" <?php if ($pro->sqLx1('permissions', 'staffid', $staffid, 'p1') == 1) { ?> checked <?php } ?> value="1" id="reg<?= $staffid ?>">
                 <label for="reg<?= $staffid ?>" data-id="reg<?= $staffid ?>"></label>
                </div>
               </td>
               <td class="text-center">
 
                <div class="icheck-primary">
-                <input type="checkbox" name="p2" <?php if ($pro->sqLx1('permissions', 'staffid', $staffid, 'p2') == 1) { ?> checked <?php } ?> value="1" id="fee2<?= $staffid ?>">
+                <input type="checkbox" name="p2[]" <?php if ($pro->sqLx1('permissions', 'staffid', $staffid, 'p2') == 1) { ?> checked <?php } ?> value="1" id="fee2<?= $staffid ?>">
                 <label for="fee2<?= $staffid ?>" data-id="fee2<?= $staffid ?>"></label>
                </div>
               </td>
               <td class="text-center">
                <div class="icheck-primary">
-                <input type="checkbox" name="p3" <?php if ($pro->sqLx1('permissions', 'staffid', $staffid, 'p3') == 1) { ?> checked <?php } ?> value="1" id="u_result2<?= $staffid ?>">
+                <input type="checkbox" name="p3[]" <?php if ($pro->sqLx1('permissions', 'staffid', $staffid, 'p3') == 1) { ?> checked <?php } ?> value="1" id="u_result2<?= $staffid ?>">
                 <label for="u_result2<?= $staffid ?>" data-id="u_result2<?= $staffid ?>"></label>
                </div>
               </td>
 
               <td class="text-center">
                <div class="icheck-primary">
-                <input type="checkbox" name="p4" <?php if ($pro->sqLx1('permissions', 'staffid', $staffid, 'p4') == 1) { ?> checked <?php }  ?> value="1" id="p4<?= $staffid ?>">
+                <input type="checkbox" name="p4[]" <?php if ($pro->sqLx1('permissions', 'staffid', $staffid, 'p4') == 1) { ?> checked <?php }  ?> value="1" id="p4<?= $staffid ?>">
                 <label for="p4<?= $staffid ?>" data-id="p4<?= $staffid ?>"></label>
                </div>
               </td>
               <td></td>
-              <td><button class="btn btn-xs btn-success save_change float-right" type="submit" name="UpdatePermission" value="<?= $staffid ?>"><i class="fas fa-save"></i> Save</button></td>
+              <td><button class="btn btn-xs btn-success save_change float-right" type="submit" name="UpdatePermission[]" value="<?= $staffid ?>"><i class="fas fa-save"></i> Save</button></td>
 
              </tr>
+             
 
             <?php   }
             ?>
@@ -203,6 +204,9 @@ require("myclass.php");
 
            </tbody>
           </table>
+          <td colspan="12">
+           <button class="btn btn-success save_all float-right" name="updateAllpermission[]"><i class='fas fa-save'></i>Save all changes</button>
+          </td>
          </form>
         </div>
 

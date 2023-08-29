@@ -155,6 +155,10 @@ class Profile
     mysqli_query($con, $sql);
     return;
   }
+  function UpdateAllPermission(){
+    global $con;
+    $name;
+  }
 
   function  Arm()
   {
