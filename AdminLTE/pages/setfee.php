@@ -206,8 +206,10 @@ include("myclass.php")
                                     <table id="exampl1" class="table mb-0 table-bordered table-hover table-striped">
                                         <thead>
                                             <tr>
-                                                <th>#</th>
+                                                <th>sn</th>
                                                 <th>Name</th>
+                                                <th>class</th>
+                                                <th>fee</th>
                                                 <th>Amount</th>
                                                 <th>Discount</th>
                                                 <th>Total</th>
@@ -216,11 +218,12 @@ include("myclass.php")
                                         </thead>
                                         <tbody id="record_table">
                                             <?php $i = 1;
-                                            $sql = $con->query("SELECT * FROM set_fee");
+                                            $sql = $con->query("SELECT * FROM set_fee ORDER BY sn DESC");
                                             while ($rows = mysqli_fetch_assoc($sql)) { ?>
-                                                <tr>
-                                                    <td><?= $rows['class'] ?></td>
-                                                    <td><?= $rows['fee_category'] ?></td>
+                                                <tr><td><?= $i++ ?></td>
+                                                    <td><?=$pro->SqLx('students', 'sn', $rows['studentid'], 'surname') ?></td>
+                                                    <td><?= $pro->SqLx('class', 'sn', $rows['class'], 'class')  ?></td>
+                                                    <td><?= $pro->SqLx('fees', 'sn',$rows['fee_category'], 'fee_category') ?></td>
                                                     <td><?= $rows['fee_amount'] ?></td>
                                                     <td><?= $rows['discount'] ?></td>
                                                 </tr>

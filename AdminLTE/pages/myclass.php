@@ -263,7 +263,7 @@ class Profile
     $sql = $con->query("SELECT * FROM students WHERE class = '$class'");
     while($rows = mysqli_fetch_assoc($sql)){
     $studentid = $rows['sn'];
-    $sql = "INSERT INTO set_fee(class, fee_category, fee_amount) VALUES('$class', '$fee_category', '$fee_amount')";
+    $sql = "INSERT INTO set_fee(class, fee_category, fee_amount, studentid ) VALUES('$class', '$fee_category', '$fee_amount', '$studentid')";
     
     mysqli_query($con, $sql);
     }
