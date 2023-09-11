@@ -182,11 +182,12 @@ include("myclass.php")
                                     <div class="row">
                                         <form class="form-group col-12 m-0 p-0 d-flex justify-content-between " action="" id="viewFee">
                                             <select class="form-control mr-2" name="cla" id="cla" style="height: 30px">
-                                                <option >Class</option>
+                                                <option>Class</option>
                                                 <?php
-                                                $i = 1; $sql = $con->query("SELECT * FROM class");
-                                                while(mysqli_fetch_assoc($sql)){
-                                                    echo '<option>' .$rows['class']. '</option>';
+                                                $i = 1;
+                                                $sql = $con->query("SELECT * FROM class");
+                                                while (mysqli_fetch_assoc($sql)) {
+                                                    echo '<option>' . $rows['class'] . '</option>';
                                                 }
                                                 ?>
                                             </select>
@@ -214,8 +215,17 @@ include("myclass.php")
                                             </tr>
                                         </thead>
                                         <tbody id="record_table">
-                                            <?php $i = 1; $sql = $con->query("SELECT * FROM set_fee");
-                                            mysqli_fetch_assoc($sql);
+                                            <?php $i = 1;
+                                            $sql = $con->query("SELECT * FROM set_fee");
+                                            while ($rows = mysqli_fetch_assoc($sql)) { ?>
+                                                <tr>
+                                                    <td><?= $rows['class'] ?></td>
+                                                    <td><?= $rows['fee_category'] ?></td>
+                                                    <td><?= $rows['fee_amount'] ?></td>
+                                                    <td><?= $rows['discount'] ?></td>
+                                                </tr>
+
+                                            <?php };
                                             ?>
                                         </tbody>
                                     </table>

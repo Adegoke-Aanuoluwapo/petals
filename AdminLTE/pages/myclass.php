@@ -260,8 +260,13 @@ class Profile
     $class = $_POST['class'];
     $fee_category = $_POST['fee_category'];
     $fee_amount = $_POST['fee_amount'];
+    $sql = $con->query("SELECT * FROM students WHERE class = '$class'");
+    while($rows = mysqli_fetch_assoc($sql)){
+    $studentid = $rows['sn'];
     $sql = "INSERT INTO set_fee(class, fee_category, fee_amount) VALUES('$class', '$fee_category', '$fee_amount')";
+    
     mysqli_query($con, $sql);
+    }
     return;
   }
   function total_Fees()
