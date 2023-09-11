@@ -214,6 +214,9 @@ include("myclass.php")
                                             </tr>
                                         </thead>
                                         <tbody id="record_table">
+                                            <?php $i = 1; $sql = $con->query("SELECT * FROM set_fee");
+                                            mysqli_fetch_assoc($sql);
+                                            ?>
                                         </tbody>
                                     </table>
                                 </div>
