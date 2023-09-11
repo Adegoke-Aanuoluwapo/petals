@@ -257,18 +257,19 @@ class Profile
   function setFees()
   {
     global $con;
-    $class = $_POST['class'];
+    $fee_class = $_POST['fee_class'];
     $fee_category = $_POST['fee_category'];
     $fee_amount = $_POST['fee_amount'];
-    $sql = $con->query("SELECT * FROM students WHERE class = '$class'");
+    $sql = $con->query("SELECT * FROM students WHERE class = '$fee_class'");
     while($rows = mysqli_fetch_assoc($sql)){
     $studentid = $rows['sn'];
-    $sql = "INSERT INTO set_fee(class, fee_category, fee_amount, studentid ) VALUES('$class', '$fee_category', '$fee_amount', '$studentid')";
+    $sq = "INSERT INTO set_fee(fee_class, fee_category, fee_amount, studentid ) VALUES('$fee_class', '$fee_category', '$fee_amount', '$studentid')";
     
-    mysqli_query($con, $sql);
+    mysqli_query($con, $sq);
     }
     return;
   }
+ 
   function total_Fees()
   {
     global $con;

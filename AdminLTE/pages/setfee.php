@@ -135,7 +135,7 @@ include("myclass.php")
                                 <form method="POST" class="row" id="setSchoolFees">
                                     <div class=" col-md-4 form-group">
                                         <label>Select Class</label>
-                                        <select name="class" class="form-control select2bs4">
+                                        <select name="fee_class" class="form-control select2bs4">
                                             <option>Select Class </option>
                                             <?php $i = 1;
                                             $sql = $con->query("SELECT * FROM class");
@@ -222,10 +222,11 @@ include("myclass.php")
                                             while ($rows = mysqli_fetch_assoc($sql)) { ?>
                                                 <tr><td><?= $i++ ?></td>
                                                     <td><?=$pro->SqLx('students', 'sn', $rows['studentid'], 'surname') ?></td>
-                                                    <td><?= $pro->SqLx('class', 'sn', $rows['class'], 'class')  ?></td>
+                                                    <td><?= $pro->SqLx('class', 'sn', $rows['fee_class'], 'class')  ?></td>
                                                     <td><?= $pro->SqLx('fees', 'sn',$rows['fee_category'], 'fee_category') ?></td>
-                                                    <td><?= $rows['fee_amount'] ?></td>
-                                                    <td><?= $rows['discount'] ?></td>
+                                                    <td><?= number_format($rows['fee_amount']) ?></td>
+                                                    <td><?= number_format($rows['discount']) ?></td>
+                                                    <td><?= number_format($rows['total']) ?></td>
                                                 </tr>
 
                                             <?php };
