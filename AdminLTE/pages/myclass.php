@@ -47,6 +47,8 @@ class Profile
       $this->Updatepermission();
     } elseif (isset($_POST['UpdateAllPermission'])) {
       $this->UpdateAllPermission();
+    } elseif (isset($_POST['AddResult'])) {
+      $this->AddResult();
     }
   }
   public function SignUp()
@@ -332,7 +334,7 @@ class Profile
     mysqli_query($con, $sql);
     return;
   }
-  function Addresult(){
+  function AddResult(){
     global $con;
 
     $subject = $_POST['subject'];
@@ -355,7 +357,7 @@ class Profile
 
       $sql = $con->query("SELECT * FROM results WHERE studentid='$student' AND class='$clas' AND subject='$subject' ");
       if (mysqli_num_rows($sql) == 0) {
-        addResult($student, $clas, $subject, $c1, $c2, $exa, $total);
+        AddResult($student, $clas, $subject, $c1, $c2, $exa, $total);
       }
     }
   }
