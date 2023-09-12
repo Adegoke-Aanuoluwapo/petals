@@ -127,33 +127,33 @@ require("myclass.php");
 
      <p></p>
      <?php
-     if (array_key_exists('AddResult', $_POST)) {
-      $subject = $_POST['subject'];
-      $studentid = $_POST['studentid'];
-      $class = $_POST['class'];
-      $ca1 = $_POST['ca1'];
-      $ca2 = $_POST['ca2'];
-      $exam = $_POST['exam'];
+     // if (array_key_exists('AddResult', $_POST)) {
+     //  $subject = $_POST['subject'];
+     //  $studentid = $_POST['studentid'];
+     //  $class = $_POST['class'];
+     //  $ca1 = $_POST['ca1'];
+     //  $ca2 = $_POST['ca2'];
+     //  $exam = $_POST['exam'];
 
 
-      $i = 0;
-      while ($i < count($studentid)) {
-       $e = $i++;
+     //  $i = 0;
+     //  while ($i < count($studentid)) {
+     //   $e = $i++;
 
 
-       $student = $studentid[$e];
-       $clas = $class[$e];
-       $c1 = $ca1[$e];
-       $c2 = $ca2[$e];
-       $exa = $exam[$e];
-       $total = (int)$c1 + (int)$c2 + (int)$exa;
+     //   $student = $studentid[$e];
+     //   $clas = $class[$e];
+     //   $c1 = $ca1[$e];
+     //   $c2 = $ca2[$e];
+     //   $exa = $exam[$e];
+     //   $total = (int)$c1 + (int)$c2 + (int)$exa;
 
-       $sql = $con->query("SELECT * FROM results WHERE studentid='$student' AND class='$clas' AND subject='$subject' ");
-       if (mysqli_num_rows($sql) == 0) {
-        addResult($student, $clas, $subject, $c1, $c2, $exa, $total);
-       }
-      }
-     }
+     //   $sql = $con->query("SELECT * FROM results WHERE studentid='$student' AND class='$clas' AND subject='$subject' ");
+     //   if (mysqli_num_rows($sql) == 0) {
+     //    addResult($student, $clas, $subject, $c1, $c2, $exa, $total);
+     //   }
+     //  }
+     // }
      //  
      ?>
 
