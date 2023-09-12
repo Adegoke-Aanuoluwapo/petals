@@ -332,6 +332,10 @@ class Profile
     mysqli_query($con, $sql);
     return;
   }
+  function Addresult(){
+    global $con;
+    
+  }
 }
 
 $pro = new Profile();

@@ -250,9 +250,6 @@ function Addresult($studentid, $class, $subject, $ca1, $ca2, $exam, $total)
 {
 	global $con;
 
-
-
-
 	$sql = "INSERT INTO results(studentid, class, subject, ca1, ca2, exam, total) VALUES( '$studentid', '$class','$subject', '$ca1', '$ca2', '$exam', '$total' )";
 
 	$result = mysqli_query($con, $sql);
