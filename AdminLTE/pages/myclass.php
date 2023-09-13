@@ -356,7 +356,7 @@ class Profile
       $exa = $exam[$e];
       $total = (int)$c1 + (int)$c2 + (int)$exa;
 
-      $sql = "INSERT  INTO results(studentid, class, subject, ca1, ca2,  exam) VALUES( '$student', '$class', '$subject', '$c1', '$c2', '$exa')";
+      $sql = "INSERT  INTO results(studentid, class, subject, ca1, ca2,  exam, total) VALUES( '$student', '$class', '$subject', '$c1', '$c2', '$exa' '$total')";
       mysqli_query($con, $sql);
     }
     return;
