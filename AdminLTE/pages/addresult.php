@@ -159,7 +159,7 @@ require("myclass.php");
                   <form method="post">
                     <div class="form-group">
                       <label>Select Class</label>
-                      <select name="class" id="term" class="form-control select2bs4">
+                      <select name="class" id="term" class="form-control select2bs4" required>
                         <option value="">Choose a Class</option>
                         <?php $i = 1;
                         $sql = $con->query("SELECT * FROM class ");
@@ -169,7 +169,7 @@ require("myclass.php");
                         ?>
 
                       </select>
-                      <select class="form-control" name="subject" >
+                      <select class="form-control" name="subject" required>
                         <option value="">Select Subject...</option>
                         <?php $i = 1;
                         $sql = $con->query("SELECT * FROM subjects");
@@ -203,8 +203,8 @@ require("myclass.php");
                       <?php
 
                       if (isset($_POST['class'])) {
-                        global $con;
-                        $report;
+                        global $con,
+                        $report,
                         $count;
                         $class = $_POST['class'];
                         $subject = $_POST['subject'];

@@ -328,7 +328,7 @@ class Profile
   }
   function AddStudent()
   {
-    global $con;
+    global $con, $report, $count;
     $guardian = $_POST['guardian'];
     $class = $_POST['class'];
     $arm = $_POST['arm'];
@@ -337,8 +337,12 @@ class Profile
     $othernames = $_POST['othernames'];
     $gender = $_POST['gender'];
     $reg = $_POST['reg'];
+    if(empty($guardian) || empty($class) || empty($arm) || empty($surname) || empty($firstname) || empty($othernames) || empty($gender) || ($reg)){
+      $report = 'enter all entries'; $count =1; return;
+    }
     $sql = "INSERT INTO students(guardian, class, arm, surname,firstname, othernames, gender, reg) VALUES('$guardian', '$class', '$arm', '$surname', '$firstname', '$othernames', '$gender', '$reg')";
     mysqli_query($con, $sql);
+    $report = 'students added successfully';
     return;
   }
   function AddResult()
