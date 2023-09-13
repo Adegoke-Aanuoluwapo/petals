@@ -1,6 +1,8 @@
-<script><?php if(isset($report)){
-  echo $pro->Alert(); 
-} ?></script>
+<script>
+  <?php if (isset($report)) {
+    echo $pro->Alert();
+  } ?>
+</script>
 
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
@@ -335,6 +337,16 @@
                 <i class="far fa-circle nav-icon"></i>
                 <p>
                   Upload Result
+
+
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="addresult.php" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>
+                  Add Results
 
 
                 </p>

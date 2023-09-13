@@ -263,15 +263,15 @@ class Profile
     $fee_category = $_POST['fee_category'];
     $fee_amount = $_POST['fee_amount'];
     $sql = $con->query("SELECT * FROM students WHERE class = '$fee_class'");
-    while($rows = mysqli_fetch_assoc($sql)){
-    $studentid = $rows['sn'];
-    $sq = "INSERT INTO set_fee(fee_class, fee_category, fee_amount, studentid ) VALUES('$fee_class', '$fee_category', '$fee_amount', '$studentid')";
-    
-    mysqli_query($con, $sq);
+    while ($rows = mysqli_fetch_assoc($sql)) {
+      $studentid = $rows['sn'];
+      $sq = "INSERT INTO set_fee(fee_class, fee_category, fee_amount, studentid ) VALUES('$fee_class', '$fee_category', '$fee_amount', '$studentid')";
+
+      mysqli_query($con, $sq);
     }
     return;
   }
- 
+
   function total_Fees()
   {
     global $con;
@@ -334,12 +334,14 @@ class Profile
     mysqli_query($con, $sql);
     return;
   }
-  function AddResult(){
+  function AddResult()
+  {
     global $con;
 
-    $subject = $_POST['subject'];
+
     $studentid = $_POST['studentid'];
     $class = $_POST['class'];
+    $subject = $_POST['subject'];
     $ca1 = $_POST['ca1'];
     $ca2 = $_POST['ca2'];
     $exam = $_POST['exam'];
@@ -347,20 +349,32 @@ class Profile
     while ($i < count($studentid)) {
       $e = $i++;
 
-
       $student = $studentid[$e];
-      $clas = $class[$e];
+
       $c1 = $ca1[$e];
       $c2 = $ca2[$e];
       $exa = $exam[$e];
       $total = (int)$c1 + (int)$c2 + (int)$exa;
 
-      $sql = $con->query("SELECT * FROM results WHERE studentid='$student' AND class='$clas' AND subject='$subject' ");
-      if (mysqli_num_rows($sql) == 0) {
-        AddResult($student, $clas, $subject, $c1, $c2, $exa, $total);
-      }
+      $sql = "INSERT  INTO results(studentid, class, subject, ca1, ca2,  exam) VALUES( '$student', '$class', '$subject', '$c1', '$c2', '$exa')";
+      mysqli_query($con, $sql);
     }
+    return;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 $pro = new Profile();
