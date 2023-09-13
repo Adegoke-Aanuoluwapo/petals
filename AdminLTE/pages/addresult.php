@@ -32,6 +32,10 @@ require("myclass.php");
   <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="../../plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css" />
+  <!-- Toastr -->
+  <link rel="stylesheet" href="../../plugins/toastr/toastr.min.css" />
   <style>
     .profile_pics {
       width: 50px;
@@ -241,3 +245,9 @@ require("myclass.php");
 
 
   <!-- /page content -->
+  <!-- SweetAlert2 -->
+  <script src="../plugins/sweetalert2/sweetalert2.min.js"></script>
+  <!-- Toastr -->
+  <script src="../plugins/toastr/toastr.min.js"></script>
+  </body>
+</html>
