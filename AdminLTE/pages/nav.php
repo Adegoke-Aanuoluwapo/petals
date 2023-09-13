@@ -337,8 +337,6 @@
                 <i class="far fa-circle nav-icon"></i>
                 <p>
                   Upload Result
-
-
                 </p>
               </a>
             </li>
@@ -347,8 +345,6 @@
                 <i class="far fa-circle nav-icon"></i>
                 <p>
                   Add Results
-
-
                 </p>
               </a>
             </li>

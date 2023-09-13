@@ -245,13 +245,16 @@ class Profile
   }
   function AddParent()
   {
-    global $con;
+    global $con, $report, $count;
     $name = $_POST['name'];
     $address = $_POST['address'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
     $state = $_POST['state'];
     $lga = $_POST['lga'];
+    if(empty($name) || empty($address) || empty($email) || empty($phone) || empty($state) || empty($lga)){
+      $report = 'enter all the entries'; $count =1; return;
+    }
     $sql = "INSERT INTO parents(name, address, email, phone, state, lga) VALUES('$name', '$address', '$email', '$phone', '$state', '$lga')";
     mysqli_query($con, $sql);
     return;
