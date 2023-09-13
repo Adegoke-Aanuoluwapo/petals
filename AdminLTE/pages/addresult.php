@@ -215,9 +215,9 @@ require("myclass.php");
                           <tr>
                             <th scope="row"><?= $i++ ?></th>
                             <td><a href="studentprofile.php?sn=<?= $rows['sn'] ?>"><?= $rows['surname'] ?></a></td>
-                            <td><?= $rows['firstname'] ?> <input type="hidden" name="studentid[]" value="<?= $rows['sn'] ?>"></td>
+                            <td><?= $rows['firstname'] ?> <input type="hidden" name="studentid[]" value="<?= $rows['sn'] ?>" required></td>
 
-                            <td><input type="number" name="ca1[]" min="0" max="20" class="form-control"></td>
+                            <td><input type="number" name="ca1[]" min="0" max="20" class="form-control" required></td>
                             <td><input type="number" name="ca2[]" min="0" max="20" class="form-control"></td>
                             <td><input type="number" name="exam[]" min="0" max="60" class="form-control"></td>
 
@@ -249,5 +249,8 @@ require("myclass.php");
   <script src="../plugins/sweetalert2/sweetalert2.min.js"></script>
   <!-- Toastr -->
   <script src="../plugins/toastr/toastr.min.js"></script>
+  <script>
+    <?= $pro->Alert() ?>
+  </script>
   </body>
 </html>
