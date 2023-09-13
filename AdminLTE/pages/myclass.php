@@ -155,7 +155,7 @@ class Profile
     global $con, $report, $count;
     $subject = $_POST['subject'];
     if(empty($subject)){
-      $report = 'input the subject'; $count = 1;
+      $report = 'input the subject'; $count = 1; return;
     }
     $sql = "INSERT INTO subjects(subject) VALUE('$subject')";
     mysqli_query($con, $sql);

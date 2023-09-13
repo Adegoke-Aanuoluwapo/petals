@@ -33,9 +33,9 @@ require("myclass.php");
   <!-- summernote -->
   <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
   <!-- SweetAlert2 -->
-  <link rel="stylesheet" href="../../plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css" />
+  <link rel="stylesheet" href="../plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css" />
   <!-- Toastr -->
-  <link rel="stylesheet" href="../../plugins/toastr/toastr.min.css" />
+  <link rel="stylesheet" href="../plugins/toastr/toastr.min.css" />
   <style>
     .profile_pics {
       width: 50px;
@@ -169,7 +169,7 @@ require("myclass.php");
                         ?>
 
                       </select>
-                      <select class="form-control" name="subject" required>
+                      <select class="form-control" name="subject" >
                         <option value="">Select Subject...</option>
                         <?php $i = 1;
                         $sql = $con->query("SELECT * FROM subjects");
@@ -180,7 +180,7 @@ require("myclass.php");
                       </select>
                     </div>
                     <div class="form-group">
-                      <button type="submit" class="btn btn-secondary float-right" required>Select</button>
+                      <button type="submit" class="btn btn-secondary float-right">Select</button>
                     </div>
                   </form>
                 </div>
@@ -203,12 +203,21 @@ require("myclass.php");
                       <?php
 
                       if (isset($_POST['class'])) {
+                        global $con;
+                        $report;
+                        $count;
                         $class = $_POST['class'];
                         $subject = $_POST['subject'];
+                        
+                        if(empty($class) || empty($subject)){
+                          $report = 'select a class and subject'; $count =1; return;
+                        }
 
                         $i = 1;
                         $sql = $con->query("SELECT * FROM students WHERE class = '$class'");
+                       
                         while ($rows = mysqli_fetch_assoc($sql)) {
+                          
 
                       ?>
 
@@ -224,6 +233,7 @@ require("myclass.php");
 
                           </tr>
                       <?php  }
+                        $report = 'class and subject has been selected';
                       } ?>
                     </tbody>
                   </table>
