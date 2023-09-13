@@ -152,11 +152,14 @@ class Profile
 
   function  AddSubject()
   {
-    global $con;
+    global $con, $report, $count;
     $subject = $_POST['subject'];
-
+    if(empty($subject)){
+      $report = 'input the subject'; $count = 1;
+    }
     $sql = "INSERT INTO subjects(subject) VALUE('$subject')";
     mysqli_query($con, $sql);
+    $report = 'Operation successful';
     return;
   }
   function UpdateAllPermission()
@@ -257,6 +260,7 @@ class Profile
     }
     $sql = "INSERT INTO parents(name, address, email, phone, state, lga) VALUES('$name', '$address', '$email', '$phone', '$state', '$lga')";
     mysqli_query($con, $sql);
+    $report = 'operation successful';
     return;
   }
   function setFees()

@@ -1,5 +1,5 @@
 <?php
-require_once("./myclass.php")
+include("myclass.php");
 ?>
 
 <!DOCTYPE html>
@@ -32,9 +32,9 @@ require_once("./myclass.php")
     <!-- summernote -->
     <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
     <!-- SweetAlert2 -->
-    <link rel="stylesheet" href="../../plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css" />
+    <link rel="stylesheet" href="../plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css" />
     <!-- Toastr -->
-    <link rel="stylesheet" href="../../plugins/toastr/toastr.min.css" />
+    <link rel="stylesheet" href="../plugins/toastr/toastr.min.css" />
 
 
     <style>
@@ -426,3 +426,4 @@ require_once("./myclass.php")
         <script>
             <?= $pro->Alert() ?>
         </script>
+</body></html>
