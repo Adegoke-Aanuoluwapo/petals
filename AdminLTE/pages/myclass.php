@@ -336,8 +336,8 @@ class Profile
   }
   function AddResult()
   {
-    global $con;
-    
+    global $con, $count, $report ;
+
 
     $studentid = $_POST['studentid'];
     $class = $_POST['class'];
@@ -345,6 +345,9 @@ class Profile
     $ca1 = $_POST['ca1'];
     $ca2 = $_POST['ca2'];
     $exam = $_POST['exam'];
+    if(empty($studentid) || empty($class) || empty($subject) || empty($ca1) || empty($ca2) || empty($exams)){
+      $report ='enter required entry'; $count =1; return;  
+    }
     $i = 0;
     while ($i < count($studentid)) {
       $e = $i++;
