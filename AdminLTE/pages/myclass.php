@@ -348,15 +348,18 @@ class Profile
     return;
   }
   function Term(){
-    global $con;
+    global $con, $count, $report;
     $session = $_POST['session'];
- 
+   If(empty($session)){
+    $report = 'Select a session'; $count = 1; return;
+   }
     $i = 0;
     while($i < 3){
       $i++;
       $sql = "INSERT INTO terms(term, session) VALUES('$i', '$session')";
       mysqli_query($con, $sql);
     }
+    $report = "Section successfully added";
     return;
     
     
