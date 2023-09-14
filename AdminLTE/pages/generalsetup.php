@@ -587,6 +587,13 @@
     <script src="../dist/js/demo.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="../dist/js/pages/dashboard.js"></script>
+    <!-- SweetAlert2 -->
+    <script src="../plugins/sweetalert2/sweetalert2.min.js"></script>
+    <!-- Toastr -->
+    <script src="../plugins/toastr/toastr.min.js"></script>
+    <script>
+        <?= $pro->Alert() ?>
+    </script>
 
 
     <script src="https://portal.schoolpetal.com/assets/js/adminlte.js"></script>
