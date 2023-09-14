@@ -350,7 +350,7 @@ class Profile
   function Term(){
     global $con;
     $session = $_POST['session'];
-    $term = $_POST['term'];
+ 
     $i = 0;
     while($i < 3){
       $i++;
@@ -358,6 +358,7 @@ class Profile
       mysqli_query($con, $sql);
     }
     return;
+    
     
    }
   function AddResult()
