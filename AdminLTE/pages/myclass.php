@@ -49,6 +49,8 @@ class Profile
       $this->UpdateAllPermission();
     } elseif (isset($_POST['AddResult'])) {
       $this->AddResult();
+    } elseif (isset($_POST['AddTerm'])) {
+      $this->Term();
     }
   }
   public function SignUp()
@@ -346,8 +348,16 @@ class Profile
     return;
   }
   function Term(){
+    global $con;
     $session = $_POST['session'];
     $term = $_POST['term'];
+    $i = 0;
+    while($i < 3){
+      $i++;
+      $sql = "INSERT INTO terms(term, session) VALUES('$i', '$session')";
+      mysqli_query($con, $sql);
+    }
+    return;
     
    }
   function AddResult()
