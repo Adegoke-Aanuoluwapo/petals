@@ -345,6 +345,11 @@ class Profile
     $report = 'students added successfully';
     return;
   }
+  function Term(){
+    $session = $_POST['session'];
+    $term = $_POST['term'];
+    
+   }
   function AddResult()
   {
     global $con, $report, $count;

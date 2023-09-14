@@ -147,7 +147,7 @@
           </select>
          </div>
          <div class="form-group mb-0 float-right">
-          <button type="submit" class="btn btn-secondary create_session_btn">Create Session</button>
+          <button type="submit" class="btn btn-secondary create_session_btn" name="AddTerm">Create Session</button>
          </div>
         </form>
        </div>
