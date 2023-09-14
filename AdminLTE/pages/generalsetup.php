@@ -133,6 +133,16 @@
           <label for="">Session</label>
           <select id="session_id" class="form-control select2bs4" name="session">
            <option selected="selected" disabled>Choose Session</option>
+           <?php
+           $i = -2;
+           while($i <= 2){
+            $e = $i++;
+            $a = date('Y') + $e;
+            $b = $a + 1;
+            echo '<option>'.$a.'/'.$b. '</option>';
+           }
+           
+           ?>
           
           </select>
          </div>
