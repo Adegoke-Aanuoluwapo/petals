@@ -128,13 +128,12 @@
         </h3>
        </div>
        <div class="card-body">
-        <form action="" id="create_new_session">
+        <form action="" id="create_new_session" method="POST">
          <div class="form-group">
           <label for="">Session</label>
-          <select id="session_id" class="form-control select2bs4">
+          <select id="session_id" class="form-control select2bs4" name="session">
            <option selected="selected" disabled>Choose Session</option>
-           <option>2022/2023</option>
-           <option>2023/2024</option>
+          
           </select>
          </div>
          <div class="form-group mb-0 float-right">
