@@ -377,6 +377,7 @@ class Profile
     $exam = $_POST['exam'];
    
     $i = 0;
+    
     while ($i < count($studentid)) {
       $e = $i++;
 
