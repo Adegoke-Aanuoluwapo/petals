@@ -203,15 +203,11 @@ require("myclass.php");
                       <?php
 
                       if (isset($_POST['class'])) {
-                        global $con,
-                        $report,
-                        $count;
+                        global $con;
                         $class = $_POST['class'];
                         $subject = $_POST['subject'];
                         
-                        if(empty($class) || empty($subject)){
-                          $report = 'select a class and subject'; $count =1; return;
-                        }
+                        
 
                         $i = 1;
                         $sql = $con->query("SELECT * FROM students WHERE class = '$class'");
@@ -233,8 +229,7 @@ require("myclass.php");
 
                           </tr>
                       <?php  }
-                        $report = 'class and subject has been selected';
-                      } ?>
+                         } ?>
                     </tbody>
                   </table>
                   <input type="hidden" name="class" value="<?= @$class ?>" class="form-control">

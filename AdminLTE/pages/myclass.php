@@ -347,7 +347,7 @@ class Profile
   }
   function AddResult()
   {
-    global $con, $count, $report ;
+    global $con, $report, $count;
 
 
     $studentid = $_POST['studentid'];
@@ -356,9 +356,7 @@ class Profile
     $ca1 = $_POST['ca1'];
     $ca2 = $_POST['ca2'];
     $exam = $_POST['exam'];
-    if(empty($studentid) || empty($class) || empty($subject) || empty($ca1) || empty($ca2) || empty($exams)){
-      $report ='enter required entry'; $count =1; return;  
-    }
+   
     $i = 0;
     while ($i < count($studentid)) {
       $e = $i++;
@@ -369,10 +367,14 @@ class Profile
       $c2 = $ca2[$e];
       $exa = $exam[$e];
       $total = (int)$c1 + (int)$c2 + (int)$exa;
+      if(empty($c1) || empty($c2) || empty($exa)){
+        $report = 'input all fields'; $count = 1; return;
+      }
 
       $sql = "INSERT  INTO results(studentid, class, subject, ca1, ca2,  exam, total) VALUES( '$student', '$class', '$subject', '$c1', '$c2', '$exa', '$total')";
       mysqli_query($con, $sql);
     }
+    $report = 'results added succesfully';
     return;
   }
 }

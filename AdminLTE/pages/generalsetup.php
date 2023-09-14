@@ -1,3 +1,4 @@
+<?php require("myclass.php") ?>
 <!DOCTYPE html>
 <html lang="en">
 
