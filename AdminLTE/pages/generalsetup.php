@@ -173,19 +173,36 @@
                                         </tr>
                                     </thead>
                                     <tbody id="session_body">
-                                        <?php
-                                        $i = 1;
-                                        $sql = $con->query("SELECT * FROM terms ");
+                                        <?php $i = 1;
+                                        $sql = $con->query("SELECT * FROM terms");
                                         while ($rows = mysqli_fetch_assoc($sql)) { ?>
                                             <tr>
-                                                <td><?= $i++ ?></td>
                                                 <td><?= $rows['session'] ?></td>
-                                                <td><?= $rows['term'] ?></td>
+                                                <td>
+                                                    <table>
+                                                        <thead class="table">
+                                                            <th>Term</th>
+                                                            <th>Closes</th>
+                                                            <th>Next-Term</th>
+                                                            <th></th>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td><?= $rows['term'] ?></td>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                    
+                                                </td>
                                             </tr>
 
 
-                                        <?php  }
+                                        <?php   }
+
                                         ?>
+
+
 
 
                                     </tbody>
