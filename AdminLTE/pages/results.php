@@ -156,7 +156,12 @@ require("myclass.php");
               <div id="res_body">
                 <?php if(isset($_POST['student'])){
                   $student = $_POST['student'];
-
+                  $i = 1;
+                  $sql = $con->query("SELECT * FROM results");
+                  while($rows = mysqli_fetch_assoc($sql)){ ?>
+                        <td><?=$pro->SqLx('students', 'sn',$rows['studentid'], 'surname' )?> </td>
+                        <td><?= $pro->SqLx('subjects', 'sn', $rows['subject'], 'subject') ?>: <?= $rows['total'] ?></td>
+         <?php     }
                 } ?>
 
               </div>
