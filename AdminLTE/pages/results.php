@@ -138,7 +138,7 @@ require("myclass.php");
                         <?php $i = 1;
                         $sql = $con->query("SELECT * FROM students");
                         while ($rows = mysqli_fetch_assoc($sql)) {
-                          echo "<option value='".['sn']."'>" . $rows['surname'] . ' ' . $rows['firstname'] . "</option>";
+                          echo "<option value='" . ['sn'] . "'>" . $rows['surname'] . ' ' . $rows['firstname'] . "</option>";
                         }
 
 
@@ -148,24 +148,27 @@ require("myclass.php");
                     </div>
                     <div class="form-group">
                       <button type="submit" class="btn btn-secondary float-right">Check Result</button>
+
                     </div>
                   </form>
                 </div>
+
               </div>
 
               <div id="res_body">
-                <?php if(isset($_POST['student'])){
+                <?php if (isset($_POST['student'])) {
                   $student = $_POST['student'];
                   $i = 1;
                   $sql = $con->query("SELECT * FROM results");
-                  while($rows = mysqli_fetch_assoc($sql)){ ?>
-                        <td><?=$pro->SqLx('students', 'sn',$rows['studentid'], 'surname' )?> </td>
-                        <td><?= $pro->SqLx('subjects', 'sn', $rows['subject'], 'subject') ?>: <?= $rows['total'] ?></td>
-         <?php     }
+                  while ($rows = mysqli_fetch_assoc($sql)) { ?>
+                    <td><?= $pro->SqLx('students', 'sn', $rows['studentid'], 'surname') ?> </td>
+                    <td><?= $pro->SqLx('subjects', 'sn', $rows['subject'], 'subject') ?>: <?= $rows['total'] ?></td>
+                <?php     }
                 } ?>
 
               </div>
             </div>
+            <input type="text" name="student" value="<?= $rows['student'] ?>">
           </div>
         </div>
       </section>
