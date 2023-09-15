@@ -129,11 +129,11 @@ require("myclass.php");
             <div class="col-12">
               <div class="card">
                 <div class="card-body">
-                  <form id="sub_form" method="POST">
+                  <form  method="POST">
                     <div class="form-group">
                       <label>Select Student</label>
 
-                      <select name="student_id" id="students" class="form-control select2bs4">
+                      <select name="studentid" id="students" class="form-control select2bs4">
                         <option selected disabled>... Loading Students ...</option>
                         <?php $i = 1;
                         $sql = $con->query("SELECT * FROM results");
@@ -159,7 +159,7 @@ require("myclass.php");
                 <?php if (isset($_POST['studentid'])) {
                   $student = $_POST['studentid'];
                   $i = 1;
-                  $sql = $con->query("SELECT * FROM results");
+                  $sql = $con->query("SELECT * FROM results WHERE studentid = '$student'");
                   while ($rows = mysqli_fetch_assoc($sql)) { ?>
                     <td><?= $pro->SqLx('students', 'sn', $rows['studentid'], 'surname') ?> </td>
                     <td><?= $pro->SqLx('subjects', 'sn', $rows['subject'], 'subject') ?>: <?= $rows['total'] ?></td>
@@ -168,7 +168,7 @@ require("myclass.php");
 
               </div>
             </div>
-            <input type="text" name="studentid" value="<?= $rows['studentid'] ?>">
+            <input type="" name="studentid" value="<?= @$student ?>">
           </div>
         </div>
       </section>
