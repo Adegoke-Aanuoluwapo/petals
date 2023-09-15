@@ -129,7 +129,7 @@ require("myclass.php");
             <div class="col-12">
               <div class="card">
                 <div class="card-body">
-                  <form  method="POST">
+                  <form method="POST">
                     <div class="form-group">
                       <label>Select Student</label>
 
@@ -138,7 +138,7 @@ require("myclass.php");
                         <?php $i = 1;
                         $sql = $con->query("SELECT * FROM results");
                         while ($rows = mysqli_fetch_assoc($sql)) {
-                          echo "<option value='" . ['sn'] . "'>" . $pro->SqLx('students', 'sn',$rows['studentid'], 'surname') . ' ' . $pro->SqLx('students', 'sn', $rows['studentid'], 'firstname')  . "</option>";
+                          echo "<option value='" . ['sn'] . "'>" . $pro->SqLx('students', 'sn', $rows['studentid'], 'surname') . ' ' . $pro->SqLx('students', 'sn', $rows['studentid'], 'firstname')  . "</option>";
                         }
 
 
@@ -161,6 +161,22 @@ require("myclass.php");
                   $i = 1;
                   $sql = $con->query("SELECT * FROM results WHERE studentid = '$student'");
                   while ($rows = mysqli_fetch_assoc($sql)) { ?>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>*</th>
+                          <th>Subject</th>
+                          <td>ca1</td>
+                          <td>ca2</td>
+                          <td>exam</td>
+
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <td><?= $rows['subject'] ?></td>
+                        <td><?= $rows['ca1'] ?></td>
+                      </tbody>
+                    </table>
                     <td><?= $pro->SqLx('students', 'sn', $rows['studentid'], 'surname') ?> </td>
                     <td><?= $pro->SqLx('subjects', 'sn', $rows['subject'], 'subject') ?>: <?= $rows['total'] ?></td>
                 <?php     }
