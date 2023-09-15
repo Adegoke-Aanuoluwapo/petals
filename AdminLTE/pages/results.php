@@ -129,7 +129,7 @@ require("myclass.php");
             <div class="col-12">
               <div class="card">
                 <div class="card-body">
-                  <form id="sub_form">
+                  <form id="sub_form" method="POST">
                     <div class="form-group">
                       <label>Select Student</label>
 
@@ -147,13 +147,17 @@ require("myclass.php");
                       </select>
                     </div>
                     <div class="form-group">
-                      <button class="btn btn-secondary float-right">Check Result</button>
+                      <button type="submit" class="btn btn-secondary float-right">Check Result</button>
                     </div>
                   </form>
                 </div>
               </div>
 
               <div id="res_body">
+                <?php if(isset($_POST['student'])){
+                  $student = $_POST['student'];
+
+                } ?>
 
               </div>
             </div>
