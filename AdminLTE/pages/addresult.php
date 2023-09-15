@@ -203,7 +203,7 @@ require("myclass.php");
                       <?php
 
                       if (isset($_POST['class'])) {
-                        global $con;
+                       
                         $class = $_POST['class'];
                         $subject = $_POST['subject'];
                         

@@ -136,9 +136,9 @@ require("myclass.php");
                       <select name="student_id" id="students" class="form-control select2bs4">
                         <option selected disabled>... Loading Students ...</option>
                         <?php $i = 1;
-                        $sql = $con->query("SELECT * FROM students");
+                        $sql = $con->query("SELECT * FROM results");
                         while ($rows = mysqli_fetch_assoc($sql)) {
-                          echo "<option value='" . ['sn'] . "'>" . $rows['surname'] . ' ' . $rows['firstname'] . "</option>";
+                          echo "<option value='" . ['sn'] . "'>" . $pro->SqLx('students', 'sn',$rows['studentid'], 'surname') . ' ' . $pro->SqLx('students', 'sn', $rows['studentid'], 'firstname')  . "</option>";
                         }
 
 
@@ -156,8 +156,8 @@ require("myclass.php");
               </div>
 
               <div id="res_body">
-                <?php if (isset($_POST['student'])) {
-                  $student = $_POST['student'];
+                <?php if (isset($_POST['studentid'])) {
+                  $student = $_POST['studentid'];
                   $i = 1;
                   $sql = $con->query("SELECT * FROM results");
                   while ($rows = mysqli_fetch_assoc($sql)) { ?>
@@ -168,7 +168,7 @@ require("myclass.php");
 
               </div>
             </div>
-            <input type="text" name="student" value="<?= $rows['student'] ?>">
+            <input type="text" name="studentid" value="<?= $rows['studentid'] ?>">
           </div>
         </div>
       </section>
