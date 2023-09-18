@@ -130,9 +130,38 @@ function Grade($score){
       $Grade = 'E';
     }
     else{
-      $Remark = 'F';
+      $Grade = 'F';
     }
     return $Grade;
+}
+function Remark($Grade){
+$Remark ='';
+  if($Grade == 'A'){
+    $Remark = 'Excellent';
+  }
+  else if ($Grade == 'B') {
+      $Remark = 'Very Good';
+    } 
+  else if ($Grade == 'C') {
+      $Remark = 'Good';
+    } 
+  else if ($Grade == 'D') {
+      $Remark = 'Pass';
+    } 
+  else if ($Grade == 'E') {
+      $Remark = 'Fair';
+    } else if ($Grade == 'F') {
+      $Remark = 'Fail';
+    }
+}
+function ResultSetup(){
+  global $con;
+  $ca1 = $_POST['ca1'];
+    $ca2 = $_POST['ca2'];
+    $ca3 = $_POST['ca3'];
+    $exam = $_POST['exam'];
+    $sql = "UPDATE result_setup SET ca1 = '$ca1', ca2 = '$ca2', ca3 = '$ca3', exam = '$exam'";
+    $con->query($sql);
 }
   function Alert()
   {
