@@ -112,7 +112,12 @@ class Profile
     return;
   }
 
-
+function Remark($score){
+  $Remark = '';
+  if($score >= 75){
+    $Remark = 'A';
+  }
+}
   function Alert()
   {
     global $count, $report;
