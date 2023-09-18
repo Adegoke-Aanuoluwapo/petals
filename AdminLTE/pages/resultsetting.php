@@ -1,3 +1,6 @@
+<?php
+require ("myclass.php")
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -130,7 +133,7 @@
         </h3>
        </div>
        <div class="card-body">
-        <form class="row" id="updateCa">
+        <form class="row" id="updateCa" method="POST">
          <div class="col-md-4 col-6 form-group">
           <label>CA 1</label>
           <input type="number" name="ca1" class="form-control" placeholder="CA 1">
@@ -148,7 +151,7 @@
           <input type="number" name="exam" class="form-control" placeholder="Exam">
          </div>
          <div class="col-md-6 col-12 form-group">
-          <button class="btn btn-secondary mt-md-4 float-right updateCa">Save</button>
+          <button type ="submit"class="btn btn-secondary mt-md-4 float-right updateCa" name="updateSetup">Save</button>
          </div>
         </form>
        </div>

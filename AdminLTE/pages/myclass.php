@@ -51,6 +51,8 @@ class Profile
       $this->AddResult();
     } elseif (isset($_POST['AddTerm'])) {
       $this->Term();
+    } elseif (isset($_POST['updateSetup'])) {
+      $this->ResultSetup();
     }
   }
   public function SignUp()
@@ -160,8 +162,9 @@ function ResultSetup(){
     $ca2 = $_POST['ca2'];
     $ca3 = $_POST['ca3'];
     $exam = $_POST['exam'];
-    $sql = "UPDATE result_setup SET ca1 = '$ca1', ca2 = '$ca2', ca3 = '$ca3', exam = '$exam'";
-    $con->query($sql);
+    $sql = "INSERT INTO result_setup(ca1, ca2, ca3, exam )VALUES('$ca1', '$ca2', '$ca3', '$exam')";
+    mysqli_query($con, $sql);
+    return;
 }
   function Alert()
   {
