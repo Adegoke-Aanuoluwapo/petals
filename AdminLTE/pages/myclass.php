@@ -112,11 +112,27 @@ class Profile
     return;
   }
 
-function Remark($score){
-  $Remark = '';
+function Grade($score){
+  $Grade = '';
   if($score >= 75){
-    $Remark = 'A';
+    $Grade = 'A';
   }
+  else if ($score >= 60) {
+      $Grade = 'B';
+  } 
+  else if ($score >= 50) {
+      $Grade = 'C';
+  } 
+  else if ($score >= 45) {
+      $Grade = 'D';
+  } 
+  else if ($score >= 40) {
+      $Grade = 'E';
+    }
+    else{
+      $Remark = 'F';
+    }
+    return $Grade;
 }
   function Alert()
   {
