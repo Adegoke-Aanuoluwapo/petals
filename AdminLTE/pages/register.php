@@ -55,6 +55,7 @@ $Pro->Alert();
               </div>
             </div>
           </div>
+          
           <div class="input-group mb-3">
             <input type="email" class="form-control" placeholder="Email" name="email">
             <div class="input-group-append">
