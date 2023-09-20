@@ -170,7 +170,7 @@ require ("myclass.php")
        </div>
        <div class="card-body p-1   ">
 
-        <form action="" id="update_grade">
+        <form action="" id="update_grade" method="POST">
          <div class="table-responsive">
           <table class="table table-striped mb-0" id="u_grad_tb">
            <tr>
