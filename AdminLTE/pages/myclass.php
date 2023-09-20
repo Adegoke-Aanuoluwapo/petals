@@ -156,6 +156,10 @@ $Remark ='';
       $Remark = 'Fail';
     }
 }
+
+function Gradeset(){
+  
+}
 function ResultSetup(){
   global $con;
   $ca1 = $_POST['ca1'];
