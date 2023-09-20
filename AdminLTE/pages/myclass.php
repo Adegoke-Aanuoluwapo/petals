@@ -180,13 +180,15 @@ $report = 'Operation Successful';
 return;
 }
 function ResultSetup(){
-  global $con;
+  global $con,
+    $report, $count;
   $ca1 = $_POST['ca1'];
     $ca2 = $_POST['ca2'];
     $ca3 = $_POST['ca3'];
     $exam = $_POST['exam'];
     
    $con->query("UPDATE result_setup SET ca1= '$ca1', ca2=  '$ca2',  ca3= '$ca3',exam = '$exam'");
+    $report = 'Operation Successful';
    return;
 }
   function Alert()
