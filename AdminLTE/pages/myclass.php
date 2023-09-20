@@ -174,8 +174,10 @@ function Gradeset(){
   $dr = $_POST['dr'];
   $er = $_POST['er'];
   $fr = $_POST['fr'];
+  
   $con->query("UPDATE result_setup SET A = '$A', B = '$B', C = '$C', D = '$D', E = '$E', F = '$F', ar = '$ar', br = '$br', cr = '$cr', dr ='$dr', er = '$er', fr = '$fr' WHERE sn = 1 ");
 $report = 'Operation Successful';
+return;
 }
 function ResultSetup(){
   global $con;
@@ -185,7 +187,7 @@ function ResultSetup(){
     $exam = $_POST['exam'];
     
    $con->query("UPDATE result_setup SET ca1= '$ca1', ca2=  '$ca2',  ca3= '$ca3',exam = '$exam'");
-   
+   return;
 }
   function Alert()
   {
