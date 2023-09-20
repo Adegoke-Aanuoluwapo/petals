@@ -130,7 +130,10 @@ require_once("myclass.php");
                     </div>
                 </div>
             </div>
-
+<?php
+$sql = $con->query("SELECT * FROM terms");
+$rows = mysqli_fetch_assoc($sql);
+?>
 
             <section class="content">
                 <div class="row">
@@ -143,7 +146,7 @@ require_once("myclass.php");
                                 </h3>
                             </div>
                             <div class="card-body">
-                                <form action="" id="create_new_session">
+                                <form action="" id="create_new_session" method="POST">
                                     <div class="form-group">
                                         <label for="">Session</label>
                                         <select id="session_id" class="form-control select2bs4 select2-hidden-accessible" data-select2-id="session_id" tabindex="-1" aria-hidden="true">
@@ -161,7 +164,7 @@ require_once("myclass.php");
                                         </select>
                                     </div>
                                     <div class="form-group mb-0 float-right">
-                                        <button type="submit" class="btn btn-secondary create_session_btn">Create Session</button>
+                                        <button type="submit" class="btn btn-secondary create_session_btn" name="AddTerm">Create Session</button>
                                     </div>
                                 </form>
                             </div>
@@ -186,7 +189,7 @@ require_once("myclass.php");
                                         <tr>
 
                                             <td colspan="2">
-                                                2023/2024
+                                                <?=$rows['session'] ?>
                                             </td>
                                             <td>
                                                 <table class="table table-sm">
@@ -293,7 +296,7 @@ require_once("myclass.php");
 
                                         <tr>
                                             <td colspan="2">
-                                                2021/2022
+                                                <?= $rows['']?>
                                             </td>
                                             <td>
                                                 <table class="table table-sm">
@@ -344,7 +347,7 @@ require_once("myclass.php");
                                                 </table>
                                             </td>
 
-                                        </tr>
+                                        </tr> 
 
                                     </tbody>
                                 </table>
