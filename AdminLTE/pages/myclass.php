@@ -158,6 +158,12 @@ $Remark ='';
 }
 
 function Gradeset(){
+  global $con, $report, $count;
+  $A = $_POST['A'];
+  $B = $_POST['B'];
+  $C = $_POST['C'];
+  $D = $_POST['D'];
+  $E = $_POST['E'];
   
 }
 function ResultSetup(){
