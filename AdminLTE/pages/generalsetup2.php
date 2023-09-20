@@ -4,7 +4,7 @@ require_once("myclass.php");
 
 
 
-<html lang="en" style="height: auto;">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -13,6 +13,11 @@ require_once("myclass.php");
     <title> General Setup
     </title>
     <!-- Google Font: Source Sans Pro -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="Sj03h7sYEFwKe2F6jAHyUXev0PNTiWyP9ZWwMwaf">
+    <title> General Setup
+    </title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
@@ -32,9 +37,10 @@ require_once("myclass.php");
     <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
     <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
-
-    <link rel="icon" href="https://portal.schoolpetal.com/assets/img/favicon.png">
-
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="../plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css" />
+    <!-- Toastr -->
+    <link rel="stylesheet" href="../plugins/toastr/toastr.min.css" />
     <style>
         .profile_pics {
             width: 50px;
@@ -178,7 +184,7 @@ require_once("myclass.php");
                                     </thead>
                                     <tbody id="session_body">
                                         <tr>
-                                        
+
                                             <td colspan="2">
                                                 2023/2024
                                             </td>
@@ -222,7 +228,7 @@ require_once("myclass.php");
                                                                 <a href="/control/setting/renew/21" class="btn btn-xs btn-danger"> Pay to Act </a>
                                                             </th>
                                                         </tr>
-                                  
+
 
                                                     </tbody>
                                                 </table>
