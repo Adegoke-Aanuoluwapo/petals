@@ -53,6 +53,8 @@ class Profile
       $this->Term();
     } elseif (isset($_POST['updateSetup'])) {
       $this->ResultSetup();
+    } elseif (isset($_POST['setgrade'])) {
+      $this->Gradeset();
     }
   }
   public function SignUp()
