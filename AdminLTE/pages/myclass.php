@@ -171,7 +171,8 @@ function Gradeset(){
   $cr = $_POST['cr'];
   $dr = $_POST['dr'];
   $er = $_POST['er'];
-  $con->query("UPDATE result_setup SET A = '$A', B = '$B', C = '$C', D = '$D', E = '$E', F = '$F' ");
+  $fr = $_POST['fr'];
+  $con->query("UPDATE result_setup SET A = '$A', B = '$B', C = '$C', D = '$D', E = '$E', F = '$F', ar = '$ar', br = '$br', cr = '$cr', dr ='$dr', er = '$er', fr = '$fr'  ");
 
 }
 function ResultSetup(){
