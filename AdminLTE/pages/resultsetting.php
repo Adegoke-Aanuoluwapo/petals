@@ -29,6 +29,10 @@ require("myclass.php")
   <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="../plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css" />
+  <!-- Toastr -->
+  <link rel="stylesheet" href="../plugins/toastr/toastr.min.css" />
 
   <style>
     .profile_pics {
@@ -214,7 +218,7 @@ require("myclass.php")
                       </tr>
                       <tr>
                         <td colspan="3">
-                          <button class="btn btn-secondary float-right update_grade">Submit</button>
+                          <button class="btn btn-secondary float-right update_grade" name="setgrade">Submit</button>
                         </td>
                       </tr>
                     </table>
@@ -233,140 +237,6 @@ require("myclass.php")
 
       <script src="https://portal.schoolpetal.com/assets/plugins/jquery/jquery.min.js"></script>
 
-      <script>
-        $(function() {
-
-          $.ajaxSetup({
-            headers: {
-              'Authorization': `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiODk5YWQwZTI4ODFmMDc0NDcyMzU2ZjY2ZWM1M2IyNDZmOGQxNzM5YzkxNmEzYTk4ZTMzMmQ0ZTNkMGJkMmJjYWYxYzBhZDc0YTNkNzJjMGUiLCJpYXQiOjE2OTIwMjkyNjUuNTQ1Mjk4LCJuYmYiOjE2OTIwMjkyNjUuNTQ1MzA2LCJleHAiOjE3MjM2NTE2NjUuNTEwODc0LCJzdWIiOiIyMCIsInNjb3BlcyI6W119.Cck_mbMp3N2586PyJoeLgNFRzranuFewXbawuS3q1D7OkyjdJ0U3o185-vrJCLi3oq-gkOGHDqq_eRthmNZwK3c1H2iqKPhbj6PavOm7OK-dme0OrLPncAGWBmQ6WbK6N5QV7oDyF1ptVCSyBjLa6xNGev2w7sMmfgAPkBJAGdD_RNTW3p5tvpI6isAWel_JX61dZ7MZWnHXTai6BdCvEhZ1B9MHqkihTqd3P53npIboxIWRmhef9cUWRqUCvw9JcnbaO_gvwveZ_CmOBQyCRKd_LMB6Xw6YLH6LlLZRkUdKdwyfgq_vFhbpjnMF9JCN-UYWCZJWNvMwcN0RS4Por8DfPEJ7gozjcAuHmku5BA2qTMddQknjr6XUziGQaGeWd7TOMxN3SYihGj0oZ0BihKqXxO30NGEBzM3L_MB50FHMA7OKY7WMYW-rfb5vB1Wy5mRf0TfJUO73r4AWtdU2kfULmyaUJre1f98TOEhuIVe79j-MMbDNxx0IYrEWh8MRX-H9A7o2_D-FCnhQyZxd3f_NZ2nprXTJxbCLIy9dI7w5rfTHi5I_qhQlTNsfv5UJ7Mht-WSQBq5NlgfslbvZFzH2YwXco87Hoq5Jons1vQMkDZbdlRDnDfWE3a6dL-Ux1kMNpMG1g8EJrtUuib7Hk49vQ-nNb9M2FTa7rkty9aM`
-            }
-          });
-
-
-
-
-          $('#update_grade').on('submit', function(e) {
-            e.preventDefault();
-            form = $(this).find('tr');
-            data = [];
-
-            form.map(tr => {
-              if (tr > 0 && tr < 7) {
-                tr = form[tr].children;
-                grade = tr[0].innerHTML;
-                score = tr[1].children[0].value;
-                remark = tr[2].children[0].value;
-                arr = {
-                  grade: grade,
-                  score: score,
-                  remark: remark
-                }
-                data.push(arr);
-              }
-            });
-
-            console.log(data);
-
-            $.ajax({
-              method: 'post',
-              url: api_url + 'update/subject_remark',
-              data: {
-                data: data
-              },
-              beforeSend: () => {
-                btnProcess('.update_grade', '', 'before');
-              }
-            }).done(function(res) {
-              littleAlert(res.message);
-              btnProcess('.update_grade', 'Submit', 'after');
-            }).fail(function(res) {
-              parseError(res.responseJSON);
-              btnProcess('.update_grade', 'Submit', 'after');
-              console.log(res);
-            })
-          })
-
-
-
-          $('#updateCa').on('submit', function(e) {
-            e.preventDefault();
-            form = $(this);
-            ca1 = parseInt($(form).find('input[name="ca1"]').val())
-            ca2 = parseInt($(form).find('input[name="ca2"]').val())
-            ca3 = parseInt($(form).find('input[name="ca3"]').val())
-            exam = parseInt($(form).find('input[name="exam"]').val())
-            console.log(ca1, ca2, ca3, exam);
-            total = ca1 + ca2 + ca3 + exam;
-            if (total != 100) {
-              littleAlert('The sum of the socres must be equal to 100', 1);
-              return;
-            }
-            $.ajax({
-              method: 'post',
-              url: api_url + 'update_ca',
-              data: {
-                ca1: ca1,
-                ca2: ca2,
-                ca3: ca3,
-                exam: exam
-              },
-              beforeSend: () => {
-                btnProcess('.updateCa', '', 'before')
-              }
-            }).done(function(res) {
-              littleAlert(res.message);
-              btnProcess('.updateCa', 'Save', 'after')
-              console.log(res);
-            }).fail(function(res) {
-              console.log(res);
-              parseError(res.responseJSON);
-              btnProcess('.updateCa', 'Save', 'after')
-            })
-          })
-
-          function fetchCa() {
-            $.ajax({
-              method: 'get',
-              url: api_url + 'ca'
-            }).done(function(res) {
-              console.log(res);
-              ca = res.data
-              form = $('#updateCa')
-              $(form).find('input[name="ca1"]').val(`${(ca) ? ca.ca1 : 0}`)
-              $(form).find('input[name="ca2"]').val(`${(ca) ? ca.ca2 : 0}`)
-              $(form).find('input[name="ca3"]').val(`${(ca) ? ca.ca3 : 0}`)
-              $(form).find('input[name="exam"]').val(`${(ca) ? ca.exam : 0}`)
-
-              rem = JSON.parse(res.data.remarks);
-
-              console.log(rem);
-
-
-
-              form = $('#update_grade').find('tr');
-
-              form.map((tr) => {
-                ind = tr - 1;
-                if (tr > 0 && tr < 7) {
-                  tr = form[tr].children;
-                  tr[1].children[0].value = rem[ind].score;
-                  tr[2].children[0].value = rem[ind].remark
-                }
-              });
-
-
-            }).fail(function(res) {
-              console.log(res);
-            })
-          }
-
-          fetchCa();
-
-
-
-
-        })
-      </script>
 
     </div>
 
@@ -447,6 +317,15 @@ require("myclass.php")
    }
   })
  </script> -->
+  <script src="../dist/js/pages/dashboard.js"></script>
+  <!-- SweetAlert2 -->
+  <script src="../plugins/sweetalert2/sweetalert2.min.js"></script>
+  <!-- Toastr -->
+  <script src="../plugins/toastr/toastr.min.js"></script>
+
+  <script>
+    <?= $pro->Alert() ?>
+  </script>
 </body>
 
 </html>
