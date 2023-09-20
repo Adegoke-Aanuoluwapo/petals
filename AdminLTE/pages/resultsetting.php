@@ -120,7 +120,11 @@ require ("myclass.php")
    </div>
 
 
+<?php
+$sql = $con->query("SELECT * FROM result_setup");
+$rows = mysqli_fetch_assoc($sql);
 
+?>
 
    <section class="content">
     <div class="row">
@@ -180,7 +184,7 @@ require ("myclass.php")
            </tr>
            <tr>
             <th>A</th>
-            <td><input type="number" class="form-control form-control-sm" style="width: 60px"></td>
+            <td><input type="number" name="A" class="form-control form-control-sm" style="width: 60px"></td>
             <td><input type="text" class="form-control form-control-sm"></td>
            </tr>
            <tr>
