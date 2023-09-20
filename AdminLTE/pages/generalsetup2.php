@@ -130,10 +130,10 @@ require_once("myclass.php");
                     </div>
                 </div>
             </div>
-<?php
-$sql = $con->query("SELECT * FROM terms");
-$rows = mysqli_fetch_assoc($sql);
-?>
+            <?php
+            $sql = $con->query("SELECT * FROM terms");
+            $rows = mysqli_fetch_assoc($sql);
+            ?>
 
             <section class="content">
                 <div class="row">
@@ -189,7 +189,7 @@ $rows = mysqli_fetch_assoc($sql);
                                         <tr>
 
                                             <td colspan="2">
-                                                <?=$rows['session'] ?>
+                                                <?= $rows['session'] ?>
                                             </td>
                                             <td>
                                                 <table class="table table-sm">
@@ -242,7 +242,7 @@ $rows = mysqli_fetch_assoc($sql);
 
                                         <tr>
                                             <td colspan="2">
-                                                2022/2023
+                                                <?= $rows['session'] ?>
                                             </td>
                                             <td>
                                                 <table class="table table-sm">
@@ -296,7 +296,7 @@ $rows = mysqli_fetch_assoc($sql);
 
                                         <tr>
                                             <td colspan="2">
-                                                <?= $rows['']?>
+                                                <?= $rows['session'] ?>
                                             </td>
                                             <td>
                                                 <table class="table table-sm">
@@ -347,7 +347,7 @@ $rows = mysqli_fetch_assoc($sql);
                                                 </table>
                                             </td>
 
-                                        </tr> 
+                                        </tr>
 
                                     </tbody>
                                 </table>
