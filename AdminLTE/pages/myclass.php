@@ -159,12 +159,20 @@ $Remark ='';
 
 function Gradeset(){
   global $con, $report, $count;
+ 
   $A = $_POST['A'];
   $B = $_POST['B'];
   $C = $_POST['C'];
   $D = $_POST['D'];
   $E = $_POST['E'];
-  
+  $F = $_POST['F'];
+  $ar = $_POST['ar'];
+  $br = $_POST['br'];
+  $cr = $_POST['cr'];
+  $dr = $_POST['dr'];
+  $er = $_POST['er'];
+  $con->query("UPDATE result_setup SET A = '$A', B = '$B', C = '$C', D = '$D', E = '$E', F = '$F' ");
+
 }
 function ResultSetup(){
   global $con;
