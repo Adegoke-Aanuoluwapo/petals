@@ -191,6 +191,19 @@ function ResultSetup(){
     $report = 'Operation Successful';
    return;
 }
+function editSchoolInfo(){
+  global $con, $report;
+  $school_name= $_POST['school_name'];
+  $email = $_POST['email'];
+  $website = $_POST['website'];
+  $phone = $_POST['phone'];
+  $alt_phone = $_POST['alt_phone'];
+  $motto = $_POST['motto'];
+  $address = $_POST['address'];
+  $con->query("UPDATE school_info SET school_name = '$school_name', email = '$email', website= '$website', phone= '$phone', alt_phone='$alt_phone', motto= '$motto',address= '$address' ");
+  $report = 'Operation Successful';
+  
+}
   function Alert()
   {
     global $count, $report;

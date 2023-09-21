@@ -195,24 +195,23 @@
                                                 <td><?= $s ?></td>
                                                 <td colspan="2">
                                                     <table>
+                                                        <tr>
+                                                            <th>Term</th>
+                                                            <th>Closes</th>
+                                                            <th>Next-Term</th>
+                                                            <th></th>
+
+                                                        </tr>
                                                         <?php $sql = $con->query("SELECT * FROM terms WHERE session='$s' ");
                                                         while ($row = mysqli_fetch_assoc($sql)) {  ?>
-                                                            <tr>
-                                                                <th>Term</th>
-                                                                <th>Closes</th>
-                                                                <th>Next-Term</th>
-                                                                <th>
 
-                                                                </th>
-
-                                                            </tr>
 
                                                             <tr>
                                                                 <td>Term <?= $row['term'] ?></td>
                                                                 <td><?= date('Y')  ?></td>
                                                                 <td><?= date('Y')  ?></td>
-                                                                <td><button class="btn btn-sm btn-primary">Edit</button><button class="btn btn-sm btn-danger">Activate</button></td>
-                                                                <td></td>
+                                                                <td><button class=" btn btn-xs btn-primary editTermInfo">Edit</button><button class="btn btn-sm btn-danger">Activate</button></td>
+
                                                             </tr>
                                                         <?php } ?>
                                                     </table>
