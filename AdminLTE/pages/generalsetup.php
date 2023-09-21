@@ -201,15 +201,18 @@
                                                                 <th>Term</th>
                                                                 <th>Closes</th>
                                                                 <th>Next-Term</th>
-                                                                <th></th>
+                                                                <th>
+
+                                                                </th>
 
                                                             </tr>
 
                                                             <tr>
                                                                 <td>Term <?= $row['term'] ?></td>
                                                                 <td><?= date('Y')  ?></td>
-                                                                <td><?= date('Y') +1 ?></td>
-                                                                <td><button class="btn btn-sm btn-primary">Activate</button></td>
+                                                                <td><?= date('Y')  ?></td>
+                                                                <td><button class="btn btn-sm btn-primary">Edit</button><button class="btn btn-sm btn-danger">Activate</button></td>
+                                                                <td></td>
                                                             </tr>
                                                         <?php } ?>
                                                     </table>
