@@ -197,6 +197,9 @@
                                                     <table>
                                                         <?php $sql = $con->query("SELECT * FROM terms WHERE session='$s' ");
                                                         while ($row = mysqli_fetch_assoc($sql)) {  ?>
+                                                        <tr>
+                                                            <th>Term</th>
+                                                        </tr>
 
                                                             <tr>
                                                                 <td>Term <?= $row['term'] ?></td>
