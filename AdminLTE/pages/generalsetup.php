@@ -247,11 +247,11 @@
                                     </div>
                                     <div class="col-md-6 form-group">
                                         <label for="">E-mail</label>
-                                        <input type="email" class="form-control" disabled value="ogbajigodwin@gmail.com" name='email'>
+                                        <input type="email" class="form-control"  name='email'>
                                     </div>
                                     <div class="col-md-6 form-group">
                                         <label for="">Website</label>
-                                        <input type="url" class="form-control" placeholder="School website" value="" name='website'>
+                                        <input type="text" class="form-control" placeholder="School website" value="" name='website'>
                                     </div>
 
                                     <div class="col-md-6 form-group">
@@ -276,7 +276,7 @@
 
 
                                     <div class="form-group col-md-12 mb-0 ">
-                                        <button type="button" class="btn btn-secondary float-right" name="UpdateSchoolInfo">Update School Info</button>
+                                        <button type="submit" class="btn btn-secondary float-right" name="UpdateSchoolInfo">Update School Info</button>
                                     </div>
                                 </form>
 

@@ -55,6 +55,8 @@ class Profile
       $this->ResultSetup();
     } elseif (isset($_POST['setgrade'])) {
       $this->Gradeset();
+    } elseif (isset($_POST['UpdateSchoolInfo'])) {
+      $this->editSchoolInfo();
     }
   }
   public function SignUp()
@@ -194,14 +196,16 @@ function ResultSetup(){
 function editSchoolInfo(){
   global $con, $report;
   $school_name= $_POST['school_name'];
+  
   $email = $_POST['email'];
   $website = $_POST['website'];
   $phone = $_POST['phone'];
   $alt_phone = $_POST['alt_phone'];
   $motto = $_POST['motto'];
   $address = $_POST['address'];
-  $con->query("UPDATE school_info SET school_name = '$school_name', email = '$email', website= '$website', phone= '$phone', alt_phone='$alt_phone', motto= '$motto',address= '$address' ");
+  $con->query("UPDATE school_info SET school_name = '$school_name', email = '$email', website= '$website', phone= '$phone', alt_phone='$alt_phone', motto= '$motto',address= '$address' WHERE sn =1");
   $report = 'Operation Successful';
+  return;
   
 }
   function Alert()
