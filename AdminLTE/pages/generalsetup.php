@@ -197,12 +197,18 @@
                                                     <table>
                                                         <?php $sql = $con->query("SELECT * FROM terms WHERE session='$s' ");
                                                         while ($row = mysqli_fetch_assoc($sql)) {  ?>
-                                                        <tr>
-                                                            <th>Term</th>
-                                                        </tr>
+                                                            <tr>
+                                                                <th>Term</th>
+                                                                <th>Closes</th>
+                                                                <th>Next-Term</th>
+                                                                <th></th>
+
+                                                            </tr>
 
                                                             <tr>
                                                                 <td>Term <?= $row['term'] ?></td>
+                                                                <td><?= date('Y')  ?></td>
+                                                                <td><?= date('Y') +1 ?></td>
                                                                 <td><button class="btn btn-sm btn-primary">Activate</button></td>
                                                             </tr>
                                                         <?php } ?>
