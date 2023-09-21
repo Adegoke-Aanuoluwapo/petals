@@ -240,43 +240,43 @@
                                 </h3>
                             </div>
                             <div class="card-body">
-                                <form action="" class="row">
+                                <form action="" class="row" method="POST">
                                     <div class="col-md-12 form-group">
                                         <label for="">School Name</label>
-                                        <input type="text" class="form-control" value="SchoolPetal International School">
+                                        <input type="text" class="form-control" value="SchoolPetal International School" name="school_name">
                                     </div>
                                     <div class="col-md-6 form-group">
                                         <label for="">E-mail</label>
-                                        <input type="email" class="form-control" disabled value="ogbajigodwin@gmail.com">
+                                        <input type="email" class="form-control" disabled value="ogbajigodwin@gmail.com" name='email'>
                                     </div>
                                     <div class="col-md-6 form-group">
                                         <label for="">Website</label>
-                                        <input type="url" class="form-control" placeholder="School website" value="">
+                                        <input type="url" class="form-control" placeholder="School website" value="" name='website'>
                                     </div>
 
                                     <div class="col-md-6 form-group">
                                         <label for="">Phone Number</label>
-                                        <input type="text" class="form-control" placeholder="Phone Number" value="08150905504">
+                                        <input type="text" class="form-control" placeholder="Phone Number" value="08150905504" name='phone'>
                                     </div>
 
                                     <div class="col-md-6 form-group">
                                         <label for="">Alternative Phone Number</label>
-                                        <input type="text" class="form-control" placeholder="Phone Number" value="">
+                                        <input type="text" class="form-control" placeholder="Phone Number" value="" name="alt_phone">
                                     </div>
 
                                     <div class="col-md-12 form-group">
                                         <label for="">Motto</label>
-                                        <input type="text" class="form-control" value="">
+                                        <input type="text" class="form-control" value="" name='motto'>
                                     </div>
 
                                     <div class="col-md-12 form-group">
                                         <label for="">Address</label>
-                                        <textarea name="" id="" class="form-control" cols="3"></textarea>
+                                        <textarea name="address" id="" class="form-control" cols="3"></textarea>
                                     </div>
 
 
                                     <div class="form-group col-md-12 mb-0 ">
-                                        <button type="button" class="btn btn-secondary float-right">Update School Info</button>
+                                        <button type="button" class="btn btn-secondary float-right" name="UpdateSchoolInfo">Update School Info</button>
                                     </div>
                                 </form>
 
