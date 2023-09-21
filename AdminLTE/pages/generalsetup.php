@@ -173,247 +173,48 @@
                                         </tr>
                                     </thead>
                                     <tbody id="session_body">
-                                         <?php
-                                        // while ($i <= 3){
-                                        //     $c = $i++;
-                                        //      $m = date('Y') + $c;
-                                        //      $n = $m +1;
-                                        //      $sql = $con->query("SELECT * FROM terms ");
-                                        //   while($rows = mysqli_fetch_assoc($sql)){ 
 
-
-                                        $i = 1;
-                                        $sql = $con->query("SELECT * FROM terms");
-                                        $i++;
-                                        while ($rows = mysqli_fetch_assoc($sql)) { ?> 
-
-                                            <tr>
-                                               <td colspan="2">
-                                                    <?php
-                                                    $i=1;
-                                                    
-                                                    while ($i <= 3) {
-                                                        $e = $i++;
-                                                        $a = date('Y') + $e;
-                                                        $b = $a + 1;
-                                                        echo '<option>' . $a . '/' . $b . '</option>';
-                                                    } ?>
-                                                    </td>
-                                                    <!-- <td>
-                                                        <table class="table table-sm">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <th>Term</th>
-                                                                    <th>Closes</th>
-                                                                    <th>Next-Term</th>
-                                                                    <th></th>
-                                                                </tr>
-
-
-                                                                <tr>
-                                                                    <td> First Term </td>
-                                                                    <td> null</td>
-                                                                    <td> null</td>
-                                                                    <th>
-                                                                        <button class="btn btn-xs btn-primary editTermInfo" data-data="{&quot;id&quot;:19,&quot;school_id&quot;:&quot;2&quot;,&quot;session_id&quot;:&quot;7&quot;,&quot;term&quot;:&quot;1&quot;,&quot;year&quot;:&quot;2023&quot;,&quot;close&quot;:null,&quot;resume&quot;:null,&quot;status&quot;:&quot;0&quot;,&quot;paid&quot;:&quot;0&quot;,&quot;created_at&quot;:&quot;2023-08-07T10:16:49.000000Z&quot;,&quot;updated_at&quot;:&quot;2023-08-07T10:16:49.000000Z&quot;}"><i class="fas fa-edit"></i> Edit</button>
-                                                                        <a href="/control/setting/renew/19" class="btn btn-xs btn-danger"> Pay to Act </a>
-                                                                    </th>
-                                                                </tr>
-
-                                                                <tr>
-                                                                    <td> Second Term </td>
-                                                                    <td> null</td>
-                                                                    <td> null</td>
-                                                                    <th>
-                                                                        <button class="btn btn-xs btn-primary editTermInfo" data-data="{&quot;id&quot;:20,&quot;school_id&quot;:&quot;2&quot;,&quot;session_id&quot;:&quot;7&quot;,&quot;term&quot;:&quot;2&quot;,&quot;year&quot;:&quot;2023&quot;,&quot;close&quot;:null,&quot;resume&quot;:null,&quot;status&quot;:&quot;0&quot;,&quot;paid&quot;:&quot;0&quot;,&quot;created_at&quot;:&quot;2023-08-07T10:16:49.000000Z&quot;,&quot;updated_at&quot;:&quot;2023-08-07T10:16:49.000000Z&quot;}"><i class="fas fa-edit"></i> Edit</button>
-                                                                        <a href="/control/setting/renew/20" class="btn btn-xs btn-danger"> Pay to Act </a>
-                                                                    </th>
-                                                                </tr>
-
-                                                                <tr>
-                                                                    <td> Third Term </td>
-                                                                    <td> null</td>
-                                                                    <td> null</td>
-                                                                    <th>
-                                                                        <button class="btn btn-xs btn-primary editTermInfo" data-data="{&quot;id&quot;:21,&quot;school_id&quot;:&quot;2&quot;,&quot;session_id&quot;:&quot;7&quot;,&quot;term&quot;:&quot;3&quot;,&quot;year&quot;:&quot;2023&quot;,&quot;close&quot;:null,&quot;resume&quot;:null,&quot;status&quot;:&quot;0&quot;,&quot;paid&quot;:&quot;0&quot;,&quot;created_at&quot;:&quot;2023-08-07T10:16:49.000000Z&quot;,&quot;updated_at&quot;:&quot;2023-08-07T10:16:49.000000Z&quot;}"><i class="fas fa-edit"></i> Edit</button>
-                                                                        <a href="/control/setting/renew/21" class="btn btn-xs btn-danger"> Pay to Act </a>
-                                                                    </th>
-                                                                </tr>
-
-
-                                                            </tbody>
-                                                        </table>
-                                                    </td> -->
-
-                                            </tr>
-
-
-                                            <tr>
-                                                <td colspan="2">
-                                                    <?= $rows['session'] ?>
-                                                </td>
-                                                <td>
-                                                    <table class="table table-sm">
-                                                        <tbody>
-                                                            <tr>
-                                                                <th>Term</th>
-                                                                <th>Closes</th>
-                                                                <th>Next-Term</th>
-                                                                <th></th>
-                                                            </tr>
-
-
-                                                            <tr class="bg-success">
-                                                                <td> First Term </td>
-                                                                <td> 2022-11-30</td>
-                                                                <td> 2023-01-09</td>
-                                                                <th>
-                                                                    <button class="btn btn-xs btn-primary editTermInfo" data-data="{&quot;id&quot;:10,&quot;school_id&quot;:&quot;2&quot;,&quot;session_id&quot;:&quot;4&quot;,&quot;term&quot;:&quot;1&quot;,&quot;year&quot;:&quot;2022&quot;,&quot;close&quot;:&quot;2022-11-30&quot;,&quot;resume&quot;:&quot;2023-01-09&quot;,&quot;status&quot;:&quot;1&quot;,&quot;paid&quot;:&quot;1&quot;,&quot;created_at&quot;:&quot;2022-04-08T15:57:57.000000Z&quot;,&quot;updated_at&quot;:&quot;2023-04-04T08:50:52.000000Z&quot;}"><i class="fas fa-edit"></i> Edit</button>
-                                                                    Active
-                                                                </th>
-                                                            </tr>
-
-                                                            <tr>
-                                                                <td> Second Term </td>
-                                                                <td> 2023-04-06</td>
-                                                                <td> 2023-05-01</td>
-                                                                <th>
-                                                                    <button class="btn btn-xs btn-primary editTermInfo" data-data="{&quot;id&quot;:11,&quot;school_id&quot;:&quot;2&quot;,&quot;session_id&quot;:&quot;4&quot;,&quot;term&quot;:&quot;2&quot;,&quot;year&quot;:&quot;2022&quot;,&quot;close&quot;:&quot;2023-04-06&quot;,&quot;resume&quot;:&quot;2023-05-01&quot;,&quot;status&quot;:&quot;0&quot;,&quot;paid&quot;:&quot;0&quot;,&quot;created_at&quot;:&quot;2022-04-08T15:57:57.000000Z&quot;,&quot;updated_at&quot;:&quot;2023-04-04T09:22:23.000000Z&quot;}"><i class="fas fa-edit"></i> Edit</button>
-                                                                    <a href="/control/setting/renew/11" class="btn btn-xs btn-danger"> Pay to Act </a>
-                                                                </th>
-                                                            </tr>
-
-                                                            <tr>
-                                                                <td> Third Term </td>
-                                                                <td> 2022-04-09</td>
-                                                                <td> 2022-04-07</td>
-                                                                <th>
-                                                                    <button class="btn btn-xs btn-primary editTermInfo" data-data="{&quot;id&quot;:12,&quot;school_id&quot;:&quot;2&quot;,&quot;session_id&quot;:&quot;4&quot;,&quot;term&quot;:&quot;3&quot;,&quot;year&quot;:&quot;2022&quot;,&quot;close&quot;:&quot;2022-04-09&quot;,&quot;resume&quot;:&quot;2022-04-07&quot;,&quot;status&quot;:&quot;0&quot;,&quot;paid&quot;:&quot;1&quot;,&quot;created_at&quot;:&quot;2022-04-08T15:57:57.000000Z&quot;,&quot;updated_at&quot;:&quot;2023-04-04T08:50:52.000000Z&quot;}"><i class="fas fa-edit"></i> Edit</button>
-                                                                    <button class="btn btn-xs btn-success activateTerm" data-id="12" title="Click to activate term">
-                                                                        <i class="fa fa-check" aria-hidden="true"></i> Activate </button>
-                                                                </th>
-                                                            </tr>
-
-
-                                                        </tbody>
-                                                    </table>
-                                                </td>
-
-                                            </tr>
-
-
-                                            <!-- <tr>
-                                                <td colspan="2">
-                                                    <?= $rows['session'] ?>
-                                                </td>
-                                                <td>
-                                                    <table class="table table-sm">
-                                                        <tbody>
-                                                            <tr>
-                                                                <th>Term</th>
-                                                                <th>Closes</th>
-                                                                <th>Next-Term</th>
-                                                                <th></th>
-                                                            </tr>
-
-
-                                                            <tr>
-                                                                <td> First Term </td>
-                                                                <td> 2022-04-07</td>
-                                                                <td> 2022-04-27</td>
-                                                                <th>
-                                                                    <button class="btn btn-xs btn-primary editTermInfo" data-data="{&quot;id&quot;:7,&quot;school_id&quot;:&quot;2&quot;,&quot;session_id&quot;:&quot;3&quot;,&quot;term&quot;:&quot;1&quot;,&quot;year&quot;:&quot;2021&quot;,&quot;close&quot;:&quot;2022-04-07&quot;,&quot;resume&quot;:&quot;2022-04-27&quot;,&quot;status&quot;:&quot;0&quot;,&quot;paid&quot;:&quot;1&quot;,&quot;created_at&quot;:&quot;2022-04-08T15:44:17.000000Z&quot;,&quot;updated_at&quot;:&quot;2023-04-04T08:50:52.000000Z&quot;}"><i class="fas fa-edit"></i> Edit</button>
-                                                                    <button class="btn btn-xs btn-success activateTerm" data-id="7" title="Click to activate term">
-                                                                        <i class="fa fa-check" aria-hidden="true"></i> Activate </button>
-                                                                </th>
-                                                            </tr>
-
-                                                            <tr>
-                                                                <td> Second Term </td>
-                                                                <td> 2022-04-09</td>
-                                                                <td> 2022-04-25</td>
-                                                                <th>
-                                                                    <button class="btn btn-xs btn-primary editTermInfo" data-data="{&quot;id&quot;:8,&quot;school_id&quot;:&quot;2&quot;,&quot;session_id&quot;:&quot;3&quot;,&quot;term&quot;:&quot;2&quot;,&quot;year&quot;:&quot;2023&quot;,&quot;close&quot;:&quot;2022-04-09&quot;,&quot;resume&quot;:&quot;2022-04-25&quot;,&quot;status&quot;:&quot;0&quot;,&quot;paid&quot;:&quot;1&quot;,&quot;created_at&quot;:&quot;2022-04-08T15:44:17.000000Z&quot;,&quot;updated_at&quot;:&quot;2023-04-04T08:50:52.000000Z&quot;}"><i class="fas fa-edit"></i> Edit</button>
-                                                                    <button class="btn btn-xs btn-success activateTerm" data-id="8" title="Click to activate term">
-                                                                        <i class="fa fa-check" aria-hidden="true"></i> Activate </button>
-                                                                </th>
-                                                            </tr>
-
-                                                            <tr>
-                                                                <td> Third Term </td>
-                                                                <td> 2023-08-30</td>
-                                                                <td> 2023-09-09</td>
-                                                                <th>
-                                                                    <button class="btn btn-xs btn-primary editTermInfo" data-data="{&quot;id&quot;:9,&quot;school_id&quot;:&quot;2&quot;,&quot;session_id&quot;:&quot;3&quot;,&quot;term&quot;:&quot;3&quot;,&quot;year&quot;:&quot;2022&quot;,&quot;close&quot;:&quot;2023-08-30&quot;,&quot;resume&quot;:&quot;2023-09-09&quot;,&quot;status&quot;:&quot;0&quot;,&quot;paid&quot;:&quot;1&quot;,&quot;created_at&quot;:&quot;2022-04-08T15:44:17.000000Z&quot;,&quot;updated_at&quot;:&quot;2023-08-07T10:17:54.000000Z&quot;}"><i class="fas fa-edit"></i> Edit</button>
-                                                                    <button class="btn btn-xs btn-success activateTerm" data-id="9" title="Click to activate term">
-                                                                        <i class="fa fa-check" aria-hidden="true"></i> Activate </button>
-                                                                </th>
-                                                            </tr> 
-
-
-                                                        </tbody>
-                                                    </table>
-                                                </td>
-
-                                            </tr> -->
 
 
 
                                         <?php
 
-                                        } ?>
 
 
 
+
+                                        $i = -1;
+
+                                        while ($i < 2) {
+                                            $e = $i++;
+                                            $a = date('Y') + $e;
+                                            $b = $a + 1;
+                                            $s = $a . '/' . $b;
+                                        ?>
+                                            <tr>
+                                                <td><?= $s ?></td>
+                                                <td colspan="2">
+                                                    <table>
+                                                        <?php $sql = $con->query("SELECT * FROM terms WHERE session='$s' ");
+                                                        while ($row = mysqli_fetch_assoc($sql)) {  ?>
+
+                                                            <tr>
+                                                                <td>Term <?= $row['term'] ?></td>
+                                                                <td><button class="btn btn-sm btn-primary">Activate</button></td>
+                                                            </tr>
+                                                        <?php } ?>
+                                                    </table>
+
+                                                </td>
+                                            </tr>
+
+
+                                        <?php } ?>
 
                                     </tbody>
                                 </table>
                             </div>
 
-                            <!-- <div class="table-responsive">
-                                <table id="example1" class="table mb-0 table-bordered table-hover table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th colspan="2">Session</th>
-                                            <th>Session Info</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="session_body">
-                                        <?php $i = 1;
-                                        $sql = $con->query("SELECT * FROM terms");
-                                        while ($rows = mysqli_fetch_assoc($sql)) { ?>
-                                            <tr>
-                                                <td><?= $rows['session'] ?></td>
-                                                <td>
-                                                    <table>
-                                                        <thead class="table">
-                                                            <th>Term</th>
-                                                            <th>Closes</th>
-                                                            <th>Next-Term</th>
-                                                            <th></th>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td><?= $rows['term'] ?></td>
-                                                            </tr>
-
-                                                        </tbody>
-                                                    </table>
-                                                    
-                                                </td>
-                                            </tr>
-
-
-                                        <?php   }
-
-                                        ?>
-
-
-
-
-                                    </tbody>
-                                </table>
-                            </div> -->
 
                         </div>
 
