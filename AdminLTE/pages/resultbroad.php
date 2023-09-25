@@ -159,10 +159,15 @@ require("myclass.php");
          <table id="example1" class="table mb-0 table-bordered table-hover table-striped">
           <thead>
            <tr>
+            <th>
+             <h3>EL-SHADDAI INTERNATIONAL GROUP OF SCHOOLS, IJOKA</h3>
+            </th>
+           </tr>
+           <tr>
             <td colspan="2"></td>
+
             <th colspan="5" class="text-center"> 1<sup>st</sup> Term </th>
-            <th colspan="5" class="text-center">2<sup>nd</sup> Term</th>
-            <th colspan="5" class="text-center">3<sup>rd</sup> Term</th>
+
             <th></th>
            </tr>
            <tr>
