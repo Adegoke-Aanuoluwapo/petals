@@ -154,7 +154,7 @@ require("myclass.php");
          <span class="t_text">Broad sheet</span>
         </h3>
        </div>
-       <div class="card-body p-1">
+       <div class="card-body ">
         <div class="table-responsive">
          <table id="example1" class="table mb-0 table-bordered table-hover table-striped">
           <thead>
@@ -166,24 +166,31 @@ require("myclass.php");
               First Term, 2021/2022 ACADEMIC SESSION
              </p>
             </th>
+            <?php $i = 1;
+            $sql = $con->query("SELECT * FROM students");
 
+            while ($rows = mysqli_fetch_assoc($sql)) {
+            ?>
            </tr>
            <tr>
-            <td colspan="2"></td>
-
-            <th> NAME </th>
-
-            <th>REGISTRATION NO:</th>
+            <th> NAME :<?= $rows['surname'] . ' ' . $rows['firstname'] ?></th>
+            <th>REGISTRATION NO: <?= $rows['reg'] ?></th>
             <th>RESULT ID:</th>
+            <th>CLASS:<?= $rows['class'] ?></th>
+            <th>GENDER:<?= $rows['gender'] ?></th>
            </tr>
            <tr>
-            <th>#</th>
-            <th>Student</th>
+            <th>subject</th>
             <th class="ca1">CA1</th>
             <th class="ca2">CA2</th>
             <th class="ca3">CA3</th>
             <th class="exam">Exam</th>
+            <th>Term Total</th>
+            <th>Last Term</th>
             <th>Total</th>
+            <th>class Avg</th>
+            <th>Grade</th>
+            <th>Remark</th>
 
             <!-- <th class="ca1">CA1</th>
             <th class="ca2">CA2</th>
@@ -202,8 +209,44 @@ require("myclass.php");
 
           </thead>
           <tbody id="result_body">
-           <tr></tr>
+           <?php if (isset($_POST['studentid'])) {
+              $studentid = $_POST['studentid'];
+              $sql = $con->query("SELECT * FROM results WHERE studentid='$studentid' ");
+             } ?>
+           <tr>
+            <td><?= $pro->SqLx('subjects', 'sn', @$rows['subject'], 'subject') ?></td>
+            <td><?= @$rows['ca1'] ?></td>
 
+            <td><?= @$rows['ca2'] ?></td>
+            <td><?= @$rows['ca3'] ?></td>
+            <td><?= @$rows['exam'] ?></td>
+            <td><?= @$rows['Ttotal'] ?></td>
+            <td><?= @$rows['lastterm'] ?></td>
+            <td><?= @$rows['total'] ?></td>
+            <td><?= @$rows['avg'] ?></td>
+            <td><?= @$rows['grade'] ?></td>
+            <td><?= @$rows['remark'] ?></td>
+
+
+           </tr>
+           <tr>
+            <td>
+             <p>Subjects</p>
+            </td>
+            <td>
+             <p>Total Score</p>
+            </td>
+            <td>
+             <p>Average</p>
+            </td>
+            <td>
+             <p>Class Average</p>
+            </td>
+            <td>
+             <p> No in Class</p>
+            </td>
+           </tr>
+          <?php } ?>
           </tbody>
          </table>
         </div>
@@ -221,7 +264,7 @@ require("myclass.php");
 
 
    <script src="https://portal.schoolpetal.com/assets/plugins/jquery/jquery.min.js"></script>
-
+   <!-- 
    <script>
     $(function() {
      $.ajaxSetup({
@@ -336,7 +379,7 @@ require("myclass.php");
 
 
     })
-   </script>
+   </script> -->
 
   </div>
 
