@@ -255,7 +255,21 @@ require("myclass.php");
                       <th>Remarks</th>
                     </tr>
                   </thead>
-                  
+                  <tbody>
+                    <?php $i = 1;
+                    $sql = $con->query("SELECT * FROM results");
+                    while ($rows = mysqli_fetch_assoc($sql)) {
+                    ?>
+                      <tr>
+                        <td><?= $i++ ?></td>
+                        <td><?= $rows['subject'] ?></td>
+                        <td><?= $rows['studentid'] ?></td>
+                        <td><?= $rows['class'] ?></td>
+                        <td><?= $rows['subject'] ?></td>
+                      </tr>
+                    <?php } ?>
+                  </tbody>
+
 
                 </table>
               </div>
