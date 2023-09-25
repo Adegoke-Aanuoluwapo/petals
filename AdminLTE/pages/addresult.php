@@ -248,11 +248,12 @@ require("myclass.php");
                         <th>sn</th>
                         <th>subject</th>
                         <th>student name</th>
+                        <th>class</th>
                         <th>ca1</th>
                         <th>ca2</th>
-                        <th>ca3</th>
                         <th>exams</th>
                         <th>Total</th>
+                        <th>Grade</th>
                         <th>Remarks</th>
                       </tr>
                     </thead>
@@ -263,15 +264,17 @@ require("myclass.php");
                       ?>
                         <tr>
                           <td><?= $i++ ?></td>
-                          <td><?= $pro->SqLx('subject', 'sn',$rows['subject'], 'subject') ?></td>
-                          <td><?= $pro->SqLx($rows['studentid']) ?></td>
-                          <td><?= $rows['class'] ?></td>
+                          <td><?= $pro->SqLx('subjects', 'sn', $rows['subject'], 'subject') ?></td>
+                          <td><?= $pro->SqLx('students', 'sn', $rows['studentid'], 'surname') ?> <?= $pro->SqLx('students', 'sn', $rows['studentid'], 'firstname') ?></td>
+                          <td><?= $pro->SqLx('class', 'sn', $rows['class'], 'class') ?></td>
 
                           <td><?= $rows['ca1'] ?></td>
                           <td><?= $rows['ca2'] ?></td>
 
                           <td><?= $rows['exam'] ?></td>
                           <td><?= $rows['total'] ?></td>
+                          <td><?= $pro->Grade($rows['total']) ?></td>
+                          <td><?= $pro->Remark($rows['total']) ?></td>
                         </tr>
                       <?php } ?>
                     </tbody>
@@ -281,24 +284,24 @@ require("myclass.php");
                 </div>
               </div>
 
-              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
 
 
-    <!-- /page content -->
-    <!-- SweetAlert2 -->
-    <script src=" ../plugins/sweetalert2/sweetalert2.min.js">
-                    </script>
-                    <!-- Toastr -->
-                    <script src="../plugins/toastr/toastr.min.js"></script>
-                    <script>
-                      <?= $pro->Alert() ?>
-                    </script>
+  <!-- /page content -->
+  <!-- SweetAlert2 -->
+  <script src=" ../plugins/sweetalert2/sweetalert2.min.js">
+  </script>
+  <!-- Toastr -->
+  <script src="../plugins/toastr/toastr.min.js"></script>
+  <script>
+    <?= $pro->Alert() ?>
+  </script>
 </body>
 
 </html>

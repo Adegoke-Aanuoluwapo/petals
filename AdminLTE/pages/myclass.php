@@ -159,6 +159,7 @@ $Remark ='';
     } else if ($Grade == 'F') {
       $Remark = 'Fail';
     }
+    return $Remark;
 }
 
 function Gradeset(){
