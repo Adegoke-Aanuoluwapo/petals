@@ -159,16 +159,22 @@ require("myclass.php");
          <table id="example1" class="table mb-0 table-bordered table-hover table-striped">
           <thead>
            <tr>
+
             <th>
-             <h3>EL-SHADDAI INTERNATIONAL GROUP OF SCHOOLS, IJOKA</h3>
+             <h3 class="text-center">EL-SHADDAI INTERNATIONAL GROUP OF SCHOOLS, IJOKA</h3>
+             <p>TERMLY CONTINUOUS ASSESSMENT DOSSIER
+              First Term, 2021/2022 ACADEMIC SESSION
+             </p>
             </th>
+
            </tr>
            <tr>
             <td colspan="2"></td>
 
-            <th colspan="5" class="text-center"> 1<sup>st</sup> Term </th>
+            <th> NAME </th>
 
-            <th></th>
+            <th>REGISTRATION NO:</th>
+            <th>RESULT ID:</th>
            </tr>
            <tr>
             <th>#</th>
