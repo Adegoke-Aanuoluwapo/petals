@@ -240,57 +240,65 @@ require("myclass.php");
                   <button type="submit" class="btn btn-primary" name="AddResult" style="width:100%">Submit Result</button>
                 </form>
               </div>
-              <div>
-                <table>
-                  <thead>
-                    <tr>
-                      <th>sn</th>
-                      <th>subject</th>
-                      <th>student name</th>
-                      <th>ca1</th>
-                      <th>ca2</th>
-                      <th>ca3</th>
-                      <th>exams</th>
-                      <th>Total</th>
-                      <th>Remarks</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <?php $i = 1;
-                    $sql = $con->query("SELECT * FROM results");
-                    while ($rows = mysqli_fetch_assoc($sql)) {
-                    ?>
+              <div class="card-body p-1">
+                <div class="table-responsive">
+                  <table class="table mb-0 table-bordered table-hover table-striped">
+                    <thead>
                       <tr>
-                        <td><?= $i++ ?></td>
-                        <td><?= $rows['subject'] ?></td>
-                        <td><?= $rows['studentid'] ?></td>
-                        <td><?= $rows['class'] ?></td>
-                        <td><?= $rows['subject'] ?></td>
+                        <th>sn</th>
+                        <th>subject</th>
+                        <th>student name</th>
+                        <th>ca1</th>
+                        <th>ca2</th>
+                        <th>ca3</th>
+                        <th>exams</th>
+                        <th>Total</th>
+                        <th>Remarks</th>
                       </tr>
-                    <?php } ?>
-                  </tbody>
+                    </thead>
+                    <tbody>
+                      <?php $i = 1;
+                      $sql = $con->query("SELECT * FROM results");
+                      while ($rows = mysqli_fetch_assoc($sql)) {
+                      ?>
+                        <tr>
+                          <td><?= $i++ ?></td>
+                          <td><?= $rows['subject'] ?></td>
+                          <td><?= $rows['studentid'] ?></td>
+                          <td><?= $rows['class'] ?></td>
+
+                          <td><?= $rows['ca1'] ?></td>
+                          <td><?= $rows['ca2'] ?></td>
+
+                          <td><?= $rows['exam'] ?></td>
+                          <td><?= $rows['total'] ?></td>
+                        </tr>
+                      <?php } ?>
+                    </tbody>
 
 
-                </table>
+                  </table>
+                </div>
               </div>
 
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
 
 
-  <!-- /page content -->
-  <!-- SweetAlert2 -->
-  <script src="../plugins/sweetalert2/sweetalert2.min.js"></script>
-  <!-- Toastr -->
-  <script src="../plugins/toastr/toastr.min.js"></script>
-  <script>
-    <?= $pro->Alert() ?>
-  </script>
+    <!-- /page content -->
+    <!-- SweetAlert2 -->
+    <script src=" ../plugins/sweetalert2/sweetalert2.min.js">
+                    </script>
+                    <!-- Toastr -->
+                    <script src="../plugins/toastr/toastr.min.js"></script>
+                    <script>
+                      <?= $pro->Alert() ?>
+                    </script>
 </body>
 
 </html>
