@@ -118,97 +118,100 @@ class Profile
     return;
   }
 
-function Grade($score){
-  $Grade = '';
-  if($score >= 75){
-    $Grade = 'A';
-  }
-  else if ($score >= 60) {
+  function Grade($score, $type = 1)
+  {
+    $Grade = '';
+    if ($score >= 75) {
+      $Grade = 'A';
+      $Remark = 'Excellent';
+    } else if ($score >= 60) {
       $Grade = 'B';
-  } 
-  else if ($score >= 50) {
-      $Grade = 'C';
-  } 
-  else if ($score >= 45) {
-      $Grade = 'D';
-  } 
-  else if ($score >= 40) {
-      $Grade = 'E';
-    }
-    else{
-      $Grade = 'F';
-    }
-    return $Grade;
-}
-function Remark($Grade){
-$Remark ='';
-  if($Grade == 'A'){
-    $Remark = 'Excellent';
-  }
-  else if ($Grade == 'B') {
       $Remark = 'Very Good';
-    } 
-  else if ($Grade == 'C') {
+    } else if ($score >= 50) {
+      $Grade = 'C';
       $Remark = 'Good';
-    } 
-  else if ($Grade == 'D') {
+    } else if ($score >= 45) {
+      $Grade = 'D';
       $Remark = 'Pass';
-    } 
-  else if ($Grade == 'E') {
+    } else if ($score >= 40) {
+      $Grade = 'E';
+      $Remark = 'Fair';
+    } else {
+      $Grade = 'F';
+      $Remark = 'Fail';
+    }
+    return $type == 1 ? $Grade : $Remark;
+  }
+
+
+  function Remark($Grade)
+  {
+    $Remark = '';
+    if ($Grade == 'A') {
+      $Remark = 'Excellent';
+    } else if ($Grade == 'B') {
+      $Remark = 'Very Good';
+    } else if ($Grade == 'C') {
+      $Remark = 'Good';
+    } else if ($Grade == 'D') {
+      $Remark = 'Pass';
+    } else if ($Grade == 'E') {
       $Remark = 'Fair';
     } else if ($Grade == 'F') {
       $Remark = 'Fail';
     }
     return $Remark;
-}
+  }
 
-function Gradeset(){
-  global $con, $report, $count;
- 
-  $A = $_POST['A'];
-  $B = $_POST['B'];
-  $C = $_POST['C'];
-  $D = $_POST['D'];
-  $E = $_POST['E'];
-  $F = $_POST['F'];
-  $ar = $_POST['ar'];
-  $br = $_POST['br'];
-  $cr = $_POST['cr'];
-  $dr = $_POST['dr'];
-  $er = $_POST['er'];
-  $fr = $_POST['fr'];
-  
-  $con->query("UPDATE result_setup SET A = '$A', B = '$B', C = '$C', D = '$D', E = '$E', F = '$F', ar = '$ar', br = '$br', cr = '$cr', dr ='$dr', er = '$er', fr = '$fr' WHERE sn = 1 ");
-$report = 'Operation Successful';
-return;
-}
-function ResultSetup(){
-  global $con,
-    $report, $count;
-  $ca1 = $_POST['ca1'];
+  function Gradeset()
+  {
+    global $con, $report, $count;
+
+    $A = $_POST['A'];
+    $B = $_POST['B'];
+    $C = $_POST['C'];
+    $D = $_POST['D'];
+    $E = $_POST['E'];
+    $F = $_POST['F'];
+    $ar = $_POST['ar'];
+    $br = $_POST['br'];
+    $cr = $_POST['cr'];
+    $dr = $_POST['dr'];
+    $er = $_POST['er'];
+    $fr = $_POST['fr'];
+
+    $con->query("UPDATE result_setup SET A = '$A', B = '$B', C = '$C', D = '$D', E = '$E', F = '$F', ar = '$ar', br = '$br', cr = '$cr', dr ='$dr', er = '$er', fr = '$fr' WHERE sn = 1 ");
+    $report = 'Operation Successful';
+    return;
+  }
+  function ResultSetup()
+  {
+    global $con,
+      $report, $count;
+    $ca1 = $_POST['ca1'];
     $ca2 = $_POST['ca2'];
     $ca3 = $_POST['ca3'];
     $exam = $_POST['exam'];
-    
-   $con->query("UPDATE result_setup SET ca1= '$ca1', ca2=  '$ca2',  ca3= '$ca3',exam = '$exam'");
+
+    $con->query("UPDATE result_setup SET ca1= '$ca1', ca2=  '$ca2',  ca3= '$ca3',exam = '$exam'");
     $report = 'Operation Successful';
-   return;
-}
-function editSchoolInfo(){
-  global $con, $report;
-  $school_name= $_POST['school_name'];
-  
-  $email = $_POST['email'];
-  $website = $_POST['website'];
-  $phone = $_POST['phone'];
-  $alt_phone = $_POST['alt_phone'];
-  $motto = $_POST['motto'];
-  $address = $_POST['address'];
-  $con->query("UPDATE school_info SET school_name = '$school_name', email = '$email', website= '$website', phone= '$phone', alt_phone='$alt_phone', motto= '$motto',address= '$address' WHERE sn =1");
-  $report = 'Operation Successful';
-  return;
-  
-}
+    return;
+  }
+  function editSchoolInfo()
+  {
+    global $con, $report;
+    $school_name = $_POST['school_name'];
+
+    $email = $_POST['email'];
+    $website = $_POST['website'];
+    $phone = $_POST['phone'];
+    $alt_phone = $_POST['alt_phone'];
+    $motto = $_POST['motto'];
+    $address = $_POST['address'];
+    $con->query("UPDATE school_info SET school_name = '$school_name', email = '$email', website= '$website', phone= '$phone', alt_phone='$alt_phone', motto= '$motto',address= '$address' WHERE sn =1");
+    $report = 'Operation Successful';
+    return;
+  }
   function Alert()
   {
     global $count, $report;
@@ -252,8 +255,10 @@ function editSchoolInfo(){
   {
     global $con, $report, $count;
     $subject = $_POST['subject'];
-    if(empty($subject)){
-      $report = 'input the subject'; $count = 1; return;
+    if (empty($subject)) {
+      $report = 'input the subject';
+      $count = 1;
+      return;
     }
     $sql = "INSERT INTO subjects(subject) VALUE('$subject')";
     mysqli_query($con, $sql);
@@ -353,8 +358,10 @@ function editSchoolInfo(){
     $phone = $_POST['phone'];
     $state = $_POST['state'];
     $lga = $_POST['lga'];
-    if(empty($name) || empty($address) || empty($email) || empty($phone) || empty($state) || empty($lga)){
-      $report = 'enter all the entries'; $count =1; return;
+    if (empty($name) || empty($address) || empty($email) || empty($phone) || empty($state) || empty($lga)) {
+      $report = 'enter all the entries';
+      $count = 1;
+      return;
     }
     $sql = "INSERT INTO parents(name, address, email, phone, state, lga) VALUES('$name', '$address', '$email', '$phone', '$state', '$lga')";
     mysqli_query($con, $sql);
@@ -435,31 +442,34 @@ function editSchoolInfo(){
     $othernames = $_POST['othernames'];
     $gender = $_POST['gender'];
     $reg = $_POST['reg'];
-    if(empty($guardian) || empty($class) || empty($arm) || empty($surname) || empty($firstname) || empty($othernames) || empty($gender) || ($reg)){
-      $report = 'enter all entries'; $count =1; return;
+    if (empty($guardian) || empty($class) || empty($arm) || empty($surname) || empty($firstname) || empty($othernames) || empty($gender) || ($reg)) {
+      $report = 'enter all entries';
+      $count = 1;
+      return;
     }
     $sql = "INSERT INTO students(guardian, class, arm, surname,firstname, othernames, gender, reg) VALUES('$guardian', '$class', '$arm', '$surname', '$firstname', '$othernames', '$gender', '$reg')";
     mysqli_query($con, $sql);
     $report = 'students added successfully';
     return;
   }
-  function Term(){
+  function Term()
+  {
     global $con, $count, $report;
     $session = $_POST['session'];
-   If(empty($session)){
-    $report = 'Select a session'; $count = 1; return;
-   }
+    if (empty($session)) {
+      $report = 'Select a session';
+      $count = 1;
+      return;
+    }
     $i = 0;
-    while($i < 3){
+    while ($i < 3) {
       $i++;
       $sql = "INSERT INTO terms(term, session) VALUES('$i', '$session')";
       mysqli_query($con, $sql);
     }
     $report = "Section successfully added";
     return;
-    
-    
-   }
+  }
   function AddResult()
   {
     global $con, $report, $count;
@@ -471,9 +481,9 @@ function editSchoolInfo(){
     $ca1 = $_POST['ca1'];
     $ca2 = $_POST['ca2'];
     $exam = $_POST['exam'];
-   
+
     $i = 0;
-    
+
     while ($i < count($studentid)) {
       $e = $i++;
 
@@ -483,8 +493,10 @@ function editSchoolInfo(){
       $c2 = $ca2[$e];
       $exa = $exam[$e];
       $total = (int)$c1 + (int)$c2 + (int)$exa;
-      if(empty($c1) || empty($c2) || empty($exa)){
-        $report = 'input all fields'; $count = 1; return;
+      if (empty($c1) || empty($c2) || empty($exa)) {
+        $report = 'input all fields';
+        $count = 1;
+        return;
       }
 
       $sql = "INSERT  INTO results(studentid, class, subject, ca1, ca2,  exam, total) VALUES( '$student', '$class', '$subject', '$c1', '$c2', '$exa', '$total')";

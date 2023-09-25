@@ -274,7 +274,7 @@ require("myclass.php");
                           <td><?= $rows['exam'] ?></td>
                           <td><?= $rows['total'] ?></td>
                           <td><?= $pro->Grade($rows['total']) ?></td>
-                          <td><?= $pro->Remark($rows['total']) ?></td>
+                          <td><?= $pro->Grade($rows['total'], 2) ?></td>
                         </tr>
                       <?php } ?>
                     </tbody>

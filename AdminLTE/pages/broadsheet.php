@@ -1,3 +1,7 @@
+<?php
+require("myclass.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -125,7 +129,7 @@
        <div class="col-md-4">
         <div class="card card-secondary card-outline">
          <div class="card-body">
-          <form id="loadSheet">
+          <form id="loadSheet" method="POST">
            <div class="form-group">
             <label>Select Programme</label>
             <select name="program" id="program" class="form-control select2bs4">
@@ -170,7 +174,7 @@
             <th class="exam">Exam</th>
             <th>Total</th>
 
-            <th class="ca1">CA1</th>
+            <!-- <th class="ca1">CA1</th>
             <th class="ca2">CA2</th>
             <th class="ca3">CA3</th>
             <th class="exam">Exam</th>
@@ -181,12 +185,13 @@
             <th class="ca3">CA3</th>
             <th class="exam">Exam</th>
             <th>Total</th>
-            <th>£f</th>
+            <th>£f</th> -->
 
            </tr>
 
           </thead>
           <tbody id="result_body">
+            <tr></tr>
 
           </tbody>
          </table>
