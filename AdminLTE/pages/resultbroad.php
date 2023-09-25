@@ -176,7 +176,7 @@ require("myclass.php");
             <th> NAME :<?= $rows['surname'] . ' ' . $rows['firstname'] ?></th>
             <th>REGISTRATION NO: <?= $rows['reg'] ?></th>
             <th>RESULT ID:</th>
-            <th>CLASS:<?= $rows['class'] ?></th>
+            <th>CLASS:<?= $pro->SqLx('class', 'sn',$rows['class'], 'class') ?></th>
             <th>GENDER:<?= $rows['gender'] ?></th>
            </tr>
            <tr>
@@ -211,8 +211,10 @@ require("myclass.php");
           <tbody id="result_body">
            <?php if (isset($_POST['studentid'])) {
               $studentid = $_POST['studentid'];
-              $sql = $con->query("SELECT * FROM results WHERE studentid='$studentid' ");
-             } ?>
+              $sql = $con->query("SELECT * FROM results  ");
+              while($rows = mysqli_fetch_assoc($sql)){ ?>
+
+             
            <tr>
             <td><?= $pro->SqLx('subjects', 'sn', @$rows['subject'], 'subject') ?></td>
             <td><?= @$rows['ca1'] ?></td>
@@ -226,7 +228,8 @@ require("myclass.php");
             <td><?= @$rows['avg'] ?></td>
             <td><?= @$rows['grade'] ?></td>
             <td><?= @$rows['remark'] ?></td>
-
+<?php }
+             } ?>
 
            </tr>
            <tr>
@@ -246,9 +249,13 @@ require("myclass.php");
              <p> No in Class</p>
             </td>
            </tr>
-          <?php } ?>
+          <?php } 
+        
+          ?>
           </tbody>
          </table>
+      
+
         </div>
 
         <div id="page_links">
