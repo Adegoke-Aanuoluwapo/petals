@@ -203,17 +203,17 @@ require("myclass.php");
                       <?php
 
                       if (isset($_POST['class'])) {
-                       
+
                         $class = $_POST['class'];
                         $subject = $_POST['subject'];
-                        
-                        
+
+
 
                         $i = 1;
                         $sql = $con->query("SELECT * FROM students WHERE class = '$class'");
-                       
+
                         while ($rows = mysqli_fetch_assoc($sql)) {
-                          
+
 
                       ?>
 
@@ -229,7 +229,7 @@ require("myclass.php");
 
                           </tr>
                       <?php  }
-                         } ?>
+                      } ?>
                     </tbody>
                   </table>
                   <input type="hidden" name="class" value="<?= @$class ?>" class="form-control">
@@ -240,6 +240,26 @@ require("myclass.php");
                   <button type="submit" class="btn btn-primary" name="AddResult" style="width:100%">Submit Result</button>
                 </form>
               </div>
+              <div>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>sn</th>
+                      <th>subject</th>
+                      <th>student name</th>
+                      <th>ca1</th>
+                      <th>ca2</th>
+                      <th>ca3</th>
+                      <th>exams</th>
+                      <th>Total</th>
+                      <th>Remarks</th>
+                    </tr>
+                  </thead>
+                  
+
+                </table>
+              </div>
+
             </div>
           </div>
         </div>
@@ -257,5 +277,6 @@ require("myclass.php");
   <script>
     <?= $pro->Alert() ?>
   </script>
-  </body>
+</body>
+
 </html>
