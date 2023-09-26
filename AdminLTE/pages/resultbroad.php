@@ -168,7 +168,7 @@ require("myclass.php");
                                                     <th colspan="12">
                                                         <h3 class="text-center">EL-SHADDAI INTERNATIONAL GROUP OF SCHOOLS, IJOKA</h3>
                                                         <p class="text-center">TERMLY CONTINUOUS ASSESSMENT DOSSIER
-                                                            First Term, 2021/2022 ACADEMIC SESSION
+                                                            First Term, 2023/2024 ACADEMIC SESSION
                                                         </p>
                                                     </th>
 
@@ -176,16 +176,16 @@ require("myclass.php");
                                                 <tr>
                                                     <th colspan="3"> NAME :<?= $rows['surname'] . ' ' . $rows['firstname'] ?></th>
                                                     <th colspan="3">REGISTRATION NO: <?= $rows['reg'] ?></th>
-                                                    <th colspan="2">RESULT ID:</th>
+                                                    <th colspan="2">RESULT ID: <?= $rows['sn'] ?></th>
                                                     <th colspan="2">CLASS:<?= $pro->SqLx('class', 'sn', $rows['class'], 'class') ?></th>
                                                     <th colspan="2">GENDER:<?= $rows['gender'] ?></th>
                                                 </tr>
                                                 <tr>
-                                                    <th>subject</th>
-                                                    <th class="ca1">CA1</th>
-                                                    <th class="ca2">CA2</th>
-                                                    <th class="ca3">CA3</th>
-                                                    <th class="exam">Exam</th>
+                                                    <th colspan="2">subject</th>
+                                                    <th colspan="0.5">CA1</th>
+                                                    <th>CA2</th>
+                                                    <th>CA3</th>
+                                                    <th>Exam</th>
                                                     <th>Term Total</th>
                                                     <th>Last Term</th>
                                                     <th>Total</th>
@@ -212,7 +212,7 @@ require("myclass.php");
                                             <tbody id="result_body">
                                                 <?php if (isset($_POST['studentid'])) {
                                                     $studentid = $_POST['studentid'];
-                                                    $sql = $con->query("SELECT * FROM results  ");
+                                                    $sql = $con->query("SELECT * FROM results WHERE sn = '$studentid' ");
                                                     while ($rows = mysqli_fetch_assoc($sql)) { ?>
 
 
