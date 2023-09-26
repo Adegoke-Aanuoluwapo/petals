@@ -477,9 +477,12 @@ class Profile
   {
     global $con, $count, $report;
     $sn = $_POST['Activate'];
-    $con->query("UPDATE terms SET status = 0 ");
-    $con->query("UPDATE terms SET status =  1 WHERE sn = '$sn' ");
-    $report = 'term updated successfully ' . $sn;
+    $result= $con->query("UPDATE terms SET status = 0 ");
+    $result= $con->query("UPDATE terms SET status =  1 WHERE sn = '$sn' ");
+    if(!empty($result)){
+ $report = 'term updated successfully ' . $sn;
+    }
+   
     echo $sn;
     return;
   }
