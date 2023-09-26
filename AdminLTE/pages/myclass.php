@@ -470,6 +470,14 @@ class Profile
     $report = "Section successfully added";
     return;
   }
+
+  function Activate($sn){
+    global $con;
+    $con->query("UPDATE terms SET status = 0;
+    UPDATE terms SET status =  1 WHERE sn = '$sn'
+    "); 
+    return;
+  }
   function AddResult()
   {
     global $con, $report, $count;
