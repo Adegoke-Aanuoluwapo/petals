@@ -157,6 +157,7 @@ require("myclass.php");
                             <div class="card-body ">
                                 <div class="table-responsive">
                                     <?php $i = 1;
+                                   
                                     $sql = $con->query("SELECT * FROM students");
 
                                     while ($rows = mysqli_fetch_assoc($sql)) {
@@ -182,7 +183,7 @@ require("myclass.php");
                                                 </tr>
                                                 <tr>
                                                     <th colspan="2">subject</th>
-                                                    <th colspan="0.5">CA1</th>
+                                                    <th colspan="">CA1</th>
                                                     <th>CA2</th>
                                                     <th>CA3</th>
                                                     <th>Exam</th>
@@ -210,19 +211,20 @@ require("myclass.php");
 
                                             </thead>
                                             <tbody id="result_body">
-                                                <?php if (isset($_POST['studentid'])) {
-                                                    $studentid = $_POST['studentid'];
-                                                    $sql = $con->query("SELECT * FROM results WHERE sn = '$studentid' ");
+                                                <?php
+                                                $i++;
+                                               $sn = $_GET['sn'];
+                                                    $sql = $con->query("SELECT * FROM results WHERE sn = '$sn'  ");
                                                     while ($rows = mysqli_fetch_assoc($sql)) { ?>
 
 
                                                         <tr>
                                                             <td><?= $pro->SqLx('subjects', 'sn', @$rows['subject'], 'subject') ?></td>
-                                                            <td><?= @$rows['ca1'] ?></td>
+                                                            <td><?= @$rows['ca1'] ?>4</td>
 
-                                                            <td><?= @$rows['ca2'] ?></td>
-                                                            <td><?= @$rows['ca3'] ?></td>
-                                                            <td><?= @$rows['exam'] ?></td>
+                                                            <td><?= @$rows['ca2'] ?><p>5</p></td>
+                                                            <td><?= @$rows['ca3'] ?>8</td>
+                                                            <td><?= @$rows['exam'] ?>18</td>
                                                             <td><?= @$rows['Ttotal'] ?></td>
                                                             <td><?= @$rows['lastterm'] ?></td>
                                                             <td><?= @$rows['total'] ?></td>
@@ -250,7 +252,10 @@ require("myclass.php");
                                                                 <p> No in Class</p>
                                                             </td>
                                                         </tr>
-                                                    <?php }
+                                                        <tr>
+                                                            <td colspan="12" style="border-style:double"></td>
+                                                        </tr>
+                                                    <?php 
 
                                                     ?>
                                             </tbody>
