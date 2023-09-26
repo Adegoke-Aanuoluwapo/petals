@@ -156,45 +156,40 @@ require("myclass.php");
                             </div>
                             <div class="card-body ">
                                 <div class="table-responsive">
-                                    <?php $i = 1;
 
-                                    $sql = $con->query("SELECT * FROM students");
+                                    <table id="example1" class="table mb-0 table-bordered table-hover table-striped">
+                                        <thead>
+                                            <tr>
 
-                                    while ($rows = mysqli_fetch_assoc($sql)) {
-                                    ?>
-                                        <table id="example1" class="table mb-0 table-bordered table-hover table-striped">
-                                            <thead>
-                                                <tr>
+                                                <th colspan="12">
+                                                    <h3 class="text-center">EL-SHADDAI INTERNATIONAL GROUP OF SCHOOLS, IJOKA</h3>
+                                                    <p class="text-center">TERMLY CONTINUOUS ASSESSMENT DOSSIER
+                                                        First Term, 2023/2024 ACADEMIC SESSION
+                                                    </p>
+                                                </th>
 
-                                                    <th colspan="12">
-                                                        <h3 class="text-center">EL-SHADDAI INTERNATIONAL GROUP OF SCHOOLS, IJOKA</h3>
-                                                        <p class="text-center">TERMLY CONTINUOUS ASSESSMENT DOSSIER
-                                                            First Term, 2023/2024 ACADEMIC SESSION
-                                                        </p>
-                                                    </th>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="3"> NAME :</th>
+                                                <th colspan="3">REGISTRATION NO: </th>
+                                                <th colspan="2">RESULT ID: </th>
+                                                <th colspan="2">CLASS:</th>
+                                                <th colspan="2">GENDER:</th>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="2">subject</th>
+                                                <th colspan="">CA1</th>
+                                                <th>CA2</th>
+                                                <th>CA3</th>
+                                                <th>Exam</th>
+                                                <th>Term Total</th>
+                                                <th>Last Term</th>
+                                                <th>Total</th>
+                                                <th>class Avg</th>
+                                                <th>Grade</th>
+                                                <th>Remark</th>
 
-                                                </tr>
-                                                <tr>
-                                                    <th colspan="3"> NAME :</th>
-                                                    <th colspan="3">REGISTRATION NO: </th>
-                                                    <th colspan="2">RESULT ID: </th>
-                                                    <th colspan="2">CLASS:</th>
-                                                    <th colspan="2">GENDER:</th>
-                                                </tr>
-                                                <tr>
-                                                    <th colspan="2">subject</th>
-                                                    <th colspan="">CA1</th>
-                                                    <th>CA2</th>
-                                                    <th>CA3</th>
-                                                    <th>Exam</th>
-                                                    <th>Term Total</th>
-                                                    <th>Last Term</th>
-                                                    <th>Total</th>
-                                                    <th>class Avg</th>
-                                                    <th>Grade</th>
-                                                    <th>Remark</th>
-
-                                                    <!-- <th class="ca1">CA1</th>
+                                                <!-- <th class="ca1">CA1</th>
             <th class="ca2">CA2</th>
             <th class="ca3">CA3</th>
             <th class="exam">Exam</th>
@@ -207,69 +202,69 @@ require("myclass.php");
             <th>Total</th>
             <th>£f</th> -->
 
+                                            </tr>
+
+                                        </thead>
+                                        <tbody id="result_body">
+                                            <?php
+                                            // $i++;
+
+                                            //     $sql = $con->query("SELECT * FROM results   ");
+                                            //     while ($rows = mysqli_fetch_assoc($sql)) 
+                                            { ?>
+
+
+                                                <tr>
+
+                                                    <td colspan="2"></td>
+
+                                                    <td>
+                                                        <p></p>
+                                                    </td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td><?= @$rows['lastterm'] ?></td>
+                                                    <td><?= @$rows['total'] ?></td>
+                                                    <td><?= @$rows['avg'] ?></td>
+                                                    <td><?= @$rows['grade'] ?></td>
+                                                    <td><?= @$rows['remark'] ?></td>
+                                                    <td></td>
+                                                <?php }
+                                                ?>
+
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="3">
+                                                        <p>Subjects</p>
+                                                    </td>
+                                                    <td colspan="3">
+                                                        <p>Total Score</p>
+                                                    </td>
+                                                    <td colspan="2">
+                                                        <p>Average</p>
+                                                    </td>
+                                                    <td colspan="2">
+                                                        <p>Class Average</p>
+                                                    </td>
+                                                    <td colspan="2">
+                                                        <p> No in Class</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th colspan="12" style="border-style:double">
+                                                        <p>Vacation Date <br />
+                                                            Teacher's Comments</p>
+                                                    </th>
+
                                                 </tr>
 
-                                            </thead>
-                                            <tbody id="result_body">
-                                                <?php
-                                                // $i++;
+                                        </tbody>
+                                    </table>
 
-                                                //     $sql = $con->query("SELECT * FROM results   ");
-                                                //     while ($rows = mysqli_fetch_assoc($sql)) 
-                                                { ?>
+                                    <?php
 
-
-                                                    <tr>
-                                                      
-                                                        <td colspan="2"></td>
-
-                                                        <td>
-                                                            <p></p>
-                                                        </td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td><?= @$rows['lastterm'] ?></td>
-                                                        <td><?= @$rows['total'] ?></td>
-                                                        <td><?= @$rows['avg'] ?></td>
-                                                        <td><?= @$rows['grade'] ?></td>
-                                                        <td><?= @$rows['remark'] ?></td>
-                                                        <td></td>
-                                                <?php }
-                                             ?>
-
-                                                    </tr>
-                                                    <tr>
-                                                        <td colspan="3">
-                                                            <p>Subjects</p>
-                                                        </td>
-                                                        <td colspan="3">
-                                                            <p>Total Score</p>
-                                                        </td>
-                                                        <td colspan="2">
-                                                            <p>Average</p>
-                                                        </td>
-                                                        <td colspan="2">
-                                                            <p>Class Average</p>
-                                                        </td>
-                                                        <td colspan="2">
-                                                            <p> No in Class</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th colspan="12" style="border-style:double">Vacation Date <br />
-                                                            Teacher's Comments
-                                                        </th>
-
-                                                    </tr>
-
-                                            </tbody>
-                                        </table>
-
-                                        <?php
-}
-echo '<br/>';
-                                        ?>
+                                    ?>
                                 </div>
 
                                 <div id="page_links">
