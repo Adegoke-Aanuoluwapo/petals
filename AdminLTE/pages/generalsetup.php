@@ -1,4 +1,7 @@
-<?php require("myclass.php") ?>
+<?php require("myclass.php");
+
+//  $status = $_POST['status'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -203,6 +206,7 @@
 
                                                         </tr>
                                                         <?php $sql = $con->query("SELECT * FROM terms WHERE session='$s' ");
+
                                                         while ($row = mysqli_fetch_assoc($sql)) {  ?>
 
 
@@ -210,7 +214,9 @@
                                                                 <td>Term <?= $row['term'] ?></td>
                                                                 <td><?= date('Y')  ?></td>
                                                                 <td><?= date('Y')  ?></td>
-                                                                <td><button class=" btn btn-xs btn-primary editTermInfo">Edit</button><button class="btn btn-sm btn-danger" type="submit">Activate</button></td>
+                                                                <form method="post">
+                                                                    <td><button class=" btn btn-xs btn-primary editTermInfo">Edit</button><button class="btn btn-sm btn-danger" type="submit" value="<?= $row['sn'] ?>" name='Activate'>Activate </button></td>
+                                                                </form>
 
                                                             </tr>
                                                         <?php } ?>
@@ -225,6 +231,7 @@
                                     </tbody>
                                 </table>
                             </div>
+                            <input type="text" name='status' value="<?= @$status ?>">
 
 
                         </div>
@@ -247,7 +254,7 @@
                                     </div>
                                     <div class="col-md-6 form-group">
                                         <label for="">E-mail</label>
-                                        <input type="email" class="form-control"  name='email'>
+                                        <input type="email" class="form-control" name='email'>
                                     </div>
                                     <div class="col-md-6 form-group">
                                         <label for="">Website</label>

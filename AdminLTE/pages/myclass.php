@@ -57,6 +57,8 @@ class Profile
       $this->Gradeset();
     } elseif (isset($_POST['UpdateSchoolInfo'])) {
       $this->editSchoolInfo();
+    } elseif (isset($_POST['Activate'])) {
+      $this->Activate();
     }
   }
   public function SignUp()
@@ -471,13 +473,17 @@ class Profile
     return;
   }
 
-  function Activate($sn){
-    global $con;
-    $con->query("UPDATE terms SET status = 0;
-    UPDATE terms SET status =  1 WHERE sn = '$sn'
-    "); 
+  function Activate()
+  {
+    global $con, $count, $report;
+    $sn = $_POST['Activate'];
+    $con->query("UPDATE terms SET status = 0 ");
+    $con->query("UPDATE terms SET status =  1 WHERE sn = '$sn' ");
+    $report = 'term updated successfully ' . $sn;
+    echo $sn;
     return;
   }
+
   function AddResult()
   {
     global $con, $report, $count;
