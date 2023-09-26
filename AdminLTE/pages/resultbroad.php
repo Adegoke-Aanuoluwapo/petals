@@ -253,8 +253,13 @@ require("myclass.php");
                                                 </tr>
                                                 <tr>
                                                     <th colspan="12" style="border-style:double">
-                                                        <p>Vacation Date <br />
-                                                            Teacher's Comments</p>
+                                                        <div style="display:flex">
+                                                            <p>Vacation Date <br />
+                                                                Teacher's Comments</p>
+                                                            <p style="margin-left:700px">Resumption Date
+                                                        <br />
+                                                    Principal's Comments</p>
+                                                        </div>
                                                     </th>
 
                                                 </tr>
