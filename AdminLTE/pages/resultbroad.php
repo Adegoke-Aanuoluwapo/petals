@@ -216,25 +216,25 @@ require("myclass.php");
 
                                                 <tr>
 
-                                                    <td colspan="2"></td>
+                                                    <td colspan="2">Chemistry</td>
 
                                                     <td>
-                                                        <p></p>
+                                                        13
                                                     </td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td><?= @$rows['lastterm'] ?></td>
-                                                    <td><?= @$rows['total'] ?></td>
-                                                    <td><?= @$rows['avg'] ?></td>
-                                                    <td><?= @$rows['grade'] ?></td>
-                                                    <td><?= @$rows['remark'] ?></td>
-                                                    <td></td>
-                                                <?php }
-                                                ?>
+                                                    <td>13</td>
+                                                    <td>10</td>
+                                                    <td>55</td>
+                                                    <td><?= @$rows['lastterm'] ?>88</td>
+                                                    <td><?= @$rows['total'] ?>91</td>
+                                                    <td><?= @$rows['avg'] ?>179</td>
+                                                    <td><?= @$rows['grade'] ?>89.5</td>
+                                                    <td><?= @$rows['remark'] ?>A</td>
+                                                    <td>Excellent</td>
+                                                        <?php }
+                                                        ?>
 
                                                 </tr>
-                                                <tr>
+                                                <tr style="">
                                                     <td colspan="3">
                                                         <p>Subjects</p>
                                                     </td>
@@ -252,13 +252,14 @@ require("myclass.php");
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <th colspan="12" style="border-style:double">
+                                                    <th colspan="12">
                                                         <div style="display:flex">
                                                             <p>Vacation Date: <br />
                                                                 Teacher's Comments:</p>
                                                             <p style="margin-left:700px">Resumption Date
-                                                        <br />
-                                                    Principal's Comments</p>
+                                                                <br />
+                                                                Principal's Comments
+                                                            </p>
                                                         </div>
                                                     </th>
 
