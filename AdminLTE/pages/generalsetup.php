@@ -210,7 +210,7 @@
                                                                 <td>Term <?= $row['term'] ?></td>
                                                                 <td><?= date('Y')  ?></td>
                                                                 <td><?= date('Y')  ?></td>
-                                                                <td><button class=" btn btn-xs btn-primary editTermInfo">Edit</button><button class="btn btn-sm btn-danger">Activate</button></td>
+                                                                <td><button class=" btn btn-xs btn-primary editTermInfo">Edit</button><button class="btn btn-sm btn-danger" type="submit">Activate</button></td>
 
                                                             </tr>
                                                         <?php } ?>

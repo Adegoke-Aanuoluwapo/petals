@@ -125,7 +125,7 @@ require("myclass.php");
             <section class="content">
                 <div class="row">
                     <div class="col-md-12 col-12">
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col-md-4">
                                 <div class="card card-secondary card-outline">
                                     <div class="card-body">
@@ -143,7 +143,7 @@ require("myclass.php");
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
 
 
@@ -234,21 +234,40 @@ require("myclass.php");
                                                         ?>
 
                                                 </tr>
-                                                <tr style="">
+                                                 <tr>
+
+                                                    <td colspan="2">Biology</td>
+
+                                                    <td>
+                                                        10
+                                                    </td>
+                                                    <td>15</td>
+                                                    <td>10</td>
+                                                    <td>55</td>
+                                                    <td><?= @$rows['lastterm'] ?>88</td>
+                                                    <td><?= @$rows['total'] ?>91</td>
+                                                    <td><?= @$rows['avg'] ?>179</td>
+                                                    <td><?= @$rows['grade'] ?>88</td>
+                                                    <td><?= @$rows['remark'] ?>A</td>
+                                                    <td>Excellent</td>
+                                                       
+
+                                                </tr>
+                                                <tr >
                                                     <td colspan="3">
-                                                        <p>Subjects</p>
+                                                        <p>Subjects:</p>
                                                     </td>
                                                     <td colspan="3">
-                                                        <p>Total Score</p>
+                                                        <p>Total Score:</p>
                                                     </td>
                                                     <td colspan="2">
-                                                        <p>Average</p>
+                                                        <p>Average:</p>
                                                     </td>
                                                     <td colspan="2">
-                                                        <p>Class Average</p>
+                                                        <p>Class Average:</p>
                                                     </td>
                                                     <td colspan="2">
-                                                        <p> No in Class</p>
+                                                        <p> No in Class:</p>
                                                     </td>
                                                 </tr>
                                                 <tr>
