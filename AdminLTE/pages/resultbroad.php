@@ -157,7 +157,7 @@ require("myclass.php");
                             <div class="card-body ">
                                 <div class="table-responsive">
                                     <?php $i = 1;
-                                   
+
                                     $sql = $con->query("SELECT * FROM students");
 
                                     while ($rows = mysqli_fetch_assoc($sql)) {
@@ -175,11 +175,11 @@ require("myclass.php");
 
                                                 </tr>
                                                 <tr>
-                                                    <th colspan="3"> NAME :<?= $rows['surname'] . ' ' . $rows['firstname'] ?></th>
-                                                    <th colspan="3">REGISTRATION NO: <?= $rows['reg'] ?></th>
-                                                    <th colspan="2">RESULT ID: <?= $rows['sn'] ?></th>
-                                                    <th colspan="2">CLASS:<?= $pro->SqLx('class', 'sn', $rows['class'], 'class') ?></th>
-                                                    <th colspan="2">GENDER:<?= $rows['gender'] ?></th>
+                                                    <th colspan="3"> NAME :</th>
+                                                    <th colspan="3">REGISTRATION NO: </th>
+                                                    <th colspan="2">RESULT ID: </th>
+                                                    <th colspan="2">CLASS:</th>
+                                                    <th colspan="2">GENDER:</th>
                                                 </tr>
                                                 <tr>
                                                     <th colspan="2">subject</th>
@@ -212,56 +212,64 @@ require("myclass.php");
                                             </thead>
                                             <tbody id="result_body">
                                                 <?php
-                                                $i++;
-                                               $sn = $_GET['sn'];
-                                                    $sql = $con->query("SELECT * FROM results WHERE sn = '$sn'  ");
-                                                    while ($rows = mysqli_fetch_assoc($sql)) { ?>
+                                                // $i++;
+
+                                                //     $sql = $con->query("SELECT * FROM results   ");
+                                                //     while ($rows = mysqli_fetch_assoc($sql)) 
+                                                { ?>
 
 
-                                                        <tr>
-                                                            <td><?= $pro->SqLx('subjects', 'sn', @$rows['subject'], 'subject') ?></td>
-                                                            <td><?= @$rows['ca1'] ?>4</td>
+                                                    <tr>
+                                                      
+                                                        <td colspan="2"></td>
 
-                                                            <td><?= @$rows['ca2'] ?><p>5</p></td>
-                                                            <td><?= @$rows['ca3'] ?>8</td>
-                                                            <td><?= @$rows['exam'] ?>18</td>
-                                                            <td><?= @$rows['Ttotal'] ?></td>
-                                                            <td><?= @$rows['lastterm'] ?></td>
-                                                            <td><?= @$rows['total'] ?></td>
-                                                            <td><?= @$rows['avg'] ?></td>
-                                                            <td><?= @$rows['grade'] ?></td>
-                                                            <td><?= @$rows['remark'] ?></td>
-                                                    <?php }
-                                                } ?>
+                                                        <td>
+                                                            <p></p>
+                                                        </td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td><?= @$rows['lastterm'] ?></td>
+                                                        <td><?= @$rows['total'] ?></td>
+                                                        <td><?= @$rows['avg'] ?></td>
+                                                        <td><?= @$rows['grade'] ?></td>
+                                                        <td><?= @$rows['remark'] ?></td>
+                                                        <td></td>
+                                                <?php }
+                                             ?>
 
-                                                        </tr>
-                                                        <tr>
-                                                            <td colspan="3">
-                                                                <p>Subjects</p>
-                                                            </td>
-                                                            <td colspan="3">
-                                                                <p>Total Score</p>
-                                                            </td>
-                                                            <td colspan="2">
-                                                                <p>Average</p>
-                                                            </td>
-                                                            <td colspan="2">
-                                                                <p>Class Average</p>
-                                                            </td>
-                                                            <td colspan="2">
-                                                                <p> No in Class</p>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td colspan="12" style="border-style:double"></td>
-                                                        </tr>
-                                                    <?php 
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="3">
+                                                            <p>Subjects</p>
+                                                        </td>
+                                                        <td colspan="3">
+                                                            <p>Total Score</p>
+                                                        </td>
+                                                        <td colspan="2">
+                                                            <p>Average</p>
+                                                        </td>
+                                                        <td colspan="2">
+                                                            <p>Class Average</p>
+                                                        </td>
+                                                        <td colspan="2">
+                                                            <p> No in Class</p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="12" style="border-style:double">Vacation Date <br />
+                                                            Teacher's Comments
+                                                        </th>
 
-                                                    ?>
+                                                    </tr>
+
                                             </tbody>
                                         </table>
 
-
+                                        <?php
+}
+echo '<br/>';
+                                        ?>
                                 </div>
 
                                 <div id="page_links">
