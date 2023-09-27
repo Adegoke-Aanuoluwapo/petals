@@ -23,8 +23,23 @@
    </h3>
    <div class="text-xl font-bold mb-4">{{$listing->company}}</div>
    <ul class="flex">
-    <li class="bg--black text-white rounded-xl"></li>
+    <li class="bg-black text-white rounded-xl px-3 py-1 mr-2"><a href="#">API</li>
+     <li class="bg-black text-white rounded-xl px-3 py-1 mr-2"><a href="#">Backend</li>
+      <li class="bg-black text-white rounded-xl px-3 py-1 mr-2"><a href="#">Vue</li>
+  
    </ul>
+   <div class="text-lg my-4">
+    <i class="fa-solid fa-location-dot"></i>
+   </div>
+   <div class="border border-gray-200 w-full mb-6"></div>
+   <div>
+    <h3 class="text-3xl font-bold mb-4">{{$listing->description}}</h3>
+    <div class="text-lg space-y-6">
+     <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim tempore quam aperiam doloribus rerum alias consequuntur repellat eos optio quidem at dolores, laboriosam ad eligendi sequi, velit, ut porro impedit?
+     </p>
+    </div>
+   </div>
   </div>
  </div>
 </div>
