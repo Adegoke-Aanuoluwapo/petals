@@ -1,4 +1,4 @@
-<main>
+
 
   <form>
    <div class="relative border-2 border-gray-100 m-4">
@@ -11,4 +11,3 @@
     </div>
    </div>
   </form>
-</main>
