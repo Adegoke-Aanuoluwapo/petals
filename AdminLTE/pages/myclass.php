@@ -504,7 +504,7 @@ class Profile
     global $con;
     $term = $this->sqLx1('terms', 'status', 1, 'term');
     $session = $this->sqLx1('terms', 'status', 1, 'session');
-    $sql = $con->query("SELECT * FROM resultsum WHERE sid = '$sid' AND term = '$term'  ");
+    $sql = $con->query("SELECT * FROM resultsum WHERE sid = '$sid' AND term = '$term' AND session = '$session'  ");
     if (mysqli_num_rows($sql) == 0) {
       $con->query("INSERT INTO resultsum(sid, term, session) VALUES('$sid', '$term', '$session')");
     }
@@ -518,6 +518,7 @@ class Profile
       $sid = $rows['sn'];
       $this->checkResultProfile($sid);
     }
+    return;
   }
   function realTerm($term)
   {
