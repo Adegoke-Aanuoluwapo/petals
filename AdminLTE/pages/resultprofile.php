@@ -156,27 +156,32 @@
           <table class="table table-striped table-hover">
            <tbody>
             <tr>
-             <th>#</th>
+             <th>sn</th>
+             <th>student name</th>
              <th>Session</th>
              <th>Term</th>
              <th>Class</th>
-             <th>Subjects</th>
+             
              <th>Date</th>
              <th></th>
             </tr>
 
 
+          <?php $i= 1; $sql= $con->query("SELECT * FROM  results");
+          while($rows =mysqli_fetch_assoc($sql)){
 
+         
+          ?>
             <tr>
-             <td>1</td>
-             <td>2022/2023</td>
+             <td><?= $i++ ?></td>
+             <td><?= $rows['studentid'] ?></td>
              <td>First Term</td>
              <td>sss 1</td>
              <td>7</td>
              <td>16 Aug, 2022</td>
              <td><a class="btn btn-xs btn-info" href="/control/view-result/284"><i class="fas fa-eye"></i> View</a></td>
             </tr>
-
+ <?php } ?>
 
 
            </tbody>
