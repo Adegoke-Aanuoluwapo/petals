@@ -491,23 +491,27 @@ class Profile
     
     $term = $_POST['term'];
     $session = $_POST['session'];
-    $sql= $con->query("SELECT * FROM result_sum WHERE sid ='$id' AND term = '$term' AND session = '$session' ");
+    $sql= $con->query("SELECT * FROM result_sum WHERE sid ='$sid' AND term = '$term' AND session = '$session' ");
     if(mysqli_num_rows($sql)==0){
-      $sq = $con->query("INSERT into result_sum(sid, term, session) VALUES('$id', '$term', '$session')");
-      $result = $rows['sn'];
-      return $result;
+      $con->query("INSERT into result_sum(sid, term, session) VALUES('$sid', '$term', '$session')");
+    
+      return;
 
     }
 
   }
 function checkResultProfile($sid){
   global $con;
-$term = sqLx1('terms', 'status', 1, 'term');
-$session=sqLx1('session', 'status', 1, 'session');
-$sql=$con->query("SELECT * result_sum WHERE sid = '$sid' AND term = '$term' AND session = '$session' ");
-return mysqli_num_rows($sql);
+$term = $this->sqLx1('terms', 'status', 1, 'term');
+$session= $this->sqLx1('session', 'status', 1, 'session');
+$sql= $con->query("SELECT * result_sum WHERE sid = '$sid' AND term = '$term' AND session = '$session' ");
+if(mysqli_num_rows($sql)==0){
+$con->query("INSERT INTO result_sum(sid, term, session) VALUES('$sid', '$term', '$session')");
+    }
+    return;
 
 }
+function addResultSum(){}
 
 
   function AddResult()
