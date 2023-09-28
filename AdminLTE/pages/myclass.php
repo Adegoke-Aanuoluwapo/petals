@@ -244,7 +244,7 @@ class Profile
     return mysqli_num_rows($sql);
   }
 
-  function sqLx1($table, $col, $val, $ret)
+ public function sqLx1($table, $col, $val, $ret)
   {
     global $con;
     $sql = $con->query("SELECT * FROM $table WHERE $col = '$val'");
@@ -500,8 +500,15 @@ class Profile
     }
 
   }
+function checkResultProfile($sid){
+  global $con;
+$term = sqLx1('terms', 'status', 1, 'term');
+$session=sqLx1('session', 'status', 'session');
+$sql=$con->query("SELECT * result_sum WHERE sid = '$sid' AND term = '$term' AND session = '$session' ");
+return mysqli_num_rows($sql);
 
-  
+}
+
 
   function AddResult()
   {
