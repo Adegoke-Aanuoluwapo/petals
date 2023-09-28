@@ -244,7 +244,7 @@ class Profile
     return mysqli_num_rows($sql);
   }
 
- public function sqLx1($table, $col, $val, $ret)
+  public function sqLx1($table, $col, $val, $ret)
   {
     global $con;
     $sql = $con->query("SELECT * FROM $table WHERE $col = '$val'");
@@ -477,61 +477,60 @@ class Profile
   {
     global $con, $count, $report;
     $sn = $_POST['Activate'];
-    $result= $con->query("UPDATE terms SET status = 0 ");
-    $result= $con->query("UPDATE terms SET status =  1 WHERE sn = '$sn' ");
-    if(!empty($result)){
- $report = 'term updated successfully ' . $sn;
+    $result = $con->query("UPDATE terms SET status = 0 ");
+    $result = $con->query("UPDATE terms SET status =  1 WHERE sn = '$sn' ");
+    if (!empty($result)) {
+      $report = 'term updated successfully ' . $sn;
     }
-   
+
     echo $sn;
     return;
   }
-  function resultSum($sid){
+  function resultSum($sid)
+  {
     global $con;
-    
+
     $term = $_POST['term'];
     $session = $_POST['session'];
-    $sql= $con->query("SELECT * FROM result_sum WHERE sid ='$sid' AND term = '$term' AND session = '$session' ");
-    if(mysqli_num_rows($sql)==0){
+    $sql = $con->query("SELECT * FROM result_sum WHERE sid ='$sid' AND term = '$term' AND session = '$session' ");
+    if (mysqli_num_rows($sql) == 0) {
       $con->query("INSERT into result_sum(sid, term, session) VALUES('$sid', '$term', '$session')");
-    
+
       return;
-
     }
-
   }
-function checkResultProfile($sid){
-  global $con;
-$term = $this->sqLx1('terms', 'status', 1, 'term');
-$session= $this->sqLx1('session', 'status', 1, 'session');
-$sql= $con->query("SELECT * result_sum WHERE sid = '$sid' AND term = '$term' AND session = '$session' ");
-if(mysqli_num_rows($sql)==0){
-$con->query("INSERT INTO result_sum(sid, term, session) VALUES('$sid', '$term', '$session')");
+  function checkResultProfile($sid)
+  {
+    global $con;
+    $term = $this->sqLx1('terms', 'status', 1, 'term');
+    $session = $this->sqLx1('terms', 'status', 1, 'session');
+    $sql = $con->query("SELECT * FROM resultsum WHERE sid = '$sid' AND term = '$term'  ");
+    if (mysqli_num_rows($sql) == 0) {
+      $con->query("INSERT INTO resultsum(sid, term, session) VALUES('$sid', '$term', '$session')");
     }
     return;
-
-}
-function checkResultSum(){
-  global $con;
-  $sql = $con->query("SELECT * FROM students");
-  while($rows=mysqli_fetch_assoc($sql)){
-    $sid = $rows['sn'];
-    $this->checkResultProfile($sid);
   }
-}
-function realTerm($term){
-  $term = '';
-  if($term == 1){
-    $term = 'First Term';
-  } 
-  else if ($term == 2) {
+  function checkResultSum()
+  {
+    global $con;
+    $sql = $con->query("SELECT * FROM students");
+    while ($rows = mysqli_fetch_assoc($sql)) {
+      $sid = $rows['sn'];
+      $this->checkResultProfile($sid);
+    }
+  }
+  function realTerm($term)
+  {
+    $term = '';
+    if ($term == 1) {
+      $term = 'First Term';
+    } else if ($term == 2) {
       $term = 'Second Term';
-    } 
-  else if ($term == 3) {
+    } else if ($term == 3) {
       $term = 'Third Term';
     }
     return $term;
-}
+  }
 
 
   function AddResult()

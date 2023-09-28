@@ -1,6 +1,6 @@
    <?php
    require_once("myclass.php");
-
+   $pro->checkResultSum();
 
    ?>
 
@@ -131,12 +131,12 @@
        <div class="container-fluid">
         <div class="row mb-2">
          <div class="col-sm-6">
-          <h1 class="m-0">Student Profile</h1>
+          <h1 class="m-0">Results Summary</h1>
          </div>
          <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
            <li class="breadcrumb-item"><a href="/control/dashboard">Home</a></li>
-           <li class="breadcrumb-item active">Student Profile</li>
+           <li class="breadcrumb-item active">Result Profile</li>
           </ol>
          </div>
         </div>
@@ -168,21 +168,17 @@
 
 
             <?php $i = 1;
-            $sql = $con->query("SELECT * FROM  results");
+            $sql = $con->query("SELECT * FROM  resultsum");
             while ($rows = mysqli_fetch_assoc($sql)) {
-                $sid = $rows['sn'];
-                if($pro->sqL1('result_sum', 'sid', $sid)==0){
-                 $sql= $con->query("INSERT INTO result_sum(sid, term, session) VALUES('$sid', '$term', '$session')");
 
-                }
 
             ?>
              <tr>
               <td><?= $i++ ?></td>
-              <td><?= $pro->SqLx('students', 'sn', $rows['studentid'], 'surname') ?> <?= $pro->SqLx('students', 'sn', $rows['studentid'], 'firstname') ?></td>
+              <td><?= $pro->SqLx('students', 'sn', $rows['sid'], 'surname') ?> <?= $pro->SqLx('students', 'sn', $rows['sid'], 'firstname') ?></td>
               <td><?= $pro->sqLx1('terms', 'sn', 1, 'session') ?></td>
-              <td><?= $pro->realTerm($pro->sqLx1('terms', 'sn', 1, 'term')) ?></td>
-              <td><?= $pro->SqLx('class', 'sn', $rows['class'], 'class') ?></td>
+              <td><?= $pro->realTerm($pro->sqLx('terms', 'sn', $rows['term'], 'term')) ?> <?=$rows['term'] ?></td>
+              <td><?=  $pro->SqLx('students', 'sn', $rows['sid'], 'class') ?></td>
 
               <td><?= $rows['created'] ?></td>
               <td><a class="btn btn-xs btn-info" href="/control/view-result/284"><i class="fas fa-eye"></i> View</a></td>
