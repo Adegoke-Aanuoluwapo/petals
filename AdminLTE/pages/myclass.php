@@ -493,7 +493,7 @@ class Profile
     $session = $_POST['session'];
     $sql= $con->query("SELECT * FROM result_sum WHERE sid ='$id' AND term = '$term' AND session = '$session' ");
     if(mysqli_num_rows($sql)==0){
-      $sq = "INSERT into result_sum(sid, term, session) VALUES('$id', '$term', '$session')";
+      $sq = $con->query("INSERT into result_sum(sid, term, session) VALUES('$id', '$term', '$session')");
       $result = $rows['sn'];
       return $result;
 
@@ -503,7 +503,7 @@ class Profile
 function checkResultProfile($sid){
   global $con;
 $term = sqLx1('terms', 'status', 1, 'term');
-$session=sqLx1('session', 'status', 'session');
+$session=sqLx1('session', 'status', 1, 'session');
 $sql=$con->query("SELECT * result_sum WHERE sid = '$sid' AND term = '$term' AND session = '$session' ");
 return mysqli_num_rows($sql);
 
