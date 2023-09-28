@@ -251,7 +251,13 @@ class Profile
     $row = mysqli_fetch_assoc($sql);
     return $row[$ret];
   }
-
+  function SqLx($table, $key, $value, $pin)
+  {
+    global $con;
+    $sql = $con->query("SELECT * FROM $table WHERE $key = '$value'");
+    $row = mysqli_fetch_assoc($sql);
+    return $row[$pin];
+  }
 
   function  AddSubject()
   {
@@ -419,13 +425,7 @@ class Profile
     return $post;
   }
 
-  function SqLx($table, $key, $value, $pin)
-  {
-    global $con;
-    $sql = $con->query("SELECT * FROM $table WHERE $key = '$value'");
-    $row = mysqli_fetch_assoc($sql);
-    return $row[$pin];
-  }
+  
 
   function Total($table)
   {
