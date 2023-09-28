@@ -511,7 +511,14 @@ $con->query("INSERT INTO result_sum(sid, term, session) VALUES('$sid', '$term', 
     return;
 
 }
-function checkSum(){}
+function checkResultSum(){
+  global $con;
+  $sql = $con->query("SELECT * FROM students");
+  while($rows=mysqli_fetch_assoc($sql)){
+    $sid = $rows['sn'];
+    $this->checkResultProfile($sid);
+  }
+}
 
 
   function AddResult()
