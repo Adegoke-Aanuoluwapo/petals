@@ -486,12 +486,12 @@ class Profile
     echo $sn;
     return;
   }
-  function resultSum(){
+  function resultSum($sid){
     global $con;
-    $id = $_POST['sid'];
+    
     $term = $_POST['term'];
     $session = $_POST['session'];
-    $sql= "SELECT * FROM result_sum WHERE sid ='$id' AND term = '$term' AND session = '$session' ";
+    $sql= $con->query("SELECT * FROM result_sum WHERE sid ='$id' AND term = '$term' AND session = '$session' ");
     if(mysqli_num_rows($sql)==0){
       $sq = "INSERT into result_sum(sid, term, session) VALUES('$id', '$term', '$session')";
       $result = $rows['sn'];
@@ -500,6 +500,8 @@ class Profile
     }
 
   }
+
+  
 
   function AddResult()
   {
