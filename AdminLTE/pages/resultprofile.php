@@ -161,27 +161,29 @@
              <th>Session</th>
              <th>Term</th>
              <th>Class</th>
-             
+
              <th>Date</th>
              <th></th>
             </tr>
 
 
-          <?php $i= 1; $sql= $con->query("SELECT * FROM  results");
-          while($rows =mysqli_fetch_assoc($sql)){
+            <?php $i = 1;
+            $sql = $con->query("SELECT * FROM  results");
+            while ($rows = mysqli_fetch_assoc($sql)) {
 
-         
-          ?>
-            <tr>
-             <td><?= $i++ ?></td>
-             <td><?= $rows['studentid'] ?></td>
-             <td>First Term</td>
-             <td>sss 1</td>
-             <td>7</td>
-             <td>16 Aug, 2022</td>
-             <td><a class="btn btn-xs btn-info" href="/control/view-result/284"><i class="fas fa-eye"></i> View</a></td>
-            </tr>
- <?php } ?>
+
+            ?>
+             <tr>
+              <td><?= $i++ ?></td>
+              <td><?= $rows['studentid'] ?></td>
+              <td><?= $pro->sqLx1('terms', 'sn', 1, 'session') ?></td>
+              <td><?= $pro->sqLx1('terms', 'sn', 1, 'term') ?></td>
+              <td><?= $rows['class'] ?></td>
+
+              <td>16 Aug, 2022</td>
+              <td><a class="btn btn-xs btn-info" href="/control/view-result/284"><i class="fas fa-eye"></i> View</a></td>
+             </tr>
+            <?php } ?>
 
 
            </tbody>
@@ -192,8 +194,8 @@
 
        <p class="p-0 m-0" style="page-break-before: always">
        </p>
-      
-       
+
+
       </div>
       <!-- Control Sidebar -->
       <aside class="control-sidebar control-sidebar-dark">

@@ -519,6 +519,19 @@ function checkResultSum(){
     $this->checkResultProfile($sid);
   }
 }
+function realTerm($term){
+  $term = '';
+  if($term ==1){
+    $term = 'First Term';
+  }
+   else if ($term == 2) {
+      $term = 'Second Term';
+    } else if ($term == 3) {
+      $term = 'Third Term';
+    }
+    return $term;
+
+}
 
 
   function AddResult()
