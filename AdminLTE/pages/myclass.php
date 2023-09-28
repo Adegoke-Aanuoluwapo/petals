@@ -511,7 +511,7 @@ $con->query("INSERT INTO result_sum(sid, term, session) VALUES('$sid', '$term', 
     return;
 
 }
-function addResultSum(){}
+function checkSum(){}
 
 
   function AddResult()
