@@ -178,10 +178,10 @@
               <td><?= $pro->SqLx('students', 'sn', $rows['sid'], 'surname') ?> <?= $pro->SqLx('students', 'sn', $rows['sid'], 'firstname') ?></td>
               <td><?= $pro->sqLx1('terms', 'sn', 1, 'session') ?></td>
               <td><?= $pro->realTerm($rows['term']) ?></td>
-              <td><?= $pro->SqLx('class', 'sn', $rows['sid'], 'class') ?></td>
+              <td><?= $pro->SqLx('class', 'sn', $rows['class'], 'class') ?></td>
 
               <td><?= $rows['created'] ?></td>
-              <td><a class="btn btn-xs btn-info" href="/control/view-result/284"><i class="fas fa-eye"></i> View</a></td>
+              <td><a class="btn btn-xs btn-info" href="resultbroad.php"><i class="fas fa-eye"></i> View</a></td>
              </tr>
             <?php } ?>
 
