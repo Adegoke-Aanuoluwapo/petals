@@ -1,5 +1,7 @@
 <?php
 require("myclass.php");
+
+
 ?>
 
 <!DOCTYPE html>
@@ -207,11 +209,9 @@ require("myclass.php");
                                         </thead>
                                         <tbody id="result_body">
                                             <?php
-                                            // $i++;
-
-                                            //     $sql = $con->query("SELECT * FROM results   ");
-                                            //     while ($rows = mysqli_fetch_assoc($sql)) 
-                                            { ?>
+                                           $i = 1; $sql =$con->query("SELECT * FROM results WHERE studentid = '$studentid'");
+                                           while(mysqli_fetch_assoc($sql)){
+                                             ?>
 
 
                                                 <tr>
@@ -230,7 +230,8 @@ require("myclass.php");
                                                     <td><?= @$rows['grade'] ?>89.5</td>
                                                     <td><?= @$rows['remark'] ?>A</td>
                                                     <td>Excellent</td>
-                                                        <?php }
+                                                        <?php
+                                            }
                                                         ?>
 
                                                 </tr>
