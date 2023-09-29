@@ -517,7 +517,7 @@ class Profile
     $sql = $con->query("SELECT * FROM students");
     while ($rows = mysqli_fetch_assoc($sql)) {
       $sid = $rows['sn'];
-      $class =$_POST['class'];
+      $class =$rows['class'];
       $this->checkResultProfile($sid);
     }
     return;
