@@ -499,7 +499,7 @@ class Profile
       return;
     }
   }
-  function checkResultProfile($sid)
+  function checkResultProfile($sid, $class)
   {
     global $con;
     $class = $_POST['class'];
@@ -518,7 +518,7 @@ class Profile
     while ($rows = mysqli_fetch_assoc($sql)) {
       $sid = $rows['sn'];
       $class =$rows['class'];
-      $this->checkResultProfile($sid);
+      $this->checkResultProfile($sid, $class);
     }
     return;
   }
