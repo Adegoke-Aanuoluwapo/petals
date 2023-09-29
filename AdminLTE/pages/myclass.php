@@ -502,12 +502,12 @@ class Profile
   function checkResultProfile($sid, $class)
   {
     global $con;
-    $class = $_POST['class'];
+   
     $term = $this->sqLx1('terms', 'status', 1, 'term');
     $session = $this->sqLx1('terms', 'status', 1, 'session');
-    $sql = $con->query("SELECT * FROM resultsum WHERE sid = '$sid' AND class='$class', term = '$term' AND session = '$session'  ");
+    $sql = $con->query("SELECT * FROM resultsum WHERE sid = '$sid' AND class='$class' AND term = '$term' AND session = '$session'  ");
     if (mysqli_num_rows($sql) == 0) {
-      $con->query("INSERT INTO resultsum(sid, class term, session) VALUES('$sid', '$class', '$term', '$session')");
+      $con->query("INSERT INTO resultsum(sid, class, term, session) VALUES('$sid', '$class', '$term', '$session')");
     }
     return;
   }
