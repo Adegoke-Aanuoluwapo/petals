@@ -425,7 +425,7 @@ class Profile
     return $post;
   }
 
-  
+
 
   function Total($table)
   {
@@ -502,11 +502,12 @@ class Profile
   function checkResultProfile($sid)
   {
     global $con;
+    $class = $_POST['class'];
     $term = $this->sqLx1('terms', 'status', 1, 'term');
     $session = $this->sqLx1('terms', 'status', 1, 'session');
-    $sql = $con->query("SELECT * FROM resultsum WHERE sid = '$sid' AND term = '$term' AND session = '$session'  ");
+    $sql = $con->query("SELECT * FROM resultsum WHERE sid = '$sid' AND class='$class', term = '$term' AND session = '$session'  ");
     if (mysqli_num_rows($sql) == 0) {
-      $con->query("INSERT INTO resultsum(sid, term, session) VALUES('$sid', '$term', '$session')");
+      $con->query("INSERT INTO resultsum(sid, class term, session) VALUES('$sid', '$class', '$term', '$session')");
     }
     return;
   }
@@ -516,18 +517,19 @@ class Profile
     $sql = $con->query("SELECT * FROM students");
     while ($rows = mysqli_fetch_assoc($sql)) {
       $sid = $rows['sn'];
+      $class =$_POST['class'];
       $this->checkResultProfile($sid);
     }
     return;
   }
-  function realTerm($term)
+  function realTerm($t)
   {
     $term = '';
-    if ($term == 1) {
+    if ($t == 1) {
       $term = 'First Term';
-    } else if ($term == 2) {
+    } elseif ($t == 2) {
       $term = 'Second Term';
-    } else if ($term == 3) {
+    } elseif ($t == 3) {
       $term = 'Third Term';
     }
     return $term;
