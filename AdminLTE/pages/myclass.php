@@ -540,7 +540,7 @@ class Profile
   {
     global $con, $report, $count;
 
-
+    $resultid = $_POST['studentid'];
     $studentid = $_POST['studentid'];
     $class = $_POST['class'];
     $subject = $_POST['subject'];
@@ -552,7 +552,7 @@ class Profile
 
     while ($i < count($studentid)) {
       $e = $i++;
-
+      $result = $resultid[$e];
       $student = $studentid[$e];
 
       $c1 = $ca1[$e];
@@ -565,7 +565,7 @@ class Profile
         return;
       }
 
-      $sql = "INSERT  INTO results(studentid, class, subject, ca1, ca2,  exam, total) VALUES( '$student', '$class', '$subject', '$c1', '$c2', '$exa', '$total')";
+      $sql = "INSERT  INTO results(studentid, studentid, class, subject, ca1, ca2,  exam, total) VALUES('$result', '$student', '$class', '$subject', '$c1', '$c2', '$exa', '$total')";
       mysqli_query($con, $sql);
     }
     $report = 'results added succesfully';
