@@ -511,11 +511,12 @@ class Profile
     }
     return;
   }
-  function resultId($sid){
+  function resultId($resultid){
     global $con;
     $sql= $con->query("SELECT resultid from result WHERE resultid = '$resultid'");
     if (mysqli_num_rows($sql)==0){
-      $con->
+      $con->query("INSERT INTO result(resultid) VALUES('$resultid')");
+      return;
     }
   }
   function checkResultSum()
