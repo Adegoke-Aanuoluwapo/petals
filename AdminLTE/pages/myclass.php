@@ -513,7 +513,7 @@ class Profile
   }
   function resultId($sid){
     global $con;
-    $sql= $con->query
+    $sql= $con->query("SELECT resultid from result")
   }
   function checkResultSum()
   {
