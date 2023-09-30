@@ -515,7 +515,7 @@ class Profile
     global $con;
     $sql= $con->query("SELECT resultid from result WHERE resultid = '$resultid'");
     if (mysqli_num_rows($sql)==0){
-      $con->query("INSERT INTO result(resultid) VALUES('$resultid')");
+      $con->query("INSERT INTO results(resultid) VALUES('$resultid')");
       return;
     }
   }
