@@ -511,6 +511,10 @@ class Profile
     }
     return;
   }
+  function resultId($sid){
+    global $con;
+    $sql= $con->query
+  }
   function checkResultSum()
   {
     global $con;

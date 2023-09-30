@@ -1,5 +1,7 @@
 <?php
 require("myclass.php");
+
+
 ?>
 
 
@@ -219,12 +221,13 @@ require("myclass.php");
 
                           <tr>
                             <th scope="row"><?= $i++ ?></th>
-                            <?php $i = 1; $sql = $con->query("SELECT * FROM resultsum WHERE resultid = '$resultid'");while($rows=mysqli_fetch_assoc($sql)){ ?>
-                            <td><input type="hidden" name="resultid[]" value="<?= $rows['sn'] ?>"></td>
-                           <?php } ?>
+
                             <td><a href="studentprofile.php?sn=<?= $rows['sn'] ?>"><?= $rows['surname'] ?></a></td>
                             <td><?= $rows['firstname'] ?> <input type="hidden" name="studentid[]" value="<?= $rows['sn'] ?>" required></td>
+                           
+                              <td><input type="hidden" name="resultid[]" value="<?= $resultid ?>"></td>
 
+                          
 
                             <td><input type="number" name="ca1[]" min="0" max="20" class="form-control" required></td>
                             <td><input type="number" name="ca2[]" min="0" max="20" class="form-control"></td>
