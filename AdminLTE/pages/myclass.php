@@ -513,7 +513,10 @@ class Profile
   }
   function resultId($sid){
     global $con;
-    $sql= $con->query("SELECT resultid from result")
+    $sql= $con->query("SELECT resultid from result WHERE resultid = '$resultid'");
+    if (mysqli_num_rows($sql)==0){
+      $con->
+    }
   }
   function checkResultSum()
   {
