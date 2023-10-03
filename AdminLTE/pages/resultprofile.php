@@ -1,7 +1,7 @@
    <?php
     require_once("myclass.php");
     $pro->checkResultSum();
- 
+
     ?>
 
 
@@ -175,6 +175,7 @@
                       ?>
                        <tr>
                          <td><?= $i++ ?></td>
+                         
                          <td><?= $pro->SqLx('students', 'sn', $rows['sid'], 'surname') ?> <?= $pro->SqLx('students', 'sn', $rows['sid'], 'firstname') ?></td>
                          <td><?= $pro->sqLx1('terms', 'sn', 1, 'session') ?></td>
                          <td><?= $pro->realTerm($rows['term']) ?></td>

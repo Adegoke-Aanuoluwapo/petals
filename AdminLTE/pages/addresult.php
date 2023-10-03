@@ -218,6 +218,7 @@ require("myclass.php");
                         $class = $_POST['class'];
                         $subject = $_POST['subject'];
                         $term = $_POST['term'];
+                        $result = $pro->resultId('sn');
 
 
 
@@ -236,7 +237,7 @@ require("myclass.php");
                             <td><?= $rows['firstname'] ?> <input type="hidden" name="studentid[]" value="<?= $rows['sn'] ?>" required></td>
 
 
-                          
+
 
                             <td><input type="number" name="ca1[]" min="0" max="20" class="form-control" required></td>
                             <td><input type="number" name="ca2[]" min="0" max="20" class="form-control"></td>
@@ -251,6 +252,7 @@ require("myclass.php");
                   <input type="hidden" name="class" value="<?= @$class ?>" class="form-control">
                   <input type="hidden" name="subject" value="<?= @$subject ?>" class="form-control">
                   <input type="hidden" name="term" value="<?= @$term ?>" class="form-control">
+                  <input type="hidden" name="resultid[]" value="<?= @$result ?>" class="form-control">
 
 
 

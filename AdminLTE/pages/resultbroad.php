@@ -148,7 +148,7 @@ require("myclass.php");
                         </div> -->
 
 
-
+                        <td><?= $pro->resultId(6) ?></td>
                         <div class="card card-secondary card-outline">
                             <div class="card-header">
                                 <h3 class="card-title text-bold">
@@ -207,86 +207,87 @@ require("myclass.php");
                                             </tr>
 
                                         </thead>
+
                                         <tbody id="result_body">
                                             <?php
-                                        
-                                                $studentid = $_GET['sid'];
-                                                $i = 1;
-                                                $sql = $con->query("SELECT * FROM results WHERE studentid = '$studentid'");
-                                                while ($rows = mysqli_fetch_assoc($sql)) {
+
+                                            $studentid = $_GET['sid'];
+                                            $i = 1;
+                                            $sql = $con->query("SELECT * FROM results WHERE studentid = '$studentid'");
+                                            while ($rows = mysqli_fetch_assoc($sql)) {
                                             ?>
-                                                    <?= var_dump($rows['sid']) ?>
+                                                <?= var_dump($rows['sid']) ?>
 
-                                                    <tr>
+                                                <tr>
 
-                                                        <td colspan="2"><?= $rows['subject'] ?></td>
+                                                    <td colspan="2"><?= $rows['subject'] ?></td>
 
-                                                        <td>
-                                                            <?= $rows['ca1'] ?>
-                                                        </td>
-                                                        <td> <?= $rows['ca2'] ?></td>
-                                                        <td> <?= $rows['ca3'] ?></td>
-                                                        <td> <?= $rows['exam'] ?></td>
-                                                        <td><?= @$rows['lastterm'] ?>88</td>
-                                                        <td><?= @$rows['total'] ?>91</td>
-                                                        <td><?= @$rows['avg'] ?>179</td>
-                                                        <td><?= @$rows['grade'] ?>89.5</td>
-                                                        <td><?= @$rows['remark'] ?>A</td>
-                                                        <td>Excellent</td>
+                                                    <td>
+                                                        <?= $rows['ca1'] ?>
+                                                    </td>
+                                                    <td> <?= $rows['ca2'] ?></td>
+                                                    <td> <?= $rows['ca3'] ?></td>
+                                                    <td> <?= $rows['exam'] ?></td>
+                                                    <td><?= @$rows['lastterm'] ?>88</td>
+                                                    <td><?= @$rows['total'] ?>91</td>
+                                                    <td><?= @$rows['avg'] ?>179</td>
+                                                    <td><?= @$rows['grade'] ?>89.5</td>
+                                                    <td><?= @$rows['remark'] ?>A</td>
+                                                    <td>Excellent</td>
                                                 <?php
-                                                }
-                                                  ?>
+                                            }
+                                                ?>
 
-                                                    </tr>
-                                                    <tr>
+                                                </tr>
+                                                <tr>
 
-                                                        <td colspan="2">Biology</td>
+                                                    <td colspan="2">Biology</td>
 
-                                                        <td>
-                                                            10
-                                                        </td>
-                                                        <td>15</td>
-                                                        <td>10</td>
-                                                        <td>55</td>
-                                                        <td><?= @$rows['lastterm'] ?>88</td>
-                                                        <td><?= @$rows['total'] ?>91</td>
-                                                        <td><?= @$rows['avg'] ?>179</td>
-                                                        <td><?= @$rows['grade'] ?>88</td>
-                                                        <td><?= @$rows['remark'] ?>A</td>
-                                                        <td>Excellent</td>
+                                                    <td>
+                                                        10
+                                                    </td>
+                                                    <td>15</td>
+                                                    <td>10</td>
+                                                    <td>55</td>
+                                                    <td><?= @$rows['lastterm'] ?>88</td>
+                                                    <td><?= @$rows['total'] ?>91</td>
+                                                    <td><?= @$rows['avg'] ?>179</td>
+                                                    <td><?= @$rows['grade'] ?>88</td>
+                                                    <td><?= @$rows['remark'] ?>A</td>
+                                                    <td>Excellent</td>
 
 
-                                                    </tr>
-                                                    <tr>
-                                                        <td colspan="3">
-                                                            <p>Subjects:</p>
-                                                        </td>
-                                                        <td colspan="3">
-                                                            <p>Total Score:</p>
-                                                        </td>
-                                                        <td colspan="2">
-                                                            <p>Average:</p>
-                                                        </td>
-                                                        <td colspan="2">
-                                                            <p>Class Average:</p>
-                                                        </td>
-                                                        <td colspan="2">
-                                                            <p> No in Class:</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th colspan="12">
-                                                            <div style="display:flex">
-                                                                <p>Vacation Date: <br />
-                                                                    Teacher's Comments:</p>
-                                                                <p style="margin-left:700px">Resumption Date
-                                                                    <br />
-                                                                    Principal's Comments
-                                                                </p>
-                                                            </div>
-                                                        </th>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="3">
+                                                        <p>Subjects:</p>
+                                                    </td>
+                                                    <td colspan="3">
+                                                        <p>Total Score:</p>
+                                                    </td>
+                                                    <td colspan="2">
+                                                        <p>Average:</p>
+                                                    </td>
+                                                    <td colspan="2">
+                                                        <p>Class Average:</p>
+                                                    </td>
+                                                    <td colspan="2">
+                                                        <p> No in Class:</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th colspan="12">
+                                                        <div style="display:flex">
+                                                            <p>Vacation Date: <br />
+                                                                Teacher's Comments:</p>
+                                                            <p style="margin-left:700px">Resumption Date
+                                                                <br />
+                                                                Principal's Comments
+                                                            </p>
+                                                        </div>
+                                                    </th>
 
-                                                    </tr>
+                                                </tr>
 
                                         </tbody>
                                     </table>
