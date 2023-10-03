@@ -158,6 +158,8 @@ require("myclass.php");
             <div class="col-md-12 col-sm-12 ">
               <div class="x_panel">
                 <div class="card-body">
+
+                  <?= $pro->resultId(24) ?>
                   <form method="post">
                     <div class="form-group">
                       <label>Select Class</label>
@@ -218,12 +220,14 @@ require("myclass.php");
                         $class = $_POST['class'];
                         $subject = $_POST['subject'];
                         $term = $_POST['term'];
-                        $result = $pro->resultId('sn');
+
 
 
 
                         $i = 1;
                         $sql = $con->query("SELECT * FROM students WHERE class = '$class'");
+
+
 
                         while ($rows = mysqli_fetch_assoc($sql)) {
 
@@ -238,7 +242,7 @@ require("myclass.php");
 
 
 
-
+                            <input type="number" name="resultid[]" value="<?= $pro->resultId($rows['sn']) ?>" class="form-control">
                             <td><input type="number" name="ca1[]" min="0" max="20" class="form-control" required></td>
                             <td><input type="number" name="ca2[]" min="0" max="20" class="form-control"></td>
                             <td><input type="number" name="exam[]" min="0" max="60" class="form-control"></td>
@@ -252,7 +256,7 @@ require("myclass.php");
                   <input type="hidden" name="class" value="<?= @$class ?>" class="form-control">
                   <input type="hidden" name="subject" value="<?= @$subject ?>" class="form-control">
                   <input type="hidden" name="term" value="<?= @$term ?>" class="form-control">
-                  <input type="hidden" name="resultid[]" value="<?= @$result ?>" class="form-control">
+
 
 
 
@@ -265,6 +269,7 @@ require("myclass.php");
                     <thead>
                       <tr>
                         <th>sn</th>
+
                         <th>subject</th>
                         <th>student name</th>
                         <th>class</th>
