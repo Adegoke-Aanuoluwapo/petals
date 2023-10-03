@@ -547,7 +547,7 @@ class Profile
   function AddResult()
   {
     global $con, $report, $count;
-
+    $term = $_POST['term'];
     $resultid = $_POST['resultid'];
     $studentid = $_POST['studentid'];
     $class = $_POST['class'];
@@ -555,6 +555,7 @@ class Profile
     $ca1 = $_POST['ca1'];
     $ca2 = $_POST['ca2'];
     $exam = $_POST['exam'];
+
 
     $i = 0;
 
