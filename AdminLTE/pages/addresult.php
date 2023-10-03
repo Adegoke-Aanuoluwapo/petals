@@ -180,6 +180,15 @@ require("myclass.php");
                         } ?>
 
                       </select>
+                      <select class="form-control" name="term" required>
+                        <option value="">Select Term</option>
+                        <?php $i = 1;
+                        $sql = $con->query("SELECT * FROM terms WHERE status = 1");
+                        while ($rows = $sql->fetch_assoc()) {
+                          echo '<option value="' . $rows['sn'] . '">' . $rows['term'] . '</option>';
+                        } ?>
+
+                      </select>
                     </div>
                     <div class="form-group">
                       <button type="submit" class="btn btn-secondary float-right">Select</button>
@@ -208,6 +217,7 @@ require("myclass.php");
 
                         $class = $_POST['class'];
                         $subject = $_POST['subject'];
+                        $term = $_POST['term'];
 
 
 
@@ -224,8 +234,7 @@ require("myclass.php");
 
                             <td><a href="studentprofile.php?sn=<?= $rows['sn'] ?>"><?= $rows['surname'] ?></a></td>
                             <td><?= $rows['firstname'] ?> <input type="hidden" name="studentid[]" value="<?= $rows['sn'] ?>" required></td>
-                           
-                              <td><input type="hidden" name="resultid[]" value="<?= $resultid ?>"></td>
+
 
                           
 
@@ -241,6 +250,7 @@ require("myclass.php");
                   </table>
                   <input type="hidden" name="class" value="<?= @$class ?>" class="form-control">
                   <input type="hidden" name="subject" value="<?= @$subject ?>" class="form-control">
+                  <input type="hidden" name="term" value="<?= @$term ?>" class="form-control">
 
 
 
