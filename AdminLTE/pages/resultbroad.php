@@ -148,7 +148,7 @@ require("myclass.php");
                         </div> -->
 
 
-                        <td><?= $pro->resultId(6) ?></td>
+                        <td><?= $pro->resultId(23) ?></td>
                         <div class="card card-secondary card-outline">
                             <div class="card-header">
                                 <h3 class="card-title text-bold">
@@ -210,13 +210,14 @@ require("myclass.php");
 
                                         <tbody id="result_body">
                                             <?php
-
-                                            $studentid = $_GET['sid'];
+                                                if(isset($_POST['resultid'])){
+                                                    $resultid = $_POST['resultid'];
+                                               
                                             $i = 1;
-                                            $sql = $con->query("SELECT * FROM results WHERE studentid = '$studentid'");
+                                            $sql = $con->query("SELECT * FROM results WHERE resultid = '$resultid'");
                                             while ($rows = mysqli_fetch_assoc($sql)) {
                                             ?>
-                                                <?= var_dump($rows['sid']) ?>
+                                               
 
                                                 <tr>
 
@@ -236,28 +237,12 @@ require("myclass.php");
                                                     <td>Excellent</td>
                                                 <?php
                                             }
+                                    }
+                                            
                                                 ?>
 
                                                 </tr>
-                                                <tr>
-
-                                                    <td colspan="2">Biology</td>
-
-                                                    <td>
-                                                        10
-                                                    </td>
-                                                    <td>15</td>
-                                                    <td>10</td>
-                                                    <td>55</td>
-                                                    <td><?= @$rows['lastterm'] ?>88</td>
-                                                    <td><?= @$rows['total'] ?>91</td>
-                                                    <td><?= @$rows['avg'] ?>179</td>
-                                                    <td><?= @$rows['grade'] ?>88</td>
-                                                    <td><?= @$rows['remark'] ?>A</td>
-                                                    <td>Excellent</td>
-
-
-                                                </tr>
+                                             
                                                 <tr>
                                                     <td colspan="3">
                                                         <p>Subjects:</p>
@@ -311,121 +296,7 @@ require("myclass.php");
 
             <script src="https://portal.schoolpetal.com/assets/plugins/jquery/jquery.min.js"></script>
             <!-- 
-   <script>
-    $(function() {
-     $.ajaxSetup({
-      headers: {
-       'Authorization': `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiN2RjOTI1MDc2N2IwZWU3NDcyNmNjN2E5MDdiODBmNDcyOTQzOWYzOGVlNTVkNTdjM2RmY2VhODQ0MTdlMGMzYzJmZmIwZjEwYjk0ZWFmMjAiLCJpYXQiOjE2OTIxMjI1OTUuOTcwNDM2LCJuYmYiOjE2OTIxMjI1OTUuOTcwNDQ2LCJleHAiOjE3MjM3NDQ5OTUuOTU0ODI5LCJzdWIiOiIyMCIsInNjb3BlcyI6W119.m9F64QZo_mUdjRcemDRmKW5qDjsBWjRgnPDznUPXbltU02OxF16_GartitU6nrjlnJk7r5DeE9Zhtjp7qVXcq3PaLeJkYqDj6GQ719W7B5bEC5reiGJznsKk5VfH8x14qrQ5WWLHrkGMOdqQEzYrnNgQgO4sD38wPz_rC7fPm_Tb2x8V4zIBfbiOT_tmt_LdfIXsDe4g6GZjyNDqNBPsuVuGMA73aLsCWP-idYn3hBxOBvuWyzgQE-4zOwgUDe0IE36ZdldHM8YbhVOqgJ34daTTz_USnksZvx7-Qq5qXXDEMcMmUZacTJU-tY5D6f7PD0-JcrM_KwwtKl_J_WYw_V6a88ULHD65OYyyL7fp5FvjWQTTFRShkj00QSBtwRTkT4IQ-wjGuUOZGPQLnxS7FzZYeqqgNVWpI3Hh1efDHHJnCQztgAgU1LIrSpaHSRNsFUKMp-bb79fsESvsaChgH8itJy4ud1DcQRgpVJWDqael9cBjcjeiZkor_v9mAsCLzEGnqifjnF4DS875IMzkRhHfpR7w3qidOTYkEbXKwCq6NvfjP_VqwZmy3pAwMoteZqA8CC-4uolnFobi42Yv-NqUi5Q4fNJwWVNPjOsgR7Sh4eApU6z0Lg0SaU54JGChbE-PL4IF9sbweIzBc8kS_TCuf1v9avZze1No8wF5nYM`
-      }
-     });
-
-
-     function fetchProgram() {
-      $.ajax({
-       method: 'get',
-       url: api_url + 'fetch_teacher_subject/20'
-      }).done(function(res) {
-       body = $('#program');
-       body.html(`<option selected disabled>Select Option</option>`);
-       res.data.map(pro => {
-        body.append(`<option value="${pro.id}">${pro.class.class} ${pro.subject.subject}</option>`)
-       })
-      }).fail(function(res) {})
-     }
-
-     fetchProgram();
-
-     $('#loadSheet').on('submit', function(e) {
-      e.preventDefault();
-      prog = $($(this)).find('select[name="program"]').val();
-      if (!prog) {
-       littleAlert('Pls select a program', 1);
-       return;
-      }
-      location.href = `/control/broad-sheet/${prog}`;
-      btnProcess('.loadSheet', '', 'before');
-     });
-
-
-
-
-     function loadProgram() {
-      program = `0`;
-      console.log(program);
-      body = $('#result_body');
-      if (program == 0) {
-       littleAlert('Pls select a program view result', 1);
-       return;
-      }
-      $.ajax({
-       method: 'get',
-       url: api_url + `broad/${program}`,
-       beforeSend: () => {
-        body.html(`
-                            <tr>
-                                <td colspan="20">
-                                    <div class="text-center">
-                                        <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
-                                        <i> Loading ... </i>
-                                    </div>
-                                </td>
-                            </tr>
-                        `)
-       }
-      }).done(function(res) {
-       $('.t_text').html(`${res.cap} Broad Sheet`);
-       body = $('#result_body');
-       set = res.setup;
-       body.html(``);
-       res.data.map((stu, index) => {
-        first = checkRes(stu.first);
-        second = checkRes(stu.second);
-        third = checkRes(stu.third);
-        //total = first.total + second.total + third.total ;
-        total = parseInt((first.total > 0) ? first.total : 0) + parseInt((second.total > 0) ? second.total : 0) + parseInt((third.total > 0) ? third.total : 0);
-        divisor = ((first.total > 0) ? 1 : 0) + ((second.total > 0) ? 1 : 0) + ((third.total > 0) ? 1 : 0);
-        ef = total / divisor;
-        body.append(`
-                            <tr class="single">
-                                <td>${index+1}</td>
-                                <td>${stu.surname} ${stu.firstname}</td>
-                                <td>${first.t1}</td>
-                                <td>${first.t2}</td>
-                                <td>${first.t3}</td>
-                                <td>${first.exam}</td>
-                                <td>${first.total}</td>
-
-                                <td>${second.t1}</td>
-                                <td>${second.t2}</td>
-                                <td>${second.t3}</td>
-                                <td>${second.exam}</td>
-                                <td>${second.total}</td>
-
-                                <td>${third.t1}</td>
-                                <td>${third.t2}</td>
-                                <td>${third.t3}</td>
-                                <td>${third.exam}</td>
-                                <td>${third.total}</td>
-
-                                <td>${ef}</td>
-
-                            </tr>
-                        `)
-       })
-
-      }).fail(function(res) {
-       console.log(res);
-      });
-     }
-     loadProgram();
-
-
-
-
-
-
-    })
-   </script> -->
+   
 
         </div>
 
@@ -435,7 +306,7 @@ require("myclass.php");
             <div class="float-right d-none d-sm-inline-block">
                 <b>Version</b> 2.5
             </div>
-        </footer>
+        </footer> -->
 
 
 

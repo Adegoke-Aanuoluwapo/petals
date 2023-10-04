@@ -552,7 +552,7 @@ class Profile
   function AddResult()
   {
     global $con, $report, $count;
-    $term = $_POST['term'];
+    $term = $this->SqLx('terms', 'status', 1, 'term');
 
     $studentid = $_POST['studentid'];
 
