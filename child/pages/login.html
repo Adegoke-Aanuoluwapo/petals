@@ -34,7 +34,7 @@
         <p class="login-box-msg">Sign in to manage your reports <br><font color="red"></font></p>
         <form method="post" enctype="multipart/form-data">
           <div class="form-group has-feedback">
-            <input type="text" class="form-control" style="height:40px" placeholder="Email or Username" name="username" wfd-id="id0" id="name">
+            <input type="text" class="form-control" style="height:40px" placeholder="Email or Username" name="name" wfd-id="id0" id="name">
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">
@@ -44,7 +44,7 @@
           <div class="row">
            
             <div class="col-md-12">
-              <button type="submit" class="btn btn-primary btn-lg btn-block" style="width:100%" name="login">Sign In Here</button>
+              <button type="button" class="btn btn-primary btn-lg btn-block" style="width:100%" onclick="Login()" name="login">Sign In Here</button>
             </div><!-- /.col -->
           </div>
         </form>
@@ -57,11 +57,16 @@
     </div><!-- /.login-box -->
 
     <!-- jQuery 2.1.4 -->
-    <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    
     <!-- Bootstrap 3.3.5 -->
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <!-- iCheck -->
     <script src="plugins/iCheck/icheck.min.js"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"></script>
+      <script src="../plugins/jquery/jquery.min.js"></script>
     <script>
       $(function () {
         $('input').iCheck({
@@ -76,14 +81,16 @@
 function Login(){
   var name = document.getElementById("name").value;
   var password= document.getElementById("password").value;
+  
     
    $.ajax({
     type:'get',
-    url:'myclass.php?email='+email+'&password='+pass+
+    url:'myclass.php?name='+name+'&password='+password+
     '&type=login'
    }).done(function(data){
-     if(data){
-         window.location.replace('chatting.html');
+     if(data ==6){
+    
+          window.location.replace('index.html');
      
      }else{
         alert(data);
@@ -91,6 +98,7 @@ function Login(){
    });
 }
   </script>
+  <script src="jquery.min.js"></script>
 
 </body>
 </html>

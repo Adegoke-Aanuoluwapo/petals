@@ -8,20 +8,23 @@ class Children
  {
   global $con;
   $sql = $con->query("SELECT * FROM user WHERE name = '$name'");
-  if ($sql->num_rows != 1) {
+  if(mysqli_num_rows($sql) != 1) {
    echo "Invalid login";
    return;
   }
-  $rows = $sql->fetch_assoc();
+  $rows = mysqli_fetch_assoc($sql);
   if (password_verify($password, $rows["password"])) {
+   echo "Login Successfully";
    $_SESSION["id"] = $rows["id"];
-   return;
+   echo 6;
   } else {
    echo "invalid login";
    return;
   }
  }
 }
+
+$pro = new Children();
 
 
 
