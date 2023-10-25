@@ -34,11 +34,11 @@
         <p class="login-box-msg">Sign in to manage your reports <br><font color="red"></font></p>
         <form method="post" enctype="multipart/form-data">
           <div class="form-group has-feedback">
-            <input type="text" class="form-control" style="height:40px" placeholder="Email or Username" name="username" wfd-id="id0">
+            <input type="text" class="form-control" style="height:40px" placeholder="Email or Username" name="username" wfd-id="id0" id="name">
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">
-            <input type="password" class="form-control" style="height:40px" placeholder="Password" name="password" wfd-id="id1">
+            <input type="password" class="form-control" style="height:40px" placeholder="Password" name="password" wfd-id="id1" id="password">
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
           <div class="row">
@@ -71,7 +71,26 @@
         });
       });
     </script>
-  
+  <script>
+
+function Login(){
+  var name = document.getElementById("name").value;
+  var password= document.getElementById("password").value;
+    
+   $.ajax({
+    type:'get',
+    url:'myclass.php?email='+email+'&password='+pass+
+    '&type=login'
+   }).done(function(data){
+     if(data){
+         window.location.replace('chatting.html');
+     
+     }else{
+        alert(data);
+        }
+   });
+}
+  </script>
 
 </body>
 </html>
