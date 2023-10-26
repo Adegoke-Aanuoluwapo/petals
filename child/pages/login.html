@@ -18,6 +18,8 @@
         width: 400px;
     }
  </style>
+  <script src="jquery.min.js"></script>
+  <script src="../plugins/jquery/jquery.min.js"></script>
  <title>Login</title>
 </head>
 
@@ -62,11 +64,8 @@
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <!-- iCheck -->
     <script src="plugins/iCheck/icheck.min.js"></script>
-    <script
-  src="https://code.jquery.com/jquery-3.7.1.min.js"
-  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-  crossorigin="anonymous"></script>
-      <script src="../plugins/jquery/jquery.min.js"></script>
+  
+     
     <script>
       $(function () {
         $('input').iCheck({
@@ -87,18 +86,20 @@ function Login(){
     type:'get',
     url:'myclass.php?name='+name+'&password='+password+
     '&type=login'
+   
    }).done(function(data){
-     if(data ==6){
-    
-          window.location.replace('index.html');
-     
-     }else{
-        alert(data);
-        }
+   
+      if(data == "Login Successfully"){
+    window.location.replace('index.php');
+       }
+   else{
+    alert("Invalid login");
+   }
+   
    });
 }
   </script>
-  <script src="jquery.min.js"></script>
+ 
 
 </body>
 </html>

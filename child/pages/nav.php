@@ -1,0 +1,384 @@
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+ <!-- Brand Logo -->
+ <a href="index3.php" class="brand-link">
+  <img src="" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+  <span class="brand-text font-weight-light">Children For Christ</span>
+ </a>
+
+ <!-- Sidebar -->
+ <div class="sidebar">
+  <!-- Sidebar user panel (optional) -->
+
+
+  <!-- SidebarSearch Form -->
+  <div class="form-inline">
+   <div class="input-group" data-widget="sidebar-search">
+    <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+    <div class="input-group-append">
+     <button class="btn btn-sidebar">
+      <i class="fas fa-search fa-fw"></i>
+     </button>
+    </div>
+   </div>
+  </div>
+
+  <!-- Sidebar Menu -->
+  <nav class="mt-2">
+   <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+    <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+    <li class="nav-item menu-open">
+     <a href="dashboard" class="nav-link active">
+      <i class="nav-icon fas fa fa-home"></i>
+      <p>
+       Dashboard
+       <i class="right fas fa-angle-left"></i>
+      </p>
+     </a>
+
+    </li>
+
+    <li class="nav-item">
+     <a href="#" class="nav-link">
+      <i class="nav-icon fa fa-graduation-cap"></i>
+      <p>
+       Manage Group
+       <i class="fas fa-angle-left right"></i>
+
+      </p>
+     </a>
+     <ul class="nav nav-treeview">
+      <li class="nav-item">
+       <a href="addTeachers" class="nav-link">
+
+        <i class="far fa-circle nav-icon"></i>
+        <p>Register Group</p>
+       </a>
+      </li>
+      <li class="nav-item">
+       <a href="registerchildren" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>Register children</p>
+       </a>
+      </li>
+      <li class="nav-item">
+       <a href="allstudents.php" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>All Students</p>
+       </a>
+      </li>
+     </ul>
+    </li>
+    <li class="nav-item">
+     <a href="#" class="nav-link">
+      <i class="nav-icon fas fa-user-plus"></i>
+      <p>
+       Staff Management
+       <i class="fas fa-angle-left right"></i>
+
+      </p>
+     </a>
+     <ul class="nav nav-treeview">
+      <li class="nav-item">
+       <a href="addstaff.php" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>Add New Staff</p>
+       </a>
+      </li>
+
+      <li class="nav-item">
+       <a href="../pages/allstaff.php" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>All Staff</p>
+       </a>
+      </li>
+
+
+
+     </ul>
+    </li>
+    <li class="nav-item">
+     <a href="#" class="nav-link">
+      <i class="nav-icon fa fa-clipboard"></i>
+      <p>
+       Manage Report
+       <i class="fas fa-angle-left right"></i>
+
+      </p>
+     </a>
+     <ul class="nav nav-treeview">
+      <li class="nav-item">
+       <a href="addreport" class="nav-link">
+
+        <i class="far fa-circle nav-icon"></i>
+        <p>Add Report</p>
+       </a>
+      </li>
+      <li class="nav-item">
+       <a href="class.php" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>Classes</p>
+       </a>
+      </li>
+     </ul>
+
+
+
+    </li>
+    <li class="nav-item">
+     <a href="#" class="nav-link">
+      <i class="nav-icon fas fa-subscript"></i>
+      <p>
+       Subject info
+       <i class="fas fa-angle-left right"></i>
+
+      </p>
+     </a>
+     <ul class="nav nav-treeview">
+      <li class="nav-item">
+       <a href="addsubject.php" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>Create/View Subjects</p>
+       </a>
+      </li>
+
+      <li class="nav-item">
+       <a href="assignsubject.php" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>View Subject Teachers</p>
+       </a>
+      </li>
+
+
+     </ul>
+    </li>
+    <li class="nav-item">
+     <a href="#" class="nav-link">
+      <i class="nav-icon fas fa-subscript"></i>
+      <p>
+       Results Mgm
+       <i class="fas fa-angle-left right"></i>
+
+      </p>
+     </a>
+     <ul class="nav nav-treeview">
+      <li class="nav-item">
+       <a href="results.php" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>Students Result</p>
+       </a>
+      </li>
+
+      <li class="nav-item">
+       <a href="classresult.php" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>Class Results</p>
+       </a>
+      </li>
+
+
+     </ul>
+    </li>
+    <li class="nav-item">
+     <a href="#" class="nav-link">
+      <i class="nav-icon fas fa-toolbox"></i>
+      <p>
+       School Settings
+       <i class="fas fa-angle-left right"></i>
+
+      </p>
+     </a>
+     <ul class="nav nav-treeview">
+      <li class="nav-item">
+       <a href="resultsetting.php" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>Result Settings</p>
+       </a>
+      </li>
+
+      <li class="nav-item">
+       <a href="resultpermission.php" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>Permission Setup</p>
+       </a>
+      </li>
+      <li class="nav-item">
+       <a href="generalsetup.php" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>General Setup</p>
+       </a>
+      </li>
+      <li class="nav-item">
+       <a href="registrationslot.php" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>Registration Slots</p>
+       </a>
+      </li>
+
+
+     </ul>
+    </li>
+    <li class="nav-item">
+     <a href="managepromotion.php" class="nav-link">
+      <i class="nav-icon fas fa-money-bill-wave-alt"></i>
+      <p>
+       Managemant Promotions
+       <i class="fas fa-angle-left right"></i>
+
+      </p>
+     </a>
+
+    </li>
+    <li class="nav-item">
+     <a href="" class="nav-link">
+      <i class="nav-icon fa fa-sticky-note"></i>
+      <p>
+       School fees Control
+       <i class="fas fa-angle-left right"></i>
+
+      </p>
+     </a>
+     <ul class="nav nav-treeview">
+      <li class="nav-item">
+       <a href="feescontrol.php" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>Create Fee Category</p>
+       </a>
+      </li>
+
+      <li class="nav-item">
+       <a href="setfee.php" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>Set School Fees</p>
+       </a>
+      </li>
+     </ul>
+    </li>
+
+    <li class="nav-item">
+     <a href="#" class="nav-link">
+      <i class="nav-icon fas fa-copy"></i>
+      <p>
+       Levy Payment Report
+       <i class="fas fa-angle-left right"></i>
+      </p>
+     </a>
+     <ul class="nav nav-treeview">
+
+      <li class="nav-item">
+       <a href="dailyfee.php" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>
+         Daily Payment
+
+
+        </p>
+       </a>
+      </li>
+      <li class="nav-item">
+       <a href="weeklyfee.php" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>
+         Weekly Payment
+
+        </p>
+       </a>
+      </li>
+      <li class="nav-item">
+       <a href="termlyfee.php" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>
+         Termly fee
+
+
+        </p>
+       </a>
+
+      </li>
+      <li class="nav-item">
+       <a href="feesrange.php" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>
+         Fees across range
+
+
+        </p>
+       </a>
+
+      </li>
+     </ul>
+    </li>
+    <li class="nav-item">
+     <a href="#" class="nav-link">
+      <i class="nav-icon fas fa-copy"></i>
+      <p>
+       Student Result
+       <i class="fas fa-angle-left right"></i>
+      </p>
+     </a>
+     <ul class="nav nav-treeview">
+
+      <li class="nav-item">
+       <a href="uploadresult.php" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>
+         Upload Result
+        </p>
+       </a>
+      </li>
+      <li class="nav-item">
+       <a href="addresult.php" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>
+         Add Results
+        </p>
+       </a>
+      </li>
+      <li class="nav-item">
+       <a href="broadsheet.php" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>
+         View Result
+
+
+        </p>
+       </a>
+      </li>
+
+     </ul>
+    </li>
+
+
+    <li class="nav-item">
+     <a href="#" class="nav-link">
+      <i class="nav-icon fas fa-copy"></i>
+      <p>
+       My Profile
+       <i class="fas fa-angle-left right"></i>
+
+      </p>
+     </a>
+    <li class="nav-item">
+     <a href="#" class="nav-link">
+
+
+      <form method="POST" action="/logout">
+       <button type="submit"><i class="nav-icon fas fa-chart-pie"></i>
+        <p>Log Out</p>
+       </button>
+      </form>
+     </a>
+
+     <i class="right-fas fa-angle-left"></i>
+    </li>
+
+    </li>
+
+    </li>
+   </ul>
+  </nav>
+  <!-- /.sidebar-menu -->
+ </div>
+ <!-- /.sidebar -->
+</aside>
