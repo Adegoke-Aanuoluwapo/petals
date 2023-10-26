@@ -49,7 +49,9 @@
 
 <body class="hold-transition sidebar-mini layout-fixed">
  <div class="wrapper">
-  @extends('nav')
+  <?php
+  include("nav.php");
+  ?>
 
 
 
@@ -150,24 +152,24 @@
       </div>
       <div class="modal-body">
        <form method="POST" class="row" id="addTeachersForm">
-        @csrf
+
         <div class="col-md-6 form-group">
          <label>Name</label>
-         <input type="text" name="name" class="form-control" placeholder="Enter Name" required>
+         <input type="text" name="name" class="form-control" placeholder="Enter Name" id="name" required>
         </div>
 
 
         <div class="col-md-6 form-group">
          <label>District</label>
-         <input type="text" name="district" class="form-control" placeholder="Alaba" required>
+         <input type="text" name="district" class="form-control" placeholder="Alaba" id="district" required>
         </div>
         <div class="col-md-6 form-group">
          <label>Phone</label>
-         <input type="text" name="phone" class="form-control" placeholder="09000000000" required>
+         <input type="text" name="phone" class="form-control" placeholder="09000000000" id="phone" required>
         </div>
         <div class="col-md-6 form-group">
          <label>Role</label>
-         <select name="role" class="form-control select2bs4" style="width: 100%;">
+         <select name="role" class="form-control select2bs4" style="width: 100%;" id="role">
           <option selected disabled>Select Role</option>
           <option value="8">Group Cordinator</option>
           <option value="9">District Coordinator</option>
@@ -177,13 +179,13 @@
         <div class="col-md-6 form-group">
          <label>Group</label>
 
-         <input name="group" id="" class="form-control" placeholder="Futa" required>
+         <input name="group" id="" class="form-control" placeholder="Futa" id="group" required>
 
         </div>
         <div class="col-md-6 form-group">
          <label>Region</label>
 
-         <input name="region" id="" class="form-control" placeholder="Akure" required>
+         <input name="region" id="" class="form-control" placeholder="Akure" id="region" required>
 
         </div>
 
@@ -200,7 +202,7 @@
      </div>
     </div>
    </div>
-   
+
 
 
 
@@ -208,5 +210,17 @@
   </div>
 
   <?php
-include("footer.php")
+  include("footer.php")
   ?>
+  <script>
+   function addTeachers() {
+    var name = document.getElementById("name").value;
+    var district = document.getElementById("district").value;
+    var phone = document.getElementById("phone").value;
+    var role = document.getElementById("role").value;
+    var group = document.getElementById("group").value;
+    var region = document.getElementById("region").value;
+
+    
+   }
+  </script>
