@@ -20,6 +20,19 @@ class Children
   }
   return;
  }
+function addTeachers($name, $district, $phone, $role,$grdistrict, $region ){
+
+ global $con;
+ $sql = $con->query("SELECT * FROM teachers WHERE name = '$name'");
+  if (mysqli_num_rows($sql) > 1) {
+   echo "teacher already exist";
+   return;
+  }
+ 
+ $sql = $con->query("INSERT INTO teachers(name, district, phone, role, grdistrict, region) VALUES('$name', '$district', '$phone','$role', '$grdistrict', '$region')");
+   echo "teacher added succefully";
+   return;
+ }
 }
 
 $pro = new Children();

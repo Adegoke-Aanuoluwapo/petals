@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -151,7 +153,7 @@
        </button>
       </div>
       <div class="modal-body">
-       <form method="POST" class="row" id="addTeachersForm">
+       <form method="POST" class="row" >
 
         <div class="col-md-6 form-group">
          <label>Name</label>
@@ -179,20 +181,20 @@
         <div class="col-md-6 form-group">
          <label>Group</label>
 
-         <input name="group" id="" class="form-control" placeholder="Futa" id="group" required>
+         <input name="group" class="form-control" placeholder="Futa" id="grdistrict" required>
 
         </div>
         <div class="col-md-6 form-group">
          <label>Region</label>
 
-         <input name="region" id="" class="form-control" placeholder="Akure" id="region" required>
+         <input name="region"  class="form-control" placeholder="Akure" id="region" required>
 
         </div>
 
 
 
         <div class="col-12 form-group">
-         <button type="submit" class="btn btn-secondary float-right addStaff " name="addTeacher" id="addTeachersBtn">Add Teacher</button>
+         <button type="button" class="btn btn-secondary float-right addStaff " name="addteacher" onclick="addTeachers()" >Add Teacher</button>
         </div>
        </form>
        <span id="output"></span>
@@ -212,15 +214,46 @@
   <?php
   include("footer.php")
   ?>
+
+  <script src="jquery.min.js"></script>
+
   <script>
    function addTeachers() {
     var name = document.getElementById("name").value;
     var district = document.getElementById("district").value;
     var phone = document.getElementById("phone").value;
     var role = document.getElementById("role").value;
-    var group = document.getElementById("group").value;
+    var grdistrict = document.getElementById("grdistrict").value;
     var region = document.getElementById("region").value;
 
-    
+    $.ajax({
+     type: 'get',
+     url: 'myclass.php?name='+name+'&district='+district+'&phone='+phone+'&role='+role+'&grdistrict='+grdistrict+'&region='+region+'&type=addteacher'
+
+    }).done(function(data) {
+     alert(data)
+     // if (data == "teacher added succefully") {
+     //  window.location.replace('index.php');
+     // } else {
+     //  alert("Invalid login");
+     // }
+
+    });
+
+
    }
+var ajax = new XMLHttpRequest();
+var method = "GET";
+var url = "myclass.php";
+var asynchronous = true;
+ajax.open(method, url, asynchronous);
+ajax.send();
+
+//receiving response
+ajax.onreadystatechange = function(){
+ if(this.readyState == 4 && this.status==200){
+  alert(this.responseText);
+ }
+}
+
   </script>
