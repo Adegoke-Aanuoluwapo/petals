@@ -102,7 +102,7 @@
                         <th></th>
                       </tr>
                     </thead>
-                    <tbody id="teacher" >
+                    <tbody id="teacher">
 
                       <tr>
                         <td></td>
@@ -241,40 +241,28 @@
 
       }
 
+      function teachers() {
+        $.ajax({
+          type: "get",
+          url: "myclass.php?type=teacher",
+        }).done(function(data) {
+          console.log(data)
+          var teachers = JSON.parse(data);
+          
+          for (var a = 0; a < teachers.length; a++) {
+            var name = teachers[a].name;
+            var district = teachers[a].district;
+            var grdistrict = teachers[a].grdistrict
+            var phone = teachers[a].phone;
+            var role = teachers[a].role;
+            var region = teachers[a].region;
 
-     
-        $("#teacher").html;
-        var ajax = new XMLHttpRequest();
-        var method = "GET";
-        var url = "myclass.php";
-        var asynchronous = true;
-        ajax.open(method, url, asynchronous);
-        ajax.send();
-
-        //receiving response
-        ajax.onreadystatechange = function() {
-          if (this.readyState == 4 && this.status == 200) {
-            var teachers = JSON.parse(this.responseText)
-            console.log(responseText);
-
-            //html values for <tbody>
-
-            for (var a = 0; a < teachers.length; a++) {
-              var name = teachers[a].name;
-              var district = teachers[a].district;
-              var grdistrict = teachers[a].grdistrict
-              var phone = teachers[a].phone;
-              var role = teachers[a].role;
-              var region = teachers[a].region;
-
-              //appending at html
-              $("#teacher").append(
-                '<tr><td>' + name + '</td><td>' + district + '</td><td>' + grdistrict + '</td><td>' + phone + '</td><td>' + role + '</td><td>' + region +'</td><tr>'
-              )
-            }
+            //appending at html
+            $("#teacher").append('<tr><td>' + name + '</td><td>' + district + '</td><td>' + grdistrict + '</td><td>' + phone + '</td><td>' + role + '</td><td>' + region + '</td><tr>');
           }
-        }
-      
+        })
+      }
 
-     
+  teachers();
+      //$("#teacher").html();
     </script>
