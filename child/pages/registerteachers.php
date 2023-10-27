@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -153,7 +151,7 @@
        </button>
       </div>
       <div class="modal-body">
-       <form method="POST" class="row" >
+       <form method="POST" class="row">
 
         <div class="col-md-6 form-group">
          <label>Name</label>
@@ -187,14 +185,14 @@
         <div class="col-md-6 form-group">
          <label>Region</label>
 
-         <input name="region"  class="form-control" placeholder="Akure" id="region" required>
+         <input name="region" class="form-control" placeholder="Akure" id="region" required>
 
         </div>
 
 
 
         <div class="col-12 form-group">
-         <button type="button" class="btn btn-secondary float-right addStaff " name="addteacher" onclick="addTeachers()" >Add Teacher</button>
+         <button type="button" class="btn btn-secondary float-right addStaff " name="addteacher" onclick="addTeachers()">Add Teacher</button>
         </div>
        </form>
        <span id="output"></span>
@@ -228,7 +226,7 @@
 
     $.ajax({
      type: 'get',
-     url: 'myclass.php?name='+name+'&district='+district+'&phone='+phone+'&role='+role+'&grdistrict='+grdistrict+'&region='+region+'&type=addteacher'
+     url: 'myclass.php?name=' + name + '&district=' + district + '&phone=' + phone + '&role=' + role + '&grdistrict=' + grdistrict + '&region=' + region + '&type=addteacher'
 
     }).done(function(data) {
      alert(data)
@@ -242,18 +240,35 @@
 
 
    }
-var ajax = new XMLHttpRequest();
-var method = "GET";
-var url = "myclass.php";
-var asynchronous = true;
-ajax.open(method, url, asynchronous);
-ajax.send();
+   var ajax = new XMLHttpRequest();
+   var method = "GET";
+   var url = "myclass.php";
+   var asynchronous = true;
+   ajax.open(method, url, asynchronous);
+   ajax.send();
 
-//receiving response
-ajax.onreadystatechange = function(){
- if(this.readyState == 4 && this.status==200){
-  alert(this.responseText);
- }
-}
+   //receiving response
+   ajax.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     var teachers = JSON.parse(this.responseText)
+     console.log(teachers);
 
+     //html values for <tbody>
+     var html = "";
+     for (var a = 0; a < teachers.length; a++) {
+      var name = teachers[a].name;
+      var district = teachers[a].district;
+      var grdistrict = teachers[a].grdistrict
+      var phone = teachers[a].phone;
+      var role = teachers[a].role;
+      var region = teachers[a].region;
+
+      //appending at html
+      html += "<tr>";
+              html += "<td>" + name + "</td>";
+
+       html += "</tr>";
+     }
+    }
+   }
   </script>
