@@ -33,7 +33,7 @@
 
 <body class="skin-blue sidebar-mini">
  <div class="wrapper">
-  @extends("nav")
+ <?php include("nav.php") ?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -83,26 +83,26 @@
 
         <form method="post" id="addchildrenForm">
 
-         @csrf
+         
 
 
          <p>
-          <input name="surname" class="form-control" placeholder="Surname*" required="">
+          <input name="surname" class="form-control" placeholder="Surname*" id="surname" required="">
          </p>
 
          <p>
-          <input name="firstname" class="form-control" placeholder="First Name*" required="">
+          <input name="firstname" class="form-control" placeholder="First Name*" id="firstname"required="">
          </p>
          <p>
-          <input name="othername" class="form-control" placeholder="Other Names" required>
+          <input name="othername" class="form-control" placeholder="Other Names" id="othername" required>
          </p>
 
          <p>
-          <input name="familyname" class="form-control" placeholder="Family Name*" required="">
+          <input name="familyname" class="form-control" placeholder="Family Name*" id="familyname" required="">
           <i><small>Should be the same for members of a family</small></i>
          </p>
          <p>
-          <select name="gender" class="form-control select2 select2-hidden-accessible" required="" tabindex="-1" aria-hidden="true">
+          <select name="gender" class="form-control select2 select2-hidden-accessible" required="" tabindex="-1" aria-hidden="true" id="gender">
            <option selected="" disabled="" value="">SELECT GENDER...</option>
            <option value="MALE">Male</option>
            <option value="FEMALE">Female</option>
@@ -111,7 +111,7 @@
 
 
          <p><i>Date of Birth</i>
-          <input name="dob" type="date" class="form-control" placeholder="Date of Birth*" required="">
+          <input name="dob" type="date" class="form-control" placeholder="Date of Birth*" id="dob" required="">
          </p>
 
          <p>
@@ -119,13 +119,13 @@
          </p>
 
          <p>
-          <textarea name="addressarea" class="form-control" placeholder="Describe Area, Community, Bus Stop, Junction" rows="2"></textarea>
+          <textarea name="addressarea" class="form-control" id="addressarea" placeholder="Describe Area, Community, Bus Stop, Junction" rows="2"></textarea>
          </p>
 
 
-         <p><input name="school" class="form-control" placeholder="School"></p>
+         <p><input name="school" class="form-control" placeholder="School" id="school"></p>
          <p>
-          <select name="class" class="form-control select2 select2-hidden-accessible" style="width: 100%" required="" tabindex="-1" aria-hidden="true">
+          <select name="class" class="form-control select2 select2-hidden-accessible" style="width: 100%" required="" tabindex="-1" aria-hidden="true" id="class">
            <option selected="" disabled="" value="">SELECT CLASS...</option>
            <option value="kg">PRE NUR</option>
            <option value="nursery">NUR</option>
@@ -145,7 +145,7 @@
 
          <p>
 
-          <button type="submit" class="btn btn-warning" name="regChildren" id="regChildrenBtn" style="width:100%">REGISTER CHILD</button>
+          <button type="submit" class="btn btn-warning" name="regChildren" id="regchildren" style="width:100%">REGISTER CHILD</button>
 
          </p>
 

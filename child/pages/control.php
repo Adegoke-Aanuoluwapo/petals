@@ -33,6 +33,20 @@ function addTeachers($name, $district, $phone, $role,$grdistrict, $region ){
    echo "teacher added succefully";
    return;
  }
+  function addChildren($surname, $firstname, $lastname, $familyname, $gender, $dob, $address, $addressarea, $school, $class)
+  {
+
+    global $con;
+    $sql = $con->query("SELECT * FROM children WHERE name = '$name' AND '$lastname'");
+    if (mysqli_num_rows($sql) == 1) {
+      echo "child already exist";
+      return;
+    }
+
+    $sql = $con->query("INSERT INTO teachers(surname, firstname, lastname, familyname, gender, dob, address, addressarea, school, class) VALUES('$surname', '$firstname', '$lastname','$familyname', '$gender', '$dob', '$address', '$addressarea', '$school', '$class')");
+    echo "child added succefully";
+    return;
+  }
 
 }
 
