@@ -17,6 +17,7 @@ if($type == 'addteacher'){
   }
   
   if($type =='teacher'){
+   global $con;
   $sql = $con->query("SELECT  * FROM teachers");
   
   $teacher = array();

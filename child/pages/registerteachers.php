@@ -94,12 +94,13 @@
                   <table id="example1" class="table mb-0 table-bordered table-hover table-striped">
                     <thead>
                       <tr>
-                        <th>#</th>
+                        <th>sn</th>
                         <th>Name</th>
                         <th>Email</th>
                         <th>Phone</th>
                         <th>Role</th>
-                        <th></th>
+                        <th>Region</th>
+                        <th>Region</th>
                       </tr>
                     </thead>
                     <tbody id="teacher">
@@ -110,11 +111,10 @@
                         <td></td>
                         <td></td>
                         <td></td>
+                        <td></td>
                         <td>
 
-                          <div class="float-right">
-                            <a href="staffprofile.php?sn="> Profile <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
-                          </div>
+
                         </td>
 
                       </tr>
@@ -248,8 +248,8 @@
         }).done(function(data) {
           console.log(data)
           var teachers = JSON.parse(data);
-          
-          for (var a = 0; a < teachers.length; a++) {
+
+          for (var a = 1; a < teachers.length; a++) {
             var name = teachers[a].name;
             var district = teachers[a].district;
             var grdistrict = teachers[a].grdistrict
@@ -258,11 +258,14 @@
             var region = teachers[a].region;
 
             //appending at html
-            $("#teacher").append('<tr><td>' + name + '</td><td>' + district + '</td><td>' + grdistrict + '</td><td>' + phone + '</td><td>' + role + '</td><td>' + region + '</td><tr>');
+            $("#teacher").append('<tr><td>' + a + `</td><td><a href="">` + name + `</a></td><td>` + district + '</td><td>' + grdistrict + '</td><td>' + phone + '</td><td>' + role + '</td><td>' + region + '</td><tr>');
           }
         })
       }
+      setInterval(function() {
+        $("teacher").ajax.reload();
+      }, 3000);
 
-  teachers();
+      teachers();
       //$("#teacher").html();
     </script>
