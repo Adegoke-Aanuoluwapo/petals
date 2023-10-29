@@ -37,7 +37,7 @@ function addTeachers($name, $district, $phone, $role,$grdistrict, $region ){
   {
 
     global $con;
-    $sql = $con->query("SELECT * FROM children WHERE name = '$name' AND '$lastname'");
+    $sql = $con->query("SELECT * FROM children WHERE surname = '$surname' AND lastname='$lastname'");
     if (mysqli_num_rows($sql) == 1) {
       echo "child already exist";
       return;
