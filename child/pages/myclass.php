@@ -28,6 +28,10 @@ if($type == 'addteacher'){
  
   }
    echo json_encode($teacher);
+
+   if($type == 'registerchild'){
+      $pro->addChildren($surname, $firstname, $lastname, $familyname, $sex, $birthdate, $address, $addressarea, $school, $class);
+   }
 }
 
 

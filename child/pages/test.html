@@ -1,18 +1,18 @@
    <form method="POST" class="row" >
 
         <div class="col-md-6 form-group">
-         <label>Name</label>
-         <input type="text" name="name" class="form-control" placeholder="Enter Name" id="name" required>
+         <label>surname</label>
+         <input type="text" name="name" class="form-control" placeholder="Enter Name" id="surname" required>
         </div>
 
 
         <div class="col-md-6 form-group">
-         <label>District</label>
-         <input type="text" name="district" class="form-control" placeholder="Alaba" id="district" required>
+         <label>firstname</label>
+         <input type="text" name="" class="form-control" placeholder="Alaba" id="firstname" required>
         </div>
         <div class="col-md-6 form-group">
-         <label>Phone</label>
-         <input type="text" name="phone" class="form-control" placeholder="09000000000" id="phone" required>
+         <label>othername</label>
+         <input type="text" name="phone" class="form-control" placeholder="09000000000" id="othername" required>
         </div>
         <div class="col-md-6 form-group">
          <label>Role</label>
@@ -39,7 +39,7 @@
 
 
         <div class="col-12 form-group">
-         <button type="button" class="btn btn-secondary float-right addStaff " name="addteacher" onclick="addTeachers()" >Add Teacher</button>
+         <button type="button" class="btn btn-secondary float-right addStaff " name="registerchild" onclick="registerChildren()" >Add Teacher</button>
         </div>
        </form>
        <span id="output"></span>
@@ -61,29 +61,39 @@
 
   <script src="jquery.min.js"></script>
 
-  <script>
-   function addTeachers() {
-    var name = document.getElementById("name").value;
-    var district = document.getElementById("district").value;
-    var phone = document.getElementById("phone").value;
-    var role = document.getElementById("role").value;
-    var group = document.getElementById("group").value;
-    var region = document.getElementById("region").value;
+ <script>
+      function registerChildren() {
+        var surname = document.getElementById("surname").value;
+        var district = document.getElementById("district").value;
+        var phone = document.getElementById("phone").value;
+        var role = document.getElementById("role").value;
+        var grdistrict = document.getElementById("grdistrict").value;
+        var region = document.getElementById("region").value;
+        alert( surname)
+                        $.ajax({
+                                type: 'get',
+                                url: 'myclass.php?surname=' + surname + '&firstname=' + firstname + '&othername=' + othername + '&familyname=' + familyname + '&sex=' + sex + '&birthdate=' + birthdate + '&address=' + address + '&addressarea=' + addressarea + '&school=' + school + '&class=' + clas + '&type=registerchild'
 
-    $.ajax({
-     type: 'get',
-     url: 'myclass.php?name='+name+'&district='+district+'&phone='+phone+'&role='+role+'&group='+group+'&region='+region+'&type=addteacher'
+                        }).done(function(data) {
+                                alert(data)
+                                // if (data == "teacher added succefully") {
+                                //  window.location.replace('index.php');
+                                // } else {
+                                //  alert("Invalid login");
+                                // }
 
-    }).done(function(data) {
-     alert(data)
-     // if (data == "teacher added succefully") {
-     //  window.location.replace('index.php');
-     // } else {
-     //  alert("Invalid login");
-     // }
-
-    });
+                        }).fail(function(xhr, status, error) {
+            alert('Request failed: ' + error);
+        });
 
 
-   }
-  </script>
+
+
+
+
+
+                }
+</script>
+<script>
+ 
+</script>

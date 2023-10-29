@@ -27,7 +27,8 @@
         <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
         <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
-        <script src="../plugins/jquery/jquery.min.js"></script>
+        <script src="jquery.min.js"></script>
+        <!-- <script src="../plugins/jquery/jquery.min.js"></script> -->
 
 </head>
 
@@ -81,10 +82,7 @@
 
 
 
-                                                                <form method="post" id="addchildrenForm">
-
-
-
+                                                                <form method="post">
 
                                                                         <p>
                                                                                 <input name="surname" class="form-control" placeholder="Surname*" id="surname" required="">
@@ -145,7 +143,7 @@
 
                                                                         <p>
 
-                                                                                <button type="submit" class="btn btn-warning" name="regChildren" id="regchildren" style="width:100%">REGISTER CHILD</button>
+                                                                                <button type="submit" onclick="registerChildren()" class="btn btn-warning" name="registerchild" style="width:100%">REGISTER CHILD</button>
 
                                                                         </p>
 
@@ -201,22 +199,47 @@
 
                 </div>
         </div>
-        <?php
-        include("footer.php");
-        ?>
+
+
         <script>
                 function registerChildren() {
                         var surname = document.getElementById("surname").value;
                         var firstname = document.getElementById("firstname").value;
                         var othername = document.getElementById("othername").value;
                         var familyname = document.getElementById("familyname").value;
-                        var gender = document.getElementById("sex").value;
+                        var sex = document.getElementById("sex").value;
                         var birthdate = document.getElementById("birthdate").value;
                         var address = document.getElementById("address").value;
                         var addressarea = document.getElementById("addressarea").value;
                         var school = document.getElementById("school").value;
                         var clas = document.getElementById("class").value;
+                        alert(surname)
+                        $.ajax({
+                                type: 'get',
+                                url: 'myclass.php?surname=' + surname + '&firstname=' + firstname + '&othername=' + othername + '&familyname=' + familyname + '&sex=' + sex + '&birthdate=' + birthdate + '&address=' + address + '&addressarea=' + addressarea + '&school=' + school + '&class=' + clas + '&type=registerchild'
 
+                        }).done(function(data) {
+                                alert(data)
+                                // if (data == "teacher added succefully") {
+                                //  window.location.replace('index.php');
+                                // } else {
+                                //  alert("Invalid login");
+                                // }
+
+                        });
+
+
+                        // $.ajax({
+
+                        // }).done(function(data) {
+                        //         alert(data)
+                        //         if (data == "child added successfully") {
+                        //                 alert("successul")
+
+                        //         } else {
+                        //                 alert("failed")
+                        //         }
+                        // });
 
 
 

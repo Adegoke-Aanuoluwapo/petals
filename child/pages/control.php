@@ -30,10 +30,11 @@ function addTeachers($name, $district, $phone, $role,$grdistrict, $region ){
   }
  
  $sql = $con->query("INSERT INTO teachers(name, district, phone, role, grdistrict, region) VALUES('$name', '$district', '$phone','$role', '$grdistrict', '$region')");
+
    echo "teacher added succefully";
    return;
  }
-  function addChildren($surname, $firstname, $lastname, $familyname, $gender, $dob, $address, $addressarea, $school, $class)
+  function addChildren($surname, $firstname, $lastname, $familyname, $sex, $birthdate, $address, $addressarea, $school, $class)
   {
 
     global $con;
@@ -43,7 +44,8 @@ function addTeachers($name, $district, $phone, $role,$grdistrict, $region ){
       return;
     }
 
-    $sql = $con->query("INSERT INTO teachers(surname, firstname, lastname, familyname, gender, dob, address, addressarea, school, class) VALUES('$surname', '$firstname', '$lastname','$familyname', '$gender', '$dob', '$address', '$addressarea', '$school', '$class')");
+    $sql = $con->query("INSERT INTO children(surname, firstname, lastname, familyname, sex, birthdate, address, addressarea, school, class) VALUES('$surname', '$firstname', '$lastname','$familyname', '$sex', '$birthdate', '$address', '$addressarea', '$school', '$class')");
+    
     echo "child added succefully";
     return;
   }
