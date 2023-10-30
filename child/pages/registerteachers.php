@@ -258,7 +258,7 @@
             var region = teachers[a].region;
 
             //appending at html
-            $("#teacher").append('<tr><td>' + a + `</td><td><a href="">` + name + `</a></td><td>` + district + '</td><td>' + grdistrict + '</td><td>' + phone + '</td><td>' + role + '</td><td>' + region + '</td><tr>');
+            $("#teacher").append('<tr><td>' + a + `</td><td><a href="">` + name + `</a></td><td>` + district + '</td><td>' + grdistrict + '</td><td>' + phone + '</td><td>' + role + '</td><td>' + region + '</td></tr>');
           }
         })
       }

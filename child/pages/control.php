@@ -28,26 +28,51 @@ function addTeachers($name, $district, $phone, $role,$grdistrict, $region ){
    echo "teacher already exist";
    return;
   }
+  else{
+      $sql = $con->query("INSERT INTO teachers(name, district, phone, role, grdistrict, region) VALUES('$name', '$district', '$phone','$role', '$grdistrict', '$region')");
+    if($sql){
+        echo "teacher added succefully";
+        return;
+    }
+     
+  }
  
- $sql = $con->query("INSERT INTO teachers(name, district, phone, role, grdistrict, region) VALUES('$name', '$district', '$phone','$role', '$grdistrict', '$region')");
-
-   echo "teacher added succefully";
-   return;
+ 
  }
-  function addChildren($surname, $firstname, $lastname, $familyname, $sex, $birthdate, $address, $addressarea, $school, $class)
+  function addChildren($surname, $firstname, $othername, $familyname, $sex, $birthdate, $address, $addressarea, $school, $class)
   {
 
     global $con;
-    $sql = $con->query("SELECT * FROM children WHERE surname = '$surname' AND lastname='$lastname'");
+    $sql = $con->query("SELECT * FROM children WHERE surname = '$surname' AND othername='$othername'");
     if (mysqli_num_rows($sql) == 1) {
       echo "child already exist";
       return;
     }
-
-    $sql = $con->query("INSERT INTO children(surname, firstname, lastname, familyname, sex, birthdate, address, addressarea, school, class) VALUES('$surname', '$firstname', '$lastname','$familyname', '$sex', '$birthdate', '$address', '$addressarea', '$school', '$class')");
+    else{
+      $sql = $con->query("INSERT INTO children(surname, firstname, othername, familyname, sex, birthdate, address, addressarea, school, class) VALUES('$surname', '$firstname', '$othername','$familyname', '$sex', '$birthdate', '$address', '$addressarea', '$school', '$class')");
+      if($sql){
+        echo "child added succefully";
+        return;
+      }
     
-    echo "child added succefully";
-    return;
+    }
+ 
+  }
+  function submitReport($reportname, $date, $b35, $g35, $b68, $g68, $b912, $g912){
+    global $con;
+    $sql = $con->query("SELECT * FROM reports WHERE reportname='$reportname' AND date='$date'");
+    if(mysqli_num_rows($sql) == 1) {
+      echo "child already exist";
+      return;
+
+  }
+  else{
+    $sql = $con->query("INSERT INTO reports(reportname, date, b35, g35, b68, g68, b912, g912)");
+    if($sql){
+      echo "report submitted successfully";
+      return;
+    }
+  }
   }
 
 }

@@ -109,11 +109,11 @@
 
 
                                                                         <p><i>Date of Birth</i>
-                                                                                <input name="birthdate" type="date" class="form-control" placeholder="Date of Birth*" id="dob" required="">
+                                                                                <input name="birthdate" type="date" class="form-control" placeholder="Date of Birth*" id="birthdate" required="">
                                                                         </p>
 
                                                                         <p>
-                                                                                <textarea name="address" class="form-control" placeholder="Detailed Residential Address*" rows="2" required=""></textarea>
+                                                                                <textarea name="address" class="form-control" placeholder="Detailed Residential Address*" id="address" rows="2" required=""></textarea>
                                                                         </p>
 
                                                                         <p>
@@ -143,7 +143,7 @@
 
                                                                         <p>
 
-                                                                                <button type="submit" onclick="registerChildren()" class="btn btn-warning" name="registerchild" style="width:100%">REGISTER CHILD</button>
+                                                                                <button type="button" onclick="registerChildren()" class="btn btn-warning" name="registerchild" style="width:100%">REGISTER CHILD</button>
 
                                                                         </p>
 
@@ -177,13 +177,8 @@
                                                                                         <th>Profile</th>
                                                                                 </tr>
                                                                         </thead>
-                                                                        <tbody id="childrentable">
-                                                                                <tr class="odd gradeX">
+                                                                        <tbody id="children">
 
-
-
-
-                                                                                </tr>
 
                                                                         </tbody>
 
@@ -213,33 +208,21 @@
                         var addressarea = document.getElementById("addressarea").value;
                         var school = document.getElementById("school").value;
                         var clas = document.getElementById("class").value;
-                        alert(surname)
+
                         $.ajax({
                                 type: 'get',
                                 url: 'myclass.php?surname=' + surname + '&firstname=' + firstname + '&othername=' + othername + '&familyname=' + familyname + '&sex=' + sex + '&birthdate=' + birthdate + '&address=' + address + '&addressarea=' + addressarea + '&school=' + school + '&class=' + clas + '&type=registerchild'
 
                         }).done(function(data) {
                                 alert(data)
-                                // if (data == "teacher added succefully") {
-                                //  window.location.replace('index.php');
+                                //  if (data == "teacher added succefully") {
+                                //         alert("child added successfully")
                                 // } else {
-                                //  alert("Invalid login");
-                                // }
+                                //  alert("Invalid input");
+                                //  }
 
                         });
 
-
-                        // $.ajax({
-
-                        // }).done(function(data) {
-                        //         alert(data)
-                        //         if (data == "child added successfully") {
-                        //                 alert("successul")
-
-                        //         } else {
-                        //                 alert("failed")
-                        //         }
-                        // });
 
 
 
@@ -250,4 +233,25 @@
 
 
                 }
+
+                function children() {
+                        $.ajax({
+                                type: 'get',
+                                url: 'myclass.php?type=children',
+                        }).done(function(data) {
+                               // console.log(data)
+                                var children = JSON.parse(data)
+                                for (i = 1; i < children.length; i++) {
+                                        var surname = children[i].surname;
+                                        var firstname = children[i].firstname;
+                                        var othername = children[i].othername;
+                                        var familyname = children[i].familyname;
+                                        var school = children[i].school;
+                                        var clas = children[i].class;
+                                        $("#children").append('<tr><td>' + i + '</td><td>' + surname + ' ' + firstname + ' ' + othername + '</td><td>' + school + '</td><td>' + clas + '</td></tr>')
+                                }
+                        })
+                }
+
+                children();
         </script>
