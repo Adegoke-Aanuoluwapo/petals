@@ -241,6 +241,15 @@ session_start();
       alert(data)
      })
     }
+
+    function Report(){
+     $.ajax({
+      type:'get',
+      url:'myclass.php?report'
+     }).done(function(data){
+      alert(data);
+     })
+    }
    </script>
 
 

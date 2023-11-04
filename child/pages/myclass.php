@@ -41,7 +41,15 @@ if($type == 'addteacher'){
  if($type == "addreport"){
       $pro->submitReport($reportname, $teacher_id, $reportdate, $b35, $g35, $b68, $g68, $b912, $g912);
    }
-
+if($type=='report'){
+   global $con;
+   $sql= $con->query("SELECT * FROM reports");
+   $report = [];
+   while($row = mysqli_fetch_assoc($sql)){
+      $report[] = $row;
+   }
+   echo json_encode($report);
+}
   
 }
 
