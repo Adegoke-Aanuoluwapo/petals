@@ -246,7 +246,7 @@
           type: "get",
           url: "myclass.php?type=teacher",
         }).done(function(data) {
-          console.log(data)
+          alert(data)
           var teachers = JSON.parse(data);
 
           for (var a = 1; a < teachers.length; a++) {
@@ -262,9 +262,7 @@
           }
         })
       }
-      setInterval(function() {
-        $("teacher").ajax.reload();
-      }, 3000);
+   
 
       teachers();
       //$("#teacher").html();

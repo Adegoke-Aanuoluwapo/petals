@@ -58,6 +58,13 @@ function addTeachers($name, $district, $phone, $role,$grdistrict, $region ){
     }
  
   }
+  function sQLx1($table, $key, $val){
+    global $con;
+    $sql = $con->query("SELECT * FROM $table WHERE $key = '$val'");
+    $rows = mysqli_fetch_assoc($sql);
+    return $rows['sn'];
+
+  }
   function submitReport($reportname, $teacher_id, $reportdate, $b35, $g35, $b68, $g68, $b912, $g912){
     global $con;
     $teacher_id = $_SESSION['id'];
