@@ -37,7 +37,10 @@ if($type == 'addteacher'){
   }
       echo json_encode($teacher);
   }
-   
+
+ if($type == "addreport"){
+      $pro->submitReport($reportname, $teacher_id, $reportdate, $b35, $g35, $b68, $g68, $b912, $g912);
+   }
 
   
 }

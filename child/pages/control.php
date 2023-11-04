@@ -58,16 +58,17 @@ function addTeachers($name, $district, $phone, $role,$grdistrict, $region ){
     }
  
   }
-  function submitReport($reportname, $date, $b35, $g35, $b68, $g68, $b912, $g912){
+  function submitReport($reportname, $teacher_id, $reportdate, $b35, $g35, $b68, $g68, $b912, $g912){
     global $con;
-    $sql = $con->query("SELECT * FROM reports WHERE reportname='$reportname' AND date='$date'");
+    $teacher_id = $_SESSION['id'];
+    $sql = $con->query("SELECT * FROM reports WHERE reportname ='$reportname' AND reportdate ='$reportdate'");
     if(mysqli_num_rows($sql) == 1) {
       echo "child already exist";
       return;
 
   }
   else{
-    $sql = $con->query("INSERT INTO reports(reportname, date, b35, g35, b68, g68, b912, g912)");
+    $sql = $con->query("INSERT INTO reports(reportname, teacher_id, reportdate, b35, g35, b68, g68, b912, g912) VALUES('$reportname','$teacher_id', '$reportdate', '$b35', '$g35', '$b68', '$g68', '$b912', '$g912')");
     if($sql){
       echo "report submitted successfully";
       return;

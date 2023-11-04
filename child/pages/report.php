@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -167,7 +172,7 @@
         </div>
         <div class="col-md-6 form-group">
          <label>Date</label>
-         <input type="date" name="date" id="date" class="form-control" placeholder="3-5" required>
+         <input type="date" id="reportdate" class="form-control" placeholder="3-5" required>
 
 
         </div>
@@ -207,7 +212,7 @@
 
 
         <div class="col-12 form-group">
-         <button type="button" class="btn btn-secondary float-right addStaff "onclick="addReport()" name="addreport" id="">Add Report</button>
+         <button type="button" class="btn btn-secondary float-right addStaff " onclick="addReport()" name="addreport" id="">Add Report</button>
         </div>
        </form>
        <span id="output"></span>
@@ -219,19 +224,20 @@
    </div>
    <script>
     function addReport() {
-     var reportname = document.getElementById("reportname").value
-     var date = document.getElementById("date");
-     var b35 =document.getElementById("b35");
-     var g35 =document.getElementById("g35");
-     var b68 = document.getElementById("b68");
-     var g68 = document.getElementById("g68");
-     var b912=document.getElementById("b912");
-     var g912 = document.getElementById("g912");
+     var teacher_id;
+     var reportname = document.getElementById("reportname").value;
+     var reportdate = document.getElementById("reportdate").value;
+     var b35 = document.getElementById("b35").value;
+     var g35 = document.getElementById("g35").value;
+     var b68 = document.getElementById("b68").value;
+     var g68 = document.getElementById("g68").value;
+     var b912 = document.getElementById("b912").value;
+     var g912 = document.getElementById("g912").value;
 
      $.ajax({
-      type:'get',
-      url:'myclass.php?reportname='+name+'&date='+date+'&b35='+b35+'g35='+g35+'&b68='+b68+'&g68='+g68+'&b912='+b912+'&g912='+g912+'&type=addreport'
-     }).done(function(data){
+      type: 'get',
+      url: 'myclass.php?teacher_id=' + teacher_id + '&reportname='+reportname + '&reportdate=' + reportdate + '&b35=' + b35 + '&g35=' + g35 + '&b68=' + b68 + '&g68=' + g68 + '&b912=' + b912 + '&g912=' + g912 + '&type=addreport'
+     }).done(function(data) {
       alert(data)
      })
     }
