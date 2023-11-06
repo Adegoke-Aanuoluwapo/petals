@@ -1,3 +1,6 @@
+ 
+
+
 <html>
 
 <head>
@@ -174,7 +177,7 @@
                                                                                         <th>Full Names</th>
 
                                                                                         <th>Gender</th>
-                                                                                        <th>Profile</th>
+                                                                                        <th>Action</th>
                                                                                 </tr>
                                                                         </thead>
                                                                         <tbody id="children">
@@ -215,11 +218,11 @@
 
                         }).done(function(data) {
                                 alert(data)
-                                //  if (data == "teacher added succefully") {
-                                //         alert("child added successfully")
-                                // } else {
-                                //  alert("Invalid input");
-                                //  }
+
+                                if (data == "teacher added succefully") {
+                                        alert("child added successfully")
+                                }
+                                children();
 
                         });
 
@@ -235,23 +238,34 @@
                 }
 
                 function children() {
+                        $('#children').html('');
                         $.ajax({
                                 type: 'get',
                                 url: 'myclass.php?type=children',
                         }).done(function(data) {
-                               // console.log(data)
+                                // console.log(data)
                                 var children = JSON.parse(data)
-                                for (i = 1; i < children.length; i++) {
+                                for (i = 0; i < children.length; i++) {
+                                        var childid = children[i].id;
                                         var surname = children[i].surname;
                                         var firstname = children[i].firstname;
                                         var othername = children[i].othername;
                                         var familyname = children[i].familyname;
                                         var school = children[i].school;
                                         var clas = children[i].class;
-                                        $("#children").append('<tr><td>' + i + '</td><td>' + surname + ' ' + firstname + ' ' + othername + '</td><td>' + school + '</td><td>' + clas + '</td></tr>')
+                                        $("#children").append('<tr><td>' + children[i].id + '</td><td>' + surname + ' ' + firstname + ' ' + othername + '</td><td>' + school + '</td><td><button onclick="goToUpdate(' + childid + ')" type="button" class="btn btn-success name="childid">Update</button></td></tr>')
                                 }
                         })
                 }
 
                 children();
+
+                function goToUpdate(c) {
+                        // alert("hello")
+                        localStorage.setItem('cId', c);
+
+                        window.location.href = 'updatechildren.php';
+
+                }
+                goToUpdate(c)
         </script>

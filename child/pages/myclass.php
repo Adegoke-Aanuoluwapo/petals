@@ -50,6 +50,12 @@ if($type=='report'){
    }
    echo json_encode($report);
 }
+if($type == "childid"){
+   $id = $_GET['id'];
+  $sql= $con->query("SELECT * FROM children WHERE id='$id'");
+   $rows = mysqli_fetch_assoc($sql);
+   echo json_encode($rows);
+}
   
 }
 
