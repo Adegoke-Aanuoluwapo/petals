@@ -100,29 +100,21 @@ session_start();
           <thead>
            <tr>
             <th>sn</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Role</th>
+            <th>group</th>
+            <th>reportname</th>
+            <th>reportdate</th>
+            <th>boys(3-5)</th>
+            <th>girls(3-5)</th>
+            <th>boys(6-8)</th>
+            <th>girls(6-8)</th>
+            <th>boys(9-12)</th>
+            <th>girls(9-12)</th>
             <th></th>
            </tr>
           </thead>
           <tbody id="report">
 
-           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>
 
-             <div class="float-right">
-              <a href="staffprofile.php?sn="> Profile <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
-             </div>
-            </td>
-
-           </tr>
 
 
 
@@ -224,7 +216,6 @@ session_start();
    </div>
    <script src="jquery.min.js"></script>
    <script>
-    
     function addReport() {
      var teacher_id;
      var reportname = document.getElementById("reportname").value;
@@ -241,18 +232,20 @@ session_start();
       url: 'myclass.php?teacher_id=' + teacher_id + '&reportname=' + reportname + '&reportdate=' + reportdate + '&b35=' + b35 + '&g35=' + g35 + '&b68=' + b68 + '&g68=' + g68 + '&b912=' + b912 + '&g912=' + g912 + '&type=addreport'
      }).done(function(data) {
       alert(data)
+      Report()
      })
     }
 
     function Report() {
+     $('#report').html('');
      $.ajax({
       type: "get",
       url: "myclass.php?type=report",
      }).done(function(data) {
       console.log(data)
       var report = JSON.parse(data);
-      
-      for (i=1; i< report.length; i++) {
+
+      for (i = 1; i < report.length; i++) {
        var teacher = report[i].teacher_id;
        var reportname = report[i].reportname;
        var reportdate = report[i].reportdate;
@@ -263,7 +256,7 @@ session_start();
        var b912 = report[i].b912;
        var g912 = report[i].g912;
 
-       $("#report").append('<tr><td>' +i+ '</td><td>' + teacher + '</td><td>' + reportname + '</td><td>' + reportdate + '</td><td>' + b35 + '</td><td>' + g35 + '</td><td>' + b68 + '</td><td>' + g68 + '</td><td>' + b912 + '</td><td>' + g912 + '</td><td>');
+       $("#report").append('<tr><td>' + i + '</td><td>' + teacher + '</td><td>' + reportname + '</td><td>' + reportdate + '</td><td>' + b35 + '</td><td>' + g35 + '</td><td>' + b68 + '</td><td>' + g68 + '</td><td>' + b912 + '</td><td>' + g912 + '</td><td>');
       }
      })
     }
