@@ -237,6 +237,8 @@ session_start();
     }
 
     function Report() {
+    // teachers = localStorage.getItem('teachers');
+    // alert(teachers);
      $('#report').html('');
      $.ajax({
       type: "get",

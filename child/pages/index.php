@@ -150,70 +150,146 @@ session_start();
           </div>
         </div>
 
-        <div class="row">
+      <div class="row">
+   <div class="col-md-12">
+              <div class="box box-primary box-solid">
+                <div class="box-header with-border">
+                  <h3 class="box-title">SUBMIT WEEKLY REPORTS</h3>
+                  <div class="box-tools pull-right">
+                  
+                  </div><!-- /.box-tools -->
+                </div><!-- /.box-header -->
+                <div class="box-body" style="padding:10px 0" id="weeklyrep">	 <div class="col-md-4 col-sm-6 col-xs-12" style="padding:0 10px">
+              <div class="info-box" style="border: thin solid #CCC;" id="popModal" data-prog="MONDAY BIBLE STUDY" data-date="06-NOV-2023" data-pid="3750">
+                <span class="info-box-icon bg-aqua-active"><i class="fa fa-calendar-times-o"></i></span>
+                <div class="info-box-content">
+            <span class="info-box-text"><center><strong>Monday Bible Study<br>06-Nov-2023</strong></center> </span>
 
-          <div class="col-md-8">
-            <div class="card card-secondary card-outline">
-              <div class="card-header">
-                <h3 class="card-title">
-                  <i class="far fa-chart-bar"></i>
-                  Fee Payment Chart
-                </h3>
+                         <button type="button" class="btn btn-primary btn-sm btn-block">SUBMIT REPORT</button>
+                     
+                </div><!-- /.info-box-content -->
+              </div><!-- /.info-box -->
+            </div><!-- /.col -->
 
-                <div class="card-tools">
-                  <a href="#" class="text-secondary">See-More-Charts <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
-                </div>
-              </div>
-              <div class="card-body">
-                <div class="chart">
-                  <div class="chartjs-size-monitor">
-                    <div class="chartjs-size-monitor-expand">
-                      <div class=""></div>
-                    </div>
-                    <div class="chartjs-size-monitor-shrink">
-                      <div class=""></div>
-                    </div>
+</div><!-- /.box-body -->
+              </div><!-- /.box -->
+            </div>
+
+   <div class="col-md-12">
+              <div class="box box-success box-solid">
+                <div class="box-header with-border">
+                  <h3 class="box-title">RECENT SUBMISSION</h3>
+                  <div class="box-tools pull-right">
+                   
+                  </div><!-- /.box-tools -->
+                </div><!-- /.box-header -->
+                <div class="box-body" style="padding:10px 0" >	
+
+
+
+
+
+ <div class="col-md-4 col-sm-6 col-xs-12" style="padding:0 10px">
+              <div class="info-box" style="border: thin solid #CCC; " onclick="popModalEdit('3740','16')">
+                <span class="info-box-icon bg-green-active"><i class="fa fa-calendar-check-o"></i></span>
+                <div class="info-box-content" >
+                  <span class="info-box-text"><center><strong ><h3 id="reportname"></h3><br ><h3 id="reportdate"></h3></strong></center> </span>
+                     
+                     <div>
+                     	<table class="table table-sm" style="margin: 0; padding:0">
+                     		
+                     		<tbody id="activereport" >
+                        </tbody>
+                      </table>
+
                   </div>
-                  <canvas id="barChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 54px;" width="108" height="500" class="chartjs-render-monitor"></canvas>
-                </div>
-              </div>
+                </div><!-- /.info-box-content -->
+              </div><!-- /.info-box -->
+            </div><!-- /.col -->
+            
+
+
+
+ </div><!-- /.col -->
+            
+
+  </div><!-- /.col -->
+            
+
+<em style="padding-left:15px">Click a report to update it</em>
+
+</div><!-- /.box-body -->
+              </div><!-- /.box -->
             </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">
-                  <i class="fa fa-users"></i>
-                  Students
-                </h3>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                <ul class="users-list clearfix student_body">
-
-                 
-                    <li>
-                      <img src="user.png" alt="User Image">
-                      <a class="users-list-name" href="studentprofile.php?sn="></a>
-                      <span class="users-list-date"></span>
-                    </li>
-                
 
 
 
 
-                </ul>
-              </div>
+   <div class="col-md-12">
+              <div class="box box-danger box-solid">
+                <div class="box-header with-border">
+                  <h3 class="box-title">PENDING REPORTS</h3>
+                  <div class="box-tools pull-right">
+                  
+                  </div><!-- /.box-tools -->
+                </div><!-- /.box-header -->
+                <div class="box-body" style="padding:10px 0" id="pendingrep"><div class="row" style="padding:0 15px"><div class="col-md-4 col-sm-6 col-xs-12" style="padding:0 10px"><div id="popModal" class="info-box" style="border: thin solid #CCC;" data-prog="Monday Bible Study" data-date="06-Nov-2023" data-pid="3750"><span class="info-box-icon bg-maroon-active"><i class="fa fa-calendar-times-o"></i></span><div class="info-box-content"><span class="info-box-text"><center><strong>Monday Bible Study<br>06-Nov-2023</strong></center> </span><button type="button" class="btn btn-danger btn-sm btn-block">SUBMIT REPORT</button></div></div></div><div class="col-md-4 col-sm-6 col-xs-12" style="padding:0 10px"><div id="popModal" class="info-box" style="border: thin solid #CCC;" data-prog="Sunday Worship Service" data-date="05-Nov-2023" data-pid="3749"><span class="info-box-icon bg-maroon-active"><i class="fa fa-calendar-times-o"></i></span><div class="info-box-content"><span class="info-box-text"><center><strong>Sunday Worship Service<br>05-Nov-2023</strong></center> </span><button type="button" class="btn btn-danger btn-sm btn-block">SUBMIT REPORT</button></div></div></div></div><div class="row"><center><a href="pending.php" class="btn btn-default">Show all Pending Reports</a></center></div></div><!-- /.box-body -->
+              </div><!-- /.box -->
             </div>
-          </div>
 
-        </div>
+
+
+
+            </div>
 
 
       </section>
       <!-- /.content -->
     </div>
+    
   <?php
 include("footer.php");
   ?>
+  <script>
+  
+  </script>
+ 
+  <script src="jquery.min.js"></script>
+   <script type="text/javascript">
+     
+ 
+ 
+ function showActiveReport(){
+             var teacher_id =localStorage.getItem('id');
+           
+              $.ajax({
+                type:"get",
+                url:"myclass.php?teacher_id="+teacher_id+"&type=activereport"
+
+              }).done(function(data){
+               
+               var activereport =JSON.parse(data);
+                 alert(data)
+                for(a = 1; a <=activereport.length; a++){
+                  var reportid =activereport[a].id;
+                  var reportname =activereport[a].reportname;
+                  var reportdate =activereport[a].reportdate;
+                  var b35 =activereport[a].b35;
+                  var g35 = activereport[a].g35;
+                  var b68 =activereport[a].b68;
+
+
+                  $('#activereport').append('<tr><td>'+b35+'</td><td>'+g35+'</td><td>'+b68+'</td><tr>');
+                  $('#reportname').html(reportname)
+                   $('#reportdate').html(reportdate)
+
+                 }}
+              );
+ }
+                     
+          showActiveReport();
+         
+</script>
+  <script>
+   
+  </script>

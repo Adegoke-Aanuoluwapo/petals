@@ -11,7 +11,7 @@ if ($type == 'login') {
 }
 if($type == 'addteacher'){
  
- $pro->addTeachers($name, $district, $phone, $role, $grdistrict,$region);
+ $pro->addTeachers($name, $district, $phone, $role, $grdistrict,$region, $password);
  
   
   }
@@ -43,12 +43,27 @@ if($type == 'addteacher'){
    }
 if($type=='report'){
    global $con;
+    
    $sql= $con->query("SELECT * FROM reports");
    $report = [];
    while($row = mysqli_fetch_assoc($sql)){
-      $report[] = $row;
+    // $report[] = $row;
+       $report[] = ['teacher_id'=>$pro->sQLx1('teachers', 'id',$row['teacher_id'], 'name'),'reportname'=>$row['reportname'], 'reportdate'=>$row['reportdate'],'b35'=>$row['b35'],'g35'=>$row['g35'], 'b68'=>$row['b68'], 'g68'=>$row['g68'], 'b912'=>$row['b912'],'g912'=>$row['g912']]; 
+      
    }
+      //$teachers = $pro->addTeachers($name, $district, $phone, $role, $grdistrict, $region);
    echo json_encode($report);
+      
+}
+if($type=='activereport'){
+   global $con;
+   $teacher_id = $_SESSION['id'];
+   $sql= $con->query("SELECT * FROM reports WHERE teacher_id ='$teacher_id'");
+   $activereport=[];
+   while($row = mysqli_fetch_assoc($sql)){
+      $activereport[] = $row;
+   }
+   echo json_encode($activereport);
 }
 if($type == "childid"){
    $id = $_GET['id'];

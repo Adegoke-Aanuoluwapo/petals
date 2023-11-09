@@ -188,6 +188,12 @@
                   <input name="region" class="form-control" placeholder="Akure" id="region" required>
 
                 </div>
+                <div class="col-md-6 form-group">
+                  <label>Password</label>
+
+                  <input name="password" class="form-control" placeholder="password" id="password" required>
+
+                </div>
 
 
 
@@ -223,10 +229,11 @@
         var role = document.getElementById("role").value;
         var grdistrict = document.getElementById("grdistrict").value;
         var region = document.getElementById("region").value;
+        var password = document.getElementById("password").value;
 
         $.ajax({
           type: 'get',
-          url: 'myclass.php?name=' + name + '&district=' + district + '&phone=' + phone + '&role=' + role + '&grdistrict=' + grdistrict + '&region=' + region + '&type=addteacher'
+          url: 'myclass.php?name=' + name + '&district=' + district + '&phone=' + phone + '&role=' + role + '&grdistrict=' + grdistrict + '&region=' + region +'&password='+password+ '&type=addteacher'
 
         }).done(function(data) {
           alert(data)
@@ -249,7 +256,8 @@
           alert(data)
           var teachers = JSON.parse(data);
 
-          for (var a = 1; a < teachers.length; a++) {
+          for (var a = 0; a < teachers.length; a++) {
+
             var name = teachers[a].name;
             var district = teachers[a].district;
             var grdistrict = teachers[a].grdistrict
@@ -258,7 +266,7 @@
             var region = teachers[a].region;
 
             //appending at html
-            $("#teacher").append('<tr><td>' + a + `</td><td><a href="">` + name + `</a></td><td>` + district + '</td><td>' + grdistrict + '</td><td>' + phone + '</td><td>' + role + '</td><td>' + region + '</td></tr>');
+            $("#teacher").append('<tr><td>' + teachers[a].id + `</td><td><a href="">` + name + `</a></td><td>` + district + '</td><td>' + grdistrict + '</td><td>' + phone + '</td><td>' + role + '</td><td>' + region + '</td></tr>');
           }
         })
       }

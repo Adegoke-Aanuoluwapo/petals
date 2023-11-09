@@ -7,7 +7,7 @@ class Children
  function LogIn($name, $password)
  {
   global $con;
-  $sql = $con->query("SELECT * FROM user WHERE name = '$name' AND password ='$password'");
+  $sql = $con->query("SELECT * FROM teachers WHERE name = '$name' AND password ='$password'");
   if(mysqli_num_rows($sql) != 1) {
    echo "Invalid login";
    return;
@@ -20,21 +20,25 @@ class Children
   }
   return;
  }
-function addTeachers($name, $district, $phone, $role,$grdistrict, $region ){
+function addTeachers($name, $district, $phone, $role,$grdistrict, $region,$password ){
 
  global $con;
- $sql = $con->query("SELECT * FROM teachers WHERE name = '$name' AND '$district'");
-  if (mysqli_num_rows($sql) == 1) {
+ $sql = $con->query("SELECT * FROM teachers WHERE name = '$name' AND district ='$district'");
+ if( mysqli_num_rows($sql)==0){
+      echo "please input result";
+      return;
+    }
+ else if (mysqli_num_rows($sql) == 1) {
    echo "teacher already exist";
    return;
   }
-  else{
-      $sql = $con->query("INSERT INTO teachers(name, district, phone, role, grdistrict, region) VALUES('$name', '$district', '$phone','$role', '$grdistrict', '$region')");
+  else {
+      $sql = $con->query("INSERT INTO teachers(name, district, phone, role, grdistrict, region, password) VALUES('$name', '$district', '$phone','$role', '$grdistrict', '$region', '$password')");
     if($sql){
         echo "teacher added succefully";
         return;
     }
-     
+
   }
  
  
@@ -61,15 +65,20 @@ function addTeachers($name, $district, $phone, $role,$grdistrict, $region ){
   function sQLx1($table, $key, $val,$pin){
     global $con;
     $sql = $con->query("SELECT * FROM $table WHERE $key = '$val'");
-    $rows = mysqli_fetch_assoc($sql);
-    return $rows[$pin];
+    $row = mysqli_fetch_assoc($sql);
+    return mysqli_num_rows($sql) > 0 ? $row[$pin] : '';
 
   }
-  function submitReport($reportname, $teacher_id, $reportdate, $b35, $g35, $b68, $g68, $b912, $g912){
+ 
+  function submitReport(   $reportname, $teacher_id, $reportdate, $b35, $g35, $b68, $g68, $b912, $g912){
     global $con;
     $teacher_id = $_SESSION['id'];
     $sql = $con->query("SELECT * FROM reports WHERE reportname ='$reportname' AND reportdate ='$reportdate'");
-    if(mysqli_num_rows($sql) == 1) {
+    if( mysqli_num_rows($sql)==0){
+      echo "please input result";
+      return;
+    }
+   else if(mysqli_num_rows($sql) == 1) {
       echo "child already exist";
       return;
 
@@ -78,6 +87,7 @@ function addTeachers($name, $district, $phone, $role,$grdistrict, $region ){
     $sql = $con->query("INSERT INTO reports(reportname, teacher_id, reportdate, b35, g35, b68, g68, b912, g912) VALUES('$reportname','$teacher_id', '$reportdate', '$b35', '$g35', '$b68', '$g68', '$b912', '$g912')");
     if($sql){
       echo "report submitted successfully";
+     //$this->addTeachers($name, $district, $phone, $role, $grdistrict, $region);
       return;
     }
   }
