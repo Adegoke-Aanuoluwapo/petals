@@ -175,7 +175,7 @@ session_start();
               </div><!-- /.box -->
             </div>
 
-   <div class="col-md-12">
+   <div class="col-md-12" >
               <div class="box box-success box-solid">
                 <div class="box-header with-border">
                   <h3 class="box-title">RECENT SUBMISSION</h3>
@@ -183,7 +183,7 @@ session_start();
                    
                   </div><!-- /.box-tools -->
                 </div><!-- /.box-header -->
-                <div class="box-body" style="padding:10px 0" >	
+                <div class="box-body" style="padding:10px 0, display:flex" id="activereport">	
 
 
 
@@ -193,12 +193,12 @@ session_start();
               <div class="info-box" style="border: thin solid #CCC; " onclick="popModalEdit('3740','16')">
                 <span class="info-box-icon bg-green-active"><i class="fa fa-calendar-check-o"></i></span>
                 <div class="info-box-content" >
-                  <span class="info-box-text"><center><strong ><h3 id="reportname"></h3><br ><h3 id="reportdate"></h3></strong></center> </span>
+                  <span class="info-box-text"><center><strong ><h3 ></h3><br ><h3 ></h3></strong></center> </span>
                      
                      <div>
                      	<table class="table table-sm" style="margin: 0; padding:0">
                      		
-                     		<tbody id="activereport" >
+                     		<tbody  >
                         </tbody>
                       </table>
 
@@ -247,9 +247,7 @@ session_start();
       <!-- /.content -->
     </div>
     
-  <?php
-include("footer.php");
-  ?>
+ 
   <script>
   
   </script>
@@ -260,6 +258,7 @@ include("footer.php");
  
  
  function showActiveReport(){
+              $("#activereport").html('');
              var teacher_id =localStorage.getItem('id');
            
               $.ajax({
@@ -269,20 +268,19 @@ include("footer.php");
               }).done(function(data){
                
                var activereport =JSON.parse(data);
-                 alert(data)
-                for(a = 1; a <=activereport.length; a++){
+               //  alert(data)
+                for(a=1; a<4; a++){
                   var reportid =activereport[a].id;
                   var reportname =activereport[a].reportname;
                   var reportdate =activereport[a].reportdate;
                   var b35 =activereport[a].b35;
                   var g35 = activereport[a].g35;
                   var b68 =activereport[a].b68;
+                  var g68 =activereport[a].g68;
+                  var b912 =activereport[a].b912;
 
-
-                  $('#activereport').append('<tr><td>'+b35+'</td><td>'+g35+'</td><td>'+b68+'</td><tr>');
-                  $('#reportname').html(reportname)
-                   $('#reportdate').html(reportdate)
-
+                   $('#activereport').append('<div class="col-md-4 col-sm-6 col-xs-12" style="padding:0 10px"><div class="info-box" style="border: thin solid #CCC;" onclick="popModalEdit(1)"><span class="info-box-icon bg-green-active"><i class="fa fa-calendar-check-o"></i></span><div class="info-box-content" style=""><span class="info-box-text"><center><strong>'+reportname+'<br>'+reportdate+'</strong></center> </span><div><table class="table table-sm" style="margin: 0; padding:0"><tr><td><b>B35</b><br>'+b35+'</td><td><b>G35</b><br>'+g35+'</td><td><b>CH</b><br>'+b68+'</td><td><b>T</b><br>'+g68+'</td><td><b>OFF</b><br>N'+b912+'</td></tr></table></div></div></div></div>');
+  
                  }}
               );
  }
@@ -291,5 +289,9 @@ include("footer.php");
          
 </script>
   <script>
-   
+                                                                            
+ 
   </script>
+   <?php
+include("footer.php");
+  ?>

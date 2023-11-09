@@ -9,7 +9,7 @@ include("control.php");
 if (isset($_GET['id'])) {
  $id = $_GET['id'];
  $i = 1;
- $sql = $con->query("SELECT * FROM children ");
+ $sql = $con->query("SELECT * FROM children WHERE id = '$id' ");
 }
 
 ?>
@@ -165,7 +165,9 @@ if (isset($_GET['id'])) {
 
         </form>
 
-
+<?php
+include("footer.php")
+?>
 
         <script src="jquery.min.js"></script>
         <script>
@@ -175,7 +177,7 @@ if (isset($_GET['id'])) {
 
           $.ajax({
            type: 'get',
-           url: 'myclass.php?id=' + c + '&type=childid'
+           url: 'myclass.php?id='+c+'&type=childid'
           }).done(function(data) {
            alert(data);
            var childid = JSON.parse(data);
@@ -192,4 +194,5 @@ if (isset($_GET['id'])) {
           })
          }
          getChildDetails()
+         
         </script>
