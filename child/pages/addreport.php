@@ -1,5 +1,5 @@
 <?php
-
+include("control.php");
 session_start();
 ?>
 
@@ -101,8 +101,8 @@ session_start();
            <tr>
             <th>sn</th>
             <th>group</th>
-            <th>reportname</th>
-            <th>reportdate</th>
+            <th>Program</th>
+           
             <th>boys(3-5)</th>
             <th>girls(3-5)</th>
             <th>boys(6-8)</th>
@@ -151,23 +151,28 @@ session_start();
        <form method="POST" class="row" id="addTeachersForm">
 
         <div class="col-md-6 form-group">
-         <label>Report name</label>
-         <select name="reportname" id="reportname" class="form-control" required>
-          <option>Please select the type</option>
-          <option value="sws">Sunday</option>
-          <option value="mbs">Monday Bible Study</option>
-          <option value="trh">Revival Hour</option>
-          <option value="hcf">House Caring</option>
+         <label>Program</label>
+         <select name="program" id="program" class="form-control" required>
+          <option value="" selected disabled>Select Program</option>
+          <?php
+          $i =1;
+          $currentyear = date('Y');
+          $currentweek = date('W');
+           $sql = $con->query("SELECT * FROM programs WHERE wk = '$currentweek' AND year='$currentyear' AND status = 1");
+
+           while ($row = mysqli_fetch_assoc($sql)) {
+   // Assuming the title is a column in your 'programs' table
+             $title = $row['title'];
+             $date = $row['date'];
+
+             echo '<option value='.$row['id'].'>' . $title .''.$date. '</option>';
+  }
+        ?>
          </select>
 
 
         </div>
-        <div class="col-md-6 form-group">
-         <label>Date</label>
-         <input type="date" id="reportdate" class="form-control" placeholder="3-5" required>
-
-
-        </div>
+        
         <div class="col-md-6 form-group">
          <label>3-5|BOYS</label>
          <input type="number" name="b35" id="b35" class="form-control" placeholder="3-5" required>
@@ -218,8 +223,8 @@ session_start();
    <script>
     function addReport() {
      var teacher_id;
-     var reportname = document.getElementById("reportname").value;
-     var reportdate = document.getElementById("reportdate").value;
+     var program = document.getElementById("program").value;
+    
      var b35 = document.getElementById("b35").value;
      var g35 = document.getElementById("g35").value;
      var b68 = document.getElementById("b68").value;
@@ -229,7 +234,7 @@ session_start();
 
      $.ajax({
       type: 'get',
-      url: 'myclass.php?teacher_id=' + teacher_id + '&reportname=' + reportname + '&reportdate=' + reportdate + '&b35=' + b35 + '&g35=' + g35 + '&b68=' + b68 + '&g68=' + g68 + '&b912=' + b912 + '&g912=' + g912 + '&type=addreport'
+      url: 'myclass.php?teacher_id=' + teacher_id + '&program=' + program  + '&b35=' + b35 + '&g35=' + g35 + '&b68=' + b68 + '&g68=' + g68 + '&b912=' + b912 + '&g912=' + g912 + '&type=addreport'
      }).done(function(data) {
       alert(data)
       Report()
@@ -237,28 +242,29 @@ session_start();
     }
 
     function Report() {
-    // teachers = localStorage.getItem('teachers');
-    // alert(teachers);
+     // teachers = localStorage.getItem('teachers');
+     // alert(teachers);
      $('#report').html('');
      $.ajax({
       type: "get",
-      url: "myclass.php?type=report",
+      url: "myclass.php?type=report"
      }).done(function(data) {
-      console.log(data)
+      alert(data);
       var report = JSON.parse(data);
 
       for (i = 1; i < report.length; i++) {
        var teacher = report[i].teacher_id;
-       var reportname = report[i].reportname;
-       var reportdate = report[i].reportdate;
+       var program = report[i].program;
+      
        var b35 = report[i].b35;
        var g35 = report[i].g35;
+       
        var b68 = report[i].b68;
        var g68 = report[i].g68;
        var b912 = report[i].b912;
        var g912 = report[i].g912;
 
-       $("#report").append('<tr><td>' + i + '</td><td>' + teacher + '</td><td>' + reportname + '</td><td>' + reportdate + '</td><td>' + b35 + '</td><td>' + g35 + '</td><td>' + b68 + '</td><td>' + g68 + '</td><td>' + b912 + '</td><td>' + g912 + '</td><td>');
+       $("#report").append('<tr><td>' + i + '</td><td>' + teacher + '</td><td>' + program +  '</td><td>' + b35 + '</td><td>' + g35 + '</td><td>' + b68 + '</td><td>' + g68 + '</td><td>' + b912 + '</td><td>' + g912 + '</td><td>');
       }
      })
     }

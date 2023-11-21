@@ -11,7 +11,7 @@ if ($type == 'login') {
 }
 if($type == 'addteacher'){
  
- $pro->addTeachers($name, $district, $phone, $role, $grdistrict,$region, $password);
+ $pro->addTeachers($name, $district, $phone, $role, $grdistrict,$megagroup,$region, $password);
  
   
   }
@@ -33,13 +33,21 @@ if($type == 'addteacher'){
   $teacher = [];
   while ($row = mysqli_fetch_assoc($sql)) {
 
-   $teacher[] = $row;
+   $teacher[] = ['id'=>$row['id'],'name'=>$row['name'], 'district'=>$row['district'], 'phone'=>$row['phone'], 'role'=>$pro->teachersRole($row['role']),'grdistrict'=>$row['grdistrict'], 'region'=>$row['region'], 'password'=>$row['password']];
   }
       echo json_encode($teacher);
   }
 
+  if($type=="teacherdetail"){
+   
+   $id = $_GET['id'];
+   $sql = $con->query("SELECT * FROM teachers WHERE id ='$id'");
+   $rows = mysqli_fetch_assoc($sql);
+   echo json_encode($rows);
+  }
+
  if($type == "addreport"){
-      $pro->submitReport($reportname, $teacher_id, $reportdate, $b35, $g35, $b68, $g68, $b912, $g912);
+      $pro->submitReport($program, $teacher_id, $b35, $g35, $b68, $g68, $b912, $g912);
    }
 if($type=='report'){
    global $con;
@@ -48,7 +56,7 @@ if($type=='report'){
    $report = [];
    while($row = mysqli_fetch_assoc($sql)){
     // $report[] = $row;
-       $report[] = ['teacher_id'=>$pro->sQLx1('teachers', 'id',$row['teacher_id'], 'name'),'reportname'=>$row['reportname'], 'reportdate'=>$row['reportdate'],'b35'=>$row['b35'],'g35'=>$row['g35'], 'b68'=>$row['b68'], 'g68'=>$row['g68'], 'b912'=>$row['b912'],'g912'=>$row['g912']]; 
+       $report[] = ['teacher_id'=>$pro->sQLx1('teachers', 'id',$row['teacher_id'], 'name'),'program'=>$row['program'], 'reportdate'=>$row['reportdate'],'b35'=>$row['b35'],'g35'=>$row['g35'], 'b68'=>$row['b68'], 'g68'=>$row['g68'], 'b912'=>$row['b912'],'g912'=>$row['g912']]; 
       
    }
       //$teachers = $pro->addTeachers($name, $district, $phone, $role, $grdistrict, $region);
@@ -70,6 +78,15 @@ if($type == "childid"){
   $sql= $con->query("SELECT * FROM children WHERE id='$id'");
    $rows = mysqli_fetch_assoc($sql);
    echo json_encode($rows);
+}
+if($type== "uploadMat"){
+   $pro->addMaterials();
+}
+if($type=='editteacher'){
+   $pro->EditTeachers($tId,$name, $district, $phone, $role,$grdistrict, $region,$password );
+}
+if($type=='editchild'){
+   $pro->editChild($cId,$surname, $firstname, $othername, $familyname, $sex, $birthdate, $address, $addressarea, $school, $class);
 }
   
 }

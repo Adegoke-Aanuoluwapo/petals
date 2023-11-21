@@ -116,9 +116,9 @@
        </a>
       </li>
       <li class="nav-item">
-       <a href="class.php" class="nav-link">
+       <a href="teachattendance.php" class="nav-link">
         <i class="far fa-circle nav-icon"></i>
-        <p>Classes</p>
+        <p>Teachers Attendance</p>
        </a>
       </li>
      </ul>
@@ -130,14 +130,14 @@
      <a href="#" class="nav-link">
       <i class="nav-icon fas fa-subscript"></i>
       <p>
-       Subject info
+       outlines
        <i class="fas fa-angle-left right"></i>
 
       </p>
      </a>
      <ul class="nav nav-treeview">
       <li class="nav-item">
-       <a href="addsubject.php" class="nav-link">
+       <a href="uploadmaterial.php" class="nav-link">
         <i class="far fa-circle nav-icon"></i>
         <p>Create/View Subjects</p>
        </a>

@@ -56,33 +56,14 @@
  }
  $primeNumbers = findPrimes(1, 100);
  echo "Prime numbers between 1 and 100 are: " . implode(", ", $primeNumbers);
+ echo '<br>';
+ $date = date('m');
+ $year = date('d, M Y');
+ echo $year;
+ echo $date; 
  ?>
- <script>
-  let posts = [{
-     id: 1,
-     userId: 1,
-     title: 'First post by John'
-    },
-    {
-     id: 2,
-     userId: 1,
-     title: 'Second post by John'
-    },
-    {
-     id: 3,
-     userId: 2,
-     title: "Alice's
-      post"  }, {
-      id: 4,
-      userId: 3,
-      title: 'Bob'
-      s post ' }, {
-       id: 5,
-       userId: 1,
-       title: 'Another post by John'
-      }
-     ];
- </script>
+ 
+
 </body>
 
 </html>

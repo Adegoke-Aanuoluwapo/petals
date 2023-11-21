@@ -1,3 +1,9 @@
+<?php
+// $actime = time();
+ $date=date('W');
+echo $date;
+?>
+
 <!DOCTYPE html>
 <html>
 

@@ -101,8 +101,15 @@
                         <th>Role</th>
                         <th>Region</th>
                         <th>Region</th>
+                        <th>
+                          Action
+                        </th>
                       </tr>
                     </thead>
+                    <tbody>
+                      </th>
+                      </tr>
+                      </thead>
                     <tbody id="teacher">
 
                       <tr>
@@ -155,7 +162,7 @@
 
                 <div class="col-md-6 form-group">
                   <label>Name</label>
-                  <input type="text" name="name" class="form-control" placeholder="Enter Name" id="name" required>
+                  <input type="text" name="name" class="form-control" placeholder="Enter Name" id="name" class="name" required>
                 </div>
 
 
@@ -180,6 +187,12 @@
                   <label>Group</label>
 
                   <input name="group" class="form-control" placeholder="Futa" id="grdistrict" required>
+
+                </div>
+                <div class="col-md-6 form-group">
+                  <label>Mega Group</label>
+
+                  <input name="region" class="form-control region x" placeholder="AULE" id="megagroup" required>
 
                 </div>
                 <div class="col-md-6 form-group">
@@ -209,6 +222,76 @@
         </div>
       </div>
 
+      <!-- boundary EditStaff -->
+      <div class="modal fade" id="editStaffModal">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <p class="modal-title text-bold">Edit Children Teachers: <span id="myname"></span> </p>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form method="POST" class="row">
+
+                <div class="col-md-6 form-group">
+                  <label>Name</label>
+                  <input type="text" name="name" class="form-control x" placeholder="Enter Name" id="namex" class="name" required>
+                </div>
+
+
+                <div class="col-md-6 form-group">
+                  <label>District</label>
+                  <input type="text" name="district" class="form-control x" placeholder="Alaba" id="district" required>
+                </div>
+                <div class="col-md-6 form-group">
+                  <label>Phone</label>
+                  <input type="text" name="phone" class="form-control x" placeholder="09000000000" id="phone" required>
+                </div>
+                <div class="col-md-6 form-group">
+                  <label>Role</label>
+                  <select name="rolex" class="form-control role select2bs4 x" style="width: 100%;" id="rolex">
+                    <option selected disabled>Select Role</option>
+                    <option value="8">Group Cordinator</option>
+                    <option value="9">District Coordinator</option>
+                    <option value="7">Teacher</option>
+                  </select>
+                </div>
+                <div class="col-md-6 form-group">
+                  <label>Group</label>
+
+                  <input name="group" class="form-control grdistrict x" placeholder="Futa" id="grdistrictx" required>
+
+                </div>
+
+                <div class="col-md-6 form-group">
+                  <label>Region</label>
+
+                  <input name="region" class="form-control region x" placeholder="Akure" id="regionx" required>
+
+                </div>
+                <div class="col-md-6 form-group">
+                  <label>Password</label>
+
+                  <input name="password" class="form-control password x" placeholder="password" id="passwordx" required>
+
+                </div>
+
+
+
+                <div class="col-12 form-group">
+                  <button type="button" class="btn btn-secondary float-right addStaff " name="editteacher" onclick="editTeachers()">Edit Teacher</button>
+                </div>
+              </form>
+              <span id="output"></span>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
 
 
 
@@ -223,17 +306,21 @@
 
     <script>
       function addTeachers() {
-        var name = document.getElementById("name").value;
-        var district = document.getElementById("district").value;
+        var name = document.getElementById('name').value;
+
+        var district = document.getElementById('district').value;
         var phone = document.getElementById("phone").value;
         var role = document.getElementById("role").value;
         var grdistrict = document.getElementById("grdistrict").value;
         var region = document.getElementById("region").value;
+        var megagroup = document.getElementById("megagroup").value;
+
         var password = document.getElementById("password").value;
+        alert(name);
 
         $.ajax({
           type: 'get',
-          url: 'myclass.php?name=' + name + '&district=' + district + '&phone=' + phone + '&role=' + role + '&grdistrict=' + grdistrict + '&region=' + region +'&password='+password+ '&type=addteacher'
+          url: 'myclass.php?name=' + name + '&district=' + district + '&phone=' + phone + '&role=' + role + '&grdistrict=' + grdistrict +'&megagroup='+megagroup+'&region=' + region + '&password=' + password + '&type=addteacher'
 
         }).done(function(data) {
           alert(data)
@@ -249,11 +336,12 @@
       }
 
       function teachers() {
+        ;
         $.ajax({
           type: "get",
           url: "myclass.php?type=teacher",
         }).done(function(data) {
-          alert(data)
+          //alert(data);
           var teachers = JSON.parse(data);
 
           for (var a = 0; a < teachers.length; a++) {
@@ -266,12 +354,74 @@
             var region = teachers[a].region;
 
             //appending at html
-            $("#teacher").append('<tr><td>' + teachers[a].id + `</td><td><a href="">` + name + `</a></td><td>` + district + '</td><td>' + grdistrict + '</td><td>' + phone + '</td><td>' + role + '</td><td>' + region + '</td></tr>');
+            $("#teacher").append('<tr><td>' + teachers[a].id + `</td><td><a href="">` + name + `</a></td><td>` + district + '</td><td>' + grdistrict + '</td><td>' + phone + '</td><td>' + role + '</td><td>' + region + '</td><th><button type="button" class="btn btn-primary"data-toggle="modal" data-target="#editStaffModal" name="teacherdetail" onclick="teachersDetails(' + teachers[a].id + ')">Edit<button></th></tr>');
           }
         })
       }
-   
+
 
       teachers();
+
+      function teachersDetails(t) {
+        localStorage.setItem('tId', t);
+        //alert(t);
+        $.ajax({
+          type: 'get',
+          url: 'myclass.php?id=' + t + '&type=teacherdetail'
+        }).done(function(data) {
+          // alert(data);
+
+
+          var teacherdetail = JSON.parse(data);
+          //alert(teacherdetail.region);
+          $("#myname").html(teacherdetail.name);
+          $("#namex").val(teacherdetail.name);
+          $("#districtx").val(teacherdetail.district);
+          $("#grdistrictx").val(teacherdetail.grdistrict);
+          $("#phonex").val(teacherdetail.phone);
+          $("#rolex").val(teacherdetail.role);
+
+
+          $("#regionx").val(teacherdetail.region);
+          $("#passwordx").val(teacherdetail.password);
+
+          $('#editStaffModal').modal('show');
+          // console.log(teacherdetail.name);
+          // console.log(teacherdetail.district);
+
+        })
+
+      }
+      teachersDetails();
+
+      function editTeachers() {
+        var t = localStorage.getItem('tId');
+        var x = document.getElementsByClassName('x');
+
+        //alert(t);
+        var name = x[0].value;
+        console.log(name);
+        var district = x[1].value;
+        var grdistrict = x[2].value;
+        var phone = x[3].value;
+        var role = x[4].value;
+        var region = x[5].value;
+        var password = x[6].value;
+
+
+        $.ajax({
+          type: 'get',
+          url: 'myclass.php?tId=' + t + '&name=' + name + '&district=' + district + '&grdistrict=' + grdistrict + '&phone=' + phone + '&role=' + role + '&region=' + region + '&password=' + password + '&type=editteacher'
+        }).done(function(data) {
+          alert(data);
+        })
+      }
+
+      function gotoUpdate(v) {
+        localStorage.setItem(v, 'tId');
+        window.location.href = "updateteachers.php";
+      }
+
+
       //$("#teacher").html();
     </script>
