@@ -1,0 +1,20 @@
+.body{
+ margin: 0px;
+}
+.card-container{
+ display: flex;
+color: rgb(340, 293, 105, 0) ;
+}
+
+.card-sm{
+ display: flex;
+ padding: 20px;
+ margin: 5px;
+ margin-left: 50px;
+
+background-color: blueviolet;
+}
+
+@media only screen and (max-width: 600px) {
+ /* Styles for screens smaller than 600px */
+}
