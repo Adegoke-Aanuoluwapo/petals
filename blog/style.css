@@ -3,7 +3,7 @@
 }
 .card-container{
  display: flex;
-color: rgb(340, 293, 105, 0) ;
+background-color: #ffffff ;
 }
 
 .card-sm{
@@ -12,7 +12,7 @@ color: rgb(340, 293, 105, 0) ;
  margin: 5px;
  margin-left: 50px;
 
-background-color: blueviolet;
+background-color: #ffff;
 }
 
 @media only screen and (max-width: 600px) {
