@@ -5,7 +5,9 @@
  display: flex;
 background-color: #ffffff ;
 }
-
+.row{
+ display: flex;
+}
 /* .card-sm{
  display: flex;
  padding: 20px;
