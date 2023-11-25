@@ -96,7 +96,7 @@
                       <tr>
                         <th>sn</th>
                         <th>Name</th>
-                        <th>Email</th>
+                        <th>District</th>
                         <th>Phone</th>
                         <th>Role</th>
                         <th>Region</th>
@@ -243,11 +243,11 @@
 
                 <div class="col-md-6 form-group">
                   <label>District</label>
-                  <input type="text" name="district" class="form-control x" placeholder="Alaba" id="district" required>
+                  <input type="text" name="district" class="form-control x" placeholder="Alaba" id="districtx" required>
                 </div>
                 <div class="col-md-6 form-group">
                   <label>Phone</label>
-                  <input type="text" name="phone" class="form-control x" placeholder="09000000000" id="phone" required>
+                  <input type="text" name="phone" class="form-control x" placeholder="09000000000" id="phonex" required>
                 </div>
                 <div class="col-md-6 form-group">
                   <label>Role</label>
@@ -261,10 +261,15 @@
                 <div class="col-md-6 form-group">
                   <label>Group</label>
 
-                  <input name="group" class="form-control grdistrict x" placeholder="Futa" id="grdistrictx" required>
+                  <input name="group" class="form-control  x" placeholder="Futa" id="grdistrictx" required>
 
                 </div>
+                <div class="col-md-6 form-group">
+                  <label>Mega Group</label>
 
+                  <input name="megagroup" class="form-control  x" placeholder="Futa" id="grdistrictx" required>
+
+                </div>
                 <div class="col-md-6 form-group">
                   <label>Region</label>
 
@@ -320,7 +325,7 @@
 
         $.ajax({
           type: 'get',
-          url: 'myclass.php?name=' + name + '&district=' + district + '&phone=' + phone + '&role=' + role + '&grdistrict=' + grdistrict +'&megagroup='+megagroup+'&region=' + region + '&password=' + password + '&type=addteacher'
+          url: 'myclass.php?name=' + name + '&district=' + district + '&phone=' + phone + '&role=' + role + '&grdistrict=' + grdistrict + '&megagroup=' + megagroup + '&region=' + region + '&password=' + password + '&type=addteacher'
 
         }).done(function(data) {
           alert(data)
@@ -329,14 +334,14 @@
           // } else {
           //  alert("Invalid login");
           // }
-
+          teachers();
         });
 
 
       }
 
       function teachers() {
-        ;
+        $("#teacher").html('');
         $.ajax({
           type: "get",
           url: "myclass.php?type=teacher",
@@ -396,22 +401,28 @@
 
       function editTeachers() {
         var t = localStorage.getItem('tId');
-        var x = document.getElementsByClassName('x');
+        // var x = document.getElementsByClassName('x');
+        // var p =x[0].value;
 
-        //alert(t);
-        var name = x[0].value;
-        console.log(name);
-        var district = x[1].value;
-        var grdistrict = x[2].value;
-        var phone = x[3].value;
-        var role = x[4].value;
-        var region = x[5].value;
-        var password = x[6].value;
+        // alert(p);
+        var p = document.getElementById('namex').value;
 
+        alert(p);
+        var district = document.getElementById('districtx').value;
 
+        var phone = document.getElementById('phonex').value;
+
+        var role = document.getElementById('rolex').value;
+
+        var grdistrict = document.getElementById('grdistrictx').value;
+        console.log(grdistrict);
+        var megagroup = document.getElementById('megagroupx').value;
+        var region = document.getElementById('regionx').value;
+        var password = document.getElementById('passwordx').value;
+        $('#editStaffModal').modal('open');
         $.ajax({
           type: 'get',
-          url: 'myclass.php?tId=' + t + '&name=' + name + '&district=' + district + '&grdistrict=' + grdistrict + '&phone=' + phone + '&role=' + role + '&region=' + region + '&password=' + password + '&type=editteacher'
+          url: 'myclass.php?tId=' + t + '&name=' + p + '&district=' + district + '&grdistrict=' + grdistrict + '&megagroup=' + magagroup + '&phone=' + phone + '&role=' + role + '&region=' + region + '&password=' + password + '&type=editteacher'
         }).done(function(data) {
           alert(data);
         })

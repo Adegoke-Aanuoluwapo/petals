@@ -83,7 +83,7 @@ if($type== "uploadMat"){
    $pro->addMaterials();
 }
 if($type=='editteacher'){
-   $pro->EditTeachers($tId,$name, $district, $phone, $role,$grdistrict, $region,$password );
+   $pro->EditTeachers($tId,$name, $district, $phone, $role,$grdistrict,$megagroup, $region,$password );
 }
 if($type=='editchild'){
    $pro->editChild($cId,$surname, $firstname, $othername, $familyname, $sex, $birthdate, $address, $addressarea, $school, $class);
