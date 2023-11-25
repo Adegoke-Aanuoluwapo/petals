@@ -59,8 +59,15 @@ letter-spacing: 2px;
 
 
 /* ****responsive css****** */
-
-@media only screen and (max-width) {
+@media only screen and(min-width:768px ) and(max-width:991px) {
+ .carousel-caption{
+  bottom: 370px;
+ }
+ .carousel-caption p{
+  width: 100%;
+ }
+}
+ @media only screen and (max-width:767) {
   .navbar-nav{
    text-align: center;
   }
@@ -74,4 +81,4 @@ letter-spacing: 2px;
    width: 100%;
    line-height: 1.6;
   }
-}
+} 
