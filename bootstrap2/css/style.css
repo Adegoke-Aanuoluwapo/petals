@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Acme&family=Lobster+Two:ital@1&family=Patua+One&family=Roboto:ital,wght@0,100;0,900;1,100;1,300;1,900&family=Rubik+Mono+One&family=Sniglet&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Acme&family=Lobster+Two:ital@1&family=Patua+One&family=Roboto:ital,wght@0,100;0,900;1,100;1,300;1,900&family=Rubik+Mono+One&family=Sniglet&display=swap'); */
 
 *{
  box-sizing: border-box;
@@ -13,7 +13,7 @@ section{
 }
 
 :root{
---Snigle-font:"Sniglet",cursive;
+--Sniglet-font:"Sniglet",cursive;
 --Rubik:"Rubik", cursive;
 --Patua:"Patua One",cursive;
 --Lobster:"Lobster",cursive;
