@@ -1,0 +1,37 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Lobster+Two:ital@1&family=Patua+One&family=Roboto:ital,wght@0,100;0,900;1,100;1,300;1,900&family=Rubik+Mono+One&family=Sniglet&display=swap');
+
+*{
+ box-sizing: border-box;
+ background: #ff5120;
+}
+
+
+header,
+section{
+ overflow-x: hidden;
+}
+
+:root{
+--Snigle-font:"Sniglet",cursive;
+--Rubik:"Rubik", cursive;
+--Patua:"Patua One",cursive;
+--Lobster:"Lobster",cursive;
+--light-black:#2e2c2caf;
+--bggradient:linear-gradient(
+ to bottom,
+ #dd2476, #ff5120
+);
+--light-gray:rgba(255,255,255,0.5);
+
+}
+a{
+ font-family:var(--Sniglet);
+ font-size: 0.9em;
+ color: whitesmoke;
+}
+
+header{
+ background:#dd2476 ;
+ background: var(--bggradient);
+}
