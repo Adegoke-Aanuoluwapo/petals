@@ -3,7 +3,7 @@
 
 *{
  box-sizing: border-box;
- background: #ff5120;
+
 }
 
 
@@ -12,7 +12,7 @@ section{
  overflow-x: hidden;
 }
 
-:root{
+/* :root{
 --Sniglet-font:"Sniglet",cursive;
 --Rubik:"Rubik", cursive;
 --Patua:"Patua One",cursive;
@@ -24,7 +24,7 @@ section{
 );
 --light-gray:rgba(255,255,255,0.5);
 
-}
+} */
 a{
  font-family:var(--Sniglet-font);
  font-size: 0.9em;
