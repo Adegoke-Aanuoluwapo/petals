@@ -10,9 +10,10 @@
 header,
 section{
  overflow-x: hidden;
+ background: #ff5120
 }
 
-/* root{
+:root{
 --Sniglet-font:"Sniglet",cursive;
 --Rubik:"Rubik", cursive;
 --Patua:"Patua One",cursive;
@@ -20,8 +21,7 @@ section{
 --light-black:#2e2c2caf;
 --bggradient:linear-gradient(
  
- #dd2476, #ff5120 */
- 
+ #dd2476, #ff5120 
   
 );
 --light-gray:rgba(255,255,255,0.5);
@@ -162,7 +162,7 @@ header .container .col-md-7 button{
  position: relative;
 }
 .cover .content{
- background:green;
+ 
  height: 100%;
  width: 100%;
  padding: 19vmin;
