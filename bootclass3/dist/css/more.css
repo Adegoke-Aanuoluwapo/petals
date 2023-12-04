@@ -27,9 +27,14 @@ padding: 0.2rem 0.5rem;
 }
 
  .header-area .main-menu .navbar-nav a:hover{
- /* background: var(--gradient-color); */
+ /* background: var(--gradient-color); not working*/
  background: blue;
  -webkit-background-clip:text;
  -webkit-text-fill-color:transparent;
  background-clip:text;
 } 
+
+/************ start main area **************/
+
+
+/************ end main area **************/
