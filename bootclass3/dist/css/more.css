@@ -20,7 +20,7 @@ padding: 0.2rem 0.5rem;
  color: var(--title-color);
 }
 .header-area .main-menu .navbar-nav .active a{
- background: blue; 
+ background:var(--gradient-color); 
  -webkit-background-clip:text;
  -webkit-text-fill-color:transparent;
  background-clip:text;
