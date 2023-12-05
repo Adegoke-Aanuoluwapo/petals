@@ -13,7 +13,8 @@ html, body{
  --title-color:#141313;
  --text-color:#777777;
  --border-color:#201f1f17;
- --gradient-color:linear-gradient(90deg #4458dc 0% #854dee 100%);
+  background: linear-gradient(to right, #ff9b1a ,#febd2c );
+ --gradient-color:linear-gradient(to right, #4458dc, #854dee );
  --shadow-color:0px 10px 30px rgba(118, 05, 225, 0.3);
  --box-shadow:0px 10px 30px rgba(57, 56, 61, 0.205);
 
