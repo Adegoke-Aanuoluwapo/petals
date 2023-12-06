@@ -63,3 +63,7 @@ padding: 0.2rem 0.5rem;
  padding: 7rem 0;
  width: 90rem;
 }
+
+.title-text{
+ font:normal bold 56/72px
+}
