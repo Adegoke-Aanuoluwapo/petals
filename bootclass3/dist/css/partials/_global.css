@@ -1,4 +1,4 @@
-/* global classes */
+global 
 
 .title-text{
  font: normal bold 50px/72px var(--roboto);
@@ -36,8 +36,15 @@
  border-radius: 4px;
 }
 
-.button .button-secondary{
+ .button.button-secondary{
  background: white;
  background-clip: padding-box;
  transition: .6s ease;
+ 
+}
+
+ .button.button-secondary:hover{
+ background: var(--gradient-color);
+ color: whitesmoke;
+ box-shadow: var(--box-shadow);
 }
