@@ -1,0 +1,15 @@
+C:\xampp\htdocs\petals\refire\bin\Debug\net7.0\refire.exe
+C:\xampp\htdocs\petals\refire\bin\Debug\net7.0\refire.deps.json
+C:\xampp\htdocs\petals\refire\bin\Debug\net7.0\refire.runtimeconfig.json
+C:\xampp\htdocs\petals\refire\bin\Debug\net7.0\refire.dll
+C:\xampp\htdocs\petals\refire\bin\Debug\net7.0\refire.pdb
+C:\xampp\htdocs\petals\refire\obj\Debug\net7.0\refire.csproj.AssemblyReference.cache
+C:\xampp\htdocs\petals\refire\obj\Debug\net7.0\refire.GeneratedMSBuildEditorConfig.editorconfig
+C:\xampp\htdocs\petals\refire\obj\Debug\net7.0\refire.AssemblyInfoInputs.cache
+C:\xampp\htdocs\petals\refire\obj\Debug\net7.0\refire.AssemblyInfo.cs
+C:\xampp\htdocs\petals\refire\obj\Debug\net7.0\refire.csproj.CoreCompileInputs.cache
+C:\xampp\htdocs\petals\refire\obj\Debug\net7.0\refire.dll
+C:\xampp\htdocs\petals\refire\obj\Debug\net7.0\refint\refire.dll
+C:\xampp\htdocs\petals\refire\obj\Debug\net7.0\refire.pdb
+C:\xampp\htdocs\petals\refire\obj\Debug\net7.0\refire.genruntimeconfig.cache
+C:\xampp\htdocs\petals\refire\obj\Debug\net7.0\ref\refire.dll

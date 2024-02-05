@@ -133,7 +133,7 @@ header .container .col-md-7 button{
  position: absolute;
  top: 7vmin;
  left: 18vmin;
- background-color: white;
+ background-color: red;
  border-radius: 3px;
  text-align: left;
  padding: 13vmin 5vmin 20vmin 10vmin;
